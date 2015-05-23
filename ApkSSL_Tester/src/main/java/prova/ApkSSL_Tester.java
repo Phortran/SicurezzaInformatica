@@ -32,7 +32,7 @@ package prova;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.jcabi.aspects.Loggable;
+//import com.jcabi.aspects.Loggable;
 
 /**
  * @author Gabriele Santi, Alessandro Valenti
@@ -47,17 +47,16 @@ public class ApkSSL_Tester {
 	
 	public static void main(String[] args) {
 		//prova annotazioni per il logger
-		int a = 15;
+		int a = 17;
 		int b = 36;
 		
 		int c = prova(a,b);
 		
 		System.out.println("Result: " + c);
 	}
-	
-	@Loggable(Loggable.DEBUG)
+
 	private static int prova (int a, int b) {
-		logger.info("passed arguments are {} and {}", a, b);
+		logger.debug("passed arguments are {} and {}", a, b);
 		return a*b;
 	}
 
