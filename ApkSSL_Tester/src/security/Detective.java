@@ -69,9 +69,8 @@ public class Detective {
 							Clues.STRING, Clues.STRING_ARRAY,
 							Clues.STRING_ARRAY)) {
 						Vulnerability apachePermissiveHV = new ApachePermissiveHV(new Suspect(sClass, sMethod));
-						if (apachePermissiveHV.proceedInspection()) {
-							this.report.add(apachePermissiveHV);
-						}
+						apachePermissiveHV.proceedInspection();
+						this.report.add(apachePermissiveHV);
 					}
 				}
 
@@ -81,9 +80,8 @@ public class Detective {
 							BooleanType.v(), "verify",
 							Clues.STRING, Clues.SSL_SESSION)) {
 						Vulnerability javaxPermissiveHV = new JavaxPermissiveHV(new Suspect(sClass, sMethod));
-						if (javaxPermissiveHV.proceedInspection()) {
-							this.report.add(javaxPermissiveHV);
-						}
+						javaxPermissiveHV.proceedInspection();
+						this.report.add(javaxPermissiveHV);
 					}
 				}
 
@@ -94,9 +92,8 @@ public class Detective {
 							VoidType.v(), "checkServerTrusted",
 							Clues.JAVAX_SECURITY_X509_CERTIFICATE_ARRAY, Clues.STRING)) {
 						Vulnerability x509negligentTM = new X509NegligentTM(new Suspect(sClass, sMethod));
-						if (x509negligentTM.proceedInspection()) {
-							this.report.add(x509negligentTM);
-						}
+						x509negligentTM.proceedInspection();
+						this.report.add(x509negligentTM);
 					}
 				}
 			} else if (sClass.getSuperclass().getName().equals(Clues.ANDROID_WEBVIEW_CLIENT.getClassName())) {
@@ -106,9 +103,8 @@ public class Detective {
 							VoidType.v(), "onReceivedSslError",
 							Clues.ANDROID_WEBVIEV, Clues.ANDROID_SSL_ERROR_HANDLER, Clues.ANDROID_NET_SSL_ERROR)) {
 						Vulnerability androidPermissiveWVC = new AndroidPermissiveWVC(new Suspect(sClass, sMethod));
-						if (androidPermissiveWVC.proceedInspection()) {
-							this.report.add(androidPermissiveWVC);
-						}
+						androidPermissiveWVC.proceedInspection();
+						this.report.add(androidPermissiveWVC);
 					}
 				}
 			}

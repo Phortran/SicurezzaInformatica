@@ -1,8 +1,12 @@
 package security;
 
+//import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+//import reachability.myreachability.MyReachability;
+//import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.AbstractStmtSwitch;
 import soot.jimple.InvokeStmt;
@@ -72,6 +76,11 @@ public final class Inspector extends SafetySquad {
 		Suspect s = v.getSuspect();
 		log.info("Inspector handling Android Permissive WebView Client suspect");
 		sospetto = FONDATO;
+		
+		//FIXME dbg
+		//ArrayList<SootMethod> ls = new ArrayList<SootMethod>();
+		//ls.add(s.getsMethod());
+		//MyReachability.getInstance().ReachabilityAnalysis(ls);
 		
 		for (Unit unit : s.getsMethod().retrieveActiveBody().getUnits()) {
 			unit.apply(new AbstractStmtSwitch() {

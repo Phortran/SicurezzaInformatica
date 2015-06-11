@@ -1,6 +1,7 @@
 package utils;
 
 import soot.RefType;
+import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
@@ -64,5 +65,24 @@ public final class PatternRecognizer {
 		}
 
 		return true;
+	}
+	
+	/*public static boolean isAndroidOrJavaClass(SootMethod sMethod) {
+		return isAndroidOrJavaClass(sMethod.getDeclaringClass());
+	}*/
+	
+	public static boolean isAndroidOrJavaClass(SootClass sClass) {
+		String name = sClass.getName();
+		if ( //name.startsWith("android.") ||
+				name.startsWith("java.") ||
+				name.startsWith("sun.")  ||
+				name.startsWith("javax.") ||
+				name.startsWith("com.sun.") || 
+				name.startsWith("org.omg.") ||
+				name.startsWith("org.xml.")
+				) 
+			return true;
+
+		return false;
 	}
 }
