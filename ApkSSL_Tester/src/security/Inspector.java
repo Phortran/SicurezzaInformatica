@@ -1,12 +1,9 @@
 package security;
 
-//import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import reachability.myreachability.MyReachability;
-//import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.AbstractStmtSwitch;
 import soot.jimple.InvokeStmt;
@@ -34,8 +31,6 @@ public final class Inspector extends SafetySquad {
 		
 		UnitGraph graph = new ExceptionalUnitGraph(s.getsMethod().retrieveActiveBody());
 		if (!PatternRecognizer.anyExitThrowsException(graph, Clues.JAVA_SECURITY_CERTIFICATE_EXCEPTION)) {
-			//TODO fare qualcosa, tipo costruire un oggetto VulnerabilityResult,
-			//aggiungere informazioni utili... per ora ritorno solo true
 			sospetto = FONDATO;
 		}
 		
@@ -49,8 +44,6 @@ public final class Inspector extends SafetySquad {
 		
 		UnitGraph graph = new BriefUnitGraph(s.getsMethod().retrieveActiveBody());
 		if (PatternRecognizer.allExitsReturnTrue(graph)) {
-			//TODO fare qualcosa, tipo costruire un oggetto VulnerabilityResult,
-			//aggiungere informazioni utili... per ora ritorno solo true
 			sospetto = FONDATO;
 		}
 		return sospetto;
@@ -63,8 +56,6 @@ public final class Inspector extends SafetySquad {
 		
 		UnitGraph graph = new ExceptionalUnitGraph(s.getsMethod().retrieveActiveBody());
 		if (!PatternRecognizer.anyExitThrowsException(graph, Clues.SSL_EXCEPTION)) {
-			//TODO fare qualcosa, tipo costruire un oggetto VulnerabilityResult,
-			//aggiungere informazioni utili... per ora ritorno solo true
 			sospetto = FONDATO;
 		}
 		

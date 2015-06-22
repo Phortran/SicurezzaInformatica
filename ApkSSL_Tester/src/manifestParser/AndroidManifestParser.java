@@ -80,18 +80,22 @@ public class AndroidManifestParser {
 			XmlManifest = getXMLManifest(apkPath);
 
 		SAXBuilder saxBuilder = new SAXBuilder();
-		Element intentFilterAction, intentFilterCategory;
+		Element intentFilter, intentFilterAction, intentFilterCategory;
 		Attribute iterMain, iterLauncher;
 		String res = null;
-		//TODO
 		
 		try {
 			Document doc = saxBuilder.build(new StringReader(XmlManifest));
 			List<Element> activities = doc.getRootElement().getChild(APPLICATION_ELEMENT).getChildren(ACTIVITY_ELEMENT);
-			//List<Element> permissions = permissionsParent.getChildren();
 
 			for (Element activity : activities) {
-				intentFilterAction = activity.getChild(ACTIVITY_INTENT_FILTER).getChild(ACTIVITY_INTENT_FILTER_ACTION);
+				intentFilter = activity.getChild(ACTIVITY_INTENT_FILTER);
+				if (intentFilter == null)
+					continue;
+				
+				intentFilterAction = intentFilter.getChild(ACTIVITY_INTENT_FILTER_ACTION);
+				if(intentFilterAction == null)
+					continue;
 				intentFilterCategory = activity.getChild(ACTIVITY_INTENT_FILTER).getChild(ACTIVITY_INTENT_FILTER_CATEGORY);
 				
 				iterMain = intentFilterAction.getAttribute(ATTRIBUTE_NAME,
@@ -248,15 +252,10 @@ public class AndroidManifestParser {
 	}
 
 	private void log(boolean newLine,StringBuilder xmlSb,String format,Object...arguments) {
-		//		System.out.printf(format,arguments);
-		//		if(newLine) System.out.println();
 		xmlSb.append(String.format(format, arguments));
 		if(newLine) xmlSb.append("\n");
 	}
 
-
-
-	/////////////////////////////////// ILLEGAL STUFF, DONT LOOK :)
 
 	public static float complexToFloat(int complex) {
 		return (float)(complex & 0xFFFFFF00)*RADIX_MULTS[(complex>>4) & 3];

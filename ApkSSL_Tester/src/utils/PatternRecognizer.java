@@ -73,7 +73,7 @@ public final class PatternRecognizer {
 	
 	public static boolean isAndroidOrJavaClass(SootClass sClass) {
 		String name = sClass.getName();
-		if ( //name.startsWith("android.") ||
+		if ( name.startsWith("android.") ||
 				name.startsWith("java.") ||
 				name.startsWith("sun.")  ||
 				name.startsWith("javax.") ||

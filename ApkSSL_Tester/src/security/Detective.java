@@ -6,6 +6,10 @@ import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+//FIXME switchare tra i due
+//import reachability.MethodTag;
+import dua.method.MethodTag;
+
 import soot.BooleanType;
 import soot.RefType;
 import soot.Scene;
@@ -16,6 +20,7 @@ import utils.Clues;
 import utils.PatternRecognizer;
 import utils.Suspect;
 import vulnerability.Vulnerability;
+import vulnerability.Vulnerability.Status;
 import vulnerability.Types.AndroidPermissiveWVC;
 import vulnerability.Types.ApachePermissiveHV;
 import vulnerability.Types.JavaxPermissiveHV;
@@ -53,7 +58,7 @@ public class Detective {
 		this.report = new Report();
 	}
 
-	public void /*FIXME (magari) farle ritornare qualcosa*/detect() {
+	public void detect() {
 		log.info("Collecting classes...");
 		Collection<SootClass> baseClasses = Scene.v().getApplicationClasses();
 		for (SootClass sClass : baseClasses) {
@@ -97,7 +102,7 @@ public class Detective {
 					}
 				}
 			} else if (sClass.getSuperclass().getName().equals(Clues.ANDROID_WEBVIEW_CLIENT.getClassName())) {
-				
+
 				for (SootMethod sMethod : sClass.getMethods()) {
 					if (PatternRecognizer.methodSignature(sMethod,
 							VoidType.v(), "onReceivedSslError",
@@ -113,5 +118,25 @@ public class Detective {
 
 	public Report report() {
 		return this.report;
+	}
+
+	public void testReachability() {
+		SootMethod sm;
+		MethodTag mt;
+
+		for (Vulnerability v : report) {
+			sm = v.getSuspect().getsMethod();
+			mt = (MethodTag) sm.getTag(MethodTag.TAG_NAME);
+
+			if (mt != null) {
+				if (!mt.isReachableFromEntry() && v.getStatus().equals(Status.VULNERABLE)) {
+					v.setStatus(Status.POTENTIAL);
+				}
+			} else {
+				log.info("WARNING: Reachability test not performable on "
+						+ v.getSuspect().getsClass().getName());
+			}
+
+		}
 	}
 }
