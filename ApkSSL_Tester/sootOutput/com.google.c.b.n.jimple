@@ -1,0 +1,74 @@
+class com.google.c.b.n extends java.lang.Object implements com.google.c.b.ae
+{
+    final java.lang.reflect.Type a;
+    final com.google.c.b.f b;
+
+    void <init>(com.google.c.b.f, java.lang.reflect.Type)
+    {
+        com.google.c.b.n $r0;
+        com.google.c.b.f $r1;
+        java.lang.reflect.Type $r2;
+
+        $r0 := @this: com.google.c.b.n;
+        $r1 := @parameter0: com.google.c.b.f;
+        $r2 := @parameter1: java.lang.reflect.Type;
+        $r0.<com.google.c.b.n: com.google.c.b.f b> = $r1;
+        $r0.<com.google.c.b.n: java.lang.reflect.Type a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public java.lang.Object a()
+    {
+        com.google.c.b.n $r0;
+        java.lang.reflect.Type $r1;
+        java.lang.String $r2;
+        java.lang.reflect.Type[] $r3;
+        boolean $z0;
+        java.lang.reflect.ParameterizedType $r4;
+        java.lang.Class $r5;
+        java.util.EnumSet $r6;
+        com.google.c.u $r7;
+        java.lang.StringBuilder $r8;
+
+        $r0 := @this: com.google.c.b.n;
+        $r1 = $r0.<com.google.c.b.n: java.lang.reflect.Type a>;
+        $z0 = $r1 instanceof java.lang.reflect.ParameterizedType;
+        if $z0 == 0 goto label1;
+
+        $r1 = $r0.<com.google.c.b.n: java.lang.reflect.Type a>;
+        $r4 = (java.lang.reflect.ParameterizedType) $r1;
+        $r3 = interfaceinvoke $r4.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        $r1 = $r3[0];
+        $z0 = $r1 instanceof java.lang.Class;
+        if $z0 == 0 goto label0;
+
+        $r5 = (java.lang.Class) $r1;
+        $r6 = staticinvoke <java.util.EnumSet: java.util.EnumSet noneOf(java.lang.Class)>($r5);
+        return $r6;
+
+     label0:
+        $r7 = new com.google.c.u;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid EnumSet type: ");
+        $r1 = $r0.<com.google.c.b.n: java.lang.reflect.Type a>;
+        $r2 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r7.<com.google.c.u: void <init>(java.lang.String)>($r2);
+        throw $r7;
+
+     label1:
+        $r7 = new com.google.c.u;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid EnumSet type: ");
+        $r1 = $r0.<com.google.c.b.n: java.lang.reflect.Type a>;
+        $r2 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r7.<com.google.c.u: void <init>(java.lang.String)>($r2);
+        throw $r7;
+    }
+}

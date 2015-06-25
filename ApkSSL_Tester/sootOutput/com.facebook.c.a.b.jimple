@@ -1,0 +1,988 @@
+final class com.facebook.c.a.b extends java.lang.Object
+{
+    private final java.lang.String a;
+    private final int b;
+    private int c;
+    private int d;
+    private int e;
+    private int f;
+    private char[] g;
+
+    public void <init>(javax.security.auth.x500.X500Principal)
+    {
+        com.facebook.c.a.b $r0;
+        javax.security.auth.x500.X500Principal $r1;
+        java.lang.String $r2;
+        int $i0;
+        char[] $r3;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $r1 := @parameter0: javax.security.auth.x500.X500Principal;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = virtualinvoke $r1.<javax.security.auth.x500.X500Principal: java.lang.String getName(java.lang.String)>("RFC2253");
+        $r0.<com.facebook.c.a.b: java.lang.String a> = $r2;
+        $r2 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        $r0.<com.facebook.c.a.b: int b> = $i0;
+        $r2 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r3 = virtualinvoke $r2.<java.lang.String: char[] toCharArray()>();
+        $r0.<com.facebook.c.a.b: char[] g> = $r3;
+        return;
+    }
+
+    private int a(int)
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i1, $i2;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.IllegalStateException $r3;
+        char[] $r4;
+        char $c8;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 := @parameter0: int;
+        $i1 = $i0 + 1;
+        $i2 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 < $i2 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Malformed DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label0:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $c8 = $r4[$i0];
+        if $c8 < 48 goto label3;
+
+        if $c8 > 57 goto label3;
+
+        $i2 = $c8 + -48;
+
+     label1:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $i0 + 1;
+        $c8 = $r4[$i1];
+        if $c8 < 48 goto label6;
+
+        if $c8 > 57 goto label6;
+
+        $i1 = $c8 + -48;
+
+     label2:
+        $i2 = $i2 << 4;
+        $i2 = $i2 + $i1;
+        return $i2;
+
+     label3:
+        if $c8 < 97 goto label4;
+
+        if $c8 > 102 goto label4;
+
+        $i2 = $c8 + -87;
+        goto label1;
+
+     label4:
+        if $c8 < 65 goto label5;
+
+        if $c8 > 70 goto label5;
+
+        $i2 = $c8 + -55;
+        goto label1;
+
+     label5:
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Malformed DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label6:
+        if $c8 < 97 goto label7;
+
+        if $c8 > 102 goto label7;
+
+        $i1 = $c8 + -87;
+        goto label2;
+
+     label7:
+        if $c8 < 65 goto label8;
+
+        if $c8 > 70 goto label8;
+
+        $i1 = $c8 + -55;
+        goto label2;
+
+     label8:
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Malformed DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+    }
+
+    private java.lang.String a()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i1, $i5;
+        java.lang.StringBuilder $r1;
+        char[] $r2;
+        char $c4;
+        java.lang.String $r3;
+        java.lang.IllegalStateException $r4;
+
+        $r0 := @this: com.facebook.c.a.b;
+
+     label0:
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $r0.<com.facebook.c.a.b: int b>;
+        if $i0 >= $i1 goto label1;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 != 32 goto label1;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        goto label0;
+
+     label1:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 != $i0 goto label2;
+
+        return null;
+
+     label2:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int d> = $i1;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+
+     label3:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 >= $i0 goto label4;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 == 61 goto label4;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 == 32 goto label4;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        goto label3;
+
+     label4:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 < $i0 goto label5;
+
+        $r4 = new java.lang.IllegalStateException;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r3 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r4;
+
+     label5:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 != 32 goto label9;
+
+     label6:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 >= $i0 goto label7;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 == 61 goto label7;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 != 32 goto label7;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        goto label6;
+
+     label7:
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 != 61 goto label8;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 != $i0 goto label9;
+
+     label8:
+        $r4 = new java.lang.IllegalStateException;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r3 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r4;
+
+     label9:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 >= $i0 goto label10;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c4 = $r2[$i1];
+        if $c4 == 32 goto label9;
+
+     label10:
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 - $i0;
+        if $i1 <= 4 goto label14;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 3;
+        $c4 = $r2[$i1];
+        if $c4 != 46 goto label14;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $c4 = $r2[$i1];
+        if $c4 == 79 goto label11;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $c4 = $r2[$i1];
+        if $c4 != 111 goto label14;
+
+     label11:
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 1;
+        $c4 = $r2[$i1];
+        if $c4 == 73 goto label12;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 1;
+        $c4 = $r2[$i1];
+        if $c4 != 105 goto label14;
+
+     label12:
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 2;
+        $c4 = $r2[$i1];
+        if $c4 == 68 goto label13;
+
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 2;
+        $c4 = $r2[$i1];
+        if $c4 != 100 goto label14;
+
+     label13:
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 + 4;
+        $r0.<com.facebook.c.a.b: int d> = $i1;
+
+     label14:
+        $r3 = new java.lang.String;
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i5 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i5 = $i5 - $i1;
+        specialinvoke $r3.<java.lang.String: void <init>(char[],int,int)>($r2, $i0, $i5);
+        return $r3;
+    }
+
+    private java.lang.String b()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i1, $i4;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.IllegalStateException $r3;
+        char[] $r4, $r5;
+        char $c2;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i0;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int d> = $i0;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $r0.<com.facebook.c.a.b: int e> = $i0;
+
+     label0:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 != $i0 goto label1;
+
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label1:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r4[$i1];
+        if $c2 != 34 goto label3;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+
+     label2:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 >= $i0 goto label6;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r4[$i1];
+        if $c2 != 32 goto label6;
+
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        goto label2;
+
+     label3:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r4[$i1];
+        if $c2 != 92 goto label5;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $c2 = specialinvoke $r0.<com.facebook.c.a.b: char e()>();
+        $r4[$i1] = $c2;
+
+     label4:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i1;
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        goto label0;
+
+     label5:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $r5 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r5[$i0];
+        $r4[$i1] = $c2;
+        goto label4;
+
+     label6:
+        $r1 = new java.lang.String;
+        $r5 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int d>;
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i4 = $i4 - $i0;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r5, $i1, $i4);
+        return $r1;
+    }
+
+    private java.lang.String c()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i2, $i5, $i6;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.IllegalStateException $r3;
+        char[] $r4;
+        char $c3;
+        byte $b4;
+        byte[] $r5;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i0 + 4;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i2 < $i0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label0:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int d> = $i2;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i2;
+
+     label1:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i2 == $i0 goto label2;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 == 43 goto label2;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 == 44 goto label2;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 != 59 goto label5;
+
+     label2:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int e> = $i2;
+
+     label3:
+        $i2 = $r0.<com.facebook.c.a.b: int e>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i2 = $i2 - $i0;
+        if $i2 < 5 goto label4;
+
+        $i0 = $i2 & 1;
+        if $i0 != 0 goto label9;
+
+     label4:
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label5:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 != 32 goto label7;
+
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int e> = $i2;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i2;
+
+     label6:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i2 >= $i0 goto label3;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 != 32 goto label3;
+
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i2;
+        goto label6;
+
+     label7:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 < 65 goto label8;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 > 70 goto label8;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        $i0 = $c3 + 32;
+        $c3 = (char) $i0;
+        $r4[$i2] = $c3;
+
+     label8:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i2;
+        goto label1;
+
+     label9:
+        $i0 = $i2 / 2;
+        $r5 = newarray (byte)[$i0];
+        $i5 = 0;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i6 = $i0 + 1;
+
+     label10:
+        $i0 = lengthof $r5;
+        if $i5 >= $i0 goto label11;
+
+        $i0 = specialinvoke $r0.<com.facebook.c.a.b: int a(int)>($i6);
+        $b4 = (byte) $i0;
+        $r5[$i5] = $b4;
+        $i6 = $i6 + 2;
+        $i5 = $i5 + 1;
+        goto label10;
+
+     label11:
+        $r1 = new java.lang.String;
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i6 = $r0.<com.facebook.c.a.b: int d>;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r4, $i6, $i2);
+        return $r1;
+    }
+
+    private java.lang.String d()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i1, $i4;
+        char $c3;
+        java.lang.String $r1;
+        char[] $r2, $r3;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int d> = $i0;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+
+     label0:
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 < $i0 goto label1;
+
+        $r1 = new java.lang.String;
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $i4 = $r0.<com.facebook.c.a.b: int d>;
+        $i4 = $i1 - $i4;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r2, $i0, $i4);
+        return $r1;
+
+     label1:
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r2[$i4];
+        lookupswitch($c3)
+        {
+            case 32: goto label5;
+            case 43: goto label3;
+            case 44: goto label3;
+            case 59: goto label3;
+            case 92: goto label4;
+            default: goto label2;
+        };
+
+     label2:
+        $r2 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r3[$i1];
+        $r2[$i4] = $c3;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i4 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i4;
+        goto label0;
+
+     label3:
+        $r1 = new java.lang.String;
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $r0.<com.facebook.c.a.b: int e>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 - $i0;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r3, $i4, $i1);
+        return $r1;
+
+     label4:
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        $c3 = specialinvoke $r0.<com.facebook.c.a.b: char e()>();
+        $r3[$i4] = $c3;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i4 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i4;
+        goto label0;
+
+     label5:
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $r0.<com.facebook.c.a.b: int f> = $i4;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i4 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i4;
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        $r3[$i4] = 32;
+
+     label6:
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $r0.<com.facebook.c.a.b: int b>;
+        if $i4 >= $i1 goto label7;
+
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r3[$i4];
+        if $c3 != 32 goto label7;
+
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int e>;
+        $i1 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int e> = $i1;
+        $r3[$i4] = 32;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i4 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i4;
+        goto label6;
+
+     label7:
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $r0.<com.facebook.c.a.b: int b>;
+        if $i4 == $i1 goto label8;
+
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r3[$i4];
+        if $c3 == 44 goto label8;
+
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r3[$i4];
+        if $c3 == 43 goto label8;
+
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r3[$i4];
+        if $c3 != 59 goto label0;
+
+     label8:
+        $r1 = new java.lang.String;
+        $r3 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i4 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $r0.<com.facebook.c.a.b: int f>;
+        $i0 = $r0.<com.facebook.c.a.b: int d>;
+        $i1 = $i1 - $i0;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r3, $i4, $i1);
+        return $r1;
+    }
+
+    private char e()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i1;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.IllegalStateException $r3;
+        char[] $r4;
+        char $c2;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i0;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 != $i0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected end of DN: ");
+        $r1 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+
+     label0:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r4[$i1];
+        lookupswitch($c2)
+        {
+            case 32: goto label2;
+            case 34: goto label2;
+            case 35: goto label2;
+            case 37: goto label2;
+            case 42: goto label2;
+            case 43: goto label2;
+            case 44: goto label2;
+            case 59: goto label2;
+            case 60: goto label2;
+            case 61: goto label2;
+            case 62: goto label2;
+            case 92: goto label2;
+            case 95: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        $c2 = specialinvoke $r0.<com.facebook.c.a.b: char f()>();
+        return $c2;
+
+     label2:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $c2 = $r4[$i1];
+        return $c2;
+    }
+
+    private char f()
+    {
+        com.facebook.c.a.b $r0;
+        int $i0, $i4, $i7, $i8;
+        char $c1, $c9;
+        byte $b6;
+        char[] $r1;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = specialinvoke $r0.<com.facebook.c.a.b: int a(int)>($i0);
+        $i4 = $r0.<com.facebook.c.a.b: int c>;
+        $i4 = $i4 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i4;
+        if $i0 >= 128 goto label0;
+
+        $c1 = (char) $i0;
+        return $c1;
+
+     label0:
+        if $i0 < 192 goto label9;
+
+        if $i0 > 247 goto label9;
+
+        if $i0 > 223 goto label4;
+
+        $b6 = 1;
+        $i4 = $i0 & 31;
+
+     label1:
+        $i7 = 0;
+
+     label2:
+        if $i7 >= $b6 goto label8;
+
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i0;
+        $i8 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $r0.<com.facebook.c.a.b: int b>;
+        if $i8 == $i0 goto label3;
+
+        $r1 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i8 = $r0.<com.facebook.c.a.b: int c>;
+        $c9 = $r1[$i8];
+        if $c9 == 92 goto label6;
+
+     label3:
+        return 63;
+
+     label4:
+        if $i0 > 239 goto label5;
+
+        $b6 = 2;
+        $i4 = $i0 & 15;
+        goto label1;
+
+     label5:
+        $b6 = 3;
+        $i4 = $i0 & 7;
+        goto label1;
+
+     label6:
+        $i8 = $r0.<com.facebook.c.a.b: int c>;
+        $i8 = $i8 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i8;
+        $i8 = $r0.<com.facebook.c.a.b: int c>;
+        $i8 = specialinvoke $r0.<com.facebook.c.a.b: int a(int)>($i8);
+        $i0 = $r0.<com.facebook.c.a.b: int c>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i0;
+        $i0 = $i8 & 192;
+        if $i0 == 128 goto label7;
+
+        return 63;
+
+     label7:
+        $i4 = $i4 << 6;
+        $i8 = $i8 & 63;
+        $i4 = $i4 + $i8;
+        $i7 = $i7 + 1;
+        goto label2;
+
+     label8:
+        $c1 = (char) $i4;
+        return $c1;
+
+     label9:
+        return 63;
+    }
+
+    public final java.lang.String a(java.lang.String)
+    {
+        com.facebook.c.a.b $r0;
+        java.lang.String $r1, $r2, $r3;
+        int $i1, $i2;
+        char[] $r4;
+        char $c3;
+        boolean $z0;
+        java.lang.IllegalStateException $r5;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: com.facebook.c.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.c.a.b: int c> = 0;
+        $r0.<com.facebook.c.a.b: int d> = 0;
+        $r0.<com.facebook.c.a.b: int e> = 0;
+        $r0.<com.facebook.c.a.b: int f> = 0;
+        $r3 = specialinvoke $r0.<com.facebook.c.a.b: java.lang.String a()>();
+        if $r3 != null goto label1;
+
+        $r2 = null;
+
+     label0:
+        return $r2;
+
+     label1:
+        $r2 = "";
+        $i1 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $r0.<com.facebook.c.a.b: int b>;
+        if $i1 != $i2 goto label2;
+
+        return null;
+
+     label2:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        lookupswitch($c3)
+        {
+            case 34: goto label5;
+            case 35: goto label6;
+            case 43: goto label4;
+            case 44: goto label4;
+            case 59: goto label4;
+            default: goto label3;
+        };
+
+     label3:
+        $r2 = specialinvoke $r0.<com.facebook.c.a.b: java.lang.String d()>();
+
+     label4:
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z0 != 0 goto label0;
+
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i1 = $r0.<com.facebook.c.a.b: int b>;
+        if $i2 < $i1 goto label7;
+
+        return null;
+
+     label5:
+        $r2 = specialinvoke $r0.<com.facebook.c.a.b: java.lang.String b()>();
+        goto label4;
+
+     label6:
+        $r2 = specialinvoke $r0.<com.facebook.c.a.b: java.lang.String c()>();
+        goto label4;
+
+     label7:
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 == 44 goto label8;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 == 59 goto label8;
+
+        $r4 = $r0.<com.facebook.c.a.b: char[] g>;
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $c3 = $r4[$i2];
+        if $c3 == 43 goto label8;
+
+        $r5 = new java.lang.IllegalStateException;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Malformed DN: ");
+        $r3 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+
+     label8:
+        $i2 = $r0.<com.facebook.c.a.b: int c>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.c.a.b: int c> = $i2;
+        $r3 = specialinvoke $r0.<com.facebook.c.a.b: java.lang.String a()>();
+        if $r3 != null goto label1;
+
+        $r5 = new java.lang.IllegalStateException;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Malformed DN: ");
+        $r3 = $r0.<com.facebook.c.a.b: java.lang.String a>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+    }
+}

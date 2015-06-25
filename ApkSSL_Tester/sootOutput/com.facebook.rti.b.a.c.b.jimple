@@ -1,0 +1,38 @@
+final class com.facebook.rti.b.a.c.b extends java.lang.Object
+{
+    final java.lang.Runnable a;
+    final java.util.concurrent.Executor b;
+
+    final void a()
+    {
+        com.facebook.rti.b.a.c.b $r0;
+        java.util.concurrent.Executor $r1;
+        java.lang.Runnable $r2;
+        java.lang.RuntimeException $r4;
+        java.lang.String $r5;
+        java.lang.Object[] $r6;
+
+        $r0 := @this: com.facebook.rti.b.a.c.b;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.a.c.b: java.util.concurrent.Executor b>;
+        $r2 = $r0.<com.facebook.rti.b.a.c.b: java.lang.Runnable a>;
+        interfaceinvoke $r1.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r2);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        $r5 = staticinvoke <com.facebook.rti.b.a.c.a: java.lang.String b()>();
+        $r6 = newarray (java.lang.Object)[2];
+        $r2 = $r0.<com.facebook.rti.b.a.c.b: java.lang.Runnable a>;
+        $r6[0] = $r2;
+        $r1 = $r0.<com.facebook.rti.b.a.c.b: java.util.concurrent.Executor b>;
+        $r6[1] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void c(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r5, $r4, "RuntimeException while executing runnable=%s with executor=%s", $r6);
+        goto label1;
+
+        catch java.lang.RuntimeException from label0 to label1 with label2;
+    }
+}

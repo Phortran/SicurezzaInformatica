@@ -1,0 +1,177 @@
+public class com.facebook.a.c.h extends java.lang.Object
+{
+    private static final java.lang.Class a;
+
+    static void <clinit>()
+    {
+        <com.facebook.a.c.h: java.lang.Class a> = class "com/facebook/a/c/h";
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.a.c.h $r0;
+
+        $r0 := @this: com.facebook.a.c.h;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static int a()
+    {
+        int $i0, $i3;
+        java.lang.String $r0, $r8;
+        java.lang.String[] $r1, $r5;
+        java.lang.Object[] $r2;
+        java.lang.Integer $r3;
+        java.io.File $r4;
+        java.lang.SecurityException $r6;
+        java.lang.Class $r7;
+
+        $i0 = 0;
+        $r1 = newarray (java.lang.String)[3];
+        $r2 = newarray (java.lang.Object)[1];
+
+     label0:
+        $i3 = staticinvoke <android.os.Process: int myPid()>();
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i3);
+        $r2[0] = $r3;
+        $r0 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("/proc/%s/fd", $r2);
+        $r1[0] = $r0;
+        $r1[1] = "/proc/self/fd";
+        $r2 = newarray (java.lang.Object)[1];
+        $i3 = staticinvoke <android.os.Process: int myTid()>();
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i3);
+        $r2[0] = $r3;
+        $r0 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("/proc/%s/fd", $r2);
+        $r1[2] = $r0;
+
+     label1:
+        if $i0 >= 3 goto label4;
+
+        $r4 = new java.io.File;
+        $r0 = $r1[$i0];
+        specialinvoke $r4.<java.io.File: void <init>(java.lang.String)>($r0);
+        $r5 = virtualinvoke $r4.<java.io.File: java.lang.String[] list()>();
+
+     label2:
+        if $r5 == null goto label3;
+
+        $i3 = lengthof $r5;
+        return $i3;
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label4:
+        return -1;
+
+     label5:
+        $r6 := @caughtexception;
+        $r7 = <com.facebook.a.c.h: java.lang.Class a>;
+        $r0 = virtualinvoke $r7.<java.lang.Class: java.lang.String toString()>();
+        $r8 = virtualinvoke $r6.<java.lang.SecurityException: java.lang.String getMessage()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r0, $r8);
+        return -2;
+
+        catch java.lang.SecurityException from label0 to label2 with label5;
+    }
+
+    public static com.facebook.a.c.i b()
+    {
+        java.io.File $r0;
+        java.util.Scanner $r1;
+        java.lang.String $r2, $r4;
+        com.facebook.a.c.i $r3;
+        java.io.IOException $r5, $r10;
+        java.util.NoSuchElementException $r6, $r9;
+        java.lang.Throwable $r7, $r8;
+
+     label0:
+        $r1 = new java.util.Scanner;
+        $r0 = new java.io.File;
+
+     label1:
+        specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("/proc/self/limits");
+        specialinvoke $r1.<java.util.Scanner: void <init>(java.io.File)>($r0);
+
+     label2:
+        $r2 = virtualinvoke $r1.<java.util.Scanner: java.lang.String findWithinHorizon(java.lang.String,int)>("Max open files", 5000);
+
+     label3:
+        if $r2 != null goto label5;
+
+        virtualinvoke $r1.<java.util.Scanner: void close()>();
+
+     label4:
+        return null;
+
+     label5:
+        $r3 = new com.facebook.a.c.i;
+
+     label6:
+        $r4 = virtualinvoke $r1.<java.util.Scanner: java.lang.String next()>();
+        $r2 = virtualinvoke $r1.<java.util.Scanner: java.lang.String next()>();
+        specialinvoke $r3.<com.facebook.a.c.i: void <init>(java.lang.String,java.lang.String)>($r4, $r2);
+
+     label7:
+        virtualinvoke $r1.<java.util.Scanner: void close()>();
+        return $r3;
+
+     label8:
+        $r5 := @caughtexception;
+        $r1 = null;
+
+     label9:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<java.util.Scanner: void close()>();
+        return null;
+
+     label10:
+        $r6 := @caughtexception;
+        $r1 = null;
+
+     label11:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<java.util.Scanner: void close()>();
+        return null;
+
+     label12:
+        $r7 := @caughtexception;
+        $r1 = null;
+        $r8 = $r7;
+
+     label13:
+        if $r1 == null goto label14;
+
+        virtualinvoke $r1.<java.util.Scanner: void close()>();
+
+     label14:
+        throw $r8;
+
+     label15:
+        $r8 := @caughtexception;
+        goto label13;
+
+     label16:
+        $r9 := @caughtexception;
+        goto label11;
+
+     label17:
+        $r10 := @caughtexception;
+        goto label9;
+
+        catch java.io.IOException from label1 to label2 with label8;
+        catch java.util.NoSuchElementException from label1 to label2 with label10;
+        catch java.lang.Throwable from label0 to label2 with label12;
+        catch java.io.IOException from label2 to label3 with label17;
+        catch java.util.NoSuchElementException from label2 to label3 with label16;
+        catch java.lang.Throwable from label2 to label3 with label15;
+        catch java.io.IOException from label6 to label7 with label17;
+        catch java.util.NoSuchElementException from label6 to label7 with label16;
+        catch java.lang.Throwable from label5 to label7 with label15;
+    }
+}

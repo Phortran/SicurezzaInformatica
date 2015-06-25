@@ -1,0 +1,47 @@
+public final class com.facebook.rti.b.a.f.b extends com.facebook.rti.b.a.f.c
+{
+    private final javax.net.ssl.SSLSocketFactory a;
+    private final com.facebook.rti.b.a.f.b.a b;
+
+    public void <init>(java.util.concurrent.ExecutorService, javax.net.ssl.SSLSocketFactory, com.facebook.rti.b.a.f.b.a)
+    {
+        com.facebook.rti.b.a.f.b $r0;
+        java.util.concurrent.ExecutorService $r1;
+        javax.net.ssl.SSLSocketFactory $r2;
+        com.facebook.rti.b.a.f.b.a $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.f.b;
+        $r1 := @parameter0: java.util.concurrent.ExecutorService;
+        $r2 := @parameter1: javax.net.ssl.SSLSocketFactory;
+        $r3 := @parameter2: com.facebook.rti.b.a.f.b.a;
+        specialinvoke $r0.<com.facebook.rti.b.a.f.c: void <init>(java.util.concurrent.ExecutorService)>($r1);
+        $r0.<com.facebook.rti.b.a.f.b: javax.net.ssl.SSLSocketFactory a> = $r2;
+        $r0.<com.facebook.rti.b.a.f.b: com.facebook.rti.b.a.f.b.a b> = $r3;
+        return;
+    }
+
+    public final java.net.Socket a(java.net.Socket, java.lang.String, int)
+    {
+        com.facebook.rti.b.a.f.b $r0;
+        java.net.Socket $r1;
+        java.lang.String $r2;
+        int $i0;
+        boolean $z0;
+        javax.net.ssl.SSLSocketFactory $r3;
+        javax.net.ssl.SSLSocket $r4;
+        com.facebook.rti.b.a.f.b.a $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.f.b;
+        $r1 := @parameter0: java.net.Socket;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $z0 = virtualinvoke $r1.<java.net.Socket: boolean isConnected()>();
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r3 = $r0.<com.facebook.rti.b.a.f.b: javax.net.ssl.SSLSocketFactory a>;
+        $r1 = virtualinvoke $r3.<javax.net.ssl.SSLSocketFactory: java.net.Socket createSocket(java.net.Socket,java.lang.String,int,boolean)>($r1, $r2, $i0, 1);
+        $r4 = (javax.net.ssl.SSLSocket) $r1;
+        $r5 = $r0.<com.facebook.rti.b.a.f.b: com.facebook.rti.b.a.f.b.a b>;
+        virtualinvoke $r5.<com.facebook.rti.b.a.f.b.a: void a(javax.net.ssl.SSLSocket,java.lang.String)>($r4, $r2);
+        return $r4;
+    }
+}

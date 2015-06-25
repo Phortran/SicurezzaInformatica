@@ -1,0 +1,214 @@
+public class it.h3g.areaclienti3.remoteservice.ScrapingService extends android.app.Service
+{
+    final android.os.RemoteCallbackList a;
+    public int b;
+    private it.h3g.areaclienti3.cache.a c;
+    private it.h3g.areaclienti3.remoteservice.HtmlActions d;
+    private volatile java.util.concurrent.ConcurrentHashMap e;
+    private final android.os.Handler f;
+    private final it.h3g.areaclienti3.remoteservice.IService$Stub g;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        android.os.RemoteCallbackList $r1;
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r2;
+        java.util.concurrent.ConcurrentHashMap $r3;
+        it.h3g.areaclienti3.remoteservice.b $r4;
+        it.h3g.areaclienti3.remoteservice.ScrapingService$2 $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        specialinvoke $r0.<android.app.Service: void <init>()>();
+        $r1 = new android.os.RemoteCallbackList;
+        specialinvoke $r1.<android.os.RemoteCallbackList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.RemoteCallbackList a> = $r1;
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: int b> = 0;
+        $r2 = staticinvoke <it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.remoteservice.HtmlActions getInstance()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.HtmlActions d> = $r2;
+        $r3 = new java.util.concurrent.ConcurrentHashMap;
+        specialinvoke $r3.<java.util.concurrent.ConcurrentHashMap: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e> = $r3;
+        $r4 = new it.h3g.areaclienti3.remoteservice.b;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b: void <init>(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r0);
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.Handler f> = $r4;
+        $r5 = new it.h3g.areaclienti3.remoteservice.ScrapingService$2;
+        specialinvoke $r5.<it.h3g.areaclienti3.remoteservice.ScrapingService$2: void <init>(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r0);
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.IService$Stub g> = $r5;
+        return;
+    }
+
+    static java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        java.util.concurrent.ConcurrentHashMap $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        return $r1;
+    }
+
+    static it.h3g.areaclienti3.cache.a b(it.h3g.areaclienti3.remoteservice.ScrapingService)
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        it.h3g.areaclienti3.cache.a $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.cache.a c>;
+        return $r1;
+    }
+
+    static it.h3g.areaclienti3.remoteservice.HtmlActions c(it.h3g.areaclienti3.remoteservice.ScrapingService)
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.HtmlActions d>;
+        return $r1;
+    }
+
+    static android.os.Handler d(it.h3g.areaclienti3.remoteservice.ScrapingService)
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        android.os.Handler $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.Handler f>;
+        return $r1;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        java.lang.String $r1, $r9;
+        java.util.concurrent.ConcurrentHashMap $r3, $r7;
+        java.util.Iterator $r4;
+        java.lang.StringBuilder $r5;
+        java.util.Set $r6;
+        boolean $z0;
+        int $i0;
+        java.lang.Object $r8;
+        it.h3g.areaclienti3.remoteservice.a $r10;
+        java.lang.Throwable $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Cancelling all pending threads");
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        entermonitor $r3;
+
+     label0:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        $r6 = virtualinvoke $r7.<java.util.concurrent.ConcurrentHashMap: java.util.Set keySet()>();
+        $r4 = interfaceinvoke $r6.<java.util.Set: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        virtualinvoke $r7.<java.util.concurrent.ConcurrentHashMap: void clear()>();
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Working threads now are = ");
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        $i0 = virtualinvoke $r7.<java.util.concurrent.ConcurrentHashMap: int size()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r1 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", $r1);
+        exitmonitor $r3;
+        return;
+
+     label2:
+        $r8 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.lang.String) $r8;
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap e>;
+        $r8 = virtualinvoke $r7.<java.util.concurrent.ConcurrentHashMap: java.lang.Object get(java.lang.Object)>($r9);
+        $r10 = (it.h3g.areaclienti3.remoteservice.a) $r8;
+        if $r10 == null goto label5;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Found the thread for action \'");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\', so cancel it");
+        $r9 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", $r9);
+        virtualinvoke $r10.<it.h3g.areaclienti3.remoteservice.a: void b()>();
+        virtualinvoke $r10.<java.lang.Thread: void interrupt()>();
+        goto label1;
+
+     label3:
+        $r11 := @caughtexception;
+        exitmonitor $r3;
+
+     label4:
+        throw $r11;
+
+     label5:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Thread not found..");
+
+     label6:
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+        catch java.lang.Throwable from label5 to label6 with label3;
+    }
+
+    public android.os.IBinder onBind(android.content.Intent)
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        android.content.Intent $r1;
+        java.lang.Class $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.IService$Stub $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 = class "it/h3g/areaclienti3/remoteservice/IService";
+        $r4 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.IService$Stub g>;
+        return $r5;
+
+     label0:
+        return null;
+    }
+
+    public void onCreate()
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r4;
+        it.h3g.areaclienti3.cache.a $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Service is created");
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.HtmlActions d>;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.content.Context getApplicationContext()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setContext(android.content.Context)>($r3);
+        $r5 = new it.h3g.areaclienti3.cache.a;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.content.Context getApplicationContext()>();
+        specialinvoke $r5.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r3);
+        $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.cache.a c> = $r5;
+        return;
+    }
+
+    public void onDestroy()
+    {
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r0;
+        android.os.RemoteCallbackList $r1;
+        android.os.Handler $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.RemoteCallbackList a>;
+        virtualinvoke $r1.<android.os.RemoteCallbackList: void kill()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: void a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.Handler f>;
+        virtualinvoke $r2.<android.os.Handler: void removeMessages(int)>(2);
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.Handler f>;
+        virtualinvoke $r2.<android.os.Handler: void removeMessages(int)>(1);
+        return;
+    }
+}

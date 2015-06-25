@@ -1,0 +1,258 @@
+public final class com.facebook.lite.notification.b extends java.lang.Object
+{
+    private static final java.lang.String a;
+    private static com.b.a.a.b.f b;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/notification/b";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.notification.b: java.lang.String a> = $r1;
+        return;
+    }
+
+    private void <init>()
+    {
+        com.facebook.lite.notification.b $r0;
+
+        $r0 := @this: com.facebook.lite.notification.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static com.b.a.a.b.f a()
+    {
+        com.b.a.a.b.f $r0;
+
+        $r0 = <com.facebook.lite.notification.b: com.b.a.a.b.f b>;
+        return $r0;
+    }
+
+    public static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r3;
+        com.facebook.b.k $r2;
+        boolean $z2;
+        int $i1;
+        long $l2;
+        java.lang.Thread $r4;
+        com.facebook.lite.notification.c $r5;
+        java.lang.UnsupportedOperationException $r6;
+        java.lang.String[] $r7;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = new com.facebook.b.k;
+        specialinvoke $r2.<com.facebook.b.k: void <init>(java.lang.String)>("ema_register_push");
+        $z2 = staticinvoke <com.facebook.lite.b.e: boolean F(android.content.Context)>($r0);
+        if $z2 != 0 goto label1;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("push_disabled", 1);
+        staticinvoke <com.facebook.lite.notification.b: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("push_disabled", 0);
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("forced_to_register", 0);
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 >= 8 goto label2;
+
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        $l2 = (long) $i1;
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("unsupported_android_version", $l2);
+        staticinvoke <com.facebook.lite.notification.b: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+        $r1 = <com.facebook.lite.notification.b: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r1, "push/device api level must be 8 or greater to support push notifications.");
+        goto label0;
+
+     label2:
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("unsupported_android_version", "n/a");
+
+     label3:
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context)>($r0);
+        staticinvoke <com.google.android.gcm.b: void b(android.content.Context)>($r0);
+
+     label4:
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("missing_play_services", 0);
+        $r3 = staticinvoke <com.google.android.gcm.b: java.lang.String g(android.content.Context)>($r0);
+        $z2 = staticinvoke <com.facebook.lite.notification.b: boolean a(android.content.Context,java.lang.String)>($r0, $r3);
+        if $z2 == 0 goto label6;
+
+        $r4 = new java.lang.Thread;
+        $r5 = new com.facebook.lite.notification.c;
+        specialinvoke $r5.<com.facebook.lite.notification.c: void <init>(android.content.Context,java.lang.String)>($r0, $r3);
+        specialinvoke $r4.<java.lang.Thread: void <init>(java.lang.Runnable)>($r5);
+        virtualinvoke $r4.<java.lang.Thread: void start()>();
+        goto label0;
+
+     label5:
+        $r6 := @caughtexception;
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("missing_play_services", 1);
+        staticinvoke <com.facebook.lite.notification.b: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+        throw $r6;
+
+     label6:
+        $i1 = (int) 1;
+        $r7 = newarray (java.lang.String)[$i1];
+        $i1 = (int) 0;
+        $r7[$i1] = "15057814354";
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context,java.lang.String[])>($r0, $r7);
+        goto label0;
+
+        catch java.lang.UnsupportedOperationException from label3 to label4 with label5;
+    }
+
+    public static void a(com.b.a.a.b.f)
+    {
+        com.b.a.a.b.f $r0;
+
+        $r0 := @parameter0: com.b.a.a.b.f;
+        <com.facebook.lite.notification.b: com.b.a.a.b.f b> = $r0;
+        return;
+    }
+
+    private static void a(com.facebook.b.k, android.content.Context)
+    {
+        com.facebook.b.k $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: com.facebook.b.k;
+        $r1 := @parameter1: android.content.Context;
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r0, $r1);
+        return;
+    }
+
+    private static boolean a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        java.lang.Long $r2;
+        long $l0, $l1, $l2, $l4, $l5;
+        byte $b3;
+        java.lang.Object[] $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = staticinvoke <com.facebook.lite.b.g: boolean a(java.lang.CharSequence)>($r1);
+        if $z0 != 0 goto label0;
+
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean i(android.content.Context)>($r0);
+        if $z0 != 0 goto label0;
+
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean h(android.content.Context)>($r0);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $l5 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l0 = staticinvoke <com.facebook.lite.b.e: long w(android.content.Context)>($r0);
+        $l1 = staticinvoke <com.facebook.lite.b.e: long v(android.content.Context)>($r0);
+        $l2 = $l5 - $l0;
+        $b3 = $l2 cmp 172800000L;
+        if $b3 <= 0 goto label2;
+
+        $l4 = $l5 - $l1;
+        $b3 = $l4 cmp 43200000L;
+        if $b3 <= 0 goto label2;
+
+        $r3 = newarray (java.lang.Object)[4];
+        $l2 = $l5 / 1000L;
+        $l4 = $l2 - 172800L;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4);
+        $r3[0] = $r2;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r3[1] = $r2;
+        $l5 = $l5 / 1000L;
+        $l5 = $l5 - 43200L;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5);
+        $r3[2] = $r2;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r3[3] = $r2;
+        staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("push/more than %ds since last registration %d, and %ds since last push received %d.", $r3);
+        return 0;
+
+     label2:
+        return 1;
+    }
+
+    public static boolean a(android.content.Context, java.lang.String, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2, $r3, $r5, $r7;
+        com.b.a.a.b.f $r4;
+        java.lang.StringBuilder $r6;
+        int $i0;
+        long $l1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r4 = <com.facebook.lite.notification.b: com.b.a.a.b.f b>;
+        if $r4 == null goto label2;
+
+        $r7 = <com.facebook.lite.notification.b: java.lang.String a>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("push/registering device (token = ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", device id = ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", push channel = ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") on server");
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r7, $r5);
+        $r4 = <com.facebook.lite.notification.b: com.b.a.a.b.f b>;
+        interfaceinvoke $r4.<com.b.a.a.b.f: void a(java.lang.String,java.lang.String,java.lang.String)>($r1, $r2, $r3);
+        $r7 = staticinvoke <com.facebook.lite.b.b: java.lang.String a(android.content.Context)>($r0);
+        if $r7 == null goto label0;
+
+        staticinvoke <com.facebook.lite.b.e: void d(android.content.Context,java.lang.String)>($r0, $r7);
+
+     label0:
+        $i0 = staticinvoke <com.facebook.lite.b.b: int c(android.content.Context)>($r0);
+        if $i0 <= 0 goto label1;
+
+        staticinvoke <com.facebook.lite.b.e: void a(android.content.Context,int)>($r0, $i0);
+
+     label1:
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        staticinvoke <com.facebook.lite.b.e: void i(android.content.Context,long)>($r0, $l1);
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context,boolean)>($r0, 1);
+        return 1;
+
+     label2:
+        $r7 = <com.facebook.lite.notification.b: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r7, "push/registering device on server failed");
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context,boolean)>($r0, 0);
+        return 0;
+    }
+
+    public static void b(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        com.b.a.a.b.f $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <com.facebook.lite.notification.b: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r1, "push/unregistering device");
+        $r3 = <com.facebook.lite.notification.b: com.b.a.a.b.f b>;
+        if $r3 == null goto label0;
+
+        $r3 = <com.facebook.lite.notification.b: com.b.a.a.b.f b>;
+        interfaceinvoke $r3.<com.b.a.a.b.f: void b(java.lang.String)>(null);
+
+     label0:
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context,boolean)>($r0, 0);
+        return;
+    }
+}

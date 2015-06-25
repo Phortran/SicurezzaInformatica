@@ -1,0 +1,43 @@
+public final class com.facebook.rti.push.service.g extends java.lang.Object
+{
+    public java.lang.String a;
+    public java.lang.String b;
+    public java.lang.String c;
+
+    public void <init>()
+    {
+        com.facebook.rti.push.service.g $r0;
+
+        $r0 := @this: com.facebook.rti.push.service.g;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.push.service.g: java.lang.String a> = "";
+        $r0.<com.facebook.rti.push.service.g: java.lang.String b> = "";
+        $r0.<com.facebook.rti.push.service.g: java.lang.String c> = "";
+        return;
+    }
+
+    public static com.facebook.rti.push.service.g a(java.lang.String)
+    {
+        java.lang.String $r0;
+        com.facebook.rti.push.service.g $r1;
+        org.json.JSONObject $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new com.facebook.rti.push.service.g;
+        specialinvoke $r1.<com.facebook.rti.push.service.g: void <init>()>();
+        if $r0 != null goto label0;
+
+        return $r1;
+
+     label0:
+        $r2 = new org.json.JSONObject;
+        specialinvoke $r2.<org.json.JSONObject: void <init>(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String optString(java.lang.String)>("pkg_name");
+        $r1.<com.facebook.rti.push.service.g: java.lang.String a> = $r0;
+        $r0 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String optString(java.lang.String)>("token");
+        $r1.<com.facebook.rti.push.service.g: java.lang.String b> = $r0;
+        $r0 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String optString(java.lang.String)>("error");
+        $r1.<com.facebook.rti.push.service.g: java.lang.String c> = $r0;
+        return $r1;
+    }
+}

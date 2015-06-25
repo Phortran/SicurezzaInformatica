@@ -1,0 +1,1848 @@
+public class com.facebook.lite.MainActivity extends com.facebook.lite.f
+{
+    private static final java.lang.String a;
+    private boolean b;
+    private java.lang.String c;
+    private android.app.AlertDialog d;
+    private com.facebook.lite.widget.BannerView e;
+    private com.facebook.lite.widget.DummySurfaceView f;
+    private com.facebook.lite.widget.FloatingTextBox g;
+    private boolean h;
+    private com.facebook.lite.widget.InlineTextBox i;
+    private long j;
+    private android.widget.RelativeLayout k;
+    private java.lang.String l;
+    private com.facebook.lite.a.j m;
+    private com.facebook.lite.widget.q n;
+    private com.facebook.lite.widget.q o;
+    private com.facebook.lite.widget.g p;
+    private android.net.Uri q;
+    private boolean r;
+    private com.facebook.lite.webview.FbWebView s;
+    private boolean t;
+    private long u;
+    private float v;
+    private float w;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/MainActivity";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.MainActivity: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.MainActivity $r0;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        specialinvoke $r0.<com.facebook.lite.f: void <init>()>();
+        $r0.<com.facebook.lite.MainActivity: boolean b> = 1;
+        $r0.<com.facebook.lite.MainActivity: java.lang.String c> = null;
+        $r0.<com.facebook.lite.MainActivity: boolean t> = 1;
+        $r0.<com.facebook.lite.MainActivity: float v> = 0.0F;
+        $r0.<com.facebook.lite.MainActivity: float w> = 0.0F;
+        return;
+    }
+
+    static long a(com.facebook.lite.MainActivity, long)
+    {
+        com.facebook.lite.MainActivity $r0;
+        long $l0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $l0 := @parameter1: long;
+        $r0.<com.facebook.lite.MainActivity: long j> = $l0;
+        return $l0;
+    }
+
+    static com.facebook.lite.widget.FloatingTextBox a(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.FloatingTextBox $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        return $r1;
+    }
+
+    private com.facebook.lite.widget.g a(int)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0;
+        com.facebook.lite.widget.SoftwareRendererView $r3, r5;
+        java.lang.RuntimeException r4;
+        com.facebook.lite.widget.GL11RendererView r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        lookupswitch($i0)
+        {
+            case 0: goto label4;
+            case 1: goto label1;
+            case 2: goto label2;
+            case 3: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        r4 = new java.lang.RuntimeException;
+        specialinvoke r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("Unknown renderer type.");
+        throw r4;
+
+     label1:
+        r5 = new com.facebook.lite.widget.SoftwareRendererView;
+        specialinvoke r5.<com.facebook.lite.widget.SoftwareRendererView: void <init>(android.content.Context)>($r0);
+        return r5;
+
+     label2:
+        r6 = new com.facebook.lite.widget.GL11RendererView;
+        $r3 = (com.facebook.lite.widget.SoftwareRendererView) r6;
+        specialinvoke r6.<com.facebook.lite.widget.GL11RendererView: void <init>(android.content.Context)>($r0);
+        return $r3;
+
+     label3:
+        r4 = new java.lang.RuntimeException;
+        specialinvoke r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("Not implemented.");
+        throw r4;
+
+     label4:
+        return null;
+    }
+
+    static com.facebook.lite.widget.q a(com.facebook.lite.MainActivity, com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n> = $r1;
+        return $r1;
+    }
+
+    static com.facebook.lite.widget.q a(com.facebook.lite.MainActivity, java.lang.String, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1, $r2;
+        com.facebook.lite.widget.q $r3;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = specialinvoke $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q a(java.lang.String,java.lang.String)>($r1, $r2);
+        return $r3;
+    }
+
+    private com.facebook.lite.widget.q a(java.lang.String, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1, $r2;
+        com.facebook.lite.widget.q $r3;
+        android.view.WindowManager$LayoutParams $r4, $r8;
+        android.view.Window $r5;
+        double $d0, $d1;
+        android.view.WindowManager $r6;
+        android.view.Display $r7;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new com.facebook.lite.widget.q;
+        specialinvoke $r3.<com.facebook.lite.widget.q: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r3.<com.facebook.lite.widget.q: void b(java.lang.String)>($r1);
+        virtualinvoke $r3.<com.facebook.lite.widget.q: void a(java.lang.String)>($r2);
+        virtualinvoke $r3.<com.facebook.lite.widget.q: void setCanceledOnTouchOutside(boolean)>(0);
+        $r6 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.WindowManager getWindowManager()>();
+        $r7 = interfaceinvoke $r6.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+        $i0 = virtualinvoke $r7.<android.view.Display: int getWidth()>();
+        $r4 = new android.view.WindowManager$LayoutParams;
+        specialinvoke $r4.<android.view.WindowManager$LayoutParams: void <init>()>();
+        $r5 = virtualinvoke $r3.<com.facebook.lite.widget.q: android.view.Window getWindow()>();
+        $r8 = virtualinvoke $r5.<android.view.Window: android.view.WindowManager$LayoutParams getAttributes()>();
+        virtualinvoke $r4.<android.view.WindowManager$LayoutParams: int copyFrom(android.view.WindowManager$LayoutParams)>($r8);
+        $d0 = (double) $i0;
+        $d1 = $d0 * 0.9;
+        $i0 = (int) $d1;
+        $r4.<android.view.WindowManager$LayoutParams: int width> = $i0;
+        $r4.<android.view.WindowManager$LayoutParams: int height> = -2;
+        $r5 = virtualinvoke $r3.<com.facebook.lite.widget.q: android.view.Window getWindow()>();
+        virtualinvoke $r5.<android.view.Window: void setAttributes(android.view.WindowManager$LayoutParams)>($r4);
+        return $r3;
+    }
+
+    static void a(com.facebook.lite.MainActivity, com.facebook.lite.widget.q, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        $r2 := @parameter2: java.lang.String;
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void a(com.facebook.lite.widget.q,java.lang.String)>($r1, $r2);
+        return;
+    }
+
+    static void a(com.facebook.lite.MainActivity, com.facebook.lite.widget.q, java.lang.String, boolean, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        $r2 := @parameter2: java.lang.String;
+        $z0 := @parameter3: boolean;
+        $r3 := @parameter4: java.lang.String;
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void a(com.facebook.lite.widget.q,java.lang.String,boolean,java.lang.String)>($r1, $r2, $z0, $r3);
+        return;
+    }
+
+    static void a(com.facebook.lite.MainActivity, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: java.lang.String;
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void a(java.lang.String)>($r1);
+        return;
+    }
+
+    private void a(com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        boolean $z0;
+        com.facebook.lite.a $r3;
+        com.facebook.lite.g.a $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: com.facebook.lite.widget.q;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<com.facebook.lite.widget.q: boolean isShowing()>();
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label0:
+        $r3 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r4 = virtualinvoke $r3.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        if $r4 != null goto label2;
+
+        $r5 = <com.facebook.lite.MainActivity: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r5, "Client session null, not able to set EXIT action");
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void finish()>();
+
+     label1:
+        return;
+
+     label2:
+        virtualinvoke $r4.<com.facebook.lite.g.g: void L()>();
+        goto label1;
+    }
+
+    private void a(com.facebook.lite.widget.q, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        com.facebook.lite.s $r4;
+        com.facebook.lite.t $r5;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: com.facebook.lite.widget.q;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = "right";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label1;
+
+        $r3 = staticinvoke <com.facebook.lite.h.a: java.lang.String a(int)>(2);
+        $r4 = new com.facebook.lite.s;
+        specialinvoke $r4.<com.facebook.lite.s: void <init>(com.facebook.lite.MainActivity,com.facebook.lite.widget.q)>($r0, $r1);
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void c(java.lang.String,android.view.View$OnClickListener)>($r3, $r4);
+
+     label0:
+        return;
+
+     label1:
+        $r3 = "central";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label0;
+
+        $r3 = staticinvoke <com.facebook.lite.h.a: java.lang.String a(int)>(2);
+        $r5 = new com.facebook.lite.t;
+        specialinvoke $r5.<com.facebook.lite.t: void <init>(com.facebook.lite.MainActivity,com.facebook.lite.widget.q)>($r0, $r1);
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void a(java.lang.String,android.view.View$OnClickListener)>($r3, $r5);
+        goto label0;
+    }
+
+    private void a(com.facebook.lite.widget.q, java.lang.String, boolean, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        java.lang.String $r2, $r3, $r4;
+        boolean $z0, $z1;
+        com.facebook.lite.u $r5;
+        com.facebook.lite.v $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: com.facebook.lite.widget.q;
+        $r2 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        $r3 := @parameter3: java.lang.String;
+        $r4 = "right";
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label1;
+
+        $r5 = new com.facebook.lite.u;
+        specialinvoke $r5.<com.facebook.lite.u: void <init>(com.facebook.lite.MainActivity,com.facebook.lite.widget.q,boolean)>($r0, $r1, $z0);
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void c(java.lang.String,android.view.View$OnClickListener)>($r2, $r5);
+
+     label0:
+        return;
+
+     label1:
+        $r4 = "central";
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label0;
+
+        $r6 = new com.facebook.lite.v;
+        specialinvoke $r6.<com.facebook.lite.v: void <init>(com.facebook.lite.MainActivity,com.facebook.lite.widget.q,boolean)>($r0, $r1, $z0);
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void a(java.lang.String,android.view.View$OnClickListener)>($r2, $r6);
+        goto label0;
+    }
+
+    private void a(java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1, $r3;
+        boolean $z0;
+        int $i0;
+        android.content.res.Resources $r2, $r7;
+        java.lang.String[] $r4;
+        java.util.Locale $r5;
+        android.content.res.Configuration $r6;
+        android.util.DisplayMetrics $r8;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = staticinvoke <com.facebook.lite.b.g: boolean a(java.lang.CharSequence)>($r1);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r1.<java.lang.String: java.lang.String[] split(java.lang.String)>("_");
+        $i0 = lengthof $r4;
+        if $i0 != 1 goto label3;
+
+        $r5 = new java.util.Locale;
+        specialinvoke $r5.<java.util.Locale: void <init>(java.lang.String)>($r1);
+
+     label2:
+        staticinvoke <java.util.Locale: void setDefault(java.util.Locale)>($r5);
+        $r6 = new android.content.res.Configuration;
+        specialinvoke $r6.<android.content.res.Configuration: void <init>()>();
+        $r6.<android.content.res.Configuration: java.util.Locale locale> = $r5;
+        $r7 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.res.Resources getResources()>();
+        $r2 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.res.Resources getResources()>();
+        $r8 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        virtualinvoke $r7.<android.content.res.Resources: void updateConfiguration(android.content.res.Configuration,android.util.DisplayMetrics)>($r6, $r8);
+        goto label0;
+
+     label3:
+        $i0 = lengthof $r4;
+        if $i0 != 2 goto label4;
+
+        $r3 = $r4[0];
+        $r1 = $r4[1];
+        $r5 = new java.util.Locale;
+        specialinvoke $r5.<java.util.Locale: void <init>(java.lang.String,java.lang.String)>($r3, $r1);
+        staticinvoke <com.facebook.lite.h.a: void a(java.lang.String,java.lang.String)>($r3, $r1);
+        goto label2;
+
+     label4:
+        $r5 = <java.util.Locale: java.util.Locale ENGLISH>;
+        goto label2;
+    }
+
+    private boolean a(android.content.Context)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.content.Context $r1;
+        boolean $z0;
+        android.net.Uri $r2;
+        com.facebook.lite.w $r3;
+        java.lang.String $r4;
+        android.app.AlertDialog $r5;
+        android.app.AlertDialog$Builder $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.content.Context;
+        $r2 = $r0.<com.facebook.lite.MainActivity: android.net.Uri q>;
+        if $r2 != null goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r5 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        if $r5 != null goto label2;
+
+        $r6 = new android.app.AlertDialog$Builder;
+        specialinvoke $r6.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r1);
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.String getString(int)>(2131165184);
+        $r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>($r4);
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.String getString(int)>(2131165187);
+        $r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)>($r4);
+        $r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setCancelable(boolean)>(0);
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.String getString(int)>(2131165188);
+        $r3 = new com.facebook.lite.w;
+        specialinvoke $r3.<com.facebook.lite.w: void <init>(com.facebook.lite.MainActivity,android.content.Context)>($r0, $r1);
+        $r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)>($r4, $r3);
+        $r5 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d> = $r5;
+
+     label2:
+        $z0 = virtualinvoke $r0.<com.facebook.lite.MainActivity: boolean isFinishing()>();
+        if $z0 != 0 goto label0;
+
+        $r5 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        virtualinvoke $r5.<android.app.AlertDialog: void show()>();
+        return 1;
+    }
+
+    static boolean a(com.facebook.lite.MainActivity, boolean)
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $z0 := @parameter1: boolean;
+        $r0.<com.facebook.lite.MainActivity: boolean h> = $z0;
+        return $z0;
+    }
+
+    static com.facebook.lite.widget.InlineTextBox b(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.InlineTextBox $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        return $r1;
+    }
+
+    static java.lang.String b(com.facebook.lite.MainActivity, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: java.lang.String;
+        $r0.<com.facebook.lite.MainActivity: java.lang.String l> = $r1;
+        return $r1;
+    }
+
+    static void b(com.facebook.lite.MainActivity, com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void b(com.facebook.lite.widget.q)>($r1);
+        return;
+    }
+
+    private void b(com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+        boolean $z0;
+        com.facebook.lite.a $r3;
+        com.facebook.lite.g.a $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: com.facebook.lite.widget.q;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<com.facebook.lite.widget.q: boolean isShowing()>();
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label0:
+        $r3 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r4 = virtualinvoke $r3.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        if $r4 != null goto label1;
+
+        $r5 = <com.facebook.lite.MainActivity: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r5, "Client session null, not able to set OK action");
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void finish()>();
+
+     label1:
+        return;
+    }
+
+    static boolean b(com.facebook.lite.MainActivity, boolean)
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $z0 := @parameter1: boolean;
+        $r0.<com.facebook.lite.MainActivity: boolean r> = $z0;
+        return $z0;
+    }
+
+    static com.facebook.lite.widget.BannerView c(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.BannerView $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.BannerView e>;
+        return $r1;
+    }
+
+    static void c(com.facebook.lite.MainActivity, com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void a(com.facebook.lite.widget.q)>($r1);
+        return;
+    }
+
+    static boolean c(com.facebook.lite.MainActivity, boolean)
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $z0 := @parameter1: boolean;
+        $r0.<com.facebook.lite.MainActivity: boolean t> = $z0;
+        return $z0;
+    }
+
+    static android.widget.RelativeLayout d(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.widget.RelativeLayout $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: android.widget.RelativeLayout k>;
+        return $r1;
+    }
+
+    static com.facebook.lite.widget.q d(com.facebook.lite.MainActivity, com.facebook.lite.widget.q)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 := @parameter1: com.facebook.lite.widget.q;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o> = $r1;
+        return $r1;
+    }
+
+    static com.facebook.lite.webview.FbWebView e(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.webview.FbWebView $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        return $r1;
+    }
+
+    static boolean f(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $z0 = $r0.<com.facebook.lite.MainActivity: boolean r>;
+        return $z0;
+    }
+
+    static com.facebook.lite.widget.q g(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        return $r1;
+    }
+
+    static com.facebook.lite.widget.q h(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        return $r1;
+    }
+
+    static long i(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        long $l0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $l0 = $r0.<com.facebook.lite.MainActivity: long j>;
+        return $l0;
+    }
+
+    static android.net.Uri j(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.net.Uri $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: android.net.Uri q>;
+        return $r1;
+    }
+
+    static android.app.AlertDialog k(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.app.AlertDialog $r1;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        return $r1;
+    }
+
+    static android.net.Uri l(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r0.<com.facebook.lite.MainActivity: android.net.Uri q> = null;
+        return null;
+    }
+
+    static android.app.AlertDialog m(com.facebook.lite.MainActivity)
+    {
+        com.facebook.lite.MainActivity $r0;
+
+        $r0 := @parameter0: com.facebook.lite.MainActivity;
+        $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d> = null;
+        return null;
+    }
+
+    static java.lang.String n()
+    {
+        java.lang.String $r0;
+
+        $r0 = <com.facebook.lite.MainActivity: java.lang.String a>;
+        return $r0;
+    }
+
+    private static com.b.a.a.b.k o()
+    {
+        com.facebook.lite.a $r0;
+        com.facebook.lite.g.a $r1;
+        com.b.a.a.b.k $r2;
+
+        $r0 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r1 = virtualinvoke $r0.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        if $r1 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = virtualinvoke $r1.<com.facebook.lite.g.g: com.b.a.a.b.k ac()>();
+        return $r2;
+    }
+
+    private void p()
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        com.facebook.lite.a.j $r3;
+        android.content.IntentFilter $r4;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 9 goto label1;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("storage/removable:");
+        $z0 = staticinvoke <android.os.Environment: boolean isExternalStorageRemovable()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $z0 = staticinvoke <android.os.Environment: boolean isExternalStorageRemovable()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label2;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("storage/emulated:");
+        $z0 = staticinvoke <android.os.Environment: boolean isExternalStorageEmulated()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $z0 = staticinvoke <android.os.Environment: boolean isExternalStorageEmulated()>();
+        if $z0 != 0 goto label0;
+
+     label2:
+        $r3 = new com.facebook.lite.a.j;
+        specialinvoke $r3.<com.facebook.lite.a.j: void <init>()>();
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.a.j m> = $r3;
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.a.j m>;
+        $r4 = staticinvoke <com.facebook.lite.a.j: android.content.IntentFilter a()>();
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r3, $r4);
+        goto label0;
+    }
+
+    private void q()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.a.j $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.a.j m>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.a.j m>;
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void unregisterReceiver(android.content.BroadcastReceiver)>($r1);
+
+     label0:
+        return;
+    }
+
+    public final void a(int, int, int, int, boolean, int, int, int)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6;
+        boolean $z0;
+        com.facebook.lite.ac $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $i3 := @parameter3: int;
+        $z0 := @parameter4: boolean;
+        $i4 := @parameter5: int;
+        $i5 := @parameter6: int;
+        $i6 := @parameter7: int;
+        $r1 = new com.facebook.lite.ac;
+        specialinvoke $r1.<com.facebook.lite.ac: void <init>(com.facebook.lite.MainActivity,int,int,int,int,boolean,int,int,int)>($r0, $i2, $i3, $i0, $i1, $z0, $i5, $i6, $i4);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final void a(int, java.lang.String, java.lang.String, java.lang.String, int)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i1;
+        java.lang.String $r1, $r2, $r3;
+        com.facebook.lite.j $r4;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $i1 := @parameter4: int;
+        $r4 = new com.facebook.lite.j;
+        specialinvoke $r4.<com.facebook.lite.j: void <init>(com.facebook.lite.MainActivity,int,java.lang.String,java.lang.String,java.lang.String,int)>($r0, $i0, $r1, $r2, $r3, $i1);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r4);
+        return;
+    }
+
+    public final void a(int, java.lang.String, java.lang.String, java.lang.String, int, boolean, int, int, int, int, java.lang.String, java.lang.String)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5;
+        java.lang.String $r1, $r2, $r3, $r4, $r5;
+        boolean $z0;
+        com.facebook.lite.x $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $i1 := @parameter4: int;
+        $z0 := @parameter5: boolean;
+        $i2 := @parameter6: int;
+        $i3 := @parameter7: int;
+        $i4 := @parameter8: int;
+        $i5 := @parameter9: int;
+        $r4 := @parameter10: java.lang.String;
+        $r5 := @parameter11: java.lang.String;
+        $r6 = new com.facebook.lite.x;
+        specialinvoke $r6.<com.facebook.lite.x: void <init>(com.facebook.lite.MainActivity,int,java.lang.String,java.lang.String,java.lang.String,int,boolean,int,int,int,int,java.lang.String,java.lang.String)>($r0, $i0, $r1, $r2, $r3, $i1, $z0, $i2, $i3, $i4, $i5, $r4, $r5);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r6);
+        return;
+    }
+
+    public final void a(int, boolean)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i1;
+        boolean $z0, $z1, $z3, $z4;
+        com.facebook.lite.widget.q $r1;
+        com.facebook.lite.o $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $z0 := @parameter1: boolean;
+        $z3 = 0;
+        $z1 = $r0.<com.facebook.lite.MainActivity: boolean b>;
+        if $z1 == 0 goto label0;
+
+        $z1 = virtualinvoke $r0.<com.facebook.lite.MainActivity: boolean isFinishing()>();
+        if $z1 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z1 = $r0.<com.facebook.lite.MainActivity: boolean h>;
+        if $z0 == $z1 goto label6;
+
+        $z1 = 1;
+
+     label2:
+        $i1 = <com.facebook.lite.net.i: int b>;
+        if $i0 != $i1 goto label7;
+
+        $z4 = 1;
+
+     label3:
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        if $r1 == null goto label4;
+
+        if $z4 != 0 goto label4;
+
+        if $z1 != 0 goto label4;
+
+        $z4 = $r0.<com.facebook.lite.MainActivity: boolean t>;
+        if $z4 == 0 goto label5;
+
+     label4:
+        $z3 = 1;
+
+     label5:
+        $r2 = new com.facebook.lite.o;
+        specialinvoke $r2.<com.facebook.lite.o: void <init>(com.facebook.lite.MainActivity,boolean,boolean,int)>($r0, $z3, $z0, $i0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r2);
+        goto label0;
+
+     label6:
+        $z1 = 0;
+        goto label2;
+
+     label7:
+        $z4 = 0;
+        goto label3;
+    }
+
+    public final void a(android.net.Uri, int, int, int, int)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.net.Uri $r1;
+        int $i0, $i1, $i2, $i3;
+        com.facebook.lite.a $r2;
+        java.lang.String $r5, $r9;
+        com.facebook.lite.g.a $r6;
+        com.facebook.lite.r $r7;
+        com.facebook.b.k $r8;
+        android.content.Context $r10;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.net.Uri;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $i3 := @parameter4: int;
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r6 = virtualinvoke $r2.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        $r5 = virtualinvoke $r6.<com.facebook.lite.g.a: java.lang.String m()>();
+        $r7 = new com.facebook.lite.r;
+        specialinvoke $r7.<com.facebook.lite.r: void <init>(com.facebook.lite.MainActivity,int,int,int,int,android.net.Uri,java.lang.String)>($r0, $i2, $i3, $i0, $i1, $r1, $r5);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r7);
+        $r8 = new com.facebook.b.k;
+        specialinvoke $r8.<com.facebook.b.k: void <init>(java.lang.String)>("ema_show_webview");
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        virtualinvoke $r8.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("uri", $r9);
+        $r10 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r8, $r10);
+        return;
+    }
+
+    public final void a(boolean, boolean)
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0, $z1, $z4, $z5, $z6;
+        com.facebook.lite.widget.q $r1;
+        java.lang.String $r2, $r4;
+        android.content.Context $r3;
+        int $i0;
+        com.facebook.lite.k $r5;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $z0 := @parameter0: boolean;
+        $z1 := @parameter1: boolean;
+        $z4 = $r0.<com.facebook.lite.MainActivity: boolean b>;
+        if $z4 == 0 goto label0;
+
+        $z5 = virtualinvoke $r0.<com.facebook.lite.MainActivity: boolean isFinishing()>();
+        if $z5 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        $r2 = staticinvoke <com.facebook.lite.b.b: java.lang.String g(android.content.Context)>($r3);
+        $r2 = staticinvoke <com.facebook.lite.b.g: java.lang.String a(java.lang.String)>($r2);
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i0 <= 0 goto label7;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: java.lang.String l>;
+        $z5 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z5 != 0 goto label7;
+
+        $z5 = 1;
+
+     label2:
+        $z4 = $r0.<com.facebook.lite.MainActivity: boolean h>;
+        if $z0 == $z4 goto label8;
+
+        $z6 = 1;
+
+     label3:
+        $z4 = $r0.<com.facebook.lite.MainActivity: boolean r>;
+        if $z1 == $z4 goto label9;
+
+        $z4 = 1;
+
+     label4:
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        if $r1 == null goto label5;
+
+        if $z6 != 0 goto label5;
+
+        if $z4 != 0 goto label5;
+
+        if $z5 == 0 goto label10;
+
+     label5:
+        $z6 = 1;
+
+     label6:
+        $r5 = new com.facebook.lite.k;
+        specialinvoke $r5.<com.facebook.lite.k: void <init>(com.facebook.lite.MainActivity,boolean,boolean,boolean,boolean,java.lang.String)>($r0, $z6, $z0, $z1, $z5, $r2);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r5);
+        goto label0;
+
+     label7:
+        $z5 = 0;
+        goto label2;
+
+     label8:
+        $z6 = 0;
+        goto label3;
+
+     label9:
+        $z4 = 0;
+        goto label4;
+
+     label10:
+        $z6 = 0;
+        goto label6;
+    }
+
+    public final boolean a(android.content.Intent, com.facebook.lite.g.a)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.content.Intent $r1;
+        com.facebook.lite.g.a $r2;
+        java.lang.String $r3, $r4, $r5;
+        int $i1;
+        boolean $z1;
+        com.facebook.b.k $r6;
+        java.lang.String[] $r7;
+        com.b.a.a.b.b $r8;
+        android.content.Context $r9;
+        android.os.Parcelable $r10;
+        android.net.Uri $r11;
+        com.facebook.lite.a $r12;
+        android.os.Bundle $r13;
+        long $l2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 := @parameter1: com.facebook.lite.g.a;
+        if $r1 == null goto label0;
+
+        if $r2 != null goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getType()>();
+        $r5 = "android.intent.action.SEND";
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label3;
+
+        if $r4 == null goto label3;
+
+        $r6 = new com.facebook.b.k;
+        specialinvoke $r6.<com.facebook.b.k: void <init>(java.lang.String)>("ema_handle_external_request");
+        $r5 = "text/plain";
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z1 == 0 goto label2;
+
+        $r7 = newarray (java.lang.String)[2];
+        $r5 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("android.intent.extra.TEXT");
+        $r7[0] = "t";
+        $i1 = (int) 1;
+        $r7[$i1] = $r5;
+        $r8 = virtualinvoke $r2.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        virtualinvoke $r8.<com.b.a.a.b.b: void a(java.lang.String[])>($r7);
+        virtualinvoke $r6.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("type", "text");
+        $r9 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r6, $r9);
+        return 1;
+
+     label2:
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean startsWith(java.lang.String)>("image/");
+        if $z1 == 0 goto label0;
+
+        $r10 = virtualinvoke $r1.<android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)>("android.intent.extra.STREAM");
+        $r11 = (android.net.Uri) $r10;
+        $r12 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        virtualinvoke $r12.<com.facebook.lite.a: void a(android.net.Uri,com.facebook.lite.g.g)>($r11, $r2);
+        virtualinvoke $r6.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("type", "image");
+        $r9 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r6, $r9);
+        return 1;
+
+     label3:
+        $r5 = "android.intent.action.VIEW";
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label4;
+
+        $r11 = virtualinvoke $r1.<android.content.Intent: android.net.Uri getData()>();
+        if $r11 == null goto label0;
+
+        $r7 = newarray (java.lang.String)[2];
+        $r7[0] = "d";
+        $r5 = virtualinvoke $r11.<android.net.Uri: java.lang.String toString()>();
+        $i1 = (int) 1;
+        $r7[$i1] = $r5;
+        $r8 = virtualinvoke $r2.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        virtualinvoke $r8.<com.b.a.a.b.b: void a(java.lang.String[])>($r7);
+        $r6 = new com.facebook.b.k;
+        specialinvoke $r6.<com.facebook.b.k: void <init>(java.lang.String)>("ema_handle_external_request");
+        virtualinvoke $r6.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("type", "deep_linking");
+        $r9 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r6, $r9);
+        return 1;
+
+     label4:
+        $z1 = virtualinvoke $r1.<android.content.Intent: boolean hasExtra(java.lang.String)>("fb-push-json");
+        if $z1 == 0 goto label0;
+
+        $r13 = virtualinvoke $r1.<android.content.Intent: android.os.Bundle getExtras()>();
+        $r5 = virtualinvoke $r13.<android.os.Bundle: java.lang.String getString(java.lang.String)>("fb-push-json");
+        $l2 = virtualinvoke $r13.<android.os.Bundle: long getLong(java.lang.String)>("fb-push-time");
+        $r8 = virtualinvoke $r2.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        virtualinvoke $r8.<com.b.a.a.b.b: void a(java.lang.String,long)>($r5, $l2);
+        $r0.<com.facebook.lite.MainActivity: java.lang.String c> = $r5;
+        return 1;
+    }
+
+    public final com.facebook.lite.widget.BannerView b()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.BannerView $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.BannerView e>;
+        return $r1;
+    }
+
+    public final com.facebook.lite.widget.DummySurfaceView c()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.DummySurfaceView $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.DummySurfaceView f>;
+        return $r1;
+    }
+
+    public final java.lang.String d()
+    {
+        com.facebook.lite.MainActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: java.lang.String c>;
+        return $r1;
+    }
+
+    public boolean dispatchTouchEvent(android.view.MotionEvent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.view.MotionEvent $r1;
+        com.facebook.lite.widget.FloatingTextBox $r2;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<com.facebook.lite.f: boolean dispatchTouchEvent(android.view.MotionEvent)>($r1);
+        return $z0;
+
+     label0:
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.widget.FloatingTextBox: boolean a(android.view.MotionEvent)>($r1);
+        if $z0 != 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.widget.FloatingTextBox: boolean b(android.view.MotionEvent)>($r1);
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r1.<android.view.MotionEvent: void setAction(int)>(99);
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        staticinvoke <com.facebook.lite.b.b: void a(android.content.Context,android.view.View)>($r0, $r2);
+
+     label2:
+        $z0 = specialinvoke $r0.<com.facebook.lite.f: boolean dispatchTouchEvent(android.view.MotionEvent)>($r1);
+        return $z0;
+    }
+
+    public final com.facebook.lite.widget.g e()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.g $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        return $r1;
+    }
+
+    public final void f()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.y $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = new com.facebook.lite.y;
+        specialinvoke $r1.<com.facebook.lite.y: void <init>(com.facebook.lite.MainActivity)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final void g()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.widget.q $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        virtualinvoke $r1.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label1:
+        return;
+    }
+
+    public final void h()
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.widget.RelativeLayout $r1;
+        int $i0;
+        com.facebook.lite.z $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: android.widget.RelativeLayout k>;
+        $i0 = virtualinvoke $r1.<android.widget.RelativeLayout: int getVisibility()>();
+        if $i0 != 0 goto label0;
+
+        $r2 = new com.facebook.lite.z;
+        specialinvoke $r2.<com.facebook.lite.z: void <init>(com.facebook.lite.MainActivity)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r2);
+
+     label0:
+        return;
+    }
+
+    public final void i()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.aa $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = new com.facebook.lite.aa;
+        specialinvoke $r1.<com.facebook.lite.aa: void <init>(com.facebook.lite.MainActivity)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final void j()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.webview.FbWebView $r1;
+        int $i0;
+        com.facebook.lite.ab $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        $i0 = virtualinvoke $r1.<com.facebook.lite.webview.FbWebView: int getVisibility()>();
+        if $i0 != 0 goto label0;
+
+        $r2 = new com.facebook.lite.ab;
+        specialinvoke $r2.<com.facebook.lite.ab: void <init>(com.facebook.lite.MainActivity)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r2);
+
+     label0:
+        return;
+    }
+
+    public final void k()
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i1, $i2;
+        com.facebook.lite.widget.g $r1;
+        android.view.View $r2;
+        android.widget.FrameLayout $r3;
+        java.lang.String $r5;
+        java.lang.Class $r6;
+        com.facebook.lite.widget.SoftwareRendererView r7;
+        java.lang.StringBuilder r8;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i2 = staticinvoke <com.facebook.lite.b.e: int x(android.content.Context)>($r0);
+        $i1 = staticinvoke <com.facebook.lite.b.e: int y(android.content.Context)>($r0);
+        $r2 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296260);
+        $r3 = (android.widget.FrameLayout) $r2;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        $r2 = interfaceinvoke $r1.<com.facebook.lite.widget.g: android.view.View a()>();
+        virtualinvoke $r3.<android.widget.FrameLayout: void removeView(android.view.View)>($r2);
+
+     label0:
+        $r1 = specialinvoke $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g a(int)>($i1);
+        if $r1 != null goto label1;
+
+        $r1 = specialinvoke $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g a(int)>($i2);
+
+     label1:
+        if $r1 != null goto label2;
+
+        r7 = new com.facebook.lite.widget.SoftwareRendererView;
+        $r1 = r7;
+        specialinvoke r7.<com.facebook.lite.widget.SoftwareRendererView: void <init>(android.content.Context)>($r0);
+
+     label2:
+        r8 = new java.lang.StringBuilder;
+        specialinvoke r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Using ");
+        $r6 = virtualinvoke $r1.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = virtualinvoke $r6.<java.lang.Class: java.lang.String getSimpleName()>();
+        virtualinvoke r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r2 = interfaceinvoke $r1.<com.facebook.lite.widget.g: android.view.View a()>();
+        virtualinvoke $r3.<android.widget.FrameLayout: void addView(android.view.View,int)>($r2, 0);
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p> = $r1;
+        return;
+    }
+
+    public final void l()
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.widget.RelativeLayout $r1;
+        int $i0;
+        com.facebook.lite.ad $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = $r0.<com.facebook.lite.MainActivity: android.widget.RelativeLayout k>;
+        $i0 = virtualinvoke $r1.<android.widget.RelativeLayout: int getVisibility()>();
+        if $i0 == 0 goto label0;
+
+        $r2 = new com.facebook.lite.ad;
+        specialinvoke $r2.<com.facebook.lite.ad: void <init>(com.facebook.lite.MainActivity)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void runOnUiThread(java.lang.Runnable)>($r2);
+
+     label0:
+        return;
+    }
+
+    public final boolean m()
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $z0 = $r0.<com.facebook.lite.MainActivity: boolean b>;
+        return $z0;
+    }
+
+    protected void onActivityResult(int, int, android.content.Intent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i1;
+        android.content.Intent $r1;
+        com.facebook.lite.a $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 := @parameter2: android.content.Intent;
+        specialinvoke $r0.<com.facebook.lite.f: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        virtualinvoke $r2.<com.facebook.lite.a: void a(int,int,android.content.Intent)>($i0, $i1, $r1);
+        return;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.os.Bundle $r1;
+        android.graphics.Point $r2;
+        com.facebook.lite.a $r3;
+        long $l0;
+        int $i1;
+        android.view.View $r4;
+        com.facebook.lite.widget.BannerView $r5;
+        com.facebook.lite.widget.DummySurfaceView $r6;
+        com.facebook.lite.webview.FbWebView $r7;
+        android.widget.RelativeLayout $r8;
+        com.facebook.lite.widget.InlineTextBox $r9;
+        com.facebook.lite.widget.FloatingTextBox $r10;
+        android.content.Intent $r11;
+        com.facebook.lite.g.a $r12;
+        boolean $z0;
+        java.lang.String $r13;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<com.facebook.lite.f: void onCreate(android.os.Bundle)>($r1);
+        $r3 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        virtualinvoke $r3.<com.facebook.lite.a: void a(long)>($l0);
+        virtualinvoke $r3.<com.facebook.lite.a: void a(com.facebook.lite.MainActivity)>($r0);
+        $r2 = staticinvoke <com.facebook.lite.b.b: android.graphics.Point b(android.content.Context)>($r0);
+        $i1 = $r2.<android.graphics.Point: int x>;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,int)>($r0, $i1);
+        $i1 = $r2.<android.graphics.Point: int y>;
+        staticinvoke <com.facebook.lite.b.e: void k(android.content.Context,int)>($r0, $i1);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void setContentView(int)>(2130903041);
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void k()>();
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296262);
+        $r5 = (com.facebook.lite.widget.BannerView) $r4;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.BannerView e> = $r5;
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296266);
+        $r6 = (com.facebook.lite.widget.DummySurfaceView) $r4;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.DummySurfaceView f> = $r6;
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296261);
+        $r7 = (com.facebook.lite.webview.FbWebView) $r4;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s> = $r7;
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296265);
+        $r8 = (android.widget.RelativeLayout) $r4;
+        $r0.<com.facebook.lite.MainActivity: android.widget.RelativeLayout k> = $r8;
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296263);
+        $r9 = (com.facebook.lite.widget.InlineTextBox) $r4;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i> = $r9;
+        $r4 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.view.View findViewById(int)>(2131296264);
+        $r10 = (com.facebook.lite.widget.FloatingTextBox) $r4;
+        $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g> = $r10;
+        $r11 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Intent getIntent()>();
+        $r12 = virtualinvoke $r3.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        $z0 = virtualinvoke $r0.<com.facebook.lite.MainActivity: boolean a(android.content.Intent,com.facebook.lite.g.a)>($r11, $r12);
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void setIntent(android.content.Intent)>(null);
+
+     label0:
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void p()>();
+        if $r1 != null goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String,boolean)>("state_has_loggedin_since_startup", 0);
+        $r0.<com.facebook.lite.MainActivity: boolean h> = $z0;
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String)>("state_user_turn_off_data_wifi");
+        $r0.<com.facebook.lite.MainActivity: boolean r> = $z0;
+        $r13 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("state_locale");
+        $r0.<com.facebook.lite.MainActivity: java.lang.String l> = $r13;
+        goto label1;
+    }
+
+    protected void onDestroy()
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.google.android.gcm.b: void d(android.content.Context)>($r1);
+        specialinvoke $r0.<com.facebook.lite.MainActivity: void q()>();
+        specialinvoke $r0.<com.facebook.lite.f: void onDestroy()>();
+        return;
+    }
+
+    public boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i2;
+        android.view.KeyEvent $r1;
+        com.facebook.lite.webview.FbWebView $r2;
+        boolean $z0;
+        int[] $r3;
+        com.b.a.a.b.k $r4;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        if $i0 != 4 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        $i2 = virtualinvoke $r2.<com.facebook.lite.webview.FbWebView: int getVisibility()>();
+        if $i2 != 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.webview.FbWebView: boolean canGoBack()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        $r3 = <com.facebook.lite.h: int[] a>;
+        $i2 = staticinvoke <java.util.Arrays: int binarySearch(int[],int)>($r3, $i0);
+        if $i2 < 0 goto label1;
+
+        $r4 = staticinvoke <com.facebook.lite.MainActivity: com.b.a.a.b.k o()>();
+        if $r4 == null goto label1;
+
+        interfaceinvoke $r4.<com.b.a.a.b.k: void b(int)>($i0);
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    public boolean onKeyUp(int, android.view.KeyEvent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        int $i0, $i2;
+        android.view.KeyEvent $r1;
+        boolean $z0;
+        com.facebook.lite.widget.InlineTextBox $r2;
+        com.facebook.lite.widget.FloatingTextBox $r3;
+        com.facebook.lite.webview.FbWebView $r4;
+        int[] $r5;
+        com.b.a.a.b.k $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        if $i0 != 4 goto label2;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.widget.InlineTextBox: boolean b()>();
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        virtualinvoke $r2.<com.facebook.lite.widget.InlineTextBox: void a()>();
+        return 1;
+
+     label0:
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r3.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        virtualinvoke $r3.<com.facebook.lite.widget.FloatingTextBox: void b()>();
+        return 1;
+
+     label1:
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        if $r4 == null goto label2;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        $i2 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: int getVisibility()>();
+        if $i2 != 0 goto label2;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        $z0 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: boolean canGoBack()>();
+        if $z0 == 0 goto label2;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.webview.FbWebView s>;
+        virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: void goBack()>();
+        return 1;
+
+     label2:
+        $r5 = <com.facebook.lite.h: int[] a>;
+        $i2 = staticinvoke <java.util.Arrays: int binarySearch(int[],int)>($r5, $i0);
+        if $i2 < 0 goto label3;
+
+        $r6 = staticinvoke <com.facebook.lite.MainActivity: com.b.a.a.b.k o()>();
+        if $r6 == null goto label3;
+
+        interfaceinvoke $r6.<com.b.a.a.b.k: void m()>();
+        return 1;
+
+     label3:
+        return 0;
+    }
+
+    protected void onNewIntent(android.content.Intent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.content.Intent $r1;
+        com.facebook.lite.a $r2;
+        com.facebook.lite.g.a $r3;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.content.Intent;
+        specialinvoke $r0.<com.facebook.lite.f: void onNewIntent(android.content.Intent)>($r1);
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        if $r2 == null goto label0;
+
+        $r3 = virtualinvoke $r2.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        $z0 = virtualinvoke $r0.<com.facebook.lite.MainActivity: boolean a(android.content.Intent,com.facebook.lite.g.a)>($r1, $r3);
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<com.facebook.lite.MainActivity: void setIntent(android.content.Intent)>(null);
+        goto label0;
+    }
+
+    public void onOptionsMenuClosed(android.view.Menu)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.view.Menu $r1;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.view.Menu;
+        interfaceinvoke $r1.<android.view.Menu: void clear()>();
+        return;
+    }
+
+    protected void onPause()
+    {
+        com.facebook.lite.MainActivity $r0;
+        boolean $z0;
+        com.facebook.lite.widget.g $r1;
+        android.app.AlertDialog $r2;
+        com.facebook.lite.widget.q $r3;
+        com.facebook.lite.widget.InlineTextBox $r4;
+        com.facebook.lite.widget.FloatingTextBox $r5;
+        com.facebook.lite.a $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        specialinvoke $r0.<com.facebook.lite.f: void onPause()>();
+        $r0.<com.facebook.lite.MainActivity: boolean b> = 0;
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        interfaceinvoke $r1.<com.facebook.lite.widget.g: void onPause()>();
+
+     label0:
+        $r2 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        $z0 = virtualinvoke $r2.<android.app.AlertDialog: boolean isShowing()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.<com.facebook.lite.MainActivity: android.app.AlertDialog d>;
+        virtualinvoke $r2.<android.app.AlertDialog: void dismiss()>();
+
+     label1:
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        if $r3 == null goto label2;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        $z0 = virtualinvoke $r3.<com.facebook.lite.widget.q: boolean isShowing()>();
+        if $z0 == 0 goto label2;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q n>;
+        virtualinvoke $r3.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label2:
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        if $r3 == null goto label3;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        $z0 = virtualinvoke $r3.<com.facebook.lite.widget.q: boolean isShowing()>();
+        if $z0 == 0 goto label3;
+
+        $r3 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.q o>;
+        virtualinvoke $r3.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label3:
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        $z0 = virtualinvoke $r4.<com.facebook.lite.widget.InlineTextBox: boolean b()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        staticinvoke <com.facebook.lite.b.b: void a(android.content.Context,android.view.View)>($r0, $r4);
+
+     label4:
+        $r5 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r5.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z0 == 0 goto label5;
+
+        $r5 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        staticinvoke <com.facebook.lite.b.b: void a(android.content.Context,android.view.View)>($r0, $r5);
+
+     label5:
+        $r6 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        virtualinvoke $r6.<com.facebook.lite.a: void K()>();
+        return;
+    }
+
+    protected void onResume()
+    {
+        com.facebook.lite.MainActivity $r0;
+        com.facebook.lite.a $r1;
+        com.facebook.lite.g.a $r2;
+        com.b.a.a.b.b $r3;
+        boolean $z0;
+        com.facebook.lite.widget.g $r4;
+        com.facebook.lite.widget.InlineTextBox $r5;
+        com.facebook.lite.widget.FloatingTextBox $r6;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        specialinvoke $r0.<com.facebook.lite.f: void onResume()>();
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r2 = virtualinvoke $r1.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        if $r2 == null goto label0;
+
+        $r3 = virtualinvoke $r2.<com.facebook.lite.g.g: com.b.a.a.b.b R()>();
+        virtualinvoke $r3.<com.b.a.a.b.b: void n()>();
+
+     label0:
+        $r0.<com.facebook.lite.MainActivity: boolean b> = 1;
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.g p>;
+        interfaceinvoke $r4.<com.facebook.lite.widget.g: void onResume()>();
+
+     label1:
+        $z0 = specialinvoke $r0.<com.facebook.lite.MainActivity: boolean a(android.content.Context)>($r0);
+        if $z0 != 0 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        $r5 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        $z0 = virtualinvoke $r5.<com.facebook.lite.widget.InlineTextBox: boolean b()>();
+        if $z0 == 0 goto label4;
+
+        $r5 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        virtualinvoke $r5.<com.facebook.lite.widget.InlineTextBox: boolean requestFocus()>();
+        $r5 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.InlineTextBox i>;
+        staticinvoke <com.facebook.lite.b.b: void b(android.content.Context,android.view.View)>($r0, $r5);
+
+     label4:
+        $r6 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        $z0 = virtualinvoke $r6.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z0 == 0 goto label2;
+
+        $r6 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        virtualinvoke $r6.<com.facebook.lite.widget.FloatingTextBox: boolean requestFocus()>();
+        $r6 = $r0.<com.facebook.lite.MainActivity: com.facebook.lite.widget.FloatingTextBox g>;
+        staticinvoke <com.facebook.lite.b.b: void b(android.content.Context,android.view.View)>($r0, $r6);
+        goto label2;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.os.Bundle $r1;
+        android.net.Uri $r3;
+        java.lang.Boolean $r4;
+        boolean $z0;
+        java.lang.String $r5;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<com.facebook.lite.f: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r3 = $r0.<com.facebook.lite.MainActivity: android.net.Uri q>;
+        virtualinvoke $r1.<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)>("state_update_uri", $r3);
+        $z0 = $r0.<com.facebook.lite.MainActivity: boolean h>;
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("state_has_loggedin_since_startup", $r4);
+        $z0 = $r0.<com.facebook.lite.MainActivity: boolean r>;
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("state_user_turn_off_data_wifi", $r4);
+        $r5 = $r0.<com.facebook.lite.MainActivity: java.lang.String l>;
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("state_locale", $r5);
+        return;
+    }
+
+    protected void onStart()
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.content.Context $r1;
+        com.facebook.lite.a $r2;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        specialinvoke $r0.<com.facebook.lite.f: void onStart()>();
+        $r1 = virtualinvoke $r0.<com.facebook.lite.MainActivity: android.content.Context getApplicationContext()>();
+        staticinvoke <com.facebook.rti.push.a.c: void a(android.content.Context)>($r1);
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        virtualinvoke $r2.<com.facebook.lite.a: void G()>();
+        return;
+    }
+
+    public boolean onTrackballEvent(android.view.MotionEvent)
+    {
+        com.facebook.lite.MainActivity $r0;
+        android.view.MotionEvent $r1;
+        com.b.a.a.b.k $r2;
+        int $i0;
+        byte $b1;
+        long $l2, $l3, $l4;
+        float $f3, $f4;
+
+        $r0 := @this: com.facebook.lite.MainActivity;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $r2 = staticinvoke <com.facebook.lite.MainActivity: com.b.a.a.b.k o()>();
+        if $r2 != null goto label0;
+
+        return 0;
+
+     label0:
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        if $i0 != 0 goto label2;
+
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int)>(23);
+
+     label1:
+        return 1;
+
+     label2:
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        if $i0 != 2 goto label1;
+
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l2 = $r0.<com.facebook.lite.MainActivity: long u>;
+        $l4 = $l3 - $l2;
+        $b1 = $l4 cmp 500L;
+        if $b1 <= 0 goto label3;
+
+        $r0.<com.facebook.lite.MainActivity: float v> = 0.0F;
+        $r0.<com.facebook.lite.MainActivity: float w> = 0.0F;
+
+     label3:
+        $r0.<com.facebook.lite.MainActivity: long u> = $l3;
+        $f3 = $r0.<com.facebook.lite.MainActivity: float v>;
+        $f4 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f4 = $f3 + $f4;
+        $r0.<com.facebook.lite.MainActivity: float v> = $f4;
+        $f4 = $r0.<com.facebook.lite.MainActivity: float w>;
+        $f3 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        $f4 = $f4 + $f3;
+        $r0.<com.facebook.lite.MainActivity: float w> = $f4;
+        $f4 = $r0.<com.facebook.lite.MainActivity: float v>;
+        $b1 = $f4 cmpl 1.0F;
+        if $b1 < 0 goto label5;
+
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int)>(22);
+        $r0.<com.facebook.lite.MainActivity: float v> = 0.0F;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void m()>();
+
+     label4:
+        $f4 = $r0.<com.facebook.lite.MainActivity: float w>;
+        $b1 = $f4 cmpl 1.0F;
+        if $b1 < 0 goto label6;
+
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int)>(20);
+        $r0.<com.facebook.lite.MainActivity: float w> = 0.0F;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void m()>();
+        goto label1;
+
+     label5:
+        $f4 = $r0.<com.facebook.lite.MainActivity: float v>;
+        $b1 = $f4 cmpg -1.0F;
+        if $b1 > 0 goto label4;
+
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int)>(21);
+        $r0.<com.facebook.lite.MainActivity: float v> = 0.0F;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void m()>();
+        goto label4;
+
+     label6:
+        $f4 = $r0.<com.facebook.lite.MainActivity: float w>;
+        $b1 = $f4 cmpg -1.0F;
+        if $b1 > 0 goto label1;
+
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int)>(19);
+        $r0.<com.facebook.lite.MainActivity: float w> = 0.0F;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void m()>();
+        goto label1;
+    }
+}

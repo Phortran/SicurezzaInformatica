@@ -1,0 +1,55 @@
+final class com.google.android.gms.internal.em$l extends com.google.android.gms.internal.el
+{
+    final com.google.android.gms.internal.em a;
+    private final com.google.android.gms.games.multiplayer.e b;
+
+    public void j(com.google.android.gms.common.data.d)
+    {
+        com.google.android.gms.internal.em$l $r0;
+        com.google.android.gms.common.data.d $r1;
+        com.google.android.gms.games.multiplayer.Invitation $r2;
+        com.google.android.gms.games.multiplayer.a $r3;
+        int $i0;
+        com.google.android.gms.internal.em $r4, $r7;
+        com.google.android.gms.games.multiplayer.e $r5;
+        java.lang.Object $r6;
+        com.google.android.gms.internal.hn $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: com.google.android.gms.internal.em$l;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $r3 = new com.google.android.gms.games.multiplayer.a;
+        specialinvoke $r3.<com.google.android.gms.games.multiplayer.a: void <init>(com.google.android.gms.common.data.d)>($r1);
+        $r2 = null;
+
+     label0:
+        $i0 = virtualinvoke $r3.<com.google.android.gms.games.multiplayer.a: int a()>();
+        if $i0 <= 0 goto label1;
+
+        $r6 = virtualinvoke $r3.<com.google.android.gms.games.multiplayer.a: java.lang.Object b(int)>(0);
+        $r2 = (com.google.android.gms.games.multiplayer.Invitation) $r6;
+        $r6 = interfaceinvoke $r2.<com.google.android.gms.games.multiplayer.Invitation: java.lang.Object h()>();
+        $r2 = (com.google.android.gms.games.multiplayer.Invitation) $r6;
+
+     label1:
+        virtualinvoke $r3.<com.google.android.gms.games.multiplayer.a: void b()>();
+        if $r2 == null goto label2;
+
+        $r7 = $r0.<com.google.android.gms.internal.em$l: com.google.android.gms.internal.em a>;
+        $r8 = new com.google.android.gms.internal.hn;
+        $r4 = $r0.<com.google.android.gms.internal.em$l: com.google.android.gms.internal.em a>;
+        $r5 = $r0.<com.google.android.gms.internal.em$l: com.google.android.gms.games.multiplayer.e b>;
+        specialinvoke $r8.<com.google.android.gms.internal.hn: void <init>(com.google.android.gms.internal.em,com.google.android.gms.games.multiplayer.e,com.google.android.gms.games.multiplayer.Invitation)>($r4, $r5, $r2);
+        virtualinvoke $r7.<com.google.android.gms.internal.em: void a(com.google.android.gms.internal.ev)>($r8);
+
+     label2:
+        return;
+
+     label3:
+        $r9 := @caughtexception;
+        virtualinvoke $r3.<com.google.android.gms.games.multiplayer.a: void b()>();
+        throw $r9;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+}

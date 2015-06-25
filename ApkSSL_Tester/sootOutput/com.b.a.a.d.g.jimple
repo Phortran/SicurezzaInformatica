@@ -1,0 +1,991 @@
+final class com.b.a.a.d.g extends java.lang.Object
+{
+    private static int[] d;
+    private static int[] e;
+    private static int f;
+    private static int g;
+    final int[] a;
+    final byte[] b;
+    final int[] c;
+    private final com.b.a.a.d.h[] h;
+    private final com.b.a.a.d.h[] i;
+    private final boolean[] j;
+    private final com.b.a.a.d.h[] k;
+    private final com.b.a.a.d.h[] l;
+    private final boolean[] m;
+    private final boolean[][] n;
+    private int o;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        $r0 = newarray (int)[16];
+        $r0[0] = 0;
+        $r0[1] = -1;
+        $r0[2] = -3;
+        $r0[3] = -7;
+        $r0[4] = -15;
+        $r0[5] = -31;
+        $r0[6] = -63;
+        $r0[7] = -127;
+        $r0[8] = -255;
+        $r0[9] = -511;
+        $r0[10] = -1023;
+        $r0[11] = -2047;
+        $r0[12] = -4095;
+        $r0[13] = -8191;
+        $r0[14] = -16383;
+        $r0[15] = -32767;
+        <com.b.a.a.d.g: int[] d> = $r0;
+        $r0 = newarray (int)[16];
+        $r0[0] = 0;
+        $r0[1] = 1;
+        $r0[2] = 2;
+        $r0[3] = 4;
+        $r0[4] = 8;
+        $r0[5] = 16;
+        $r0[6] = 32;
+        $r0[7] = 64;
+        $r0[8] = 128;
+        $r0[9] = 256;
+        $r0[10] = 512;
+        $r0[11] = 1024;
+        $r0[12] = 2048;
+        $r0[13] = 4096;
+        $r0[14] = 8192;
+        $r0[15] = 16384;
+        <com.b.a.a.d.g: int[] e> = $r0;
+        return;
+    }
+
+    void <init>()
+    {
+        com.b.a.a.d.g $r0;
+        int[] $r1;
+        byte[] $r2;
+        com.b.a.a.d.h[] $r3;
+        boolean[] $r4;
+        java.lang.Class $r5;
+        java.lang.Object $r6;
+        boolean[][] $r7;
+
+        $r0 := @this: com.b.a.a.d.g;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = newarray (int)[257];
+        $r0.<com.b.a.a.d.g: int[] a> = $r1;
+        $r2 = newarray (byte)[257];
+        $r0.<com.b.a.a.d.g: byte[] b> = $r2;
+        $r1 = newarray (int)[4];
+        $r0.<com.b.a.a.d.g: int[] c> = $r1;
+        $r3 = newarray (com.b.a.a.d.h)[10];
+        $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] h> = $r3;
+        $r3 = newarray (com.b.a.a.d.h)[4];
+        $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] i> = $r3;
+        $r4 = newarray (boolean)[10];
+        $r0.<com.b.a.a.d.g: boolean[] j> = $r4;
+        $r3 = newarray (com.b.a.a.d.h)[10];
+        $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] k> = $r3;
+        $r3 = newarray (com.b.a.a.d.h)[4];
+        $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] l> = $r3;
+        $r4 = newarray (boolean)[10];
+        $r0.<com.b.a.a.d.g: boolean[] m> = $r4;
+        $r1 = newarray (int)[2];
+        $r1[0] = 3;
+        $r1[1] = 4;
+        $r5 = <java.lang.Boolean: java.lang.Class TYPE>;
+        $r6 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int[])>($r5, $r1);
+        $r7 = (boolean[][]) $r6;
+        $r0.<com.b.a.a.d.g: boolean[][] n> = $r7;
+        return;
+    }
+
+    private static int a(com.b.a.a.d.f, com.b.a.a.d.h)
+    {
+        com.b.a.a.d.f $r0;
+        com.b.a.a.d.h $r1;
+        int $i1;
+        java.lang.IllegalStateException $r3;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $r1 := @parameter1: com.b.a.a.d.h;
+        $i1 = staticinvoke <com.b.a.a.d.g: int a(com.b.a.a.d.f,com.b.a.a.d.h,int)>($r0, $r1, 9);
+        if $i1 >= 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("huffDecode value");
+        throw $r3;
+
+     label0:
+        return $i1;
+    }
+
+    private static int a(com.b.a.a.d.f, com.b.a.a.d.h, int)
+    {
+        com.b.a.a.d.f $r0;
+        com.b.a.a.d.h $r1;
+        int $i0, $i1, $i2, $i3;
+        int[] $r2;
+        java.lang.IllegalStateException $r3;
+        com.b.a.a.e.b $r5;
+        short $s6;
+        com.b.a.a.d.b $r6;
+        short[] $r7;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $r1 := @parameter1: com.b.a.a.d.h;
+        $i0 := @parameter2: int;
+        $r2 = $r1.<com.b.a.a.d.h: int[] c>;
+        $i1 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,int)>($r0, $i0);
+
+     label0:
+        $i2 = $r2[$i0];
+        if $i1 <= $i2 goto label3;
+
+        $i2 = <com.b.a.a.d.g: int f>;
+        if $i2 != 0 goto label1;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r0);
+
+     label1:
+        $i2 = <com.b.a.a.d.g: int f>;
+        if $i2 != 0 goto label2;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("insufficient data");
+        throw $r3;
+
+     label2:
+        $i2 = <com.b.a.a.d.g: int f>;
+        $i2 = $i2 + -1;
+        <com.b.a.a.d.g: int f> = $i2;
+        $i1 = $i1 << 1;
+        $i3 = <com.b.a.a.d.g: int g>;
+        $i2 = <com.b.a.a.d.g: int f>;
+        $i3 = $i3 >> $i2;
+        $i3 = $i3 & 1;
+        $i1 = $i1 | $i3;
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        if $i0 <= 16 goto label4;
+
+        $r5 = $r0.<com.b.a.a.d.f: com.b.a.a.e.b e>;
+        interfaceinvoke $r5.<com.b.a.a.e.b: void b(short,short,java.lang.String)>(3, 90, "huff bad code");
+        return 0;
+
+     label4:
+        $r6 = $r1.<com.b.a.a.d.h: com.b.a.a.d.b d>;
+        $r7 = $r6.<com.b.a.a.d.b: short[] b>;
+        $r2 = $r1.<com.b.a.a.d.h: int[] e>;
+        $i3 = $r2[$i0];
+        $i3 = $i1 + $i3;
+        $s6 = $r7[$i3];
+        return $s6;
+    }
+
+    private static void a(com.b.a.a.d.f, int)
+    {
+        com.b.a.a.d.f $r0;
+        int $i0, $i1;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $i0 := @parameter1: int;
+        $i1 = <com.b.a.a.d.g: int f>;
+        if $i1 >= $i0 goto label0;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r0);
+        $i1 = <com.b.a.a.d.g: int f>;
+        if $i0 <= $i1 goto label0;
+
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("insufficient data");
+        throw $r2;
+
+     label0:
+        $i1 = <com.b.a.a.d.g: int f>;
+        $i1 = $i1 - $i0;
+        <com.b.a.a.d.g: int f> = $i1;
+        return;
+    }
+
+    private void a(com.b.a.a.d.f, boolean, int)
+    {
+        com.b.a.a.d.g $r0;
+        com.b.a.a.d.f $r1;
+        boolean $z0, $z1;
+        int $i0, $i1, $i4, $i5, $i7, $i8;
+        byte $b2, $b6;
+        boolean[][] $r2;
+        java.lang.String $r3;
+        short $s3;
+        com.b.a.a.d.b $r4;
+        byte[] $r5;
+        int[] $r6, $r15, $r16;
+        short[] $r7, $r8, $r17;
+        java.lang.StringBuffer $r9;
+        boolean[] $r10;
+        java.lang.IllegalArgumentException $r11;
+        com.b.a.a.d.b[] $r12;
+        com.b.a.a.d.h[] $r13;
+        com.b.a.a.d.h $r14;
+
+        $r0 := @this: com.b.a.a.d.g;
+        $r1 := @parameter0: com.b.a.a.d.f;
+        $z0 := @parameter1: boolean;
+        $i0 := @parameter2: int;
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        if $z0 == 0 goto label2;
+
+        $b2 = 0;
+
+     label0:
+        $r10 = $r2[$b2];
+        $z1 = $r10[$i0];
+        if $z1 == 0 goto label3;
+
+     label1:
+        return;
+
+     label2:
+        $b2 = 1;
+        goto label0;
+
+     label3:
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        if $z0 == 0 goto label6;
+
+        $b2 = 0;
+
+     label4:
+        $r10 = $r2[$b2];
+        $r10[$i0] = 1;
+        $r5 = $r0.<com.b.a.a.d.g: byte[] b>;
+        $r6 = $r0.<com.b.a.a.d.g: int[] a>;
+        if $i0 < 0 goto label5;
+
+        if $i0 < 4 goto label7;
+
+     label5:
+        $r11 = new java.lang.IllegalArgumentException;
+        specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("no huff table");
+        throw $r11;
+
+     label6:
+        $b2 = 1;
+        goto label4;
+
+     label7:
+        if $z0 == 0 goto label9;
+
+        $r12 = $r1.<com.b.a.a.d.f: com.b.a.a.d.b[] n>;
+        $r4 = $r12[$i0];
+
+     label8:
+        if $r4 != null goto label10;
+
+        $r11 = new java.lang.IllegalArgumentException;
+        $r9 = new java.lang.StringBuffer;
+        specialinvoke $r9.<java.lang.StringBuffer: void <init>(java.lang.String)>("no huff table: ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i0);
+        $r3 = virtualinvoke $r9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r3);
+        throw $r11;
+
+     label9:
+        $r12 = $r1.<com.b.a.a.d.f: com.b.a.a.d.b[] f>;
+        $r4 = $r12[$i0];
+        goto label8;
+
+     label10:
+        if $z0 == 0 goto label16;
+
+        $r13 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] l>;
+        $r14 = $r13[$i0];
+
+     label11:
+        if $r14 != null goto label13;
+
+        $r14 = new com.b.a.a.d.h;
+        specialinvoke $r14.<com.b.a.a.d.h: void <init>(byte)>(0);
+        if $z0 == 0 goto label17;
+
+        $r13 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] l>;
+
+     label12:
+        $r13[$i0] = $r14;
+
+     label13:
+        $r14.<com.b.a.a.d.h: com.b.a.a.d.b d> = $r4;
+        $i0 = 0;
+        $r7 = $r4.<com.b.a.a.d.b: short[] a>;
+        $i1 = 1;
+
+     label14:
+        if $i1 > 16 goto label20;
+
+        $i4 = $r7[$i1];
+        if $i4 < 0 goto label15;
+
+        $i5 = $i0 + $i4;
+        if $i5 <= 256 goto label41;
+
+     label15:
+        $r11 = new java.lang.IllegalArgumentException;
+        specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("bad huff table");
+        throw $r11;
+
+     label16:
+        $r13 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] i>;
+        $r14 = $r13[$i0];
+        goto label11;
+
+     label17:
+        $r13 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] i>;
+        goto label12;
+
+     label18:
+        if $i4 == 0 goto label19;
+
+        $b2 = (byte) $i1;
+        $r5[$i0] = $b2;
+        $i0 = $i0 + 1;
+        $i4 = $i4 + -1;
+        goto label18;
+
+     label19:
+        $i1 = $i1 + 1;
+        goto label14;
+
+     label20:
+        $r5[$i0] = 0;
+        $i5 = 0;
+        $i4 = $r5[0];
+        $i1 = 0;
+
+     label21:
+        $b2 = $r5[$i1];
+        if $b2 == 0 goto label25;
+
+     label22:
+        $b6 = $r5[$i1];
+        $b2 = (byte) $i4;
+        if $b6 != $b2 goto label23;
+
+        $r6[$i1] = $i5;
+        $i5 = $i5 + 1;
+        $i1 = $i1 + 1;
+        goto label22;
+
+     label23:
+        $i7 = 1 << $i4;
+        if $i5 < $i7 goto label24;
+
+        $r11 = new java.lang.IllegalArgumentException;
+        specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("bad huff table");
+        throw $r11;
+
+     label24:
+        $i5 = $i5 << 1;
+        $i4 = $i4 + 1;
+        goto label21;
+
+     label25:
+        $r15 = $r14.<com.b.a.a.d.h: int[] e>;
+        $r16 = $r14.<com.b.a.a.d.h: int[] c>;
+        $i7 = 0;
+        $i5 = 1;
+
+     label26:
+        if $i5 > 16 goto label29;
+
+        $s3 = $r7[$i5];
+        if $s3 != 0 goto label28;
+
+        $r16[$i5] = -1;
+
+     label27:
+        $i5 = $i5 + 1;
+        goto label26;
+
+     label28:
+        $i4 = $r6[$i7];
+        $i4 = $i7 - $i4;
+        $r15[$i5] = $i4;
+        $s3 = $r7[$i5];
+        $i7 = $i7 + $s3;
+        $i4 = $i7 + -1;
+        $i4 = $r6[$i4];
+        $r16[$i5] = $i4;
+        goto label27;
+
+     label29:
+        $r16[17] = 1048575;
+        $r16 = $r14.<com.b.a.a.d.h: int[] a>;
+        $r15 = $r14.<com.b.a.a.d.h: int[] a>;
+        $i7 = lengthof $r15;
+        $i5 = 0;
+
+     label30:
+        if $i5 >= $i7 goto label31;
+
+        $r16[$i5] = 0;
+        $i5 = $i5 + 1;
+        goto label30;
+
+     label31:
+        $i7 = 0;
+        $r17 = $r4.<com.b.a.a.d.b: short[] b>;
+        $r8 = $r14.<com.b.a.a.d.h: short[] b>;
+        $i5 = 1;
+
+     label32:
+        if $i5 > 8 goto label37;
+
+        $i4 = 1;
+
+     label33:
+        $s3 = $r7[$i5];
+        if $i4 > $s3 goto label36;
+
+        $i1 = $r6[$i7];
+        $i8 = 8 - $i5;
+        $i8 = $i1 << $i8;
+        $i1 = 8 - $i5;
+        $i1 = 1 << $i1;
+
+     label34:
+        if $i1 <= 0 goto label35;
+
+        $r16[$i8] = $i5;
+        $s3 = $r17[$i7];
+        $r8[$i8] = $s3;
+        $i8 = $i8 + 1;
+        $i1 = $i1 + -1;
+        goto label34;
+
+     label35:
+        $i4 = $i4 + 1;
+        $i7 = $i7 + 1;
+        goto label33;
+
+     label36:
+        $i5 = $i5 + 1;
+        goto label32;
+
+     label37:
+        if $z0 == 0 goto label1;
+
+        $i8 = 0;
+
+     label38:
+        if $i8 >= $i0 goto label1;
+
+        $r17 = $r4.<com.b.a.a.d.b: short[] b>;
+        $s3 = $r17[$i8];
+        if $s3 < 0 goto label39;
+
+        if $s3 <= 15 goto label40;
+
+     label39:
+        $r11 = new java.lang.IllegalArgumentException;
+        specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("bad huff table");
+        throw $r11;
+
+     label40:
+        $i8 = $i8 + 1;
+        goto label38;
+
+     label41:
+        goto label18;
+    }
+
+    private static int b(com.b.a.a.d.f, int)
+    {
+        com.b.a.a.d.f $r0;
+        int $i0, $i1, $i2;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $i0 := @parameter1: int;
+        $i1 = <com.b.a.a.d.g: int f>;
+        if $i1 >= $i0 goto label0;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r0);
+        $i1 = <com.b.a.a.d.g: int f>;
+        if $i0 <= $i1 goto label0;
+
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("insufficient data");
+        throw $r2;
+
+     label0:
+        $i1 = <com.b.a.a.d.g: int f>;
+        $i1 = $i1 - $i0;
+        <com.b.a.a.d.g: int f> = $i1;
+        $i1 = <com.b.a.a.d.g: int g>;
+        $i2 = <com.b.a.a.d.g: int f>;
+        $i2 = $i1 >> $i2;
+        $i1 = 1 << $i0;
+        $i1 = $i1 + -1;
+        $i2 = $i2 & $i1;
+        return $i2;
+    }
+
+    private static int b(com.b.a.a.d.f, com.b.a.a.d.h)
+    {
+        com.b.a.a.d.f $r0;
+        com.b.a.a.d.h $r1;
+        int $i1;
+        java.lang.IllegalStateException $r3;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $r1 := @parameter1: com.b.a.a.d.h;
+        $i1 = staticinvoke <com.b.a.a.d.g: int a(com.b.a.a.d.f,com.b.a.a.d.h,int)>($r0, $r1, 1);
+        if $i1 >= 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("huffDecode value");
+        throw $r3;
+
+     label0:
+        return $i1;
+    }
+
+    private static void b(com.b.a.a.d.f)
+    {
+        com.b.a.a.d.f $r0;
+        int $i0, $i3;
+        byte $b2;
+        byte[] $r1;
+        short $s4;
+
+        $r0 := @parameter0: com.b.a.a.d.f;
+        $i0 = $r0.<com.b.a.a.d.f: int T>;
+        if $i0 != 0 goto label4;
+
+     label0:
+        $i0 = <com.b.a.a.d.g: int f>;
+        if $i0 >= 25 goto label4;
+
+        $r1 = $r0.<com.b.a.a.d.f: byte[] Q>;
+        $i3 = $r0.<com.b.a.a.d.f: int R>;
+        $i0 = $i3 + 1;
+        $r0.<com.b.a.a.d.f: int R> = $i0;
+        $b2 = $r1[$i3];
+        $s4 = $b2 & 255;
+        if $s4 != 255 goto label2;
+
+     label1:
+        $r1 = $r0.<com.b.a.a.d.f: byte[] Q>;
+        $i3 = $r0.<com.b.a.a.d.f: int R>;
+        $i0 = $i3 + 1;
+        $r0.<com.b.a.a.d.f: int R> = $i0;
+        $b2 = $r1[$i3];
+        $s4 = $b2 & 255;
+        if $s4 == 255 goto label1;
+
+        if $s4 != 0 goto label3;
+
+        $s4 = 255;
+
+     label2:
+        $i3 = <com.b.a.a.d.g: int g>;
+        $i3 = $i3 << 8;
+        $s4 = $s4 & 255;
+        $i3 = $s4 | $i3;
+        <com.b.a.a.d.g: int g> = $i3;
+        $i3 = <com.b.a.a.d.g: int f>;
+        $i3 = $i3 + 8;
+        <com.b.a.a.d.g: int f> = $i3;
+        goto label0;
+
+     label3:
+        $r0.<com.b.a.a.d.f: int T> = $s4;
+
+     label4:
+        return;
+    }
+
+    private boolean c(com.b.a.a.d.f)
+    {
+        com.b.a.a.d.g $r0;
+        com.b.a.a.d.f $r1;
+        com.b.a.a.d.j $r2;
+        int $i1, $i2;
+        int[] $r3;
+
+        $r0 := @this: com.b.a.a.d.g;
+        $r1 := @parameter0: com.b.a.a.d.f;
+        $r2 = $r1.<com.b.a.a.d.f: com.b.a.a.d.j A>;
+        $i1 = $r2.<com.b.a.a.d.j: int a>;
+        $i2 = <com.b.a.a.d.g: int f>;
+        $i2 = $i2 / 8;
+        $i2 = $i1 + $i2;
+        $r2.<com.b.a.a.d.j: int a> = $i2;
+        <com.b.a.a.d.g: int f> = 0;
+        $r2 = $r1.<com.b.a.a.d.f: com.b.a.a.d.j A>;
+        virtualinvoke $r2.<com.b.a.a.d.j: boolean b(com.b.a.a.d.f)>($r1);
+        $i2 = 0;
+
+     label0:
+        $i1 = $r1.<com.b.a.a.d.f: int l>;
+        if $i2 >= $i1 goto label1;
+
+        $r3 = $r0.<com.b.a.a.d.g: int[] c>;
+        $r3[$i2] = 0;
+        $i2 = $i2 + 1;
+        goto label0;
+
+     label1:
+        $i2 = $r1.<com.b.a.a.d.f: int M>;
+        $r0.<com.b.a.a.d.g: int o> = $i2;
+        return 1;
+    }
+
+    final void a(com.b.a.a.d.f)
+    {
+        com.b.a.a.d.g $r0;
+        com.b.a.a.d.f $r1;
+        boolean[][] $r2;
+        int $i0, $i1, i2, i3;
+        boolean[] $r3, $r4;
+        com.b.a.a.d.d[] $r5;
+        com.b.a.a.d.d $r6;
+        int[] $r7;
+        com.b.a.a.d.h[] $r8, $r9;
+        com.b.a.a.d.h $r10;
+        boolean $z2;
+
+        $r0 := @this: com.b.a.a.d.g;
+        $r1 := @parameter0: com.b.a.a.d.f;
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        $r3 = $r2[2];
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        i2 = (int) 0;
+        $r4 = $r2[i2];
+        i2 = (int) 0;
+        i3 = (int) 0;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, i2, $r4, i3, 4);
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        $r4 = $r2[2];
+        $r2 = $r0.<com.b.a.a.d.g: boolean[][] n>;
+        i3 = (int) 1;
+        $r3 = $r2[i3];
+        i3 = (int) 0;
+        i2 = (int) 0;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r4, i3, $r3, i2, 4);
+        $i1 = (int) 0;
+
+     label0:
+        $i0 = $r1.<com.b.a.a.d.f: int l>;
+        if $i1 >= $i0 goto label1;
+
+        $r5 = $r1.<com.b.a.a.d.f: com.b.a.a.d.d[] m>;
+        $r6 = $r5[$i1];
+        $i0 = $r6.<com.b.a.a.d.d: int e>;
+        specialinvoke $r0.<com.b.a.a.d.g: void a(com.b.a.a.d.f,boolean,int)>($r1, 1, $i0);
+        specialinvoke $r0.<com.b.a.a.d.g: void a(com.b.a.a.d.f,boolean,int)>($r1, 0, $i0);
+        $r7 = $r0.<com.b.a.a.d.g: int[] c>;
+        i3 = (int) 0;
+        $r7[$i1] = i3;
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        $i1 = $r1.<com.b.a.a.d.f: int h>;
+        $i0 = $i1 + -1;
+
+     label2:
+        if $i0 < 0 goto label7;
+
+        $r5 = $r1.<com.b.a.a.d.f: com.b.a.a.d.d[] m>;
+        $r7 = $r1.<com.b.a.a.d.f: int[] D>;
+        $i1 = $r7[$i0];
+        $r6 = $r5[$i1];
+        $r8 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] k>;
+        $r9 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] l>;
+        $i1 = $r6.<com.b.a.a.d.d: int e>;
+        $r10 = $r9[$i1];
+        $r8[$i0] = $r10;
+        $r9 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] h>;
+        $r8 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] i>;
+        $i1 = $r6.<com.b.a.a.d.d: int a>;
+        $r10 = $r8[$i1];
+        $r9[$i0] = $r10;
+        $z2 = $r6.<com.b.a.a.d.d: boolean d>;
+        if $z2 == 0 goto label6;
+
+        $r4 = $r0.<com.b.a.a.d.g: boolean[] m>;
+        $r4[$i0] = 1;
+        $r4 = $r0.<com.b.a.a.d.g: boolean[] j>;
+        $i1 = $r6.<com.b.a.a.d.d: int f>;
+        i3 = (int) 1;
+        if $i1 <= i3 goto label5;
+
+        $z2 = 1;
+
+     label3:
+        $r4[$i0] = $z2;
+
+     label4:
+        $i0 = $i0 + -1;
+        goto label2;
+
+     label5:
+        $z2 = 0;
+        goto label3;
+
+     label6:
+        $r4 = $r0.<com.b.a.a.d.g: boolean[] m>;
+        $r3 = $r0.<com.b.a.a.d.g: boolean[] j>;
+        $r3[$i0] = 0;
+        $r4[$i0] = 0;
+        goto label4;
+
+     label7:
+        i3 = (int) 0;
+        <com.b.a.a.d.g: int f> = i3;
+        i3 = (int) 0;
+        <com.b.a.a.d.g: int g> = i3;
+        $i1 = $r1.<com.b.a.a.d.f: int M>;
+        $r0.<com.b.a.a.d.g: int o> = $i1;
+        return;
+    }
+
+    final void a(com.b.a.a.d.f, short[][])
+    {
+        com.b.a.a.d.g $r0;
+        com.b.a.a.d.f $r1;
+        short[][] $r2;
+        int $i0, $i1, $i3, $i4, $i5, $i7;
+        com.b.a.a.d.h[] $r3;
+        int[] $r4, $r8;
+        short[] $r5, $r10;
+        com.b.a.a.d.h $r6, $r7;
+        boolean[] $r9;
+        boolean $z0;
+        short $s6;
+
+        $r0 := @this: com.b.a.a.d.g;
+        $r1 := @parameter0: com.b.a.a.d.f;
+        $r2 := @parameter1: short[][];
+        $i0 = $r1.<com.b.a.a.d.f: int M>;
+        if $i0 == 0 goto label0;
+
+        $i3 = $r0.<com.b.a.a.d.g: int o>;
+        if $i3 != 0 goto label0;
+
+        specialinvoke $r0.<com.b.a.a.d.g: boolean c(com.b.a.a.d.f)>($r1);
+
+     label0:
+        $i1 = $r1.<com.b.a.a.d.f: int h>;
+        $r4 = <com.b.a.a.d.a: int[] a>;
+        $i0 = 0;
+
+     label1:
+        if $i0 >= $i1 goto label22;
+
+        $r5 = $r2[$i0];
+        $r3 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] k>;
+        $r7 = $r3[$i0];
+        $r3 = $r0.<com.b.a.a.d.g: com.b.a.a.d.h[] h>;
+        $r6 = $r3[$i0];
+        $i3 = <com.b.a.a.d.g: int f>;
+        if $i3 >= 8 goto label8;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r1);
+        $i3 = <com.b.a.a.d.g: int f>;
+        if $i3 >= 8 goto label8;
+
+        $i3 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r7);
+
+     label2:
+        if $i3 == 0 goto label23;
+
+        $i4 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,int)>($r1, $i3);
+        $r8 = <com.b.a.a.d.g: int[] e>;
+        $i5 = $r8[$i3];
+        if $i4 >= $i5 goto label3;
+
+        $r8 = <com.b.a.a.d.g: int[] d>;
+        $i5 = $r8[$i3];
+        $i4 = $i4 + $i5;
+
+     label3:
+        $r9 = $r0.<com.b.a.a.d.g: boolean[] m>;
+        $z0 = $r9[$i0];
+        if $z0 == 0 goto label4;
+
+        $r8 = $r1.<com.b.a.a.d.f: int[] D>;
+        $i5 = $r8[$i0];
+        $r8 = $r0.<com.b.a.a.d.g: int[] c>;
+        $i3 = $r8[$i5];
+        $i4 = $i4 + $i3;
+        $r8 = $r0.<com.b.a.a.d.g: int[] c>;
+        $r8[$i5] = $i4;
+        $s6 = (short) $i4;
+        $r5[0] = $s6;
+
+     label4:
+        $r9 = $r0.<com.b.a.a.d.g: boolean[] j>;
+        $z0 = $r9[$i0];
+        if $z0 == 0 goto label14;
+
+        $i5 = 1;
+
+     label5:
+        if $i5 >= 64 goto label21;
+
+        $i4 = <com.b.a.a.d.g: int f>;
+        if $i4 >= 8 goto label10;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r1);
+        $i4 = <com.b.a.a.d.g: int f>;
+        if $i4 >= 8 goto label10;
+
+        $i4 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r6);
+
+     label6:
+        $i7 = $i4 >> 4;
+        $i3 = $i4 & 15;
+        if $i3 != 0 goto label12;
+
+        if $i7 != 15 goto label21;
+
+        $i7 = $i5 + 15;
+
+     label7:
+        $i5 = $i7 + 1;
+        goto label5;
+
+     label8:
+        $i7 = <com.b.a.a.d.g: int g>;
+        $i5 = <com.b.a.a.d.g: int f>;
+        $i5 = $i5 + -8;
+        $i7 = $i7 >> $i5;
+        $i7 = $i7 & 255;
+        $r8 = $r7.<com.b.a.a.d.h: int[] a>;
+        $i5 = $r8[$i7];
+        if $i5 == 0 goto label9;
+
+        $i4 = <com.b.a.a.d.g: int f>;
+        $i5 = $i4 - $i5;
+        <com.b.a.a.d.g: int f> = $i5;
+        $r10 = $r7.<com.b.a.a.d.h: short[] b>;
+        $i3 = $r10[$i7];
+        goto label2;
+
+     label9:
+        $i3 = staticinvoke <com.b.a.a.d.g: int a(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r7);
+        goto label2;
+
+     label10:
+        $i7 = <com.b.a.a.d.g: int g>;
+        $i4 = <com.b.a.a.d.g: int f>;
+        $i4 = $i4 + -8;
+        $i7 = $i7 >> $i4;
+        $i7 = $i7 & 255;
+        $r8 = $r6.<com.b.a.a.d.h: int[] a>;
+        $i4 = $r8[$i7];
+        if $i4 == 0 goto label11;
+
+        $i3 = <com.b.a.a.d.g: int f>;
+        $i4 = $i3 - $i4;
+        <com.b.a.a.d.g: int f> = $i4;
+        $r10 = $r6.<com.b.a.a.d.h: short[] b>;
+        $i4 = $r10[$i7];
+        goto label6;
+
+     label11:
+        $i4 = staticinvoke <com.b.a.a.d.g: int a(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r6);
+        goto label6;
+
+     label12:
+        $i7 = $i5 + $i7;
+        $i5 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,int)>($r1, $i3);
+        $r8 = <com.b.a.a.d.g: int[] e>;
+        $i4 = $r8[$i3];
+        if $i5 >= $i4 goto label13;
+
+        $r8 = <com.b.a.a.d.g: int[] d>;
+        $i4 = $r8[$i3];
+        $i5 = $i5 + $i4;
+
+     label13:
+        $i4 = $r4[$i7];
+        $s6 = (short) $i5;
+        $r5[$i4] = $s6;
+        goto label7;
+
+     label14:
+        $i7 = 1;
+
+     label15:
+        if $i7 >= 64 goto label21;
+
+        $i5 = <com.b.a.a.d.g: int f>;
+        if $i5 >= 8 goto label18;
+
+        staticinvoke <com.b.a.a.d.g: void b(com.b.a.a.d.f)>($r1);
+        $i5 = <com.b.a.a.d.g: int f>;
+        if $i5 >= 8 goto label18;
+
+        $i5 = staticinvoke <com.b.a.a.d.g: int b(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r6);
+
+     label16:
+        $i4 = $i5 >> 4;
+        $i5 = $i5 & 15;
+        if $i5 != 0 goto label20;
+
+        if $i4 != 15 goto label21;
+
+        $i7 = $i7 + 15;
+
+     label17:
+        $i7 = $i7 + 1;
+        goto label15;
+
+     label18:
+        $i5 = <com.b.a.a.d.g: int g>;
+        $i4 = <com.b.a.a.d.g: int f>;
+        $i4 = $i4 + -8;
+        $i5 = $i5 >> $i4;
+        $i5 = $i5 & 255;
+        $r8 = $r6.<com.b.a.a.d.h: int[] a>;
+        $i4 = $r8[$i5];
+        if $i4 != 0 goto label19;
+
+        $i5 = staticinvoke <com.b.a.a.d.g: int a(com.b.a.a.d.f,com.b.a.a.d.h)>($r1, $r6);
+        goto label16;
+
+     label19:
+        $i3 = <com.b.a.a.d.g: int f>;
+        $i4 = $i3 - $i4;
+        <com.b.a.a.d.g: int f> = $i4;
+        $r10 = $r6.<com.b.a.a.d.h: short[] b>;
+        $i5 = $r10[$i5];
+        goto label16;
+
+     label20:
+        $i7 = $i7 + $i4;
+        staticinvoke <com.b.a.a.d.g: void a(com.b.a.a.d.f,int)>($r1, $i5);
+        goto label17;
+
+     label21:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label22:
+        $i7 = $r0.<com.b.a.a.d.g: int o>;
+        $i7 = $i7 + -1;
+        $r0.<com.b.a.a.d.g: int o> = $i7;
+        return;
+
+     label23:
+        $i4 = $i3;
+        goto label3;
+    }
+}

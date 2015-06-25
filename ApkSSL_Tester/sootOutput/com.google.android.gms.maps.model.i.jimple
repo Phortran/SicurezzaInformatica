@@ -1,0 +1,81 @@
+public final class com.google.android.gms.maps.model.i extends java.lang.Object
+{
+    private final com.google.android.gms.maps.model.internal.d a;
+
+    public void <init>(com.google.android.gms.maps.model.internal.d)
+    {
+        com.google.android.gms.maps.model.i $r0;
+        com.google.android.gms.maps.model.internal.d $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: com.google.android.gms.maps.model.i;
+        $r1 := @parameter0: com.google.android.gms.maps.model.internal.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r1);
+        $r1 = (com.google.android.gms.maps.model.internal.d) $r2;
+        $r0.<com.google.android.gms.maps.model.i: com.google.android.gms.maps.model.internal.d a> = $r1;
+        return;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.android.gms.maps.model.i $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        com.google.android.gms.maps.model.internal.d $r2, $r3;
+        android.os.RemoteException $r4;
+        com.google.android.gms.maps.model.m $r5;
+
+        $r0 := @this: com.google.android.gms.maps.model.i;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = $r1 instanceof com.google.android.gms.maps.model.i;
+        if $z0 != 0 goto label0;
+
+        return 0;
+
+     label0:
+        $r3 = $r0.<com.google.android.gms.maps.model.i: com.google.android.gms.maps.model.internal.d a>;
+        $r0 = (com.google.android.gms.maps.model.i) $r1;
+        $r2 = $r0.<com.google.android.gms.maps.model.i: com.google.android.gms.maps.model.internal.d a>;
+
+     label1:
+        $z0 = interfaceinvoke $r3.<com.google.android.gms.maps.model.internal.d: boolean a(com.google.android.gms.maps.model.internal.d)>($r2);
+
+     label2:
+        return $z0;
+
+     label3:
+        $r4 := @caughtexception;
+        $r5 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r5.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r4);
+        throw $r5;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+    public int hashCode()
+    {
+        com.google.android.gms.maps.model.i $r0;
+        com.google.android.gms.maps.model.internal.d $r1;
+        com.google.android.gms.maps.model.m $r2;
+        int $i0;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.model.i;
+        $r1 = $r0.<com.google.android.gms.maps.model.i: com.google.android.gms.maps.model.internal.d a>;
+
+     label0:
+        $i0 = interfaceinvoke $r1.<com.google.android.gms.maps.model.internal.d: int k()>();
+
+     label1:
+        return $i0;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+}

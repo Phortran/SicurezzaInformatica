@@ -1,0 +1,66 @@
+class it.h3g.areaclienti3.ussdservices.m extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.ussdservices.l a;
+    private final it.h3g.areaclienti3.ussdservices.ContactService b;
+
+    void <init>(it.h3g.areaclienti3.ussdservices.l, it.h3g.areaclienti3.ussdservices.ContactService)
+    {
+        it.h3g.areaclienti3.ussdservices.m $r0;
+        it.h3g.areaclienti3.ussdservices.l $r1;
+        it.h3g.areaclienti3.ussdservices.ContactService $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.m;
+        $r1 := @parameter0: it.h3g.areaclienti3.ussdservices.l;
+        $r2 := @parameter1: it.h3g.areaclienti3.ussdservices.ContactService;
+        $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a> = $r1;
+        $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.ContactService b> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.ussdservices.m $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.ussdservices.l $r2, $r8;
+        java.lang.StringBuilder $r3;
+        it.h3g.areaclienti3.ussdservices.ContactService $r4;
+        android.widget.EditText $r5;
+        android.text.Editable $r6;
+        int $i0;
+        java.lang.String $r7;
+        it.h3g.areaclienti3.fragments.c $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.m;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.ussdservices.l: android.widget.EditText a(it.h3g.areaclienti3.ussdservices.l)>($r2);
+        $r6 = virtualinvoke $r5.<android.widget.EditText: android.text.Editable getText()>();
+        $i0 = interfaceinvoke $r6.<android.text.Editable: int length()>();
+        if $i0 <= 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a>;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.ContactService b>;
+        $r7 = virtualinvoke $r4.<it.h3g.areaclienti3.ussdservices.ContactService: java.lang.String c()>();
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r7);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r8 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.ussdservices.l: android.widget.EditText a(it.h3g.areaclienti3.ussdservices.l)>($r8);
+        $r6 = virtualinvoke $r5.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.ussdservices.l: void a(it.h3g.areaclienti3.ussdservices.l,java.lang.String)>($r2, $r7);
+
+     label0:
+        return;
+
+     label1:
+        $r8 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.ussdservices.l: it.h3g.areaclienti3.fragments.c b(it.h3g.areaclienti3.ussdservices.l)>($r8);
+        $r8 = $r0.<it.h3g.areaclienti3.ussdservices.m: it.h3g.areaclienti3.ussdservices.l a>;
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.ussdservices.l: java.lang.String getString(int)>(2131231193);
+        interfaceinvoke $r9.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r7, 2);
+        goto label0;
+    }
+}

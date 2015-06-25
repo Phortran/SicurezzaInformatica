@@ -1,0 +1,44 @@
+public final class com.facebook.rti.b.a.a.i extends java.lang.Object
+{
+    public final long a;
+    public final long b;
+    public final long c;
+
+    public void <init>(long, long, long)
+    {
+        com.facebook.rti.b.a.a.i $r0;
+        long $l0, $l1, $l2;
+
+        $r0 := @this: com.facebook.rti.b.a.a.i;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $l2 := @parameter2: long;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.i: long a> = $l0;
+        $r0.<com.facebook.rti.b.a.a.i: long b> = $l1;
+        $r0.<com.facebook.rti.b.a.a.i: long c> = $l2;
+        return;
+    }
+
+    public final org.json.JSONObject a()
+    {
+        com.facebook.rti.b.a.a.i $r0;
+        org.json.JSONObject $r1;
+        long $l0;
+        java.lang.Long $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.a.i;
+        $r1 = new org.json.JSONObject;
+        specialinvoke $r1.<org.json.JSONObject: void <init>()>();
+        $l0 = $r0.<com.facebook.rti.b.a.a.i: long a>;
+        $r3 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("pub", $r3);
+        $l0 = $r0.<com.facebook.rti.b.a.a.i: long b>;
+        $r3 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("s", $r3);
+        $l0 = $r0.<com.facebook.rti.b.a.a.i: long c>;
+        $r3 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("r", $r3);
+        return $r1;
+    }
+}

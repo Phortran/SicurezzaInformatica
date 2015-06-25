@@ -1,0 +1,109 @@
+public final class android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround extends java.lang.Object
+{
+    private java.lang.reflect.Method mSelectRouteIntMethod;
+
+    public void <init>()
+    {
+        android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround $r0;
+        int $i0;
+        java.lang.Class $r1, $r4;
+        java.lang.reflect.Method $r2;
+        java.lang.UnsupportedOperationException $r3;
+        java.lang.Class[] $r6;
+        java.lang.NoSuchMethodException $r7;
+
+        $r0 := @this: android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 16 goto label0;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 <= 17 goto label1;
+
+     label0:
+        $r3 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r3.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $r4 = class "android/media/MediaRouter";
+        $r6 = newarray (java.lang.Class)[2];
+        $r1 = <java.lang.Integer: java.lang.Class TYPE>;
+        $r6[0] = $r1;
+        $r6[1] = class "android/media/MediaRouter$RouteInfo";
+
+     label2:
+        $r2 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("selectRouteInt", $r6);
+
+     label3:
+        $r0.<android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround: java.lang.reflect.Method mSelectRouteIntMethod> = $r2;
+
+     label4:
+        return;
+
+     label5:
+        $r7 := @caughtexception;
+        goto label4;
+
+        catch java.lang.NoSuchMethodException from label2 to label3 with label5;
+    }
+
+    public void selectRoute(java.lang.Object, int, java.lang.Object)
+    {
+        android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround $r0;
+        java.lang.Object $r1, $r2;
+        int $i0, $i1, $i2;
+        java.lang.IllegalAccessException $r3;
+        java.lang.Integer $r4;
+        android.media.MediaRouter $r5;
+        android.media.MediaRouter$RouteInfo $r6;
+        java.lang.reflect.Method $r7;
+        java.lang.Object[] $r8;
+        java.lang.reflect.InvocationTargetException $r11;
+
+        $r0 := @this: android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround;
+        $r1 := @parameter0: java.lang.Object;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.Object;
+        $r5 = (android.media.MediaRouter) $r1;
+        $r6 = (android.media.MediaRouter$RouteInfo) $r2;
+        $i1 = virtualinvoke $r6.<android.media.MediaRouter$RouteInfo: int getSupportedTypes()>();
+        $i2 = 8388608 & $i1;
+        if $i2 != 0 goto label3;
+
+        $r7 = $r0.<android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround: java.lang.reflect.Method mSelectRouteIntMethod>;
+        if $r7 == null goto label5;
+
+        $r7 = $r0.<android.support.v4.media.routing.MediaRouterJellybean$SelectRouteWorkaround: java.lang.reflect.Method mSelectRouteIntMethod>;
+        $r8 = newarray (java.lang.Object)[2];
+
+     label0:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r8[0] = $r4;
+        $r8[1] = $r6;
+        virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r5, $r8);
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("MediaRouterJellybean", "Cannot programmatically select non-user route.  Media routing may not work.", $r3);
+
+     label3:
+        virtualinvoke $r5.<android.media.MediaRouter: void selectRoute(int,android.media.MediaRouter$RouteInfo)>($i0, $r6);
+        goto label1;
+
+     label4:
+        $r11 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("MediaRouterJellybean", "Cannot programmatically select non-user route.  Media routing may not work.", $r11);
+        goto label3;
+
+     label5:
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("MediaRouterJellybean", "Cannot programmatically select non-user route because the platform is missing the selectRouteInt() method.  Media routing may not work.");
+        goto label3;
+
+        catch java.lang.IllegalAccessException from label0 to label1 with label2;
+        catch java.lang.reflect.InvocationTargetException from label0 to label1 with label4;
+    }
+}

@@ -1,0 +1,103 @@
+public final class com.facebook.lite.photo.r extends android.os.AsyncTask
+{
+    final com.facebook.lite.photo.PreviewActivity a;
+
+    public void <init>(com.facebook.lite.photo.PreviewActivity)
+    {
+        com.facebook.lite.photo.r $r0;
+        com.facebook.lite.photo.PreviewActivity $r1;
+
+        $r0 := @this: com.facebook.lite.photo.r;
+        $r1 := @parameter0: com.facebook.lite.photo.PreviewActivity;
+        $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    private transient android.graphics.Bitmap a(java.lang.String[])
+    {
+        com.facebook.lite.photo.r $r0;
+        java.lang.String[] $r1;
+        com.facebook.b.k $r2;
+        java.lang.String $r3;
+        com.facebook.lite.photo.PreviewActivity $r4;
+        android.content.Context $r5;
+        int $i1;
+        android.graphics.Bitmap $r6;
+
+        $r0 := @this: com.facebook.lite.photo.r;
+        $r1 := @parameter0: java.lang.String[];
+        $r2 = new com.facebook.b.k;
+        specialinvoke $r2.<com.facebook.b.k: void <init>(java.lang.String)>("ema_launch_preview");
+        $r3 = $r1[0];
+        $r4 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $r5 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.content.Context b(com.facebook.lite.photo.PreviewActivity)>($r4);
+        $r4 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $i1 = staticinvoke <com.facebook.lite.photo.PreviewActivity: int a(com.facebook.lite.photo.PreviewActivity)>($r4);
+        $r6 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(java.lang.String,com.facebook.b.k,android.content.Context,int)>($r3, $r2, $r5, $i1);
+        $r4 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        staticinvoke <com.facebook.lite.photo.PreviewActivity: int a(com.facebook.lite.photo.PreviewActivity,int)>($r4, 0);
+        $r4 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $r6 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(android.graphics.Bitmap)>($r6);
+        staticinvoke <com.facebook.lite.photo.PreviewActivity: android.graphics.Bitmap a(com.facebook.lite.photo.PreviewActivity,android.graphics.Bitmap)>($r4, $r6);
+        $r4 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $r6 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.graphics.Bitmap c(com.facebook.lite.photo.PreviewActivity)>($r4);
+        return $r6;
+    }
+
+    private void a(android.graphics.Bitmap)
+    {
+        com.facebook.lite.photo.r $r0;
+        android.graphics.Bitmap $r1;
+        boolean $z0;
+        com.facebook.lite.photo.PreviewActivity $r2;
+        android.widget.ImageView $r3;
+        android.widget.LinearLayout $r4;
+
+        $r0 := @this: com.facebook.lite.photo.r;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<android.graphics.Bitmap: boolean isRecycled()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $r3 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.widget.ImageView d(com.facebook.lite.photo.PreviewActivity)>($r2);
+        virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>($r1);
+        $r2 = $r0.<com.facebook.lite.photo.r: com.facebook.lite.photo.PreviewActivity a>;
+        $r4 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.widget.LinearLayout e(com.facebook.lite.photo.PreviewActivity)>($r2);
+        virtualinvoke $r4.<android.widget.LinearLayout: void setVisibility(int)>(0);
+        goto label0;
+    }
+
+    protected final java.lang.Object doInBackground(java.lang.Object[])
+    {
+        com.facebook.lite.photo.r $r0;
+        java.lang.Object[] $r1;
+        android.graphics.Bitmap $r2;
+        java.lang.String[] $r3;
+
+        $r0 := @this: com.facebook.lite.photo.r;
+        $r1 := @parameter0: java.lang.Object[];
+        $r3 = (java.lang.String[]) $r1;
+        $r2 = specialinvoke $r0.<com.facebook.lite.photo.r: android.graphics.Bitmap a(java.lang.String[])>($r3);
+        return $r2;
+    }
+
+    protected final void onPostExecute(java.lang.Object)
+    {
+        com.facebook.lite.photo.r $r0;
+        java.lang.Object $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.r;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        specialinvoke $r0.<com.facebook.lite.photo.r: void a(android.graphics.Bitmap)>($r2);
+        return;
+    }
+}

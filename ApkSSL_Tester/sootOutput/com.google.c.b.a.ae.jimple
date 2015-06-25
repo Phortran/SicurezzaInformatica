@@ -1,0 +1,90 @@
+final class com.google.c.b.a.ae extends com.google.c.ae
+{
+
+    void <init>()
+    {
+        com.google.c.b.a.ae $r0;
+
+        $r0 := @this: com.google.c.b.a.ae;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.math.BigDecimal a(com.google.c.d.a)
+    {
+        com.google.c.b.a.ae $r0;
+        com.google.c.d.a $r1;
+        com.google.c.d.c $r2, $r3;
+        java.math.BigDecimal $r4;
+        java.lang.String $r5;
+        java.lang.NumberFormatException $r6;
+        com.google.c.aa $r7;
+
+        $r0 := @this: com.google.c.b.a.ae;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r3 = <com.google.c.d.c: com.google.c.d.c i>;
+        if $r2 != $r3 goto label0;
+
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+        return null;
+
+     label0:
+        $r4 = new java.math.BigDecimal;
+
+     label1:
+        $r5 = virtualinvoke $r1.<com.google.c.d.a: java.lang.String h()>();
+        specialinvoke $r4.<java.math.BigDecimal: void <init>(java.lang.String)>($r5);
+
+     label2:
+        return $r4;
+
+     label3:
+        $r6 := @caughtexception;
+        $r7 = new com.google.c.aa;
+        specialinvoke $r7.<com.google.c.aa: void <init>(java.lang.Throwable)>($r6);
+        throw $r7;
+
+        catch java.lang.NumberFormatException from label1 to label2 with label3;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.b.a.ae $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.math.BigDecimal $r3;
+
+        $r0 := @this: com.google.c.b.a.ae;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.math.BigDecimal) $r2;
+        virtualinvoke $r0.<com.google.c.b.a.ae: void a(com.google.c.d.d,java.math.BigDecimal)>($r1, $r3);
+        return;
+    }
+
+    public void a(com.google.c.d.d, java.math.BigDecimal)
+    {
+        com.google.c.b.a.ae $r0;
+        com.google.c.d.d $r1;
+        java.math.BigDecimal $r2;
+
+        $r0 := @this: com.google.c.b.a.ae;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.math.BigDecimal;
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d a(java.lang.Number)>($r2);
+        return;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.b.a.ae $r0;
+        com.google.c.d.a $r1;
+        java.math.BigDecimal $r2;
+
+        $r0 := @this: com.google.c.b.a.ae;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.b.a.ae: java.math.BigDecimal a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

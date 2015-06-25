@@ -1,0 +1,1049 @@
+public class it.h3g.areaclienti3.remoteservice.b.k.g extends it.h3g.areaclienti3.remoteservice.b.g
+{
+    private it.h3g.areaclienti3.d.z f;
+    private it.h3g.areaclienti3.remoteservice.b.k.h g;
+
+    public void <init>(android.content.Context, it.h3g.areaclienti3.d.z)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.d.z $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: it.h3g.areaclienti3.d.z;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.g: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.remoteservice.b.k.h g> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f> = $r2;
+        return;
+    }
+
+    private it.h3g.areaclienti3.d.bb a(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1, $r7;
+        it.h3g.areaclienti3.d.bb $r2;
+        java.lang.String $r3, $r6;
+        int $i0, $i2;
+        it.h3g.areaclienti3.d.al $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.d.aj $r8;
+        it.h3g.areaclienti3.d.ai $r9;
+        java.lang.StringBuilder $r10;
+        it.h3g.areaclienti3.d.am $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $r2 = null;
+        if $r1 == null goto label3;
+
+        $r2 = new it.h3g.areaclienti3.d.bb;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.bb: void <init>()>();
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("key");
+        if $z0 == 0 goto label0;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("key");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bb: void a(java.lang.String)>($r3);
+
+     label0:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("title");
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("title");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bb: void b(java.lang.String)>($r3);
+
+     label1:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("Products");
+        if $z0 == 0 goto label3;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("Products");
+        $r1 = (org.e.a.j) $r5;
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("Product");
+        if $z0 == 0 goto label3;
+
+        $r4 = new it.h3g.areaclienti3.d.al;
+        specialinvoke $r4.<it.h3g.areaclienti3.d.al: void <init>()>();
+        $i0 = 0;
+
+     label2:
+        $i2 = virtualinvoke $r1.<org.e.a.j: int c()>();
+        if $i0 < $i2 goto label4;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bb: void a(it.h3g.areaclienti3.d.al)>($r4);
+
+     label3:
+        return $r2;
+
+     label4:
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.Object a(int)>($i0);
+        $z0 = $r5 instanceof org.e.a.j;
+        if $z0 == 0 goto label6;
+
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bb: java.lang.String a()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("-100");
+        if $z0 != 0 goto label8;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.Object a(int)>($i0);
+        $r7 = (org.e.a.j) $r5;
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.aj b(org.e.a.j)>($r7);
+        $r6 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: java.lang.String C()>();
+        $z0 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: boolean a()>();
+        if $z0 == 0 goto label5;
+
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai x()>();
+        if $r9 == null goto label7;
+
+        $r10 = new java.lang.StringBuilder;
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6);
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("#");
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai x()>();
+        $r6 = virtualinvoke $r9.<it.h3g.areaclienti3.d.ai: java.lang.String a()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label5:
+        virtualinvoke $r4.<it.h3g.areaclienti3.d.al: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r8);
+
+     label6:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label7:
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai y()>();
+        if $r9 == null goto label5;
+
+        $r10 = new java.lang.StringBuilder;
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6);
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("#");
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai y()>();
+        $r6 = virtualinvoke $r9.<it.h3g.areaclienti3.d.ai: java.lang.String a()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label5;
+
+     label8:
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bb: java.lang.String a()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("-100");
+        if $z0 == 0 goto label6;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.Object a(int)>($i0);
+        $z0 = $r5 instanceof org.e.a.j;
+        if $z0 == 0 goto label6;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.Object a(int)>($i0);
+        $r7 = (org.e.a.j) $r5;
+        $r11 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.am f(org.e.a.j)>($r7);
+        if $r11 == null goto label6;
+
+        $r6 = virtualinvoke $r11.<it.h3g.areaclienti3.d.am: java.lang.String C()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.d.al: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r11);
+        goto label6;
+    }
+
+    private void a(it.h3g.areaclienti3.d.aj)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        it.h3g.areaclienti3.d.aj $r1;
+        it.h3g.areaclienti3.d.z $r2;
+        java.lang.String $r3, $r9;
+        java.util.Iterator $r4;
+        it.h3g.areaclienti3.d.ai $r5;
+        boolean $z0;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.d.y $r7;
+        it.h3g.areaclienti3.d.x $r8;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.aj;
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f>;
+        $z0 = virtualinvoke $r2.<it.h3g.areaclienti3.d.z: boolean isEmpty()>();
+        if $z0 != 0 goto label1;
+
+        if $r1 == null goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: java.lang.String C()>();
+        $z0 = virtualinvoke $r2.<it.h3g.areaclienti3.d.z: boolean containsKey(java.lang.Object)>($r3);
+        if $z0 == 0 goto label1;
+
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: boolean a()>();
+        if $z0 == 0 goto label3;
+
+        $r5 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai x()>();
+        if $r5 == null goto label3;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: java.lang.String C()>();
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.d.z: java.lang.Object get(java.lang.Object)>($r3);
+        $r7 = (it.h3g.areaclienti3.d.y) $r6;
+        $r4 = virtualinvoke $r7.<it.h3g.areaclienti3.d.y: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: void a(it.h3g.areaclienti3.d.y)>($r7);
+
+     label1:
+        return;
+
+     label2:
+        $r6 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (it.h3g.areaclienti3.d.x) $r6;
+        $i0 = virtualinvoke $r8.<it.h3g.areaclienti3.d.x: int a()>();
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $r5 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: it.h3g.areaclienti3.d.ai x()>();
+        $r9 = virtualinvoke $r5.<it.h3g.areaclienti3.d.ai: java.lang.String a()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r9);
+        if $z0 != 0 goto label0;
+
+        interfaceinvoke $r4.<java.util.Iterator: void remove()>();
+        goto label0;
+
+     label3:
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.z f>;
+        $r9 = virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: java.lang.String C()>();
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.d.z: java.lang.Object get(java.lang.Object)>($r9);
+        $r7 = (it.h3g.areaclienti3.d.y) $r6;
+        virtualinvoke $r1.<it.h3g.areaclienti3.d.aj: void a(it.h3g.areaclienti3.d.y)>($r7);
+        goto label1;
+    }
+
+    private it.h3g.areaclienti3.d.aj b(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1, $r5, $r7;
+        java.lang.String $r2;
+        int $i0, $i1, $i2;
+        it.h3g.areaclienti3.d.aj $r3, $r8;
+        boolean $z0;
+        java.lang.Object $r4;
+        it.h3g.areaclienti3.d.aa $r6;
+        it.h3g.areaclienti3.d.ai $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $i2 = 0;
+        virtualinvoke $r1.<org.e.a.j: boolean a(java.lang.Object,int)>($r1, 0);
+        $r3 = new it.h3g.areaclienti3.d.aj;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.aj: void <init>()>();
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("code");
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("code");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void k(java.lang.String)>($r2);
+
+     label0:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("optionType");
+        if $z0 == 0 goto label1;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("optionType");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void a(java.lang.String)>($r2);
+
+     label1:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("status");
+        if $z0 == 0 goto label2;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("status");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void b(java.lang.String)>($r2);
+
+     label2:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("abstract");
+        if $z0 == 0 goto label3;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("abstract");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void l(java.lang.String)>($r2);
+
+     label3:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("title");
+        if $z0 == 0 goto label4;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("title");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void m(java.lang.String)>($r2);
+
+     label4:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("activationDate");
+        if $z0 == 0 goto label5;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("activationDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void r(java.lang.String)>($r2);
+
+     label5:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("expiryDate");
+        if $z0 == 0 goto label6;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("expiryDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void s(java.lang.String)>($r2);
+
+     label6:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("expiryDiscountDate");
+        if $z0 == 0 goto label7;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("expiryDiscountDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void t(java.lang.String)>($r2);
+
+     label7:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("renewDate");
+        if $z0 == 0 goto label8;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("renewDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void u(java.lang.String)>($r2);
+
+     label8:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("activationPrice");
+        if $z0 == 0 goto label9;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("activationPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void n(java.lang.String)>($r2);
+
+     label9:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("renewalPrice");
+        if $z0 == 0 goto label10;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("renewalPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void o(java.lang.String)>($r2);
+
+     label10:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("renewalPriceEnabled");
+        if $z0 == 0 goto label11;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("renewalPriceEnabled");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void e(boolean)>($z0);
+
+     label11:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("discountPrice");
+        if $z0 == 0 goto label12;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("discountPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void p(java.lang.String)>($r2);
+
+     label12:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("actionDescription");
+        if $z0 == 0 goto label13;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("actionDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void c(java.lang.String)>($r2);
+
+     label13:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("customDescription");
+        if $z0 == 0 goto label14;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("customDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void q(java.lang.String)>($r2);
+
+     label14:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("claimDescription");
+        if $z0 == 0 goto label15;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("claimDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void d(java.lang.String)>($r2);
+
+     label15:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("upgradeDescription");
+        if $z0 == 0 goto label16;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("upgradeDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void j(java.lang.String)>($r2);
+
+     label16:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("isDiscount");
+        if $z0 == 0 goto label17;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("isDiscount");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void g(boolean)>($z0);
+
+     label17:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("isComplex");
+        if $z0 == 0 goto label18;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("isComplex");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void a(boolean)>($z0);
+
+     label18:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("myBusiness");
+        if $z0 == 0 goto label19;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("myBusiness");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void b(boolean)>($z0);
+
+     label19:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("active");
+        if $z0 == 0 goto label20;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("active");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void h(boolean)>($z0);
+
+     label20:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("editable");
+        if $z0 == 0 goto label21;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("editable");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void i(boolean)>($z0);
+
+     label21:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("automaticRenewable");
+        if $z0 == 0 goto label22;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("automaticRenewable");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void c(boolean)>($z0);
+
+     label22:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("automaticRenewableEnabled");
+        if $z0 == 0 goto label23;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("automaticRenewableEnabled");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void d(boolean)>($z0);
+
+     label23:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("modificaAbilitazioneRinnovo");
+        if $z0 == 0 goto label24;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("modificaAbilitazioneRinnovo");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void e(java.lang.String)>($r2);
+
+     label24:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("modificaPartner");
+        if $z0 == 0 goto label25;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("modificaPartner");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void f(java.lang.String)>($r2);
+
+     label25:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("requiresPartnerMsisdn");
+        if $z0 == 0 goto label26;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("requiresPartnerMsisdn");
+        $z0 = (boolean) 0;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, $z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void f(boolean)>($z0);
+
+     label26:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("partnerMsisdns");
+        if $z0 == 0 goto label27;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("partnerMsisdns");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void g(java.lang.String)>($r2);
+
+     label27:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("extra");
+        if $z0 == 0 goto label28;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("extra");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void h(java.lang.String)>($r2);
+
+     label28:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("complexProducts");
+        if $z0 == 0 goto label30;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("complexProducts");
+        $r5 = (org.e.a.j) $r4;
+        $i1 = 0;
+
+     label29:
+        $i0 = virtualinvoke $r5.<org.e.a.j: int c()>();
+        if $i1 < $i0 goto label34;
+
+     label30:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("optionPackages");
+        if $z0 == 0 goto label32;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("optionPackages");
+        $r5 = (org.e.a.j) $r4;
+
+     label31:
+        $i1 = virtualinvoke $r5.<org.e.a.j: int c()>();
+        if $i2 < $i1 goto label36;
+
+     label32:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("optionIncompatibility");
+        if $z0 == 0 goto label33;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("optionIncompatibility");
+        $z0 = $r4 instanceof org.e.a.j;
+        if $z0 == 0 goto label33;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("optionIncompatibility");
+        $r5 = (org.e.a.j) $r4;
+        $r6 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.aa e(org.e.a.j)>($r5);
+        if $r6 == null goto label33;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void a(it.h3g.areaclienti3.d.aa)>($r6);
+
+     label33:
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: void a(it.h3g.areaclienti3.d.aj)>($r3);
+        return $r3;
+
+     label34:
+        $z0 = virtualinvoke $r5.<org.e.a.j: boolean e(java.lang.String)>("Product");
+        if $z0 == 0 goto label35;
+
+        $r4 = virtualinvoke $r5.<org.e.a.j: java.lang.Object a(int)>($i1);
+        $r7 = (org.e.a.j) $r4;
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.aj b(org.e.a.j)>($r7);
+        if $r8 == null goto label35;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void a(it.h3g.areaclienti3.d.aj)>($r8);
+
+     label35:
+        $i1 = $i1 + 1;
+        goto label29;
+
+     label36:
+        $z0 = virtualinvoke $r5.<org.e.a.j: boolean e(java.lang.String)>("optionPackage");
+        if $z0 == 0 goto label37;
+
+        $r4 = virtualinvoke $r5.<org.e.a.j: java.lang.Object a(int)>($i2);
+        $r7 = (org.e.a.j) $r4;
+        $r9 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.ai c(org.e.a.j)>($r7);
+        if $r9 == null goto label37;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aj: void a(it.h3g.areaclienti3.d.ai)>($r9);
+
+     label37:
+        $i2 = $i2 + 1;
+        goto label31;
+    }
+
+    private it.h3g.areaclienti3.d.ai c(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1, $r5;
+        java.lang.String $r2;
+        it.h3g.areaclienti3.d.ai $r3;
+        boolean $z1;
+        java.lang.Object $r4;
+        it.h3g.areaclienti3.d.n $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $r3 = new it.h3g.areaclienti3.d.ai;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.ai: void <init>()>();
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("packageId");
+        if $z1 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("packageId");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void a(java.lang.String)>($r2);
+
+     label0:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("title");
+        if $z1 == 0 goto label1;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("title");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void m(java.lang.String)>($r2);
+
+     label1:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("customDescription");
+        if $z1 == 0 goto label2;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("customDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void q(java.lang.String)>($r2);
+
+     label2:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("actionDescription");
+        if $z1 == 0 goto label3;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("actionDescription");
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void c(java.lang.String)>($r2);
+
+     label3:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("active");
+        if $z1 == 0 goto label4;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("active");
+        $z1 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, 0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void h(boolean)>($z1);
+
+     label4:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("editable");
+        if $z1 == 0 goto label5;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("editable");
+        $z1 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, 0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void i(boolean)>($z1);
+
+     label5:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("isDiscount");
+        if $z1 == 0 goto label6;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("isDiscount");
+        $z1 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, 0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void g(boolean)>($z1);
+
+     label6:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("activationDate");
+        if $z1 == 0 goto label7;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("activationDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void r(java.lang.String)>($r2);
+
+     label7:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("expiryDate");
+        if $z1 == 0 goto label8;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("expiryDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void s(java.lang.String)>($r2);
+
+     label8:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("expiryDiscountDate");
+        if $z1 == 0 goto label9;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("expiryDiscountDate");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void t(java.lang.String)>($r2);
+
+     label9:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("renewalPrice");
+        if $z1 == 0 goto label10;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("renewalPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void o(java.lang.String)>($r2);
+
+     label10:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("activationPrice");
+        if $z1 == 0 goto label11;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("activationPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void n(java.lang.String)>($r2);
+
+     label11:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("discountPrice");
+        if $z1 == 0 goto label12;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("discountPrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void p(java.lang.String)>($r2);
+
+     label12:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("changePackagePrice");
+        if $z1 == 0 goto label13;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("changePackagePrice");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void b(java.lang.String)>($r2);
+
+     label13:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("endTieLabel");
+        if $z1 == 0 goto label14;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("endTieLabel");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void a_(java.lang.String)>($r2);
+
+     label14:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("endTie");
+        if $z1 == 0 goto label15;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("endTie");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void d(java.lang.String)>($r2);
+
+     label15:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("chargeMode");
+        if $z1 == 0 goto label16;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("chargeMode");
+        $z1 = $r4 instanceof org.e.a.j;
+        if $z1 == 0 goto label16;
+
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.Object c(java.lang.String)>("chargeMode");
+        $r5 = (org.e.a.j) $r4;
+        $r6 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.n d(org.e.a.j)>($r5);
+        if $r6 == null goto label16;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void a(it.h3g.areaclienti3.d.n)>($r6);
+
+     label16:
+        $z1 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("changeRenewal");
+        if $z1 == 0 goto label17;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("changeRenewal");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.ai: void e(java.lang.String)>($r2);
+
+     label17:
+        return $r3;
+    }
+
+    private it.h3g.areaclienti3.d.n d(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1;
+        it.h3g.areaclienti3.d.n $r2;
+        java.lang.String $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $r2 = new it.h3g.areaclienti3.d.n;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.n: void <init>()>();
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("label");
+        if $z0 == 0 goto label0;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("label");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.n: void a(java.lang.String)>($r3);
+
+     label0:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("text");
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("text");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.n: void b(java.lang.String)>($r3);
+
+     label1:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("popupMessage");
+        if $z0 == 0 goto label2;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("popupMessage");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.n: void c(java.lang.String)>($r3);
+
+     label2:
+        return $r2;
+    }
+
+    private it.h3g.areaclienti3.d.aa e(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1;
+        java.lang.String $r2, $r5;
+        boolean $z0, $z2;
+        it.h3g.areaclienti3.d.aa $r3;
+        java.lang.Boolean $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $z0 = 1;
+        $r3 = new it.h3g.areaclienti3.d.aa;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.aa: void <init>()>();
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("incompatibility");
+        if $z2 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("incompatibility");
+        $z2 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(java.lang.String,boolean)>($r2, 0);
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void a(java.lang.Boolean)>($r4);
+
+     label0:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("error");
+        if $z2 == 0 goto label2;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("error");
+        $z2 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("true");
+        if $z2 == 0 goto label16;
+
+        $z2 = 1;
+
+     label1:
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void d(java.lang.Boolean)>($r4);
+
+     label2:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("messageError");
+        if $z2 == 0 goto label3;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("messageError");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void d(java.lang.String)>($r5);
+
+     label3:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("canAction");
+        if $z2 == 0 goto label5;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("canAction");
+        $z2 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("true");
+        if $z2 == 0 goto label17;
+
+        $z2 = 1;
+
+     label4:
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z2);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void b(java.lang.Boolean)>($r4);
+
+     label5:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("messageCanAction");
+        if $z2 == 0 goto label6;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("messageCanAction");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void e(java.lang.String)>($r5);
+
+     label6:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("alreadyPerform");
+        if $z2 == 0 goto label8;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("alreadyPerform");
+        $z2 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("true");
+        if $z2 == 0 goto label18;
+
+     label7:
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void c(java.lang.Boolean)>($r4);
+
+     label8:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("messageAlreadyPerform");
+        if $z2 == 0 goto label9;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("messageAlreadyPerform");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void c(java.lang.String)>($r5);
+
+     label9:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("optionListUpgrade");
+        if $z2 == 0 goto label10;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("optionListUpgrade");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void i(java.lang.String)>($r5);
+
+     label10:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("upgradeMessage");
+        if $z2 == 0 goto label11;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("upgradeMessage");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void a(java.lang.String)>($r5);
+
+     label11:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("popUpMessage");
+        if $z2 == 0 goto label12;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("popUpMessage");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void b(java.lang.String)>($r5);
+
+     label12:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("buttonLabel");
+        if $z2 == 0 goto label13;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("buttonLabel");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void f(java.lang.String)>($r5);
+
+     label13:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("combination");
+        if $z2 == 0 goto label14;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("combination");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void g(java.lang.String)>($r5);
+
+     label14:
+        $z2 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("condition");
+        if $z2 == 0 goto label15;
+
+        $r5 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("condition");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.aa: void h(java.lang.String)>($r5);
+
+     label15:
+        return $r3;
+
+     label16:
+        $z2 = 0;
+        goto label1;
+
+     label17:
+        $z2 = 0;
+        goto label4;
+
+     label18:
+        $z0 = 0;
+        goto label7;
+    }
+
+    private it.h3g.areaclienti3.d.am f(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        org.e.a.j $r1;
+        it.h3g.areaclienti3.d.am $r2;
+        java.lang.String $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: org.e.a.j;
+        $r2 = new it.h3g.areaclienti3.d.am;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.am: void <init>()>();
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("title");
+        if $z0 == 0 goto label0;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("title");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.am: void m(java.lang.String)>($r3);
+
+     label0:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("code");
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<org.e.a.j: java.lang.String g(java.lang.String)>("code");
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.am: void k(java.lang.String)>($r3);
+
+     label1:
+        return $r2;
+    }
+
+    public java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        it.h3g.areaclienti3.remoteservice.b.i $r1;
+        java.lang.Object $r2;
+        it.h3g.areaclienti3.remoteservice.b.k.i $r3;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.k.h $r4;
+        java.util.Vector $r5;
+        org.e.a.j $r6;
+        java.util.Iterator $r7;
+        it.h3g.areaclienti3.d.bb $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 := @parameter0: it.h3g.areaclienti3.remoteservice.b.i;
+        $r4 = (it.h3g.areaclienti3.remoteservice.b.k.h) $r1;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.remoteservice.b.k.h g> = $r4;
+        $r3 = new it.h3g.areaclienti3.remoteservice.b.k.i;
+        specialinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.k.i: void <init>()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: java.lang.Object h()>();
+        if $r2 != null goto label0;
+
+        return $r3;
+
+     label0:
+        $z0 = $r2 instanceof org.e.a.j;
+        if $z0 == 0 goto label4;
+
+        $r5 = new java.util.Vector;
+        specialinvoke $r5.<java.util.Vector: void <init>()>();
+        $r6 = (org.e.a.j) $r2;
+        virtualinvoke $r5.<java.util.Vector: boolean add(java.lang.Object)>($r6);
+
+     label1:
+        if $r5 == null goto label3;
+
+        $r7 = virtualinvoke $r5.<java.util.Vector: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label5;
+
+     label3:
+        return $r3;
+
+     label4:
+        $z0 = $r2 instanceof java.util.Vector;
+        if $z0 == 0 goto label6;
+
+        $r5 = (java.util.Vector) $r2;
+        goto label1;
+
+     label5:
+        $r2 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (org.e.a.j) $r2;
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.d.bb a(org.e.a.j)>($r6);
+        if $r8 == null goto label2;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.k.i: void a(it.h3g.areaclienti3.d.bb)>($r8);
+        goto label2;
+
+     label6:
+        $r5 = null;
+        goto label1;
+    }
+
+    public java.util.ArrayList f()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        java.util.ArrayList $r1;
+        it.h3g.areaclienti3.remoteservice.b.k.h $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.remoteservice.b.k.h g>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.k.h: java.lang.String b()>();
+        virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r3);
+        return $r1;
+    }
+
+    public java.util.ArrayList g()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        java.util.ArrayList $r1;
+        it.h3g.areaclienti3.remoteservice.b.k.h $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: it.h3g.areaclienti3.remoteservice.b.k.h g>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.k.h: java.lang.String a()>();
+        virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r3);
+        return $r1;
+    }
+
+    public java.lang.String i()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232019);
+        return $r3;
+    }
+
+    public java.lang.String j()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232022);
+        return $r3;
+    }
+
+    public java.lang.String k()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232020);
+        return $r3;
+    }
+
+    public java.lang.String l()
+    {
+        it.h3g.areaclienti3.remoteservice.b.k.g $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.k.g;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.k.g: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232021);
+        return $r3;
+    }
+}

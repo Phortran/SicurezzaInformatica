@@ -1,0 +1,70 @@
+final class com.google.android.gms.internal.ff$b extends com.google.android.gms.internal.fd$a
+{
+    final com.google.android.gms.internal.ff a;
+    private final com.google.android.gms.c.c b;
+    private final com.google.android.gms.c.b c;
+    private final android.net.Uri d;
+
+    public void a(int, android.os.Bundle, int, android.content.Intent)
+    {
+        com.google.android.gms.internal.ff$b $r0;
+        int $i0, $i1;
+        android.os.Bundle $r1;
+        android.content.Intent $r2;
+        android.net.Uri $r3;
+        com.google.android.gms.common.a $r4;
+        com.google.android.gms.internal.ff $r5, $r12;
+        android.content.Context $r6;
+        android.app.PendingIntent $r7;
+        android.os.Parcelable $r9;
+        com.google.android.gms.c.c $r10;
+        com.google.android.gms.internal.ij $r11;
+        com.google.android.gms.internal.ik $r13;
+        com.google.android.gms.c.b $r14;
+
+        $r0 := @this: com.google.android.gms.internal.ff$b;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Bundle;
+        $i1 := @parameter2: int;
+        $r2 := @parameter3: android.content.Intent;
+        $r3 = $r0.<com.google.android.gms.internal.ff$b: android.net.Uri d>;
+        if $r3 == null goto label0;
+
+        $r5 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.internal.ff a>;
+        $r6 = virtualinvoke $r5.<com.google.android.gms.internal.ff: android.content.Context h()>();
+        $r3 = $r0.<com.google.android.gms.internal.ff$b: android.net.Uri d>;
+        virtualinvoke $r6.<android.content.Context: void revokeUriPermission(android.net.Uri,int)>($r3, 1);
+
+     label0:
+        $r7 = null;
+        if $r1 == null goto label1;
+
+        $r9 = virtualinvoke $r1.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("pendingIntent");
+        $r7 = (android.app.PendingIntent) $r9;
+
+     label1:
+        $r4 = new com.google.android.gms.common.a;
+        specialinvoke $r4.<com.google.android.gms.common.a: void <init>(int,android.app.PendingIntent)>($i0, $r7);
+        $r10 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.c.c b>;
+        if $r10 == null goto label3;
+
+        $r5 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.internal.ff a>;
+        $r11 = new com.google.android.gms.internal.ij;
+        $r12 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.internal.ff a>;
+        $r10 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.c.c b>;
+        specialinvoke $r11.<com.google.android.gms.internal.ij: void <init>(com.google.android.gms.internal.ff,com.google.android.gms.c.c,com.google.android.gms.common.a,int,android.content.Intent)>($r12, $r10, $r4, $i1, $r2);
+        virtualinvoke $r5.<com.google.android.gms.internal.ff: void a(com.google.android.gms.internal.ev)>($r11);
+
+     label2:
+        return;
+
+     label3:
+        $r12 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.internal.ff a>;
+        $r13 = new com.google.android.gms.internal.ik;
+        $r5 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.internal.ff a>;
+        $r14 = $r0.<com.google.android.gms.internal.ff$b: com.google.android.gms.c.b c>;
+        specialinvoke $r13.<com.google.android.gms.internal.ik: void <init>(com.google.android.gms.internal.ff,com.google.android.gms.c.b,com.google.android.gms.common.a,android.content.Intent)>($r5, $r14, $r4, $r2);
+        virtualinvoke $r12.<com.google.android.gms.internal.ff: void a(com.google.android.gms.internal.ev)>($r13);
+        goto label2;
+    }
+}

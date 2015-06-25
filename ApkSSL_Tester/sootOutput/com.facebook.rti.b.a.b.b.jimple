@@ -1,0 +1,109 @@
+public final class com.facebook.rti.b.a.b.b extends java.lang.Object
+{
+    private final android.content.Context A;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public final int k;
+    public final int l;
+    public final int m;
+    public final int n;
+    public final int o;
+    public final int p;
+    public final int q;
+    public final long r;
+    public final long s;
+    public final android.content.BroadcastReceiver t;
+    public java.lang.String u;
+    public java.lang.String v;
+    public int w;
+    public int x;
+    public boolean y;
+    public boolean z;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.rti.b.a.b.b $r0;
+        android.content.Context $r1;
+        com.facebook.rti.b.a.b.c $r2;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.a.b.b;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new com.facebook.rti.b.a.b.c;
+        specialinvoke $r2.<com.facebook.rti.b.a.b.c: void <init>(com.facebook.rti.b.a.b.b)>($r0);
+        $r0.<com.facebook.rti.b.a.b.b: android.content.BroadcastReceiver t> = $r2;
+        $r0.<com.facebook.rti.b.a.b.b: android.content.Context A> = $r1;
+        $r0.<com.facebook.rti.b.a.b.b: java.lang.String u> = "orcart.facebook.com";
+        $r0.<com.facebook.rti.b.a.b.b: java.lang.String v> = "edge-mqtt.facebook.com";
+        $r0.<com.facebook.rti.b.a.b.b: int x> = 443;
+        $r0.<com.facebook.rti.b.a.b.b: boolean y> = 1;
+        $r0.<com.facebook.rti.b.a.b.b: boolean z> = 1;
+        $r0.<com.facebook.rti.b.a.b.b: int a> = 60;
+        $r0.<com.facebook.rti.b.a.b.b: int b> = 60;
+        $r0.<com.facebook.rti.b.a.b.b: int c> = 60;
+        $r0.<com.facebook.rti.b.a.b.b: int d> = 59;
+        $r0.<com.facebook.rti.b.a.b.b: int e> = 3;
+        $i0 = (int) 1;
+        $r0.<com.facebook.rti.b.a.b.b: int f> = $i0;
+        $r0.<com.facebook.rti.b.a.b.b: int g> = 0;
+        $r0.<com.facebook.rti.b.a.b.b: int h> = 2;
+        $r0.<com.facebook.rti.b.a.b.b: int i> = 10;
+        $r0.<com.facebook.rti.b.a.b.b: int j> = 900;
+        $r0.<com.facebook.rti.b.a.b.b: int k> = 120;
+        $r0.<com.facebook.rti.b.a.b.b: int l> = 900;
+        $r0.<com.facebook.rti.b.a.b.b: int m> = 300;
+        $r0.<com.facebook.rti.b.a.b.b: int n> = 0;
+        $r0.<com.facebook.rti.b.a.b.b: int o> = 5;
+        $r0.<com.facebook.rti.b.a.b.b: int p> = 5;
+        $r0.<com.facebook.rti.b.a.b.b: int q> = -1;
+        $r0.<com.facebook.rti.b.a.b.b: long r> = 0L;
+        $r0.<com.facebook.rti.b.a.b.b: long s> = 0L;
+        $r0.<com.facebook.rti.b.a.b.b: int w> = 443;
+        return;
+    }
+
+    static android.content.SharedPreferences a(com.facebook.rti.b.a.b.b)
+    {
+        com.facebook.rti.b.a.b.b $r0;
+        android.content.SharedPreferences $r1;
+
+        $r0 := @parameter0: com.facebook.rti.b.a.b.b;
+        $r1 = specialinvoke $r0.<com.facebook.rti.b.a.b.b: android.content.SharedPreferences b()>();
+        return $r1;
+    }
+
+    private android.content.SharedPreferences b()
+    {
+        com.facebook.rti.b.a.b.b $r0;
+        com.facebook.rti.a.f.a $r1;
+        android.content.Context $r2;
+        android.content.SharedPreferences $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.b.b;
+        $r1 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r2 = $r0.<com.facebook.rti.b.a.b.b: android.content.Context A>;
+        $r4 = virtualinvoke $r1.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String,boolean)>($r2, "rti.mqtt.mqtt_config", 1);
+        return $r4;
+    }
+
+    public final int a()
+    {
+        com.facebook.rti.b.a.b.b $r0;
+        android.content.SharedPreferences $r1;
+        int $i1;
+
+        $r0 := @this: com.facebook.rti.b.a.b.b;
+        $r1 = specialinvoke $r0.<com.facebook.rti.b.a.b.b: android.content.SharedPreferences b()>();
+        $i1 = interfaceinvoke $r1.<android.content.SharedPreferences: int getInt(java.lang.String,int)>("device_on_keepalive_override", 300);
+        return $i1;
+    }
+}

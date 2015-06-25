@@ -1,0 +1,69 @@
+class it.h3g.areaclienti3.at extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.PagerActivity a;
+
+    void <init>(it.h3g.areaclienti3.PagerActivity)
+    {
+        it.h3g.areaclienti3.at $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.at;
+        $r1 := @parameter0: it.h3g.areaclienti3.PagerActivity;
+        $r0.<it.h3g.areaclienti3.at: it.h3g.areaclienti3.PagerActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.at $r0;
+        android.view.View $r1;
+        java.lang.Object $r2;
+        int $i0, $i1;
+        android.widget.LinearLayout $r3, $r5;
+        android.widget.ImageView $r4;
+        it.h3g.areaclienti3.PagerActivity $r6;
+        android.content.Context $r7;
+        android.view.animation.Animation $r8;
+        it.h3g.areaclienti3.j.c $r9;
+        android.widget.ScrollView $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.at;
+        $r1 := @parameter0: android.view.View;
+        $r2 = virtualinvoke $r1.<android.view.View: java.lang.Object getTag()>();
+        $r3 = (android.widget.LinearLayout) $r2;
+        $r1 = virtualinvoke $r3.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165508);
+        $r4 = (android.widget.ImageView) $r1;
+        $r1 = virtualinvoke $r3.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165511);
+        $r5 = (android.widget.LinearLayout) $r1;
+        $i0 = virtualinvoke $r5.<android.widget.LinearLayout: int getVisibility()>();
+        if $i0 != 8 goto label1;
+
+        $r6 = $r0.<it.h3g.areaclienti3.at: it.h3g.areaclienti3.PagerActivity a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.content.Context a(it.h3g.areaclienti3.PagerActivity)>($r6);
+        $r8 = staticinvoke <android.view.animation.AnimationUtils: android.view.animation.Animation loadAnimation(android.content.Context,int)>($r7, 2130968583);
+        virtualinvoke $r4.<android.widget.ImageView: void startAnimation(android.view.animation.Animation)>($r8);
+        $r9 = new it.h3g.areaclienti3.j.c;
+        specialinvoke $r9.<it.h3g.areaclienti3.j.c: void <init>(android.view.View,boolean)>($r5, 1);
+        virtualinvoke $r5.<android.widget.LinearLayout: void startAnimation(android.view.animation.Animation)>($r9);
+        $r6 = $r0.<it.h3g.areaclienti3.at: it.h3g.areaclienti3.PagerActivity a>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.PagerActivity: android.view.View findViewById(int)>(2131165505);
+        $r10 = (android.widget.ScrollView) $r1;
+        $i1 = virtualinvoke $r3.<android.widget.LinearLayout: int getTop()>();
+        $i0 = (int) 0;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.widget.ScrollView,int,int)>($r10, $i0, $i1);
+
+     label0:
+        return;
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.at: it.h3g.areaclienti3.PagerActivity a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.content.Context a(it.h3g.areaclienti3.PagerActivity)>($r6);
+        $r8 = staticinvoke <android.view.animation.AnimationUtils: android.view.animation.Animation loadAnimation(android.content.Context,int)>($r7, 2130968582);
+        virtualinvoke $r4.<android.widget.ImageView: void startAnimation(android.view.animation.Animation)>($r8);
+        $r9 = new it.h3g.areaclienti3.j.c;
+        specialinvoke $r9.<it.h3g.areaclienti3.j.c: void <init>(android.view.View,boolean)>($r5, 0);
+        virtualinvoke $r5.<android.widget.LinearLayout: void startAnimation(android.view.animation.Animation)>($r9);
+        goto label0;
+    }
+}

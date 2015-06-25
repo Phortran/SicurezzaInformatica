@@ -1,0 +1,44 @@
+class it.h3g.areaclienti3.tremobility.f extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.tremobility.b a;
+
+    void <init>(it.h3g.areaclienti3.tremobility.b)
+    {
+        it.h3g.areaclienti3.tremobility.f $r0;
+        it.h3g.areaclienti3.tremobility.b $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.f;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.b;
+        $r0.<it.h3g.areaclienti3.tremobility.f: it.h3g.areaclienti3.tremobility.b a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.tremobility.f $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.tremobility.b $r2;
+        java.lang.String $r3;
+        it.h3g.areaclienti3.fragments.c $r4;
+        android.content.Intent $r5;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r6;
+        android.net.Uri $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.f;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.f: it.h3g.areaclienti3.tremobility.b a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.tremobility.b: it.h3g.areaclienti3.fragments.c a(it.h3g.areaclienti3.tremobility.b)>($r2);
+        interfaceinvoke $r4.<it.h3g.areaclienti3.fragments.c: void i()>();
+        $r5 = new android.content.Intent;
+        specialinvoke $r5.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.f: it.h3g.areaclienti3.tremobility.b a>;
+        $r6 = $r2.<it.h3g.areaclienti3.tremobility.b: it.h3g.areaclienti3.tremobility.model.TreMobTicket h>;
+        $r3 = virtualinvoke $r6.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getWeb()>();
+        $r7 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        virtualinvoke $r5.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r7);
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.f: it.h3g.areaclienti3.tremobility.b a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.tremobility.b: void startActivity(android.content.Intent)>($r5);
+        return;
+    }
+}

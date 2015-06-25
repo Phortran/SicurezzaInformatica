@@ -1,0 +1,150 @@
+public class com.a.a.bh extends java.lang.Object implements com.a.a.w
+{
+    static volatile java.lang.Object a;
+    private static final java.lang.Object b;
+    private final android.content.Context c;
+
+    static void <clinit>()
+    {
+        java.lang.Object $r0;
+
+        $r0 = new java.lang.Object;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        <com.a.a.bh: java.lang.Object b> = $r0;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        com.a.a.bh $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.a.a.bh;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.a.a.bh: android.content.Context c> = $r1;
+        return;
+    }
+
+    private static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.Object $r1, $r2;
+        java.lang.Throwable $r3;
+        java.io.IOException $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <com.a.a.bh: java.lang.Object a>;
+        if $r1 != null goto label2;
+
+        $r2 = <com.a.a.bh: java.lang.Object b>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = <com.a.a.bh: java.lang.Object a>;
+        if $r1 != null goto label1;
+
+        $r1 = staticinvoke <com.a.a.bi: java.lang.Object a(android.content.Context)>($r0);
+        <com.a.a.bh: java.lang.Object a> = $r1;
+
+     label1:
+        exitmonitor $r2;
+
+     label2:
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+        exitmonitor $r2;
+
+     label4:
+        throw $r3;
+
+     label5:
+        $r4 := @caughtexception;
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+        catch java.io.IOException from label4 to label5 with label5;
+    }
+
+    public com.a.a.x a(android.net.Uri, boolean)
+    {
+        com.a.a.bh $r0;
+        android.net.Uri $r1;
+        boolean $z0, $z1;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        com.a.a.x $r4;
+        java.net.HttpURLConnection $r5;
+        android.content.Context $r6;
+        java.lang.String $r7;
+        com.a.a.y $r8;
+        long $l3;
+        java.io.InputStream $r9;
+
+        $r0 := @this: com.a.a.bh;
+        $r1 := @parameter0: android.net.Uri;
+        $z0 := @parameter1: boolean;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 14 goto label0;
+
+        $r6 = $r0.<com.a.a.bh: android.content.Context c>;
+        staticinvoke <com.a.a.bh: void a(android.content.Context)>($r6);
+
+     label0:
+        $r5 = virtualinvoke $r0.<com.a.a.bh: java.net.HttpURLConnection a(android.net.Uri)>($r1);
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setUseCaches(boolean)>(1);
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("Cache-Control", "only-if-cached,max-age=2147483647");
+
+     label1:
+        $i0 = virtualinvoke $r5.<java.net.HttpURLConnection: int getResponseCode()>();
+        if $i0 < 300 goto label2;
+
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        $r8 = new com.a.a.y;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r7 = virtualinvoke $r5.<java.net.HttpURLConnection: java.lang.String getResponseMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r8.<com.a.a.y: void <init>(java.lang.String)>($r7);
+        throw $r8;
+
+     label2:
+        $i0 = virtualinvoke $r5.<java.net.HttpURLConnection: int getHeaderFieldInt(java.lang.String,int)>("Content-Length", -1);
+        $l3 = (long) $i0;
+        $r7 = virtualinvoke $r5.<java.net.HttpURLConnection: java.lang.String getHeaderField(java.lang.String)>("X-Android-Response-Source");
+        $z1 = staticinvoke <com.a.a.bj: boolean a(java.lang.String)>($r7);
+        $r4 = new com.a.a.x;
+        $r9 = virtualinvoke $r5.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>();
+        specialinvoke $r4.<com.a.a.x: void <init>(java.io.InputStream,boolean,long)>($r9, $z1, $l3);
+        return $r4;
+    }
+
+    protected java.net.HttpURLConnection a(android.net.Uri)
+    {
+        com.a.a.bh $r0;
+        android.net.Uri $r1;
+        java.net.URL $r2;
+        java.lang.String $r3;
+        java.net.URLConnection $r4;
+        java.net.HttpURLConnection $r5;
+
+        $r0 := @this: com.a.a.bh;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 = new java.net.URL;
+        $r3 = virtualinvoke $r1.<android.net.Uri: java.lang.String toString()>();
+        specialinvoke $r2.<java.net.URL: void <init>(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r2.<java.net.URL: java.net.URLConnection openConnection()>();
+        $r5 = (java.net.HttpURLConnection) $r4;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setConnectTimeout(int)>(15000);
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setReadTimeout(int)>(20000);
+        return $r5;
+    }
+}

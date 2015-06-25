@@ -1,0 +1,217 @@
+public class org.b.a.a.b extends java.lang.Object
+{
+    public static final char a;
+    public static final java.lang.String b;
+
+    static void <clinit>()
+    {
+        char $c0;
+        java.lang.String $r0;
+        org.b.a.a.a.b $r1;
+        java.io.PrintWriter $r2;
+
+        $c0 = <java.io.File: char separatorChar>;
+        <org.b.a.a.b: char a> = $c0;
+        $r1 = new org.b.a.a.a.b;
+        specialinvoke $r1.<org.b.a.a.a.b: void <init>(int)>(4);
+        $r2 = new java.io.PrintWriter;
+        specialinvoke $r2.<java.io.PrintWriter: void <init>(java.io.Writer)>($r1);
+        virtualinvoke $r2.<java.io.PrintWriter: void println()>();
+        $r0 = virtualinvoke $r1.<org.b.a.a.a.b: java.lang.String toString()>();
+        <org.b.a.a.b: java.lang.String b> = $r0;
+        virtualinvoke $r2.<java.io.PrintWriter: void close()>();
+        return;
+    }
+
+    public static int a(java.io.InputStream, java.io.OutputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.OutputStream $r1;
+        long $l0;
+        byte $b2;
+        int $i3;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.io.OutputStream;
+        $l0 = staticinvoke <org.b.a.a.b: long b(java.io.InputStream,java.io.OutputStream)>($r0, $r1);
+        $b2 = $l0 cmp 2147483647L;
+        if $b2 <= 0 goto label0;
+
+        return -1;
+
+     label0:
+        $i3 = (int) $l0;
+        return $i3;
+    }
+
+    public static int a(java.io.Reader, java.io.Writer)
+    {
+        java.io.Reader $r0;
+        java.io.Writer $r1;
+        long $l0;
+        byte $b2;
+        int $i3;
+
+        $r0 := @parameter0: java.io.Reader;
+        $r1 := @parameter1: java.io.Writer;
+        $l0 = staticinvoke <org.b.a.a.b: long b(java.io.Reader,java.io.Writer)>($r0, $r1);
+        $b2 = $l0 cmp 2147483647L;
+        if $b2 <= 0 goto label0;
+
+        return -1;
+
+     label0:
+        $i3 = (int) $l0;
+        return $i3;
+    }
+
+    public static long a(java.io.InputStream, java.io.OutputStream, byte[])
+    {
+        java.io.InputStream $r0;
+        java.io.OutputStream $r1;
+        byte[] $r2;
+        long $l0, $l3;
+        int $i2;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.io.OutputStream;
+        $r2 := @parameter2: byte[];
+        $l0 = 0L;
+
+     label0:
+        $i2 = virtualinvoke $r0.<java.io.InputStream: int read(byte[])>($r2);
+        if -1 == $i2 goto label1;
+
+        virtualinvoke $r1.<java.io.OutputStream: void write(byte[],int,int)>($r2, 0, $i2);
+        $l3 = (long) $i2;
+        $l0 = $l0 + $l3;
+        goto label0;
+
+     label1:
+        return $l0;
+    }
+
+    public static long a(java.io.Reader, java.io.Writer, char[])
+    {
+        java.io.Reader $r0;
+        java.io.Writer $r1;
+        char[] $r2;
+        long $l0, $l3;
+        int $i2;
+
+        $r0 := @parameter0: java.io.Reader;
+        $r1 := @parameter1: java.io.Writer;
+        $r2 := @parameter2: char[];
+        $l0 = 0L;
+
+     label0:
+        $i2 = virtualinvoke $r0.<java.io.Reader: int read(char[])>($r2);
+        if -1 == $i2 goto label1;
+
+        virtualinvoke $r1.<java.io.Writer: void write(char[],int,int)>($r2, 0, $i2);
+        $l3 = (long) $i2;
+        $l0 = $l0 + $l3;
+        goto label0;
+
+     label1:
+        return $l0;
+    }
+
+    public static java.lang.String a(java.io.InputStream, java.nio.charset.Charset)
+    {
+        java.io.InputStream $r0;
+        java.nio.charset.Charset $r1;
+        org.b.a.a.a.b $r2;
+        java.lang.String $r3;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.nio.charset.Charset;
+        $r2 = new org.b.a.a.a.b;
+        specialinvoke $r2.<org.b.a.a.a.b: void <init>()>();
+        staticinvoke <org.b.a.a.b: void a(java.io.InputStream,java.io.Writer,java.nio.charset.Charset)>($r0, $r2, $r1);
+        $r3 = virtualinvoke $r2.<org.b.a.a.a.b: java.lang.String toString()>();
+        return $r3;
+    }
+
+    public static java.lang.String a(byte[])
+    {
+        byte[] $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: byte[];
+        $r1 = new java.lang.String;
+        specialinvoke $r1.<java.lang.String: void <init>(byte[])>($r0);
+        return $r1;
+    }
+
+    public static void a(java.io.InputStream, java.io.Writer, java.nio.charset.Charset)
+    {
+        java.io.InputStream $r0;
+        java.io.Writer $r1;
+        java.nio.charset.Charset $r2;
+        java.io.InputStreamReader $r3;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.io.Writer;
+        $r2 := @parameter2: java.nio.charset.Charset;
+        $r3 = new java.io.InputStreamReader;
+        $r2 = staticinvoke <org.b.a.a.a: java.nio.charset.Charset a(java.nio.charset.Charset)>($r2);
+        specialinvoke $r3.<java.io.InputStreamReader: void <init>(java.io.InputStream,java.nio.charset.Charset)>($r0, $r2);
+        staticinvoke <org.b.a.a.b: int a(java.io.Reader,java.io.Writer)>($r3, $r1);
+        return;
+    }
+
+    public static byte[] a(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        org.b.a.a.a.a $r1;
+        byte[] $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 = new org.b.a.a.a.a;
+        specialinvoke $r1.<org.b.a.a.a.a: void <init>()>();
+        staticinvoke <org.b.a.a.b: int a(java.io.InputStream,java.io.OutputStream)>($r0, $r1);
+        $r2 = virtualinvoke $r1.<org.b.a.a.a.a: byte[] a()>();
+        return $r2;
+    }
+
+    public static long b(java.io.InputStream, java.io.OutputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.OutputStream $r1;
+        long $l1;
+        byte[] $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.io.OutputStream;
+        $r2 = newarray (byte)[4096];
+        $l1 = staticinvoke <org.b.a.a.b: long a(java.io.InputStream,java.io.OutputStream,byte[])>($r0, $r1, $r2);
+        return $l1;
+    }
+
+    public static long b(java.io.Reader, java.io.Writer)
+    {
+        java.io.Reader $r0;
+        java.io.Writer $r1;
+        long $l1;
+        char[] $r2;
+
+        $r0 := @parameter0: java.io.Reader;
+        $r1 := @parameter1: java.io.Writer;
+        $r2 = newarray (char)[4096];
+        $l1 = staticinvoke <org.b.a.a.b: long a(java.io.Reader,java.io.Writer,char[])>($r0, $r1, $r2);
+        return $l1;
+    }
+
+    public static java.lang.String b(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        java.nio.charset.Charset $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset defaultCharset()>();
+        $r2 = staticinvoke <org.b.a.a.b: java.lang.String a(java.io.InputStream,java.nio.charset.Charset)>($r0, $r1);
+        return $r2;
+    }
+}

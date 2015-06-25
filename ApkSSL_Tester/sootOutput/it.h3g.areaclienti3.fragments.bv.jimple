@@ -1,0 +1,46 @@
+class it.h3g.areaclienti3.fragments.bv extends android.webkit.WebViewClient
+{
+    final it.h3g.areaclienti3.fragments.bu a;
+
+    void <init>(it.h3g.areaclienti3.fragments.bu)
+    {
+        it.h3g.areaclienti3.fragments.bv $r0;
+        it.h3g.areaclienti3.fragments.bu $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bv;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.bu;
+        $r0.<it.h3g.areaclienti3.fragments.bv: it.h3g.areaclienti3.fragments.bu a> = $r1;
+        specialinvoke $r0.<android.webkit.WebViewClient: void <init>()>();
+        return;
+    }
+
+    public boolean shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.bv $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r5;
+        java.lang.StringBuilder $r4;
+        it.h3g.areaclienti3.fragments.bu $r6;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bv;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("url ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SocialFragment", $r5);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.bv: it.h3g.areaclienti3.fragments.bu a>;
+        $z0 = staticinvoke <it.h3g.areaclienti3.fragments.bu: boolean a(it.h3g.areaclienti3.fragments.bu,java.lang.String)>($r6, $r2);
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r1.<android.webkit.WebView: void loadUrl(java.lang.String)>($r2);
+        return 1;
+
+     label0:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.bv: it.h3g.areaclienti3.fragments.bu a>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.fragments.bu: void a(java.lang.String)>($r2);
+        return 1;
+    }
+}

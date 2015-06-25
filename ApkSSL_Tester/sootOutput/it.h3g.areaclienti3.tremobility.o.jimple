@@ -1,0 +1,96 @@
+public class it.h3g.areaclienti3.tremobility.o extends java.lang.Object
+{
+    private android.content.Context a;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.tremobility.o $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.o;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a> = $r1;
+        return;
+    }
+
+    public void a(it.h3g.areaclienti3.tremobility.model.TreMobTicket, android.widget.ImageView)
+    {
+        it.h3g.areaclienti3.tremobility.o $r0;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r1;
+        android.widget.ImageView $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4, $r6, $r7;
+        int $i0;
+        android.content.Context $r5;
+        boolean $z0;
+        com.a.a.ah $r8;
+        com.a.a.ax $r9;
+        android.content.res.Resources $r10, $r11;
+        android.graphics.drawable.Drawable $r12;
+        java.lang.Exception $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.o;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.model.TreMobTicket;
+        $r2 := @parameter1: android.widget.ImageView;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("logo_");
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCodice()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCodice()>();
+        if $r4 == null goto label0;
+
+        $r7 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCodice()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("null");
+        if $z0 != 0 goto label0;
+
+        $r7 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getIcon()>();
+        if $r7 != null goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a>;
+        $r8 = staticinvoke <com.a.a.ah: com.a.a.ah a(android.content.Context)>($r5);
+        $r9 = virtualinvoke $r8.<com.a.a.ah: com.a.a.ax a(int)>(2130837793);
+        virtualinvoke $r9.<com.a.a.ax: void a(android.widget.ImageView)>($r2);
+
+     label0:
+        return;
+
+     label1:
+        $r7 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getIcon()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 != 0 goto label2;
+
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a>;
+        $r8 = staticinvoke <com.a.a.ah: com.a.a.ah a(android.content.Context)>($r5);
+        $r7 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getIcon()>();
+        $r9 = virtualinvoke $r8.<com.a.a.ah: com.a.a.ax a(java.lang.String)>($r7);
+        $r9 = virtualinvoke $r9.<com.a.a.ax: com.a.a.ax a(int)>(2130837793);
+        $r9 = virtualinvoke $r9.<com.a.a.ax: com.a.a.ax b(int)>(2130837793);
+        virtualinvoke $r9.<com.a.a.ax: void a(android.widget.ImageView)>($r2);
+        goto label0;
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a>;
+        $r10 = virtualinvoke $r5.<android.content.Context: android.content.res.Resources getResources()>();
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a>;
+        $r11 = virtualinvoke $r5.<android.content.Context: android.content.res.Resources getResources()>();
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.o: android.content.Context a>;
+        $r4 = virtualinvoke $r5.<android.content.Context: java.lang.String getPackageName()>();
+        $i0 = virtualinvoke $r11.<android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>($r6, "drawable", $r4);
+        $r12 = virtualinvoke $r10.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+        if $r12 == null goto label0;
+
+        virtualinvoke $r2.<android.widget.ImageView: void setImageDrawable(android.graphics.drawable.Drawable)>($r12);
+
+     label3:
+        goto label0;
+
+     label4:
+        $r13 := @caughtexception;
+        virtualinvoke $r13.<java.lang.Exception: void printStackTrace()>();
+        goto label0;
+
+        catch java.lang.Exception from label2 to label3 with label4;
+    }
+}

@@ -1,0 +1,219 @@
+public final class com.google.c.b.a.p extends java.lang.Object implements com.google.c.af
+{
+    private final com.google.c.b.f a;
+    private final com.google.c.i b;
+    private final com.google.c.b.s c;
+
+    public void <init>(com.google.c.b.f, com.google.c.i, com.google.c.b.s)
+    {
+        com.google.c.b.a.p $r0;
+        com.google.c.b.f $r1;
+        com.google.c.i $r2;
+        com.google.c.b.s $r3;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: com.google.c.b.f;
+        $r2 := @parameter1: com.google.c.i;
+        $r3 := @parameter2: com.google.c.b.s;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.c.b.a.p: com.google.c.b.f a> = $r1;
+        $r0.<com.google.c.b.a.p: com.google.c.i b> = $r2;
+        $r0.<com.google.c.b.a.p: com.google.c.b.s c> = $r3;
+        return;
+    }
+
+    private com.google.c.b.a.s a(com.google.c.j, java.lang.reflect.Field, java.lang.String, com.google.c.c.a, boolean, boolean)
+    {
+        com.google.c.b.a.p $r0;
+        com.google.c.j $r1;
+        java.lang.reflect.Field $r2;
+        java.lang.String $r3;
+        com.google.c.c.a $r4;
+        boolean $z0, $z1, $z2;
+        java.lang.Class $r5;
+        com.google.c.b.a.q $r6;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: com.google.c.j;
+        $r2 := @parameter1: java.lang.reflect.Field;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: com.google.c.c.a;
+        $z0 := @parameter4: boolean;
+        $z1 := @parameter5: boolean;
+        $r5 = virtualinvoke $r4.<com.google.c.c.a: java.lang.Class a()>();
+        $z2 = staticinvoke <com.google.c.b.af: boolean a(java.lang.reflect.Type)>($r5);
+        $r6 = new com.google.c.b.a.q;
+        specialinvoke $r6.<com.google.c.b.a.q: void <init>(com.google.c.b.a.p,java.lang.String,boolean,boolean,com.google.c.j,com.google.c.c.a,java.lang.reflect.Field,boolean)>($r0, $r3, $z0, $z1, $r1, $r4, $r2, $z2);
+        return $r6;
+    }
+
+    private java.lang.String a(java.lang.reflect.Field)
+    {
+        com.google.c.b.a.p $r0;
+        java.lang.reflect.Field $r1;
+        java.lang.annotation.Annotation $r3;
+        com.google.c.a.b $r4;
+        com.google.c.i $r5;
+        java.lang.String $r6;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: java.lang.reflect.Field;
+        $r3 = virtualinvoke $r1.<java.lang.reflect.Field: java.lang.annotation.Annotation getAnnotation(java.lang.Class)>(class "com/google/c/a/b");
+        $r4 = (com.google.c.a.b) $r3;
+        if $r4 != null goto label0;
+
+        $r5 = $r0.<com.google.c.b.a.p: com.google.c.i b>;
+        $r6 = interfaceinvoke $r5.<com.google.c.i: java.lang.String a(java.lang.reflect.Field)>($r1);
+        return $r6;
+
+     label0:
+        $r6 = interfaceinvoke $r4.<com.google.c.a.b: java.lang.String a()>();
+        return $r6;
+    }
+
+    private java.util.Map a(com.google.c.j, com.google.c.c.a, java.lang.Class)
+    {
+        com.google.c.b.a.p $r0;
+        com.google.c.j $r1;
+        com.google.c.c.a $r2, $r7;
+        java.lang.Class $r3;
+        boolean $z0, $z1;
+        java.lang.reflect.Type $r4, $r9, $r12;
+        java.lang.reflect.Field $r5;
+        java.lang.String $r6;
+        java.util.LinkedHashMap $r8;
+        int $i0, $i1;
+        java.lang.reflect.Field[] $r10;
+        com.google.c.b.a.s $r15;
+        java.lang.Object $r16;
+        java.lang.IllegalArgumentException $r17;
+        java.lang.StringBuilder $r18;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: com.google.c.j;
+        $r2 := @parameter1: com.google.c.c.a;
+        $r3 := @parameter2: java.lang.Class;
+        $r8 = new java.util.LinkedHashMap;
+        specialinvoke $r8.<java.util.LinkedHashMap: void <init>()>();
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isInterface()>();
+        if $z0 == 0 goto label0;
+
+        return $r8;
+
+     label0:
+        $r9 = virtualinvoke $r2.<com.google.c.c.a: java.lang.reflect.Type b()>();
+
+     label1:
+        if $r3 == class "java/lang/Object" goto label6;
+
+        $r10 = virtualinvoke $r3.<java.lang.Class: java.lang.reflect.Field[] getDeclaredFields()>();
+        $i1 = lengthof $r10;
+        $i0 = 0;
+
+     label2:
+        if $i0 >= $i1 goto label5;
+
+        $r5 = $r10[$i0];
+        $z0 = virtualinvoke $r0.<com.google.c.b.a.p: boolean a(java.lang.reflect.Field,boolean)>($r5, 1);
+        $z1 = virtualinvoke $r0.<com.google.c.b.a.p: boolean a(java.lang.reflect.Field,boolean)>($r5, 0);
+        if $z0 != 0 goto label4;
+
+        if $z1 != 0 goto label4;
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label4:
+        virtualinvoke $r5.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        $r12 = virtualinvoke $r2.<com.google.c.c.a: java.lang.reflect.Type b()>();
+        $r4 = virtualinvoke $r5.<java.lang.reflect.Field: java.lang.reflect.Type getGenericType()>();
+        $r12 = staticinvoke <com.google.c.b.b: java.lang.reflect.Type a(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type)>($r12, $r3, $r4);
+        $r6 = specialinvoke $r0.<com.google.c.b.a.p: java.lang.String a(java.lang.reflect.Field)>($r5);
+        $r7 = staticinvoke <com.google.c.c.a: com.google.c.c.a a(java.lang.reflect.Type)>($r12);
+        $r15 = specialinvoke $r0.<com.google.c.b.a.p: com.google.c.b.a.s a(com.google.c.j,java.lang.reflect.Field,java.lang.String,com.google.c.c.a,boolean,boolean)>($r1, $r5, $r6, $r7, $z0, $z1);
+        $r6 = $r15.<com.google.c.b.a.s: java.lang.String g>;
+        $r16 = interfaceinvoke $r8.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r15);
+        $r15 = (com.google.c.b.a.s) $r16;
+        if $r15 == null goto label3;
+
+        $r17 = new java.lang.IllegalArgumentException;
+        $r18 = new java.lang.StringBuilder;
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" declares multiple JSON fields named ");
+        $r6 = $r15.<com.google.c.b.a.s: java.lang.String g>;
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r17.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r6);
+        throw $r17;
+
+     label5:
+        $r12 = virtualinvoke $r2.<com.google.c.c.a: java.lang.reflect.Type b()>();
+        $r4 = virtualinvoke $r3.<java.lang.Class: java.lang.reflect.Type getGenericSuperclass()>();
+        $r12 = staticinvoke <com.google.c.b.b: java.lang.reflect.Type a(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type)>($r12, $r3, $r4);
+        $r2 = staticinvoke <com.google.c.c.a: com.google.c.c.a a(java.lang.reflect.Type)>($r12);
+        $r3 = virtualinvoke $r2.<com.google.c.c.a: java.lang.Class a()>();
+        goto label1;
+
+     label6:
+        return $r8;
+    }
+
+    public com.google.c.ae a(com.google.c.j, com.google.c.c.a)
+    {
+        com.google.c.b.a.p $r0;
+        com.google.c.j $r1;
+        com.google.c.c.a $r2;
+        java.lang.Class $r3, $r4;
+        com.google.c.b.ae $r5;
+        boolean $z0;
+        com.google.c.b.f $r6;
+        com.google.c.b.a.r $r7;
+        java.util.Map $r8;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: com.google.c.j;
+        $r2 := @parameter1: com.google.c.c.a;
+        $r4 = virtualinvoke $r2.<com.google.c.c.a: java.lang.Class a()>();
+        $r3 = class "java/lang/Object";
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>($r4);
+        if $z0 != 0 goto label0;
+
+        return null;
+
+     label0:
+        $r6 = $r0.<com.google.c.b.a.p: com.google.c.b.f a>;
+        $r5 = virtualinvoke $r6.<com.google.c.b.f: com.google.c.b.ae a(com.google.c.c.a)>($r2);
+        $r7 = new com.google.c.b.a.r;
+        $r8 = specialinvoke $r0.<com.google.c.b.a.p: java.util.Map a(com.google.c.j,com.google.c.c.a,java.lang.Class)>($r1, $r2, $r4);
+        specialinvoke $r7.<com.google.c.b.a.r: void <init>(com.google.c.b.ae,java.util.Map,com.google.c.b.a.q)>($r5, $r8, null);
+        return $r7;
+    }
+
+    public boolean a(java.lang.reflect.Field, boolean)
+    {
+        com.google.c.b.a.p $r0;
+        java.lang.reflect.Field $r1;
+        boolean $z0, $z1;
+        com.google.c.b.s $r2;
+        java.lang.Class $r3;
+
+        $r0 := @this: com.google.c.b.a.p;
+        $r1 := @parameter0: java.lang.reflect.Field;
+        $z0 := @parameter1: boolean;
+        $r2 = $r0.<com.google.c.b.a.p: com.google.c.b.s c>;
+        $r3 = virtualinvoke $r1.<java.lang.reflect.Field: java.lang.Class getType()>();
+        $z1 = virtualinvoke $r2.<com.google.c.b.s: boolean a(java.lang.Class,boolean)>($r3, $z0);
+        if $z1 != 0 goto label0;
+
+        $r2 = $r0.<com.google.c.b.a.p: com.google.c.b.s c>;
+        $z1 = virtualinvoke $r2.<com.google.c.b.s: boolean a(java.lang.reflect.Field,boolean)>($r1, $z0);
+        if $z1 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+}

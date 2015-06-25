@@ -1,0 +1,107 @@
+final enum class com.facebook.rti.b.e.p extends java.lang.Enum
+{
+    public static final enum com.facebook.rti.b.e.p a;
+    public static final enum com.facebook.rti.b.e.p b;
+    public static final enum com.facebook.rti.b.e.p c;
+    private static final com.facebook.rti.b.e.p[] e;
+    private final byte d;
+
+    static void <clinit>()
+    {
+        com.facebook.rti.b.e.p $r0;
+        com.facebook.rti.b.e.p[] $r2;
+
+        $r0 = new com.facebook.rti.b.e.p;
+        specialinvoke $r0.<com.facebook.rti.b.e.p: void <init>(java.lang.String,int,int)>("ACKNOWLEDGED_DELIVERY", 0, 0);
+        <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p a> = $r0;
+        $r0 = new com.facebook.rti.b.e.p;
+        specialinvoke $r0.<com.facebook.rti.b.e.p: void <init>(java.lang.String,int,int)>("PROCESSING_LASTACTIVE_PRESENCEINFO", 1, 1);
+        <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p b> = $r0;
+        $r0 = new com.facebook.rti.b.e.p;
+        specialinvoke $r0.<com.facebook.rti.b.e.p: void <init>(java.lang.String,int,int)>("EXACT_KEEPALIVE", 2, 2);
+        <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p c> = $r0;
+        $r2 = newarray (com.facebook.rti.b.e.p)[3];
+        $r0 = <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p a>;
+        $r2[0] = $r0;
+        $r0 = <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p b>;
+        $r2[1] = $r0;
+        $r0 = <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p c>;
+        $r2[2] = $r0;
+        <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p[] e> = $r2;
+        return;
+    }
+
+    private void <init>(java.lang.String, int, int)
+    {
+        com.facebook.rti.b.e.p $r0;
+        java.lang.String $r1;
+        int $i0, $i1;
+        boolean $z0, $z1;
+        byte $b2;
+
+        $r0 := @this: com.facebook.rti.b.e.p;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $z1 = 1;
+        specialinvoke $r0.<java.lang.Enum: void <init>(java.lang.String,int)>($r1, $i0);
+        if $i1 < 0 goto label2;
+
+        $z0 = 1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        if $i1 >= 64 goto label3;
+
+     label1:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z1);
+        $b2 = (byte) $i1;
+        $r0.<com.facebook.rti.b.e.p: byte d> = $b2;
+        return;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+
+     label3:
+        $z1 = 0;
+        goto label1;
+    }
+
+    public static com.facebook.rti.b.e.p valueOf(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.Enum $r2;
+        com.facebook.rti.b.e.p $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "com/facebook/rti/b/e/p", $r0);
+        $r3 = (com.facebook.rti.b.e.p) $r2;
+        return $r3;
+    }
+
+    public static com.facebook.rti.b.e.p[] values()
+    {
+        com.facebook.rti.b.e.p[] $r0;
+        java.lang.Object $r1;
+
+        $r0 = <com.facebook.rti.b.e.p: com.facebook.rti.b.e.p[] e>;
+        $r1 = virtualinvoke $r0.<java.lang.Object: java.lang.Object clone()>();
+        $r0 = (com.facebook.rti.b.e.p[]) $r1;
+        return $r0;
+    }
+
+    public final long a()
+    {
+        com.facebook.rti.b.e.p $r0;
+        byte $b1;
+        int $i2;
+        long $l3;
+
+        $r0 := @this: com.facebook.rti.b.e.p;
+        $b1 = $r0.<com.facebook.rti.b.e.p: byte d>;
+        $i2 = 1 << $b1;
+        $l3 = (long) $i2;
+        return $l3;
+    }
+}

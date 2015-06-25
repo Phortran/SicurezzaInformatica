@@ -1,0 +1,179 @@
+public final class com.google.android.gms.common.a extends java.lang.Object
+{
+    public static final com.google.android.gms.common.a a;
+    private final android.app.PendingIntent b;
+    private final int c;
+
+    static void <clinit>()
+    {
+        com.google.android.gms.common.a $r0;
+
+        $r0 = new com.google.android.gms.common.a;
+        specialinvoke $r0.<com.google.android.gms.common.a: void <init>(int,android.app.PendingIntent)>(0, null);
+        <com.google.android.gms.common.a: com.google.android.gms.common.a a> = $r0;
+        return;
+    }
+
+    public void <init>(int, android.app.PendingIntent)
+    {
+        com.google.android.gms.common.a $r0;
+        int $i0;
+        android.app.PendingIntent $r1;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.app.PendingIntent;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.common.a: int c> = $i0;
+        $r0.<com.google.android.gms.common.a: android.app.PendingIntent b> = $r1;
+        return;
+    }
+
+    private java.lang.String c()
+    {
+        com.google.android.gms.common.a $r0;
+        int $i0;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $i0 = $r0.<com.google.android.gms.common.a: int c>;
+        lookupswitch($i0)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            case 2: goto label3;
+            case 3: goto label4;
+            case 4: goto label5;
+            case 5: goto label6;
+            case 6: goto label7;
+            case 7: goto label8;
+            case 8: goto label9;
+            case 9: goto label10;
+            case 10: goto label11;
+            case 11: goto label12;
+            default: goto label0;
+        };
+
+     label0:
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("unknown status code ");
+        $i0 = $r0.<com.google.android.gms.common.a: int c>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+
+     label1:
+        return "SUCCESS";
+
+     label2:
+        return "SERVICE_MISSING";
+
+     label3:
+        return "SERVICE_VERSION_UPDATE_REQUIRED";
+
+     label4:
+        return "SERVICE_DISABLED";
+
+     label5:
+        return "SIGN_IN_REQUIRED";
+
+     label6:
+        return "INVALID_ACCOUNT";
+
+     label7:
+        return "RESOLUTION_REQUIRED";
+
+     label8:
+        return "NETWORK_ERROR";
+
+     label9:
+        return "INTERNAL_ERROR";
+
+     label10:
+        return "SERVICE_INVALID";
+
+     label11:
+        return "DEVELOPER_ERROR";
+
+     label12:
+        return "LICENSE_CHECK_FAILED";
+    }
+
+    public void a(android.app.Activity, int)
+    {
+        com.google.android.gms.common.a $r0;
+        android.app.Activity $r1;
+        int $i0;
+        boolean $z0;
+        android.content.IntentSender $r2;
+        android.app.PendingIntent $r3;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $r1 := @parameter0: android.app.Activity;
+        $i0 := @parameter1: int;
+        $z0 = virtualinvoke $r0.<com.google.android.gms.common.a: boolean a()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = $r0.<com.google.android.gms.common.a: android.app.PendingIntent b>;
+        $r2 = virtualinvoke $r3.<android.app.PendingIntent: android.content.IntentSender getIntentSender()>();
+        virtualinvoke $r1.<android.app.Activity: void startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int)>($r2, $i0, null, 0, 0, 0);
+        goto label0;
+    }
+
+    public boolean a()
+    {
+        com.google.android.gms.common.a $r0;
+        int $i0;
+        android.app.PendingIntent $r1;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $i0 = $r0.<com.google.android.gms.common.a: int c>;
+        if $i0 == 0 goto label0;
+
+        $r1 = $r0.<com.google.android.gms.common.a: android.app.PendingIntent b>;
+        if $r1 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean b()
+    {
+        com.google.android.gms.common.a $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $i0 = $r0.<com.google.android.gms.common.a: int c>;
+        if $i0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.common.a $r0;
+        com.google.android.gms.internal.fy $r1;
+        java.lang.String $r3;
+        android.app.PendingIntent $r4;
+
+        $r0 := @this: com.google.android.gms.common.a;
+        $r1 = staticinvoke <com.google.android.gms.internal.fw: com.google.android.gms.internal.fy a(java.lang.Object)>($r0);
+        $r3 = specialinvoke $r0.<com.google.android.gms.common.a: java.lang.String c()>();
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("statusCode", $r3);
+        $r4 = $r0.<com.google.android.gms.common.a: android.app.PendingIntent b>;
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("resolution", $r4);
+        $r3 = virtualinvoke $r1.<com.google.android.gms.internal.fy: java.lang.String toString()>();
+        return $r3;
+    }
+}

@@ -1,0 +1,164 @@
+public class com.google.android.gms.common.data.i extends java.lang.Object implements android.os.Parcelable$Creator
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.common.data.i $r0;
+
+        $r0 := @this: com.google.android.gms.common.data.i;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static void a(com.google.android.gms.common.data.d, android.os.Parcel, int)
+    {
+        com.google.android.gms.common.data.d $r0;
+        android.os.Parcel $r1;
+        int $i0, $i1, $i4;
+        java.lang.String[] $r2;
+        android.database.CursorWindow[] $r3;
+        android.os.Bundle $r4;
+
+        $r0 := @parameter0: com.google.android.gms.common.data.d;
+        $r1 := @parameter1: android.os.Parcel;
+        $i0 := @parameter2: int;
+        $i1 = staticinvoke <com.google.android.gms.common.internal.safeparcel.c: int a(android.os.Parcel)>($r1);
+        $r2 = virtualinvoke $r0.<com.google.android.gms.common.data.d: java.lang.String[] c()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,java.lang.String[],boolean)>($r1, 1, $r2, 0);
+        $i4 = virtualinvoke $r0.<com.google.android.gms.common.data.d: int b()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,int)>($r1, 1000, $i4);
+        $r3 = virtualinvoke $r0.<com.google.android.gms.common.data.d: android.database.CursorWindow[] d()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,android.os.Parcelable[],int,boolean)>($r1, 2, $r3, $i0, 0);
+        $i4 = virtualinvoke $r0.<com.google.android.gms.common.data.d: int e()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,int)>($r1, 3, $i4);
+        $r4 = virtualinvoke $r0.<com.google.android.gms.common.data.d: android.os.Bundle f()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,android.os.Bundle,boolean)>($r1, 4, $r4, 0);
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int)>($r1, $i1);
+        return;
+    }
+
+    public com.google.android.gms.common.data.d a(android.os.Parcel)
+    {
+        com.google.android.gms.common.data.i $r0;
+        android.os.Parcel $r1;
+        int $i0, $i1, $i2, $i3, $i4;
+        java.lang.Cloneable $r2, $r3;
+        android.os.Bundle $r4;
+        java.lang.String[] $r5;
+        android.os.Parcelable$Creator $r6;
+        java.lang.Object[] $r7;
+        android.database.CursorWindow[] $r8;
+        java.lang.StringBuilder $r10, r13;
+        java.lang.String $r11;
+        com.google.android.gms.common.internal.safeparcel.b r14;
+        com.google.android.gms.common.data.d r15;
+
+        $r0 := @this: com.google.android.gms.common.data.i;
+        $r1 := @parameter0: android.os.Parcel;
+        $i2 = 0;
+        $r4 = null;
+        $i3 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int b(android.os.Parcel)>($r1);
+        $r3 = null;
+        $r2 = null;
+        $i1 = 0;
+
+     label0:
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i0 >= $i3 goto label7;
+
+        $i4 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(android.os.Parcel)>($r1);
+        $i0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(int)>($i4);
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label4;
+            case 3: goto label5;
+            case 4: goto label6;
+            case 1000: goto label3;
+            default: goto label1;
+        };
+
+     label1:
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.a: void b(android.os.Parcel,int)>($r1, $i4);
+        goto label0;
+
+     label2:
+        $r2 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: java.lang.String[] w(android.os.Parcel,int)>($r1, $i4);
+        goto label0;
+
+     label3:
+        $i1 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int f(android.os.Parcel,int)>($r1, $i4);
+        goto label0;
+
+     label4:
+        $r6 = <android.database.CursorWindow: android.os.Parcelable$Creator CREATOR>;
+        $r7 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: java.lang.Object[] b(android.os.Parcel,int,android.os.Parcelable$Creator)>($r1, $i4, $r6);
+        $r3 = (android.database.CursorWindow[]) $r7;
+        goto label0;
+
+     label5:
+        $i2 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int f(android.os.Parcel,int)>($r1, $i4);
+        goto label0;
+
+     label6:
+        $r4 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: android.os.Bundle n(android.os.Parcel,int)>($r1, $i4);
+        goto label0;
+
+     label7:
+        $i4 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i4 == $i3 goto label8;
+
+        r14 = new com.google.android.gms.common.internal.safeparcel.b;
+        r13 = new java.lang.StringBuilder;
+        specialinvoke r13.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Overread allowed size end=");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke r14.<com.google.android.gms.common.internal.safeparcel.b: void <init>(java.lang.String,android.os.Parcel)>($r11, $r1);
+        throw r14;
+
+     label8:
+        r15 = new com.google.android.gms.common.data.d;
+        $r5 = (java.lang.String[]) $r2;
+        $r8 = (android.database.CursorWindow[]) $r3;
+        specialinvoke r15.<com.google.android.gms.common.data.d: void <init>(int,java.lang.String[],android.database.CursorWindow[],int,android.os.Bundle)>($i1, $r5, $r8, $i2, $r4);
+        virtualinvoke r15.<com.google.android.gms.common.data.d: void a()>();
+        return r15;
+    }
+
+    public com.google.android.gms.common.data.d[] a(int)
+    {
+        com.google.android.gms.common.data.i $r0;
+        int $i0;
+        com.google.android.gms.common.data.d[] $r1;
+
+        $r0 := @this: com.google.android.gms.common.data.i;
+        $i0 := @parameter0: int;
+        $r1 = newarray (com.google.android.gms.common.data.d)[$i0];
+        return $r1;
+    }
+
+    public java.lang.Object createFromParcel(android.os.Parcel)
+    {
+        com.google.android.gms.common.data.i $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.common.data.d $r2;
+
+        $r0 := @this: com.google.android.gms.common.data.i;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+        return $r2;
+    }
+
+    public java.lang.Object[] newArray(int)
+    {
+        com.google.android.gms.common.data.i $r0;
+        int $i0;
+        com.google.android.gms.common.data.d[] $r1;
+
+        $r0 := @this: com.google.android.gms.common.data.i;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d[] a(int)>($i0);
+        return $r1;
+    }
+}

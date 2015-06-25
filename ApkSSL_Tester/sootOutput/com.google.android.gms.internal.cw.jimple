@@ -1,0 +1,102 @@
+public final class com.google.android.gms.internal.cw extends com.google.android.gms.internal.de
+{
+    private final java.lang.String f;
+
+    protected com.google.android.gms.internal.cy a(android.os.IBinder)
+    {
+        com.google.android.gms.internal.cw $r0;
+        android.os.IBinder $r1;
+        com.google.android.gms.internal.cy $r2;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        $r1 := @parameter0: android.os.IBinder;
+        $r2 = staticinvoke <com.google.android.gms.internal.cy$a: com.google.android.gms.internal.cy a(android.os.IBinder)>($r1);
+        return $r2;
+    }
+
+    protected java.lang.String a()
+    {
+        com.google.android.gms.internal.cw $r0;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        return "com.google.android.gms.appstate.service.START";
+    }
+
+    protected void a(com.google.android.gms.internal.dj, com.google.android.gms.internal.de$d)
+    {
+        com.google.android.gms.internal.cw $r0;
+        com.google.android.gms.internal.dj $r1;
+        com.google.android.gms.internal.de$d $r2;
+        android.content.Context $r3;
+        java.lang.String $r4, $r5;
+        java.lang.String[] $r6;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        $r1 := @parameter0: com.google.android.gms.internal.dj;
+        $r2 := @parameter1: com.google.android.gms.internal.de$d;
+        $r3 = virtualinvoke $r0.<com.google.android.gms.internal.cw: android.content.Context h()>();
+        $r4 = virtualinvoke $r3.<android.content.Context: java.lang.String getPackageName()>();
+        $r5 = $r0.<com.google.android.gms.internal.cw: java.lang.String f>;
+        $r6 = virtualinvoke $r0.<com.google.android.gms.internal.cw: java.lang.String[] i()>();
+        interfaceinvoke $r1.<com.google.android.gms.internal.dj: void a(com.google.android.gms.internal.di,int,java.lang.String,java.lang.String,java.lang.String[])>($r2, 4030500, $r4, $r5, $r6);
+        return;
+    }
+
+    protected transient void a(java.lang.String[])
+    {
+        com.google.android.gms.internal.cw $r0;
+        java.lang.String[] $r1;
+        int $i0, $i1;
+        boolean $z1, $z3;
+        java.lang.String $r3;
+        java.lang.Object[] $r4;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        $r1 := @parameter0: java.lang.String[];
+        $i0 = (int) 0;
+        $z1 = 0;
+
+     label0:
+        $i1 = lengthof $r1;
+        if $i0 >= $i1 goto label2;
+
+        $r3 = $r1[$i0];
+        $z3 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("https://www.googleapis.com/auth/appstate");
+        if $z3 == 0 goto label1;
+
+        $z1 = 1;
+
+     label1:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label2:
+        $i1 = (int) 1;
+        $r4 = newarray (java.lang.Object)[$i1];
+        $i1 = (int) 0;
+        $r4[$i1] = "https://www.googleapis.com/auth/appstate";
+        $r3 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("AppStateClient requires %s to function.", $r4);
+        staticinvoke <com.google.android.gms.internal.fz: void a(boolean,java.lang.Object)>($z1, $r3);
+        return;
+    }
+
+    protected android.os.IInterface b(android.os.IBinder)
+    {
+        com.google.android.gms.internal.cw $r0;
+        android.os.IBinder $r1;
+        com.google.android.gms.internal.cy $r2;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        $r1 := @parameter0: android.os.IBinder;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.internal.cw: com.google.android.gms.internal.cy a(android.os.IBinder)>($r1);
+        return $r2;
+    }
+
+    protected java.lang.String b()
+    {
+        com.google.android.gms.internal.cw $r0;
+
+        $r0 := @this: com.google.android.gms.internal.cw;
+        return "com.google.android.gms.appstate.internal.IAppStateService";
+    }
+}

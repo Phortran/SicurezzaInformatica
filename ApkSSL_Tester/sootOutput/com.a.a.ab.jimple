@@ -1,0 +1,304 @@
+public class com.a.a.ab extends java.lang.Object implements com.a.a.k
+{
+    final java.util.LinkedHashMap b;
+    private final int c;
+    private int d;
+    private int e;
+    private int f;
+    private int g;
+    private int h;
+
+    public void <init>(int)
+    {
+        com.a.a.ab $r0;
+        int $i0;
+        java.lang.IllegalArgumentException $r1;
+        java.util.LinkedHashMap $r3;
+
+        $r0 := @this: com.a.a.ab;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        if $i0 > 0 goto label0;
+
+        $r1 = new java.lang.IllegalArgumentException;
+        specialinvoke $r1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Max size must be positive.");
+        throw $r1;
+
+     label0:
+        $r0.<com.a.a.ab: int c> = $i0;
+        $r3 = new java.util.LinkedHashMap;
+        specialinvoke $r3.<java.util.LinkedHashMap: void <init>(int,float,boolean)>(0, 0.75F, 1);
+        $r0.<com.a.a.ab: java.util.LinkedHashMap b> = $r3;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        com.a.a.ab $r0;
+        android.content.Context $r1;
+        int $i0;
+
+        $r0 := @this: com.a.a.ab;
+        $r1 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <com.a.a.bj: int c(android.content.Context)>($r1);
+        specialinvoke $r0.<com.a.a.ab: void <init>(int)>($i0);
+        return;
+    }
+
+    private void a(int)
+    {
+        com.a.a.ab $r0;
+        int $i0, $i1, $i2;
+        java.lang.StringBuilder $r1;
+        java.lang.Class $r2;
+        boolean $z0;
+        java.util.LinkedHashMap $r3;
+        java.lang.IllegalStateException $r4;
+        java.lang.String $r5;
+        java.lang.Throwable $r6;
+        java.util.Set $r7;
+        java.util.Iterator $r8;
+        java.lang.Object $r9;
+        java.util.Map$Entry $r10;
+        android.graphics.Bitmap $r11;
+
+        $r0 := @this: com.a.a.ab;
+        $i0 := @parameter0: int;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $i1 = $r0.<com.a.a.ab: int d>;
+        if $i1 < 0 goto label2;
+
+        $r3 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        $z0 = virtualinvoke $r3.<java.util.LinkedHashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label5;
+
+        $i1 = $r0.<com.a.a.ab: int d>;
+        if $i1 == 0 goto label5;
+
+     label2:
+        $r4 = new java.lang.IllegalStateException;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".sizeOf() is reporting inconsistent results!");
+        $r5 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r5);
+        throw $r4;
+
+     label3:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+
+     label4:
+        throw $r6;
+
+     label5:
+        $i1 = $r0.<com.a.a.ab: int d>;
+        if $i1 <= $i0 goto label6;
+
+        $r3 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        $z0 = virtualinvoke $r3.<java.util.LinkedHashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label7;
+
+     label6:
+        exitmonitor $r0;
+        return;
+
+     label7:
+        $r3 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        $r7 = virtualinvoke $r3.<java.util.LinkedHashMap: java.util.Set entrySet()>();
+        $r8 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+        $r9 = interfaceinvoke $r8.<java.util.Iterator: java.lang.Object next()>();
+        $r10 = (java.util.Map$Entry) $r9;
+        $r9 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r5 = (java.lang.String) $r9;
+        $r9 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r11 = (android.graphics.Bitmap) $r9;
+        $r3 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        virtualinvoke $r3.<java.util.LinkedHashMap: java.lang.Object remove(java.lang.Object)>($r5);
+        $i1 = $r0.<com.a.a.ab: int d>;
+        $i2 = staticinvoke <com.a.a.bj: int a(android.graphics.Bitmap)>($r11);
+        $i2 = $i1 - $i2;
+        $r0.<com.a.a.ab: int d> = $i2;
+        $i2 = $r0.<com.a.a.ab: int f>;
+        $i2 = $i2 + 1;
+        $r0.<com.a.a.ab: int f> = $i2;
+        exitmonitor $r0;
+
+     label8:
+        goto label0;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+        catch java.lang.Throwable from label5 to label8 with label3;
+    }
+
+    public final int a()
+    {
+        com.a.a.ab $r0;
+        int $i0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.a.a.ab;
+        entermonitor $r0;
+
+     label0:
+        $i0 = $r0.<com.a.a.ab: int d>;
+
+     label1:
+        exitmonitor $r0;
+        return $i0;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public android.graphics.Bitmap a(java.lang.String)
+    {
+        com.a.a.ab $r0;
+        java.lang.String $r1;
+        java.lang.NullPointerException $r2;
+        java.lang.Object $r3;
+        java.util.LinkedHashMap $r4;
+        android.graphics.Bitmap $r5;
+        int $i0;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.a.a.ab;
+        $r1 := @parameter0: java.lang.String;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.NullPointerException;
+        specialinvoke $r2.<java.lang.NullPointerException: void <init>(java.lang.String)>("key == null");
+        throw $r2;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $r4 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        $r3 = virtualinvoke $r4.<java.util.LinkedHashMap: java.lang.Object get(java.lang.Object)>($r1);
+        $r5 = (android.graphics.Bitmap) $r3;
+        if $r5 == null goto label2;
+
+        $i0 = $r0.<com.a.a.ab: int g>;
+        $i0 = $i0 + 1;
+        $r0.<com.a.a.ab: int g> = $i0;
+        exitmonitor $r0;
+        return $r5;
+
+     label2:
+        $i0 = $r0.<com.a.a.ab: int h>;
+        $i0 = $i0 + 1;
+        $r0.<com.a.a.ab: int h> = $i0;
+        exitmonitor $r0;
+        return null;
+
+     label3:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+
+     label4:
+        throw $r6;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+    }
+
+    public void a(java.lang.String, android.graphics.Bitmap)
+    {
+        com.a.a.ab $r0;
+        java.lang.String $r1;
+        android.graphics.Bitmap $r2;
+        java.lang.NullPointerException $r3;
+        int $i0, $i1;
+        java.util.LinkedHashMap $r4;
+        java.lang.Object $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.a.a.ab;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: android.graphics.Bitmap;
+        if $r1 == null goto label0;
+
+        if $r2 != null goto label1;
+
+     label0:
+        $r3 = new java.lang.NullPointerException;
+        specialinvoke $r3.<java.lang.NullPointerException: void <init>(java.lang.String)>("key == null || bitmap == null");
+        throw $r3;
+
+     label1:
+        entermonitor $r0;
+
+     label2:
+        $i0 = $r0.<com.a.a.ab: int e>;
+        $i0 = $i0 + 1;
+        $r0.<com.a.a.ab: int e> = $i0;
+        $i1 = $r0.<com.a.a.ab: int d>;
+        $i0 = staticinvoke <com.a.a.bj: int a(android.graphics.Bitmap)>($r2);
+        $i1 = $i1 + $i0;
+        $r0.<com.a.a.ab: int d> = $i1;
+        $r4 = $r0.<com.a.a.ab: java.util.LinkedHashMap b>;
+        $r5 = virtualinvoke $r4.<java.util.LinkedHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $r2 = (android.graphics.Bitmap) $r5;
+        if $r2 == null goto label3;
+
+        $i1 = $r0.<com.a.a.ab: int d>;
+        $i0 = staticinvoke <com.a.a.bj: int a(android.graphics.Bitmap)>($r2);
+        $i1 = $i1 - $i0;
+        $r0.<com.a.a.ab: int d> = $i1;
+
+     label3:
+        exitmonitor $r0;
+
+     label4:
+        $i1 = $r0.<com.a.a.ab: int c>;
+        specialinvoke $r0.<com.a.a.ab: void a(int)>($i1);
+        return;
+
+     label5:
+        $r6 := @caughtexception;
+
+     label6:
+        exitmonitor $r0;
+
+     label7:
+        throw $r6;
+
+        catch java.lang.Throwable from label2 to label4 with label5;
+        catch java.lang.Throwable from label6 to label7 with label5;
+    }
+
+    public final int b()
+    {
+        com.a.a.ab $r0;
+        int $i0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.a.a.ab;
+        entermonitor $r0;
+
+     label0:
+        $i0 = $r0.<com.a.a.ab: int c>;
+
+     label1:
+        exitmonitor $r0;
+        return $i0;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

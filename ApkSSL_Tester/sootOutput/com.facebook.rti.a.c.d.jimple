@@ -1,0 +1,170 @@
+public final class com.facebook.rti.a.c.d extends java.lang.Object implements java.util.concurrent.Executor
+{
+    private final java.lang.String a;
+    private final java.util.concurrent.Executor b;
+    private final int c;
+    private final int d;
+    private final int e;
+    private final java.util.Queue f;
+    private com.facebook.rti.a.c.f g;
+
+    private void <init>(com.facebook.rti.a.c.e)
+    {
+        com.facebook.rti.a.c.d $r0;
+        com.facebook.rti.a.c.e $r1;
+        java.lang.String $r2;
+        java.util.concurrent.Executor $r3;
+        int $i0;
+        java.util.LinkedList $r4;
+
+        $r0 := @this: com.facebook.rti.a.c.d;
+        $r1 := @parameter0: com.facebook.rti.a.c.e;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = staticinvoke <com.facebook.rti.a.c.e: java.lang.String a(com.facebook.rti.a.c.e)>($r1);
+        $r0.<com.facebook.rti.a.c.d: java.lang.String a> = $r2;
+        $r3 = staticinvoke <com.facebook.rti.a.c.e: java.util.concurrent.Executor b(com.facebook.rti.a.c.e)>($r1);
+        $r0.<com.facebook.rti.a.c.d: java.util.concurrent.Executor b> = $r3;
+        $i0 = staticinvoke <com.facebook.rti.a.c.e: int c(com.facebook.rti.a.c.e)>($r1);
+        $r0.<com.facebook.rti.a.c.d: int c> = $i0;
+        $i0 = staticinvoke <com.facebook.rti.a.c.e: int d(com.facebook.rti.a.c.e)>($r1);
+        $r0.<com.facebook.rti.a.c.d: int d> = $i0;
+        $i0 = staticinvoke <com.facebook.rti.a.c.e: int e(com.facebook.rti.a.c.e)>($r1);
+        $r0.<com.facebook.rti.a.c.d: int e> = $i0;
+        $r4 = new java.util.LinkedList;
+        specialinvoke $r4.<java.util.LinkedList: void <init>()>();
+        $r0.<com.facebook.rti.a.c.d: java.util.Queue f> = $r4;
+        return;
+    }
+
+    void <init>(com.facebook.rti.a.c.e, byte)
+    {
+        com.facebook.rti.a.c.d $r0;
+        com.facebook.rti.a.c.e $r1;
+        byte $b0;
+
+        $r0 := @this: com.facebook.rti.a.c.d;
+        $r1 := @parameter0: com.facebook.rti.a.c.e;
+        $b0 := @parameter1: byte;
+        specialinvoke $r0.<com.facebook.rti.a.c.d: void <init>(com.facebook.rti.a.c.e)>($r1);
+        return;
+    }
+
+    static int a(com.facebook.rti.a.c.d)
+    {
+        com.facebook.rti.a.c.d $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.rti.a.c.d;
+        $i0 = $r0.<com.facebook.rti.a.c.d: int e>;
+        return $i0;
+    }
+
+    private void a()
+    {
+        com.facebook.rti.a.c.d $r0;
+        java.util.Queue $r1;
+        com.facebook.rti.a.c.f $r2;
+        java.lang.Object $r3;
+        java.util.concurrent.Executor $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.facebook.rti.a.c.d;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.a.c.d: java.util.Queue f>;
+        $r3 = interfaceinvoke $r1.<java.util.Queue: java.lang.Object poll()>();
+        $r2 = (com.facebook.rti.a.c.f) $r3;
+        $r0.<com.facebook.rti.a.c.d: com.facebook.rti.a.c.f g> = $r2;
+        $r2 = $r0.<com.facebook.rti.a.c.d: com.facebook.rti.a.c.f g>;
+        if $r2 == null goto label1;
+
+        $r4 = $r0.<com.facebook.rti.a.c.d: java.util.concurrent.Executor b>;
+        $r2 = $r0.<com.facebook.rti.a.c.d: com.facebook.rti.a.c.f g>;
+        interfaceinvoke $r4.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r2);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    static java.lang.String b(com.facebook.rti.a.c.d)
+    {
+        com.facebook.rti.a.c.d $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.facebook.rti.a.c.d;
+        $r1 = $r0.<com.facebook.rti.a.c.d: java.lang.String a>;
+        return $r1;
+    }
+
+    static int c(com.facebook.rti.a.c.d)
+    {
+        com.facebook.rti.a.c.d $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.rti.a.c.d;
+        $i0 = $r0.<com.facebook.rti.a.c.d: int c>;
+        return $i0;
+    }
+
+    static int d(com.facebook.rti.a.c.d)
+    {
+        com.facebook.rti.a.c.d $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.rti.a.c.d;
+        $i0 = $r0.<com.facebook.rti.a.c.d: int d>;
+        return $i0;
+    }
+
+    static void e(com.facebook.rti.a.c.d)
+    {
+        com.facebook.rti.a.c.d $r0;
+
+        $r0 := @parameter0: com.facebook.rti.a.c.d;
+        specialinvoke $r0.<com.facebook.rti.a.c.d: void a()>();
+        return;
+    }
+
+    public final void execute(java.lang.Runnable)
+    {
+        com.facebook.rti.a.c.d $r0;
+        java.lang.Runnable $r1;
+        java.util.Queue $r2;
+        com.facebook.rti.a.c.f $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.facebook.rti.a.c.d;
+        $r1 := @parameter0: java.lang.Runnable;
+        entermonitor $r0;
+
+     label0:
+        $r2 = $r0.<com.facebook.rti.a.c.d: java.util.Queue f>;
+        $r3 = new com.facebook.rti.a.c.f;
+        specialinvoke $r3.<com.facebook.rti.a.c.f: void <init>(com.facebook.rti.a.c.d,java.lang.Runnable)>($r0, $r1);
+        interfaceinvoke $r2.<java.util.Queue: boolean add(java.lang.Object)>($r3);
+        $r3 = $r0.<com.facebook.rti.a.c.d: com.facebook.rti.a.c.f g>;
+        if $r3 != null goto label1;
+
+        specialinvoke $r0.<com.facebook.rti.a.c.d: void a()>();
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

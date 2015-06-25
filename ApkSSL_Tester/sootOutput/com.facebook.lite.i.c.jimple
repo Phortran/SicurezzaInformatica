@@ -1,0 +1,81 @@
+public final class com.facebook.lite.i.c extends java.util.zip.DeflaterOutputStream
+{
+
+    public void <init>(java.io.OutputStream, java.util.zip.Deflater)
+    {
+        com.facebook.lite.i.c $r0;
+        java.io.OutputStream $r1;
+        java.util.zip.Deflater $r2;
+
+        $r0 := @this: com.facebook.lite.i.c;
+        $r1 := @parameter0: java.io.OutputStream;
+        $r2 := @parameter1: java.util.zip.Deflater;
+        specialinvoke $r0.<java.util.zip.DeflaterOutputStream: void <init>(java.io.OutputStream,java.util.zip.Deflater,int)>($r1, $r2, 1024);
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.lite.i.c $r0;
+        java.util.zip.Deflater $r1;
+
+        $r0 := @this: com.facebook.lite.i.c;
+        $r1 = $r0.<com.facebook.lite.i.c: java.util.zip.Deflater def>;
+        virtualinvoke $r1.<java.util.zip.Deflater: void reset()>();
+        return;
+    }
+
+    public final void b()
+    {
+        com.facebook.lite.i.c $r0;
+        java.util.zip.Deflater $r1;
+        byte[] $r2, $r3;
+        int $i2;
+        java.io.OutputStream $r4;
+        java.io.IOException $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.lite.i.c;
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.i.c: java.util.zip.Deflater def>;
+        $r2 = $r0.<com.facebook.lite.i.c: byte[] buf>;
+        $r3 = $r0.<com.facebook.lite.i.c: byte[] buf>;
+        $i2 = lengthof $r3;
+
+     label1:
+        $i2 = virtualinvoke $r1.<java.util.zip.Deflater: int deflate(byte[],int,int,int)>($r2, 0, $i2, 2);
+        if $i2 <= 0 goto label4;
+
+        $r4 = $r0.<com.facebook.lite.i.c: java.io.OutputStream out>;
+        $r3 = $r0.<com.facebook.lite.i.c: byte[] buf>;
+        virtualinvoke $r4.<java.io.OutputStream: void write(byte[],int,int)>($r3, 0, $i2);
+
+     label2:
+        goto label0;
+
+     label3:
+        $r5 := @caughtexception;
+        throw $r5;
+
+     label4:
+        $r4 = $r0.<com.facebook.lite.i.c: java.io.OutputStream out>;
+
+     label5:
+        virtualinvoke $r4.<java.io.OutputStream: void flush()>();
+
+     label6:
+        return;
+
+     label7:
+        $r6 := @caughtexception;
+        $r5 = new java.io.IOException;
+        specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String,java.lang.Throwable)>("Sync flush failed. This shouldn\'t happen. ", $r6);
+        throw $r5;
+
+        catch java.io.IOException from label1 to label2 with label3;
+        catch java.lang.Throwable from label0 to label2 with label7;
+        catch java.io.IOException from label5 to label6 with label3;
+        catch java.lang.Throwable from label4 to label6 with label7;
+    }
+}

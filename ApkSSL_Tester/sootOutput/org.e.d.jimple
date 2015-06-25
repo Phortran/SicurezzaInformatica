@@ -1,0 +1,188 @@
+public class org.e.d extends org.e.c
+{
+    public org.f.b.b f;
+    public org.f.b.b g;
+    public org.f.b.b h;
+    public org.f.b.b i;
+    public org.f.b.b j;
+
+    public void <init>()
+    {
+        org.e.d $r0;
+
+        $r0 := @this: org.e.d;
+        specialinvoke $r0.<org.e.c: void <init>()>();
+        $r0.<org.e.d: int e> = 120;
+        return;
+    }
+
+    public void <init>(int)
+    {
+        org.e.d $r0;
+        int $i0;
+
+        $r0 := @this: org.e.d;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<org.e.c: void <init>()>();
+        $r0.<org.e.d: int e> = $i0;
+        return;
+    }
+
+    private void b(org.xmlpull.v1.XmlPullParser)
+    {
+        org.e.d $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.String $r3;
+        int $i2;
+        boolean $z0;
+        org.f.b.b $r4;
+        java.lang.RuntimeException $r5;
+        java.lang.StringBuffer $r6;
+
+        $r0 := @this: org.e.d;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(2, "http://www.w3.org/2003/05/soap-envelope", "Fault");
+
+     label0:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        if $i2 != 2 goto label7;
+
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("Code");
+        if $z0 == 0 goto label2;
+
+        $r4 = new org.f.b.b;
+        specialinvoke $r4.<org.f.b.b: void <init>()>();
+        $r0.<org.e.d: org.f.b.b f> = $r4;
+        $r4 = $r0.<org.e.d: org.f.b.b f>;
+        virtualinvoke $r4.<org.f.b.b: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+
+     label1:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, "http://www.w3.org/2003/05/soap-envelope", $r3);
+        goto label0;
+
+     label2:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("Reason");
+        if $z0 == 0 goto label3;
+
+        $r4 = new org.f.b.b;
+        specialinvoke $r4.<org.f.b.b: void <init>()>();
+        $r0.<org.e.d: org.f.b.b g> = $r4;
+        $r4 = $r0.<org.e.d: org.f.b.b g>;
+        virtualinvoke $r4.<org.f.b.b: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        goto label1;
+
+     label3:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("Node");
+        if $z0 == 0 goto label4;
+
+        $r4 = new org.f.b.b;
+        specialinvoke $r4.<org.f.b.b: void <init>()>();
+        $r0.<org.e.d: org.f.b.b h> = $r4;
+        $r4 = $r0.<org.e.d: org.f.b.b h>;
+        virtualinvoke $r4.<org.f.b.b: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        goto label1;
+
+     label4:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("Role");
+        if $z0 == 0 goto label5;
+
+        $r4 = new org.f.b.b;
+        specialinvoke $r4.<org.f.b.b: void <init>()>();
+        $r0.<org.e.d: org.f.b.b i> = $r4;
+        $r4 = $r0.<org.e.d: org.f.b.b i>;
+        virtualinvoke $r4.<org.f.b.b: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        goto label1;
+
+     label5:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("Detail");
+        if $z0 == 0 goto label6;
+
+        $r4 = new org.f.b.b;
+        specialinvoke $r4.<org.f.b.b: void <init>()>();
+        $r0.<org.e.d: org.f.b.b j> = $r4;
+        $r4 = $r0.<org.e.d: org.f.b.b j>;
+        virtualinvoke $r4.<org.f.b.b: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        goto label1;
+
+     label6:
+        $r5 = new java.lang.RuntimeException;
+        $r6 = new java.lang.StringBuffer;
+        specialinvoke $r6.<java.lang.StringBuffer: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("unexpected tag:");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.RuntimeException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+
+     label7:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, "http://www.w3.org/2003/05/soap-envelope", "Fault");
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        return;
+    }
+
+    public void a(org.xmlpull.v1.XmlPullParser)
+    {
+        org.e.d $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        org.f.b.b $r2;
+        java.lang.String $r4;
+        org.f.b.a $r5;
+
+        $r0 := @this: org.e.d;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        specialinvoke $r0.<org.e.d: void b(org.xmlpull.v1.XmlPullParser)>($r1);
+        $r2 = $r0.<org.e.d: org.f.b.b f>;
+        $r5 = virtualinvoke $r2.<org.f.b.b: org.f.b.a c(java.lang.String,java.lang.String)>("http://www.w3.org/2003/05/soap-envelope", "Value");
+        $r4 = virtualinvoke $r5.<org.f.b.a: java.lang.String h(int)>(0);
+        $r0.<org.e.d: java.lang.String a> = $r4;
+        $r2 = $r0.<org.e.d: org.f.b.b g>;
+        $r5 = virtualinvoke $r2.<org.f.b.b: org.f.b.a c(java.lang.String,java.lang.String)>("http://www.w3.org/2003/05/soap-envelope", "Text");
+        $r4 = virtualinvoke $r5.<org.f.b.a: java.lang.String h(int)>(0);
+        $r0.<org.e.d: java.lang.String b> = $r4;
+        $r2 = $r0.<org.e.d: org.f.b.b j>;
+        $r0.<org.e.d: org.f.b.b d> = $r2;
+        $r0.<org.e.d: java.lang.String c> = null;
+        return;
+    }
+
+    public java.lang.String getMessage()
+    {
+        org.e.d $r0;
+        org.f.b.b $r1;
+        java.lang.String $r3;
+        org.f.b.a $r4;
+
+        $r0 := @this: org.e.d;
+        $r1 = $r0.<org.e.d: org.f.b.b g>;
+        $r4 = virtualinvoke $r1.<org.f.b.b: org.f.b.a c(java.lang.String,java.lang.String)>("http://www.w3.org/2003/05/soap-envelope", "Text");
+        $r3 = virtualinvoke $r4.<org.f.b.a: java.lang.String h(int)>(0);
+        return $r3;
+    }
+
+    public java.lang.String toString()
+    {
+        org.e.d $r0;
+        org.f.b.b $r1;
+        java.lang.String $r2, $r5;
+        org.f.b.a $r4;
+        java.lang.StringBuffer $r6;
+
+        $r0 := @this: org.e.d;
+        $r1 = $r0.<org.e.d: org.f.b.b g>;
+        $r4 = virtualinvoke $r1.<org.f.b.b: org.f.b.a c(java.lang.String,java.lang.String)>("http://www.w3.org/2003/05/soap-envelope", "Text");
+        $r2 = virtualinvoke $r4.<org.f.b.a: java.lang.String h(int)>(0);
+        $r1 = $r0.<org.e.d: org.f.b.b f>;
+        $r4 = virtualinvoke $r1.<org.f.b.b: org.f.b.a c(java.lang.String,java.lang.String)>("http://www.w3.org/2003/05/soap-envelope", "Value");
+        $r5 = virtualinvoke $r4.<org.f.b.a: java.lang.String h(int)>(0);
+        $r6 = new java.lang.StringBuffer;
+        specialinvoke $r6.<java.lang.StringBuffer: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Code: ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r5);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(", Reason: ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuffer: java.lang.String toString()>();
+        return $r5;
+    }
+}

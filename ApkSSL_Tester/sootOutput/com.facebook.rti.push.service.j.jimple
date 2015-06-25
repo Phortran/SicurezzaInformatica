@@ -1,0 +1,65 @@
+final class com.facebook.rti.push.service.j extends java.lang.Object implements com.facebook.rti.b.e.r
+{
+    final com.facebook.rti.push.service.FbnsService a;
+
+    void <init>(com.facebook.rti.push.service.FbnsService)
+    {
+        com.facebook.rti.push.service.j $r0;
+        com.facebook.rti.push.service.FbnsService $r1;
+
+        $r0 := @this: com.facebook.rti.push.service.j;
+        $r1 := @parameter0: com.facebook.rti.push.service.FbnsService;
+        $r0.<com.facebook.rti.push.service.j: com.facebook.rti.push.service.FbnsService a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.rti.push.service.j $r0;
+        com.facebook.rti.push.service.a $r3;
+        java.lang.Object[] $r4;
+        com.facebook.rti.push.service.FbnsService $r5;
+        com.facebook.rti.push.service.c $r6;
+
+        $r0 := @this: com.facebook.rti.push.service.j;
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsService", "Publish successful", $r4);
+        $r5 = $r0.<com.facebook.rti.push.service.j: com.facebook.rti.push.service.FbnsService a>;
+        $r3 = staticinvoke <com.facebook.rti.push.service.FbnsService: com.facebook.rti.push.service.a a(com.facebook.rti.push.service.FbnsService)>($r5);
+        $r6 = <com.facebook.rti.push.service.c: com.facebook.rti.push.service.c b>;
+        virtualinvoke $r3.<com.facebook.rti.push.service.a: void a(com.facebook.rti.push.service.c,java.lang.String)>($r6, null);
+        return;
+    }
+
+    public final void a(com.facebook.rti.a.d.a.c)
+    {
+        com.facebook.rti.push.service.j $r0;
+        com.facebook.rti.a.d.a.c $r1;
+        boolean $z0;
+        java.lang.Object[] $r4;
+        java.lang.Object $r5;
+        java.lang.Throwable $r6;
+        com.facebook.rti.push.service.FbnsService $r7;
+        com.facebook.rti.push.service.a $r8;
+        com.facebook.rti.push.service.c $r9;
+
+        $r0 := @this: com.facebook.rti.push.service.j;
+        $r1 := @parameter0: com.facebook.rti.a.d.a.c;
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsService", "Publish failed", $r4);
+        $z0 = virtualinvoke $r1.<com.facebook.rti.a.d.a.c: boolean a()>();
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r1.<com.facebook.rti.a.d.a.c: java.lang.Object b()>();
+        $r6 = (java.lang.Throwable) $r5;
+        virtualinvoke $r6.<java.lang.Throwable: java.lang.String getLocalizedMessage()>();
+
+     label0:
+        $r7 = $r0.<com.facebook.rti.push.service.j: com.facebook.rti.push.service.FbnsService a>;
+        $r8 = staticinvoke <com.facebook.rti.push.service.FbnsService: com.facebook.rti.push.service.a a(com.facebook.rti.push.service.FbnsService)>($r7);
+        $r9 = <com.facebook.rti.push.service.c: com.facebook.rti.push.service.c c>;
+        virtualinvoke $r8.<com.facebook.rti.push.service.a: void a(com.facebook.rti.push.service.c,java.lang.String)>($r9, null);
+        return;
+    }
+}

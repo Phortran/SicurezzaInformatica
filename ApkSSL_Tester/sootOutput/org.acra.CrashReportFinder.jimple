@@ -1,0 +1,65 @@
+final class org.acra.CrashReportFinder extends java.lang.Object
+{
+    private final android.content.Context context;
+
+    public void <init>(android.content.Context)
+    {
+        org.acra.CrashReportFinder $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: org.acra.CrashReportFinder;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.CrashReportFinder: android.content.Context context> = $r1;
+        return;
+    }
+
+    public java.lang.String[] getCrashReportFiles()
+    {
+        org.acra.CrashReportFinder $r0;
+        android.content.Context $r1;
+        java.lang.String $r2, $r5;
+        java.lang.StringBuilder $r3;
+        java.io.File $r4;
+        java.lang.String[] $r6;
+        org.acra.CrashReportFinder$1 $r7;
+
+        $r0 := @this: org.acra.CrashReportFinder;
+        $r1 = $r0.<org.acra.CrashReportFinder: android.content.Context context>;
+        if $r1 != null goto label1;
+
+        $r5 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r5, "Trying to get ACRA reports but ACRA is not initialized.");
+        $r6 = newarray (java.lang.String)[0];
+
+     label0:
+        return $r6;
+
+     label1:
+        $r1 = $r0.<org.acra.CrashReportFinder: android.content.Context context>;
+        $r4 = virtualinvoke $r1.<android.content.Context: java.io.File getFilesDir()>();
+        if $r4 != null goto label2;
+
+        $r5 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r5, "Application files directory does not exist! The application may not be installed correctly. Please try reinstalling.");
+        $r6 = newarray (java.lang.String)[0];
+        return $r6;
+
+     label2:
+        $r5 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Looking for error files in ");
+        $r2 = virtualinvoke $r4.<java.io.File: java.lang.String getAbsolutePath()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r5, $r2);
+        $r7 = new org.acra.CrashReportFinder$1;
+        specialinvoke $r7.<org.acra.CrashReportFinder$1: void <init>(org.acra.CrashReportFinder)>($r0);
+        $r6 = virtualinvoke $r4.<java.io.File: java.lang.String[] list(java.io.FilenameFilter)>($r7);
+        if $r6 != null goto label0;
+
+        $r6 = newarray (java.lang.String)[0];
+        return $r6;
+    }
+}

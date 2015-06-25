@@ -1,0 +1,680 @@
+public class org.acra.collector.MediaCodecListCollector extends java.lang.Object
+{
+    private static final java.lang.String[] AAC_TYPES;
+    private static final java.lang.String[] AVC_TYPES;
+    private static final java.lang.String COLOR_FORMAT_PREFIX;
+    private static final java.lang.String[] H263_TYPES;
+    private static final java.lang.String[] MPEG4_TYPES;
+    private static java.lang.Class codecCapabilitiesClass;
+    private static java.lang.reflect.Field colorFormatsField;
+    private static java.lang.reflect.Method getCapabilitiesForTypeMethod;
+    private static java.lang.reflect.Method getCodecInfoAtMethod;
+    private static java.lang.reflect.Method getNameMethod;
+    private static java.lang.reflect.Method getSupportedTypesMethod;
+    private static java.lang.reflect.Method isEncoderMethod;
+    private static java.lang.reflect.Field levelField;
+    private static android.util.SparseArray mAACProfileValues;
+    private static android.util.SparseArray mAVCLevelValues;
+    private static android.util.SparseArray mAVCProfileValues;
+    private static android.util.SparseArray mColorFormatValues;
+    private static android.util.SparseArray mH263LevelValues;
+    private static android.util.SparseArray mH263ProfileValues;
+    private static android.util.SparseArray mMPEG4LevelValues;
+    private static android.util.SparseArray mMPEG4ProfileValues;
+    private static java.lang.Class mediaCodecInfoClass;
+    private static java.lang.Class mediaCodecListClass;
+    private static java.lang.reflect.Field profileField;
+    private static java.lang.reflect.Field profileLevelsField;
+
+    static void <clinit>()
+    {
+        int $i0, $i5, $i6, $i7;
+        java.lang.String $r0, $r9;
+        java.lang.Class $r1, $r5;
+        java.lang.String[] $r2;
+        android.util.SparseArray $r3;
+        java.lang.Class[] $r4;
+        java.lang.reflect.Method $r6;
+        java.lang.reflect.Field $r7;
+        java.lang.reflect.Field[] $r8;
+        boolean $z0;
+        java.lang.ClassNotFoundException $r10;
+        java.lang.NoSuchMethodException $r11;
+        java.lang.IllegalArgumentException $r12;
+        java.lang.IllegalAccessException $r13;
+        java.lang.SecurityException $r14;
+        java.lang.NoSuchFieldException $r15;
+
+        $i0 = 0;
+        $r2 = newarray (java.lang.String)[4];
+        $r2[0] = "mp4";
+        $r2[1] = "mpeg4";
+        $r2[2] = "MP4";
+        $r2[3] = "MPEG4";
+        <org.acra.collector.MediaCodecListCollector: java.lang.String[] MPEG4_TYPES> = $r2;
+        $r2 = newarray (java.lang.String)[4];
+        $r2[0] = "avc";
+        $r2[1] = "h264";
+        $r2[2] = "AVC";
+        $r2[3] = "H264";
+        <org.acra.collector.MediaCodecListCollector: java.lang.String[] AVC_TYPES> = $r2;
+        $r2 = newarray (java.lang.String)[2];
+        $r2[0] = "h263";
+        $r2[1] = "H263";
+        <org.acra.collector.MediaCodecListCollector: java.lang.String[] H263_TYPES> = $r2;
+        $r2 = newarray (java.lang.String)[2];
+        $r2[0] = "aac";
+        $r2[1] = "AAC";
+        <org.acra.collector.MediaCodecListCollector: java.lang.String[] AAC_TYPES> = $r2;
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecListClass> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCodecInfoAtMethod> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getNameMethod> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method isEncoderMethod> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getSupportedTypesMethod> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCapabilitiesForTypeMethod> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class codecCapabilitiesClass> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field colorFormatsField> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileLevelsField> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileField> = null;
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field levelField> = null;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mColorFormatValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCLevelValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCProfileValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263LevelValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263ProfileValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4LevelValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4ProfileValues> = $r3;
+        $r3 = new android.util.SparseArray;
+        specialinvoke $r3.<android.util.SparseArray: void <init>()>();
+        <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAACProfileValues> = $r3;
+
+     label0:
+        $r1 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.media.MediaCodecList");
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecListClass> = $r1;
+        $r1 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecListClass>;
+        $r4 = newarray (java.lang.Class)[1];
+        $r5 = <java.lang.Integer: java.lang.Class TYPE>;
+        $r4[0] = $r5;
+        $r6 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getCodecInfoAt", $r4);
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCodecInfoAtMethod> = $r6;
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.media.MediaCodecInfo");
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass> = $r5;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass>;
+        $r4 = newarray (java.lang.Class)[0];
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getName", $r4);
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getNameMethod> = $r6;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass>;
+        $r4 = newarray (java.lang.Class)[0];
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("isEncoder", $r4);
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method isEncoderMethod> = $r6;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass>;
+        $r4 = newarray (java.lang.Class)[0];
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getSupportedTypes", $r4);
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getSupportedTypesMethod> = $r6;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass>;
+        $r4 = newarray (java.lang.Class)[1];
+        $r4[0] = class "java/lang/String";
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getCapabilitiesForType", $r4);
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCapabilitiesForTypeMethod> = $r6;
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.media.MediaCodecInfo$CodecCapabilities");
+        <org.acra.collector.MediaCodecListCollector: java.lang.Class codecCapabilitiesClass> = $r5;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class codecCapabilitiesClass>;
+        $r7 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>("colorFormats");
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field colorFormatsField> = $r7;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class codecCapabilitiesClass>;
+        $r7 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>("profileLevels");
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileLevelsField> = $r7;
+        $r5 = <org.acra.collector.MediaCodecListCollector: java.lang.Class codecCapabilitiesClass>;
+        $r8 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $i5 = lengthof $r8;
+        $i6 = 0;
+
+     label1:
+        if $i6 >= $i5 goto label3;
+
+        $r7 = $r8[$i6];
+        $i7 = virtualinvoke $r7.<java.lang.reflect.Field: int getModifiers()>();
+        $z0 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>($i7);
+        if $z0 == 0 goto label2;
+
+        $i7 = virtualinvoke $r7.<java.lang.reflect.Field: int getModifiers()>();
+        $z0 = staticinvoke <java.lang.reflect.Modifier: boolean isFinal(int)>($i7);
+        if $z0 == 0 goto label2;
+
+        $r0 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean startsWith(java.lang.String)>("COLOR_");
+        if $z0 == 0 goto label2;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mColorFormatValues>;
+        $i7 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i7, $r9);
+
+     label2:
+        $i6 = $i6 + 1;
+        goto label1;
+
+     label3:
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.media.MediaCodecInfo$CodecProfileLevel");
+        $r8 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $i7 = lengthof $r8;
+
+     label4:
+        if $i0 >= $i7 goto label19;
+
+        $r7 = $r8[$i0];
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getModifiers()>();
+        $z0 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>($i6);
+        if $z0 == 0 goto label5;
+
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getModifiers()>();
+        $z0 = staticinvoke <java.lang.reflect.Modifier: boolean isFinal(int)>($i6);
+        if $z0 == 0 goto label5;
+
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("AVCLevel");
+        if $z0 == 0 goto label6;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCLevelValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+
+     label5:
+        $i0 = $i0 + 1;
+        goto label4;
+
+     label6:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("AVCProfile");
+        if $z0 == 0 goto label9;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCProfileValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label7:
+        $r10 := @caughtexception;
+
+     label8:
+        return;
+
+     label9:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("H263Level");
+        if $z0 == 0 goto label11;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263LevelValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label10:
+        $r11 := @caughtexception;
+        goto label8;
+
+     label11:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("H263Profile");
+        if $z0 == 0 goto label13;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263ProfileValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label12:
+        $r12 := @caughtexception;
+        goto label8;
+
+     label13:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("MPEG4Level");
+        if $z0 == 0 goto label15;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4LevelValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label14:
+        $r13 := @caughtexception;
+        goto label8;
+
+     label15:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("MPEG4Profile");
+        if $z0 == 0 goto label17;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4ProfileValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label16:
+        $r14 := @caughtexception;
+        goto label8;
+
+     label17:
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("AAC");
+        if $z0 == 0 goto label5;
+
+        $r3 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAACProfileValues>;
+        $i6 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>(null);
+        $r9 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.String getName()>();
+        virtualinvoke $r3.<android.util.SparseArray: void put(int,java.lang.Object)>($i6, $r9);
+        goto label5;
+
+     label18:
+        $r15 := @caughtexception;
+        goto label8;
+
+     label19:
+        $r7 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>("profile");
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileField> = $r7;
+        $r7 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>("level");
+
+     label20:
+        <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field levelField> = $r7;
+        goto label8;
+
+        catch java.lang.ClassNotFoundException from label0 to label20 with label7;
+        catch java.lang.NoSuchMethodException from label0 to label20 with label10;
+        catch java.lang.IllegalArgumentException from label0 to label20 with label12;
+        catch java.lang.IllegalAccessException from label0 to label20 with label14;
+        catch java.lang.SecurityException from label0 to label20 with label16;
+        catch java.lang.NoSuchFieldException from label0 to label20 with label18;
+    }
+
+    public void <init>()
+    {
+        org.acra.collector.MediaCodecListCollector $r0;
+
+        $r0 := @this: org.acra.collector.MediaCodecListCollector;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String collecMediaCodecList()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2, $r8;
+        int $i2, $i3, $i4, $i5;
+        java.lang.Integer $r3;
+        java.lang.reflect.Method $r4;
+        java.lang.Class[] $r5;
+        java.lang.Object[] $r6;
+        java.lang.Object $r7, $r9;
+        java.lang.String[] $r10;
+        java.lang.reflect.InvocationTargetException $r11;
+        java.lang.IllegalAccessException $r12;
+        java.lang.NoSuchMethodException $r13;
+
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r0 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecListClass>;
+        if $r0 == null goto label6;
+
+        $r0 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecInfoClass>;
+        if $r0 == null goto label6;
+
+        $r0 = <org.acra.collector.MediaCodecListCollector: java.lang.Class mediaCodecListClass>;
+        $r5 = newarray (java.lang.Class)[0];
+
+     label0:
+        $r4 = virtualinvoke $r0.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getCodecCount", $r5);
+        $r6 = newarray (java.lang.Object)[0];
+        $r7 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r6);
+        $r3 = (java.lang.Integer) $r7;
+        $r3 = (java.lang.Integer) $r3;
+        $i2 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $i3 = 0;
+
+     label1:
+        if $i3 >= $i2 goto label6;
+
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r4 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCodecInfoAtMethod>;
+        $r6 = newarray (java.lang.Object)[1];
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i3);
+        $r6[0] = $r3;
+        $r7 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r6);
+        $r8 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");
+        $r4 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getNameMethod>;
+        $r6 = newarray (java.lang.Object)[0];
+        $r9 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r7, $r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r8 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("isEncoder: ");
+        $r4 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method isEncoderMethod>;
+        $r6 = newarray (java.lang.Object)[0];
+        $r9 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r7, $r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r4 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getSupportedTypesMethod>;
+        $r6 = newarray (java.lang.Object)[0];
+        $r9 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r7, $r6);
+        $r10 = (java.lang.String[]) $r9;
+        $r10 = (java.lang.String[]) $r10;
+        $r8 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Supported types: ");
+        $r1 = staticinvoke <java.util.Arrays: java.lang.String toString(java.lang.Object[])>($r10);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $i4 = lengthof $r10;
+        $i5 = 0;
+
+     label2:
+        if $i5 >= $i4 goto label3;
+
+        $r1 = $r10[$i5];
+        $r1 = staticinvoke <org.acra.collector.MediaCodecListCollector: java.lang.String collectCapabilitiesForType(java.lang.Object,java.lang.String)>($r7, $r1);
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $i5 = $i5 + 1;
+        goto label2;
+
+     label3:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label4:
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label5:
+        $r11 := @caughtexception;
+
+     label6:
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+
+     label7:
+        $r12 := @caughtexception;
+        goto label6;
+
+     label8:
+        $r13 := @caughtexception;
+        goto label6;
+
+        catch java.lang.NoSuchMethodException from label0 to label4 with label8;
+        catch java.lang.IllegalAccessException from label0 to label4 with label7;
+        catch java.lang.reflect.InvocationTargetException from label0 to label4 with label5;
+    }
+
+    private static java.lang.String collectCapabilitiesForType(java.lang.Object, java.lang.String)
+    {
+        java.lang.Object $r0, $r5, $r8;
+        java.lang.String $r1, $r3;
+        java.lang.reflect.Method $r2;
+        int $i1, $i2, $i5, $i6;
+        java.lang.StringBuilder $r4, $r10;
+        java.lang.Object[] $r6;
+        java.lang.reflect.Field $r7;
+        int[] $r9;
+        android.util.SparseArray $r11;
+        org.acra.collector.MediaCodecListCollector$CodecType $r12;
+
+        $r0 := @parameter0: java.lang.Object;
+        $r1 := @parameter1: java.lang.String;
+        $i1 = 0;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r2 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getCapabilitiesForTypeMethod>;
+        $r6 = newarray (java.lang.Object)[1];
+        $r6[0] = $r1;
+        $r5 = virtualinvoke $r2.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r0, $r6);
+        $r7 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field colorFormatsField>;
+        $r8 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r5);
+        $r9 = (int[]) $r8;
+        $r9 = (int[]) $r9;
+        $i2 = lengthof $r9;
+        if $i2 <= 0 goto label3;
+
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" color formats:");
+        $i5 = 0;
+
+     label0:
+        $i2 = lengthof $r9;
+        if $i5 >= $i2 goto label2;
+
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mColorFormatValues>;
+        $i2 = $r9[$i5];
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.String) $r8;
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $i2 = lengthof $r9;
+        $i2 = $i2 + -1;
+        if $i5 >= $i2 goto label1;
+
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+
+     label1:
+        $i5 = $i5 + 1;
+        goto label0;
+
+     label2:
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label3:
+        $r7 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileLevelsField>;
+        $r8 = virtualinvoke $r7.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r5);
+        $r6 = (java.lang.Object[]) $r8;
+        $r6 = (java.lang.Object[]) $r6;
+        $i5 = lengthof $r6;
+        if $i5 <= 0 goto label13;
+
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" profile levels:");
+
+     label4:
+        $i5 = lengthof $r6;
+        if $i1 >= $i5 goto label12;
+
+        $r12 = staticinvoke <org.acra.collector.MediaCodecListCollector: org.acra.collector.MediaCodecListCollector$CodecType identifyCodecType(java.lang.Object)>($r0);
+        $r7 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field profileField>;
+        $r8 = $r6[$i1];
+        $i5 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>($r8);
+        $r7 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Field levelField>;
+        $r8 = $r6[$i1];
+        $i2 = virtualinvoke $r7.<java.lang.reflect.Field: int getInt(java.lang.Object)>($r8);
+        if $r12 != null goto label5;
+
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(45);
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+     label5:
+        $r9 = <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType>;
+        $i6 = virtualinvoke $r12.<org.acra.collector.MediaCodecListCollector$CodecType: int ordinal()>();
+        $i6 = $r9[$i6];
+        lookupswitch($i6)
+        {
+            case 1: goto label8;
+            case 2: goto label9;
+            case 3: goto label10;
+            case 4: goto label11;
+            default: goto label6;
+        };
+
+     label6:
+        $i6 = lengthof $r6;
+        $i6 = $i6 + -1;
+        if $i1 >= $i6 goto label7;
+
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+
+     label7:
+        $i1 = $i1 + 1;
+        goto label4;
+
+     label8:
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCProfileValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i5);
+        $r3 = (java.lang.String) $r8;
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(45);
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAVCLevelValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.String) $r8;
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        goto label6;
+
+     label9:
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263ProfileValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i5);
+        $r3 = (java.lang.String) $r8;
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(45);
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mH263LevelValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.String) $r8;
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        goto label6;
+
+     label10:
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4ProfileValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i5);
+        $r3 = (java.lang.String) $r8;
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(45);
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mMPEG4LevelValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.String) $r8;
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        goto label6;
+
+     label11:
+        $r11 = <org.acra.collector.MediaCodecListCollector: android.util.SparseArray mAACProfileValues>;
+        $r8 = virtualinvoke $r11.<android.util.SparseArray: java.lang.Object get(int)>($i5);
+        $r3 = (java.lang.String) $r8;
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        goto label6;
+
+     label12:
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label13:
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r3 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+
+    private static org.acra.collector.MediaCodecListCollector$CodecType identifyCodecType(java.lang.Object)
+    {
+        java.lang.Object $r0;
+        java.lang.reflect.Method $r1;
+        int $i0, $i1, $i2;
+        java.lang.Object[] $r2;
+        java.lang.String[] $r3;
+        java.lang.String $r4, $r5;
+        boolean $z0;
+        org.acra.collector.MediaCodecListCollector$CodecType $r6;
+
+        $r0 := @parameter0: java.lang.Object;
+        $i0 = 0;
+        $r1 = <org.acra.collector.MediaCodecListCollector: java.lang.reflect.Method getNameMethod>;
+        $r2 = newarray (java.lang.Object)[0];
+        $r0 = virtualinvoke $r1.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r0, $r2);
+        $r5 = (java.lang.String) $r0;
+        $r3 = <org.acra.collector.MediaCodecListCollector: java.lang.String[] AVC_TYPES>;
+        $i1 = lengthof $r3;
+        $i2 = 0;
+
+     label0:
+        if $i2 >= $i1 goto label2;
+
+        $r4 = $r3[$i2];
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean contains(java.lang.CharSequence)>($r4);
+        if $z0 == 0 goto label1;
+
+        $r6 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType AVC>;
+        return $r6;
+
+     label1:
+        $i2 = $i2 + 1;
+        goto label0;
+
+     label2:
+        $r3 = <org.acra.collector.MediaCodecListCollector: java.lang.String[] H263_TYPES>;
+        $i2 = lengthof $r3;
+        $i1 = 0;
+
+     label3:
+        if $i1 >= $i2 goto label5;
+
+        $r4 = $r3[$i1];
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean contains(java.lang.CharSequence)>($r4);
+        if $z0 == 0 goto label4;
+
+        $r6 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType H263>;
+        return $r6;
+
+     label4:
+        $i1 = $i1 + 1;
+        goto label3;
+
+     label5:
+        $r3 = <org.acra.collector.MediaCodecListCollector: java.lang.String[] MPEG4_TYPES>;
+        $i2 = lengthof $r3;
+        $i1 = 0;
+
+     label6:
+        if $i1 >= $i2 goto label8;
+
+        $r4 = $r3[$i1];
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean contains(java.lang.CharSequence)>($r4);
+        if $z0 == 0 goto label7;
+
+        $r6 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType MPEG4>;
+        return $r6;
+
+     label7:
+        $i1 = $i1 + 1;
+        goto label6;
+
+     label8:
+        $r3 = <org.acra.collector.MediaCodecListCollector: java.lang.String[] AAC_TYPES>;
+        $i2 = lengthof $r3;
+
+     label9:
+        if $i0 >= $i2 goto label11;
+
+        $r4 = $r3[$i0];
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean contains(java.lang.CharSequence)>($r4);
+        if $z0 == 0 goto label10;
+
+        $r6 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType AAC>;
+        return $r6;
+
+     label10:
+        $i0 = $i0 + 1;
+        goto label9;
+
+     label11:
+        return null;
+    }
+}

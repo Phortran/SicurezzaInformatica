@@ -1,0 +1,205 @@
+public final class com.google.android.gms.internal.cj extends java.lang.Object
+{
+    public final int a;
+    public final boolean b;
+    public final boolean c;
+    public final java.lang.String d;
+    public final java.lang.String e;
+    public final boolean f;
+    public final boolean g;
+    public final boolean h;
+    public final java.lang.String i;
+    public final java.lang.String j;
+    public final int k;
+    public final int l;
+    public final int m;
+    public final int n;
+    public final int o;
+    public final int p;
+    public final float q;
+    public final int r;
+    public final int s;
+
+    public void <init>(android.content.Context)
+    {
+        com.google.android.gms.internal.cj $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        android.content.res.Resources $r3;
+        int $i0;
+        boolean $z0, $z2;
+        android.util.DisplayMetrics $r4;
+        java.util.Locale $r5;
+        android.content.pm.PackageManager $r6;
+        java.lang.Object $r7;
+        android.media.AudioManager $r8;
+        android.net.ConnectivityManager $r9;
+        android.telephony.TelephonyManager $r10;
+        android.content.pm.ResolveInfo $r11;
+        float $f0;
+
+        $r0 := @this: com.google.android.gms.internal.cj;
+        $r1 := @parameter0: android.content.Context;
+        $z0 = 1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r7 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("audio");
+        $r8 = (android.media.AudioManager) $r7;
+        $r7 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r9 = (android.net.ConnectivityManager) $r7;
+        $r3 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r4 = virtualinvoke $r3.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $r5 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>();
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r7 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r10 = (android.telephony.TelephonyManager) $r7;
+        $i0 = virtualinvoke $r8.<android.media.AudioManager: int getMode()>();
+        $r0.<com.google.android.gms.internal.cj: int a> = $i0;
+        $r11 = staticinvoke <com.google.android.gms.internal.cj: android.content.pm.ResolveInfo a(android.content.pm.PackageManager,java.lang.String)>($r6, "geo:0,0?q=donuts");
+        if $r11 == null goto label2;
+
+        $z2 = 1;
+
+     label0:
+        $r0.<com.google.android.gms.internal.cj: boolean b> = $z2;
+        $r11 = staticinvoke <com.google.android.gms.internal.cj: android.content.pm.ResolveInfo a(android.content.pm.PackageManager,java.lang.String)>($r6, "http://www.google.com");
+        if $r11 == null goto label3;
+
+     label1:
+        $r0.<com.google.android.gms.internal.cj: boolean c> = $z0;
+        $r2 = virtualinvoke $r10.<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()>();
+        $r0.<com.google.android.gms.internal.cj: java.lang.String d> = $r2;
+        $r2 = virtualinvoke $r5.<java.util.Locale: java.lang.String getCountry()>();
+        $r0.<com.google.android.gms.internal.cj: java.lang.String e> = $r2;
+        $z2 = staticinvoke <com.google.android.gms.internal.db: boolean a()>();
+        $r0.<com.google.android.gms.internal.cj: boolean f> = $z2;
+        $z2 = virtualinvoke $r8.<android.media.AudioManager: boolean isMusicActive()>();
+        $r0.<com.google.android.gms.internal.cj: boolean g> = $z2;
+        $z2 = virtualinvoke $r8.<android.media.AudioManager: boolean isSpeakerphoneOn()>();
+        $r0.<com.google.android.gms.internal.cj: boolean h> = $z2;
+        $r2 = virtualinvoke $r5.<java.util.Locale: java.lang.String getLanguage()>();
+        $r0.<com.google.android.gms.internal.cj: java.lang.String i> = $r2;
+        $r2 = staticinvoke <com.google.android.gms.internal.cj: java.lang.String a(android.content.pm.PackageManager)>($r6);
+        $r0.<com.google.android.gms.internal.cj: java.lang.String j> = $r2;
+        $i0 = virtualinvoke $r8.<android.media.AudioManager: int getStreamVolume(int)>(3);
+        $r0.<com.google.android.gms.internal.cj: int k> = $i0;
+        $i0 = staticinvoke <com.google.android.gms.internal.cj: int a(android.content.Context,android.net.ConnectivityManager,android.content.pm.PackageManager)>($r1, $r9, $r6);
+        $r0.<com.google.android.gms.internal.cj: int l> = $i0;
+        $i0 = virtualinvoke $r10.<android.telephony.TelephonyManager: int getNetworkType()>();
+        $r0.<com.google.android.gms.internal.cj: int m> = $i0;
+        $i0 = virtualinvoke $r10.<android.telephony.TelephonyManager: int getPhoneType()>();
+        $r0.<com.google.android.gms.internal.cj: int n> = $i0;
+        $i0 = virtualinvoke $r8.<android.media.AudioManager: int getRingerMode()>();
+        $r0.<com.google.android.gms.internal.cj: int o> = $i0;
+        $i0 = virtualinvoke $r8.<android.media.AudioManager: int getStreamVolume(int)>(2);
+        $r0.<com.google.android.gms.internal.cj: int p> = $i0;
+        $f0 = $r4.<android.util.DisplayMetrics: float density>;
+        $r0.<com.google.android.gms.internal.cj: float q> = $f0;
+        $i0 = $r4.<android.util.DisplayMetrics: int widthPixels>;
+        $r0.<com.google.android.gms.internal.cj: int r> = $i0;
+        $i0 = $r4.<android.util.DisplayMetrics: int heightPixels>;
+        $r0.<com.google.android.gms.internal.cj: int s> = $i0;
+        return;
+
+     label2:
+        $z2 = 0;
+        goto label0;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+    }
+
+    private static int a(android.content.Context, android.net.ConnectivityManager, android.content.pm.PackageManager)
+    {
+        android.content.Context $r0;
+        android.net.ConnectivityManager $r1;
+        android.content.pm.PackageManager $r2;
+        int $i0;
+        java.lang.String $r3;
+        boolean $z0;
+        android.net.NetworkInfo $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.ConnectivityManager;
+        $r2 := @parameter2: android.content.pm.PackageManager;
+        $i0 = -2;
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $z0 = staticinvoke <com.google.android.gms.internal.cs: boolean a(android.content.pm.PackageManager,java.lang.String,java.lang.String)>($r2, $r3, "android.permission.ACCESS_NETWORK_STATE");
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r1.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r5 == null goto label1;
+
+        $i0 = virtualinvoke $r5.<android.net.NetworkInfo: int getType()>();
+
+     label0:
+        return $i0;
+
+     label1:
+        return -1;
+    }
+
+    private static android.content.pm.ResolveInfo a(android.content.pm.PackageManager, java.lang.String)
+    {
+        android.content.pm.PackageManager $r0;
+        java.lang.String $r1;
+        android.content.Intent $r2;
+        android.net.Uri $r4;
+        android.content.pm.ResolveInfo $r5;
+
+        $r0 := @parameter0: android.content.pm.PackageManager;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new android.content.Intent;
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r1);
+        specialinvoke $r2.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r4);
+        $r5 = virtualinvoke $r0.<android.content.pm.PackageManager: android.content.pm.ResolveInfo resolveActivity(android.content.Intent,int)>($r2, 65536);
+        return $r5;
+    }
+
+    private static java.lang.String a(android.content.pm.PackageManager)
+    {
+        android.content.pm.PackageManager $r0;
+        java.lang.String $r1;
+        android.content.pm.ResolveInfo $r2;
+        android.content.pm.ActivityInfo $r3;
+        android.content.pm.PackageInfo $r4;
+        java.lang.StringBuilder $r5;
+        int $i1;
+        android.content.pm.PackageManager$NameNotFoundException $r6;
+
+        $r0 := @parameter0: android.content.pm.PackageManager;
+        $r2 = staticinvoke <com.google.android.gms.internal.cj: android.content.pm.ResolveInfo a(android.content.pm.PackageManager,java.lang.String)>($r0, "market://details?id=com.google.android.gms.ads");
+        if $r2 != null goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $r3 = $r2.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        if $r3 == null goto label0;
+
+        $r1 = $r3.<android.content.pm.ActivityInfo: java.lang.String packageName>;
+
+     label2:
+        $r4 = virtualinvoke $r0.<android.content.pm.PackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)>($r1, 0);
+        if $r4 == null goto label0;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $i1 = $r4.<android.content.pm.PackageInfo: int versionCode>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".");
+        $r1 = $r3.<android.content.pm.ActivityInfo: java.lang.String packageName>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label3:
+        return $r1;
+
+     label4:
+        $r6 := @caughtexception;
+        return null;
+
+        catch android.content.pm.PackageManager$NameNotFoundException from label2 to label3 with label4;
+    }
+}

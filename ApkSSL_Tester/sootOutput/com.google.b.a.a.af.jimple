@@ -1,0 +1,115 @@
+class com.google.b.a.a.af extends java.lang.Object
+{
+    private final java.util.Map a;
+    private final long b;
+    private final java.lang.String c;
+    private final java.util.List d;
+
+    public void <init>(java.util.Map, long, java.lang.String, java.util.List)
+    {
+        com.google.b.a.a.af $r0;
+        java.util.Map $r1;
+        long $l0;
+        java.lang.String $r2;
+        java.util.List $r3;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $r1 := @parameter0: java.util.Map;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.util.List;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.b.a.a.af: java.util.Map a> = $r1;
+        $r0.<com.google.b.a.a.af: long b> = $l0;
+        $r0.<com.google.b.a.a.af: java.lang.String c> = $r2;
+        $r0.<com.google.b.a.a.af: java.util.List d> = $r3;
+        return;
+    }
+
+    public java.util.Map a()
+    {
+        com.google.b.a.a.af $r0;
+        java.util.Map $r1;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $r1 = $r0.<com.google.b.a.a.af: java.util.Map a>;
+        return $r1;
+    }
+
+    public long b()
+    {
+        com.google.b.a.a.af $r0;
+        long $l0;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $l0 = $r0.<com.google.b.a.a.af: long b>;
+        return $l0;
+    }
+
+    public java.lang.String c()
+    {
+        com.google.b.a.a.af $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $r1 = $r0.<com.google.b.a.a.af: java.lang.String c>;
+        return $r1;
+    }
+
+    public java.util.List d()
+    {
+        com.google.b.a.a.af $r0;
+        java.util.List $r1;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $r1 = $r0.<com.google.b.a.a.af: java.util.List d>;
+        return $r1;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.b.a.a.af $r0;
+        java.lang.String $r1;
+        java.lang.Object $r2;
+        java.lang.StringBuilder $r3;
+        java.util.Iterator $r4;
+        java.util.Set $r5;
+        java.util.Map $r6;
+        boolean $z0;
+        java.util.Map$Entry $r7;
+
+        $r0 := @this: com.google.b.a.a.af;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PATH: ");
+        $r1 = $r0.<com.google.b.a.a.af: java.lang.String c>;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = $r0.<com.google.b.a.a.af: java.util.Map a>;
+        if $r6 == null goto label1;
+
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  PARAMS: ");
+        $r6 = $r0.<com.google.b.a.a.af: java.util.Map a>;
+        $r5 = interfaceinvoke $r6.<java.util.Map: java.util.Set entrySet()>();
+        $r4 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.util.Map$Entry) $r2;
+        $r2 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r1 = (java.lang.String) $r2;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r2 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r1 = (java.lang.String) $r2;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",  ");
+        goto label0;
+
+     label1:
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+}

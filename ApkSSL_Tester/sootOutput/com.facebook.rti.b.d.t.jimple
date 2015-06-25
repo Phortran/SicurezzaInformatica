@@ -1,0 +1,118 @@
+final class com.facebook.rti.b.d.t extends java.lang.Object implements com.facebook.rti.b.a.d.a
+{
+    final com.facebook.rti.b.d.r a;
+
+    void <init>(com.facebook.rti.b.d.r)
+    {
+        com.facebook.rti.b.d.t $r0;
+        com.facebook.rti.b.d.r $r1;
+
+        $r0 := @this: com.facebook.rti.b.d.t;
+        $r1 := @parameter0: com.facebook.rti.b.d.r;
+        $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void a(android.content.Intent)
+    {
+        com.facebook.rti.b.d.t $r0;
+        android.content.Intent $r1;
+        java.lang.String $r2;
+        com.facebook.rti.b.d.r $r4, $r14;
+        java.lang.Boolean $r5;
+        boolean $z0, $z1;
+        com.facebook.rti.b.a.a.f $r6;
+        com.facebook.rti.b.a.d.b $r7;
+        long $l0, $l1;
+        com.facebook.rti.a.g.b $r8;
+        com.facebook.rti.b.a.a.a $r9;
+        android.net.NetworkInfo $r10;
+        android.content.SharedPreferences $r11;
+        android.content.SharedPreferences$Editor $r12;
+        byte $b2;
+        com.facebook.rti.b.d.b $r13;
+        java.lang.Object[] $r15;
+        com.facebook.rti.b.a.a.g $r16;
+
+        $r0 := @this: com.facebook.rti.b.d.t;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = staticinvoke <com.facebook.rti.a.d.a.b: boolean a(java.lang.Object,java.lang.Object)>($r2, "com.facebook.orca.ACTION_NETWORK_CONNECTIVITY_CHANGED");
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r6 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.a.f f>;
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $z0 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: boolean a()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $l0 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: long e()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r8 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.a.g.b d>;
+        $l1 = interfaceinvoke $r8.<com.facebook.rti.a.g.b: long a()>();
+        virtualinvoke $r6.<com.facebook.rti.b.a.a.f: void a(boolean,long,long)>($z0, $l0, $l1);
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r9 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.a.a e>;
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $l1 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: long e()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $r10 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: android.net.NetworkInfo b()>();
+        virtualinvoke $r9.<com.facebook.rti.b.a.a.a: void a(long,android.net.NetworkInfo)>($l1, $r10);
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $z0 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: boolean a()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r11 = staticinvoke <com.facebook.rti.b.d.r: android.content.SharedPreferences a(com.facebook.rti.b.d.r)>($r4);
+        $r12 = interfaceinvoke $r11.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $r2 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: java.lang.String c()>();
+        $r12 = interfaceinvoke $r12.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("mqtt/network_state", $r2);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r12);
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r7 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.d.b b>;
+        $l1 = virtualinvoke $r7.<com.facebook.rti.b.a.d.b: long d()>();
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $l0 = staticinvoke <com.facebook.rti.b.d.r: long b(com.facebook.rti.b.d.r)>($r4);
+        $b2 = $l1 cmp $l0;
+        if $b2 != 0 goto label2;
+
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r13 = $r4.<com.facebook.rti.b.d.r: com.facebook.rti.b.d.b a>;
+        $z1 = virtualinvoke $r13.<com.facebook.rti.b.d.b: boolean g()>();
+        if $z1 != 0 goto label0;
+
+     label2:
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        staticinvoke <com.facebook.rti.b.d.r: long a(com.facebook.rti.b.d.r,long)>($r4, $l1);
+        $r4 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r14 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r8 = $r14.<com.facebook.rti.b.d.r: com.facebook.rti.a.g.b d>;
+        $l1 = interfaceinvoke $r8.<com.facebook.rti.a.g.b: long a()>();
+        staticinvoke <com.facebook.rti.b.d.r: long b(com.facebook.rti.b.d.r,long)>($r4, $l1);
+        $r15 = newarray (java.lang.Object)[1];
+        $r5 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        $r15[0] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MqttPushService", "Network Connectivity Changed. becameConnected:%b", $r15);
+        if $z0 == 0 goto label3;
+
+        $r14 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r16 = <com.facebook.rti.b.a.a.g: com.facebook.rti.b.a.a.g d>;
+        staticinvoke <com.facebook.rti.b.d.r: void a(com.facebook.rti.b.d.r,com.facebook.rti.b.a.a.g)>($r14, $r16);
+        goto label0;
+
+     label3:
+        $r14 = $r0.<com.facebook.rti.b.d.t: com.facebook.rti.b.d.r a>;
+        $r13 = $r14.<com.facebook.rti.b.d.r: com.facebook.rti.b.d.b a>;
+        virtualinvoke $r13.<com.facebook.rti.b.d.b: void f()>();
+        goto label0;
+    }
+}

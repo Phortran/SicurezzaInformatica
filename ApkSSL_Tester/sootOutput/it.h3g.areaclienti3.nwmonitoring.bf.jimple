@@ -1,0 +1,820 @@
+public class it.h3g.areaclienti3.nwmonitoring.bf extends java.lang.Object
+{
+    private static float i;
+    private int a;
+    private int b;
+    private int c;
+    private int d;
+    private int e;
+    private boolean f;
+    private int g;
+    private float h;
+    private android.content.Context j;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.nwmonitoring.bf: float i> = 1.5F;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int a> = 900000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int b> = 86400000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int c> = 21600000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int d> = 5000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int e> = 40000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean f> = 1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int g> = 60000;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: float h> = 0.0625F;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j> = $r1;
+        return;
+    }
+
+    public boolean A()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_DB_WRITE_FAKE", 0);
+        return $z0;
+    }
+
+    public boolean B()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_SSL_DISABLED", 0);
+        return $z0;
+    }
+
+    public java.lang.Float C()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        float $f0;
+        java.lang.Float $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $f0 = <it.h3g.areaclienti3.nwmonitoring.bf: float i>;
+        $f0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r2, "COLLECT_TIME_FACTOR", $f0);
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        return $r4;
+    }
+
+    public java.lang.String a()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = new java.lang.StringBuilder;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String m()>();
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("://");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String o()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String p()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String q()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String s()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SEND_DATA_URL", $r2);
+        return $r2;
+    }
+
+    public void a(float)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        float $f0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $f0 := @parameter0: float;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r2, "SETTINGS_MAX_DELTA_SEND_PERIOD_PERC", $f0);
+        return;
+    }
+
+    public void a(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "POSITION_MAX_AGE", $i0);
+        return;
+    }
+
+    public void a(long)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        long $l0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $l0 := @parameter0: long;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r2, "SendTimeStamp", $l0);
+        return;
+    }
+
+    public void a(it.h3g.model.APIResponse)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.model.APIResponse $r1;
+        float $f0, $f1;
+        java.lang.String $r2;
+        long $l0, $l4;
+        byte $b1;
+        boolean $z0;
+        int $i2, $i3;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.nwmonitoring.av $r4;
+        java.lang.StringBuilder $r6;
+        java.lang.Float $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 := @parameter0: it.h3g.model.APIResponse;
+        $f0 = virtualinvoke $r1.<it.h3g.model.APIResponse: float getMaxDeltaSendPeriodPerc()>();
+        $b1 = $f0 cmpl 0.0F;
+        if $b1 <= 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean x()>();
+        if $z0 == 0 goto label0;
+
+        $f1 = virtualinvoke $r1.<it.h3g.model.APIResponse: float getMaxDeltaSendPeriodPerc()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void a(float)>($f1);
+
+     label0:
+        $i2 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPeriod()>();
+        if $i2 <= 0 goto label1;
+
+        $i2 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPeriod()>();
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        if $i2 == $i3 goto label1;
+
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean x()>();
+        if $z0 == 0 goto label1;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPeriod()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void b(int)>($i3);
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        $l0 = (long) $i3;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void c(android.content.Context,long)>($r3, $l0);
+
+     label1:
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getSendPeriod()>();
+        if $i3 <= 0 goto label2;
+
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean x()>();
+        if $z0 == 0 goto label8;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getSendPeriod()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void d(int)>($i3);
+
+     label2:
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r3, "SETTINGS_PREV_TIME_SEND", $l0);
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int g()>();
+        $l0 = (long) $i3;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void d(android.content.Context,long)>($r3, $l0);
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int g()>();
+        $l4 = (long) $i3;
+        $l4 = $l0 + $l4;
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void a(long)>($l4);
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Next send: ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l4);
+        $r2 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SENDER-SEND-TIMESTAMP", $r2);
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean x()>();
+        if $z0 == 0 goto label7;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPacketLength()>();
+        if $i3 <= 0 goto label3;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPacketLength()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void g(int)>($i3);
+
+     label3:
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getGpsPeriod()>();
+        if $i3 <= 0 goto label4;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getGpsPeriod()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void f(int)>($i3);
+
+     label4:
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getGpsTimeout()>();
+        if $i3 <= 0 goto label5;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getGpsTimeout()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void c(int)>($i3);
+
+     label5:
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPositionMaxAge()>();
+        if $i3 <= 0 goto label6;
+
+        $i3 = virtualinvoke $r1.<it.h3g.model.APIResponse: int getPositionMaxAge()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void a(int)>($i3);
+
+     label6:
+        $z0 = virtualinvoke $r1.<it.h3g.model.APIResponse: boolean isPositionEnabled()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: void a(boolean)>($z0);
+
+     label7:
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Time GPS: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int h()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - PacketSize: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int i()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timer Lettura dati: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timer invio dati: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int f()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timout GPS: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int e()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Position Enabled: ");
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean j()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Max Pos. Valid Time: ");
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int c()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" Random Send: ");
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.Float k()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);
+        $r2 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-CONFIG", $r2);
+        return;
+
+     label8:
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int f()>();
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int e(int)>($i3);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,int)>($r3, "SETTINGS_TIME_SEND_INEXACT", $i3);
+        goto label2;
+    }
+
+    public void a(boolean)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        boolean $z0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $z0 := @parameter0: boolean;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r2, "SETTINGS_POSITIONING_ENABLED", $z0);
+        return;
+    }
+
+    public java.lang.String b()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = new java.lang.StringBuilder;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String m()>();
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("://");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String o()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String p()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String q()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String r()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SEND_CONSENTS_URL", $r2);
+        return $r2;
+    }
+
+    public void b(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_COLLECT", $i0);
+        return;
+    }
+
+    public int c()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int g>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "POSITION_MAX_AGE", $i0);
+        return $i0;
+    }
+
+    public void c(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_GPS_TIMEOUT", $i0);
+        return;
+    }
+
+    public int d()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int a>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_COLLECT", $i0);
+        return $i0;
+    }
+
+    public void d(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0, $i1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.os.Bundle $r4;
+        it.h3g.areaclienti3.nwmonitoring.av $r5;
+        android.content.Context $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int e(int)>($i0);
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Time: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SEND_NEXT_INTERVAL", $r3);
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("SETTINGS_TIME_SEND", $i0);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("SETTINGS_TIME_SEND_INEXACT", $i1);
+        $r5 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,android.os.Bundle)>($r6, $r4);
+        return;
+    }
+
+    public int e()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int e>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_GPS_TIMEOUT", $i0);
+        return $i0;
+    }
+
+    public int e(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0, $i1;
+        java.util.Random $r1;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        java.lang.Float $r5;
+        float $f0, $f1, $f2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = new java.util.Random;
+        specialinvoke $r1.<java.util.Random: void <init>()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Random: ");
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.Float k()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_RANDOM_USED", $r4);
+        $f0 = (float) $i0;
+        $f1 = (float) $i0;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.Float k()>();
+        $f2 = virtualinvoke $r5.<java.lang.Float: float floatValue()>();
+        $f2 = $f1 * $f2;
+        $f2 = $f0 + $f2;
+        $i1 = (int) $f2;
+        $f2 = (float) $i0;
+        $f1 = (float) $i0;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.Float k()>();
+        $f0 = virtualinvoke $r5.<java.lang.Float: float floatValue()>();
+        $f1 = $f1 * $f0;
+        $f2 = $f2 - $f1;
+        $i0 = (int) $f2;
+        $i1 = $i1 - $i0;
+        $i1 = virtualinvoke $r1.<java.util.Random: int nextInt(int)>($i1);
+        $i1 = $i1 + $i0;
+        return $i1;
+    }
+
+    public int f()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int b>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_SEND", $i0);
+        return $i0;
+    }
+
+    public void f(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_GPS", $i0);
+        return;
+    }
+
+    public int g()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int b>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_SEND_INEXACT", $i0);
+        return $i0;
+    }
+
+    public void g(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        int $i0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $i0 := @parameter0: int;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_PACKET_SIZE", $i0);
+        return;
+    }
+
+    public int h()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int c>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_TIME_GPS", $i0);
+        return $i0;
+    }
+
+    public int i()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: int d>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "SETTINGS_PACKET_SIZE", $i0);
+        return $i0;
+    }
+
+    public boolean j()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: boolean f>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "SETTINGS_POSITIONING_ENABLED", $z0);
+        return $z0;
+    }
+
+    public java.lang.Float k()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        float $f0;
+        java.lang.Float $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $f0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: float h>;
+        $f0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r2, "SETTINGS_MAX_DELTA_SEND_PERIOD_PERC", $f0);
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        return $r4;
+    }
+
+    public long l()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        long $l0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $l0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r2, "SendTimeStamp", 0L);
+        return $l0;
+    }
+
+    public java.lang.String m()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_PROTOCOL", "https");
+        return $r4;
+    }
+
+    public int n()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i1 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "TIMEOUT_SEND_CONNECTION", 10000);
+        return $i1;
+    }
+
+    public java.lang.String o()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_IP_ADDRESS", "62.13.171.102");
+        return $r4;
+    }
+
+    public java.lang.String p()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_PORT", "");
+        return $r4;
+    }
+
+    public java.lang.String q()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_SERVER_APP", "frontend");
+        return $r4;
+    }
+
+    public java.lang.String r()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_CONSENTS_RESOURCE", "rest/consents");
+        return $r4;
+    }
+
+    public java.lang.String s()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r2, "SEND_DATA_RESOURCE", "rest/data");
+        return $r4;
+    }
+
+    public int t()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i1 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "DB_DATA_MAX_ROWS", 9000);
+        return $i1;
+    }
+
+    public int u()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $i1 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: int b(android.content.Context,java.lang.String,int)>($r2, "DB_DATA_MAX_DIFF", 1000);
+        return $i1;
+    }
+
+    public boolean v()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_MODE_WIFI", 0);
+        return $z0;
+    }
+
+    public boolean w()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_MODE_NOT_SEND", 0);
+        return $z0;
+    }
+
+    public boolean x()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_RECEIVE_SETTINGS", 1);
+        return $z0;
+    }
+
+    public boolean y()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_CSV_LOG", 0);
+        return $z0;
+    }
+
+    public boolean z()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bf $r0;
+        it.h3g.areaclienti3.nwmonitoring.av $r1;
+        android.content.Context $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bf: android.content.Context j>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "DEBUG_DB_CLEAN", 1);
+        return $z0;
+    }
+}

@@ -1,0 +1,173 @@
+public class it.h3g.areaclienti3.nwmonitoring.az extends java.lang.Object
+{
+    static int a;
+    static int b;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.nwmonitoring.az: int a> = 0;
+        <it.h3g.areaclienti3.nwmonitoring.az: int b> = 1;
+        return;
+    }
+
+    public static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.app.PendingIntent $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: android.app.PendingIntent c(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,android.app.PendingIntent)>($r0, $r1);
+        return;
+    }
+
+    public static void a(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0, $l1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.app.PendingIntent $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l1 = $l1 + $l0;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Time: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_COLLECT-TIME", $r3);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: android.app.PendingIntent c(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,long,android.app.PendingIntent)>($r0, $l0, $r4);
+        return;
+    }
+
+    private static void a(android.content.Context, long, android.app.PendingIntent)
+    {
+        android.content.Context $r0;
+        long $l0, $l2, $l3;
+        android.app.PendingIntent $r1;
+        java.lang.Object $r3;
+        android.app.AlarmManager $r4;
+        java.lang.Exception $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        $r1 := @parameter2: android.app.PendingIntent;
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+     label0:
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("alarm");
+        $r4 = (android.app.AlarmManager) $r3;
+        $l3 = $l2 + $l0;
+        virtualinvoke $r4.<android.app.AlarmManager: void setInexactRepeating(int,long,long,android.app.PendingIntent)>(0, $l3, $l0, $r1);
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r5.<java.lang.Exception: void printStackTrace()>();
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private static void a(android.content.Context, android.app.PendingIntent)
+    {
+        android.content.Context $r0;
+        android.app.PendingIntent $r1;
+        java.lang.Object $r3;
+        android.app.AlarmManager $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.app.PendingIntent;
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("alarm");
+        $r4 = (android.app.AlarmManager) $r3;
+        virtualinvoke $r4.<android.app.AlarmManager: void cancel(android.app.PendingIntent)>($r1);
+        return;
+    }
+
+    public static void b(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.app.PendingIntent $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: android.app.PendingIntent d(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,android.app.PendingIntent)>($r0, $r1);
+        return;
+    }
+
+    public static void b(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+        android.app.PendingIntent $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        $r1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: android.app.PendingIntent d(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,long,android.app.PendingIntent)>($r0, $l0, $r1);
+        return;
+    }
+
+    private static android.app.PendingIntent c(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        android.app.PendingIntent $r3;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/nwmonitoring/CollectDataService");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.TIME_SCHEDULING");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent addCategory(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.COLLECT_DATA");
+        $i1 = <it.h3g.areaclienti3.nwmonitoring.az: int a>;
+        $r3 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getService(android.content.Context,int,android.content.Intent,int)>($r0, $i1, $r1, 134217728);
+        return $r3;
+    }
+
+    public static void c(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,long)>($r0, $l0);
+        return;
+    }
+
+    private static android.app.PendingIntent d(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        android.app.PendingIntent $r3;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/nwmonitoring/SendDataService");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent addCategory(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.SEND_DATA");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.TIME_SCHEDULING");
+        $i1 = <it.h3g.areaclienti3.nwmonitoring.az: int b>;
+        $r3 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getService(android.content.Context,int,android.content.Intent,int)>($r0, $i1, $r1, 134217728);
+        return $r3;
+    }
+
+    public static void d(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void b(android.content.Context)>($r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void b(android.content.Context,long)>($r0, $l0);
+        return;
+    }
+}

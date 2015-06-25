@@ -1,0 +1,219 @@
+public class com.facebook.rti.a.a.e extends java.lang.Object
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/a/a/e";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.rti.a.a.e: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.a.a.e $r0;
+
+        $r0 := @this: com.facebook.rti.a.a.e;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static int a(java.util.Map, java.lang.String)
+    {
+        java.util.Map $r0;
+        java.lang.String $r1, $r6;
+        java.net.URL $r2;
+        java.net.URLConnection $r4;
+        java.net.HttpURLConnection $r5;
+        boolean $z0;
+        java.net.MalformedURLException $r7;
+        java.lang.Object[] $r8;
+        java.io.IOException $r9, $r10;
+        int $i3;
+        java.lang.Throwable $r11;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.net.URL;
+
+     label0:
+        specialinvoke $r2.<java.net.URL: void <init>(java.lang.String)>("https://api.facebook.com/method/logging.clientevent");
+
+     label1:
+        $r4 = virtualinvoke $r2.<java.net.URL: java.net.URLConnection openConnection()>();
+
+     label2:
+        $r5 = (java.net.HttpURLConnection) $r4;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setConnectTimeout(int)>(10000);
+
+     label3:
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setDoOutput(boolean)>(1);
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("User-Agent", $r1);
+        $z0 = staticinvoke <com.facebook.rti.a.a.e: boolean a(java.util.Map,java.net.HttpURLConnection)>($r0, $r5);
+
+     label4:
+        if $z0 != 0 goto label7;
+
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        return -1;
+
+     label5:
+        $r7 := @caughtexception;
+        $r6 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $r8 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r6, $r7, "Logging end point malformed", $r8);
+        return -1;
+
+     label6:
+        $r9 := @caughtexception;
+        $r6 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $r8 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r6, $r9, "Failed to open http connection", $r8);
+        return -1;
+
+     label7:
+        $i3 = virtualinvoke $r5.<java.net.HttpURLConnection: int getResponseCode()>();
+
+     label8:
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        return $i3;
+
+     label9:
+        $r10 := @caughtexception;
+
+     label10:
+        $r6 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $r8 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r6, $r10, "", $r8);
+
+     label11:
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        return -1;
+
+     label12:
+        $r11 := @caughtexception;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        throw $r11;
+
+        catch java.net.MalformedURLException from label0 to label1 with label5;
+        catch java.io.IOException from label1 to label2 with label6;
+        catch java.io.IOException from label3 to label4 with label9;
+        catch java.lang.Throwable from label3 to label4 with label12;
+        catch java.io.IOException from label7 to label8 with label9;
+        catch java.lang.Throwable from label7 to label8 with label12;
+        catch java.lang.Throwable from label10 to label11 with label12;
+    }
+
+    private static boolean a(java.util.Map, java.net.HttpURLConnection)
+    {
+        java.util.Map $r0;
+        java.net.HttpURLConnection $r1;
+        java.io.OutputStream $r2;
+        int $i0;
+        java.io.DataOutputStream $r3;
+        java.lang.StringBuilder $r4, $r11;
+        java.util.Iterator $r5;
+        java.util.Set $r7;
+        boolean $z1;
+        java.lang.Object $r8;
+        java.util.Map$Entry $r9;
+        java.lang.String $r10;
+        java.io.UnsupportedEncodingException $r12;
+        java.lang.Object[] $r13;
+        java.io.IOException $r14, $r15;
+        java.lang.Throwable $r16;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.net.HttpURLConnection;
+        $r3 = new java.io.DataOutputStream;
+
+     label0:
+        $r2 = virtualinvoke $r1.<java.net.HttpURLConnection: java.io.OutputStream getOutputStream()>();
+        specialinvoke $r3.<java.io.DataOutputStream: void <init>(java.io.OutputStream)>($r2);
+
+     label1:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r7 = interfaceinvoke $r0.<java.util.Map: java.util.Set entrySet()>();
+        $r5 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+
+     label2:
+        $z1 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label7;
+
+        $r8 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.util.Map$Entry) $r8;
+        $i0 = virtualinvoke $r4.<java.lang.StringBuilder: int length()>();
+        if $i0 == 0 goto label3;
+
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&");
+
+     label3:
+        $r8 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r10 = (java.lang.String) $r8;
+        $r10 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r10, "UTF-8");
+        $r11 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r8 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r10 = (java.lang.String) $r8;
+        $r10 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r10, "UTF-8");
+        virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+
+     label4:
+        goto label2;
+
+     label5:
+        $r12 := @caughtexception;
+        $r10 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $i0 = (int) 0;
+        $r13 = newarray (java.lang.Object)[$i0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r10, $r12, "", $r13);
+        virtualinvoke $r3.<java.io.DataOutputStream: void close()>();
+        return 0;
+
+     label6:
+        $r14 := @caughtexception;
+        $r10 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $i0 = (int) 0;
+        $r13 = newarray (java.lang.Object)[$i0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r10, $r14, "Unable to create output stream", $r13);
+        return 0;
+
+     label7:
+        $r10 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r3.<java.io.DataOutputStream: void writeBytes(java.lang.String)>($r10);
+        virtualinvoke $r3.<java.io.DataOutputStream: void flush()>();
+
+     label8:
+        virtualinvoke $r3.<java.io.DataOutputStream: void close()>();
+        return 1;
+
+     label9:
+        $r15 := @caughtexception;
+
+     label10:
+        $r10 = <com.facebook.rti.a.a.e: java.lang.String a>;
+        $r13 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r10, $r15, "Failed to write to output stream", $r13);
+
+     label11:
+        virtualinvoke $r3.<java.io.DataOutputStream: void close()>();
+        return 0;
+
+     label12:
+        $r16 := @caughtexception;
+        virtualinvoke $r3.<java.io.DataOutputStream: void close()>();
+        throw $r16;
+
+        catch java.io.IOException from label0 to label1 with label6;
+        catch java.io.UnsupportedEncodingException from label3 to label4 with label5;
+        catch java.io.IOException from label7 to label8 with label9;
+        catch java.lang.Throwable from label7 to label8 with label12;
+        catch java.lang.Throwable from label10 to label11 with label12;
+    }
+}

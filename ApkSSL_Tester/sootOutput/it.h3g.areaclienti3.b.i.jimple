@@ -1,0 +1,101 @@
+public class it.h3g.areaclienti3.b.i extends android.support.v4.view.ae
+{
+    private android.content.Context a;
+    private android.content.res.TypedArray b;
+
+    public void <init>(android.content.Context, android.content.res.TypedArray)
+    {
+        it.h3g.areaclienti3.b.i $r0;
+        android.content.Context $r1;
+        android.content.res.TypedArray $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.b.i;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.res.TypedArray;
+        specialinvoke $r0.<android.support.v4.view.ae: void <init>()>();
+        $r0.<it.h3g.areaclienti3.b.i: android.content.Context a> = $r1;
+        $r0.<it.h3g.areaclienti3.b.i: android.content.res.TypedArray b> = $r2;
+        return;
+    }
+
+    public java.lang.Object a(android.view.ViewGroup, int)
+    {
+        it.h3g.areaclienti3.b.i $r0;
+        android.view.ViewGroup $r1;
+        int $i0;
+        android.widget.ImageView $r2;
+        android.content.Context $r3;
+        android.view.ViewGroup$LayoutParams $r4;
+        android.widget.ImageView$ScaleType $r5;
+        android.content.res.TypedArray $r6;
+        android.support.v4.view.ViewPager $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.b.i;
+        $r1 := @parameter0: android.view.ViewGroup;
+        $i0 := @parameter1: int;
+        $r2 = new android.widget.ImageView;
+        $r3 = $r0.<it.h3g.areaclienti3.b.i: android.content.Context a>;
+        specialinvoke $r2.<android.widget.ImageView: void <init>(android.content.Context)>($r3);
+        $r4 = new android.view.ViewGroup$LayoutParams;
+        specialinvoke $r4.<android.view.ViewGroup$LayoutParams: void <init>(int,int)>(-1, -1);
+        virtualinvoke $r2.<android.widget.ImageView: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r4);
+        $r5 = <android.widget.ImageView$ScaleType: android.widget.ImageView$ScaleType FIT_XY>;
+        virtualinvoke $r2.<android.widget.ImageView: void setScaleType(android.widget.ImageView$ScaleType)>($r5);
+        $r6 = $r0.<it.h3g.areaclienti3.b.i: android.content.res.TypedArray b>;
+        $i0 = virtualinvoke $r6.<android.content.res.TypedArray: int getResourceId(int,int)>($i0, -1);
+        virtualinvoke $r2.<android.widget.ImageView: void setImageResource(int)>($i0);
+        $r7 = (android.support.v4.view.ViewPager) $r1;
+        virtualinvoke $r7.<android.support.v4.view.ViewPager: void addView(android.view.View,int)>($r2, 0);
+        return $r2;
+    }
+
+    public void a(android.view.ViewGroup, int, java.lang.Object)
+    {
+        it.h3g.areaclienti3.b.i $r0;
+        android.view.ViewGroup $r1;
+        int $i0;
+        java.lang.Object $r2;
+        android.support.v4.view.ViewPager $r3;
+        android.widget.ImageView $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.b.i;
+        $r1 := @parameter0: android.view.ViewGroup;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.Object;
+        $r3 = (android.support.v4.view.ViewPager) $r1;
+        $r4 = (android.widget.ImageView) $r2;
+        virtualinvoke $r3.<android.support.v4.view.ViewPager: void removeView(android.view.View)>($r4);
+        return;
+    }
+
+    public boolean a(android.view.View, java.lang.Object)
+    {
+        it.h3g.areaclienti3.b.i $r0;
+        android.view.View $r1;
+        java.lang.Object $r2;
+        android.widget.ImageView $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.b.i;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (android.widget.ImageView) $r2;
+        if $r1 != $r3 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public int b()
+    {
+        it.h3g.areaclienti3.b.i $r0;
+        android.content.res.TypedArray $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.b.i: android.content.res.TypedArray b>;
+        $i0 = virtualinvoke $r1.<android.content.res.TypedArray: int length()>();
+        return $i0;
+    }
+}

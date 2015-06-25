@@ -1,0 +1,234 @@
+public final class org.acra.util.ReportUtils extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        org.acra.util.ReportUtils $r0;
+
+        $r0 := @this: org.acra.util.ReportUtils;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String getApplicationFilePath(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.io.File $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3, $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = virtualinvoke $r0.<android.content.Context: java.io.File getFilesDir()>();
+        if $r1 == null goto label0;
+
+        $r3 = virtualinvoke $r1.<java.io.File: java.lang.String getAbsolutePath()>();
+        return $r3;
+
+     label0:
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Couldn\'t retrieve ApplicationFilePath for : ");
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r4, $r3);
+        return "Couldn\'t retrieve ApplicationFilePath";
+    }
+
+    public static long getAvailableInternalMemorySize()
+    {
+        java.io.File $r0;
+        android.os.StatFs $r1;
+        long $l0, $l2;
+        java.lang.String $r2;
+        int $i1;
+
+        $r0 = staticinvoke <android.os.Environment: java.io.File getDataDirectory()>();
+        $r1 = new android.os.StatFs;
+        $r2 = virtualinvoke $r0.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r2);
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+        $l0 = (long) $i1;
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getAvailableBlocks()>();
+        $l2 = (long) $i1;
+        $l2 = $l2 * $l0;
+        return $l2;
+    }
+
+    public static java.lang.String getDeviceId(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+        java.lang.Object $r4;
+        android.telephony.TelephonyManager $r5;
+        java.lang.RuntimeException $r6;
+
+        $r0 := @parameter0: android.content.Context;
+
+     label0:
+        $r4 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r5 = (android.telephony.TelephonyManager) $r4;
+        $r3 = virtualinvoke $r5.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>();
+
+     label1:
+        return $r3;
+
+     label2:
+        $r6 := @caughtexception;
+        $r1 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Couldn\'t retrieve DeviceId for : ");
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, $r3, $r6);
+        return null;
+
+        catch java.lang.RuntimeException from label0 to label1 with label2;
+    }
+
+    public static java.lang.String getLocalIpAddress()
+    {
+        boolean $z0, $z1;
+        java.lang.StringBuilder $r0;
+        java.util.Enumeration $r1, $r2;
+        java.lang.Object $r3;
+        java.net.NetworkInterface $r4;
+        java.net.InetAddress $r5;
+        java.lang.String $r6, $r9;
+        java.net.SocketException $r7;
+        org.acra.log.ACRALog $r8;
+
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $z1 = 1;
+
+     label0:
+        $r1 = staticinvoke <java.net.NetworkInterface: java.util.Enumeration getNetworkInterfaces()>();
+
+     label1:
+        $z0 = interfaceinvoke $r1.<java.util.Enumeration: boolean hasMoreElements()>();
+        if $z0 == 0 goto label7;
+
+        $r3 = interfaceinvoke $r1.<java.util.Enumeration: java.lang.Object nextElement()>();
+        $r4 = (java.net.NetworkInterface) $r3;
+        $r2 = virtualinvoke $r4.<java.net.NetworkInterface: java.util.Enumeration getInetAddresses()>();
+
+     label2:
+        $z0 = interfaceinvoke $r2.<java.util.Enumeration: boolean hasMoreElements()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Enumeration: java.lang.Object nextElement()>();
+        $r5 = (java.net.InetAddress) $r3;
+        $z0 = virtualinvoke $r5.<java.net.InetAddress: boolean isLoopbackAddress()>();
+        if $z0 != 0 goto label8;
+
+        if $z1 != 0 goto label3;
+
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+
+     label3:
+        $r6 = virtualinvoke $r5.<java.net.InetAddress: java.lang.String getHostAddress()>();
+        $r6 = virtualinvoke $r6.<java.lang.String: java.lang.String toString()>();
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+     label4:
+        $z1 = 0;
+
+     label5:
+        goto label2;
+
+     label6:
+        $r7 := @caughtexception;
+        $r8 = <org.acra.ACRA: org.acra.log.ACRALog log>;
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r9 = virtualinvoke $r7.<java.net.SocketException: java.lang.String toString()>();
+        interfaceinvoke $r8.<org.acra.log.ACRALog: int w(java.lang.String,java.lang.String)>($r6, $r9);
+
+     label7:
+        $r9 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r9;
+
+     label8:
+        goto label5;
+
+        catch java.net.SocketException from label0 to label4 with label6;
+    }
+
+    public static long getTotalInternalMemorySize()
+    {
+        java.io.File $r0;
+        android.os.StatFs $r1;
+        long $l0, $l2;
+        java.lang.String $r2;
+        int $i1;
+
+        $r0 = staticinvoke <android.os.Environment: java.io.File getDataDirectory()>();
+        $r1 = new android.os.StatFs;
+        $r2 = virtualinvoke $r0.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r2);
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+        $l0 = (long) $i1;
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockCount()>();
+        $l2 = (long) $i1;
+        $l2 = $l2 * $l0;
+        return $l2;
+    }
+
+    public static java.lang.String sparseArrayToString(android.util.SparseArray)
+    {
+        android.util.SparseArray $r0;
+        java.lang.StringBuilder $r1;
+        int $i0, $i2;
+        java.lang.String $r2;
+        java.lang.Object $r3;
+
+        $r0 := @parameter0: android.util.SparseArray;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        if $r0 != null goto label0;
+
+        return "null";
+
+     label0:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(123);
+        $i2 = 0;
+
+     label1:
+        $i0 = virtualinvoke $r0.<android.util.SparseArray: int size()>();
+        if $i2 >= $i0 goto label5;
+
+        $i0 = virtualinvoke $r0.<android.util.SparseArray: int keyAt(int)>($i2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" => ");
+        $r3 = virtualinvoke $r0.<android.util.SparseArray: java.lang.Object valueAt(int)>($i2);
+        if $r3 != null goto label4;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null");
+
+     label2:
+        $i0 = virtualinvoke $r0.<android.util.SparseArray: int size()>();
+        $i0 = $i0 + -1;
+        if $i2 >= $i0 goto label3;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+     label3:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label4:
+        $r3 = virtualinvoke $r0.<android.util.SparseArray: java.lang.Object valueAt(int)>($i2);
+        $r2 = virtualinvoke $r3.<java.lang.Object: java.lang.String toString()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        goto label2;
+
+     label5:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+}

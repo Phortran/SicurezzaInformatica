@@ -1,0 +1,38 @@
+class it.h3g.areaclienti3.fragments.store.a extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.store.MapDialogActivity a;
+
+    void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)
+    {
+        it.h3g.areaclienti3.fragments.store.a $r0;
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.a;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r0.<it.h3g.areaclienti3.fragments.store.a: it.h3g.areaclienti3.fragments.store.MapDialogActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.store.a $r0;
+        android.view.View $r1;
+        android.content.Intent $r2;
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.a;
+        $r1 := @parameter0: android.view.View;
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.a: it.h3g.areaclienti3.fragments.store.MapDialogActivity a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String a(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r4);
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("cityName", $r5);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.a: it.h3g.areaclienti3.fragments.store.MapDialogActivity a>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void setResult(int,android.content.Intent)>(1, $r2);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.a: it.h3g.areaclienti3.fragments.store.MapDialogActivity a>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void finish()>();
+        return;
+    }
+}

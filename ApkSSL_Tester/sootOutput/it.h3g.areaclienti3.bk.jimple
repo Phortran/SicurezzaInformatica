@@ -1,0 +1,63 @@
+class it.h3g.areaclienti3.bk extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.PagerActivity a;
+
+    void <init>(it.h3g.areaclienti3.PagerActivity)
+    {
+        it.h3g.areaclienti3.bk $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.bk;
+        $r1 := @parameter0: it.h3g.areaclienti3.PagerActivity;
+        $r0.<it.h3g.areaclienti3.bk: it.h3g.areaclienti3.PagerActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static it.h3g.areaclienti3.PagerActivity a(it.h3g.areaclienti3.bk)
+    {
+        it.h3g.areaclienti3.bk $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.bk;
+        $r1 = $r0.<it.h3g.areaclienti3.bk: it.h3g.areaclienti3.PagerActivity a>;
+        return $r1;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.bk $r0;
+        android.view.View $r1;
+        android.os.Bundle $r2;
+        java.lang.String $r3;
+        it.h3g.areaclienti3.PagerActivity $r4, $r7;
+        int $i0;
+        boolean $z0;
+        java.util.ArrayList $r5;
+        it.h3g.areaclienti3.bl $r6;
+        java.lang.String[] $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.bk;
+        $r1 := @parameter0: android.view.View;
+        $r2 = <it.h3g.areaclienti3.j.e: android.os.Bundle a>;
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("usims");
+        if $z0 == 0 goto label0;
+
+        $r2 = <it.h3g.areaclienti3.j.e: android.os.Bundle a>;
+        $r5 = virtualinvoke $r2.<android.os.Bundle: java.util.ArrayList getStringArrayList(java.lang.String)>("usims");
+        $i0 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        if $i0 <= 0 goto label0;
+
+        $r6 = new it.h3g.areaclienti3.bl;
+        specialinvoke $r6.<it.h3g.areaclienti3.bl: void <init>(it.h3g.areaclienti3.bk)>($r0);
+        $r7 = $r0.<it.h3g.areaclienti3.bk: it.h3g.areaclienti3.PagerActivity a>;
+        $r4 = $r0.<it.h3g.areaclienti3.bk: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = virtualinvoke $r4.<it.h3g.areaclienti3.PagerActivity: java.lang.String getString(int)>(2131231236);
+        $r4 = $r0.<it.h3g.areaclienti3.bk: it.h3g.areaclienti3.PagerActivity a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.PagerActivity: java.lang.String[] v(it.h3g.areaclienti3.PagerActivity)>($r4);
+        virtualinvoke $r7.<it.h3g.areaclienti3.PagerActivity: void a(java.lang.String,java.lang.String[],android.widget.AdapterView$OnItemClickListener)>($r3, $r8, $r6);
+
+     label0:
+        return;
+    }
+}

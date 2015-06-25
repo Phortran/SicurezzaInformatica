@@ -1,0 +1,45 @@
+final class com.facebook.lite.notification.a extends java.lang.Object implements java.lang.Runnable
+{
+    final android.content.Context a;
+    final com.facebook.lite.notification.PushRegistrationBroadcastReceiver b;
+
+    void <init>(com.facebook.lite.notification.PushRegistrationBroadcastReceiver, android.content.Context)
+    {
+        com.facebook.lite.notification.a $r0;
+        com.facebook.lite.notification.PushRegistrationBroadcastReceiver $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.lite.notification.a;
+        $r1 := @parameter0: com.facebook.lite.notification.PushRegistrationBroadcastReceiver;
+        $r2 := @parameter1: android.content.Context;
+        $r0.<com.facebook.lite.notification.a: com.facebook.lite.notification.PushRegistrationBroadcastReceiver b> = $r1;
+        $r0.<com.facebook.lite.notification.a: android.content.Context a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.lite.notification.a $r0;
+        android.content.Context $r1;
+        java.lang.UnsupportedOperationException $r3;
+        java.lang.String $r4;
+
+        $r0 := @this: com.facebook.lite.notification.a;
+        $r1 = $r0.<com.facebook.lite.notification.a: android.content.Context a>;
+
+     label0:
+        staticinvoke <com.facebook.lite.notification.b: void a(android.content.Context)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r4 = staticinvoke <com.facebook.lite.notification.PushRegistrationBroadcastReceiver: java.lang.String a()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r4, "Fail to register push token. Google play services not found.");
+        goto label1;
+
+        catch java.lang.UnsupportedOperationException from label0 to label1 with label2;
+    }
+}

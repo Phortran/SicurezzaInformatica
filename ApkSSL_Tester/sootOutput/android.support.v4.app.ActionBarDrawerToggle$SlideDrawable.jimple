@@ -1,0 +1,151 @@
+class android.support.v4.app.ActionBarDrawerToggle$SlideDrawable extends android.graphics.drawable.InsetDrawable implements android.graphics.drawable.Drawable$Callback
+{
+    private final boolean mHasMirroring;
+    private float mOffset;
+    private float mPosition;
+    private final android.graphics.Rect mTmpRect;
+    final android.support.v4.app.ActionBarDrawerToggle this$0;
+
+    private void <init>(android.support.v4.app.ActionBarDrawerToggle, android.graphics.drawable.Drawable)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.support.v4.app.ActionBarDrawerToggle $r1;
+        android.graphics.drawable.Drawable $r2;
+        boolean $z0;
+        int $i0, $i1;
+        android.graphics.Rect $r3;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $r1 := @parameter0: android.support.v4.app.ActionBarDrawerToggle;
+        $r2 := @parameter1: android.graphics.drawable.Drawable;
+        $z0 = 0;
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.support.v4.app.ActionBarDrawerToggle this$0> = $r1;
+        $i1 = (int) 0;
+        specialinvoke $r0.<android.graphics.drawable.InsetDrawable: void <init>(android.graphics.drawable.Drawable,int)>($r2, $i1);
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 <= 18 goto label0;
+
+        $z0 = 1;
+
+     label0:
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: boolean mHasMirroring> = $z0;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect> = $r3;
+        return;
+    }
+
+    void <init>(android.support.v4.app.ActionBarDrawerToggle, android.graphics.drawable.Drawable, android.support.v4.app.ActionBarDrawerToggle$1)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.support.v4.app.ActionBarDrawerToggle $r1;
+        android.graphics.drawable.Drawable $r2;
+        android.support.v4.app.ActionBarDrawerToggle$1 $r3;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $r1 := @parameter0: android.support.v4.app.ActionBarDrawerToggle;
+        $r2 := @parameter1: android.graphics.drawable.Drawable;
+        $r3 := @parameter2: android.support.v4.app.ActionBarDrawerToggle$1;
+        specialinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void <init>(android.support.v4.app.ActionBarDrawerToggle,android.graphics.drawable.Drawable)>($r1, $r2);
+        return;
+    }
+
+    public void draw(android.graphics.Canvas)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.Canvas $r1;
+        byte $b0, $b1;
+        int $i2;
+        android.graphics.Rect $r2;
+        float $f0, $f2;
+        android.app.Activity $r3;
+        android.support.v4.app.ActionBarDrawerToggle $r4;
+        android.view.Window $r5;
+        android.view.View $r6;
+        boolean $z0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $r1 := @parameter0: android.graphics.Canvas;
+        $b0 = 1;
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect>;
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void copyBounds(android.graphics.Rect)>($r2);
+        virtualinvoke $r1.<android.graphics.Canvas: int save()>();
+        $r4 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.support.v4.app.ActionBarDrawerToggle this$0>;
+        $r3 = staticinvoke <android.support.v4.app.ActionBarDrawerToggle: android.app.Activity access$400(android.support.v4.app.ActionBarDrawerToggle)>($r4);
+        $r5 = virtualinvoke $r3.<android.app.Activity: android.view.Window getWindow()>();
+        $r6 = virtualinvoke $r5.<android.view.Window: android.view.View getDecorView()>();
+        $i2 = staticinvoke <android.support.v4.view.ViewCompat: int getLayoutDirection(android.view.View)>($r6);
+        if $i2 != 1 goto label3;
+
+        $b1 = 1;
+
+     label0:
+        if $b1 == 0 goto label1;
+
+        $b0 = -1;
+
+     label1:
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect>;
+        $i2 = virtualinvoke $r2.<android.graphics.Rect: int width()>();
+        $f0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffset>;
+        $f2 = neg $f0;
+        $f0 = (float) $i2;
+        $f2 = $f2 * $f0;
+        $f0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mPosition>;
+        $f2 = $f2 * $f0;
+        $f0 = (float) $b0;
+        $f2 = $f2 * $f0;
+        virtualinvoke $r1.<android.graphics.Canvas: void translate(float,float)>($f2, 0.0F);
+        if $b1 == 0 goto label2;
+
+        $z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: boolean mHasMirroring>;
+        if $z0 != 0 goto label2;
+
+        $f2 = (float) $i2;
+        virtualinvoke $r1.<android.graphics.Canvas: void translate(float,float)>($f2, 0.0F);
+        virtualinvoke $r1.<android.graphics.Canvas: void scale(float,float)>(-1.0F, 1.0F);
+
+     label2:
+        specialinvoke $r0.<android.graphics.drawable.InsetDrawable: void draw(android.graphics.Canvas)>($r1);
+        virtualinvoke $r1.<android.graphics.Canvas: void restore()>();
+        return;
+
+     label3:
+        $b1 = 0;
+        goto label0;
+    }
+
+    public float getPosition()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float $f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $f0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mPosition>;
+        return $f0;
+    }
+
+    public void setOffset(float)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float $f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $f0 := @parameter0: float;
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffset> = $f0;
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void invalidateSelf()>();
+        return;
+    }
+
+    public void setPosition(float)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float $f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+        $f0 := @parameter0: float;
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mPosition> = $f0;
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void invalidateSelf()>();
+        return;
+    }
+}

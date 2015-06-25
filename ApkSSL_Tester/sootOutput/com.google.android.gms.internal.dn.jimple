@@ -1,0 +1,445 @@
+public class com.google.android.gms.internal.dn extends android.webkit.WebChromeClient
+{
+    private final com.google.android.gms.internal.dg a;
+
+    public void <init>(com.google.android.gms.internal.dg)
+    {
+        com.google.android.gms.internal.dn $r0;
+        com.google.android.gms.internal.dg $r1;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        specialinvoke $r0.<android.webkit.WebChromeClient: void <init>()>();
+        $r0.<com.google.android.gms.internal.dn: com.google.android.gms.internal.dg a> = $r1;
+        return;
+    }
+
+    private static void a(android.app.AlertDialog$Builder, java.lang.String, android.webkit.JsResult)
+    {
+        android.app.AlertDialog$Builder $r0;
+        java.lang.String $r1;
+        android.webkit.JsResult $r2;
+        com.google.android.gms.internal.dq $r3;
+        com.google.android.gms.internal.dp $r4;
+        com.google.android.gms.internal.do $r5;
+        android.app.AlertDialog $r6;
+
+        $r0 := @parameter0: android.app.AlertDialog$Builder;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: android.webkit.JsResult;
+        $r0 = virtualinvoke $r0.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)>($r1);
+        $r3 = new com.google.android.gms.internal.dq;
+        specialinvoke $r3.<com.google.android.gms.internal.dq: void <init>(android.webkit.JsResult)>($r2);
+        $r0 = virtualinvoke $r0.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(17039370, $r3);
+        $r4 = new com.google.android.gms.internal.dp;
+        specialinvoke $r4.<com.google.android.gms.internal.dp: void <init>(android.webkit.JsResult)>($r2);
+        $r0 = virtualinvoke $r0.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNegativeButton(int,android.content.DialogInterface$OnClickListener)>(17039360, $r4);
+        $r5 = new com.google.android.gms.internal.do;
+        specialinvoke $r5.<com.google.android.gms.internal.do: void <init>(android.webkit.JsResult)>($r2);
+        $r0 = virtualinvoke $r0.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener)>($r5);
+        $r6 = virtualinvoke $r0.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        virtualinvoke $r6.<android.app.AlertDialog: void show()>();
+        return;
+    }
+
+    private static void a(android.content.Context, android.app.AlertDialog$Builder, java.lang.String, java.lang.String, android.webkit.JsPromptResult)
+    {
+        android.content.Context $r0;
+        android.app.AlertDialog$Builder $r1;
+        java.lang.String $r2, $r3;
+        android.webkit.JsPromptResult $r4;
+        android.widget.LinearLayout $r5;
+        android.widget.EditText $r6;
+        com.google.android.gms.internal.dv $r7;
+        android.widget.TextView $r8;
+        com.google.android.gms.internal.du $r9;
+        com.google.android.gms.internal.ds $r10;
+        android.app.AlertDialog $r11;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.app.AlertDialog$Builder;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r4 := @parameter4: android.webkit.JsPromptResult;
+        $r5 = new android.widget.LinearLayout;
+        specialinvoke $r5.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r5.<android.widget.LinearLayout: void setOrientation(int)>(1);
+        $r8 = new android.widget.TextView;
+        specialinvoke $r8.<android.widget.TextView: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r8.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $r6 = new android.widget.EditText;
+        specialinvoke $r6.<android.widget.EditText: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r6.<android.widget.EditText: void setText(java.lang.CharSequence)>($r3);
+        virtualinvoke $r5.<android.widget.LinearLayout: void addView(android.view.View)>($r8);
+        virtualinvoke $r5.<android.widget.LinearLayout: void addView(android.view.View)>($r6);
+        $r1 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setView(android.view.View)>($r5);
+        $r7 = new com.google.android.gms.internal.dv;
+        specialinvoke $r7.<com.google.android.gms.internal.dv: void <init>(android.webkit.JsPromptResult,android.widget.EditText)>($r4, $r6);
+        $r1 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(17039370, $r7);
+        $r9 = new com.google.android.gms.internal.du;
+        specialinvoke $r9.<com.google.android.gms.internal.du: void <init>(android.webkit.JsPromptResult)>($r4);
+        $r1 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNegativeButton(int,android.content.DialogInterface$OnClickListener)>(17039360, $r9);
+        $r10 = new com.google.android.gms.internal.ds;
+        specialinvoke $r10.<com.google.android.gms.internal.ds: void <init>(android.webkit.JsPromptResult)>($r4);
+        $r1 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener)>($r10);
+        $r11 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        virtualinvoke $r11.<android.app.AlertDialog: void show()>();
+        return;
+    }
+
+    private static boolean a(android.content.Context, java.lang.String, java.lang.String, java.lang.String, android.webkit.JsResult, android.webkit.JsPromptResult, boolean)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2, $r3;
+        android.webkit.JsResult $r4;
+        android.webkit.JsPromptResult $r5;
+        boolean $z0;
+        android.app.AlertDialog$Builder $r6;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r4 := @parameter4: android.webkit.JsResult;
+        $r5 := @parameter5: android.webkit.JsPromptResult;
+        $z0 := @parameter6: boolean;
+        $r6 = new android.app.AlertDialog$Builder;
+        specialinvoke $r6.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>($r1);
+        if $z0 == 0 goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dn: void a(android.content.Context,android.app.AlertDialog$Builder,java.lang.String,java.lang.String,android.webkit.JsPromptResult)>($r0, $r6, $r2, $r3, $r5);
+
+     label0:
+        return 1;
+
+     label1:
+        staticinvoke <com.google.android.gms.internal.dn: void a(android.app.AlertDialog$Builder,java.lang.String,android.webkit.JsResult)>($r6, $r2, $r4);
+        goto label0;
+    }
+
+    protected final void a(android.view.View, int, android.webkit.WebChromeClient$CustomViewCallback)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.view.View $r1;
+        int $i0;
+        android.webkit.WebChromeClient$CustomViewCallback $r2;
+        com.google.android.gms.internal.dg $r3;
+        com.google.android.gms.internal.bf $r4;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.view.View;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: android.webkit.WebChromeClient$CustomViewCallback;
+        $r3 = $r0.<com.google.android.gms.internal.dn: com.google.android.gms.internal.dg a>;
+        $r4 = virtualinvoke $r3.<com.google.android.gms.internal.dg: com.google.android.gms.internal.bf c()>();
+        if $r4 != null goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Could not get ad overlay when showing custom view.");
+        interfaceinvoke $r2.<android.webkit.WebChromeClient$CustomViewCallback: void onCustomViewHidden()>();
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r4.<com.google.android.gms.internal.bf: void a(android.view.View,android.webkit.WebChromeClient$CustomViewCallback)>($r1, $r2);
+        virtualinvoke $r4.<com.google.android.gms.internal.bf: void a(int)>($i0);
+        goto label0;
+    }
+
+    public final void onCloseWindow(android.webkit.WebView)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.WebView $r1;
+        boolean $z0;
+        com.google.android.gms.internal.bf $r2;
+        com.google.android.gms.internal.dg $r4;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.WebView;
+        $z0 = $r1 instanceof com.google.android.gms.internal.dg;
+        if $z0 != 0 goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Tried to close a WebView that wasn\'t an AdWebView.");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = (com.google.android.gms.internal.dg) $r1;
+        $r2 = virtualinvoke $r4.<com.google.android.gms.internal.dg: com.google.android.gms.internal.bf c()>();
+        if $r2 != null goto label2;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Tried to close an AdWebView not associated with an overlay.");
+        goto label0;
+
+     label2:
+        virtualinvoke $r2.<com.google.android.gms.internal.bf: void a()>();
+        goto label0;
+    }
+
+    public final boolean onConsoleMessage(android.webkit.ConsoleMessage)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.ConsoleMessage $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.webkit.ConsoleMessage$MessageLevel $r4;
+        int $i0;
+        int[] $r5;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.ConsoleMessage;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("JS: ");
+        $r3 = virtualinvoke $r1.<android.webkit.ConsoleMessage: java.lang.String message()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (");
+        $r3 = virtualinvoke $r1.<android.webkit.ConsoleMessage: java.lang.String sourceId()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $i0 = virtualinvoke $r1.<android.webkit.ConsoleMessage: int lineNumber()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r5 = <com.google.android.gms.internal.dx: int[] a>;
+        $r4 = virtualinvoke $r1.<android.webkit.ConsoleMessage: android.webkit.ConsoleMessage$MessageLevel messageLevel()>();
+        $i0 = virtualinvoke $r4.<android.webkit.ConsoleMessage$MessageLevel: int ordinal()>();
+        $i0 = $r5[$i0];
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label3;
+            case 3: goto label4;
+            case 4: goto label4;
+            case 5: goto label5;
+            default: goto label0;
+        };
+
+     label0:
+        staticinvoke <com.google.android.gms.internal.dc: void c(java.lang.String)>($r3);
+
+     label1:
+        $z0 = specialinvoke $r0.<android.webkit.WebChromeClient: boolean onConsoleMessage(android.webkit.ConsoleMessage)>($r1);
+        return $z0;
+
+     label2:
+        staticinvoke <com.google.android.gms.internal.dc: void b(java.lang.String)>($r3);
+        goto label1;
+
+     label3:
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r3);
+        goto label1;
+
+     label4:
+        staticinvoke <com.google.android.gms.internal.dc: void c(java.lang.String)>($r3);
+        goto label1;
+
+     label5:
+        staticinvoke <com.google.android.gms.internal.dc: void a(java.lang.String)>($r3);
+        goto label1;
+    }
+
+    public final void onExceededDatabaseQuota(java.lang.String, java.lang.String, long, long, long, android.webkit.WebStorage$QuotaUpdater)
+    {
+        com.google.android.gms.internal.dn $r0;
+        java.lang.String $r1, $r2;
+        long $l0, $l1, $l2, $l3;
+        android.webkit.WebStorage$QuotaUpdater $r3;
+        byte $b4;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $l0 := @parameter2: long;
+        $l1 := @parameter3: long;
+        $l2 := @parameter4: long;
+        $r3 := @parameter5: android.webkit.WebStorage$QuotaUpdater;
+        $l2 = 5242880L - $l2;
+        $b4 = $l2 cmp 0L;
+        if $b4 > 0 goto label1;
+
+        interfaceinvoke $r3.<android.webkit.WebStorage$QuotaUpdater: void updateQuota(long)>($l0);
+
+     label0:
+        return;
+
+     label1:
+        $b4 = $l0 cmp 0L;
+        if $b4 != 0 goto label4;
+
+        $b4 = $l1 cmp $l2;
+        if $b4 > 0 goto label3;
+
+        $b4 = $l1 cmp 1048576L;
+        if $b4 > 0 goto label3;
+
+     label2:
+        interfaceinvoke $r3.<android.webkit.WebStorage$QuotaUpdater: void updateQuota(long)>($l1);
+        goto label0;
+
+     label3:
+        $l1 = 0L;
+        goto label2;
+
+     label4:
+        $b4 = $l1 cmp 0L;
+        if $b4 != 0 goto label5;
+
+        $l3 = staticinvoke <java.lang.Math: long min(long,long)>(131072L, $l2);
+        $l3 = $l3 + $l0;
+        $l1 = staticinvoke <java.lang.Math: long min(long,long)>($l3, 1048576L);
+        goto label2;
+
+     label5:
+        $l3 = 1048576L - $l0;
+        $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l3, $l2);
+        $b4 = $l1 cmp $l3;
+        if $b4 > 0 goto label6;
+
+        $l0 = $l0 + $l1;
+
+     label6:
+        $l1 = $l0;
+        goto label2;
+    }
+
+    public final void onHideCustomView()
+    {
+        com.google.android.gms.internal.dn $r0;
+        com.google.android.gms.internal.dg $r1;
+        com.google.android.gms.internal.bf $r2;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 = $r0.<com.google.android.gms.internal.dn: com.google.android.gms.internal.dg a>;
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dg: com.google.android.gms.internal.bf c()>();
+        if $r2 != null goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Could not get ad overlay when hiding custom view.");
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r2.<com.google.android.gms.internal.bf: void c()>();
+        goto label0;
+    }
+
+    public final boolean onJsAlert(android.webkit.WebView, java.lang.String, java.lang.String, android.webkit.JsResult)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3;
+        android.webkit.JsResult $r4;
+        android.content.Context $r5;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: android.webkit.JsResult;
+        $r5 = virtualinvoke $r1.<android.webkit.WebView: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.google.android.gms.internal.dn: boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsResult,android.webkit.JsPromptResult,boolean)>($r5, $r2, $r3, null, $r4, null, 0);
+        return $z0;
+    }
+
+    public final boolean onJsBeforeUnload(android.webkit.WebView, java.lang.String, java.lang.String, android.webkit.JsResult)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3;
+        android.webkit.JsResult $r4;
+        android.content.Context $r5;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: android.webkit.JsResult;
+        $r5 = virtualinvoke $r1.<android.webkit.WebView: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.google.android.gms.internal.dn: boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsResult,android.webkit.JsPromptResult,boolean)>($r5, $r2, $r3, null, $r4, null, 0);
+        return $z0;
+    }
+
+    public final boolean onJsConfirm(android.webkit.WebView, java.lang.String, java.lang.String, android.webkit.JsResult)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3;
+        android.webkit.JsResult $r4;
+        android.content.Context $r5;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: android.webkit.JsResult;
+        $r5 = virtualinvoke $r1.<android.webkit.WebView: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.google.android.gms.internal.dn: boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsResult,android.webkit.JsPromptResult,boolean)>($r5, $r2, $r3, null, $r4, null, 0);
+        return $z0;
+    }
+
+    public final boolean onJsPrompt(android.webkit.WebView, java.lang.String, java.lang.String, java.lang.String, android.webkit.JsPromptResult)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3, $r4;
+        android.webkit.JsPromptResult $r5;
+        android.content.Context $r6;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String;
+        $r5 := @parameter4: android.webkit.JsPromptResult;
+        $r6 = virtualinvoke $r1.<android.webkit.WebView: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.google.android.gms.internal.dn: boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsResult,android.webkit.JsPromptResult,boolean)>($r6, $r2, $r3, $r4, null, $r5, 1);
+        return $z0;
+    }
+
+    public final void onReachedMaxAppCacheSize(long, long, android.webkit.WebStorage$QuotaUpdater)
+    {
+        com.google.android.gms.internal.dn $r0;
+        long $l0, $l1, $l2;
+        android.webkit.WebStorage$QuotaUpdater $r1;
+        byte $b3;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $r1 := @parameter2: android.webkit.WebStorage$QuotaUpdater;
+        $l1 = 5242880L - $l1;
+        $l2 = 131072L + $l0;
+        $b3 = $l1 cmp $l2;
+        if $b3 >= 0 goto label1;
+
+        interfaceinvoke $r1.<android.webkit.WebStorage$QuotaUpdater: void updateQuota(long)>(0L);
+
+     label0:
+        return;
+
+     label1:
+        interfaceinvoke $r1.<android.webkit.WebStorage$QuotaUpdater: void updateQuota(long)>($l2);
+        goto label0;
+    }
+
+    public final void onShowCustomView(android.view.View, android.webkit.WebChromeClient$CustomViewCallback)
+    {
+        com.google.android.gms.internal.dn $r0;
+        android.view.View $r1;
+        android.webkit.WebChromeClient$CustomViewCallback $r2;
+
+        $r0 := @this: com.google.android.gms.internal.dn;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.webkit.WebChromeClient$CustomViewCallback;
+        virtualinvoke $r0.<com.google.android.gms.internal.dn: void a(android.view.View,int,android.webkit.WebChromeClient$CustomViewCallback)>($r1, -1, $r2);
+        return;
+    }
+}

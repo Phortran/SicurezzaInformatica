@@ -1,0 +1,666 @@
+public abstract class com.google.android.gms.internal.eq$a extends android.os.Binder implements com.google.android.gms.internal.eq
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.eq$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.eq$a;
+        specialinvoke $r0.<android.os.Binder: void <init>()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void attachInterface(android.os.IInterface,java.lang.String)>($r0, "com.google.android.gms.games.internal.IGamesCallbacks");
+        return;
+    }
+
+    public static com.google.android.gms.internal.eq a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.internal.eq $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.internal.eq$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.internal.eq;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.internal.eq) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.internal.eq$a$a;
+        specialinvoke r4.<com.google.android.gms.internal.eq$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.eq$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.eq$a;
+        return $r0;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.eq$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        android.os.Parcelable $r3, $r7;
+        java.lang.String $r4;
+        boolean $z0;
+        com.google.android.gms.common.data.i $r5;
+        com.google.android.gms.common.data.d $r6, r11;
+        java.lang.String[] $r8;
+        android.os.Parcelable$Creator $r9;
+        java.lang.Object $r10;
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage r12;
+
+        $r0 := @this: com.google.android.gms.internal.eq$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $r3 = null;
+        lookupswitch($i0)
+        {
+            case 5001: goto label2;
+            case 5002: goto label3;
+            case 5003: goto label5;
+            case 5004: goto label6;
+            case 5005: goto label8;
+            case 5006: goto label12;
+            case 5007: goto label14;
+            case 5008: goto label16;
+            case 5009: goto label18;
+            case 5010: goto label20;
+            case 5011: goto label22;
+            case 5012: goto label24;
+            case 5013: goto label26;
+            case 5014: goto label27;
+            case 5015: goto label29;
+            case 5016: goto label30;
+            case 5017: goto label31;
+            case 5018: goto label35;
+            case 5019: goto label37;
+            case 5020: goto label39;
+            case 5021: goto label40;
+            case 5022: goto label42;
+            case 5023: goto label44;
+            case 5024: goto label46;
+            case 5025: goto label48;
+            case 5026: goto label50;
+            case 5027: goto label52;
+            case 5028: goto label54;
+            case 5029: goto label56;
+            case 5030: goto label58;
+            case 5031: goto label60;
+            case 5032: goto label62;
+            case 5033: goto label64;
+            case 5034: goto label65;
+            case 5035: goto label70;
+            case 5036: goto label72;
+            case 5037: goto label33;
+            case 5038: goto label68;
+            case 5039: goto label73;
+            case 5040: goto label75;
+            case 6001: goto label76;
+            case 6002: goto label77;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(int,java.lang.String)>($i1, $r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label3:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label4;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label4:
+        $r6 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(com.google.android.gms.common.data.d)>($r6);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label5:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void b(int,java.lang.String)>($i1, $r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label6:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label7;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label7:
+        $r6 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void b(com.google.android.gms.common.data.d)>($r6);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label8:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label11;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r7 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label9:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label10;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label10:
+        $r6 = (com.google.android.gms.common.data.d) $r7;
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(com.google.android.gms.common.data.d,com.google.android.gms.common.data.d)>($r6, r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label11:
+        $r7 = null;
+        goto label9;
+
+     label12:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label13;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label13:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void c(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label14:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label15;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label15:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void d(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label16:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label17;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label17:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void e(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label18:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label19;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label19:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void f(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label20:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label21;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label21:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void g(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label22:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label23;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label23:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void h(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label24:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label25;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label25:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void k(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label26:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(int)>($i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label27:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label28;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label28:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void l(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label29:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void b(int)>($i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label30:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label31:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label32;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label32:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void i(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label33:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label34;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label34:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void j(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label35:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label36;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label36:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void m(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label37:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label38;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label38:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void n(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label39:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void c(int,java.lang.String)>($i1, $r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label40:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label41;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label41:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void o(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label42:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label43;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label43:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void p(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label44:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label45;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label45:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void q(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label46:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label47;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label47:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void r(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label48:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label49;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label49:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void s(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label50:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label51;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label51:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label52:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label53;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label53:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void b(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label54:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label55;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label55:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void c(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label56:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label57;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label57:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void d(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label58:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label59;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label59:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void e(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label60:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label61;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label61:
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String[] createStringArray()>();
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void f(com.google.android.gms.common.data.d,java.lang.String[])>(r11, $r8);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label62:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label63;
+
+        $r9 = <com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: android.os.Parcelable$Creator CREATOR>;
+        $r10 = interfaceinvoke $r9.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r3 = (com.google.android.gms.games.multiplayer.realtime.RealTimeMessage) $r10;
+
+     label63:
+        r12 = (com.google.android.gms.games.multiplayer.realtime.RealTimeMessage) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(com.google.android.gms.games.multiplayer.realtime.RealTimeMessage)>(r12);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label64:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(int,int,java.lang.String)>($i1, $i0, $r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label65:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i0 == 0 goto label67;
+
+        $z0 = 1;
+
+     label66:
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(int,java.lang.String,boolean)>($i1, $r4, $z0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label67:
+        $z0 = 0;
+        goto label66;
+
+     label68:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label69;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label69:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void t(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label70:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label71;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label71:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void u(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label72:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void c(int)>($i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label73:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label74;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label74:
+        r11 = (com.google.android.gms.common.data.d) $r3;
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void v(com.google.android.gms.common.data.d)>(r11);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label75:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void d(int)>($i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label76:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void a(java.lang.String)>($r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label77:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.games.internal.IGamesCallbacks");
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.eq$a: void b(java.lang.String)>($r4);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+    }
+}

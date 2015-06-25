@@ -1,0 +1,41 @@
+public class android.support.v4.view.bk extends android.view.ViewGroup$LayoutParams
+{
+    public boolean a;
+    public int b;
+    float c;
+    boolean d;
+    int e;
+    int f;
+
+    public void <init>()
+    {
+        android.support.v4.view.bk $r0;
+
+        $r0 := @this: android.support.v4.view.bk;
+        specialinvoke $r0.<android.view.ViewGroup$LayoutParams: void <init>(int,int)>(-1, -1);
+        $r0.<android.support.v4.view.bk: float c> = 0.0F;
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v4.view.bk $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int[] $r3;
+        android.content.res.TypedArray $r4;
+        int $i2;
+
+        $r0 := @this: android.support.v4.view.bk;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        specialinvoke $r0.<android.view.ViewGroup$LayoutParams: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r0.<android.support.v4.view.bk: float c> = 0.0F;
+        $r3 = staticinvoke <android.support.v4.view.ViewPager: int[] f()>();
+        $r4 = virtualinvoke $r1.<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet,int[])>($r2, $r3);
+        $i2 = virtualinvoke $r4.<android.content.res.TypedArray: int getInteger(int,int)>(0, 48);
+        $r0.<android.support.v4.view.bk: int b> = $i2;
+        virtualinvoke $r4.<android.content.res.TypedArray: void recycle()>();
+        return;
+    }
+}

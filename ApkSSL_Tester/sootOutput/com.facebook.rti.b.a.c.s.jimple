@@ -1,0 +1,19 @@
+public final class com.facebook.rti.b.a.c.s extends java.lang.Object
+{
+
+    public static boolean a()
+    {
+        android.os.Looper $r0;
+        java.lang.Thread $r1, $r2;
+
+        $r0 = staticinvoke <android.os.Looper: android.os.Looper getMainLooper()>();
+        $r2 = virtualinvoke $r0.<android.os.Looper: java.lang.Thread getThread()>();
+        $r1 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>();
+        if $r2 != $r1 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+}

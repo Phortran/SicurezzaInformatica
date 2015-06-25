@@ -1,0 +1,258 @@
+public final class com.google.android.gms.internal.m extends java.lang.Object implements com.google.android.gms.internal.k
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.m $r0;
+
+        $r0 := @this: com.google.android.gms.internal.m;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private static int a(android.util.DisplayMetrics, java.util.Map, java.lang.String, int)
+    {
+        android.util.DisplayMetrics $r0;
+        java.util.Map $r1;
+        java.lang.String $r2, $r5;
+        int $i0, $i1;
+        java.lang.Object $r3;
+        java.lang.NumberFormatException $r6;
+        java.lang.StringBuilder $r7;
+
+        $r0 := @parameter0: android.util.DisplayMetrics;
+        $r1 := @parameter1: java.util.Map;
+        $r2 := @parameter2: java.lang.String;
+        $i0 := @parameter3: int;
+        $r3 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r2);
+        $r5 = (java.lang.String) $r3;
+        if $r5 == null goto label2;
+
+     label0:
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r5);
+        $i1 = staticinvoke <com.google.android.gms.internal.db: int a(android.util.DisplayMetrics,int)>($r0, $i1);
+
+     label1:
+        $i0 = $i1;
+
+     label2:
+        return $i0;
+
+     label3:
+        $r6 := @caughtexception;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not parse ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in a video GMSG: ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r5);
+        return $i0;
+
+        catch java.lang.NumberFormatException from label0 to label1 with label3;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.m $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        java.lang.String $r3, $r7;
+        com.google.android.gms.internal.bf $r4;
+        com.google.android.gms.internal.au $r5;
+        java.lang.Object $r6;
+        boolean $z0, $z1;
+        android.content.Context $r8;
+        android.content.res.Resources $r9;
+        android.util.DisplayMetrics $r10;
+        int $i2, $i3, $i4, $i5;
+        long $l6;
+        float $f0, $f1;
+        android.view.MotionEvent $r11;
+        java.lang.NumberFormatException $r12;
+        java.lang.StringBuilder $r13;
+
+        $r0 := @this: com.google.android.gms.internal.m;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r6 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("action");
+        $r7 = (java.lang.String) $r6;
+        if $r7 != null goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Action missing from video GMSG.");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dg: com.google.android.gms.internal.bf c()>();
+        if $r4 != null goto label2;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Could not get ad overlay for a video GMSG.");
+        goto label0;
+
+     label2:
+        $r3 = "new";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        $r3 = "position";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z0 != 0 goto label3;
+
+        if $z1 == 0 goto label5;
+
+     label3:
+        $r8 = virtualinvoke $r1.<com.google.android.gms.internal.dg: android.content.Context getContext()>();
+        $r9 = virtualinvoke $r8.<android.content.Context: android.content.res.Resources getResources()>();
+        $r10 = virtualinvoke $r9.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $i2 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "x", 0);
+        $i3 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "y", 0);
+        $i4 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "w", -1);
+        $i5 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "h", -1);
+        if $z0 == 0 goto label4;
+
+        $r5 = virtualinvoke $r4.<com.google.android.gms.internal.bf: com.google.android.gms.internal.au b()>();
+        if $r5 != null goto label4;
+
+        virtualinvoke $r4.<com.google.android.gms.internal.bf: void b(int,int,int,int)>($i2, $i3, $i4, $i5);
+        goto label0;
+
+     label4:
+        virtualinvoke $r4.<com.google.android.gms.internal.bf: void a(int,int,int,int)>($i2, $i3, $i4, $i5);
+        goto label0;
+
+     label5:
+        $r5 = virtualinvoke $r4.<com.google.android.gms.internal.bf: com.google.android.gms.internal.au b()>();
+        if $r5 != null goto label6;
+
+        staticinvoke <com.google.android.gms.internal.au: void a(com.google.android.gms.internal.dg,java.lang.String,java.lang.String)>($r1, "no_video_view", null);
+        goto label0;
+
+     label6:
+        $r3 = "click";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label7;
+
+        $r8 = virtualinvoke $r1.<com.google.android.gms.internal.dg: android.content.Context getContext()>();
+        $r9 = virtualinvoke $r8.<android.content.Context: android.content.res.Resources getResources()>();
+        $r10 = virtualinvoke $r9.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $i5 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "x", 0);
+        $i4 = staticinvoke <com.google.android.gms.internal.m: int a(android.util.DisplayMetrics,java.util.Map,java.lang.String,int)>($r10, $r2, "y", 0);
+        $l6 = staticinvoke <android.os.SystemClock: long uptimeMillis()>();
+        $f0 = (float) $i5;
+        $f1 = (float) $i4;
+        $r11 = staticinvoke <android.view.MotionEvent: android.view.MotionEvent obtain(long,long,int,float,float,int)>($l6, $l6, 0, $f0, $f1, 0);
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void a(android.view.MotionEvent)>($r11);
+        virtualinvoke $r11.<android.view.MotionEvent: void recycle()>();
+        goto label0;
+
+     label7:
+        $r3 = "controls";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label9;
+
+        $r6 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("enabled");
+        $r7 = (java.lang.String) $r6;
+        if $r7 != null goto label8;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Enabled parameter missing from controls video GMSG.");
+        goto label0;
+
+     label8:
+        $z1 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r7);
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void a(boolean)>($z1);
+        goto label0;
+
+     label9:
+        $r3 = "currentTime";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label13;
+
+        $r6 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("time");
+        $r7 = (java.lang.String) $r6;
+        if $r7 != null goto label10;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Time parameter missing from currentTime video GMSG.");
+        goto label0;
+
+     label10:
+        $f1 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>($r7);
+        $f1 = $f1 * 1000.0F;
+        $i5 = (int) $f1;
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void a(int)>($i5);
+
+     label11:
+        goto label0;
+
+     label12:
+        $r12 := @caughtexception;
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not parse time parameter from currentTime video GMSG: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r7);
+        goto label0;
+
+     label13:
+        $r3 = "hide";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label14;
+
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void setVisibility(int)>(4);
+        goto label0;
+
+     label14:
+        $r3 = "load";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label15;
+
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void b()>();
+        goto label0;
+
+     label15:
+        $r3 = "pause";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label16;
+
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void c()>();
+        goto label0;
+
+     label16:
+        $r3 = "play";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label17;
+
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void d()>();
+        goto label0;
+
+     label17:
+        $r3 = "show";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label18;
+
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void setVisibility(int)>(0);
+        goto label0;
+
+     label18:
+        $r3 = "src";
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z1 == 0 goto label19;
+
+        $r6 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("src");
+        $r7 = (java.lang.String) $r6;
+        virtualinvoke $r5.<com.google.android.gms.internal.au: void a(java.lang.String)>($r7);
+        goto label0;
+
+     label19:
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unknown video action: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r7);
+        goto label0;
+
+        catch java.lang.NumberFormatException from label10 to label11 with label12;
+    }
+}

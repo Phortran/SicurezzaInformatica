@@ -1,0 +1,80 @@
+public final enum class org.c.i extends java.lang.Enum
+{
+    public static final enum org.c.i a;
+    public static final enum org.c.i b;
+    public static final enum org.c.i c;
+    private static final org.c.i[] f;
+    private final boolean d;
+    private final boolean e;
+
+    static void <clinit>()
+    {
+        org.c.i $r0;
+        int $i1;
+        org.c.i[] $r2;
+
+        $r0 = new org.c.i;
+        $i1 = (int) 0;
+        specialinvoke $r0.<org.c.i: void <init>(java.lang.String,int,boolean,boolean)>("required", $i1, 0, 1);
+        <org.c.i: org.c.i a> = $r0;
+        $r0 = new org.c.i;
+        $i1 = (int) 1;
+        specialinvoke $r0.<org.c.i: void <init>(java.lang.String,int,boolean,boolean)>("optional", $i1, 1, 1);
+        <org.c.i: org.c.i b> = $r0;
+        $r0 = new org.c.i;
+        specialinvoke $r0.<org.c.i: void <init>(java.lang.String,int,boolean,boolean)>("forbidden", 2, 1, 0);
+        <org.c.i: org.c.i c> = $r0;
+        $r2 = newarray (org.c.i)[3];
+        $r0 = <org.c.i: org.c.i a>;
+        $i1 = (int) 0;
+        $r2[$i1] = $r0;
+        $r0 = <org.c.i: org.c.i b>;
+        $i1 = (int) 1;
+        $r2[$i1] = $r0;
+        $r0 = <org.c.i: org.c.i c>;
+        $r2[2] = $r0;
+        <org.c.i: org.c.i[] f> = $r2;
+        return;
+    }
+
+    private void <init>(java.lang.String, int, boolean, boolean)
+    {
+        org.c.i $r0;
+        java.lang.String $r1;
+        int $i0;
+        boolean $z0, $z1;
+
+        $r0 := @this: org.c.i;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $z0 := @parameter2: boolean;
+        $z1 := @parameter3: boolean;
+        specialinvoke $r0.<java.lang.Enum: void <init>(java.lang.String,int)>($r1, $i0);
+        $r0.<org.c.i: boolean d> = $z0;
+        $r0.<org.c.i: boolean e> = $z1;
+        return;
+    }
+
+    public static org.c.i valueOf(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.Enum $r2;
+        org.c.i $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/c/i", $r0);
+        $r3 = (org.c.i) $r2;
+        return $r3;
+    }
+
+    public static org.c.i[] values()
+    {
+        org.c.i[] $r0;
+        java.lang.Object $r1;
+
+        $r0 = <org.c.i: org.c.i[] f>;
+        $r1 = virtualinvoke $r0.<java.lang.Object: java.lang.Object clone()>();
+        $r0 = (org.c.i[]) $r1;
+        return $r0;
+    }
+}

@@ -1,0 +1,77 @@
+final class com.facebook.lite.g extends java.lang.Object implements java.lang.Thread$UncaughtExceptionHandler
+{
+    private final java.lang.Thread$UncaughtExceptionHandler a;
+    private final com.facebook.a.j b;
+
+    public void <init>(com.facebook.a.j)
+    {
+        com.facebook.lite.g $r0;
+        com.facebook.a.j $r1;
+        java.lang.Thread$UncaughtExceptionHandler $r2;
+
+        $r0 := @this: com.facebook.lite.g;
+        $r1 := @parameter0: com.facebook.a.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = staticinvoke <java.lang.Thread: java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()>();
+        $r0.<com.facebook.lite.g: java.lang.Thread$UncaughtExceptionHandler a> = $r2;
+        $r0.<com.facebook.lite.g: com.facebook.a.j b> = $r1;
+        return;
+    }
+
+    public final void uncaughtException(java.lang.Thread, java.lang.Throwable)
+    {
+        com.facebook.lite.g $r0;
+        java.lang.Thread $r1;
+        java.lang.Throwable $r2;
+        java.util.HashMap $r3;
+        java.lang.Class $r4;
+        java.lang.String $r5, $r6;
+        java.io.StringWriter $r7;
+        java.io.PrintWriter $r8;
+        java.lang.Object $r9;
+        boolean $z0;
+        java.lang.Thread$UncaughtExceptionHandler $r10;
+        com.facebook.a.j $r11;
+
+        $r0 := @this: com.facebook.lite.g;
+        $r1 := @parameter0: java.lang.Thread;
+        $r2 := @parameter1: java.lang.Throwable;
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $r4 = class "java/lang/IllegalArgumentException";
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.String getSimpleName()>();
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, "android.os.StatFs.native_setup");
+        $r4 = class "java/lang/NoSuchFieldError";
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.String getSimpleName()>();
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, "android.database.sqlite.SQLiteDatabase.openDatabase");
+        $r4 = class "android/database/sqlite/SQLiteDiskIOException";
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.String getSimpleName()>();
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, "android.database.sqlite.SQLiteDatabase.native_setLocale");
+        $r7 = new java.io.StringWriter;
+        specialinvoke $r7.<java.io.StringWriter: void <init>()>();
+        $r8 = new java.io.PrintWriter;
+        specialinvoke $r8.<java.io.PrintWriter: void <init>(java.io.Writer)>($r7);
+        virtualinvoke $r2.<java.lang.Throwable: void printStackTrace(java.io.PrintWriter)>($r8);
+        $r6 = virtualinvoke $r7.<java.io.StringWriter: java.lang.String toString()>();
+        $r4 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = virtualinvoke $r4.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r9 = interfaceinvoke $r3.<java.util.Map: java.lang.Object get(java.lang.Object)>($r5);
+        $r5 = (java.lang.String) $r9;
+        if $r5 == null goto label0;
+
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean contains(java.lang.CharSequence)>($r5);
+        if $z0 != 0 goto label2;
+
+     label0:
+        $r10 = $r0.<com.facebook.lite.g: java.lang.Thread$UncaughtExceptionHandler a>;
+        interfaceinvoke $r10.<java.lang.Thread$UncaughtExceptionHandler: void uncaughtException(java.lang.Thread,java.lang.Throwable)>($r1, $r2);
+
+     label1:
+        return;
+
+     label2:
+        $r11 = $r0.<com.facebook.lite.g: com.facebook.a.j b>;
+        virtualinvoke $r11.<com.facebook.a.j: com.facebook.a.n a(java.lang.Throwable)>($r2);
+        goto label1;
+    }
+}

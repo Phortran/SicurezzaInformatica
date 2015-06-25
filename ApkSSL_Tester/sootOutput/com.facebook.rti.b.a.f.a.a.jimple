@@ -1,0 +1,125 @@
+public final class com.facebook.rti.b.a.f.a.a extends java.lang.Object implements org.apache.http.conn.scheme.LayeredSocketFactory
+{
+    private final b.a.a.a.a.a.f a;
+    private final com.facebook.rti.b.a.f.b.a b;
+    private final com.facebook.rti.b.a.f.a.b.d c;
+    private final com.facebook.rti.b.a.f.a.b d;
+
+    public void <init>(javax.net.ssl.SSLSocketFactory, com.facebook.rti.b.a.f.b.a, com.facebook.rti.b.a.f.a.b.d, com.facebook.rti.b.a.f.a.b, int)
+    {
+        com.facebook.rti.b.a.f.a.a $r0;
+        javax.net.ssl.SSLSocketFactory $r1;
+        com.facebook.rti.b.a.f.b.a $r2;
+        com.facebook.rti.b.a.f.a.b.d $r3;
+        com.facebook.rti.b.a.f.a.b $r4;
+        int $i0;
+        b.a.a.a.a.a.f $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a;
+        $r1 := @parameter0: javax.net.ssl.SSLSocketFactory;
+        $r2 := @parameter1: com.facebook.rti.b.a.f.b.a;
+        $r3 := @parameter2: com.facebook.rti.b.a.f.a.b.d;
+        $r4 := @parameter3: com.facebook.rti.b.a.f.a.b;
+        $i0 := @parameter4: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.a.f.a.a: com.facebook.rti.b.a.f.b.a b> = $r2;
+        $r5 = staticinvoke <com.facebook.rti.b.a.f.a.b.b: b.a.a.a.a.a.f a(javax.net.ssl.SSLSocketFactory)>($r1);
+        $r0.<com.facebook.rti.b.a.f.a.a: b.a.a.a.a.a.f a> = $r5;
+        $r5 = $r0.<com.facebook.rti.b.a.f.a.a: b.a.a.a.a.a.f a>;
+        staticinvoke <com.facebook.rti.b.a.f.a.b.c: void a(b.a.a.a.a.a.f,int)>($r5, $i0);
+        $r0.<com.facebook.rti.b.a.f.a.a: com.facebook.rti.b.a.f.a.b.d c> = $r3;
+        $r0.<com.facebook.rti.b.a.f.a.a: com.facebook.rti.b.a.f.a.b d> = $r4;
+        return;
+    }
+
+    public final java.net.Socket connectSocket(java.net.Socket, java.lang.String, int, java.net.InetAddress, int, org.apache.http.params.HttpParams)
+    {
+        com.facebook.rti.b.a.f.a.a $r0;
+        java.net.Socket $r1;
+        java.lang.String $r2;
+        int $i0, $i1;
+        java.net.InetAddress $r3;
+        org.apache.http.params.HttpParams $r4;
+        java.lang.UnsupportedOperationException $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a;
+        $r1 := @parameter0: java.net.Socket;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $r3 := @parameter3: java.net.InetAddress;
+        $i1 := @parameter4: int;
+        $r4 := @parameter5: org.apache.http.params.HttpParams;
+        $r5 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r5.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>("connectSocket() is not supported by the socket factory");
+        throw $r5;
+    }
+
+    public final java.net.Socket createSocket()
+    {
+        com.facebook.rti.b.a.f.a.a $r0;
+        java.lang.UnsupportedOperationException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a;
+        $r1 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r1.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>("createSocket() is not supported by the socket factory");
+        throw $r1;
+    }
+
+    public final java.net.Socket createSocket(java.net.Socket, java.lang.String, int, boolean)
+    {
+        com.facebook.rti.b.a.f.a.a $r0;
+        java.net.Socket $r1;
+        java.lang.String $r2;
+        int $i0;
+        boolean $z0;
+        java.net.InetAddress $r4;
+        com.facebook.rti.b.a.f.a.c $r5;
+        byte[] $r6;
+        com.facebook.rti.b.a.f.b.a $r7;
+        com.facebook.rti.b.a.f.a.d $r8;
+        java.io.IOException $r9;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a;
+        $r1 := @parameter0: java.net.Socket;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $z0 := @parameter3: boolean;
+        $r5 = staticinvoke <com.facebook.rti.b.a.f.a.b: com.facebook.rti.b.a.f.a.c a(java.net.Socket)>($r1);
+
+     label0:
+        virtualinvoke $r5.<com.facebook.rti.b.a.f.a.c: void a(java.lang.String)>($r2);
+        virtualinvoke $r5.<com.facebook.rti.b.a.f.a.c: void a()>();
+        virtualinvoke $r1.<java.net.Socket: int getSoTimeout()>();
+        virtualinvoke $r5.<com.facebook.rti.b.a.f.a.c: void b()>();
+        $r4 = virtualinvoke $r1.<java.net.Socket: java.net.InetAddress getInetAddress()>();
+        $r6 = virtualinvoke $r4.<java.net.InetAddress: byte[] getAddress()>();
+        staticinvoke <com.facebook.rti.b.a.f.a.b.d: void a(java.net.Socket,byte[],java.lang.String,int)>($r5, $r6, $r2, $i0);
+        $r7 = $r0.<com.facebook.rti.b.a.f.a.a: com.facebook.rti.b.a.f.b.a b>;
+        virtualinvoke $r7.<com.facebook.rti.b.a.f.b.a: void a(javax.net.ssl.SSLSocket,java.lang.String)>($r5, $r2);
+
+     label1:
+        return $r5;
+
+     label2:
+        $r8 := @caughtexception;
+        $r9 = new java.io.IOException;
+        specialinvoke $r9.<java.io.IOException: void <init>(java.lang.Throwable)>($r8);
+        throw $r9;
+
+        catch com.facebook.rti.b.a.f.a.d from label0 to label1 with label2;
+    }
+
+    public final boolean isSecure(java.net.Socket)
+    {
+        com.facebook.rti.b.a.f.a.a $r0;
+        java.net.Socket $r1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a;
+        $r1 := @parameter0: java.net.Socket;
+        staticinvoke <com.facebook.rti.a.d.a.d: java.lang.Object a(java.lang.Object)>($r1);
+        $z0 = $r1 instanceof com.facebook.rti.b.a.f.a.c;
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        return 1;
+    }
+}

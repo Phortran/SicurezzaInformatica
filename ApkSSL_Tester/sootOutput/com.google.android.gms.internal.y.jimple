@@ -1,0 +1,100 @@
+public final class com.google.android.gms.internal.y extends java.lang.Object
+{
+    public final java.util.List a;
+    public final long b;
+    public final java.util.List c;
+    public final java.util.List d;
+    public final java.util.List e;
+    public final java.lang.String f;
+    public final long g;
+
+    public void <init>(java.lang.String)
+    {
+        com.google.android.gms.internal.y $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        org.json.JSONObject $r2, $r3;
+        byte $b1;
+        int $i2, $i3;
+        java.lang.StringBuilder $r4;
+        org.json.JSONArray $r5;
+        java.util.ArrayList $r6;
+        com.google.android.gms.internal.w $r7;
+        java.util.List $r8;
+        long $l4, $l5;
+
+        $r0 := @this: com.google.android.gms.internal.y;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new org.json.JSONObject;
+        specialinvoke $r2.<org.json.JSONObject: void <init>(java.lang.String)>($r1);
+        $z0 = staticinvoke <com.google.android.gms.internal.dc: boolean a(int)>(2);
+        if $z0 == 0 goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mediation Response JSON: ");
+        $r1 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String toString(int)>(2);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void d(java.lang.String)>($r1);
+
+     label0:
+        $r5 = virtualinvoke $r2.<org.json.JSONObject: org.json.JSONArray getJSONArray(java.lang.String)>("ad_networks");
+        $r6 = new java.util.ArrayList;
+        $i2 = virtualinvoke $r5.<org.json.JSONArray: int length()>();
+        specialinvoke $r6.<java.util.ArrayList: void <init>(int)>($i2);
+        $i3 = 0;
+
+     label1:
+        $i2 = virtualinvoke $r5.<org.json.JSONArray: int length()>();
+        if $i3 >= $i2 goto label2;
+
+        $r7 = new com.google.android.gms.internal.w;
+        $r3 = virtualinvoke $r5.<org.json.JSONArray: org.json.JSONObject getJSONObject(int)>($i3);
+        specialinvoke $r7.<com.google.android.gms.internal.w: void <init>(org.json.JSONObject)>($r3);
+        interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r7);
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label2:
+        $r8 = staticinvoke <java.util.Collections: java.util.List unmodifiableList(java.util.List)>($r6);
+        $r0.<com.google.android.gms.internal.y: java.util.List a> = $r8;
+        $r1 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String getString(java.lang.String)>("qdata");
+        $r0.<com.google.android.gms.internal.y: java.lang.String f> = $r1;
+        $r3 = virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject optJSONObject(java.lang.String)>("settings");
+        if $r3 == null goto label6;
+
+        $l4 = virtualinvoke $r3.<org.json.JSONObject: long optLong(java.lang.String,long)>("ad_network_timeout_millis", -1L);
+        $r0.<com.google.android.gms.internal.y: long b> = $l4;
+        $r8 = staticinvoke <com.google.android.gms.internal.aj: java.util.List a(org.json.JSONObject,java.lang.String)>($r3, "click_urls");
+        $r0.<com.google.android.gms.internal.y: java.util.List c> = $r8;
+        $r8 = staticinvoke <com.google.android.gms.internal.aj: java.util.List a(org.json.JSONObject,java.lang.String)>($r3, "imp_urls");
+        $r0.<com.google.android.gms.internal.y: java.util.List d> = $r8;
+        $r8 = staticinvoke <com.google.android.gms.internal.aj: java.util.List a(org.json.JSONObject,java.lang.String)>($r3, "nofill_urls");
+        $r0.<com.google.android.gms.internal.y: java.util.List e> = $r8;
+        $l4 = virtualinvoke $r3.<org.json.JSONObject: long optLong(java.lang.String,long)>("refresh", -1L);
+        $b1 = $l4 cmp 0L;
+        if $b1 <= 0 goto label5;
+
+        $l5 = 1000L * $l4;
+
+     label3:
+        $r0.<com.google.android.gms.internal.y: long g> = $l5;
+
+     label4:
+        return;
+
+     label5:
+        $l5 = -1L;
+        goto label3;
+
+     label6:
+        $r0.<com.google.android.gms.internal.y: long b> = -1L;
+        $r0.<com.google.android.gms.internal.y: java.util.List c> = null;
+        $r0.<com.google.android.gms.internal.y: java.util.List d> = null;
+        $r0.<com.google.android.gms.internal.y: java.util.List e> = null;
+        $r0.<com.google.android.gms.internal.y: long g> = -1L;
+        goto label4;
+    }
+}

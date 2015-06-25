@@ -1,0 +1,211 @@
+public final class com.facebook.rti.b.d.o extends java.lang.Object
+{
+    public final com.facebook.rti.b.e.h a;
+    public final com.facebook.rti.b.e.b.j b;
+    public final int c;
+    public final long d;
+    private final java.util.concurrent.CountDownLatch e;
+    private java.lang.Throwable f;
+    private java.util.concurrent.ScheduledFuture g;
+
+    public void <init>(com.facebook.rti.b.e.h, com.facebook.rti.b.e.b.j, int, long)
+    {
+        com.facebook.rti.b.d.o $r0;
+        com.facebook.rti.b.e.h $r1;
+        com.facebook.rti.b.e.b.j $r2;
+        int $i0;
+        long $l1;
+        java.util.concurrent.CountDownLatch $r3;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r1 := @parameter0: com.facebook.rti.b.e.h;
+        $r2 := @parameter1: com.facebook.rti.b.e.b.j;
+        $i0 := @parameter2: int;
+        $l1 := @parameter3: long;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = new java.util.concurrent.CountDownLatch;
+        specialinvoke $r3.<java.util.concurrent.CountDownLatch: void <init>(int)>(1);
+        $r0.<com.facebook.rti.b.d.o: java.util.concurrent.CountDownLatch e> = $r3;
+        $r0.<com.facebook.rti.b.d.o: java.lang.Throwable f> = null;
+        $r0.<com.facebook.rti.b.d.o: com.facebook.rti.b.e.h a> = $r1;
+        $r0.<com.facebook.rti.b.d.o: com.facebook.rti.b.e.b.j b> = $r2;
+        $r0.<com.facebook.rti.b.d.o: int c> = $i0;
+        $r0.<com.facebook.rti.b.d.o: long d> = $l1;
+        return;
+    }
+
+    private void b()
+    {
+        com.facebook.rti.b.d.o $r0;
+        java.lang.Object[] $r3;
+        java.util.concurrent.CountDownLatch $r4;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r3 = newarray (java.lang.Object)[1];
+        $r3[0] = $r0;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MqttOperation", "Complete operation %s", $r3);
+        $r4 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.CountDownLatch e>;
+        virtualinvoke $r4.<java.util.concurrent.CountDownLatch: void countDown()>();
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.rti.b.d.o $r0;
+        java.util.concurrent.ScheduledFuture $r1;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r1 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        interfaceinvoke $r1.<java.util.concurrent.ScheduledFuture: boolean cancel(boolean)>(0);
+
+     label0:
+        specialinvoke $r0.<com.facebook.rti.b.d.o: void b()>();
+        return;
+    }
+
+    public final void a(long)
+    {
+        com.facebook.rti.b.d.o $r0;
+        long $l0;
+        java.util.concurrent.CountDownLatch $r1;
+        java.util.concurrent.TimeUnit $r2;
+        boolean $z0;
+        java.util.concurrent.TimeoutException $r3;
+        java.lang.Throwable $r4;
+        java.util.concurrent.ExecutionException $r5;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.CountDownLatch e>;
+        $r2 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+        $z0 = virtualinvoke $r1.<java.util.concurrent.CountDownLatch: boolean await(long,java.util.concurrent.TimeUnit)>($l0, $r2);
+        if $z0 != 0 goto label0;
+
+        $r3 = new java.util.concurrent.TimeoutException;
+        specialinvoke $r3.<java.util.concurrent.TimeoutException: void <init>()>();
+        throw $r3;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $r4 = $r0.<com.facebook.rti.b.d.o: java.lang.Throwable f>;
+        if $r4 == null goto label4;
+
+        $r5 = new java.util.concurrent.ExecutionException;
+        $r4 = $r0.<com.facebook.rti.b.d.o: java.lang.Throwable f>;
+        specialinvoke $r5.<java.util.concurrent.ExecutionException: void <init>(java.lang.Throwable)>($r4);
+        throw $r5;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+
+     label3:
+        throw $r4;
+
+     label4:
+        exitmonitor $r0;
+
+     label5:
+        return;
+
+        catch java.lang.Throwable from label1 to label3 with label2;
+        catch java.lang.Throwable from label4 to label5 with label2;
+    }
+
+    public final void a(java.lang.Throwable)
+    {
+        com.facebook.rti.b.d.o $r0;
+        java.lang.Throwable $r1, $r4;
+        java.util.concurrent.ScheduledFuture $r2;
+        java.util.concurrent.CountDownLatch $r3;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        interfaceinvoke $r2.<java.util.concurrent.ScheduledFuture: boolean cancel(boolean)>(0);
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $r0.<com.facebook.rti.b.d.o: java.lang.Throwable f> = $r1;
+        $r3 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.CountDownLatch e>;
+        virtualinvoke $r3.<java.util.concurrent.CountDownLatch: void countDown()>();
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+
+     label3:
+        throw $r4;
+
+        catch java.lang.Throwable from label1 to label3 with label2;
+    }
+
+    public final void a(java.util.concurrent.ScheduledFuture)
+    {
+        com.facebook.rti.b.d.o $r0;
+        java.util.concurrent.ScheduledFuture $r1, $r2;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r1 := @parameter0: java.util.concurrent.ScheduledFuture;
+        staticinvoke <com.facebook.rti.a.d.a.d: java.lang.Object a(java.lang.Object)>($r1);
+        $r2 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        if $r2 != null goto label1;
+
+        $z0 = 1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void b(boolean)>($z0);
+        $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g> = $r1;
+        return;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.rti.b.d.o $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        long $l0;
+        com.facebook.rti.b.e.h $r3;
+        com.facebook.rti.b.e.b.j $r4;
+        int $i1;
+        java.util.concurrent.ScheduledFuture $r5;
+
+        $r0 := @this: com.facebook.rti.b.d.o;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("MqttOperation{mClient=");
+        $r3 = $r0.<com.facebook.rti.b.d.o: com.facebook.rti.b.e.h a>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", mResponseType=");
+        $r4 = $r0.<com.facebook.rti.b.d.o: com.facebook.rti.b.e.b.j b>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", mOperationId=");
+        $i1 = $r0.<com.facebook.rti.b.d.o: int c>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", mCreationTime=");
+        $l0 = $r0.<com.facebook.rti.b.d.o: long d>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", mTimeoutFuture=");
+        $r5 = $r0.<com.facebook.rti.b.d.o: java.util.concurrent.ScheduledFuture g>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+}

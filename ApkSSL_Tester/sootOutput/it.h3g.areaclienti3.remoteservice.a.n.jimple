@@ -1,0 +1,971 @@
+public class it.h3g.areaclienti3.remoteservice.a.n extends java.lang.Object
+{
+    private android.content.Context a;
+    private it.h3g.areaclienti3.j.m b;
+    private it.h3g.areaclienti3.j.l c;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.j.m $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.l c> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a> = $r1;
+        $r3 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r3.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b> = $r3;
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.l c> = $r2;
+        return;
+    }
+
+    private android.os.Bundle a(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r9;
+        it.h3g.areaclienti3.remoteservice.b.f.t $r2;
+        android.os.Bundle $r3, $r8;
+        it.h3g.areaclienti3.remoteservice.b.f.s $r4;
+        android.content.Context $r5;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.remoteservice.b.f.u $r7;
+        boolean $z0;
+        java.lang.Exception $r11;
+        it.h3g.areaclienti3.j.m $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.f.t;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.f.t: void <init>()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.f.t: void a(java.lang.String)>($r1);
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.f.s;
+
+     label0:
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.s: void <init>(android.content.Context)>($r5);
+        $r6 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.s: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r2);
+        $r7 = (it.h3g.areaclienti3.remoteservice.b.f.u) $r6;
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        $r9 = virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.f.u: java.lang.String c()>();
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int)>(2);
+        virtualinvoke $r8.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("registered");
+        if $z0 == 0 goto label3;
+
+        $z0 = 1;
+
+     label1:
+        virtualinvoke $r8.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("registered", $z0);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r8);
+
+     label2:
+        return $r3;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+
+     label4:
+        $r11 := @caughtexception;
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r8 = virtualinvoke $r12.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r11, $r3);
+        return $r8;
+
+        catch java.lang.Exception from label0 to label2 with label4;
+    }
+
+    private android.os.Bundle a(java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r2, $r10;
+        it.h3g.areaclienti3.remoteservice.b.f.n $r3;
+        android.os.Bundle $r4, $r9;
+        it.h3g.areaclienti3.remoteservice.b.f.m $r5;
+        android.content.Context $r6;
+        java.lang.Object $r7;
+        it.h3g.areaclienti3.remoteservice.b.f.o $r8;
+        it.h3g.areaclienti3.remoteservice.b.f.b $r11;
+        it.h3g.areaclienti3.remoteservice.b.f.a $r12;
+        it.h3g.areaclienti3.remoteservice.b.f.c $r13;
+        boolean $z0;
+        java.lang.Exception $r14;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new it.h3g.areaclienti3.remoteservice.b.f.n;
+        specialinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.n: void <init>()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.n: void b(java.lang.String)>($r1);
+        if $r2 == null goto label0;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.n: void a(java.lang.String)>($r2);
+
+     label0:
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r5 = new it.h3g.areaclienti3.remoteservice.b.f.m;
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.f.m: void <init>(android.content.Context)>($r6);
+        $r7 = virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.f.m: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r3);
+        $r8 = (it.h3g.areaclienti3.remoteservice.b.f.o) $r7;
+        $r9 = new android.os.Bundle;
+        specialinvoke $r9.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        if $r2 == null goto label4;
+
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("email", $r2);
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("usimType", "data");
+
+     label2:
+        $r11 = new it.h3g.areaclienti3.remoteservice.b.f.b;
+        specialinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void <init>()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void a(java.lang.String)>($r1);
+        $r12 = new it.h3g.areaclienti3.remoteservice.b.f.a;
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: void <init>(android.content.Context)>($r6);
+        $r7 = virtualinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r11);
+        $r13 = (it.h3g.areaclienti3.remoteservice.b.f.c) $r7;
+        $r10 = "profile_ItaConsumer";
+        $r2 = virtualinvoke $r13.<it.h3g.areaclienti3.remoteservice.b.f.c: java.lang.String c()>();
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label7;
+
+        $r10 = "consumer";
+
+     label3:
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("proposition", $r10);
+        virtualinvoke $r4.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r9);
+        return $r4;
+
+     label4:
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("usimType", "voice");
+
+     label5:
+        goto label2;
+
+     label6:
+        $r14 := @caughtexception;
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r9 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r14, $r4);
+        return $r9;
+
+     label7:
+        $r10 = "business";
+        goto label3;
+
+        catch java.lang.Exception from label1 to label5 with label6;
+    }
+
+    private android.os.Bundle a(java.lang.String, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r2, $r3;
+        it.h3g.areaclienti3.remoteservice.b.f.k $r4;
+        android.os.Bundle $r5, $r10;
+        it.h3g.areaclienti3.remoteservice.b.f.j $r6;
+        android.content.Context $r7;
+        java.lang.Object $r8;
+        it.h3g.areaclienti3.remoteservice.b.f.l $r9;
+        it.h3g.areaclienti3.remoteservice.b.f.b $r11;
+        it.h3g.areaclienti3.remoteservice.b.f.a $r12;
+        it.h3g.areaclienti3.remoteservice.b.f.c $r13;
+        boolean $z0;
+        java.lang.Exception $r14;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.f.k;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.k: void <init>()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.k: void c(java.lang.String)>($r1);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.k: void a(java.lang.String)>($r2);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.f.k: void b(java.lang.String)>($r3);
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.f.j;
+
+     label0:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.f.j: void <init>(android.content.Context)>($r7);
+        $r8 = virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.f.j: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r4);
+        $r9 = (it.h3g.areaclienti3.remoteservice.b.f.l) $r8;
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        $r11 = new it.h3g.areaclienti3.remoteservice.b.f.b;
+        specialinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void <init>()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void a(java.lang.String)>($r1);
+        $r12 = new it.h3g.areaclienti3.remoteservice.b.f.a;
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: void <init>(android.content.Context)>($r7);
+        $r8 = virtualinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r11);
+        $r13 = (it.h3g.areaclienti3.remoteservice.b.f.c) $r8;
+        $r3 = "profile_ItaConsumer";
+        $r2 = virtualinvoke $r13.<it.h3g.areaclienti3.remoteservice.b.f.c: java.lang.String c()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label3;
+
+        $r3 = "consumer";
+
+     label1:
+        virtualinvoke $r10.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("proposition", $r3);
+        virtualinvoke $r10.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("tempPassSent", "Password temporanea inviata sul canale richiesto");
+        virtualinvoke $r5.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r10);
+
+     label2:
+        return $r5;
+
+     label3:
+        $r3 = "business";
+        goto label1;
+
+     label4:
+        $r14 := @caughtexception;
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r10 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r14, $r5);
+        return $r10;
+
+        catch java.lang.Exception from label0 to label2 with label4;
+    }
+
+    private android.os.Bundle a(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r2, $r3, $r4, $r8;
+        java.lang.Boolean $r5, $r6, $r7;
+        it.h3g.areaclienti3.remoteservice.b.f.v $r10;
+        android.content.Context $r11;
+        java.lang.Object $r12;
+        android.os.Bundle $r13, $r16;
+        it.h3g.areaclienti3.remoteservice.b.f.w $r14;
+        it.h3g.areaclienti3.remoteservice.b.f.x $r15;
+        java.lang.Exception $r17;
+        it.h3g.areaclienti3.j.m $r18;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String;
+        $r5 := @parameter4: java.lang.Boolean;
+        $r6 := @parameter5: java.lang.Boolean;
+        $r7 := @parameter6: java.lang.Boolean;
+        $r8 := @parameter7: java.lang.String;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Set password - BEGIN");
+        $r13 = new android.os.Bundle;
+        specialinvoke $r13.<android.os.Bundle: void <init>()>();
+        $r14 = new it.h3g.areaclienti3.remoteservice.b.f.w;
+        specialinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void <init>()>();
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void b(java.lang.String)>($r1);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void a(java.lang.Boolean)>($r7);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void c(java.lang.Boolean)>($r5);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void b(java.lang.Boolean)>($r6);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void c(java.lang.String)>($r2);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void e(java.lang.String)>($r4);
+        virtualinvoke $r14.<it.h3g.areaclienti3.remoteservice.b.f.w: void d(java.lang.String)>($r3);
+        $r10 = new it.h3g.areaclienti3.remoteservice.b.f.v;
+
+     label0:
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r10.<it.h3g.areaclienti3.remoteservice.b.f.v: void <init>(android.content.Context)>($r11);
+        $r12 = virtualinvoke $r10.<it.h3g.areaclienti3.remoteservice.b.f.v: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r14);
+        $r15 = (it.h3g.areaclienti3.remoteservice.b.f.x) $r12;
+        if $r15 == null goto label4;
+
+        $r16 = new android.os.Bundle;
+        specialinvoke $r16.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r16.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        virtualinvoke $r16.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("password", $r2);
+        virtualinvoke $r13.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r16);
+
+     label1:
+        $r16 = $r13;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Set password - END");
+        return $r16;
+
+     label3:
+        $r17 := @caughtexception;
+        $r18 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r16 = virtualinvoke $r18.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r17, $r13);
+        goto label2;
+
+     label4:
+        $r16 = $r13;
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    private android.os.Bundle a(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r2, $r3, $r4, $r5, $r9;
+        java.lang.Boolean $r6, $r7, $r8;
+        it.h3g.areaclienti3.remoteservice.b.f.g $r11;
+        android.content.Context $r12;
+        java.lang.Object $r13;
+        android.os.Bundle $r14, $r17;
+        it.h3g.areaclienti3.remoteservice.b.f.h $r15;
+        it.h3g.areaclienti3.remoteservice.b.f.i $r16;
+        java.lang.Exception $r18;
+        it.h3g.areaclienti3.j.m $r19;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String;
+        $r5 := @parameter4: java.lang.String;
+        $r6 := @parameter5: java.lang.Boolean;
+        $r7 := @parameter6: java.lang.Boolean;
+        $r8 := @parameter7: java.lang.Boolean;
+        $r9 := @parameter8: java.lang.String;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Change password - BEGIN");
+        $r14 = new android.os.Bundle;
+        specialinvoke $r14.<android.os.Bundle: void <init>()>();
+        $r15 = new it.h3g.areaclienti3.remoteservice.b.f.h;
+        specialinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void <init>()>();
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void b(java.lang.String)>($r1);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void a(java.lang.Boolean)>($r8);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void c(java.lang.Boolean)>($r6);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void b(java.lang.Boolean)>($r7);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void c(java.lang.String)>($r3);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void a(java.lang.String)>($r2);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void e(java.lang.String)>($r5);
+        virtualinvoke $r15.<it.h3g.areaclienti3.remoteservice.b.f.h: void d(java.lang.String)>($r4);
+        $r11 = new it.h3g.areaclienti3.remoteservice.b.f.g;
+
+     label0:
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.g: void <init>(android.content.Context)>($r12);
+        $r13 = virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.g: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r15);
+        $r16 = (it.h3g.areaclienti3.remoteservice.b.f.i) $r13;
+        if $r16 == null goto label4;
+
+        $r17 = new android.os.Bundle;
+        specialinvoke $r17.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r17.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        virtualinvoke $r17.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("password", $r3);
+        virtualinvoke $r17.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("oldPassword", $r2);
+        virtualinvoke $r14.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r17);
+
+     label1:
+        $r17 = $r14;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Change password - END");
+        return $r17;
+
+     label3:
+        $r18 := @caughtexception;
+        $r19 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r17 = virtualinvoke $r19.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r18, $r14);
+        goto label2;
+
+     label4:
+        $r17 = $r14;
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    private android.os.Bundle b(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r9;
+        it.h3g.areaclienti3.remoteservice.b.q.o $r2;
+        android.os.Bundle $r3, $r8;
+        it.h3g.areaclienti3.remoteservice.b.q.n $r4;
+        android.content.Context $r5;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.remoteservice.b.q.p $r7;
+        java.lang.Exception $r11;
+        it.h3g.areaclienti3.j.m $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.q.o;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.o: void <init>()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.o: void a(java.lang.String)>($r1);
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.q.n;
+
+     label0:
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.q.n: void <init>(android.content.Context)>($r5);
+        $r6 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.q.n: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r2);
+        $r7 = (it.h3g.areaclienti3.remoteservice.b.q.p) $r6;
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        $r9 = virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.q.p: java.lang.String k()>();
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int)>(2);
+        virtualinvoke $r8.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        virtualinvoke $r8.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("pin", $r9);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r8);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r11 := @caughtexception;
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r8 = virtualinvoke $r12.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r11, $r3);
+        return $r8;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private android.os.Bundle b(java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1, $r2, $r10;
+        it.h3g.areaclienti3.remoteservice.b.f.q $r3;
+        android.os.Bundle $r4, $r9;
+        it.h3g.areaclienti3.remoteservice.b.f.p $r5;
+        android.content.Context $r6;
+        java.lang.Object $r7;
+        it.h3g.areaclienti3.remoteservice.b.f.r $r8;
+        it.h3g.areaclienti3.remoteservice.b.f.b $r11;
+        it.h3g.areaclienti3.remoteservice.b.f.a $r12;
+        it.h3g.areaclienti3.remoteservice.b.f.c $r13;
+        boolean $z0;
+        java.lang.Exception $r14;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new it.h3g.areaclienti3.remoteservice.b.f.q;
+        specialinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.q: void <init>()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.q: void c(java.lang.String)>($r1);
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f.q: void b(java.lang.String)>($r2);
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r5 = new it.h3g.areaclienti3.remoteservice.b.f.p;
+
+     label0:
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.f.p: void <init>(android.content.Context)>($r6);
+        $r7 = virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.f.p: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r3);
+        $r8 = (it.h3g.areaclienti3.remoteservice.b.f.r) $r7;
+        $r9 = new android.os.Bundle;
+        specialinvoke $r9.<android.os.Bundle: void <init>()>();
+        $r10 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.f.r: java.lang.String c()>();
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("secretQuestion", $r10);
+        $r11 = new it.h3g.areaclienti3.remoteservice.b.f.b;
+        specialinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void <init>()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.f.b: void a(java.lang.String)>($r1);
+        $r12 = new it.h3g.areaclienti3.remoteservice.b.f.a;
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.content.Context a>;
+        specialinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: void <init>(android.content.Context)>($r6);
+        $r7 = virtualinvoke $r12.<it.h3g.areaclienti3.remoteservice.b.f.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r11);
+        $r13 = (it.h3g.areaclienti3.remoteservice.b.f.c) $r7;
+        $r10 = "profile_ItaConsumer";
+        $r2 = virtualinvoke $r13.<it.h3g.areaclienti3.remoteservice.b.f.c: java.lang.String c()>();
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label3;
+
+        $r10 = "consumer";
+
+     label1:
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("proposition", $r10);
+        virtualinvoke $r4.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r9);
+
+     label2:
+        return $r4;
+
+     label3:
+        $r10 = "business";
+        goto label1;
+
+     label4:
+        $r14 := @caughtexception;
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.m b>;
+        $r9 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r14, $r4);
+        return $r9;
+
+        catch java.lang.Exception from label0 to label2 with label4;
+    }
+
+    private android.os.Bundle c(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        java.lang.String $r1;
+        android.os.Bundle $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String,java.lang.String)>($r1, null);
+        return $r2;
+    }
+
+    public android.os.Bundle a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        if $r3 == null goto label1;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label1;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start registration status action with username = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r2);
+        $i0 = virtualinvoke $r3.<java.lang.String: int length()>();
+        if $i0 > 11 goto label0;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String)>($r3);
+        return $r1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        return $r1;
+    }
+
+    public android.os.Bundle b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        if $r3 == null goto label1;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label1;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start PIN recovery action with username = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r2);
+        $i0 = virtualinvoke $r3.<java.lang.String: int length()>();
+        if $i0 > 11 goto label0;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle b(java.lang.String)>($r3);
+        return $r1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        return $r1;
+    }
+
+    public android.os.Bundle c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1, $r3;
+        java.lang.String $r2, $r7;
+        it.h3g.areaclienti3.j.l $r4;
+        boolean $z0;
+        java.lang.StringBuilder $r6;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.a.n: it.h3g.areaclienti3.j.l c>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.j.l: void f(boolean)>(0);
+        if $r2 == null goto label2;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label2;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start signup action consumer with username = ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i0 > 11 goto label0;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("email");
+        if $z0 == 0 goto label1;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("email");
+        $r3 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String,java.lang.String)>($r2, $r7);
+        return $r3;
+
+     label1:
+        $r3 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle c(java.lang.String)>($r2);
+        return $r3;
+
+     label2:
+        virtualinvoke $r3.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        return $r3;
+    }
+
+    public android.os.Bundle d(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r4;
+        boolean $z0;
+        int $i1;
+        java.lang.StringBuilder $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r2 = "sms";
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("channel");
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("channel");
+
+     label0:
+        if $r4 == null goto label1;
+
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label2;
+
+     label1:
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r1;
+
+     label2:
+        $i1 = virtualinvoke $r4.<java.lang.String: int length()>();
+        if $i1 > 11 goto label3;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Reset password form , proposition null, try to find out");
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle b(java.lang.String,java.lang.String)>($r4, $r2);
+        return $r1;
+    }
+
+    public android.os.Bundle e(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r5;
+        boolean $z0;
+        int $i1;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("proposition");
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("secretAnswer");
+        $r5 = "sms";
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("channel");
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("channel");
+
+     label0:
+        $i1 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i1 > 11 goto label1;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label1:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String,java.lang.String,java.lang.String)>($r2, $r3, $r5);
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 == 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("RegistrationAction", "SendSecretAnswerThread thread result CONTAINS ERROR!");
+
+     label2:
+        return $r1;
+    }
+
+    public android.os.Bundle f(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r5, $r6, $r7, $r8, $r9, $r10, $r11, $r12;
+        java.lang.Boolean $r4, $r15, $r16;
+        int $i0;
+        java.lang.StringBuilder $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = null;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", "Set password Action - BEGIN");
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("proposition");
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("password");
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("confirmPassword");
+        $r8 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("recoveryQuestion");
+        $r9 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("recoveryAnswer");
+        $r10 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("informativa");
+        $r11 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("usage");
+        $r12 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("consenso");
+        $i0 = virtualinvoke $r6.<java.lang.String: int length()>();
+        if $i0 > 11 goto label0;
+
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("proposition: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r2 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r2);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("username: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r2 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r2);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("password: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r2);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("confirmPassword: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("recoveryQuestion: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("recoveryAnswer: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("informativa: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("usage: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("consenso: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r7);
+        if $r10 == null goto label1;
+
+        $i0 = virtualinvoke $r10.<java.lang.String: int length()>();
+        if $i0 != 0 goto label6;
+
+     label1:
+        $r15 = null;
+
+     label2:
+        if $r11 == null goto label3;
+
+        $i0 = virtualinvoke $r11.<java.lang.String: int length()>();
+        if $i0 != 0 goto label7;
+
+     label3:
+        $r16 = null;
+
+     label4:
+        if $r12 == null goto label5;
+
+        $i0 = virtualinvoke $r12.<java.lang.String: int length()>();
+        if $i0 != 0 goto label8;
+
+     label5:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean,java.lang.Boolean,java.lang.Boolean,java.lang.String)>($r6, $r3, $r8, $r9, $r15, $r16, $r4, $r5);
+        return $r1;
+
+     label6:
+        $r15 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r10);
+        goto label2;
+
+     label7:
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r11);
+        goto label4;
+
+     label8:
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r12);
+        goto label5;
+    }
+
+    public android.os.Bundle g(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.n $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r4, $r5, $r7, $r8, $r9, $r10, $r11, $r12, $r13;
+        java.lang.Boolean $r6, $r16, $r17;
+        int $i0;
+        java.lang.StringBuilder $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.n;
+        $r1 := @parameter0: android.os.Bundle;
+        $r6 = null;
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("proposition");
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("username");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("oldPassword");
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("password");
+        $r8 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("confirmPassword");
+        $r9 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("recoveryQuestion");
+        $r10 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("recoveryAnswer");
+        $r11 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("informativa");
+        $r12 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("usage");
+        $r13 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("consenso");
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i0 > 11 goto label0;
+
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("proposition: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r5 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r5);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("username: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r5);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("oldPassword: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r5);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("password: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r5);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("confirmPassword: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("recoveryQuestion: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("recoveryAnswer: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("informativa: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("usage: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("consenso: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
+        $r8 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationAction", $r8);
+        if $r11 == null goto label1;
+
+        $i0 = virtualinvoke $r11.<java.lang.String: int length()>();
+        if $i0 != 0 goto label6;
+
+     label1:
+        $r16 = null;
+
+     label2:
+        if $r12 == null goto label3;
+
+        $i0 = virtualinvoke $r12.<java.lang.String: int length()>();
+        if $i0 != 0 goto label7;
+
+     label3:
+        $r17 = null;
+
+     label4:
+        if $r13 == null goto label5;
+
+        $i0 = virtualinvoke $r13.<java.lang.String: int length()>();
+        if $i0 != 0 goto label8;
+
+     label5:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean,java.lang.Boolean,java.lang.Boolean,java.lang.String)>($r2, $r3, $r4, $r9, $r10, $r16, $r17, $r6, $r7);
+        return $r1;
+
+     label6:
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r11);
+        goto label2;
+
+     label7:
+        $r17 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r12);
+        goto label4;
+
+     label8:
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r13);
+        goto label5;
+    }
+}

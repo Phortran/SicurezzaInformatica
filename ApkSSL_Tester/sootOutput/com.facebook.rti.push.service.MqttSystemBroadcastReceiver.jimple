@@ -1,0 +1,37 @@
+public class com.facebook.rti.push.service.MqttSystemBroadcastReceiver extends android.content.BroadcastReceiver
+{
+
+    public void <init>()
+    {
+        com.facebook.rti.push.service.MqttSystemBroadcastReceiver $r0;
+
+        $r0 := @this: com.facebook.rti.push.service.MqttSystemBroadcastReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.rti.push.service.MqttSystemBroadcastReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r4;
+        java.lang.Object[] $r5;
+
+        $r0 := @this: com.facebook.rti.push.service.MqttSystemBroadcastReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r5 = newarray (java.lang.Object)[1];
+        $r5[0] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("MqttSystemBroadcastReceiver", "onReceive %s", $r5);
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        staticinvoke <com.facebook.rti.push.a.c: void b(android.content.Context,java.lang.String)>($r1, $r4);
+        goto label0;
+    }
+}

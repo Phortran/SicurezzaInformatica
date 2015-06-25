@@ -1,0 +1,43 @@
+class it.h3g.areaclienti3.fragments.bk extends java.lang.Object implements android.content.DialogInterface$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.bf a;
+
+    void <init>(it.h3g.areaclienti3.fragments.bf)
+    {
+        it.h3g.areaclienti3.fragments.bk $r0;
+        it.h3g.areaclienti3.fragments.bf $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bk;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.bf;
+        $r0.<it.h3g.areaclienti3.fragments.bk: it.h3g.areaclienti3.fragments.bf a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.content.DialogInterface, int)
+    {
+        it.h3g.areaclienti3.fragments.bk $r0;
+        android.content.DialogInterface $r1;
+        int $i0;
+        java.lang.String[] $r2;
+        java.lang.String $r5;
+        it.h3g.areaclienti3.fragments.bf $r6;
+        android.widget.EditText $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bk;
+        $r1 := @parameter0: android.content.DialogInterface;
+        $i0 := @parameter1: int;
+        $r2 = <it.h3g.areaclienti3.fragments.bf: java.lang.String[] a>;
+        $r5 = $r2[$i0];
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("+39", "");
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(" ", "");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.bk: it.h3g.areaclienti3.fragments.bf a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.fragments.bf: android.widget.EditText b(it.h3g.areaclienti3.fragments.bf)>($r6);
+        virtualinvoke $r7.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.bk: it.h3g.areaclienti3.fragments.bf a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.fragments.bf: android.widget.EditText c(it.h3g.areaclienti3.fragments.bf)>($r6);
+        virtualinvoke $r7.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5);
+        interfaceinvoke $r1.<android.content.DialogInterface: void dismiss()>();
+        return;
+    }
+}

@@ -1,0 +1,58 @@
+final class com.a.a.at extends java.util.concurrent.FutureTask implements java.lang.Comparable
+{
+    private final com.a.a.d a;
+
+    public void <init>(com.a.a.d)
+    {
+        com.a.a.at $r0;
+        com.a.a.d $r1;
+
+        $r0 := @this: com.a.a.at;
+        $r1 := @parameter0: com.a.a.d;
+        specialinvoke $r0.<java.util.concurrent.FutureTask: void <init>(java.lang.Runnable,java.lang.Object)>($r1, null);
+        $r0.<com.a.a.at: com.a.a.d a> = $r1;
+        return;
+    }
+
+    public int a(com.a.a.at)
+    {
+        com.a.a.at $r0, $r1;
+        com.a.a.d $r2;
+        com.a.a.ao $r3, $r4;
+        int $i0, $i1;
+
+        $r0 := @this: com.a.a.at;
+        $r1 := @parameter0: com.a.a.at;
+        $r2 = $r0.<com.a.a.at: com.a.a.d a>;
+        $r3 = virtualinvoke $r2.<com.a.a.d: com.a.a.ao n()>();
+        $r2 = $r1.<com.a.a.at: com.a.a.d a>;
+        $r4 = virtualinvoke $r2.<com.a.a.d: com.a.a.ao n()>();
+        if $r3 != $r4 goto label0;
+
+        $r2 = $r0.<com.a.a.at: com.a.a.d a>;
+        $i0 = $r2.<com.a.a.d: int a>;
+        $r2 = $r1.<com.a.a.at: com.a.a.d a>;
+        $i1 = $r2.<com.a.a.d: int a>;
+        $i1 = $i0 - $i1;
+        return $i1;
+
+     label0:
+        $i1 = virtualinvoke $r4.<com.a.a.ao: int ordinal()>();
+        $i0 = virtualinvoke $r3.<com.a.a.ao: int ordinal()>();
+        $i1 = $i1 - $i0;
+        return $i1;
+    }
+
+    public int compareTo(java.lang.Object)
+    {
+        com.a.a.at $r0, $r2;
+        java.lang.Object $r1;
+        int $i0;
+
+        $r0 := @this: com.a.a.at;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (com.a.a.at) $r1;
+        $i0 = virtualinvoke $r0.<com.a.a.at: int a(com.a.a.at)>($r2);
+        return $i0;
+    }
+}

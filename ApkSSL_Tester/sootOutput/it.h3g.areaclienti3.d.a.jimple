@@ -1,0 +1,73 @@
+public class it.h3g.areaclienti3.d.a extends java.util.ArrayList implements java.io.Serializable
+{
+
+    public void <init>(java.util.ArrayList)
+    {
+        it.h3g.areaclienti3.d.a $r0;
+        java.util.ArrayList $r1;
+        boolean $z0;
+        java.util.Iterator $r2;
+        it.h3g.areaclienti3.d.k $r3;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.remoteservice.b.e.r $r6;
+        java.lang.String $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.d.a;
+        $r1 := @parameter0: java.util.ArrayList;
+        specialinvoke $r0.<java.util.ArrayList: void <init>()>();
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        return;
+
+     label1:
+        $r5 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (it.h3g.areaclienti3.remoteservice.b.e.r) $r5;
+        $r3 = new it.h3g.areaclienti3.d.k;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.k: void <init>(it.h3g.areaclienti3.remoteservice.b.e.r)>($r6);
+        $r7 = virtualinvoke $r3.<it.h3g.areaclienti3.d.k: java.lang.String b()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("2104");
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.d.a: boolean add(java.lang.Object)>($r3);
+        goto label0;
+    }
+
+    public it.h3g.areaclienti3.d.k a(java.lang.String)
+    {
+        it.h3g.areaclienti3.d.a $r0;
+        java.lang.String $r1, $r4;
+        int $i1, $i2;
+        it.h3g.areaclienti3.d.k $r2;
+        java.lang.Object $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.d.a;
+        $r1 := @parameter0: java.lang.String;
+        $i1 = 0;
+
+     label0:
+        $i2 = virtualinvoke $r0.<it.h3g.areaclienti3.d.a: int size()>();
+        if $i1 < $i2 goto label1;
+
+        return null;
+
+     label1:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.d.a: java.lang.Object get(int)>($i1);
+        $r2 = (it.h3g.areaclienti3.d.k) $r3;
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.d.k: java.lang.String a()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z0 == 0 goto label2;
+
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.d.a: java.lang.Object get(int)>($i1);
+        $r2 = (it.h3g.areaclienti3.d.k) $r3;
+        return $r2;
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+}

@@ -1,0 +1,198 @@
+public class org.e.b.d extends java.lang.Object implements org.e.b.c
+{
+    private java.net.HttpURLConnection a;
+
+    public void <init>(java.net.Proxy, java.lang.String, int)
+    {
+        org.e.b.d $r0;
+        java.net.Proxy $r1;
+        java.lang.String $r2;
+        int $i0;
+        java.net.URL $r3;
+        java.net.URLConnection $r4;
+        java.net.HttpURLConnection $r5;
+
+        $r0 := @this: org.e.b.d;
+        $r1 := @parameter0: java.net.Proxy;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        if $r1 != null goto label1;
+
+        $r3 = new java.net.URL;
+        specialinvoke $r3.<java.net.URL: void <init>(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r3.<java.net.URL: java.net.URLConnection openConnection()>();
+        $r5 = (java.net.HttpURLConnection) $r4;
+
+     label0:
+        $r0.<org.e.b.d: java.net.HttpURLConnection a> = $r5;
+        $r5 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setUseCaches(boolean)>(0);
+        $r5 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setDoOutput(boolean)>(1);
+        $r5 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setDoInput(boolean)>(1);
+        $r5 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setConnectTimeout(int)>($i0);
+        $r5 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void setReadTimeout(int)>($i0);
+        return;
+
+     label1:
+        $r3 = new java.net.URL;
+        specialinvoke $r3.<java.net.URL: void <init>(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r3.<java.net.URL: java.net.URLConnection openConnection(java.net.Proxy)>($r1);
+        $r5 = (java.net.HttpURLConnection) $r4;
+        goto label0;
+    }
+
+    public void a()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+
+        $r0 := @this: org.e.b.d;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r1.<java.net.HttpURLConnection: void disconnect()>();
+        return;
+    }
+
+    public void a(int)
+    {
+        org.e.b.d $r0;
+        int $i0;
+        java.net.HttpURLConnection $r1;
+
+        $r0 := @this: org.e.b.d;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r1.<java.net.HttpURLConnection: void setFixedLengthStreamingMode(int)>($i0);
+        return;
+    }
+
+    public void a(java.lang.String)
+    {
+        org.e.b.d $r0;
+        java.lang.String $r1;
+        java.net.HttpURLConnection $r2;
+
+        $r0 := @this: org.e.b.d;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setRequestMethod(java.lang.String)>($r1);
+        return;
+    }
+
+    public void a(java.lang.String, java.lang.String)
+    {
+        org.e.b.d $r0;
+        java.lang.String $r1, $r2;
+        java.net.HttpURLConnection $r3;
+
+        $r0 := @this: org.e.b.d;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        virtualinvoke $r3.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>($r1, $r2);
+        return;
+    }
+
+    public java.util.List b()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+        java.lang.Object $r2;
+        int $i1, $i2;
+        java.util.LinkedList $r3;
+        java.util.Map $r4;
+        java.util.Iterator $r5;
+        org.e.a $r6;
+        java.util.Set $r7;
+        boolean $z0;
+        java.lang.String $r8, $r10;
+        java.util.List $r9;
+
+        $r0 := @this: org.e.b.d;
+        $r3 = new java.util.LinkedList;
+        specialinvoke $r3.<java.util.LinkedList: void <init>()>();
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        $r4 = virtualinvoke $r1.<java.net.HttpURLConnection: java.util.Map getHeaderFields()>();
+        if $r4 == null goto label2;
+
+        $r7 = interfaceinvoke $r4.<java.util.Map: java.util.Set keySet()>();
+        $r5 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label2;
+
+        $r2 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (java.lang.String) $r2;
+        $r2 = interfaceinvoke $r4.<java.util.Map: java.lang.Object get(java.lang.Object)>($r8);
+        $r9 = (java.util.List) $r2;
+        $i1 = 0;
+
+     label1:
+        $i2 = interfaceinvoke $r9.<java.util.List: int size()>();
+        if $i1 >= $i2 goto label0;
+
+        $r6 = new org.e.a;
+        $r2 = interfaceinvoke $r9.<java.util.List: java.lang.Object get(int)>($i1);
+        $r10 = (java.lang.String) $r2;
+        specialinvoke $r6.<org.e.a: void <init>(java.lang.String,java.lang.String)>($r8, $r10);
+        interfaceinvoke $r3.<java.util.List: boolean add(java.lang.Object)>($r6);
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label2:
+        return $r3;
+    }
+
+    public int c()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+        int $i0;
+
+        $r0 := @this: org.e.b.d;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        $i0 = virtualinvoke $r1.<java.net.HttpURLConnection: int getResponseCode()>();
+        return $i0;
+    }
+
+    public java.io.OutputStream d()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+        java.io.OutputStream $r2;
+
+        $r0 := @this: org.e.b.d;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        $r2 = virtualinvoke $r1.<java.net.HttpURLConnection: java.io.OutputStream getOutputStream()>();
+        return $r2;
+    }
+
+    public java.io.InputStream e()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+        java.io.InputStream $r2;
+
+        $r0 := @this: org.e.b.d;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        $r2 = virtualinvoke $r1.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>();
+        return $r2;
+    }
+
+    public java.io.InputStream f()
+    {
+        org.e.b.d $r0;
+        java.net.HttpURLConnection $r1;
+        java.io.InputStream $r2;
+
+        $r0 := @this: org.e.b.d;
+        $r1 = $r0.<org.e.b.d: java.net.HttpURLConnection a>;
+        $r2 = virtualinvoke $r1.<java.net.HttpURLConnection: java.io.InputStream getErrorStream()>();
+        return $r2;
+    }
+}

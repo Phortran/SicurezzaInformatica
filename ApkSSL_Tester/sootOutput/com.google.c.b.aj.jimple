@@ -1,0 +1,56 @@
+class com.google.c.b.aj extends java.lang.Object implements java.lang.CharSequence
+{
+    char[] a;
+
+    void <init>()
+    {
+        com.google.c.b.aj $r0;
+
+        $r0 := @this: com.google.c.b.aj;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public char charAt(int)
+    {
+        com.google.c.b.aj $r0;
+        int $i0;
+        char[] $r1;
+        char $c1;
+
+        $r0 := @this: com.google.c.b.aj;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<com.google.c.b.aj: char[] a>;
+        $c1 = $r1[$i0];
+        return $c1;
+    }
+
+    public int length()
+    {
+        com.google.c.b.aj $r0;
+        char[] $r1;
+        int $i0;
+
+        $r0 := @this: com.google.c.b.aj;
+        $r1 = $r0.<com.google.c.b.aj: char[] a>;
+        $i0 = lengthof $r1;
+        return $i0;
+    }
+
+    public java.lang.CharSequence subSequence(int, int)
+    {
+        com.google.c.b.aj $r0;
+        int $i0, $i1;
+        java.lang.String $r1;
+        char[] $r2;
+
+        $r0 := @this: com.google.c.b.aj;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 = new java.lang.String;
+        $r2 = $r0.<com.google.c.b.aj: char[] a>;
+        $i1 = $i1 - $i0;
+        specialinvoke $r1.<java.lang.String: void <init>(char[],int,int)>($r2, $i0, $i1);
+        return $r1;
+    }
+}

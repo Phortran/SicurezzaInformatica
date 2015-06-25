@@ -1,0 +1,59 @@
+abstract class com.google.android.gms.internal.gt extends com.google.android.gms.internal.hh
+{
+    final com.google.android.gms.internal.em a;
+    private final java.util.ArrayList d;
+
+    void <init>(com.google.android.gms.internal.em, com.google.android.gms.games.multiplayer.realtime.g, com.google.android.gms.common.data.d, java.lang.String[])
+    {
+        com.google.android.gms.internal.gt $r0;
+        com.google.android.gms.internal.em $r1;
+        com.google.android.gms.games.multiplayer.realtime.g $r2;
+        com.google.android.gms.common.data.d $r3;
+        java.lang.String[] $r4;
+        java.util.ArrayList $r5;
+        int $i0, $i1;
+        java.lang.String $r6;
+
+        $r0 := @this: com.google.android.gms.internal.gt;
+        $r1 := @parameter0: com.google.android.gms.internal.em;
+        $r2 := @parameter1: com.google.android.gms.games.multiplayer.realtime.g;
+        $r3 := @parameter2: com.google.android.gms.common.data.d;
+        $r4 := @parameter3: java.lang.String[];
+        $r0.<com.google.android.gms.internal.gt: com.google.android.gms.internal.em a> = $r1;
+        specialinvoke $r0.<com.google.android.gms.internal.hh: void <init>(com.google.android.gms.internal.em,com.google.android.gms.games.multiplayer.realtime.g,com.google.android.gms.common.data.d)>($r1, $r2, $r3);
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r0.<com.google.android.gms.internal.gt: java.util.ArrayList d> = $r5;
+        $i1 = 0;
+        $i0 = lengthof $r4;
+
+     label0:
+        if $i1 >= $i0 goto label1;
+
+        $r5 = $r0.<com.google.android.gms.internal.gt: java.util.ArrayList d>;
+        $r6 = $r4[$i1];
+        virtualinvoke $r5.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    protected void a(com.google.android.gms.games.multiplayer.realtime.g, com.google.android.gms.games.multiplayer.realtime.Room)
+    {
+        com.google.android.gms.internal.gt $r0;
+        com.google.android.gms.games.multiplayer.realtime.g $r1;
+        com.google.android.gms.games.multiplayer.realtime.Room $r2;
+        java.util.ArrayList $r3;
+
+        $r0 := @this: com.google.android.gms.internal.gt;
+        $r1 := @parameter0: com.google.android.gms.games.multiplayer.realtime.g;
+        $r2 := @parameter1: com.google.android.gms.games.multiplayer.realtime.Room;
+        $r3 = $r0.<com.google.android.gms.internal.gt: java.util.ArrayList d>;
+        virtualinvoke $r0.<com.google.android.gms.internal.gt: void a(com.google.android.gms.games.multiplayer.realtime.g,com.google.android.gms.games.multiplayer.realtime.Room,java.util.ArrayList)>($r1, $r2, $r3);
+        return;
+    }
+
+    protected abstract void a(com.google.android.gms.games.multiplayer.realtime.g, com.google.android.gms.games.multiplayer.realtime.Room, java.util.ArrayList);
+}

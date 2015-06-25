@@ -1,0 +1,58 @@
+final class com.google.android.gms.internal.ba extends java.lang.Object
+{
+    private final java.lang.Runnable a;
+    private volatile boolean b;
+
+    public void <init>(com.google.android.gms.internal.au)
+    {
+        com.google.android.gms.internal.ba $r0;
+        com.google.android.gms.internal.au $r1;
+        com.google.android.gms.internal.bb $r2;
+
+        $r0 := @this: com.google.android.gms.internal.ba;
+        $r1 := @parameter0: com.google.android.gms.internal.au;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.ba: boolean b> = 0;
+        $r2 = new com.google.android.gms.internal.bb;
+        specialinvoke $r2.<com.google.android.gms.internal.bb: void <init>(com.google.android.gms.internal.ba,com.google.android.gms.internal.au)>($r0, $r1);
+        $r0.<com.google.android.gms.internal.ba: java.lang.Runnable a> = $r2;
+        return;
+    }
+
+    static boolean a(com.google.android.gms.internal.ba)
+    {
+        com.google.android.gms.internal.ba $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.google.android.gms.internal.ba;
+        $z0 = $r0.<com.google.android.gms.internal.ba: boolean b>;
+        return $z0;
+    }
+
+    public void a()
+    {
+        com.google.android.gms.internal.ba $r0;
+        java.lang.Runnable $r1;
+        android.os.Handler $r2;
+
+        $r0 := @this: com.google.android.gms.internal.ba;
+        $r0.<com.google.android.gms.internal.ba: boolean b> = 1;
+        $r2 = <com.google.android.gms.internal.db: android.os.Handler a>;
+        $r1 = $r0.<com.google.android.gms.internal.ba: java.lang.Runnable a>;
+        virtualinvoke $r2.<android.os.Handler: void removeCallbacks(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public void b()
+    {
+        com.google.android.gms.internal.ba $r0;
+        android.os.Handler $r1;
+        java.lang.Runnable $r2;
+
+        $r0 := @this: com.google.android.gms.internal.ba;
+        $r1 = <com.google.android.gms.internal.db: android.os.Handler a>;
+        $r2 = $r0.<com.google.android.gms.internal.ba: java.lang.Runnable a>;
+        virtualinvoke $r1.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r2, 250L);
+        return;
+    }
+}

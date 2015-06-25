@@ -1,0 +1,84 @@
+public class com.facebook.lite.deviceid.UniqueIdSupplier extends android.content.BroadcastReceiver
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/deviceid/UniqueIdSupplier";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getName()>();
+        <com.facebook.lite.deviceid.UniqueIdSupplier: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.deviceid.UniqueIdSupplier $r0;
+
+        $r0 := @this: com.facebook.lite.deviceid.UniqueIdSupplier;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.lite.deviceid.UniqueIdSupplier $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        com.facebook.lite.deviceid.c $r3;
+        int $i0;
+        long $l1, $l4, $l5;
+        java.lang.String $r5;
+        android.os.Bundle $r6;
+        byte $b6;
+
+        $r0 := @this: com.facebook.lite.deviceid.UniqueIdSupplier;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = null;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: int getResultCode()>();
+        if $i0 != -1 goto label2;
+
+        $r5 = virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: java.lang.String getResultData()>();
+        $r6 = virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: android.os.Bundle getResultExtras(boolean)>(1);
+        $l4 = virtualinvoke $r6.<android.os.Bundle: long getLong(java.lang.String,long)>("device_id_generated_timestamp_ms", 9223372036854775807L);
+        if $r5 == null goto label1;
+
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l5 = $l1 - $l4;
+        $b6 = $l5 cmp 172800000L;
+        if $b6 <= 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = new com.facebook.lite.deviceid.c;
+        specialinvoke $r3.<com.facebook.lite.deviceid.c: void <init>(java.lang.String,long)>($r5, $l4);
+
+     label2:
+        $r5 = staticinvoke <com.facebook.lite.b.e: java.lang.String j(android.content.Context)>($r1);
+        $l5 = staticinvoke <com.facebook.lite.b.e: long k(android.content.Context)>($r1);
+        if $r5 == null goto label0;
+
+        $b6 = $l5 cmp 9223372036854775807L;
+        if $b6 == 0 goto label0;
+
+        if $r3 == null goto label3;
+
+        $l4 = virtualinvoke $r3.<com.facebook.lite.deviceid.c: long b()>();
+        $b6 = $l5 cmp $l4;
+        if $b6 > 0 goto label0;
+
+     label3:
+        virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: void setResultCode(int)>(-1);
+        virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: void setResultData(java.lang.String)>($r5);
+        $r6 = new android.os.Bundle;
+        specialinvoke $r6.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r6.<android.os.Bundle: void putLong(java.lang.String,long)>("device_id_generated_timestamp_ms", $l5);
+        virtualinvoke $r0.<com.facebook.lite.deviceid.UniqueIdSupplier: void setResultExtras(android.os.Bundle)>($r6);
+        goto label0;
+    }
+}

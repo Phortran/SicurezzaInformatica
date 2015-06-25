@@ -1,0 +1,92 @@
+class com.google.c.m extends com.google.c.ae
+{
+    final com.google.c.j a;
+
+    void <init>(com.google.c.j)
+    {
+        com.google.c.m $r0;
+        com.google.c.j $r1;
+
+        $r0 := @this: com.google.c.m;
+        $r1 := @parameter0: com.google.c.j;
+        $r0.<com.google.c.m: com.google.c.j a> = $r1;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.lang.Double a(com.google.c.d.a)
+    {
+        com.google.c.m $r0;
+        com.google.c.d.a $r1;
+        com.google.c.d.c $r2, $r3;
+        double $d0;
+        java.lang.Double $r4;
+
+        $r0 := @this: com.google.c.m;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r3 = <com.google.c.d.c: com.google.c.d.c i>;
+        if $r2 != $r3 goto label0;
+
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+        return null;
+
+     label0:
+        $d0 = virtualinvoke $r1.<com.google.c.d.a: double k()>();
+        $r4 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        return $r4;
+    }
+
+    public void a(com.google.c.d.d, java.lang.Number)
+    {
+        com.google.c.m $r0;
+        com.google.c.d.d $r1;
+        java.lang.Number $r2;
+        double $d0;
+        com.google.c.j $r3;
+
+        $r0 := @this: com.google.c.m;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Number;
+        if $r2 != null goto label1;
+
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d f()>();
+
+     label0:
+        return;
+
+     label1:
+        $d0 = virtualinvoke $r2.<java.lang.Number: double doubleValue()>();
+        $r3 = $r0.<com.google.c.m: com.google.c.j a>;
+        staticinvoke <com.google.c.j: void a(com.google.c.j,double)>($r3, $d0);
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d a(java.lang.Number)>($r2);
+        goto label0;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.m $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.lang.Number $r3;
+
+        $r0 := @this: com.google.c.m;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.lang.Number) $r2;
+        virtualinvoke $r0.<com.google.c.m: void a(com.google.c.d.d,java.lang.Number)>($r1, $r3);
+        return;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.m $r0;
+        com.google.c.d.a $r1;
+        java.lang.Double $r2;
+
+        $r0 := @this: com.google.c.m;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.m: java.lang.Double a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

@@ -1,0 +1,138 @@
+public class it.h3g.areaclienti3.RegistrationTabActivity extends android.app.TabActivity
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.RegistrationTabActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationTabActivity;
+        specialinvoke $r0.<android.app.TabActivity: void <init>()>();
+        return;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.RegistrationTabActivity $r0;
+        android.os.Bundle $r1;
+        int $i0, $i1, i3;
+        java.lang.String $r2;
+        java.lang.StringBuilder $r3;
+        boolean $z1, z2;
+        android.content.Intent $r4;
+        android.widget.TabHost $r6;
+        android.widget.TabHost$TabSpec $r8;
+        android.widget.TabWidget $r9;
+        android.view.View $r10;
+        android.view.ViewGroup$LayoutParams $r11;
+        android.widget.TextView $r12;
+        android.content.res.Resources $r13;
+        android.content.res.ColorStateList $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationTabActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $z1 = (boolean) 2;
+        $i1 = 0;
+        specialinvoke $r0.<android.app.TabActivity: void onCreate(android.os.Bundle)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationTabActivity: void setContentView(int)>(2130903134);
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationTabActivity: android.content.Intent getIntent()>();
+        $r1 = virtualinvoke $r4.<android.content.Intent: android.os.Bundle getExtras()>();
+        if $r1 == null goto label6;
+
+        $i0 = virtualinvoke $r1.<android.os.Bundle: int getInt(java.lang.String)>("step");
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Create profile tab, first step is ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationTab", $r2);
+
+     label0:
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationTabActivity: android.widget.TabHost getTabHost()>();
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>()>();
+        $r4 = virtualinvoke $r4.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/RegistrationStep1Activity");
+        $r8 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabHost$TabSpec newTabSpec(java.lang.String)>("step1");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setIndicator(java.lang.CharSequence)>("Step1");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setContent(android.content.Intent)>($r4);
+        virtualinvoke $r6.<android.widget.TabHost: void addTab(android.widget.TabHost$TabSpec)>($r8);
+        if $i0 == 0 goto label1;
+
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildTabViewAt(int)>(0);
+        z2 = (boolean) 0;
+        virtualinvoke $r10.<android.view.View: void setEnabled(boolean)>(z2);
+
+     label1:
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>()>();
+        $r4 = virtualinvoke $r4.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/RegistrationStep2Activity");
+        $r8 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabHost$TabSpec newTabSpec(java.lang.String)>("step2");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setIndicator(java.lang.CharSequence)>("Step2");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setContent(android.content.Intent)>($r4);
+        virtualinvoke $r6.<android.widget.TabHost: void addTab(android.widget.TabHost$TabSpec)>($r8);
+        i3 = (int) 1;
+        if $i0 == i3 goto label2;
+
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        i3 = (int) 1;
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildTabViewAt(int)>(i3);
+        z2 = (boolean) 0;
+        virtualinvoke $r10.<android.view.View: void setEnabled(boolean)>(z2);
+
+     label2:
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>()>();
+        $r4 = virtualinvoke $r4.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/RegistrationStep3Activity");
+        $r8 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabHost$TabSpec newTabSpec(java.lang.String)>("step3");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setIndicator(java.lang.CharSequence)>("Step3");
+        $r8 = virtualinvoke $r8.<android.widget.TabHost$TabSpec: android.widget.TabHost$TabSpec setContent(android.content.Intent)>($r4);
+        virtualinvoke $r6.<android.widget.TabHost: void addTab(android.widget.TabHost$TabSpec)>($r8);
+        i3 = (int) $z1;
+        if $i0 == i3 goto label3;
+
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        i3 = (int) $z1;
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildTabViewAt(int)>(i3);
+        z2 = (boolean) 0;
+        virtualinvoke $r10.<android.view.View: void setEnabled(boolean)>(z2);
+
+     label3:
+        virtualinvoke $r6.<android.widget.TabHost: void setCurrentTab(int)>($i0);
+
+     label4:
+        if $i1 < 3 goto label5;
+
+        return;
+
+     label5:
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildAt(int)>($i1);
+        virtualinvoke $r10.<android.view.View: void setBackgroundResource(int)>(2130837878);
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildAt(int)>($i1);
+        $r11 = virtualinvoke $r10.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r11.<android.view.ViewGroup$LayoutParams: int height> = -2;
+        $r9 = virtualinvoke $r6.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $r10 = virtualinvoke $r9.<android.widget.TabWidget: android.view.View getChildAt(int)>($i1);
+        $r10 = virtualinvoke $r10.<android.view.View: android.view.View findViewById(int)>(16908310);
+        $r12 = (android.widget.TextView) $r10;
+        $r13 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationTabActivity: android.content.res.Resources getResources()>();
+        $r14 = virtualinvoke $r13.<android.content.res.Resources: android.content.res.ColorStateList getColorStateList(int)>(2131099762);
+        virtualinvoke $r12.<android.widget.TextView: void setTextColor(android.content.res.ColorStateList)>($r14);
+        $i1 = $i1 + 1;
+        goto label4;
+
+     label6:
+        $i0 = 0;
+        goto label0;
+    }
+
+    protected void onDestroy()
+    {
+        it.h3g.areaclienti3.RegistrationTabActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationTabActivity;
+        specialinvoke $r0.<android.app.TabActivity: void onDestroy()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationTab", "Destroying activity...");
+        return;
+    }
+}

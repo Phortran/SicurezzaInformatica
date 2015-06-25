@@ -1,0 +1,159 @@
+public class org.a.d.b extends org.a.d.a
+{
+
+    public void <init>(org.a.a.a)
+    {
+        org.a.d.b $r0;
+        org.a.a.a $r1;
+
+        $r0 := @this: org.a.d.b;
+        $r1 := @parameter0: org.a.a.a;
+        specialinvoke $r0.<org.a.d.a: void <init>(org.a.a.a)>($r1);
+        return;
+    }
+
+    public void a()
+    {
+        org.a.d.b $r0;
+        org.a.a.a $r1;
+        org.a.c.d $r2, $r7;
+        int $i0, $i1, $i4, $i5, $i6;
+        double[] $r3, $r9;
+        org.a.b.e $r4;
+        double $d0, $d1, $d2;
+        org.a.b.d $r5;
+        boolean $z0;
+        org.a.a.j $r6;
+        org.a.b.e[] $r8;
+        org.a.a.g $r10;
+        org.a.c.b $r11;
+        float $f0;
+
+        $r0 := @this: org.a.d.b;
+        $r1 = $r0.<org.a.d.b: org.a.a.a a>;
+        $z0 = $r1 instanceof org.a.a.j;
+        if $z0 == 0 goto label9;
+
+        $r1 = $r0.<org.a.d.b: org.a.a.a a>;
+        $r6 = (org.a.a.j) $r1;
+        $r5 = virtualinvoke $r6.<org.a.a.j: org.a.b.d b()>();
+        if $r5 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<org.a.d.b: org.a.c.d b>;
+        $i0 = virtualinvoke $r2.<org.a.c.d: int ai()>();
+        $r2 = $r0.<org.a.d.b: org.a.c.d b>;
+        $z0 = virtualinvoke $r2.<org.a.c.d: boolean Z()>();
+        if $z0 == 0 goto label4;
+
+        $i1 = 0;
+
+     label2:
+        if $i1 >= $i0 goto label0;
+
+        $r2 = $r0.<org.a.d.b: org.a.c.d b>;
+        $z0 = virtualinvoke $r2.<org.a.c.d: boolean o(int)>($i1);
+        if $z0 == 0 goto label3;
+
+        $r7 = $r0.<org.a.d.b: org.a.c.d b>;
+        $r2 = $r0.<org.a.d.b: org.a.c.d b>;
+        $r3 = virtualinvoke $r2.<org.a.c.d: double[] p(int)>($i1);
+        virtualinvoke $r7.<org.a.c.d: void a(double[],int)>($r3, $i1);
+
+     label3:
+        $i1 = $i1 + 1;
+        goto label2;
+
+     label4:
+        $r1 = $r0.<org.a.d.b: org.a.a.a a>;
+        $r6 = (org.a.a.j) $r1;
+        $r5 = virtualinvoke $r6.<org.a.a.j: org.a.b.d b()>();
+        $r8 = virtualinvoke $r5.<org.a.b.d: org.a.b.e[] b()>();
+        $i1 = lengthof $r8;
+        if $i1 <= 0 goto label0;
+
+        $i4 = 0;
+
+     label5:
+        if $i4 >= $i0 goto label0;
+
+        $r3 = newarray (double)[4];
+        $r3[0] = 1.7976931348623157E308;
+        $r3[1] = -1.7976931348623157E308;
+        $r3[2] = 1.7976931348623157E308;
+        $r3[3] = -1.7976931348623157E308;
+        $i5 = 0;
+
+     label6:
+        if $i5 >= $i1 goto label8;
+
+        $r4 = $r8[$i5];
+        $i6 = virtualinvoke $r4.<org.a.b.e: int a()>();
+        if $i4 != $i6 goto label7;
+
+        $d0 = $r3[0];
+        $r4 = $r8[$i5];
+        $d1 = virtualinvoke $r4.<org.a.b.e: double e()>();
+        $d1 = staticinvoke <java.lang.Math: double min(double,double)>($d0, $d1);
+        $r3[0] = $d1;
+        $d1 = $r3[1];
+        $r4 = $r8[$i5];
+        $d0 = virtualinvoke $r4.<org.a.b.e: double g()>();
+        $d1 = staticinvoke <java.lang.Math: double max(double,double)>($d1, $d0);
+        $r3[1] = $d1;
+        $d1 = $r3[2];
+        $r4 = $r8[$i5];
+        $d0 = virtualinvoke $r4.<org.a.b.e: double f()>();
+        $d1 = staticinvoke <java.lang.Math: double min(double,double)>($d1, $d0);
+        $r3[2] = $d1;
+        $d1 = $r3[3];
+        $r4 = $r8[$i5];
+        $d0 = virtualinvoke $r4.<org.a.b.e: double h()>();
+        $d1 = staticinvoke <java.lang.Math: double max(double,double)>($d1, $d0);
+        $r3[3] = $d1;
+
+     label7:
+        $i5 = $i5 + 1;
+        goto label6;
+
+     label8:
+        $d1 = $r3[1];
+        $d0 = $r3[0];
+        $d1 = $d1 - $d0;
+        $d1 = staticinvoke <java.lang.Math: double abs(double)>($d1);
+        $d1 = $d1 / 40.0;
+        $d2 = $r3[3];
+        $d0 = $r3[2];
+        $d2 = $d2 - $d0;
+        $d2 = staticinvoke <java.lang.Math: double abs(double)>($d2);
+        $d2 = $d2 / 40.0;
+        $r7 = $r0.<org.a.d.b: org.a.c.d b>;
+        $r9 = newarray (double)[4];
+        $d0 = $r3[0];
+        $d0 = $d0 - $d1;
+        $r9[0] = $d0;
+        $d0 = $r3[1];
+        $d1 = $d1 + $d0;
+        $r9[1] = $d1;
+        $d1 = $r3[2];
+        $d1 = $d1 - $d2;
+        $r9[2] = $d1;
+        $d1 = $r3[3];
+        $d2 = $d1 + $d2;
+        $r9[3] = $d2;
+        virtualinvoke $r7.<org.a.c.d: void a(double[],int)>($r9, $i4);
+        $i4 = $i4 + 1;
+        goto label5;
+
+     label9:
+        $r1 = $r0.<org.a.d.b: org.a.a.a a>;
+        $r10 = (org.a.a.g) $r1;
+        $r11 = virtualinvoke $r10.<org.a.a.g: org.a.c.b a()>();
+        $f0 = virtualinvoke $r11.<org.a.c.b: float v()>();
+        virtualinvoke $r11.<org.a.c.b: void b(float)>($f0);
+        goto label0;
+    }
+}

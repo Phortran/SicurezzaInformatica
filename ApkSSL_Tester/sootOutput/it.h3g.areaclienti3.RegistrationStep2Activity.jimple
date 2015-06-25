@@ -1,0 +1,530 @@
+public class it.h3g.areaclienti3.RegistrationStep2Activity extends it.h3g.areaclienti3.BaseActivity
+{
+    protected android.widget.LinearLayout D;
+    protected android.widget.EditText E;
+    protected android.widget.Button F;
+    protected java.lang.String G;
+    protected java.lang.String H;
+    protected java.lang.String I;
+    protected java.lang.String J;
+    protected android.widget.LinearLayout K;
+    protected java.lang.String L;
+    protected java.lang.String M;
+    protected android.widget.EditText N;
+    protected android.widget.EditText O;
+    protected boolean P;
+    protected android.widget.Button Q;
+    protected java.lang.String R;
+    protected android.content.Context S;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void <init>()>();
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String H> = "";
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String I> = "";
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J> = "";
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String L> = "";
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String M> = "";
+        return;
+    }
+
+    private void c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.os.Bundle $r1;
+        java.lang.Boolean $r2;
+        int $i0;
+        java.lang.String $r3, $r4, $r5, $r7;
+        boolean $z2;
+        it.h3g.areaclienti3.j.l $r6;
+        android.app.Activity $r8;
+        android.app.TabActivity $r9;
+        android.widget.TabHost $r10;
+        android.widget.TabWidget $r11;
+        android.view.View $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        <it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.Boolean u> = $r2;
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void k()>();
+        if $r1 == null goto label1;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("errorCode");
+        if $z2 == 0 goto label1;
+
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("errorCode");
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131232059);
+        $z2 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z2 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationStep2", "step2 successfully - close this activity");
+        $r6 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.j.l p>;
+        $r7 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String H>;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String G>;
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String I>;
+        $r5 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.j.l: java.lang.Boolean a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>($r7, $r3, $r4, $r5);
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.app.Activity getParent()>();
+        $r9 = (android.app.TabActivity) $r8;
+        $r10 = virtualinvoke $r9.<android.app.TabActivity: android.widget.TabHost getTabHost()>();
+        $r11 = virtualinvoke $r10.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $i0 = (int) 1;
+        $r12 = virtualinvoke $r11.<android.widget.TabWidget: android.view.View getChildTabViewAt(int)>($i0);
+        virtualinvoke $r12.<android.view.View: void setEnabled(boolean)>(0);
+        $r11 = virtualinvoke $r10.<android.widget.TabHost: android.widget.TabWidget getTabWidget()>();
+        $r12 = virtualinvoke $r11.<android.widget.TabWidget: android.view.View getChildTabViewAt(int)>(2);
+        virtualinvoke $r12.<android.view.View: void setEnabled(boolean)>(1);
+        virtualinvoke $r10.<android.widget.TabHost: void setCurrentTab(int)>(2);
+
+     label0:
+        return;
+
+     label1:
+        if $r1 == null goto label6;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z2 == 0 goto label6;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z2 == 0 goto label4;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label2:
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("errorCode");
+        if $z2 == 0 goto label5;
+
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("errorCode");
+
+     label3:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void a(java.lang.String,java.lang.String,java.lang.String)>("REGISTRAZIONE", $r5, $r7);
+        goto label0;
+
+     label4:
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231110);
+        goto label2;
+
+     label5:
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231691);
+        goto label3;
+
+     label6:
+        if $r1 == null goto label0;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z2 != 0 goto label0;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z2 == 0 goto label0;
+
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        if $r1 == null goto label0;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("tempPassword");
+        if $z2 != 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationStep2", "Login successfully - close this activity");
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void finish()>();
+        goto label0;
+    }
+
+    private void q()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText E>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText E>;
+        virtualinvoke $r1.<android.widget.EditText: void setText(java.lang.CharSequence)>("");
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText N>;
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText N>;
+        virtualinvoke $r1.<android.widget.EditText: void setText(java.lang.CharSequence)>("");
+
+     label1:
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText O>;
+        if $r1 == null goto label2;
+
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText O>;
+        virtualinvoke $r1.<android.widget.EditText: void setText(java.lang.CharSequence)>("");
+
+     label2:
+        return;
+    }
+
+    protected void a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.IService $r4;
+        android.os.RemoteException $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label4;
+
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("pin");
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String R> = $r2;
+        $r2 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String R>;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String M>;
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label3;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String H>;
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r2);
+        $r2 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String L>;
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("email", $r2);
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.remoteservice.IService z>;
+
+     label0:
+        interfaceinvoke $r4.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("signupAction", $r1);
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("RegistrationStep2", "Error during start action");
+        goto label1;
+
+     label3:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void k()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231731);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231136);
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void a(java.lang.String,java.lang.String,java.lang.String)>("REGISTRAZIONE", $r2, $r6);
+        goto label1;
+
+     label4:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void k()>();
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z0 == 0 goto label7;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label5:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("errorCode");
+        if $z0 == 0 goto label8;
+
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("errorCode");
+
+     label6:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void a(java.lang.String,java.lang.String,java.lang.String)>("REGISTRAZIONE", $r3, $r6);
+        goto label1;
+
+     label7:
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231110);
+        goto label5;
+
+     label8:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231691);
+        goto label6;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void a(android.os.Message)
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.os.Message $r1;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        java.lang.Object $r5;
+        android.os.Bundle $r6;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        lookupswitch($i0)
+        {
+            case 1: goto label1;
+            case 2: goto label0;
+            default: goto label0;
+        };
+
+     label0:
+        return;
+
+     label1:
+        $r5 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r6 = (android.os.Bundle) $r5;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action \'");
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' finished!!");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationStep2", $r4);
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("pinRecoveryAction");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void a(android.os.Bundle)>($r6);
+        goto label0;
+
+     label2:
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("signupAction");
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void b(android.os.Bundle)>($r6);
+        goto label0;
+
+     label3:
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("loginAction");
+        if $z0 == 0 goto label4;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void c(android.os.Bundle)>($r6);
+        goto label0;
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("RegistrationStep2", "Action finished but no callback executed");
+        goto label0;
+    }
+
+    public void b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.Boolean $r3;
+        java.lang.String $r4, $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        <it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.Boolean u> = $r3;
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void k()>();
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 == 0 goto label5;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z0 == 0 goto label3;
+
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label0:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("errorCode");
+        if $z0 == 0 goto label4;
+
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("errorCode");
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void a(java.lang.String,java.lang.String,java.lang.String)>("REGISTRAZIONE", $r5, $r4);
+
+     label2:
+        return;
+
+     label3:
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231120);
+        goto label0;
+
+     label4:
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131231697);
+        goto label1;
+
+     label5:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label2;
+
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: boolean P> = 1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void o()>();
+        goto label2;
+    }
+
+    protected void o()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.view.View $r4;
+        android.widget.TextView $r5;
+        boolean $z0;
+        android.widget.LinearLayout $r6;
+        android.widget.EditText $r7;
+        android.graphics.Typeface $r8;
+        android.text.method.PasswordTransformationMethod $r9;
+        android.widget.Button $r10;
+        it.h3g.areaclienti3.br $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165784);
+        $r5 = (android.widget.TextView) $r4;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("SHOW TEMP PASSWORD - USIM TYPE = ");
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationStep2", $r3);
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J>;
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("data");
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131230821);
+        virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r3);
+
+     label0:
+        $r6 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout D>;
+        virtualinvoke $r6.<android.widget.LinearLayout: void setVisibility(int)>(0);
+        $r6 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout K>;
+        virtualinvoke $r6.<android.widget.LinearLayout: void setVisibility(int)>(8);
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165785);
+        $r7 = (android.widget.EditText) $r4;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText E> = $r7;
+        $r7 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText E>;
+        $r8 = <android.graphics.Typeface: android.graphics.Typeface SANS_SERIF>;
+        virtualinvoke $r7.<android.widget.EditText: void setTypeface(android.graphics.Typeface)>($r8);
+        $r7 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText E>;
+        $r9 = new android.text.method.PasswordTransformationMethod;
+        specialinvoke $r9.<android.text.method.PasswordTransformationMethod: void <init>()>();
+        virtualinvoke $r7.<android.widget.EditText: void setTransformationMethod(android.text.method.TransformationMethod)>($r9);
+        $r10 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button Q>;
+        virtualinvoke $r10.<android.widget.Button: void setVisibility(int)>(8);
+        $r10 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button F>;
+        virtualinvoke $r10.<android.widget.Button: void setVisibility(int)>(0);
+        $r10 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button F>;
+        $r11 = new it.h3g.areaclienti3.br;
+        specialinvoke $r11.<it.h3g.areaclienti3.br: void <init>(it.h3g.areaclienti3.RegistrationStep2Activity)>($r0);
+        virtualinvoke $r10.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r11);
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String getString(int)>(2131230820);
+        virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r3);
+        goto label0;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r7;
+        it.h3g.areaclienti3.j.l $r3;
+        boolean $z0;
+        android.view.View $r4;
+        android.widget.LinearLayout $r5;
+        android.widget.Button $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onCreate(android.os.Bundle)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void setContentView(int)>(2130903132);
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.content.Context S> = $r0;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.j.l p>;
+        $r2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String E()>();
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String H> = $r2;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.j.l p>;
+        $r2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String C()>();
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String I> = $r2;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.j.l p>;
+        $r2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String D()>();
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J> = $r2;
+        $r3 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: it.h3g.areaclienti3.j.l p>;
+        $z0 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: boolean F()>();
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: boolean P> = $z0;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165783);
+        $r5 = (android.widget.LinearLayout) $r4;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout D> = $r5;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165787);
+        $r5 = (android.widget.LinearLayout) $r4;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout K> = $r5;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165790);
+        $r6 = (android.widget.Button) $r4;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button Q> = $r6;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165786);
+        $r6 = (android.widget.Button) $r4;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button F> = $r6;
+        $r7 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J>;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("voice");
+        if $z0 != 0 goto label0;
+
+        $r7 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: java.lang.String J>;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("data");
+        if $z0 == 0 goto label2;
+
+        $z0 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: boolean P>;
+        if $z0 == 0 goto label2;
+
+     label0:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void o()>();
+
+     label1:
+        return;
+
+     label2:
+        virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void p()>();
+        goto label1;
+    }
+
+    protected void onDestroy()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onDestroy()>();
+        return;
+    }
+
+    protected void onResume()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onResume()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: void q()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RegistrationStep2", "On Resume");
+        return;
+    }
+
+    protected void p()
+    {
+        it.h3g.areaclienti3.RegistrationStep2Activity $r0;
+        android.widget.LinearLayout $r1;
+        android.view.View $r2;
+        android.widget.EditText $r3;
+        android.widget.Button $r4;
+        it.h3g.areaclienti3.bs $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.RegistrationStep2Activity;
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout D>;
+        virtualinvoke $r1.<android.widget.LinearLayout: void setVisibility(int)>(8);
+        $r1 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.LinearLayout K>;
+        virtualinvoke $r1.<android.widget.LinearLayout: void setVisibility(int)>(0);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165788);
+        $r3 = (android.widget.EditText) $r2;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText N> = $r3;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.view.View findViewById(int)>(2131165789);
+        $r3 = (android.widget.EditText) $r2;
+        $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.EditText O> = $r3;
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button Q>;
+        virtualinvoke $r4.<android.widget.Button: void setVisibility(int)>(0);
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button F>;
+        virtualinvoke $r4.<android.widget.Button: void setVisibility(int)>(8);
+        $r4 = $r0.<it.h3g.areaclienti3.RegistrationStep2Activity: android.widget.Button Q>;
+        $r5 = new it.h3g.areaclienti3.bs;
+        specialinvoke $r5.<it.h3g.areaclienti3.bs: void <init>(it.h3g.areaclienti3.RegistrationStep2Activity)>($r0);
+        virtualinvoke $r4.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r5);
+        return;
+    }
+}

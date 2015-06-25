@@ -1,0 +1,302 @@
+public class com.facebook.lite.widget.GL11RendererView extends com.facebook.lite.widget.AbstractGLRendererView
+{
+    private int a;
+    private int b;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void <init>(android.content.Context)>($r1);
+        $r0.<com.facebook.lite.widget.GL11RendererView: int a> = -1;
+        $r0.<com.facebook.lite.widget.GL11RendererView: int b> = -1;
+        return;
+    }
+
+    private static boolean b(javax.microedition.khronos.opengles.GL10)
+    {
+        javax.microedition.khronos.opengles.GL10 $r0;
+        java.lang.String $r2;
+        boolean $z0;
+        java.nio.ByteOrder $r3, $r4;
+
+        $r0 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $r2 = interfaceinvoke $r0.<javax.microedition.khronos.opengles.GL10: java.lang.String glGetString(int)>(7939);
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean contains(java.lang.CharSequence)>("GL_OES_draw_texture");
+        if $z0 == 0 goto label0;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean contains(java.lang.CharSequence)>("GL_EXT_texture_format_BGRA8888");
+        if $z0 == 0 goto label0;
+
+        $r3 = staticinvoke <java.nio.ByteOrder: java.nio.ByteOrder nativeOrder()>();
+        $r4 = <java.nio.ByteOrder: java.nio.ByteOrder LITTLE_ENDIAN>;
+        if $r3 != $r4 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    protected final void a(javax.microedition.khronos.opengles.GL10)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        int $i0;
+        com.b.a.a.e.b $r2;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glFlush()>();
+        $i0 = interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: int glGetError()>();
+        lookupswitch($i0)
+        {
+            case 1280: goto label2;
+            case 1281: goto label3;
+            case 1282: goto label4;
+            case 1283: goto label5;
+            case 1284: goto label6;
+            case 1285: goto label7;
+            default: goto label0;
+        };
+
+     label0:
+        if $i0 == 0 goto label1;
+
+        virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: void b()>();
+
+     label1:
+        return;
+
+     label2:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 260);
+        goto label0;
+
+     label3:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 261);
+        goto label0;
+
+     label4:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 262);
+        goto label0;
+
+     label5:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 263);
+        goto label0;
+
+     label6:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 264);
+        goto label0;
+
+     label7:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r2.<com.b.a.a.e.b: void a(short,short)>(2, 266);
+        goto label0;
+    }
+
+    protected final void a(javax.microedition.khronos.opengles.GL10, android.graphics.Bitmap)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        android.graphics.Bitmap $r2;
+        int $i2, $i5, $i6, $i10;
+        javax.microedition.khronos.opengles.GL11 $r4;
+        int[] $r5;
+        javax.microedition.khronos.opengles.GL11Ext $r6;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $r2 := @parameter1: android.graphics.Bitmap;
+        $i6 = virtualinvoke $r2.<android.graphics.Bitmap: int getWidth()>();
+        $i5 = virtualinvoke $r2.<android.graphics.Bitmap: int getHeight()>();
+        $i2 = $r0.<com.facebook.lite.widget.GL11RendererView: int a>;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i2);
+        $r4 = (javax.microedition.khronos.opengles.GL11) $r1;
+        $r5 = newarray (int)[4];
+        $r5[0] = 0;
+        $r5[1] = $i5;
+        $r5[2] = $i6;
+        $i2 = neg $i5;
+        $r5[3] = $i2;
+        interfaceinvoke $r4.<javax.microedition.khronos.opengles.GL11: void glTexParameteriv(int,int,int[],int)>(3553, 35741, $r5, 0);
+        staticinvoke <android.opengl.GLUtils: void texSubImage2D(int,int,int,int,android.graphics.Bitmap,int,int)>(3553, 0, 0, 0, $r2, 6408, 5121);
+        $r6 = (javax.microedition.khronos.opengles.GL11Ext) $r1;
+        $i2 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int g()>();
+        $i2 = $i2 - $i6;
+        $i10 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int f()>();
+        $i10 = $i10 - $i5;
+        interfaceinvoke $r6.<javax.microedition.khronos.opengles.GL11Ext: void glDrawTexiOES(int,int,int,int,int)>($i2, $i10, 0, $i6, $i5);
+        return;
+    }
+
+    protected final void a(javax.microedition.khronos.opengles.GL10, java.nio.IntBuffer)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        java.nio.IntBuffer $r2;
+        int $i0, $i6;
+        javax.microedition.khronos.opengles.GL11 $r4;
+        int[] $r5;
+        javax.microedition.khronos.opengles.GL11Ext $r6;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $r2 := @parameter1: java.nio.IntBuffer;
+        $i0 = $r0.<com.facebook.lite.widget.GL11RendererView: int b>;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i0);
+        $r4 = (javax.microedition.khronos.opengles.GL11) $r1;
+        $r5 = newarray (int)[4];
+        $r5[0] = 0;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int f()>();
+        $r5[1] = $i0;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int g()>();
+        $r5[2] = $i0;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int f()>();
+        $i0 = neg $i0;
+        $r5[3] = $i0;
+        interfaceinvoke $r4.<javax.microedition.khronos.opengles.GL11: void glTexParameteriv(int,int,int[],int)>(3553, 35741, $r5, 0);
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int d()>();
+        $i6 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int c()>();
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexSubImage2D(int,int,int,int,int,int,int,int,java.nio.Buffer)>(3553, 0, 0, 0, $i0, $i6, 32993, 5121, $r2);
+        $r6 = (javax.microedition.khronos.opengles.GL11Ext) $r1;
+        $i6 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int g()>();
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int f()>();
+        interfaceinvoke $r6.<javax.microedition.khronos.opengles.GL11Ext: void glDrawTexiOES(int,int,int,int,int)>(0, 0, 0, $i6, $i0);
+        return;
+    }
+
+    protected final void b(int)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void b(int)>($i0);
+        $z0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: boolean i()>();
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: void setDebugFlags(int)>(1);
+
+     label0:
+        return;
+    }
+
+    public void onSurfaceChanged(javax.microedition.khronos.opengles.GL10, int, int)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        int $i0, $i1, $i9;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glViewport(int,int,int,int)>(0, 0, $i0, $i1);
+        $i1 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int d()>();
+        $i1 = staticinvoke <java.lang.Integer: int highestOneBit(int)>($i1);
+        $i1 = $i1 << 1;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: int c()>();
+        $i0 = staticinvoke <java.lang.Integer: int highestOneBit(int)>($i0);
+        $i0 = $i0 << 1;
+        $i9 = $r0.<com.facebook.lite.widget.GL11RendererView: int b>;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i9);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexImage2D(int,int,int,int,int,int,int,int,java.nio.Buffer)>(3553, 0, 32993, $i1, $i0, 0, 32993, 5121, null);
+        $z0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: boolean h()>();
+        if $z0 == 0 goto label0;
+
+        $i9 = $r0.<com.facebook.lite.widget.GL11RendererView: int a>;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i9);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexImage2D(int,int,int,int,int,int,int,int,java.nio.Buffer)>(3553, 0, 6408, $i1, $i0, 0, 6408, 5121, null);
+
+     label0:
+        return;
+    }
+
+    public void onSurfaceCreated(javax.microedition.khronos.opengles.GL10, javax.microedition.khronos.egl.EGLConfig)
+    {
+        com.facebook.lite.widget.GL11RendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        javax.microedition.khronos.egl.EGLConfig $r2;
+        boolean $z0;
+        com.b.a.a.e.b $r3;
+        int[] $r4;
+        int $i6;
+
+        $r0 := @this: com.facebook.lite.widget.GL11RendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $r2 := @parameter1: javax.microedition.khronos.egl.EGLConfig;
+        $z0 = staticinvoke <com.facebook.lite.widget.GL11RendererView: boolean b(javax.microedition.khronos.opengles.GL10)>($r1);
+        if $z0 != 0 goto label1;
+
+        $r3 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: com.b.a.a.e.b e()>();
+        interfaceinvoke $r3.<com.b.a.a.e.b: void a(short,short)>(2, 267);
+        virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: void b()>();
+
+     label0:
+        return;
+
+     label1:
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glEnable(int)>(3553);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(3008);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(3042);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2884);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(3058);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2903);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2929);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(3024);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2912);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2896);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2848);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32925);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2977);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2832);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(34913);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32823);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32826);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32926);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32927);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(32928);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(3089);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glDisable(int)>(2960);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glClearColor(float,float,float,float)>(0.0F, 0.0F, 0.0F, 1.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glHint(int,int)>(3152, 4353);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glPixelStorei(int,int)>(3317, 1);
+        $r4 = newarray (int)[1];
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glGenTextures(int,int[],int)>(1, $r4, 0);
+        $i6 = $r4[0];
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i6);
+        $i6 = $r4[0];
+        $r0.<com.facebook.lite.widget.GL11RendererView: int b> = $i6;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10241, 9728.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10240, 9728.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10242, 33071.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10243, 33071.0F);
+        $z0 = virtualinvoke $r0.<com.facebook.lite.widget.GL11RendererView: boolean h()>();
+        if $z0 == 0 goto label0;
+
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glEnable(int)>(3008);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glAlphaFunc(int,float)>(516, 0.1F);
+        $r4 = newarray (int)[1];
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glGenTextures(int,int[],int)>(1, $r4, 0);
+        $i6 = $r4[0];
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glBindTexture(int,int)>(3553, $i6);
+        $i6 = $r4[0];
+        $r0.<com.facebook.lite.widget.GL11RendererView: int a> = $i6;
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10241, 9728.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10240, 9728.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10242, 33071.0F);
+        interfaceinvoke $r1.<javax.microedition.khronos.opengles.GL10: void glTexParameterf(int,int,float)>(3553, 10243, 33071.0F);
+        goto label0;
+    }
+}

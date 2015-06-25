@@ -1,0 +1,49 @@
+public class it.h3g.areaclienti3.nwmonitoring.ba extends it.h3g.areaclienti3.nwmonitoring.NetworkReceiver
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.ba $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.ba;
+        specialinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.NetworkReceiver: void <init>()>();
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.ba $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        it.h3g.areaclienti3.nwmonitoring.g $r3;
+        it.h3g.areaclienti3.nwmonitoring.as $r4;
+        java.lang.String $r6;
+        boolean $z0;
+        int $i0, $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.ba;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = new it.h3g.areaclienti3.nwmonitoring.g;
+        specialinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.g: void <init>(android.content.Context)>($r1);
+        $r4 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SCREEN-OFF", "OnReceive");
+        $r6 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("android.intent.action.SCREEN_OFF");
+        if $z0 == 0 goto label1;
+
+        $i0 = virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.as: int p()>();
+        $i1 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.g: int f()>();
+        if $i0 != $i1 goto label0;
+
+        $z0 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.g: boolean i()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.NetworkReceiver: void onReceive(android.content.Context,android.content.Intent)>($r1, $r2);
+
+     label1:
+        return;
+    }
+}

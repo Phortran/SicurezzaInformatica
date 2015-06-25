@@ -1,0 +1,61 @@
+class org.c.ag extends java.lang.Object
+{
+    static final int[] a;
+
+    static void <clinit>()
+    {
+        org.c.l[] $r0;
+        org.c.l $r1;
+        int $i1;
+        int[] $r2;
+        java.lang.NoSuchFieldError $r3, $r4, $r5;
+
+        $r0 = staticinvoke <org.c.l: org.c.l[] values()>();
+        $i1 = lengthof $r0;
+        $r2 = newarray (int)[$i1];
+        <org.c.ag: int[] a> = $r2;
+
+     label0:
+        $r2 = <org.c.ag: int[] a>;
+        $r1 = <org.c.l: org.c.l a>;
+        $i1 = virtualinvoke $r1.<org.c.l: int ordinal()>();
+
+     label1:
+        $r2[$i1] = 1;
+
+     label2:
+        $r2 = <org.c.ag: int[] a>;
+        $r1 = <org.c.l: org.c.l c>;
+        $i1 = virtualinvoke $r1.<org.c.l: int ordinal()>();
+
+     label3:
+        $r2[$i1] = 2;
+
+     label4:
+        $r2 = <org.c.ag: int[] a>;
+        $r1 = <org.c.l: org.c.l b>;
+        $i1 = virtualinvoke $r1.<org.c.l: int ordinal()>();
+
+     label5:
+        $r2[$i1] = 3;
+
+     label6:
+        return;
+
+     label7:
+        $r3 := @caughtexception;
+        goto label6;
+
+     label8:
+        $r4 := @caughtexception;
+        goto label4;
+
+     label9:
+        $r5 := @caughtexception;
+        goto label2;
+
+        catch java.lang.NoSuchFieldError from label0 to label1 with label9;
+        catch java.lang.NoSuchFieldError from label2 to label3 with label8;
+        catch java.lang.NoSuchFieldError from label4 to label5 with label7;
+    }
+}

@@ -1,0 +1,36 @@
+final class com.a.a.ay extends java.lang.Object implements java.lang.Runnable
+{
+    final java.util.concurrent.atomic.AtomicInteger a;
+    final java.util.concurrent.CountDownLatch b;
+
+    void <init>(java.util.concurrent.atomic.AtomicInteger, java.util.concurrent.CountDownLatch)
+    {
+        com.a.a.ay $r0;
+        java.util.concurrent.atomic.AtomicInteger $r1;
+        java.util.concurrent.CountDownLatch $r2;
+
+        $r0 := @this: com.a.a.ay;
+        $r1 := @parameter0: java.util.concurrent.atomic.AtomicInteger;
+        $r2 := @parameter1: java.util.concurrent.CountDownLatch;
+        $r0.<com.a.a.ay: java.util.concurrent.atomic.AtomicInteger a> = $r1;
+        $r0.<com.a.a.ay: java.util.concurrent.CountDownLatch b> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.a.a.ay $r0;
+        java.util.concurrent.atomic.AtomicInteger $r1;
+        int $i0;
+        java.util.concurrent.CountDownLatch $r2;
+
+        $r0 := @this: com.a.a.ay;
+        $r1 = $r0.<com.a.a.ay: java.util.concurrent.atomic.AtomicInteger a>;
+        $i0 = staticinvoke <com.a.a.ax: int b()>();
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicInteger: void set(int)>($i0);
+        $r2 = $r0.<com.a.a.ay: java.util.concurrent.CountDownLatch b>;
+        virtualinvoke $r2.<java.util.concurrent.CountDownLatch: void countDown()>();
+        return;
+    }
+}

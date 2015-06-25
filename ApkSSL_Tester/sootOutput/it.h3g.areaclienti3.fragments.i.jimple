@@ -1,0 +1,431 @@
+public class it.h3g.areaclienti3.fragments.i extends it.h3g.areaclienti3.fragments.a
+{
+    private android.webkit.WebView a;
+    private android.widget.ProgressBar b;
+    private java.lang.String c;
+    private int d;
+    private final int e;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c> = "http://www.grandecinema3.it/mobile/card.aspx";
+        $r0.<it.h3g.areaclienti3.fragments.i: int d> = 0;
+        $r0.<it.h3g.areaclienti3.fragments.i: int e> = 10;
+        return;
+    }
+
+    static int a(it.h3g.areaclienti3.fragments.i)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        int $i0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.i;
+        $i0 = $r0.<it.h3g.areaclienti3.fragments.i: int d>;
+        return $i0;
+    }
+
+    public static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+        byte[] $r3;
+        int $i1;
+        java.security.MessageDigest $r4;
+        java.math.BigInteger $r5;
+        java.lang.StringBuilder $r6;
+        java.security.NoSuchAlgorithmException $r7;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = null;
+        if $r0 != null goto label1;
+
+     label0:
+        return $r1;
+
+     label1:
+        $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>("MD5");
+        $r3 = virtualinvoke $r0.<java.lang.String: byte[] getBytes()>();
+        $i1 = virtualinvoke $r0.<java.lang.String: int length()>();
+        virtualinvoke $r4.<java.security.MessageDigest: void update(byte[],int,int)>($r3, 0, $i1);
+        $r5 = new java.math.BigInteger;
+        $r3 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>();
+        specialinvoke $r5.<java.math.BigInteger: void <init>(int,byte[])>(1, $r3);
+        $r1 = virtualinvoke $r5.<java.math.BigInteger: java.lang.String toString(int)>(16);
+
+     label2:
+        $i1 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i1 >= 32 goto label0;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("0");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label3:
+        $r1 = $r2;
+        goto label2;
+
+     label4:
+        $r7 := @caughtexception;
+        virtualinvoke $r7.<java.security.NoSuchAlgorithmException: void printStackTrace()>();
+        return $r1;
+
+        catch java.security.NoSuchAlgorithmException from label1 to label3 with label4;
+    }
+
+    static void a(it.h3g.areaclienti3.fragments.i, int)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        int $i0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.i;
+        $i0 := @parameter1: int;
+        $r0.<it.h3g.areaclienti3.fragments.i: int d> = $i0;
+        return;
+    }
+
+    static android.widget.ProgressBar b(it.h3g.areaclienti3.fragments.i)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        android.widget.ProgressBar $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.i: android.widget.ProgressBar b>;
+        return $r1;
+    }
+
+    private java.lang.String b()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        java.util.Date $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        java.lang.String $r3;
+        java.lang.Long $r4;
+        long $l0;
+        java.text.SimpleDateFormat $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        $r1 = new java.util.Date;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: it.h3g.areaclienti3.j.l myPreferences>;
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.Long a()>();
+        $l0 = virtualinvoke $r4.<java.lang.Long: long longValue()>();
+        specialinvoke $r1.<java.util.Date: void <init>(long)>($l0);
+        $r5 = new java.text.SimpleDateFormat;
+        specialinvoke $r5.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("yyyy-MM-dd HH:mm:ss");
+        $r3 = virtualinvoke $r5.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r1);
+        return $r3;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        java.lang.String $r1, $r2, $r4, $r6;
+        java.lang.StringBuilder $r3, $r8;
+        it.h3g.areaclienti3.j.l $r5;
+        java.util.HashMap $r7;
+        java.util.Set $r9;
+        java.util.Iterator $r10;
+        boolean $z0;
+        android.webkit.WebView $r11;
+        byte[] $r12;
+        java.lang.Object $r13;
+        java.util.Map$Entry $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Gd3_Fragment", "Post Data - valorizzazione dei parametri");
+        $r4 = specialinvoke $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String b()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("+");
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.i: it.h3g.areaclienti3.j.l myPreferences>;
+        $r2 = virtualinvoke $r5.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r7 = new java.util.HashMap;
+        specialinvoke $r7.<java.util.HashMap: void <init>()>();
+        $r1 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r6, "UTF8");
+        virtualinvoke $r7.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("msisdn", $r1);
+        virtualinvoke $r7.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("InteractiveType", "Web");
+        $r1 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r4, "UTF8");
+        virtualinvoke $r7.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("dt", $r1);
+        virtualinvoke $r7.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("css", "TRE");
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("AMDn3456mvker844jJDnsdlgtdf734");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r6 = staticinvoke <it.h3g.areaclienti3.fragments.i: java.lang.String a(java.lang.String)>($r6);
+        virtualinvoke $r7.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("token", $r6);
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r9 = virtualinvoke $r7.<java.util.HashMap: java.util.Set entrySet()>();
+        $r10 = interfaceinvoke $r9.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r10.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Posting \'");
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' to ");
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("Gd3_Fragment", $r4);
+        $z0 = virtualinvoke $r7.<java.util.HashMap: boolean isEmpty()>();
+        if $z0 != 0 goto label1;
+
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r12 = staticinvoke <org.apache.http.util.EncodingUtils: byte[] getBytes(java.lang.String,java.lang.String)>($r4, "BASE64");
+        virtualinvoke $r11.<android.webkit.WebView: void postUrl(java.lang.String,byte[])>($r6, $r12);
+
+     label1:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Chiamata GD3 effettuata - URL: ");
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Gd3_Fragment", $r4);
+        return;
+
+     label2:
+        $r13 = interfaceinvoke $r10.<java.util.Iterator: java.lang.Object next()>();
+        $r14 = (java.util.Map$Entry) $r13;
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r6 = (java.lang.String) $r13;
+        $r3 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r6 = (java.lang.String) $r13;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r3 = new java.lang.StringBuilder;
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r4 = (java.lang.String) $r13;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r4 = (java.lang.String) $r13;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Gd3_Fragment", $r4);
+        $z0 = interfaceinvoke $r10.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(38);
+        goto label0;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        return 2131231024;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        return 0;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        return 38;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r3;
+        boolean $z0;
+        android.view.View $r4;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("callBannerPiccoloAction");
+        if $z0 == 0 goto label0;
+
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: android.view.View getView()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: void onBannerPiccoloResults(android.os.Bundle,android.view.View,int)>($r1, $r4, $i0);
+
+     label0:
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r5, $r6;
+        android.widget.ProgressBar $r7;
+        android.webkit.WebView $r8;
+        android.webkit.WebSettings $r9;
+        it.h3g.areaclienti3.fragments.j $r10;
+        it.h3g.areaclienti3.fragments.k $r11;
+        it.h3g.areaclienti3.fragments.l $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onCreate(android.os.Bundle)>($r3);
+        $r5 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903119, $r2, 0);
+        $r6 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165253);
+        $r7 = (android.widget.ProgressBar) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.i: android.widget.ProgressBar b> = $r7;
+        $r6 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165199);
+        $r8 = (android.webkit.WebView) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a> = $r8;
+        if $r3 == null goto label0;
+
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebBackForwardList restoreState(android.os.Bundle)>($r3);
+
+     label0:
+        $r6 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165199);
+        $r8 = (android.webkit.WebView) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a> = $r8;
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        virtualinvoke $r8.<android.webkit.WebView: boolean requestFocus(int)>(130);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r9 = virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r9.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r9 = virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r9.<android.webkit.WebSettings: void setJavaScriptCanOpenWindowsAutomatically(boolean)>(1);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r9 = virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r9.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(0);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r10 = new it.h3g.areaclienti3.fragments.j;
+        specialinvoke $r10.<it.h3g.areaclienti3.fragments.j: void <init>(it.h3g.areaclienti3.fragments.i)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r10);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r11 = new it.h3g.areaclienti3.fragments.k;
+        specialinvoke $r11.<it.h3g.areaclienti3.fragments.k: void <init>(it.h3g.areaclienti3.fragments.i)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r11);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        $r12 = new it.h3g.areaclienti3.fragments.l;
+        specialinvoke $r12.<it.h3g.areaclienti3.fragments.l: void <init>(it.h3g.areaclienti3.fragments.i)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setOnTouchListener(android.view.View$OnTouchListener)>($r12);
+        return $r5;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDestroyView()>();
+        return;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebView $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: android.webkit.WebView a>;
+        virtualinvoke $r2.<android.webkit.WebView: android.webkit.WebBackForwardList saveState(android.os.Bundle)>($r1);
+
+     label0:
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.i $r0;
+        int $i0;
+        android.content.Context $r1;
+        java.lang.String $r2, $r4;
+        it.h3g.areaclienti3.j.k $r3;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        org.apache.http.client.ClientProtocolException $r6;
+        java.io.IOException $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.i;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: void getBannerPiccolo(int)>($i0);
+        $r3 = new it.h3g.areaclienti3.j.k;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.i: android.content.Context mContext>;
+
+     label0:
+        specialinvoke $r3.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r1);
+        $z0 = virtualinvoke $r3.<it.h3g.areaclienti3.j.k: boolean b()>();
+        if $z0 != 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean contains(java.lang.CharSequence)>("?lang=");
+        if $z0 != 0 goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r5 = new java.lang.StringBuilder;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("?lang=en");
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c> = $r4;
+
+     label1:
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start connection to ");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Gd3_Fragment", $r2);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.i: void a()>();
+
+     label2:
+        return;
+
+     label3:
+        $r6 := @caughtexception;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("ClientProtocolException to ");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("Gd3_Fragment", $r2, $r6);
+        goto label2;
+
+     label4:
+        $r7 := @caughtexception;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("IOException to ");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.i: java.lang.String c>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("Gd3_Fragment", $r2, $r7);
+        goto label2;
+
+        catch org.apache.http.client.ClientProtocolException from label0 to label2 with label3;
+        catch java.io.IOException from label0 to label2 with label4;
+    }
+}

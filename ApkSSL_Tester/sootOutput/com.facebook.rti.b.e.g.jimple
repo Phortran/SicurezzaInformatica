@@ -1,0 +1,50 @@
+final class com.facebook.rti.b.e.g extends java.lang.Object implements java.util.concurrent.Callable
+{
+    final java.net.Socket a;
+    final java.net.Socket b;
+    final com.facebook.rti.b.e.f c;
+
+    void <init>(com.facebook.rti.b.e.f, java.net.Socket, java.net.Socket)
+    {
+        com.facebook.rti.b.e.g $r0;
+        com.facebook.rti.b.e.f $r1;
+        java.net.Socket $r2, $r3;
+
+        $r0 := @this: com.facebook.rti.b.e.g;
+        $r1 := @parameter0: com.facebook.rti.b.e.f;
+        $r2 := @parameter1: java.net.Socket;
+        $r3 := @parameter2: java.net.Socket;
+        $r0.<com.facebook.rti.b.e.g: com.facebook.rti.b.e.f c> = $r1;
+        $r0.<com.facebook.rti.b.e.g: java.net.Socket a> = $r2;
+        $r0.<com.facebook.rti.b.e.g: java.net.Socket b> = $r3;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private java.lang.Void a()
+    {
+        com.facebook.rti.b.e.g $r0;
+        com.facebook.rti.b.e.f $r1, $r3;
+        java.net.Socket $r2, $r4;
+        java.net.InetAddress $r5;
+
+        $r0 := @this: com.facebook.rti.b.e.g;
+        $r1 = $r0.<com.facebook.rti.b.e.g: com.facebook.rti.b.e.f c>;
+        $r2 = $r0.<com.facebook.rti.b.e.g: java.net.Socket a>;
+        $r3 = $r0.<com.facebook.rti.b.e.g: com.facebook.rti.b.e.f c>;
+        $r5 = staticinvoke <com.facebook.rti.b.e.f: java.net.InetAddress a(com.facebook.rti.b.e.f)>($r3);
+        $r4 = $r0.<com.facebook.rti.b.e.g: java.net.Socket b>;
+        staticinvoke <com.facebook.rti.b.e.f: void a(com.facebook.rti.b.e.f,java.net.Socket,java.net.InetAddress,java.net.Socket)>($r1, $r2, $r5, $r4);
+        return null;
+    }
+
+    public final java.lang.Object call()
+    {
+        com.facebook.rti.b.e.g $r0;
+        java.lang.Void $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.g;
+        $r1 = specialinvoke $r0.<com.facebook.rti.b.e.g: java.lang.Void a()>();
+        return $r1;
+    }
+}

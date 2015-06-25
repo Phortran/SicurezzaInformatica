@@ -1,0 +1,55 @@
+final class com.facebook.lite.deviceid.d extends java.lang.Object implements com.facebook.lite.deviceid.b
+{
+    final android.content.Context a;
+
+    void <init>(android.content.Context)
+    {
+        com.facebook.lite.deviceid.d $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.deviceid.d;
+        $r1 := @parameter0: android.content.Context;
+        $r0.<com.facebook.lite.deviceid.d: android.content.Context a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void a(com.facebook.lite.deviceid.c)
+    {
+        com.facebook.lite.deviceid.d $r0;
+        com.facebook.lite.deviceid.c $r1, $r4;
+        android.content.Context $r2;
+        byte $b0;
+        long $l1, $l2;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r6;
+        com.facebook.lite.a $r7;
+
+        $r0 := @this: com.facebook.lite.deviceid.d;
+        $r1 := @parameter0: com.facebook.lite.deviceid.c;
+        $r2 = $r0.<com.facebook.lite.deviceid.d: android.content.Context a>;
+        $r4 = staticinvoke <com.facebook.lite.deviceid.f: com.facebook.lite.deviceid.c b(android.content.Context)>($r2);
+        $l1 = virtualinvoke $r4.<com.facebook.lite.deviceid.c: long b()>();
+        $l2 = virtualinvoke $r1.<com.facebook.lite.deviceid.c: long b()>();
+        $b0 = $l1 cmp $l2;
+        if $b0 <= 0 goto label0;
+
+        $r5 = staticinvoke <com.facebook.lite.deviceid.UniqueDeviceIdBroadcastSender: java.lang.String a()>();
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("deviceidsync/device id changed from ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" to ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r5, $r3);
+        $r2 = $r0.<com.facebook.lite.deviceid.d: android.content.Context a>;
+        staticinvoke <com.facebook.lite.deviceid.f: void a(android.content.Context,com.facebook.lite.deviceid.c)>($r2, $r1);
+        $r5 = staticinvoke <com.facebook.lite.deviceid.UniqueDeviceIdBroadcastSender: java.lang.String a()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r5, "deviceidsync/device id changed. re-register push token in background.");
+        $r7 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        virtualinvoke $r7.<com.facebook.lite.a: void E()>();
+
+     label0:
+        return;
+    }
+}

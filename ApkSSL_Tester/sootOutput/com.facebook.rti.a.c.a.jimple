@@ -1,0 +1,38 @@
+public final class com.facebook.rti.a.c.a extends java.lang.Object
+{
+    private static final java.util.concurrent.ThreadFactory a;
+    private static final java.util.concurrent.BlockingQueue b;
+    private static final java.util.concurrent.Executor c;
+
+    static void <clinit>()
+    {
+        com.facebook.rti.a.c.b $r0;
+        java.util.concurrent.TimeUnit $r1;
+        java.util.concurrent.BlockingQueue $r2;
+        java.util.concurrent.ThreadFactory $r3;
+        java.util.concurrent.LinkedBlockingQueue $r4;
+        java.util.concurrent.ThreadPoolExecutor $r5;
+
+        $r0 = new com.facebook.rti.a.c.b;
+        specialinvoke $r0.<com.facebook.rti.a.c.b: void <init>()>();
+        <com.facebook.rti.a.c.a: java.util.concurrent.ThreadFactory a> = $r0;
+        $r4 = new java.util.concurrent.LinkedBlockingQueue;
+        specialinvoke $r4.<java.util.concurrent.LinkedBlockingQueue: void <init>(int)>(10);
+        <com.facebook.rti.a.c.a: java.util.concurrent.BlockingQueue b> = $r4;
+        $r5 = new java.util.concurrent.ThreadPoolExecutor;
+        $r1 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+        $r2 = <com.facebook.rti.a.c.a: java.util.concurrent.BlockingQueue b>;
+        $r3 = <com.facebook.rti.a.c.a: java.util.concurrent.ThreadFactory a>;
+        specialinvoke $r5.<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory)>(5, 128, 1L, $r1, $r2, $r3);
+        <com.facebook.rti.a.c.a: java.util.concurrent.Executor c> = $r5;
+        return;
+    }
+
+    public static java.util.concurrent.Executor a()
+    {
+        java.util.concurrent.Executor $r0;
+
+        $r0 = <com.facebook.rti.a.c.a: java.util.concurrent.Executor c>;
+        return $r0;
+    }
+}

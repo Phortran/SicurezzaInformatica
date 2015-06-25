@@ -1,0 +1,487 @@
+public abstract class com.google.android.gcm.a extends android.app.IntentService
+{
+    private static android.os.PowerManager$WakeLock a;
+    private static final java.lang.Object b;
+    private static int d;
+    private static final java.util.Random e;
+    private static final int f;
+    private static final java.lang.String g;
+    private final java.lang.String[] c;
+
+    static void <clinit>()
+    {
+        long $l0;
+        java.util.Random $r1;
+        java.util.concurrent.TimeUnit $r2;
+        int $i2;
+        java.lang.String $r3;
+
+        <com.google.android.gcm.a: java.lang.Object b> = class "com/google/android/gcm/a";
+        <com.google.android.gcm.a: int d> = 0;
+        $r1 = new java.util.Random;
+        specialinvoke $r1.<java.util.Random: void <init>()>();
+        <com.google.android.gcm.a: java.util.Random e> = $r1;
+        $r2 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+        $l0 = virtualinvoke $r2.<java.util.concurrent.TimeUnit: long toMillis(long)>(3600L);
+        $i2 = (int) $l0;
+        <com.google.android.gcm.a: int f> = $i2;
+        $r1 = <com.google.android.gcm.a: java.util.Random e>;
+        $l0 = virtualinvoke $r1.<java.util.Random: long nextLong()>();
+        $r3 = staticinvoke <java.lang.Long: java.lang.String toBinaryString(long)>($l0);
+        <com.google.android.gcm.a: java.lang.String g> = $r3;
+        return;
+    }
+
+    protected void <init>()
+    {
+        com.google.android.gcm.a $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 = staticinvoke <com.google.android.gcm.a: java.lang.String b(java.lang.String)>("DynamicSenderIds");
+        specialinvoke $r0.<com.google.android.gcm.a: void <init>(java.lang.String,java.lang.String[])>($r1, null);
+        return;
+    }
+
+    private void <init>(java.lang.String, java.lang.String[])
+    {
+        com.google.android.gcm.a $r0;
+        java.lang.String $r1;
+        java.lang.String[] $r2;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String[];
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>($r1);
+        $r0.<com.google.android.gcm.a: java.lang.String[] c> = $r2;
+        return;
+    }
+
+    protected transient void <init>(java.lang.String[])
+    {
+        com.google.android.gcm.a $r0;
+        java.lang.String[] $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 := @parameter0: java.lang.String[];
+        $r2 = staticinvoke <com.google.android.gcm.a: java.lang.String a(java.lang.String[])>($r1);
+        specialinvoke $r0.<com.google.android.gcm.a: void <init>(java.lang.String,java.lang.String[])>($r2, $r1);
+        return;
+    }
+
+    private static java.lang.String a(java.lang.String[])
+    {
+        java.lang.String[] $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: java.lang.String[];
+        $r1 = staticinvoke <com.google.android.gcm.b: java.lang.String a(java.lang.String[])>($r0);
+        $r1 = staticinvoke <com.google.android.gcm.a: java.lang.String b(java.lang.String)>($r1);
+        return $r1;
+    }
+
+    static void a(android.content.Context, android.content.Intent, java.lang.String)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        java.lang.String $r2;
+        android.os.PowerManager$WakeLock $r3;
+        java.lang.Object $r4, $r6;
+        android.os.PowerManager $r7;
+        java.lang.Throwable $r8;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.content.Intent;
+        $r2 := @parameter2: java.lang.String;
+        $r4 = <com.google.android.gcm.a: java.lang.Object b>;
+        entermonitor $r4;
+
+     label0:
+        $r3 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        if $r3 != null goto label1;
+
+        $r6 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("power");
+        $r7 = (android.os.PowerManager) $r6;
+        $r3 = virtualinvoke $r7.<android.os.PowerManager: android.os.PowerManager$WakeLock newWakeLock(int,java.lang.String)>(1, "GCM_LIB");
+        <com.google.android.gcm.a: android.os.PowerManager$WakeLock a> = $r3;
+
+     label1:
+        exitmonitor $r4;
+
+     label2:
+        $r3 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        virtualinvoke $r3.<android.os.PowerManager$WakeLock: void acquire()>();
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setClassName(android.content.Context,java.lang.String)>($r0, $r2);
+        virtualinvoke $r0.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r1);
+        return;
+
+     label3:
+        $r8 := @caughtexception;
+
+     label4:
+        exitmonitor $r4;
+
+     label5:
+        throw $r8;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+
+    private static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        java.lang.StringBuilder $r1;
+        int $i0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("GCMIntentService-");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("-");
+        $i0 = <com.google.android.gcm.a: int d>;
+        $i0 = $i0 + 1;
+        <com.google.android.gcm.a: int d> = $i0;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+
+    private void b(android.content.Context, android.content.Intent)
+    {
+        com.google.android.gcm.a $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.StringBuilder $r4;
+        long $l1, $l2;
+        java.lang.String $r5, $r6, $r7;
+        boolean $z0;
+        int $i3, $i4, $i5;
+        java.util.Random $r8;
+        android.app.PendingIntent $r9;
+        java.lang.Object $r10;
+        android.app.AlarmManager $r11;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r5 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("registration_id");
+        $r6 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("error");
+        $r7 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("unregistered");
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("handleRegistration: registrationId = ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", error = ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", unregistered = ");
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        if $r5 == null goto label1;
+
+        staticinvoke <com.google.android.gcm.b: void k(android.content.Context)>($r1);
+        staticinvoke <com.google.android.gcm.b: java.lang.String a(android.content.Context,java.lang.String)>($r1, $r5);
+        virtualinvoke $r0.<com.google.android.gcm.a: void b(android.content.Context,java.lang.String)>($r1, $r5);
+
+     label0:
+        return;
+
+     label1:
+        if $r7 == null goto label2;
+
+        staticinvoke <com.google.android.gcm.b: void k(android.content.Context)>($r1);
+        staticinvoke <com.google.android.gcm.b: java.lang.String i(android.content.Context)>($r1);
+        virtualinvoke $r0.<com.google.android.gcm.a: void a(android.content.Context)>($r1);
+        goto label0;
+
+     label2:
+        $r7 = "SERVICE_NOT_AVAILABLE";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r6);
+        if $z0 == 0 goto label3;
+
+        $z0 = virtualinvoke $r0.<com.google.android.gcm.a: boolean a(android.content.Context,java.lang.String)>($r1, $r6);
+        if $z0 == 0 goto label0;
+
+        $i3 = staticinvoke <com.google.android.gcm.b: int l(android.content.Context)>($r1);
+        $i4 = $i3 / 2;
+        $r8 = <com.google.android.gcm.a: java.util.Random e>;
+        $i5 = virtualinvoke $r8.<java.util.Random: int nextInt(int)>($i3);
+        $i5 = $i5 + $i4;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Scheduling registration retry, backoff = ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>(java.lang.String)>("com.google.android.gcm.intent.RETRY");
+        $r6 = <com.google.android.gcm.a: java.lang.String g>;
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("token", $r6);
+        $r9 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getBroadcast(android.content.Context,int,android.content.Intent,int)>($r1, 0, $r2, 0);
+        $r10 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("alarm");
+        $r11 = (android.app.AlarmManager) $r10;
+        $l1 = staticinvoke <android.os.SystemClock: long elapsedRealtime()>();
+        $l2 = (long) $i5;
+        $l2 = $l1 + $l2;
+        virtualinvoke $r11.<android.app.AlarmManager: void set(int,long,android.app.PendingIntent)>(3, $l2, $r9);
+        $i5 = <com.google.android.gcm.a: int f>;
+        if $i3 >= $i5 goto label0;
+
+        $i5 = $i3 * 2;
+        staticinvoke <com.google.android.gcm.b: void a(android.content.Context,int)>($r1, $i5);
+        goto label0;
+
+     label3:
+        virtualinvoke $r0.<com.google.android.gcm.a: void a(java.lang.String)>($r6);
+        goto label0;
+    }
+
+    private java.lang.String[] b()
+    {
+        com.google.android.gcm.a $r0;
+        java.lang.String[] $r1;
+        java.lang.IllegalStateException $r3;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 = $r0.<com.google.android.gcm.a: java.lang.String[] c>;
+        if $r1 != null goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("sender id not set on constructor");
+        throw $r3;
+
+     label0:
+        $r1 = $r0.<com.google.android.gcm.a: java.lang.String[] c>;
+        return $r1;
+    }
+
+    protected void a()
+    {
+        com.google.android.gcm.a $r0;
+
+        $r0 := @this: com.google.android.gcm.a;
+        return;
+    }
+
+    protected abstract void a(android.content.Context);
+
+    protected abstract void a(android.content.Context, android.content.Intent);
+
+    protected abstract void a(java.lang.String);
+
+    protected boolean a(android.content.Context, java.lang.String)
+    {
+        com.google.android.gcm.a $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        return 1;
+    }
+
+    protected abstract void b(android.content.Context, java.lang.String);
+
+    public final void onHandleIntent(android.content.Intent)
+    {
+        com.google.android.gcm.a $r0;
+        android.content.Intent $r1;
+        android.content.Context $r2;
+        java.lang.String $r3, $r4, $r8;
+        boolean $z0;
+        java.lang.Object $r5;
+        android.os.PowerManager$WakeLock $r6;
+        java.lang.NumberFormatException $r7;
+        java.lang.StringBuilder $r9;
+        java.lang.Throwable $r10, $r11, $r13, $r14;
+        java.lang.String[] $r12;
+
+        $r0 := @this: com.google.android.gcm.a;
+        $r1 := @parameter0: android.content.Intent;
+
+     label0:
+        $r2 = virtualinvoke $r0.<com.google.android.gcm.a: android.content.Context getApplicationContext()>();
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("com.google.android.c2dm.intent.REGISTRATION");
+        if $z0 == 0 goto label5;
+
+        staticinvoke <com.google.android.gcm.b: void f(android.content.Context)>($r2);
+        specialinvoke $r0.<com.google.android.gcm.a: void b(android.content.Context,android.content.Intent)>($r2, $r1);
+
+     label1:
+        $r5 = <com.google.android.gcm.a: java.lang.Object b>;
+        entermonitor $r5;
+
+     label2:
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        if $r6 == null goto label29;
+
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        virtualinvoke $r6.<android.os.PowerManager$WakeLock: void release()>();
+
+     label3:
+        exitmonitor $r5;
+
+     label4:
+        return;
+
+     label5:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("com.google.android.c2dm.intent.RECEIVE");
+        if $z0 == 0 goto label18;
+
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("message_type");
+        if $r4 == null goto label17;
+
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("deleted_messages");
+        if $z0 == 0 goto label16;
+
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("total_deleted");
+
+     label6:
+        $r3 = $r4;
+        if $r4 == null goto label1;
+
+     label7:
+        staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r4);
+        virtualinvoke $r0.<com.google.android.gcm.a: void a()>();
+
+     label8:
+        goto label1;
+
+     label9:
+        $r7 := @caughtexception;
+
+     label10:
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("GCM returned invalid number of deleted messages: ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", $r4);
+
+     label11:
+        goto label1;
+
+     label12:
+        $r10 := @caughtexception;
+        $r5 = <com.google.android.gcm.a: java.lang.Object b>;
+        entermonitor $r5;
+
+     label13:
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        if $r6 == null goto label32;
+
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        virtualinvoke $r6.<android.os.PowerManager$WakeLock: void release()>();
+
+     label14:
+        exitmonitor $r5;
+
+     label15:
+        throw $r10;
+
+     label16:
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Received unknown special message: ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", $r4);
+        goto label1;
+
+     label17:
+        virtualinvoke $r0.<com.google.android.gcm.a: void a(android.content.Context,android.content.Intent)>($r2, $r1);
+        goto label1;
+
+     label18:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("com.google.android.gcm.intent.RETRY");
+        if $z0 == 0 goto label1;
+
+        $r8 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("token");
+        $r4 = <com.google.android.gcm.a: java.lang.String g>;
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r8);
+        if $z0 != 0 goto label26;
+
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Received invalid token: ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", $r8);
+
+     label19:
+        $r5 = <com.google.android.gcm.a: java.lang.Object b>;
+        entermonitor $r5;
+
+     label20:
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        if $r6 == null goto label24;
+
+        $r6 = <com.google.android.gcm.a: android.os.PowerManager$WakeLock a>;
+        virtualinvoke $r6.<android.os.PowerManager$WakeLock: void release()>();
+
+     label21:
+        exitmonitor $r5;
+        goto label4;
+
+     label22:
+        $r11 := @caughtexception;
+        exitmonitor $r5;
+
+     label23:
+        throw $r11;
+
+     label24:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", "Wakelock reference is null");
+
+     label25:
+        goto label21;
+
+     label26:
+        $z0 = staticinvoke <com.google.android.gcm.b: boolean h(android.content.Context)>($r2);
+        if $z0 == 0 goto label27;
+
+        staticinvoke <com.google.android.gcm.b: void e(android.content.Context)>($r2);
+        goto label1;
+
+     label27:
+        $r12 = specialinvoke $r0.<com.google.android.gcm.a: java.lang.String[] b()>();
+        staticinvoke <com.google.android.gcm.b: void b(android.content.Context,java.lang.String[])>($r2, $r12);
+
+     label28:
+        goto label1;
+
+     label29:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", "Wakelock reference is null");
+        goto label3;
+
+     label30:
+        $r13 := @caughtexception;
+        exitmonitor $r5;
+
+     label31:
+        throw $r13;
+
+     label32:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("GCMBaseIntentService", "Wakelock reference is null");
+        goto label14;
+
+     label33:
+        $r14 := @caughtexception;
+        exitmonitor $r5;
+
+     label34:
+        throw $r14;
+
+        catch java.lang.Throwable from label0 to label1 with label12;
+        catch java.lang.Throwable from label2 to label4 with label30;
+        catch java.lang.Throwable from label5 to label6 with label12;
+        catch java.lang.NumberFormatException from label7 to label8 with label9;
+        catch java.lang.Throwable from label7 to label8 with label12;
+        catch java.lang.Throwable from label10 to label11 with label12;
+        catch java.lang.Throwable from label13 to label15 with label33;
+        catch java.lang.Throwable from label16 to label19 with label12;
+        catch java.lang.Throwable from label20 to label23 with label22;
+        catch java.lang.Throwable from label24 to label25 with label22;
+        catch java.lang.Throwable from label26 to label28 with label12;
+        catch java.lang.Throwable from label29 to label31 with label30;
+        catch java.lang.Throwable from label32 to label34 with label33;
+    }
+}

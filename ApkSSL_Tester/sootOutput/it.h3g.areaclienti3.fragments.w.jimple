@@ -1,0 +1,102 @@
+class it.h3g.areaclienti3.fragments.w extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.IsAThreeFragment a;
+
+    void <init>(it.h3g.areaclienti3.fragments.IsAThreeFragment)
+    {
+        it.h3g.areaclienti3.fragments.w $r0;
+        it.h3g.areaclienti3.fragments.IsAThreeFragment $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.w;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.IsAThreeFragment;
+        $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.w $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.IsAThreeFragment $r2;
+        java.lang.String $r3, $r12, $r14;
+        int $i2;
+        android.widget.EditText $r4;
+        android.text.Editable $r5, $r11;
+        boolean $z0;
+        android.support.v4.app.h $r6;
+        java.lang.Object $r7;
+        android.view.inputmethod.InputMethodManager $r8;
+        android.os.IBinder $r9;
+        java.lang.CharSequence $r10;
+        android.os.Bundle $r13;
+        it.h3g.areaclienti3.fragments.d $r15;
+        it.h3g.areaclienti3.fragments.c $r16;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.w;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $i2 = virtualinvoke $r4.<android.widget.EditText: int length()>();
+        if $i2 <= 0 goto label2;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean i(java.lang.String)>($r3);
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: android.support.v4.app.h getActivity()>();
+        $r7 = virtualinvoke $r6.<android.support.v4.app.h: java.lang.Object getSystemService(java.lang.String)>("input_method");
+        $r8 = (android.view.inputmethod.InputMethodManager) $r7;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $r9 = virtualinvoke $r4.<android.widget.EditText: android.os.IBinder getWindowToken()>();
+        virtualinvoke $r8.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r9, 0);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r10 = interfaceinvoke $r5.<android.text.Editable: java.lang.CharSequence subSequence(int,int)>(0, 3);
+        $r3 = interfaceinvoke $r10.<java.lang.CharSequence: java.lang.String toString()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.IsAThreeFragment: android.widget.EditText access$0(it.h3g.areaclienti3.fragments.IsAThreeFragment)>($r2);
+        $r11 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $i2 = interfaceinvoke $r11.<android.text.Editable: int length()>();
+        $r10 = interfaceinvoke $r5.<android.text.Editable: java.lang.CharSequence subSequence(int,int)>(3, $i2);
+        $r12 = interfaceinvoke $r10.<java.lang.CharSequence: java.lang.String toString()>();
+        $r13 = new android.os.Bundle;
+        specialinvoke $r13.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r13.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("prefix", $r3);
+        virtualinvoke $r13.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("number", $r12);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Is a 3 Fragment", "Start show bills action");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r15 = $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r15.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("isA3Action", $r13, 1);
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r16 = $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r14 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: java.lang.String getString(int)>(2131231126);
+        interfaceinvoke $r16.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r14, 2);
+        goto label0;
+
+     label2:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r16 = $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r12 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: java.lang.String getString(int)>(2131231713);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.w: it.h3g.areaclienti3.fragments.IsAThreeFragment a>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.IsAThreeFragment: java.lang.String getString(int)>(2131231058);
+        interfaceinvoke $r16.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String)>("RICARICA", $r12, $r3);
+        goto label0;
+    }
+}

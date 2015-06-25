@@ -1,0 +1,71 @@
+class it.h3g.areaclienti3.fragments.b.z extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.b.y a;
+
+    void <init>(it.h3g.areaclienti3.fragments.b.y)
+    {
+        it.h3g.areaclienti3.fragments.b.z $r0;
+        it.h3g.areaclienti3.fragments.b.y $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.z;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.b.y;
+        $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.b.z $r0;
+        android.view.View $r1;
+        boolean $z0;
+        int $i0, $i1;
+        java.lang.String $r2, $r8;
+        it.h3g.areaclienti3.fragments.b.y $r3, $r9;
+        java.lang.Object $r4;
+        java.lang.Integer $r5;
+        android.os.Bundle $r6;
+        it.h3g.areaclienti3.j.l $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.z;
+        $r1 := @parameter0: android.view.View;
+        $z0 = $r1 instanceof android.widget.ImageButton;
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        $i0 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: int a(it.h3g.areaclienti3.fragments.b.y)>($r3);
+        $r4 = virtualinvoke $r1.<android.view.View: java.lang.Object getTag()>();
+        $r5 = (java.lang.Integer) $r4;
+        $i1 = virtualinvoke $r5.<java.lang.Integer: int intValue()>();
+        $i1 = $i1 + $i0;
+
+     label0:
+        $r6 = new android.os.Bundle;
+        specialinvoke $r6.<android.os.Bundle: void <init>()>();
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: it.h3g.areaclienti3.j.l b(it.h3g.areaclienti3.fragments.b.y)>($r3);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String g()>();
+        virtualinvoke $r6.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("proposition", $r8);
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: it.h3g.areaclienti3.j.l b(it.h3g.areaclienti3.fragments.b.y)>($r3);
+        $r2 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        virtualinvoke $r6.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("msisdn", $r2);
+        virtualinvoke $r6.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("returnContMail", 1);
+        virtualinvoke $r6.<android.os.Bundle: void putInt(java.lang.String,int)>("page", $i1);
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        staticinvoke <it.h3g.areaclienti3.fragments.b.y: void a(it.h3g.areaclienti3.fragments.b.y,int)>($r3, $i1);
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: android.os.Bundle c(it.h3g.areaclienti3.fragments.b.y)>($r9);
+        staticinvoke <it.h3g.areaclienti3.fragments.b.y: void a(it.h3g.areaclienti3.fragments.b.y,android.os.Bundle)>($r3, $r6);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.b.z: it.h3g.areaclienti3.fragments.b.y a>;
+        staticinvoke <it.h3g.areaclienti3.fragments.b.y: void d(it.h3g.areaclienti3.fragments.b.y)>($r9);
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r1.<android.view.View: java.lang.Object getTag()>();
+        $r5 = (java.lang.Integer) $r4;
+        $i1 = virtualinvoke $r5.<java.lang.Integer: int intValue()>();
+        goto label0;
+    }
+}

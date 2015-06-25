@@ -1,0 +1,313 @@
+public class com.facebook.rti.b.e.b.f extends java.lang.Object
+{
+    private static final java.lang.String q;
+    java.lang.String a;
+    java.lang.String b;
+    java.lang.Long c;
+    java.lang.Long d;
+    java.lang.Integer e;
+    java.lang.Integer f;
+    java.lang.Boolean g;
+    java.lang.Boolean h;
+    java.lang.String i;
+    java.lang.Boolean j;
+    java.lang.Long k;
+    java.lang.String l;
+    java.lang.String m;
+    java.lang.String n;
+    java.util.List o;
+    java.lang.Boolean p;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/b/e/b/f";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.rti.b.e.b.f: java.lang.String q> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.b.e.b.f $r0;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private java.lang.String a()
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1, $r3;
+        org.json.JSONObject $r2;
+        java.util.Iterator $r4;
+        java.lang.Long $r5;
+        java.lang.Integer $r6;
+        java.lang.Boolean $r7;
+        java.util.List $r8;
+        org.json.JSONArray $r9;
+        boolean $z0;
+        java.lang.Object $r10;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r2 = new org.json.JSONObject;
+        specialinvoke $r2.<org.json.JSONObject: void <init>()>();
+        $r3 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String a>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("u", $r3);
+        $r1 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String b>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("a", $r1);
+        $r5 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Long c>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("cp", $r5);
+        $r5 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Long d>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("mqtt_sid", $r5);
+        $r6 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Integer e>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("nwt", $r6);
+        $r6 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Integer f>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("nwst", $r6);
+        $r7 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean g>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("chat_on", $r7);
+        $r7 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean h>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("no_auto_fg", $r7);
+        $r1 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String i>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("d", $r1);
+        $r7 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean j>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("fg", $r7);
+        $r5 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Long k>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("ecp", $r5);
+        $r1 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String l>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("pf", $r1);
+        $r1 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String m>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("ct", $r1);
+        $r1 = $r0.<com.facebook.rti.b.e.b.f: java.lang.String n>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("aid", $r1);
+        $r8 = $r0.<com.facebook.rti.b.e.b.f: java.util.List o>;
+        if $r8 == null goto label2;
+
+        $r9 = new org.json.JSONArray;
+        specialinvoke $r9.<org.json.JSONArray: void <init>()>();
+        $r8 = $r0.<com.facebook.rti.b.e.b.f: java.util.List o>;
+        $r4 = interfaceinvoke $r8.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r10 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r3 = (java.lang.String) $r10;
+        virtualinvoke $r9.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r3);
+        goto label0;
+
+     label1:
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("st", $r9);
+
+     label2:
+        $r7 = $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean p>;
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("log", $r7);
+        $r3 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String toString()>();
+        return $r3;
+    }
+
+    public final com.facebook.rti.b.e.b.f a(java.lang.Boolean)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Boolean;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean g> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f a(java.lang.Integer)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Integer $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Integer;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Integer e> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f a(java.lang.Long)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Long $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Long;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Long c> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f a(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String a> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f a(java.util.List)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.util.List $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.util.List;
+        $r0.<com.facebook.rti.b.e.b.f: java.util.List o> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f b(java.lang.Boolean)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Boolean;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean h> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f b(java.lang.Integer)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Integer $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Integer;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Integer f> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f b(java.lang.Long)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Long $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Long;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Long d> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f b(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String b> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f c(java.lang.Boolean)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Boolean;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean j> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f c(java.lang.Long)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Long $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Long;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Long k> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f c(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String i> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f d(java.lang.Boolean)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.Boolean;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.Boolean p> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f d(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String l> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f e(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String m> = $r1;
+        return $r0;
+    }
+
+    public final com.facebook.rti.b.e.b.f f(java.lang.String)
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b.f: java.lang.String n> = $r1;
+        return $r0;
+    }
+
+    public java.lang.String toString()
+    {
+        com.facebook.rti.b.e.b.f $r0;
+        java.lang.String $r1, $r2;
+        org.json.JSONException $r3;
+        java.lang.Object[] $r4;
+
+        $r0 := @this: com.facebook.rti.b.e.b.f;
+
+     label0:
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.e.b.f: java.lang.String a()>();
+
+     label1:
+        return $r2;
+
+     label2:
+        $r3 := @caughtexception;
+        $r1 = <com.facebook.rti.b.e.b.f: java.lang.String q>;
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r1, $r3, "Failed to serialize", $r4);
+        return "";
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+}

@@ -1,0 +1,42 @@
+class it.h3g.areaclienti3.fragments.store.n extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.store.k a;
+
+    void <init>(it.h3g.areaclienti3.fragments.store.k)
+    {
+        it.h3g.areaclienti3.fragments.store.n $r0;
+        it.h3g.areaclienti3.fragments.store.k $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.n;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.store.k;
+        $r0.<it.h3g.areaclienti3.fragments.store.n: it.h3g.areaclienti3.fragments.store.k a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.store.n $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.store.k $r2;
+        android.content.Context $r4;
+        android.widget.Button $r5;
+        android.content.Intent $r6;
+        int i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.n;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.n: it.h3g.areaclienti3.fragments.store.k a>;
+        $r5 = $r2.<it.h3g.areaclienti3.fragments.store.k: android.widget.Button b>;
+        virtualinvoke $r5.<android.widget.Button: void setClickable(boolean)>(0);
+        $r6 = new android.content.Intent;
+        specialinvoke $r6.<android.content.Intent: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.n: it.h3g.areaclienti3.fragments.store.k a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.store.k: android.content.Context a(it.h3g.areaclienti3.fragments.store.k)>($r2);
+        virtualinvoke $r6.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r4, class "it/h3g/areaclienti3/fragments/store/MapDialogActivity");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.n: it.h3g.areaclienti3.fragments.store.k a>;
+        i0 = (int) 0;
+        virtualinvoke $r2.<it.h3g.areaclienti3.fragments.store.k: void startActivityForResult(android.content.Intent,int)>($r6, i0);
+        return;
+    }
+}

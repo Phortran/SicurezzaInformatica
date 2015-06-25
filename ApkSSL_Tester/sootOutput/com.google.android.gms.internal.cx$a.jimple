@@ -1,0 +1,133 @@
+public abstract class com.google.android.gms.internal.cx$a extends android.os.Binder implements com.google.android.gms.internal.cx
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.cx$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.cx$a;
+        specialinvoke $r0.<android.os.Binder: void <init>()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void attachInterface(android.os.IInterface,java.lang.String)>($r0, "com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        return;
+    }
+
+    public static com.google.android.gms.internal.cx a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.internal.cx $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.internal.cx$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.internal.cx;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.internal.cx) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.internal.cx$a$a;
+        specialinvoke r4.<com.google.android.gms.internal.cx$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.cx$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.cx$a;
+        return $r0;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.cx$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        com.google.android.gms.common.data.d $r3;
+        boolean $z0;
+        com.google.android.gms.common.data.i $r5;
+
+        $r0 := @this: com.google.android.gms.internal.cx$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $r3 = null;
+        lookupswitch($i0)
+        {
+            case 5001: goto label2;
+            case 5002: goto label4;
+            case 5003: goto label6;
+            case 5004: goto label7;
+            case 5005: goto label8;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label3;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label3:
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void a(int,com.google.android.gms.common.data.d)>($i0, $r3);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label4:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label5;
+
+        $r5 = <com.google.android.gms.common.data.d: com.google.android.gms.common.data.i a>;
+        $r3 = virtualinvoke $r5.<com.google.android.gms.common.data.i: com.google.android.gms.common.data.d a(android.os.Parcel)>($r1);
+
+     label5:
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void a(com.google.android.gms.common.data.d)>($r3);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label6:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void a(int,int)>($i1, $i0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label7:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label8:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.appstate.internal.IAppStateCallbacks");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.cx$a: void a(int)>($i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+    }
+}

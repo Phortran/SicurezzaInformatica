@@ -1,0 +1,98 @@
+public abstract class com.google.c.b.ak extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        com.google.c.b.ak $r0;
+
+        $r0 := @this: com.google.c.b.ak;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static com.google.c.b.ak a()
+    {
+        java.lang.Class $r1, $r2;
+        java.lang.reflect.Field $r3;
+        java.lang.Object $r4;
+        java.lang.Class[] $r5;
+        java.lang.reflect.Method $r6;
+        java.lang.Exception $r8, $r9, $r12;
+        java.lang.Object[] $r10;
+        java.lang.Integer $r11;
+        int $i1;
+        com.google.c.b.al r13;
+        com.google.c.b.am r14;
+        com.google.c.b.an r15;
+        com.google.c.b.ao r16;
+
+     label0:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("sun.misc.Unsafe");
+        $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("theUnsafe");
+        virtualinvoke $r3.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        $r4 = virtualinvoke $r3.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(null);
+        $r5 = newarray (java.lang.Class)[1];
+        $r5[0] = class "java/lang/Class";
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("allocateInstance", $r5);
+        r13 = new com.google.c.b.al;
+        specialinvoke r13.<com.google.c.b.al: void <init>(java.lang.reflect.Method,java.lang.Object)>($r6, $r4);
+
+     label1:
+        return r13;
+
+     label2:
+        $r8 := @caughtexception;
+        $r2 = class "java/io/ObjectInputStream";
+
+     label3:
+        $r5 = newarray (java.lang.Class)[2];
+        $r5[0] = class "java/lang/Class";
+        $r5[1] = class "java/lang/Class";
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("newInstance", $r5);
+        virtualinvoke $r6.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        r14 = new com.google.c.b.am;
+        specialinvoke r14.<com.google.c.b.am: void <init>(java.lang.reflect.Method)>($r6);
+
+     label4:
+        return r14;
+
+     label5:
+        $r9 := @caughtexception;
+        $r2 = class "java/io/ObjectStreamClass";
+
+     label6:
+        $r5 = newarray (java.lang.Class)[1];
+        $r5[0] = class "java/lang/Class";
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("getConstructorId", $r5);
+        virtualinvoke $r6.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        $r10 = newarray (java.lang.Object)[1];
+        $r10[0] = class "java/lang/Object";
+        $r4 = virtualinvoke $r6.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r10);
+        $r11 = (java.lang.Integer) $r4;
+        $i1 = virtualinvoke $r11.<java.lang.Integer: int intValue()>();
+        $r2 = class "java/io/ObjectStreamClass";
+        $r5 = newarray (java.lang.Class)[2];
+        $r5[0] = class "java/lang/Class";
+        $r1 = <java.lang.Integer: java.lang.Class TYPE>;
+        $r5[1] = $r1;
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("newInstance", $r5);
+        virtualinvoke $r6.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        r15 = new com.google.c.b.an;
+        specialinvoke r15.<com.google.c.b.an: void <init>(java.lang.reflect.Method,int)>($r6, $i1);
+
+     label7:
+        return r15;
+
+     label8:
+        $r12 := @caughtexception;
+        r16 = new com.google.c.b.ao;
+        specialinvoke r16.<com.google.c.b.ao: void <init>()>();
+        return r16;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+        catch java.lang.Exception from label3 to label4 with label5;
+        catch java.lang.Exception from label6 to label7 with label8;
+    }
+
+    public abstract java.lang.Object a(java.lang.Class);
+}

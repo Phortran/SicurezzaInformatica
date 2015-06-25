@@ -1,0 +1,42 @@
+final class com.google.android.gms.internal.aq extends java.lang.Object
+{
+    public final int a;
+    public final android.view.ViewGroup$LayoutParams b;
+    public final android.view.ViewGroup c;
+
+    public void <init>(com.google.android.gms.internal.dg)
+    {
+        com.google.android.gms.internal.aq $r0;
+        com.google.android.gms.internal.dg $r1;
+        android.view.ViewGroup$LayoutParams $r2;
+        boolean $z0;
+        android.view.ViewParent $r3;
+        android.view.ViewGroup $r4;
+        int $i0;
+        com.google.android.gms.internal.ap $r5;
+
+        $r0 := @this: com.google.android.gms.internal.aq;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dg: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r0.<com.google.android.gms.internal.aq: android.view.ViewGroup$LayoutParams b> = $r2;
+        $r3 = virtualinvoke $r1.<com.google.android.gms.internal.dg: android.view.ViewParent getParent()>();
+        $z0 = $r3 instanceof android.view.ViewGroup;
+        if $z0 == 0 goto label0;
+
+        $r4 = (android.view.ViewGroup) $r3;
+        $r0.<com.google.android.gms.internal.aq: android.view.ViewGroup c> = $r4;
+        $r4 = $r0.<com.google.android.gms.internal.aq: android.view.ViewGroup c>;
+        $i0 = virtualinvoke $r4.<android.view.ViewGroup: int indexOfChild(android.view.View)>($r1);
+        $r0.<com.google.android.gms.internal.aq: int a> = $i0;
+        $r4 = $r0.<com.google.android.gms.internal.aq: android.view.ViewGroup c>;
+        virtualinvoke $r4.<android.view.ViewGroup: void removeView(android.view.View)>($r1);
+        virtualinvoke $r1.<com.google.android.gms.internal.dg: void a(boolean)>(1);
+        return;
+
+     label0:
+        $r5 = new com.google.android.gms.internal.ap;
+        specialinvoke $r5.<com.google.android.gms.internal.ap: void <init>(java.lang.String)>("Could not get the parent of the WebView for an overlay.");
+        throw $r5;
+    }
+}

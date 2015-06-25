@@ -1,0 +1,55 @@
+public final class com.facebook.rti.b.e.y extends java.lang.Object
+{
+
+    static java.net.Socket a(java.net.InetAddress, int, int)
+    {
+        java.net.InetAddress $r0;
+        int $i0, $i1;
+        java.net.InetSocketAddress $r2;
+        java.net.Socket $r3;
+
+        $r0 := @parameter0: java.net.InetAddress;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r3 = staticinvoke <com.facebook.rti.b.a.f.c: java.net.Socket a()>();
+        staticinvoke <com.facebook.rti.b.e.y: void a(java.net.Socket)>($r3);
+        $r2 = new java.net.InetSocketAddress;
+        specialinvoke $r2.<java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>($r0, $i0);
+        virtualinvoke $r3.<java.net.Socket: void connect(java.net.SocketAddress,int)>($r2, $i1);
+        return $r3;
+    }
+
+    static void a(java.net.Socket)
+    {
+        java.net.Socket $r0;
+        int i0;
+
+        $r0 := @parameter0: java.net.Socket;
+        virtualinvoke $r0.<java.net.Socket: void setTcpNoDelay(boolean)>(1);
+        i0 = (int) 0;
+        virtualinvoke $r0.<java.net.Socket: void setSoTimeout(int)>(i0);
+        virtualinvoke $r0.<java.net.Socket: void setKeepAlive(boolean)>(0);
+        return;
+    }
+
+    static void b(java.net.Socket)
+    {
+        java.net.Socket $r0;
+        java.io.IOException $r1;
+
+        $r0 := @parameter0: java.net.Socket;
+        if $r0 == null goto label1;
+
+     label0:
+        virtualinvoke $r0.<java.net.Socket: void close()>();
+
+     label1:
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+}

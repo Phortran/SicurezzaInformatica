@@ -1,0 +1,59 @@
+class com.facebook.rti.b.e.c.c extends java.lang.Object
+{
+    protected com.facebook.rti.b.e.b.h a;
+    protected int b;
+
+    void <init>(com.facebook.rti.b.e.b.h, int)
+    {
+        com.facebook.rti.b.e.c.c $r0;
+        com.facebook.rti.b.e.b.h $r1;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.e.c.c;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.h;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.e.c.c: com.facebook.rti.b.e.b.h a> = $r1;
+        $r0.<com.facebook.rti.b.e.c.c: int b> = $i0;
+        return;
+    }
+
+    protected final java.lang.String a(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.c $r0;
+        java.io.DataInputStream $r1;
+        int $i0, $i1;
+        byte[] $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: com.facebook.rti.b.e.c.c;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $i0 = virtualinvoke $r0.<com.facebook.rti.b.e.c.c: int b(java.io.DataInputStream)>($r1);
+        $r2 = newarray (byte)[$i0];
+        virtualinvoke $r1.<java.io.DataInputStream: void readFully(byte[])>($r2);
+        $i1 = $r0.<com.facebook.rti.b.e.c.c: int b>;
+        $i1 = $i1 - $i0;
+        $r0.<com.facebook.rti.b.e.c.c: int b> = $i1;
+        $r3 = new java.lang.String;
+        specialinvoke $r3.<java.lang.String: void <init>(byte[],java.lang.String)>($r2, "UTF-8");
+        return $r3;
+    }
+
+    protected final int b(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.c $r0;
+        java.io.DataInputStream $r1;
+        int $i0, $i1, $i2;
+
+        $r0 := @this: com.facebook.rti.b.e.c.c;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $i0 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        $i1 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        $i2 = $r0.<com.facebook.rti.b.e.c.c: int b>;
+        $i2 = $i2 + -2;
+        $r0.<com.facebook.rti.b.e.c.c: int b> = $i2;
+        $i2 = $i0 << 8;
+        $i2 = $i2 | $i1;
+        return $i2;
+    }
+}

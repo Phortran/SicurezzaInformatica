@@ -1,0 +1,69 @@
+final class com.a.a.h extends java.io.ByteArrayOutputStream
+{
+    final com.a.a.g a;
+
+    void <init>(com.a.a.g, int)
+    {
+        com.a.a.h $r0;
+        com.a.a.g $r1;
+        int $i0;
+
+        $r0 := @this: com.a.a.h;
+        $r1 := @parameter0: com.a.a.g;
+        $i0 := @parameter1: int;
+        $r0.<com.a.a.h: com.a.a.g a> = $r1;
+        specialinvoke $r0.<java.io.ByteArrayOutputStream: void <init>(int)>($i0);
+        return;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.a.a.h $r0;
+        int $i0;
+        byte[] $r1;
+        byte $b1;
+        com.a.a.g $r2;
+        java.nio.charset.Charset $r3;
+        java.lang.String $r4, $r5;
+        java.io.UnsupportedEncodingException $r6;
+        java.lang.AssertionError $r7;
+
+        $r0 := @this: com.a.a.h;
+        $i0 = $r0.<com.a.a.h: int count>;
+        if $i0 <= 0 goto label3;
+
+        $r1 = $r0.<com.a.a.h: byte[] buf>;
+        $i0 = $r0.<com.a.a.h: int count>;
+        $i0 = $i0 + -1;
+        $b1 = $r1[$i0];
+        if $b1 != 13 goto label3;
+
+        $i0 = $r0.<com.a.a.h: int count>;
+        $i0 = $i0 + -1;
+
+     label0:
+        $r4 = new java.lang.String;
+        $r1 = $r0.<com.a.a.h: byte[] buf>;
+        $r2 = $r0.<com.a.a.h: com.a.a.g a>;
+
+     label1:
+        $r3 = staticinvoke <com.a.a.g: java.nio.charset.Charset a(com.a.a.g)>($r2);
+        $r5 = virtualinvoke $r3.<java.nio.charset.Charset: java.lang.String name()>();
+        specialinvoke $r4.<java.lang.String: void <init>(byte[],int,int,java.lang.String)>($r1, 0, $i0, $r5);
+
+     label2:
+        return $r4;
+
+     label3:
+        $i0 = $r0.<com.a.a.h: int count>;
+        goto label0;
+
+     label4:
+        $r6 := @caughtexception;
+        $r7 = new java.lang.AssertionError;
+        specialinvoke $r7.<java.lang.AssertionError: void <init>(java.lang.Object)>($r6);
+        throw $r7;
+
+        catch java.io.UnsupportedEncodingException from label1 to label2 with label4;
+    }
+}

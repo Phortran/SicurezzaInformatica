@@ -1,0 +1,123 @@
+public class it.h3g.areaclienti3.fragments.e.m extends it.h3g.areaclienti3.fragments.a
+{
+    android.view.View a;
+    android.os.Bundle b;
+    private android.webkit.WebView c;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        return;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        return 2131230907;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        return 2130837675;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        return 35;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r6;
+        android.webkit.WebView $r7;
+        android.webkit.WebSettings $r8;
+        java.lang.String $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903142, $r2, 0);
+        $r0.<it.h3g.areaclienti3.fragments.e.m: android.view.View a> = $r6;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.view.View a>;
+        $r6 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165199);
+        $r7 = (android.webkit.WebView) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.e.m: android.webkit.WebView c> = $r7;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.webkit.WebView c>;
+        $r8 = virtualinvoke $r7.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r8.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+        $r0.<it.h3g.areaclienti3.fragments.e.m: android.os.Bundle b> = $r3;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.e.m: android.os.Bundle getArguments()>();
+        $r9 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_info_data");
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.webkit.WebView c>;
+        virtualinvoke $r7.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>($r9, "text/html", "utf-8");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.view.View a>;
+        return $r6;
+    }
+
+    public void onResume()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebView $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.os.Bundle b>;
+        if $r1 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.webkit.WebView c>;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.os.Bundle b>;
+        virtualinvoke $r2.<android.webkit.WebView: android.webkit.WebBackForwardList restoreState(android.os.Bundle)>($r1);
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onResume()>();
+        return;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebView $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.e.m: android.webkit.WebView c>;
+        virtualinvoke $r2.<android.webkit.WebView: android.webkit.WebBackForwardList saveState(android.os.Bundle)>($r1);
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.e.m $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.m;
+        return;
+    }
+}

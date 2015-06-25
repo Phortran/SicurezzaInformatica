@@ -1,0 +1,394 @@
+public class com.facebook.lite.a.i extends java.lang.Object
+{
+    private int a;
+    private int b;
+    private final java.util.LinkedHashMap c;
+    private int d;
+    private int e;
+    private int f;
+    private int g;
+
+    public void <init>(int)
+    {
+        com.facebook.lite.a.i $r0;
+        int $i0;
+        java.lang.IllegalArgumentException $r1;
+        java.util.LinkedHashMap $r3;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        if $i0 > 0 goto label0;
+
+        $r1 = new java.lang.IllegalArgumentException;
+        specialinvoke $r1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("maxSize <= 0");
+        throw $r1;
+
+     label0:
+        $r0.<com.facebook.lite.a.i: int d> = $i0;
+        $r3 = new java.util.LinkedHashMap;
+        specialinvoke $r3.<java.util.LinkedHashMap: void <init>(int,float,boolean)>(0, 0.75F, 1);
+        $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c> = $r3;
+        return;
+    }
+
+    private void a(int)
+    {
+        com.facebook.lite.a.i $r0;
+        int $i0, $i1, $i2;
+        java.lang.StringBuilder $r1;
+        java.lang.Class $r2;
+        boolean $z0;
+        java.util.LinkedHashMap $r3;
+        java.lang.IllegalStateException $r4;
+        java.lang.String $r5;
+        java.lang.Throwable $r6;
+        java.util.Set $r7;
+        java.util.Iterator $r8;
+        java.lang.Object $r9, $r11;
+        java.util.Map$Entry $r10;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $i0 := @parameter0: int;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        if $i1 < 0 goto label2;
+
+        $r3 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $z0 = virtualinvoke $r3.<java.util.LinkedHashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label5;
+
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        if $i1 == 0 goto label5;
+
+     label2:
+        $r4 = new java.lang.IllegalStateException;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".sizeOf() is reporting inconsistent results!");
+        $r5 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r5);
+        throw $r4;
+
+     label3:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+
+     label4:
+        throw $r6;
+
+     label5:
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        if $i1 <= $i0 goto label6;
+
+        $r3 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $z0 = virtualinvoke $r3.<java.util.LinkedHashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label7;
+
+     label6:
+        exitmonitor $r0;
+        return;
+
+     label7:
+        $r3 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $r7 = virtualinvoke $r3.<java.util.LinkedHashMap: java.util.Set entrySet()>();
+        $r8 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+        $r9 = interfaceinvoke $r8.<java.util.Iterator: java.lang.Object next()>();
+        $r10 = (java.util.Map$Entry) $r9;
+        $r9 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r11 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r3 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        virtualinvoke $r3.<java.util.LinkedHashMap: java.lang.Object remove(java.lang.Object)>($r9);
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        $i2 = specialinvoke $r0.<com.facebook.lite.a.i: int b(java.lang.Object,java.lang.Object)>($r9, $r11);
+        $i2 = $i1 - $i2;
+        $r0.<com.facebook.lite.a.i: int g> = $i2;
+        $i2 = $r0.<com.facebook.lite.a.i: int a>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.lite.a.i: int a> = $i2;
+        exitmonitor $r0;
+
+     label8:
+        virtualinvoke $r0.<com.facebook.lite.a.i: void c(java.lang.Object)>($r11);
+        goto label0;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+        catch java.lang.Throwable from label5 to label8 with label3;
+    }
+
+    private int b(java.lang.Object, java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1, $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        int $i1;
+        java.lang.IllegalStateException $r5;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        $i1 = virtualinvoke $r0.<com.facebook.lite.a.i: int d(java.lang.Object)>($r2);
+        if $i1 >= 0 goto label0;
+
+        $r5 = new java.lang.IllegalStateException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Negative size: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r4);
+        throw $r5;
+
+     label0:
+        return $i1;
+    }
+
+    public final java.lang.Object a(java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1;
+        java.lang.NullPointerException $r2;
+        java.util.LinkedHashMap $r4;
+        int $i0;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.NullPointerException;
+        specialinvoke $r2.<java.lang.NullPointerException: void <init>(java.lang.String)>("key == null");
+        throw $r2;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $r4 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $r1 = virtualinvoke $r4.<java.util.LinkedHashMap: java.lang.Object get(java.lang.Object)>($r1);
+        if $r1 == null goto label2;
+
+        $i0 = $r0.<com.facebook.lite.a.i: int b>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.lite.a.i: int b> = $i0;
+        exitmonitor $r0;
+        return $r1;
+
+     label2:
+        $i0 = $r0.<com.facebook.lite.a.i: int e>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.lite.a.i: int e> = $i0;
+        exitmonitor $r0;
+        return null;
+
+     label3:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+
+     label4:
+        throw $r6;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+    }
+
+    public final java.lang.Object a(java.lang.Object, java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1, $r2, $r6;
+        java.lang.NullPointerException $r3;
+        int $i0, $i1;
+        java.util.LinkedHashMap $r5;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        if $r1 == null goto label0;
+
+        if $r2 != null goto label1;
+
+     label0:
+        $r3 = new java.lang.NullPointerException;
+        specialinvoke $r3.<java.lang.NullPointerException: void <init>(java.lang.String)>("key == null || value == null");
+        throw $r3;
+
+     label1:
+        entermonitor $r0;
+
+     label2:
+        $i0 = $r0.<com.facebook.lite.a.i: int f>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.lite.a.i: int f> = $i0;
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        $i0 = specialinvoke $r0.<com.facebook.lite.a.i: int b(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $i1 = $i1 + $i0;
+        $r0.<com.facebook.lite.a.i: int g> = $i1;
+        $r5 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $r2 = virtualinvoke $r5.<java.util.LinkedHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $r6 = $r2;
+        if $r2 == null goto label3;
+
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        $i0 = specialinvoke $r0.<com.facebook.lite.a.i: int b(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $i1 = $i1 - $i0;
+        $r0.<com.facebook.lite.a.i: int g> = $i1;
+
+     label3:
+        exitmonitor $r0;
+
+     label4:
+        if $r6 == null goto label5;
+
+        virtualinvoke $r0.<com.facebook.lite.a.i: void c(java.lang.Object)>($r6);
+
+     label5:
+        $i1 = $r0.<com.facebook.lite.a.i: int d>;
+        specialinvoke $r0.<com.facebook.lite.a.i: void a(int)>($i1);
+        return $r2;
+
+     label6:
+        $r7 := @caughtexception;
+
+     label7:
+        exitmonitor $r0;
+
+     label8:
+        throw $r7;
+
+        catch java.lang.Throwable from label2 to label4 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    public final java.lang.Object b(java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1, $r4;
+        java.lang.NullPointerException $r2;
+        int $i0, $i1;
+        java.util.LinkedHashMap $r5;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.NullPointerException;
+        specialinvoke $r2.<java.lang.NullPointerException: void <init>(java.lang.String)>("key == null");
+        throw $r2;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        $r5 = $r0.<com.facebook.lite.a.i: java.util.LinkedHashMap c>;
+        $r4 = virtualinvoke $r5.<java.util.LinkedHashMap: java.lang.Object remove(java.lang.Object)>($r1);
+        if $r4 == null goto label2;
+
+        $i1 = $r0.<com.facebook.lite.a.i: int g>;
+        $i0 = specialinvoke $r0.<com.facebook.lite.a.i: int b(java.lang.Object,java.lang.Object)>($r1, $r4);
+        $i1 = $i1 - $i0;
+        $r0.<com.facebook.lite.a.i: int g> = $i1;
+
+     label2:
+        exitmonitor $r0;
+
+     label3:
+        if $r4 == null goto label4;
+
+        virtualinvoke $r0.<com.facebook.lite.a.i: void c(java.lang.Object)>($r4);
+
+     label4:
+        return $r4;
+
+     label5:
+        $r7 := @caughtexception;
+
+     label6:
+        exitmonitor $r0;
+
+     label7:
+        throw $r7;
+
+        catch java.lang.Throwable from label1 to label3 with label5;
+        catch java.lang.Throwable from label6 to label7 with label5;
+    }
+
+    protected void c(java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        return;
+    }
+
+    protected int d(java.lang.Object)
+    {
+        com.facebook.lite.a.i $r0;
+        java.lang.Object $r1;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $r1 := @parameter0: java.lang.Object;
+        return 1;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.lite.a.i $r0;
+        int $i0, $i1, $i2;
+        java.lang.Integer $r1;
+        java.lang.String $r2;
+        java.lang.Object[] $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.facebook.lite.a.i;
+        $i0 = 0;
+        entermonitor $r0;
+
+     label0:
+        $i1 = $r0.<com.facebook.lite.a.i: int b>;
+        $i2 = $r0.<com.facebook.lite.a.i: int e>;
+        $i2 = $i1 + $i2;
+        if $i2 == 0 goto label1;
+
+        $i1 = $r0.<com.facebook.lite.a.i: int b>;
+        $i1 = $i1 * 100;
+        $i0 = $i1 / $i2;
+
+     label1:
+        $r3 = newarray (java.lang.Object)[4];
+        $i2 = $r0.<com.facebook.lite.a.i: int d>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r3[0] = $r1;
+        $i2 = $r0.<com.facebook.lite.a.i: int b>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r3[1] = $r1;
+        $i2 = $r0.<com.facebook.lite.a.i: int e>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r3[2] = $r1;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r3[3] = $r1;
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", $r3);
+
+     label2:
+        exitmonitor $r0;
+        return $r2;
+
+     label3:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+}

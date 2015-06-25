@@ -1,0 +1,322 @@
+class com.google.android.gms.internal.gh$a$a extends java.lang.Object implements com.google.android.gms.internal.gh
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a(android.os.Bundle, com.google.android.gms.internal.gi)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.gi $r2;
+        android.os.IBinder $r3;
+        android.os.Parcel $r4;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 := @parameter1: com.google.android.gms.internal.gi;
+        $r3 = null;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.wallet.internal.IOwService");
+        if $r1 == null goto label4;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        if $r2 == null goto label2;
+
+        $r3 = interfaceinvoke $r2.<com.google.android.gms.internal.gi: android.os.IBinder asBinder()>();
+
+     label2:
+        virtualinvoke $r4.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        $r3 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r3.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(5, $r4, null, 1);
+
+     label3:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    public void a(com.google.android.gms.wallet.FullWalletRequest, android.os.Bundle, com.google.android.gms.internal.gi)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        com.google.android.gms.wallet.FullWalletRequest $r1;
+        android.os.Bundle $r2;
+        com.google.android.gms.internal.gi $r3;
+        android.os.IBinder $r4;
+        android.os.Parcel $r5;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: com.google.android.gms.wallet.FullWalletRequest;
+        $r2 := @parameter1: android.os.Bundle;
+        $r3 := @parameter2: com.google.android.gms.internal.gi;
+        $r4 = null;
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r5.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.wallet.internal.IOwService");
+        if $r1 == null goto label5;
+
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.wallet.FullWalletRequest: void writeToParcel(android.os.Parcel,int)>($r5, 0);
+
+     label1:
+        if $r2 == null goto label8;
+
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r5, 0);
+
+     label2:
+        if $r3 == null goto label3;
+
+        $r4 = interfaceinvoke $r3.<com.google.android.gms.internal.gi: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r4);
+        $r4 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r5, null, 1);
+
+     label4:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        return;
+
+     label5:
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(0);
+
+     label6:
+        goto label1;
+
+     label7:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+     label8:
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(0);
+
+     label9:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label4 with label7;
+        catch java.lang.Throwable from label5 to label6 with label7;
+        catch java.lang.Throwable from label8 to label9 with label7;
+    }
+
+    public void a(com.google.android.gms.wallet.MaskedWalletRequest, android.os.Bundle, com.google.android.gms.internal.gi)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        com.google.android.gms.wallet.MaskedWalletRequest $r1;
+        android.os.Bundle $r2;
+        com.google.android.gms.internal.gi $r3;
+        android.os.IBinder $r4;
+        android.os.Parcel $r5;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: com.google.android.gms.wallet.MaskedWalletRequest;
+        $r2 := @parameter1: android.os.Bundle;
+        $r3 := @parameter2: com.google.android.gms.internal.gi;
+        $r4 = null;
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r5.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.wallet.internal.IOwService");
+        if $r1 == null goto label5;
+
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.wallet.MaskedWalletRequest: void writeToParcel(android.os.Parcel,int)>($r5, 0);
+
+     label1:
+        if $r2 == null goto label8;
+
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r5, 0);
+
+     label2:
+        if $r3 == null goto label3;
+
+        $r4 = interfaceinvoke $r3.<com.google.android.gms.internal.gi: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r4);
+        $r4 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r5, null, 1);
+
+     label4:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        return;
+
+     label5:
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(0);
+
+     label6:
+        goto label1;
+
+     label7:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+     label8:
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(0);
+
+     label9:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label4 with label7;
+        catch java.lang.Throwable from label5 to label6 with label7;
+        catch java.lang.Throwable from label8 to label9 with label7;
+    }
+
+    public void a(com.google.android.gms.wallet.NotifyTransactionStatusRequest, android.os.Bundle)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        com.google.android.gms.wallet.NotifyTransactionStatusRequest $r1;
+        android.os.Bundle $r2;
+        android.os.Parcel $r4;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: com.google.android.gms.wallet.NotifyTransactionStatusRequest;
+        $r2 := @parameter1: android.os.Bundle;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.wallet.internal.IOwService");
+        if $r1 == null goto label4;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.wallet.NotifyTransactionStatusRequest: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        if $r2 == null goto label7;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label2:
+        $r5 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(4, $r4, null, 1);
+
+     label3:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+     label7:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label8:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    public void a(java.lang.String, java.lang.String, android.os.Bundle, com.google.android.gms.internal.gi)
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        java.lang.String $r1, $r2;
+        android.os.Bundle $r3;
+        com.google.android.gms.internal.gi $r4;
+        android.os.IBinder $r5;
+        android.os.Parcel $r6;
+        java.lang.Throwable $r8;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 := @parameter3: com.google.android.gms.internal.gi;
+        $r5 = null;
+        $r6 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r6.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.wallet.internal.IOwService");
+        virtualinvoke $r6.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        virtualinvoke $r6.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        if $r3 == null goto label4;
+
+        virtualinvoke $r6.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r3.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r6, 0);
+
+     label1:
+        if $r4 == null goto label2;
+
+        $r5 = interfaceinvoke $r4.<com.google.android.gms.internal.gi: android.os.IBinder asBinder()>();
+
+     label2:
+        virtualinvoke $r6.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r5);
+        $r5 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(3, $r6, null, 1);
+
+     label3:
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r6.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r8 := @caughtexception;
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        throw $r8;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.gh$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.gh$a$a;
+        $r1 = $r0.<com.google.android.gms.internal.gh$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+}

@@ -1,0 +1,84 @@
+class it.h3g.areaclienti3.fragments.b.aa extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.b.y a;
+
+    void <init>(it.h3g.areaclienti3.fragments.b.y)
+    {
+        it.h3g.areaclienti3.fragments.b.aa $r0;
+        it.h3g.areaclienti3.fragments.b.y $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.aa;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.b.y;
+        $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.b.aa $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.b.y $r2;
+        int $i0;
+        java.lang.StringBuilder $r4;
+        java.util.ArrayList $r5;
+        it.h3g.areaclienti3.fragments.d $r6;
+        java.lang.Object $r7;
+        java.lang.String $r8, $r9;
+        android.os.Bundle $r10;
+        boolean $z1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.aa;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r6 = $r2.<it.h3g.areaclienti3.fragments.b.y: it.h3g.areaclienti3.fragments.d mService>;
+        if $r6 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: java.util.ArrayList e(it.h3g.areaclienti3.fragments.b.y)>($r2);
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+        $r7 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r5 = (java.util.ArrayList) $r7;
+        $r7 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r8 = (java.lang.String) $r7;
+        $r7 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>(4);
+        $r9 = (java.lang.String) $r7;
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r10.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("id", $r8);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start Get My Message At URL : ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MyMessages", $r8);
+        $z1 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("E");
+        if $z1 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MyMessages", "Have routing E");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r6 = $r2.<it.h3g.areaclienti3.fragments.b.y: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r6.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("getMyMessageAtUrlAction", $r10, 1);
+
+     label0:
+        return;
+
+     label1:
+        $z1 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("A");
+        if $z1 == 0 goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Have routing A whit socialClientId ");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: java.lang.String f(it.h3g.areaclienti3.fragments.b.y)>($r2);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MyMessages", $r9);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.fragments.b.y: java.lang.String f(it.h3g.areaclienti3.fragments.b.y)>($r2);
+        virtualinvoke $r10.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("socialClientId", $r9);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.aa: it.h3g.areaclienti3.fragments.b.y a>;
+        $r6 = $r2.<it.h3g.areaclienti3.fragments.b.y: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r6.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("getMyMessageAtAMCUrlAction", $r10, 1);
+        goto label0;
+    }
+}

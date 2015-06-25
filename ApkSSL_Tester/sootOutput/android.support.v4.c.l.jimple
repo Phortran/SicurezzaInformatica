@@ -1,0 +1,264 @@
+final class android.support.v4.c.l extends java.lang.Object implements java.util.Collection
+{
+    final android.support.v4.c.g a;
+
+    void <init>(android.support.v4.c.g)
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.g $r1;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: android.support.v4.c.g;
+        $r0.<android.support.v4.c.l: android.support.v4.c.g a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public boolean add(java.lang.Object)
+    {
+        android.support.v4.c.l $r0;
+        java.lang.Object $r1;
+        java.lang.UnsupportedOperationException $r2;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r2.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r2;
+    }
+
+    public boolean addAll(java.util.Collection)
+    {
+        android.support.v4.c.l $r0;
+        java.util.Collection $r1;
+        java.lang.UnsupportedOperationException $r2;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.util.Collection;
+        $r2 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r2.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r2;
+    }
+
+    public void clear()
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.g $r1;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        virtualinvoke $r1.<android.support.v4.c.g: void c()>();
+        return;
+    }
+
+    public boolean contains(java.lang.Object)
+    {
+        android.support.v4.c.l $r0;
+        java.lang.Object $r1;
+        android.support.v4.c.g $r2;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i0 = virtualinvoke $r2.<android.support.v4.c.g: int b(java.lang.Object)>($r1);
+        if $i0 < 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean containsAll(java.util.Collection)
+    {
+        android.support.v4.c.l $r0;
+        java.util.Collection $r1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.util.Collection;
+        $r2 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $z0 = virtualinvoke $r0.<android.support.v4.c.l: boolean contains(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        return 0;
+
+     label1:
+        return 1;
+    }
+
+    public boolean isEmpty()
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.g $r1;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i0 = virtualinvoke $r1.<android.support.v4.c.g: int a()>();
+        if $i0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public java.util.Iterator iterator()
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.h $r1;
+        android.support.v4.c.g $r2;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 = new android.support.v4.c.h;
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        specialinvoke $r1.<android.support.v4.c.h: void <init>(android.support.v4.c.g,int)>($r2, 1);
+        return $r1;
+    }
+
+    public boolean remove(java.lang.Object)
+    {
+        android.support.v4.c.l $r0;
+        java.lang.Object $r1;
+        android.support.v4.c.g $r2;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i0 = virtualinvoke $r2.<android.support.v4.c.g: int b(java.lang.Object)>($r1);
+        if $i0 < 0 goto label0;
+
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        virtualinvoke $r2.<android.support.v4.c.g: void a(int)>($i0);
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean removeAll(java.util.Collection)
+    {
+        android.support.v4.c.l $r0;
+        java.util.Collection $r1;
+        int $i0, $i1, i2;
+        android.support.v4.c.g $r2;
+        boolean $z1, $z2;
+        java.lang.Object $r3;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.util.Collection;
+        $i0 = 0;
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i1 = virtualinvoke $r2.<android.support.v4.c.g: int a()>();
+        $z1 = (boolean) 0;
+
+     label0:
+        if $i0 >= $i1 goto label2;
+
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        i2 = (int) 1;
+        $r3 = virtualinvoke $r2.<android.support.v4.c.g: java.lang.Object a(int,int)>($i0, i2);
+        $z2 = interfaceinvoke $r1.<java.util.Collection: boolean contains(java.lang.Object)>($r3);
+        if $z2 == 0 goto label1;
+
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        virtualinvoke $r2.<android.support.v4.c.g: void a(int)>($i0);
+        $i0 = $i0 + -1;
+        $i1 = $i1 + -1;
+        $z1 = 1;
+
+     label1:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label2:
+        return $z1;
+    }
+
+    public boolean retainAll(java.util.Collection)
+    {
+        android.support.v4.c.l $r0;
+        java.util.Collection $r1;
+        int $i0, $i1, i2;
+        android.support.v4.c.g $r2;
+        boolean $z1, $z2;
+        java.lang.Object $r3;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.util.Collection;
+        $i0 = 0;
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i1 = virtualinvoke $r2.<android.support.v4.c.g: int a()>();
+        $z1 = (boolean) 0;
+
+     label0:
+        if $i0 >= $i1 goto label2;
+
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        i2 = (int) 1;
+        $r3 = virtualinvoke $r2.<android.support.v4.c.g: java.lang.Object a(int,int)>($i0, i2);
+        $z2 = interfaceinvoke $r1.<java.util.Collection: boolean contains(java.lang.Object)>($r3);
+        if $z2 != 0 goto label1;
+
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        virtualinvoke $r2.<android.support.v4.c.g: void a(int)>($i0);
+        $i0 = $i0 + -1;
+        $i1 = $i1 + -1;
+        $z1 = 1;
+
+     label1:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label2:
+        return $z1;
+    }
+
+    public int size()
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.g $r1;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $i0 = virtualinvoke $r1.<android.support.v4.c.g: int a()>();
+        return $i0;
+    }
+
+    public java.lang.Object[] toArray()
+    {
+        android.support.v4.c.l $r0;
+        android.support.v4.c.g $r1;
+        java.lang.Object[] $r2;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $r2 = virtualinvoke $r1.<android.support.v4.c.g: java.lang.Object[] b(int)>(1);
+        return $r2;
+    }
+
+    public java.lang.Object[] toArray(java.lang.Object[])
+    {
+        android.support.v4.c.l $r0;
+        java.lang.Object[] $r1;
+        android.support.v4.c.g $r2;
+
+        $r0 := @this: android.support.v4.c.l;
+        $r1 := @parameter0: java.lang.Object[];
+        $r2 = $r0.<android.support.v4.c.l: android.support.v4.c.g a>;
+        $r1 = virtualinvoke $r2.<android.support.v4.c.g: java.lang.Object[] a(java.lang.Object[],int)>($r1, 1);
+        return $r1;
+    }
+}

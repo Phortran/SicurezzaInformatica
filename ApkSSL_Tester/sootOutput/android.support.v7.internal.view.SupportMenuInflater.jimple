@@ -1,0 +1,376 @@
+public class android.support.v7.internal.view.SupportMenuInflater extends android.view.MenuInflater
+{
+    private static final java.lang.Class[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE;
+    private static final java.lang.Class[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE;
+    private static final java.lang.String LOG_TAG;
+    private static final int NO_ID;
+    private static final java.lang.String XML_GROUP;
+    private static final java.lang.String XML_ITEM;
+    private static final java.lang.String XML_MENU;
+    private final java.lang.Object[] mActionProviderConstructorArguments;
+    private final java.lang.Object[] mActionViewConstructorArguments;
+    private android.content.Context mContext;
+    private java.lang.Object mRealOwner;
+
+    static void <clinit>()
+    {
+        java.lang.Class[] $r1;
+
+        $r1 = newarray (java.lang.Class)[1];
+        $r1[0] = class "android/content/Context";
+        <android.support.v7.internal.view.SupportMenuInflater: java.lang.Class[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE> = $r1;
+        $r1 = <android.support.v7.internal.view.SupportMenuInflater: java.lang.Class[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE>;
+        <android.support.v7.internal.view.SupportMenuInflater: java.lang.Class[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        android.content.Context $r1;
+        java.lang.Object[] $r2;
+
+        $r0 := @this: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.view.MenuInflater: void <init>(android.content.Context)>($r1);
+        $r0.<android.support.v7.internal.view.SupportMenuInflater: android.content.Context mContext> = $r1;
+        $r2 = newarray (java.lang.Object)[1];
+        $r2[0] = $r1;
+        $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object[] mActionViewConstructorArguments> = $r2;
+        $r2 = $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object[] mActionViewConstructorArguments>;
+        $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object[] mActionProviderConstructorArguments> = $r2;
+        return;
+    }
+
+    static android.content.Context access$100(android.support.v7.internal.view.SupportMenuInflater)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 = $r0.<android.support.v7.internal.view.SupportMenuInflater: android.content.Context mContext>;
+        return $r1;
+    }
+
+    static java.lang.Class[] access$200()
+    {
+        java.lang.Class[] $r0;
+
+        $r0 = <android.support.v7.internal.view.SupportMenuInflater: java.lang.Class[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE>;
+        return $r0;
+    }
+
+    static java.lang.Object[] access$300(android.support.v7.internal.view.SupportMenuInflater)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        java.lang.Object[] $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 = $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object[] mActionProviderConstructorArguments>;
+        return $r1;
+    }
+
+    static java.lang.Object access$400(android.support.v7.internal.view.SupportMenuInflater)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        java.lang.Object $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 = specialinvoke $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object getRealOwner()>();
+        return $r1;
+    }
+
+    static java.lang.Class[] access$500()
+    {
+        java.lang.Class[] $r0;
+
+        $r0 = <android.support.v7.internal.view.SupportMenuInflater: java.lang.Class[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE>;
+        return $r0;
+    }
+
+    static java.lang.Object[] access$600(android.support.v7.internal.view.SupportMenuInflater)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        java.lang.Object[] $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 = $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object[] mActionViewConstructorArguments>;
+        return $r1;
+    }
+
+    private java.lang.Object findRealOwner(java.lang.Object)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        android.content.Context $r2;
+        android.content.ContextWrapper $r3;
+
+        $r0 := @this: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = $r1 instanceof android.app.Activity;
+        if $z0 == 0 goto label1;
+
+     label0:
+        return $r1;
+
+     label1:
+        $z0 = $r1 instanceof android.content.ContextWrapper;
+        if $z0 == 0 goto label0;
+
+        $r3 = (android.content.ContextWrapper) $r1;
+        $r2 = virtualinvoke $r3.<android.content.ContextWrapper: android.content.Context getBaseContext()>();
+        $r1 = specialinvoke $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object findRealOwner(java.lang.Object)>($r2);
+        return $r1;
+    }
+
+    private java.lang.Object getRealOwner()
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        java.lang.Object $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 = $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object mRealOwner>;
+        if $r1 != null goto label0;
+
+        $r2 = $r0.<android.support.v7.internal.view.SupportMenuInflater: android.content.Context mContext>;
+        $r1 = specialinvoke $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object findRealOwner(java.lang.Object)>($r2);
+        $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object mRealOwner> = $r1;
+
+     label0:
+        $r1 = $r0.<android.support.v7.internal.view.SupportMenuInflater: java.lang.Object mRealOwner>;
+        return $r1;
+    }
+
+    private void parseMenu(org.xmlpull.v1.XmlPullParser, android.util.AttributeSet, android.view.Menu) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        android.util.AttributeSet $r2;
+        android.view.Menu $r3;
+        int $i0;
+        boolean $z0, $z1, $z2;
+        android.support.v7.internal.view.SupportMenuInflater$MenuState $r4;
+        android.view.SubMenu $r5;
+        java.lang.String $r6, $r7, $r9;
+        java.lang.StringBuilder $r8;
+        java.lang.RuntimeException $r10;
+        android.support.v4.view.ActionProvider $r11;
+
+        $r0 := @this: android.support.v7.internal.view.SupportMenuInflater;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $r3 := @parameter2: android.view.Menu;
+        $r4 = new android.support.v7.internal.view.SupportMenuInflater$MenuState;
+        specialinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: void <init>(android.support.v7.internal.view.SupportMenuInflater,android.view.Menu)>($r0, $r3);
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        $z0 = 0;
+        $r7 = null;
+
+     label0:
+        if $i0 != 2 goto label5;
+
+        $r6 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z1 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("menu");
+        if $z1 == 0 goto label4;
+
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+
+     label1:
+        $z1 = 0;
+
+     label2:
+        if $z1 != 0 goto label16;
+
+        lookupswitch($i0)
+        {
+            case 1: goto label15;
+            case 2: goto label6;
+            case 3: goto label10;
+            default: goto label3;
+        };
+
+     label3:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label2;
+
+     label4:
+        $r10 = new java.lang.RuntimeException;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Expecting menu, got ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r10.<java.lang.RuntimeException: void <init>(java.lang.String)>($r9);
+        throw $r10;
+
+     label5:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+        if $i0 != 1 goto label0;
+
+        goto label1;
+
+     label6:
+        if $z0 != 0 goto label3;
+
+        $r9 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("group");
+        if $z2 == 0 goto label7;
+
+        virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: void readGroup(android.util.AttributeSet)>($r2);
+        goto label3;
+
+     label7:
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("item");
+        if $z2 == 0 goto label8;
+
+        virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: void readItem(android.util.AttributeSet)>($r2);
+        goto label3;
+
+     label8:
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("menu");
+        if $z2 == 0 goto label9;
+
+        $r5 = virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: android.view.SubMenu addSubMenuItem()>();
+        specialinvoke $r0.<android.support.v7.internal.view.SupportMenuInflater: void parseMenu(org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.view.Menu)>($r1, $r2, $r5);
+        goto label3;
+
+     label9:
+        $z0 = 1;
+        $r7 = $r9;
+        goto label3;
+
+     label10:
+        $r9 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        if $z0 == 0 goto label11;
+
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z2 == 0 goto label11;
+
+        $z0 = 0;
+        $r7 = null;
+        goto label3;
+
+     label11:
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("group");
+        if $z2 == 0 goto label12;
+
+        virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: void resetGroup()>();
+        goto label3;
+
+     label12:
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("item");
+        if $z2 == 0 goto label14;
+
+        $z2 = virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: boolean hasAddedItem()>();
+        if $z2 != 0 goto label3;
+
+        $r11 = staticinvoke <android.support.v7.internal.view.SupportMenuInflater$MenuState: android.support.v4.view.ActionProvider access$000(android.support.v7.internal.view.SupportMenuInflater$MenuState)>($r4);
+        if $r11 == null goto label13;
+
+        $r11 = staticinvoke <android.support.v7.internal.view.SupportMenuInflater$MenuState: android.support.v4.view.ActionProvider access$000(android.support.v7.internal.view.SupportMenuInflater$MenuState)>($r4);
+        $z2 = virtualinvoke $r11.<android.support.v4.view.ActionProvider: boolean hasSubMenu()>();
+        if $z2 == 0 goto label13;
+
+        virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: android.view.SubMenu addSubMenuItem()>();
+        goto label3;
+
+     label13:
+        virtualinvoke $r4.<android.support.v7.internal.view.SupportMenuInflater$MenuState: void addItem()>();
+        goto label3;
+
+     label14:
+        $z2 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("menu");
+        if $z2 == 0 goto label3;
+
+        $z1 = 1;
+        goto label3;
+
+     label15:
+        $r10 = new java.lang.RuntimeException;
+        specialinvoke $r10.<java.lang.RuntimeException: void <init>(java.lang.String)>("Unexpected end of document");
+        throw $r10;
+
+     label16:
+        return;
+    }
+
+    public void inflate(int, android.view.Menu)
+    {
+        android.support.v7.internal.view.SupportMenuInflater $r0;
+        int $i0;
+        android.view.Menu $r1;
+        android.util.AttributeSet $r2;
+        org.xmlpull.v1.XmlPullParserException $r3;
+        android.content.res.XmlResourceParser $r4;
+        boolean $z0;
+        android.content.res.Resources $r6;
+        android.content.Context $r7;
+        android.view.InflateException $r9;
+        java.lang.Throwable $r10;
+        java.io.IOException $r11;
+
+        $r0 := @this: android.support.v7.internal.view.SupportMenuInflater;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.Menu;
+        $z0 = $r1 instanceof android.support.v4.internal.view.SupportMenu;
+        if $z0 != 0 goto label1;
+
+        specialinvoke $r0.<android.view.MenuInflater: void inflate(int,android.view.Menu)>($i0, $r1);
+
+     label0:
+        return;
+
+     label1:
+        $r4 = null;
+
+     label2:
+        $r7 = $r0.<android.support.v7.internal.view.SupportMenuInflater: android.content.Context mContext>;
+
+     label3:
+        $r6 = virtualinvoke $r7.<android.content.Context: android.content.res.Resources getResources()>();
+        $r4 = virtualinvoke $r6.<android.content.res.Resources: android.content.res.XmlResourceParser getLayout(int)>($i0);
+        $r2 = staticinvoke <android.util.Xml: android.util.AttributeSet asAttributeSet(org.xmlpull.v1.XmlPullParser)>($r4);
+        specialinvoke $r0.<android.support.v7.internal.view.SupportMenuInflater: void parseMenu(org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.view.Menu)>($r4, $r2, $r1);
+
+     label4:
+        if $r4 == null goto label0;
+
+        interfaceinvoke $r4.<android.content.res.XmlResourceParser: void close()>();
+        goto label0;
+
+     label5:
+        $r3 := @caughtexception;
+
+     label6:
+        $r9 = new android.view.InflateException;
+        specialinvoke $r9.<android.view.InflateException: void <init>(java.lang.String,java.lang.Throwable)>("Error inflating menu XML", $r3);
+        throw $r9;
+
+     label7:
+        $r10 := @caughtexception;
+        if $r4 == null goto label8;
+
+        interfaceinvoke $r4.<android.content.res.XmlResourceParser: void close()>();
+
+     label8:
+        throw $r10;
+
+     label9:
+        $r11 := @caughtexception;
+
+     label10:
+        $r9 = new android.view.InflateException;
+        specialinvoke $r9.<android.view.InflateException: void <init>(java.lang.String,java.lang.Throwable)>("Error inflating menu XML", $r11);
+
+     label11:
+        throw $r9;
+
+        catch org.xmlpull.v1.XmlPullParserException from label3 to label4 with label5;
+        catch java.io.IOException from label3 to label4 with label9;
+        catch java.lang.Throwable from label2 to label4 with label7;
+        catch java.lang.Throwable from label6 to label7 with label7;
+        catch java.lang.Throwable from label10 to label11 with label7;
+    }
+}

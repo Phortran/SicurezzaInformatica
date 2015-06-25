@@ -1,0 +1,474 @@
+public class it.h3g.areaclienti3.nwmonitoring.bj extends it.h3g.areaclienti3.fragments.a implements it.h3g.areaclienti3.nwmonitoring.j
+{
+    android.widget.ImageView a;
+    android.widget.ImageButton b;
+    java.util.ArrayList c;
+    java.util.ArrayList d;
+    java.util.ArrayList e;
+    android.widget.LinearLayout f;
+    android.widget.LinearLayout g;
+    android.widget.LinearLayout h;
+    android.widget.TextView i;
+    android.widget.TextView j;
+    it.h3g.areaclienti3.nwmonitoring.n k;
+    it.h3g.areaclienti3.nwmonitoring.as l;
+    private int m;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m> = 0;
+        return;
+    }
+
+    private void c()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        android.widget.LinearLayout $r1;
+        int $i0, $i3, $i6;
+        java.lang.String $r2;
+        android.support.v4.app.h $r3;
+        java.util.ArrayList $r4;
+        java.lang.Object $r5;
+        java.lang.Integer $r6;
+        it.h3g.areaclienti3.nwmonitoring.av $r7;
+        android.content.Context $r8;
+        float $f1;
+        it.h3g.areaclienti3.nwmonitoring.n $r9;
+        boolean $z0;
+        it.h3g.areaclienti3.nwmonitoring.bg $r10;
+        java.lang.StringBuilder $r11;
+        long $l7, $l8;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $i0 = -2;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout h>;
+        virtualinvoke $r1.<android.widget.LinearLayout: void removeAllViews()>();
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c> = $r4;
+        $i3 = 2;
+
+     label0:
+        if $i3 <= 4 goto label9;
+
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(1);
+        $r6 = (java.lang.Integer) $r5;
+        $i6 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i3 + $i6;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(2);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i3 + $i6;
+        if $i6 != 0 goto label1;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c> = null;
+
+     label1:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $f1 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r8, "signal_value_day", -1.0F);
+        $f1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: float a(float)>($f1);
+        $i6 = staticinvoke <java.lang.Math: int round(float)>($f1);
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        $z0 = virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.n: boolean b()>();
+        if $z0 == 0 goto label2;
+
+        $i3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m>;
+        if $i3 != 0 goto label2;
+
+        $i6 = -2;
+
+     label2:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout h>;
+        $r10 = new it.h3g.areaclienti3.nwmonitoring.bg;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.support.v4.app.h getActivity()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c>;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.lang.String getString(int)>(2131231673);
+        specialinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.bg: void <init>(android.content.Context,java.util.ArrayList,int,java.lang.String)>($r3, $r4, $i6, $r2);
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View)>($r10);
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d> = $r4;
+        $i6 = 2;
+
+     label3:
+        if $i6 <= 4 goto label10;
+
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r6 = (java.lang.Integer) $r5;
+        $i6 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(1);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i6 + $i3;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(2);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i3 + $i6;
+        if $i6 != 0 goto label4;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d> = null;
+
+     label4:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $f1 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r8, "signal_value_week", -1.0F);
+        $f1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: float a(float)>($f1);
+        $i6 = staticinvoke <java.lang.Math: int round(float)>($f1);
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        $z0 = virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.n: boolean b()>();
+        if $z0 == 0 goto label5;
+
+        $i3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m>;
+        if $i3 != 0 goto label5;
+
+        $i6 = -2;
+
+     label5:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout h>;
+        $r10 = new it.h3g.areaclienti3.nwmonitoring.bg;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.support.v4.app.h getActivity()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d>;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.lang.String getString(int)>(2131231674);
+        specialinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.bg: void <init>(android.content.Context,java.util.ArrayList,int,java.lang.String)>($r3, $r4, $i6, $r2);
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View)>($r10);
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e> = $r4;
+        $i6 = 2;
+
+     label6:
+        if $i6 <= 4 goto label11;
+
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r6 = (java.lang.Integer) $r5;
+        $i6 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(1);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i6 + $i3;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>(2);
+        $r6 = (java.lang.Integer) $r5;
+        $i3 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        $i6 = $i3 + $i6;
+        if $i6 != 0 goto label7;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e> = null;
+
+     label7:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $f1 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r8, "signal_value_month", -1.0F);
+        $f1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: float a(float)>($f1);
+        $i6 = staticinvoke <java.lang.Math: int round(float)>($f1);
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        $z0 = virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.n: boolean b()>();
+        if $z0 == 0 goto label12;
+
+        $i3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m>;
+        if $i3 != 0 goto label12;
+
+     label8:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout h>;
+        $r10 = new it.h3g.areaclienti3.nwmonitoring.bg;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.support.v4.app.h getActivity()>();
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e>;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.lang.String getString(int)>(2131231675);
+        specialinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.bg: void <init>(android.content.Context,java.util.ArrayList,int,java.lang.String)>($r3, $r4, $i0, $r2);
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View)>($r10);
+        return;
+
+     label9:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_day_");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+        $r2 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l7 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r8, $r2, 0L);
+        $l8 = $l7 / 1000L;
+        $i6 = (int) $l8;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList c>;
+        $r6 = new java.lang.Integer;
+        specialinvoke $r6.<java.lang.Integer: void <init>(int)>($i6);
+        virtualinvoke $r4.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+        $i3 = $i3 + 1;
+        goto label0;
+
+     label10:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_week_");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6);
+        $r2 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l8 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r8, $r2, 0L);
+        $l8 = $l8 / 1000L;
+        $i3 = (int) $l8;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList d>;
+        $r6 = new java.lang.Integer;
+        specialinvoke $r6.<java.lang.Integer: void <init>(int)>($i3);
+        virtualinvoke $r4.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+        $i6 = $i6 + 1;
+        goto label3;
+
+     label11:
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_month_");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6);
+        $r2 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l8 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r8, $r2, 0L);
+        $l8 = $l8 / 1000L;
+        $i3 = (int) $l8;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: java.util.ArrayList e>;
+        $r6 = new java.lang.Integer;
+        specialinvoke $r6.<java.lang.Integer: void <init>(int)>($i3);
+        virtualinvoke $r4.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+        $i6 = $i6 + 1;
+        goto label6;
+
+     label12:
+        $i0 = $i6;
+        goto label8;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        it.h3g.areaclienti3.nwmonitoring.as $r1;
+        android.os.Bundle $r3;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: android.os.Bundle a()>();
+        $i0 = virtualinvoke $r3.<android.os.Bundle: int getInt(java.lang.String)>("signalStength");
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m> = $i0;
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: void b()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: void c()>();
+        return;
+    }
+
+    protected void b()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        int $i0, $i4;
+        it.h3g.areaclienti3.nwmonitoring.as $r1;
+        it.h3g.areaclienti3.nwmonitoring.n $r2;
+        boolean $z0;
+        android.widget.ImageView $r3;
+        android.widget.ImageButton $r4;
+        android.widget.LinearLayout $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m>;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        $i4 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: int p()>();
+        $i4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: int a(int,int)>($i0, $i4);
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        $z0 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.n: boolean b()>();
+        if $z0 == 0 goto label1;
+
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: int m>;
+        if $i0 != 0 goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a>;
+        virtualinvoke $r3.<android.widget.ImageView: void setVisibility(int)>(8);
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageButton b>;
+        virtualinvoke $r4.<android.widget.ImageButton: void setVisibility(int)>(8);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout g>;
+        virtualinvoke $r5.<android.widget.LinearLayout: void setVisibility(int)>(0);
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: int p()>();
+        if $i0 != 2 goto label2;
+
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a>;
+        virtualinvoke $r3.<android.widget.ImageView: void setImageLevel(int)>(5);
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a>;
+        virtualinvoke $r3.<android.widget.ImageView: void setVisibility(int)>(0);
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageButton b>;
+        virtualinvoke $r4.<android.widget.ImageButton: void setVisibility(int)>(0);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout g>;
+        virtualinvoke $r5.<android.widget.LinearLayout: void setVisibility(int)>(8);
+        goto label0;
+
+     label2:
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a>;
+        virtualinvoke $r3.<android.widget.ImageView: void setVisibility(int)>(0);
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageButton b>;
+        virtualinvoke $r4.<android.widget.ImageButton: void setVisibility(int)>(0);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout g>;
+        virtualinvoke $r5.<android.widget.LinearLayout: void setVisibility(int)>(8);
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a>;
+        virtualinvoke $r3.<android.widget.ImageView: void setImageLevel(int)>($i4);
+        goto label0;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        return 2131231656;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        return 0;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        return -1;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r4;
+        android.widget.ScrollView $r5;
+        android.widget.LinearLayout $r6;
+        android.widget.ImageView $r7;
+        android.widget.TextView $r8;
+        android.widget.ImageButton $r9;
+        it.h3g.areaclienti3.nwmonitoring.bk $r10;
+        it.h3g.areaclienti3.nwmonitoring.n $r11;
+        android.content.Context $r12;
+        java.lang.String $r13;
+        android.content.res.Resources $r14;
+        it.h3g.areaclienti3.nwmonitoring.as $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903112, $r2, 0);
+        $r5 = (android.widget.ScrollView) $r4;
+        $r4 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165608);
+        $r6 = (android.widget.LinearLayout) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout f> = $r6;
+        $r4 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165605);
+        $r7 = (android.widget.ImageView) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageView a> = $r7;
+        $r4 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165609);
+        $r6 = (android.widget.LinearLayout) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout g> = $r6;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout g>;
+        $r4 = virtualinvoke $r6.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165610);
+        $r8 = (android.widget.TextView) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.TextView i> = $r8;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout f>;
+        $r4 = virtualinvoke $r6.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165246);
+        $r8 = (android.widget.TextView) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.TextView j> = $r8;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout f>;
+        $r4 = virtualinvoke $r6.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165611);
+        $r9 = (android.widget.ImageButton) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageButton b> = $r9;
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.ImageButton b>;
+        $r10 = new it.h3g.areaclienti3.nwmonitoring.bk;
+        specialinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.bk: void <init>(it.h3g.areaclienti3.nwmonitoring.bj)>($r0);
+        virtualinvoke $r9.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r10);
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout f>;
+        $r4 = virtualinvoke $r6.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165612);
+        $r6 = (android.widget.LinearLayout) $r4;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.LinearLayout h> = $r6;
+        $r11 = new it.h3g.areaclienti3.nwmonitoring.n;
+        $r12 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        specialinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.n: void <init>(android.content.Context)>($r12);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k> = $r11;
+        $r11 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.n: void a()>();
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.TextView i>;
+        $r11 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.n k>;
+        $r13 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.n: java.lang.String c()>();
+        virtualinvoke $r8.<android.widget.TextView: void setText(java.lang.CharSequence)>($r13);
+        $r8 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.widget.TextView j>;
+        $r12 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        $r14 = virtualinvoke $r12.<android.content.Context: android.content.res.Resources getResources()>();
+        $r13 = virtualinvoke $r14.<android.content.res.Resources: java.lang.String getString(int)>(2131231668);
+        virtualinvoke $r8.<android.widget.TextView: void setText(java.lang.CharSequence)>($r13);
+        $r15 = new it.h3g.areaclienti3.nwmonitoring.as;
+        $r12 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: android.content.Context mContext>;
+        specialinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r12);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l> = $r15;
+        return $r5;
+    }
+
+    public void onPause()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        it.h3g.areaclienti3.nwmonitoring.as $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: void b()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onPause()>();
+        return;
+    }
+
+    public void onResume()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+        it.h3g.areaclienti3.nwmonitoring.as $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onResume()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.bj: void c()>();
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: void a(int)>(1);
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bj: it.h3g.areaclienti3.nwmonitoring.as l>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.as: void a(it.h3g.areaclienti3.nwmonitoring.j)>($r0);
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bj $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bj;
+        return;
+    }
+}

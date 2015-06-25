@@ -1,0 +1,693 @@
+public abstract class com.facebook.lite.widget.AbstractGLRendererView extends android.opengl.GLSurfaceView implements android.opengl.GLSurfaceView$Renderer, com.facebook.lite.widget.g
+{
+    private com.facebook.lite.g.a a;
+    private android.graphics.Bitmap b;
+    private android.graphics.Canvas c;
+    private volatile long d;
+    private android.view.Choreographer$FrameCallback e;
+    private final int f;
+    private int g;
+    private int h;
+    private final com.b.a.a.k.j i;
+    private boolean j;
+    private com.b.a.a.e.b k;
+    private com.facebook.lite.e.h l;
+    private boolean m;
+    private int n;
+    private int o;
+    private java.nio.IntBuffer p;
+    private final java.lang.Object q;
+    private boolean r;
+    private com.facebook.lite.e.a s;
+    private int t;
+    private com.facebook.lite.e.a u;
+    private int v;
+    private com.facebook.lite.ui.c w;
+    private com.b.a.a.b.k x;
+    private com.facebook.lite.ui.a y;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.content.Context $r1;
+        com.b.a.a.k.j $r2;
+        int $i2;
+        java.lang.Object $r3;
+        com.facebook.lite.widget.a $r4;
+        android.view.Choreographer$FrameCallback $r5;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.opengl.GLSurfaceView: void <init>(android.content.Context)>($r1);
+        $r2 = new com.b.a.a.k.j;
+        specialinvoke $r2.<com.b.a.a.k.j: void <init>()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.k.j i> = $r2;
+        $r3 = new java.lang.Object;
+        specialinvoke $r3.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.lang.Object q> = $r3;
+        $i2 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i2 < 16 goto label0;
+
+        $r4 = new com.facebook.lite.widget.a;
+        specialinvoke $r4.<com.facebook.lite.widget.a: void <init>(com.facebook.lite.widget.AbstractGLRendererView)>($r0);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.view.Choreographer$FrameCallback e> = $r4;
+        $r5 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.view.Choreographer$FrameCallback e>;
+        interfaceinvoke $r5.<android.view.Choreographer$FrameCallback: void doFrame(long)>(0L);
+
+     label0:
+        $i2 = staticinvoke <com.facebook.lite.b.b: int f(android.content.Context)>($r1);
+        $i2 = 1000 / $i2;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int f> = $i2;
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void b(int)>(1);
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void setRenderer(android.opengl.GLSurfaceView$Renderer)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void setRenderMode(int)>(0);
+        return;
+    }
+
+    static long a(com.facebook.lite.widget.AbstractGLRendererView, long)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        long $l0;
+
+        $r0 := @parameter0: com.facebook.lite.widget.AbstractGLRendererView;
+        $l0 := @parameter1: long;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: long d> = $l0;
+        return $l0;
+    }
+
+    static android.view.Choreographer$FrameCallback a(com.facebook.lite.widget.AbstractGLRendererView)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.view.Choreographer$FrameCallback $r1;
+
+        $r0 := @parameter0: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.view.Choreographer$FrameCallback e>;
+        return $r1;
+    }
+
+    private void a(long, long)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        long $l0, $l1;
+        com.facebook.lite.e.h $r1;
+        int $i2, $i3;
+        com.b.a.a.k.j $r2;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.h l>;
+        $l1 = $l1 - $l0;
+        $i2 = (int) $l1;
+        virtualinvoke $r1.<com.facebook.lite.e.h: void b(int)>($i2);
+        $l1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: long d>;
+        $i2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int f>;
+        $l0 = (long) $i2;
+        $l1 = $l0 + $l1;
+        $i3 = 0;
+
+     label0:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.k.j i>;
+        $i2 = virtualinvoke $r2.<com.b.a.a.k.j: int b()>();
+        if $i3 >= $i2 goto label1;
+
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.h l>;
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.k.j i>;
+        $l0 = virtualinvoke $r2.<com.b.a.a.k.j: long a(int)>($i3);
+        $l0 = $l1 - $l0;
+        $i2 = (int) $l0;
+        virtualinvoke $r1.<com.facebook.lite.e.h: void c(int)>($i2);
+        $i3 = $i3 + 1;
+        goto label0;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.k.j i>;
+        virtualinvoke $r2.<com.b.a.a.k.j: void a()>();
+        return;
+    }
+
+    private void j()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.graphics.Bitmap $r1;
+        int $i1;
+        com.facebook.lite.e.a $r2;
+        android.graphics.Canvas $r3;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Bitmap b>;
+        virtualinvoke $r1.<android.graphics.Bitmap: void eraseColor(int)>(0);
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int v>;
+        if $i1 <= 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a u>;
+        $r3 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Canvas c>;
+        interfaceinvoke $r2.<com.facebook.lite.e.a: void a(android.graphics.Canvas)>($r3);
+
+     label0:
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int t>;
+        if $i1 <= 0 goto label1;
+
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a s>;
+        $r3 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Canvas c>;
+        interfaceinvoke $r2.<com.facebook.lite.e.a: void a(android.graphics.Canvas)>($r3);
+
+     label1:
+        return;
+    }
+
+    public final android.view.View a()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        return $r0;
+    }
+
+    public final void a(int)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.Context getContext()>();
+        staticinvoke <com.facebook.lite.b.e: void j(android.content.Context,int)>($r1, $i0);
+        return;
+    }
+
+    protected abstract void a(javax.microedition.khronos.opengles.GL10);
+
+    protected abstract void a(javax.microedition.khronos.opengles.GL10, android.graphics.Bitmap);
+
+    protected abstract void a(javax.microedition.khronos.opengles.GL10, java.nio.IntBuffer);
+
+    public final void a(int[])
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int[] $r1;
+        boolean $z0;
+        int $i0, $i1, $i2;
+        com.facebook.lite.ui.a $r2;
+        java.lang.Object $r3;
+        java.nio.IntBuffer $r4;
+        com.b.a.a.k.j $r5;
+        long $l4;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: int[];
+        $z0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean j>;
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        if $r2 == null goto label0;
+
+        if $r1 == null goto label0;
+
+        $i2 = lengthof $r1;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g>;
+        $i1 = $i0 * $i1;
+        if $i2 >= $i1 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.lang.Object q>;
+        entermonitor $r3;
+
+     label2:
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p>;
+        virtualinvoke $r4.<java.nio.IntBuffer: java.nio.Buffer clear()>();
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p>;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g>;
+        $i2 = $i1 * $i0;
+        virtualinvoke $r4.<java.nio.IntBuffer: java.nio.IntBuffer put(int[],int,int)>($r1, 0, $i2);
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p>;
+        virtualinvoke $r4.<java.nio.IntBuffer: java.nio.Buffer position(int)>(0);
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        $z0 = virtualinvoke $r2.<com.facebook.lite.ui.a: boolean E()>();
+        if $z0 == 0 goto label3;
+
+        $r5 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.k.j i>;
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        $l4 = virtualinvoke $r2.<com.facebook.lite.ui.a: long b()>();
+        virtualinvoke $r5.<com.b.a.a.k.j: void a(long)>($l4);
+
+     label3:
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void requestRender()>();
+        exitmonitor $r3;
+        goto label0;
+
+     label4:
+        $r6 := @caughtexception;
+        exitmonitor $r3;
+
+     label5:
+        throw $r6;
+
+        catch java.lang.Throwable from label2 to label5 with label4;
+    }
+
+    protected final void b()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.content.Context $r1;
+        int $i0, i1;
+        com.facebook.lite.g.a $r2;
+        com.b.a.a.g.l $r3;
+        com.facebook.lite.widget.b $r4;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean m> = 1;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.Context getContext()>();
+        $i0 = (int) 1;
+        staticinvoke <com.facebook.lite.b.e: void i(android.content.Context,int)>($r1, $i0);
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r3 = virtualinvoke $r2.<com.facebook.lite.g.a: com.b.a.a.g.l V()>();
+        i1 = (int) 1;
+        virtualinvoke $r3.<com.b.a.a.g.l: void a(int,int)>(65, i1);
+        $r4 = new com.facebook.lite.widget.b;
+        specialinvoke $r4.<com.facebook.lite.widget.b: void <init>(com.facebook.lite.widget.AbstractGLRendererView)>($r0);
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean post(java.lang.Runnable)>($r4);
+        return;
+    }
+
+    protected void b(int)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 := @parameter0: int;
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void setEGLContextClientVersion(int)>($i0);
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void setEGLConfigChooser(boolean)>(0);
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void setPreserveEGLContextOnPause(boolean)>(1);
+
+     label0:
+        return;
+    }
+
+    protected final int c()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g>;
+        return $i0;
+    }
+
+    protected final int d()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        return $i0;
+    }
+
+    protected final com.b.a.a.e.b e()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        com.b.a.a.e.b $r1;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k>;
+        return $r1;
+    }
+
+    protected final int f()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int n>;
+        return $i0;
+    }
+
+    protected final int g()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int o>;
+        return $i0;
+    }
+
+    protected final boolean h()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.graphics.Bitmap $r1;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Bitmap b>;
+        if $r1 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    protected final boolean i()
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.content.Context $r1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.facebook.lite.b.e: boolean o(android.content.Context)>($r1);
+        return $z0;
+    }
+
+    public void onDrawFrame(javax.microedition.khronos.opengles.GL10)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        javax.microedition.khronos.opengles.GL10 $r1;
+        long $l0, $l1;
+        boolean $z0;
+        java.nio.IntBuffer $r2;
+        java.lang.Object $r3;
+        android.graphics.Bitmap $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: javax.microedition.khronos.opengles.GL10;
+        $l0 = staticinvoke <android.os.SystemClock: long uptimeMillis()>();
+        $z0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean m>;
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.lang.Object q>;
+        entermonitor $r3;
+
+     label2:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p>;
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void a(javax.microedition.khronos.opengles.GL10,java.nio.IntBuffer)>($r1, $r2);
+        $z0 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean h()>();
+        if $z0 == 0 goto label3;
+
+        specialinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void j()>();
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Bitmap b>;
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void a(javax.microedition.khronos.opengles.GL10,android.graphics.Bitmap)>($r1, $r4);
+
+     label3:
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void a(javax.microedition.khronos.opengles.GL10)>($r1);
+        $l1 = staticinvoke <android.os.SystemClock: long uptimeMillis()>();
+        specialinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void a(long,long)>($l0, $l1);
+        exitmonitor $r3;
+        goto label0;
+
+     label4:
+        $r5 := @caughtexception;
+        exitmonitor $r3;
+
+     label5:
+        throw $r5;
+
+        catch java.lang.Throwable from label2 to label5 with label4;
+    }
+
+    protected void onMeasure(int, int)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        int $i0, $i1;
+        com.facebook.lite.ui.c $r1;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.c w>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.c w>;
+        virtualinvoke $r1.<com.facebook.lite.ui.c: void a(android.view.View,int)>($r0, $i1);
+
+     label0:
+        specialinvoke $r0.<android.opengl.GLSurfaceView: void onMeasure(int,int)>($i0, $i1);
+        return;
+    }
+
+    public boolean onTouchEvent(android.view.MotionEvent)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.view.MotionEvent $r1;
+        boolean $z0;
+        float $f0;
+        int $i0, $i2, $i3;
+        com.b.a.a.b.k $r2;
+        java.lang.Throwable $r3, $r5, $r6, $r7;
+        com.b.a.a.e.b $r4;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $z0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean j>;
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<android.opengl.GLSurfaceView: boolean onTouchEvent(android.view.MotionEvent)>($r1);
+        return $z0;
+
+     label0:
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $i2 = (int) $f0;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        $i3 = (int) $f0;
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        lookupswitch($i0)
+        {
+            case 0: goto label2;
+            case 1: goto label8;
+            case 2: goto label5;
+            case 99: goto label11;
+            default: goto label1;
+        };
+
+     label1:
+        return 1;
+
+     label2:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.b.k x>;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void c(int,int)>($i2, $i3);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r3 := @caughtexception;
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k>;
+        interfaceinvoke $r4.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(102, null, $r3);
+        goto label1;
+
+     label5:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.b.k x>;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void b(int,int)>($i2, $i3);
+
+     label6:
+        goto label1;
+
+     label7:
+        $r5 := @caughtexception;
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k>;
+        interfaceinvoke $r4.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(102, null, $r5);
+        goto label1;
+
+     label8:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.b.k x>;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void d(int,int)>($i2, $i3);
+
+     label9:
+        goto label1;
+
+     label10:
+        $r6 := @caughtexception;
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k>;
+        interfaceinvoke $r4.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(102, null, $r6);
+        goto label1;
+
+     label11:
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.b.k x>;
+        interfaceinvoke $r2.<com.b.a.a.b.k: void e(int,int)>($i2, $i3);
+
+     label12:
+        goto label1;
+
+     label13:
+        $r7 := @caughtexception;
+        $r4 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k>;
+        interfaceinvoke $r4.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(102, null, $r7);
+        goto label1;
+
+        catch java.lang.Throwable from label2 to label3 with label4;
+        catch java.lang.Throwable from label5 to label6 with label7;
+        catch java.lang.Throwable from label8 to label9 with label10;
+        catch java.lang.Throwable from label11 to label12 with label13;
+    }
+
+    public void surfaceChanged(android.view.SurfaceHolder, int, int, int)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.view.SurfaceHolder $r1;
+        int $i0, $i1, $i2;
+        com.facebook.lite.ui.a $r2;
+        int[] $r3;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: android.view.SurfaceHolder;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int o> = $i1;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int n> = $i2;
+        specialinvoke $r0.<android.opengl.GLSurfaceView: void surfaceChanged(android.view.SurfaceHolder,int,int,int)>($r1, $i0, $i1, $i2);
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        $r3 = virtualinvoke $r2.<com.facebook.lite.ui.a: int[] v()>();
+        virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: void a(int[])>($r3);
+
+     label0:
+        return;
+    }
+
+    public void surfaceCreated(android.view.SurfaceHolder)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.view.SurfaceHolder $r1;
+        android.content.Context $r2;
+        int $i0, $i1, $i2;
+        java.nio.IntBuffer $r3;
+        java.nio.ByteBuffer $r4;
+        java.nio.ByteOrder $r5;
+        com.facebook.lite.a $r6;
+        com.facebook.lite.g.g $r7;
+        com.facebook.lite.g.a $r8;
+        com.b.a.a.b.k $r9;
+        com.b.a.a.j.v $r10;
+        com.facebook.lite.ui.a $r11;
+        com.b.a.a.e.b $r12;
+        com.facebook.lite.e.b $r13;
+        com.facebook.lite.e.d $r14;
+        com.facebook.lite.e.a $r15;
+        com.facebook.lite.e.h $r16;
+        com.facebook.lite.ui.c $r17;
+        android.content.res.Resources $r18;
+        boolean $z1;
+        android.graphics.Bitmap$Config $r19;
+        android.graphics.Bitmap $r20;
+        android.graphics.Canvas $r21;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: android.view.SurfaceHolder;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean j> = 1;
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.Context getContext()>();
+        $i0 = staticinvoke <com.facebook.lite.b.e: int d(android.content.Context)>($r2);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h> = $i0;
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.Context getContext()>();
+        $i0 = staticinvoke <com.facebook.lite.b.e: int b(android.content.Context)>($r2);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g> = $i0;
+        $r3 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p>;
+        if $r3 != null goto label0;
+
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g>;
+        $i1 = $i1 * $i0;
+        $i1 = $i1 * 4;
+        $r4 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocateDirect(int)>($i1);
+        $r5 = staticinvoke <java.nio.ByteOrder: java.nio.ByteOrder nativeOrder()>();
+        $r4 = virtualinvoke $r4.<java.nio.ByteBuffer: java.nio.ByteBuffer order(java.nio.ByteOrder)>($r5);
+        $r3 = virtualinvoke $r4.<java.nio.ByteBuffer: java.nio.IntBuffer asIntBuffer()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: java.nio.IntBuffer p> = $r3;
+
+     label0:
+        $r6 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r7 = virtualinvoke $r6.<com.facebook.lite.a: com.facebook.lite.g.g s()>();
+        $r8 = (com.facebook.lite.g.a) $r7;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a> = $r8;
+        $r8 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r9 = virtualinvoke $r8.<com.facebook.lite.g.a: com.b.a.a.b.k ac()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.b.k x> = $r9;
+        $r8 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r10 = virtualinvoke $r8.<com.facebook.lite.g.a: com.b.a.a.j.v ad()>();
+        $r11 = (com.facebook.lite.ui.a) $r10;
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y> = $r11;
+        $r8 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r12 = virtualinvoke $r8.<com.facebook.lite.g.a: com.b.a.a.e.b U()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.b.a.a.e.b k> = $r12;
+        $r8 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r13 = virtualinvoke $r8.<com.facebook.lite.g.a: com.facebook.lite.e.b s()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a s> = $r13;
+        $r8 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.g.a a>;
+        $r14 = virtualinvoke $r8.<com.facebook.lite.g.a: com.facebook.lite.e.d t()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a u> = $r14;
+        $r15 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a u>;
+        $r14 = (com.facebook.lite.e.d) $r15;
+        $r16 = virtualinvoke $r14.<com.facebook.lite.e.d: com.facebook.lite.e.h a()>();
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.h l> = $r16;
+        $r17 = new com.facebook.lite.ui.c;
+        $r18 = virtualinvoke $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.content.res.Resources getResources()>();
+        specialinvoke $r17.<com.facebook.lite.ui.c: void <init>(android.content.res.Resources,com.facebook.lite.ui.b)>($r18, $r0);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.c w> = $r17;
+        $r11 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.ui.a y>;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int g>;
+        $i1 = $i1 * $i0;
+        virtualinvoke $r11.<com.facebook.lite.ui.a: void a(boolean,int)>(1, $i1);
+        $z1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean r>;
+        if $z1 != 0 goto label1;
+
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean r> = 1;
+        $r15 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a u>;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i1 = interfaceinvoke $r15.<com.facebook.lite.e.a: int a(int)>($i1);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int v> = $i1;
+        $r15 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: com.facebook.lite.e.a s>;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i1 = interfaceinvoke $r15.<com.facebook.lite.e.a: int a(int)>($i1);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: int t> = $i1;
+        $i1 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int h>;
+        $i0 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int t>;
+        $i2 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: int v>;
+        $i2 = staticinvoke <java.lang.Math: int max(int,int)>($i0, $i2);
+        if $i2 <= 0 goto label1;
+
+        $r19 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r20 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i1, $i2, $r19);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Bitmap b> = $r20;
+        $r21 = new android.graphics.Canvas;
+        $r20 = $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Bitmap b>;
+        specialinvoke $r21.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r20);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: android.graphics.Canvas c> = $r21;
+
+     label1:
+        specialinvoke $r0.<android.opengl.GLSurfaceView: void surfaceCreated(android.view.SurfaceHolder)>($r1);
+        return;
+    }
+
+    public void surfaceDestroyed(android.view.SurfaceHolder)
+    {
+        com.facebook.lite.widget.AbstractGLRendererView $r0;
+        android.view.SurfaceHolder $r1;
+
+        $r0 := @this: com.facebook.lite.widget.AbstractGLRendererView;
+        $r1 := @parameter0: android.view.SurfaceHolder;
+        specialinvoke $r0.<android.opengl.GLSurfaceView: void surfaceDestroyed(android.view.SurfaceHolder)>($r1);
+        $r0.<com.facebook.lite.widget.AbstractGLRendererView: boolean j> = 0;
+        return;
+    }
+}

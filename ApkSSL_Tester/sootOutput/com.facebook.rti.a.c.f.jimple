@@ -1,0 +1,109 @@
+final class com.facebook.rti.a.c.f extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.a.c.d a;
+    private final java.lang.Runnable b;
+    private final long c;
+    private volatile long d;
+    private volatile long e;
+
+    void <init>(com.facebook.rti.a.c.d, java.lang.Runnable)
+    {
+        com.facebook.rti.a.c.f $r0;
+        com.facebook.rti.a.c.d $r1;
+        java.lang.Runnable $r2;
+        long $l0;
+
+        $r0 := @this: com.facebook.rti.a.c.f;
+        $r1 := @parameter0: com.facebook.rti.a.c.d;
+        $r2 := @parameter1: java.lang.Runnable;
+        $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.a.c.f: java.lang.Runnable b> = $r2;
+        $l0 = staticinvoke <android.os.SystemClock: long elapsedRealtime()>();
+        $r0.<com.facebook.rti.a.c.f: long c> = $l0;
+        $r0.<com.facebook.rti.a.c.f: long d> = -1L;
+        $r0.<com.facebook.rti.a.c.f: long e> = -1L;
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.a.c.f $r0;
+        long $l0, $l5, $l7;
+        java.lang.String $r1, $r5;
+        com.facebook.rti.a.c.d $r2;
+        int $i4;
+        byte $b6;
+        java.lang.Object[] $r4;
+        java.lang.Runnable $r6;
+
+        $r0 := @this: com.facebook.rti.a.c.f;
+        $l0 = staticinvoke <android.os.SystemClock: long elapsedRealtime()>();
+        $r0.<com.facebook.rti.a.c.f: long d> = $l0;
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int a(com.facebook.rti.a.c.d)>($r2);
+        if $i4 == -1 goto label0;
+
+        $l5 = $r0.<com.facebook.rti.a.c.f: long d>;
+        $l0 = $r0.<com.facebook.rti.a.c.f: long c>;
+        $l5 = $l5 - $l0;
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int a(com.facebook.rti.a.c.d)>($r2);
+        $l0 = (long) $i4;
+        $b6 = $l5 cmp $l0;
+        if $b6 <= 0 goto label0;
+
+        $r4 = newarray (java.lang.Object)[1];
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $r5 = staticinvoke <com.facebook.rti.a.c.d: java.lang.String b(com.facebook.rti.a.c.d)>($r2);
+        $r4[0] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("SerialExecutor", "dispatch time exceeded limit: %s", $r4);
+
+     label0:
+        $l5 = staticinvoke <android.os.SystemClock: long currentThreadTimeMillis()>();
+        $r6 = $r0.<com.facebook.rti.a.c.f: java.lang.Runnable b>;
+        interfaceinvoke $r6.<java.lang.Runnable: void run()>();
+        $l7 = staticinvoke <android.os.SystemClock: long currentThreadTimeMillis()>();
+        $l0 = staticinvoke <android.os.SystemClock: long elapsedRealtime()>();
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int c(com.facebook.rti.a.c.d)>($r2);
+        if $i4 == -1 goto label1;
+
+        $l7 = $l7 - $l5;
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int c(com.facebook.rti.a.c.d)>($r2);
+        $l5 = (long) $i4;
+        $b6 = $l7 cmp $l5;
+        if $b6 <= 0 goto label1;
+
+        $r4 = newarray (java.lang.Object)[1];
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $r1 = staticinvoke <com.facebook.rti.a.c.d: java.lang.String b(com.facebook.rti.a.c.d)>($r2);
+        $r4[0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("SerialExecutor", "compute time exceeded limit: %s", $r4);
+
+     label1:
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int d(com.facebook.rti.a.c.d)>($r2);
+        if $i4 == -1 goto label2;
+
+        $l7 = $r0.<com.facebook.rti.a.c.f: long d>;
+        $l7 = $l0 - $l7;
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $i4 = staticinvoke <com.facebook.rti.a.c.d: int d(com.facebook.rti.a.c.d)>($r2);
+        $l5 = (long) $i4;
+        $b6 = $l7 cmp $l5;
+        if $b6 <= 0 goto label2;
+
+        $r4 = newarray (java.lang.Object)[1];
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        $r1 = staticinvoke <com.facebook.rti.a.c.d: java.lang.String b(com.facebook.rti.a.c.d)>($r2);
+        $r4[0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("SerialExecutor", "wall clock runtime exceeded limit: %s", $r4);
+
+     label2:
+        $r2 = $r0.<com.facebook.rti.a.c.f: com.facebook.rti.a.c.d a>;
+        staticinvoke <com.facebook.rti.a.c.d: void e(com.facebook.rti.a.c.d)>($r2);
+        return;
+    }
+}

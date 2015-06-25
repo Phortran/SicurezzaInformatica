@@ -1,0 +1,158 @@
+public class it.h3g.areaclienti3.nwmonitoring.SendDataService extends android.app.IntentService
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>("initService");
+        return;
+    }
+
+    public void <init>(java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>($r1);
+        return;
+    }
+
+    public android.os.IBinder onBind(android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+        android.content.Intent $r1;
+        android.os.IBinder $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 = specialinvoke $r0.<android.app.IntentService: android.os.IBinder onBind(android.content.Intent)>($r1);
+        return $r2;
+    }
+
+    public void onCreate()
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        specialinvoke $r0.<android.app.IntentService: void onCreate()>();
+        return;
+    }
+
+    public void onDestroy()
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        specialinvoke $r0.<android.app.IntentService: void onDestroy()>();
+        return;
+    }
+
+    protected void onHandleIntent(android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+        android.content.Intent $r1, $r11;
+        it.h3g.areaclienti3.nwmonitoring.as $r2;
+        int $i0, $i1;
+        it.h3g.areaclienti3.nwmonitoring.av $r3;
+        java.lang.String $r4, $r10;
+        boolean $z0, $z2;
+        it.h3g.areaclienti3.nwmonitoring.bf $r5;
+        it.h3g.areaclienti3.nwmonitoring.q $r6;
+        it.h3g.areaclienti3.nwmonitoring.bd $r7;
+        it.h3g.areaclienti3.nwmonitoring.bc $r8;
+        android.content.Context $r9;
+        it.h3g.areaclienti3.nwmonitoring.ay $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        $r1 := @parameter0: android.content.Intent;
+        if $r1 == null goto label3;
+
+        $r2 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r0);
+        $i0 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.as: int q()>();
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $z0 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r0, "pendingConsents", 0);
+        $r5 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r0);
+        $z2 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.as: boolean g()>();
+        if $z2 == 0 goto label3;
+
+        $z2 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.as: boolean i()>();
+        if $z2 != 0 goto label3;
+
+        if $i0 == 5 goto label0;
+
+        if $i0 != 0 goto label1;
+
+     label0:
+        if $i0 != 5 goto label4;
+
+        $z2 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: boolean v()>();
+        if $z2 == 0 goto label4;
+
+     label1:
+        $z2 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: boolean w()>();
+        if $z2 != 0 goto label4;
+
+        $r6 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.q: it.h3g.areaclienti3.nwmonitoring.q a()>();
+        $i1 = (int) 1;
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.q: it.h3g.areaclienti3.nwmonitoring.bd a(int)>($i1);
+        $r8 = new it.h3g.areaclienti3.nwmonitoring.bc;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.SendDataService: android.content.Context getApplicationContext()>();
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        specialinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bc: void <init>(android.content.Context,java.lang.String)>($r9, $r4);
+        virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.bd: void execute(java.lang.Runnable)>($r8);
+        if $z0 == 0 goto label3;
+
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z2 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.areaclienti3.nwmonitoring.RETRY_ON_SCHEDULING_ACTION");
+        if $z2 != 0 goto label2;
+
+        $r10 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.areaclienti3.nwmonitoring.TIME_SCHEDULING");
+        if $z2 != 0 goto label2;
+
+        $r10 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.areaclienti3.nwmonitoring.BOOT_SEND_ACTION");
+        if $z2 == 0 goto label3;
+
+     label2:
+        $r11 = new android.content.Intent;
+        specialinvoke $r11.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "it/h3g/areaclienti3/nwmonitoring/SendConsentService");
+        $r10 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r11 = virtualinvoke $r11.<android.content.Intent: android.content.Intent setAction(java.lang.String)>($r10);
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.SendDataService: android.content.ComponentName startService(android.content.Intent)>($r11);
+
+     label3:
+        return;
+
+     label4:
+        $z2 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: boolean w()>();
+        if $z2 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_RETRY", "Tentativo invio in wifi o no data service");
+        $r13 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.ay: it.h3g.areaclienti3.nwmonitoring.ay a()>();
+        $r10 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.nwmonitoring.ay: void a(boolean,java.lang.String,android.content.Context)>(1, $r10, $r0);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r0, "PendingPackets", 1);
+        goto label3;
+    }
+
+    public void onStart(android.content.Intent, int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendDataService $r0;
+        android.content.Intent $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendDataService;
+        $r1 := @parameter0: android.content.Intent;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<android.app.IntentService: void onStart(android.content.Intent,int)>($r1, $i0);
+        return;
+    }
+}

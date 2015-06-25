@@ -1,0 +1,23 @@
+final class com.facebook.rti.push.service.i extends java.util.ArrayList
+{
+    final com.facebook.rti.push.service.FbnsService a;
+
+    void <init>(com.facebook.rti.push.service.FbnsService)
+    {
+        com.facebook.rti.push.service.i $r0;
+        com.facebook.rti.push.service.FbnsService $r1;
+        com.facebook.rti.b.e.b.v $r2;
+
+        $r0 := @this: com.facebook.rti.push.service.i;
+        $r1 := @parameter0: com.facebook.rti.push.service.FbnsService;
+        $r0.<com.facebook.rti.push.service.i: com.facebook.rti.push.service.FbnsService a> = $r1;
+        specialinvoke $r0.<java.util.ArrayList: void <init>()>();
+        $r2 = new com.facebook.rti.b.e.b.v;
+        specialinvoke $r2.<com.facebook.rti.b.e.b.v: void <init>(java.lang.String,int)>("/fbns_reg_resp", 1);
+        virtualinvoke $r0.<com.facebook.rti.push.service.i: boolean add(java.lang.Object)>($r2);
+        $r2 = new com.facebook.rti.b.e.b.v;
+        specialinvoke $r2.<com.facebook.rti.b.e.b.v: void <init>(java.lang.String,int)>("/fbns_msg", 1);
+        virtualinvoke $r0.<com.facebook.rti.push.service.i: boolean add(java.lang.Object)>($r2);
+        return;
+    }
+}

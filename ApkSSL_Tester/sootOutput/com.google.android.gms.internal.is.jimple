@@ -1,0 +1,33 @@
+public class com.google.android.gms.internal.is extends java.lang.Object
+{
+
+    public static int a(java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        java.lang.StringBuilder $r2;
+        boolean $z0;
+        java.lang.IllegalArgumentException $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("person");
+        if $z0 == 0 goto label0;
+
+        return 0;
+
+     label0:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("page");
+        if $z0 == 0 goto label1;
+
+        return 1;
+
+     label1:
+        $r3 = new java.lang.IllegalArgumentException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unknown objectType string: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r3;
+    }
+}

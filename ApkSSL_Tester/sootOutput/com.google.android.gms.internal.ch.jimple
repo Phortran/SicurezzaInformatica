@@ -1,0 +1,63 @@
+class com.google.android.gms.internal.ch extends java.lang.Object implements com.google.android.gms.internal.k
+{
+    final com.google.android.gms.internal.cf a;
+
+    void <init>(com.google.android.gms.internal.cf)
+    {
+        com.google.android.gms.internal.ch $r0;
+        com.google.android.gms.internal.cf $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ch;
+        $r1 := @parameter0: com.google.android.gms.internal.cf;
+        $r0.<com.google.android.gms.internal.ch: com.google.android.gms.internal.cf a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.ch $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        com.google.android.gms.internal.cf $r3;
+        java.lang.Object $r4, $r6;
+        java.lang.String $r5;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.ch;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r3 = $r0.<com.google.android.gms.internal.ch: com.google.android.gms.internal.cf a>;
+        $r4 = staticinvoke <com.google.android.gms.internal.cf: java.lang.Object a(com.google.android.gms.internal.cf)>($r3);
+        entermonitor $r4;
+
+     label0:
+        $r6 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("url");
+        $r5 = (java.lang.String) $r6;
+        if $r5 != null goto label2;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("URL missing in loadAdUrl GMSG.");
+        exitmonitor $r4;
+
+     label1:
+        return;
+
+     label2:
+        $r3 = $r0.<com.google.android.gms.internal.ch: com.google.android.gms.internal.cf a>;
+        staticinvoke <com.google.android.gms.internal.cf: java.lang.String a(com.google.android.gms.internal.cf,java.lang.String)>($r3, $r5);
+        $r3 = $r0.<com.google.android.gms.internal.ch: com.google.android.gms.internal.cf a>;
+        $r6 = staticinvoke <com.google.android.gms.internal.cf: java.lang.Object a(com.google.android.gms.internal.cf)>($r3);
+        virtualinvoke $r6.<java.lang.Object: void notify()>();
+        exitmonitor $r4;
+        goto label1;
+
+     label3:
+        $r7 := @caughtexception;
+        exitmonitor $r4;
+
+     label4:
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+    }
+}

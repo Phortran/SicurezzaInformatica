@@ -1,0 +1,261 @@
+final class android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask extends android.os.AsyncTask
+{
+    final android.support.v7.internal.widget.ActivityChooserModel this$0;
+
+    private void <init>(android.support.v7.internal.widget.ActivityChooserModel)
+    {
+        android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask $r0;
+        android.support.v7.internal.widget.ActivityChooserModel $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask;
+        $r1 := @parameter0: android.support.v7.internal.widget.ActivityChooserModel;
+        $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    void <init>(android.support.v7.internal.widget.ActivityChooserModel, android.support.v7.internal.widget.ActivityChooserModel$1)
+    {
+        android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask $r0;
+        android.support.v7.internal.widget.ActivityChooserModel $r1;
+        android.support.v7.internal.widget.ActivityChooserModel$1 $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask;
+        $r1 := @parameter0: android.support.v7.internal.widget.ActivityChooserModel;
+        $r2 := @parameter1: android.support.v7.internal.widget.ActivityChooserModel$1;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: void <init>(android.support.v7.internal.widget.ActivityChooserModel)>($r1);
+        return;
+    }
+
+    public volatile java.lang.Object doInBackground(java.lang.Object[])
+    {
+        android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask $r0;
+        java.lang.Object[] $r1;
+        java.lang.Void $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask;
+        $r1 := @parameter0: java.lang.Object[];
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: java.lang.Void doInBackground(java.lang.Object[])>($r1);
+        return $r2;
+    }
+
+    public transient java.lang.Void doInBackground(java.lang.Object[])
+    {
+        android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask $r0;
+        java.lang.Object[] $r1;
+        java.io.FileNotFoundException $r3;
+        java.io.FileOutputStream $r4;
+        java.lang.Object $r5;
+        int $i0, $i1;
+        java.lang.IllegalArgumentException $r6;
+        java.io.IOException $r7, $r20, $r21, $r22, $r24, $r25;
+        java.lang.IllegalStateException $r8;
+        org.xmlpull.v1.XmlSerializer $r9;
+        android.content.ComponentName $r10;
+        long $l3;
+        android.content.Context $r11;
+        java.util.List $r12;
+        java.lang.String $r13, $r17, $r19;
+        android.support.v7.internal.widget.ActivityChooserModel $r14;
+        java.lang.Boolean $r15;
+        android.support.v7.internal.widget.ActivityChooserModel$HistoricalRecord $r16;
+        float $f0;
+        java.lang.StringBuilder $r18;
+        java.lang.Throwable $r23;
+
+        $r0 := @this: android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask;
+        $r1 := @parameter0: java.lang.Object[];
+        $r5 = $r1[0];
+        $r12 = (java.util.List) $r5;
+        $r5 = $r1[1];
+        $r13 = (java.lang.String) $r5;
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+
+     label0:
+        $r11 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: android.content.Context access$200(android.support.v7.internal.widget.ActivityChooserModel)>($r14);
+        $r4 = virtualinvoke $r11.<android.content.Context: java.io.FileOutputStream openFileOutput(java.lang.String,int)>($r13, 0);
+
+     label1:
+        $r9 = staticinvoke <android.util.Xml: org.xmlpull.v1.XmlSerializer newSerializer()>();
+
+     label2:
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: void setOutput(java.io.OutputStream,java.lang.String)>($r4, null);
+        $r15 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: void startDocument(java.lang.String,java.lang.Boolean)>("UTF-8", $r15);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>(null, "historical-records");
+        $i1 = interfaceinvoke $r12.<java.util.List: int size()>();
+        $i0 = 0;
+
+     label3:
+        if $i0 >= $i1 goto label6;
+
+        $r5 = interfaceinvoke $r12.<java.util.List: java.lang.Object remove(int)>(0);
+        $r16 = (android.support.v7.internal.widget.ActivityChooserModel$HistoricalRecord) $r5;
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>(null, "historical-record");
+        $r10 = $r16.<android.support.v7.internal.widget.ActivityChooserModel$HistoricalRecord: android.content.ComponentName activity>;
+        $r17 = virtualinvoke $r10.<android.content.ComponentName: java.lang.String flattenToString()>();
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "activity", $r17);
+        $l3 = $r16.<android.support.v7.internal.widget.ActivityChooserModel$HistoricalRecord: long time>;
+        $r13 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l3);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "time", $r13);
+        $f0 = $r16.<android.support.v7.internal.widget.ActivityChooserModel$HistoricalRecord: float weight>;
+        $r13 = staticinvoke <java.lang.String: java.lang.String valueOf(float)>($f0);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "weight", $r13);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>(null, "historical-record");
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label3;
+
+     label5:
+        $r3 := @caughtexception;
+        $r17 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$300()>();
+        $r18 = new java.lang.StringBuilder;
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error writing historical recrod file: ");
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
+        $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r17, $r19, $r3);
+        return null;
+
+     label6:
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>(null, "historical-records");
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlSerializer: void endDocument()>();
+
+     label7:
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: boolean access$502(android.support.v7.internal.widget.ActivityChooserModel,boolean)>($r14, 1);
+        if $r4 == null goto label9;
+
+     label8:
+        virtualinvoke $r4.<java.io.FileOutputStream: void close()>();
+
+     label9:
+        return null;
+
+     label10:
+        $r6 := @caughtexception;
+
+     label11:
+        $r19 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$300()>();
+        $r18 = new java.lang.StringBuilder;
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error writing historical recrod file: ");
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        $r17 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$400(android.support.v7.internal.widget.ActivityChooserModel)>($r14);
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r17 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r19, $r17, $r6);
+
+     label12:
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: boolean access$502(android.support.v7.internal.widget.ActivityChooserModel,boolean)>($r14, 1);
+        if $r4 == null goto label9;
+
+     label13:
+        virtualinvoke $r4.<java.io.FileOutputStream: void close()>();
+
+     label14:
+        goto label9;
+
+     label15:
+        $r20 := @caughtexception;
+        goto label9;
+
+     label16:
+        $r8 := @caughtexception;
+
+     label17:
+        $r19 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$300()>();
+        $r18 = new java.lang.StringBuilder;
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error writing historical recrod file: ");
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        $r17 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$400(android.support.v7.internal.widget.ActivityChooserModel)>($r14);
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r17 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r19, $r17, $r8);
+
+     label18:
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: boolean access$502(android.support.v7.internal.widget.ActivityChooserModel,boolean)>($r14, 1);
+        if $r4 == null goto label9;
+
+     label19:
+        virtualinvoke $r4.<java.io.FileOutputStream: void close()>();
+
+     label20:
+        goto label9;
+
+     label21:
+        $r21 := @caughtexception;
+        goto label9;
+
+     label22:
+        $r7 := @caughtexception;
+
+     label23:
+        $r19 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$300()>();
+        $r18 = new java.lang.StringBuilder;
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error writing historical recrod file: ");
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        $r17 = staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: java.lang.String access$400(android.support.v7.internal.widget.ActivityChooserModel)>($r14);
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r17 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r19, $r17, $r7);
+
+     label24:
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: boolean access$502(android.support.v7.internal.widget.ActivityChooserModel,boolean)>($r14, 1);
+        if $r4 == null goto label9;
+
+     label25:
+        virtualinvoke $r4.<java.io.FileOutputStream: void close()>();
+
+     label26:
+        goto label9;
+
+     label27:
+        $r22 := @caughtexception;
+        goto label9;
+
+     label28:
+        $r23 := @caughtexception;
+        $r14 = $r0.<android.support.v7.internal.widget.ActivityChooserModel$PersistHistoryAsyncTask: android.support.v7.internal.widget.ActivityChooserModel this$0>;
+        staticinvoke <android.support.v7.internal.widget.ActivityChooserModel: boolean access$502(android.support.v7.internal.widget.ActivityChooserModel,boolean)>($r14, 1);
+        if $r4 == null goto label30;
+
+     label29:
+        virtualinvoke $r4.<java.io.FileOutputStream: void close()>();
+
+     label30:
+        throw $r23;
+
+     label31:
+        $r24 := @caughtexception;
+        goto label9;
+
+     label32:
+        $r25 := @caughtexception;
+        goto label30;
+
+        catch java.io.FileNotFoundException from label0 to label1 with label5;
+        catch java.lang.IllegalArgumentException from label2 to label4 with label10;
+        catch java.lang.IllegalStateException from label2 to label4 with label16;
+        catch java.io.IOException from label2 to label4 with label22;
+        catch java.lang.Throwable from label2 to label4 with label28;
+        catch java.lang.IllegalArgumentException from label6 to label7 with label10;
+        catch java.lang.IllegalStateException from label6 to label7 with label16;
+        catch java.io.IOException from label6 to label7 with label22;
+        catch java.lang.Throwable from label6 to label7 with label28;
+        catch java.io.IOException from label8 to label9 with label31;
+        catch java.lang.Throwable from label11 to label12 with label28;
+        catch java.io.IOException from label13 to label14 with label15;
+        catch java.lang.Throwable from label17 to label18 with label28;
+        catch java.io.IOException from label19 to label20 with label21;
+        catch java.lang.Throwable from label23 to label24 with label28;
+        catch java.io.IOException from label25 to label26 with label27;
+        catch java.io.IOException from label29 to label30 with label32;
+    }
+}

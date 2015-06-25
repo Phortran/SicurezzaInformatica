@@ -1,0 +1,69 @@
+final class it.h3g.areaclienti3.customview.w extends android.widget.ScrollView
+{
+    final it.h3g.areaclienti3.customview.PullToRefreshScrollView a;
+
+    public void <init>(it.h3g.areaclienti3.customview.PullToRefreshScrollView, android.content.Context, android.util.AttributeSet)
+    {
+        it.h3g.areaclienti3.customview.w $r0;
+        it.h3g.areaclienti3.customview.PullToRefreshScrollView $r1;
+        android.content.Context $r2;
+        android.util.AttributeSet $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.w;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.PullToRefreshScrollView;
+        $r2 := @parameter1: android.content.Context;
+        $r3 := @parameter2: android.util.AttributeSet;
+        $r0.<it.h3g.areaclienti3.customview.w: it.h3g.areaclienti3.customview.PullToRefreshScrollView a> = $r1;
+        specialinvoke $r0.<android.widget.ScrollView: void <init>(android.content.Context,android.util.AttributeSet)>($r2, $r3);
+        return;
+    }
+
+    private int a()
+    {
+        it.h3g.areaclienti3.customview.w $r0;
+        int $i0, $i1, $i2, $i3;
+        android.view.View $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.w;
+        $i0 = 0;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.w: int getChildCount()>();
+        if $i1 <= 0 goto label0;
+
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.w: android.view.View getChildAt(int)>(0);
+        $i3 = virtualinvoke $r1.<android.view.View: int getHeight()>();
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.w: int getHeight()>();
+        $i2 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.w: int getPaddingBottom()>();
+        $i2 = $i1 - $i2;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.w: int getPaddingTop()>();
+        $i2 = $i2 - $i1;
+        $i3 = $i3 - $i2;
+        $i0 = staticinvoke <java.lang.Math: int max(int,int)>(0, $i3);
+
+     label0:
+        return $i0;
+    }
+
+    protected boolean overScrollBy(int, int, int, int, int, int, int, int, boolean)
+    {
+        it.h3g.areaclienti3.customview.w $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6, $i7, $i8;
+        boolean $z0, $z1;
+        it.h3g.areaclienti3.customview.PullToRefreshScrollView $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.w;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $i3 := @parameter3: int;
+        $i4 := @parameter4: int;
+        $i5 := @parameter5: int;
+        $i6 := @parameter6: int;
+        $i7 := @parameter7: int;
+        $z0 := @parameter8: boolean;
+        $z1 = specialinvoke $r0.<android.widget.ScrollView: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)>($i0, $i1, $i2, $i3, $i4, $i5, $i6, $i7, $z0);
+        $r1 = $r0.<it.h3g.areaclienti3.customview.w: it.h3g.areaclienti3.customview.PullToRefreshScrollView a>;
+        $i8 = specialinvoke $r0.<it.h3g.areaclienti3.customview.w: int a()>();
+        staticinvoke <it.h3g.areaclienti3.customview.a.e: void a(it.h3g.areaclienti3.customview.a.f,int,int,int,int,int,boolean)>($r1, $i0, $i2, $i1, $i3, $i8, $z0);
+        return $z1;
+    }
+}

@@ -1,0 +1,335 @@
+class com.google.b.a.a.ay extends android.database.sqlite.SQLiteOpenHelper
+{
+    final com.google.b.a.a.aw a;
+    private boolean b;
+    private long c;
+
+    void <init>(com.google.b.a.a.aw, android.content.Context, java.lang.String)
+    {
+        com.google.b.a.a.ay $r0;
+        com.google.b.a.a.aw $r1;
+        android.content.Context $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: com.google.b.a.a.aw;
+        $r2 := @parameter1: android.content.Context;
+        $r3 := @parameter2: java.lang.String;
+        $r0.<com.google.b.a.a.ay: com.google.b.a.a.aw a> = $r1;
+        specialinvoke $r0.<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>($r2, $r3, null, 1);
+        $r0.<com.google.b.a.a.ay: long c> = 0L;
+        return;
+    }
+
+    private void a(android.database.sqlite.SQLiteDatabase)
+    {
+        com.google.b.a.a.ay $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        byte $b0;
+        java.lang.String $r2;
+        java.util.HashSet $r3;
+        java.lang.String[] $r4;
+        int $i1, $i2;
+        android.database.Cursor $r5;
+        boolean $z0;
+        android.database.sqlite.SQLiteException $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $b0 = 0;
+        $r5 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT * FROM hits2 WHERE 0", null);
+        $r3 = new java.util.HashSet;
+        specialinvoke $r3.<java.util.HashSet: void <init>()>();
+
+     label0:
+        $r4 = interfaceinvoke $r5.<android.database.Cursor: java.lang.String[] getColumnNames()>();
+        $i2 = 0;
+
+     label1:
+        $i1 = lengthof $r4;
+        if $i2 >= $i1 goto label3;
+
+        $r2 = $r4[$i2];
+        interfaceinvoke $r3.<java.util.Set: boolean add(java.lang.Object)>($r2);
+
+     label2:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label3:
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean remove(java.lang.Object)>("hit_id");
+        if $z0 == 0 goto label4;
+
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean remove(java.lang.Object)>("hit_url");
+        if $z0 == 0 goto label4;
+
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean remove(java.lang.Object)>("hit_string");
+        if $z0 == 0 goto label4;
+
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean remove(java.lang.Object)>("hit_time");
+        if $z0 != 0 goto label6;
+
+     label4:
+        $r6 = new android.database.sqlite.SQLiteException;
+        specialinvoke $r6.<android.database.sqlite.SQLiteException: void <init>(java.lang.String)>("Database column missing");
+        throw $r6;
+
+     label5:
+        $r7 := @caughtexception;
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        throw $r7;
+
+     label6:
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean remove(java.lang.Object)>("hit_app_id");
+        if $z0 != 0 goto label7;
+
+        $b0 = 1;
+
+     label7:
+        $z0 = interfaceinvoke $r3.<java.util.Set: boolean isEmpty()>();
+        if $z0 != 0 goto label8;
+
+        $r6 = new android.database.sqlite.SQLiteException;
+        specialinvoke $r6.<android.database.sqlite.SQLiteException: void <init>(java.lang.String)>("Database has extra columns");
+        throw $r6;
+
+     label8:
+        if $b0 == 0 goto label9;
+
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>("ALTER TABLE hits2 ADD COLUMN hit_app_id");
+
+     label9:
+        return;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+    }
+
+    private boolean a(java.lang.String, android.database.sqlite.SQLiteDatabase)
+    {
+        com.google.b.a.a.ay $r0;
+        java.lang.String $r1, $r5;
+        android.database.sqlite.SQLiteDatabase $r2;
+        java.lang.String[] $r4, $r6;
+        android.database.Cursor $r7, $r8;
+        boolean $z1;
+        android.database.sqlite.SQLiteException $r9, $r13;
+        java.lang.StringBuilder $r10;
+        java.lang.Throwable $r11, $r12;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: android.database.sqlite.SQLiteDatabase;
+        $r7 = null;
+
+     label0:
+        $r4 = newarray (java.lang.String)[1];
+        $r4[0] = "name";
+        $r6 = newarray (java.lang.String)[1];
+        $r6[0] = $r1;
+
+     label1:
+        $r8 = virtualinvoke $r2.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>("SQLITE_MASTER", $r4, "name=?", $r6, null, null, null);
+
+     label2:
+        $z1 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToFirst()>();
+
+     label3:
+        if $r8 == null goto label4;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label4:
+        return $z1;
+
+     label5:
+        $r9 := @caughtexception;
+        $r8 = null;
+
+     label6:
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error querying for table ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r5);
+
+     label7:
+        if $r8 == null goto label8;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label8:
+        return 0;
+
+     label9:
+        $r11 := @caughtexception;
+
+     label10:
+        if $r7 == null goto label11;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+
+     label11:
+        throw $r11;
+
+     label12:
+        $r11 := @caughtexception;
+        $r7 = $r8;
+        goto label10;
+
+     label13:
+        $r12 := @caughtexception;
+        $r7 = $r8;
+        $r11 = $r12;
+        goto label10;
+
+     label14:
+        $r13 := @caughtexception;
+        goto label6;
+
+        catch android.database.sqlite.SQLiteException from label1 to label2 with label5;
+        catch java.lang.Throwable from label0 to label2 with label9;
+        catch android.database.sqlite.SQLiteException from label2 to label3 with label14;
+        catch java.lang.Throwable from label2 to label3 with label12;
+        catch java.lang.Throwable from label6 to label7 with label13;
+    }
+
+    public android.database.sqlite.SQLiteDatabase getWritableDatabase()
+    {
+        com.google.b.a.a.ay $r0;
+        boolean $z0;
+        java.lang.String $r1;
+        long $l0, $l1;
+        com.google.b.a.a.l $r2;
+        com.google.b.a.a.aw $r3;
+        byte $b2;
+        android.database.sqlite.SQLiteException $r4;
+        android.database.sqlite.SQLiteDatabase $r5, $r6;
+        android.content.Context $r7;
+        java.io.File $r8;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $z0 = $r0.<com.google.b.a.a.ay: boolean b>;
+        if $z0 == 0 goto label0;
+
+        $l1 = $r0.<com.google.b.a.a.ay: long c>;
+        $l1 = $l1 + 3600000L;
+        $r3 = $r0.<com.google.b.a.a.ay: com.google.b.a.a.aw a>;
+        $r2 = staticinvoke <com.google.b.a.a.aw: com.google.b.a.a.l a(com.google.b.a.a.aw)>($r3);
+        $l0 = interfaceinvoke $r2.<com.google.b.a.a.l: long a()>();
+        $b2 = $l1 cmp $l0;
+        if $b2 <= 0 goto label0;
+
+        $r4 = new android.database.sqlite.SQLiteException;
+        specialinvoke $r4.<android.database.sqlite.SQLiteException: void <init>(java.lang.String)>("Database creation failed");
+        throw $r4;
+
+     label0:
+        $r5 = null;
+        $r0.<com.google.b.a.a.ay: boolean b> = 1;
+        $r3 = $r0.<com.google.b.a.a.ay: com.google.b.a.a.aw a>;
+        $r2 = staticinvoke <com.google.b.a.a.aw: com.google.b.a.a.l a(com.google.b.a.a.aw)>($r3);
+        $l1 = interfaceinvoke $r2.<com.google.b.a.a.l: long a()>();
+        $r0.<com.google.b.a.a.ay: long c> = $l1;
+
+     label1:
+        $r6 = specialinvoke $r0.<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>();
+
+     label2:
+        $r5 = $r6;
+
+     label3:
+        if $r5 != null goto label4;
+
+        $r5 = specialinvoke $r0.<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>();
+
+     label4:
+        $r0.<com.google.b.a.a.ay: boolean b> = 0;
+        return $r5;
+
+     label5:
+        $r4 := @caughtexception;
+        $r3 = $r0.<com.google.b.a.a.ay: com.google.b.a.a.aw a>;
+        $r7 = staticinvoke <com.google.b.a.a.aw: android.content.Context c(com.google.b.a.a.aw)>($r3);
+        $r3 = $r0.<com.google.b.a.a.ay: com.google.b.a.a.aw a>;
+        $r1 = staticinvoke <com.google.b.a.a.aw: java.lang.String b(com.google.b.a.a.aw)>($r3);
+        $r8 = virtualinvoke $r7.<android.content.Context: java.io.File getDatabasePath(java.lang.String)>($r1);
+        virtualinvoke $r8.<java.io.File: boolean delete()>();
+        goto label3;
+
+        catch android.database.sqlite.SQLiteException from label1 to label2 with label5;
+    }
+
+    public void onCreate(android.database.sqlite.SQLiteDatabase)
+    {
+        com.google.b.a.a.ay $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $r2 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: java.lang.String getPath()>();
+        staticinvoke <com.google.b.a.a.t: boolean a(java.lang.String)>($r2);
+        return;
+    }
+
+    public void onOpen(android.database.sqlite.SQLiteDatabase)
+    {
+        com.google.b.a.a.ay $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        int $i0;
+        android.database.Cursor $r2;
+        java.lang.String $r3;
+        boolean $z0;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 15 goto label2;
+
+        $r2 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("PRAGMA journal_mode=memory", null);
+
+     label0:
+        interfaceinvoke $r2.<android.database.Cursor: boolean moveToFirst()>();
+
+     label1:
+        interfaceinvoke $r2.<android.database.Cursor: void close()>();
+
+     label2:
+        $z0 = specialinvoke $r0.<com.google.b.a.a.ay: boolean a(java.lang.String,android.database.sqlite.SQLiteDatabase)>("hits2", $r1);
+        if $z0 != 0 goto label5;
+
+        $r3 = staticinvoke <com.google.b.a.a.aw: java.lang.String e()>();
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>($r3);
+
+     label3:
+        return;
+
+     label4:
+        $r4 := @caughtexception;
+        interfaceinvoke $r2.<android.database.Cursor: void close()>();
+        throw $r4;
+
+     label5:
+        specialinvoke $r0.<com.google.b.a.a.ay: void a(android.database.sqlite.SQLiteDatabase)>($r1);
+        goto label3;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+    }
+
+    public void onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
+    {
+        com.google.b.a.a.ay $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        int $i0, $i1;
+
+        $r0 := @this: com.google.b.a.a.ay;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        return;
+    }
+}

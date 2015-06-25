@@ -1,0 +1,165 @@
+public class it.h3g.areaclienti3.ch extends java.lang.Object implements java.lang.Runnable
+{
+    final it.h3g.areaclienti3.SplashScreenActivity a;
+    private it.h3g.areaclienti3.d.bp b;
+
+    public void <init>(it.h3g.areaclienti3.SplashScreenActivity, it.h3g.areaclienti3.d.bp)
+    {
+        it.h3g.areaclienti3.ch $r0;
+        it.h3g.areaclienti3.SplashScreenActivity $r1;
+        it.h3g.areaclienti3.d.bp $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.ch;
+        $r1 := @parameter0: it.h3g.areaclienti3.SplashScreenActivity;
+        $r2 := @parameter1: it.h3g.areaclienti3.d.bp;
+        $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b> = $r2;
+        return;
+    }
+
+    private void a()
+    {
+        it.h3g.areaclienti3.ch $r0;
+        it.h3g.areaclienti3.d.bp $r1;
+        java.lang.String $r2, $r3, $r8;
+        boolean $z0;
+        it.h3g.areaclienti3.SplashScreenActivity $r4;
+        it.h3g.areaclienti3.j.k $r5;
+        it.h3g.areaclienti3.e.b.a $r6;
+        android.database.Cursor $r7;
+        java.lang.StringBuilder $r9;
+        it.h3g.areaclienti3.j.f $r10;
+        java.lang.Exception $r11;
+        it.h3g.areaclienti3.j.m $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.ch;
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String a()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("transcoding");
+        if $z0 == 0 goto label4;
+
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.j.k e(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String c()>();
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.j.k: java.lang.String b(java.lang.String)>($r3);
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.e.b.a f(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.e.b.a: android.database.Cursor a(java.lang.String)>($r3);
+        if $r7 == null goto label1;
+
+        $z0 = interfaceinvoke $r7.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label1;
+
+        $z0 = interfaceinvoke $r7.<android.database.Cursor: boolean isNull(int)>(2);
+        if $z0 != 0 goto label1;
+
+        $r2 = interfaceinvoke $r7.<android.database.Cursor: java.lang.String getString(int)>(2);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r8 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String d()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r8);
+        if $z0 != 0 goto label1;
+
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Download XML ");
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String b()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String d()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SplashScreenActivity", $r2);
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.j.f g(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r8 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String b()>();
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.j.f: java.lang.String c(java.lang.String)>($r8);
+        if $r8 == null goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.e.b.a f(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String d()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.e.b.a: void a(java.lang.String,java.lang.String,java.lang.String)>($r8, $r2, $r3);
+
+     label1:
+        if $r7 == null goto label2;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+
+     label2:
+        return;
+
+     label3:
+        $r11 := @caughtexception;
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r12 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.j.m h(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String b()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>(null, "TRANSC_XML_TIMEOUT", $r3);
+        goto label1;
+
+     label4:
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r8 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String a()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>("splashscreen");
+        if $z0 == 0 goto label2;
+
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.e.b.a f(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r8 = virtualinvoke $r4.<it.h3g.areaclienti3.SplashScreenActivity: java.lang.String getString(int)>(2131230753);
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.e.b.a: android.database.Cursor b(java.lang.String)>($r8);
+        if $r7 == null goto label5;
+
+        $z0 = interfaceinvoke $r7.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label5;
+
+        $r8 = interfaceinvoke $r7.<android.database.Cursor: java.lang.String getString(int)>(3);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String d()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label5;
+
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.j.f g(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r4 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: it.h3g.areaclienti3.e.b.a f(it.h3g.areaclienti3.SplashScreenActivity)>($r4);
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        virtualinvoke $r10.<it.h3g.areaclienti3.j.f: void a(it.h3g.areaclienti3.e.b.a,it.h3g.areaclienti3.d.bp)>($r6, $r1);
+
+     label5:
+        if $r7 == null goto label2;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.ch $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ch;
+        specialinvoke $r0.<it.h3g.areaclienti3.ch: void a()>();
+        return;
+    }
+
+    public java.lang.String toString()
+    {
+        it.h3g.areaclienti3.ch $r0;
+        it.h3g.areaclienti3.d.bp $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.ch;
+        $r1 = $r0.<it.h3g.areaclienti3.ch: it.h3g.areaclienti3.d.bp b>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bp: java.lang.String c()>();
+        return $r2;
+    }
+}

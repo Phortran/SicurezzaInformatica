@@ -1,0 +1,169 @@
+public class com.facebook.lite.photo.MediaContentProvider extends android.content.ContentProvider
+{
+    private android.content.UriMatcher a;
+
+    public void <init>()
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        specialinvoke $r0.<android.content.ContentProvider: void <init>()>();
+        return;
+    }
+
+    public int delete(android.net.Uri, java.lang.String, java.lang.String[])
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String[];
+        return 0;
+    }
+
+    public java.lang.String getType(android.net.Uri)
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 = virtualinvoke $r1.<android.net.Uri: java.lang.String getPath()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>(".jpg");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>(".jpeg");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return "image/jpeg";
+
+     label1:
+        return null;
+    }
+
+    public android.net.Uri insert(android.net.Uri, android.content.ContentValues)
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: android.content.ContentValues;
+        return null;
+    }
+
+    public boolean onCreate()
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.content.UriMatcher $r1;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 = new android.content.UriMatcher;
+        specialinvoke $r1.<android.content.UriMatcher: void <init>(int)>(-1);
+        $r0.<com.facebook.lite.photo.MediaContentProvider: android.content.UriMatcher a> = $r1;
+        $r1 = $r0.<com.facebook.lite.photo.MediaContentProvider: android.content.UriMatcher a>;
+        virtualinvoke $r1.<android.content.UriMatcher: void addURI(java.lang.String,java.lang.String,int)>("com.facebook.lite.media", "*", 1);
+        return 1;
+    }
+
+    public android.os.ParcelFileDescriptor openFile(android.net.Uri, java.lang.String)
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2, $r10;
+        java.lang.StringBuilder $r3;
+        int $i0;
+        android.content.UriMatcher $r4;
+        java.io.File $r5, $r7;
+        android.content.Context $r6;
+        boolean $z0;
+        android.os.ParcelFileDescriptor $r8;
+        java.io.IOException $r9;
+        java.io.FileNotFoundException $r11;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("photo/called with uri: ");
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r4 = $r0.<com.facebook.lite.photo.MediaContentProvider: android.content.UriMatcher a>;
+        $i0 = virtualinvoke $r4.<android.content.UriMatcher: int match(android.net.Uri)>($r1);
+        if $i0 != 1 goto label3;
+
+        $r5 = new java.io.File;
+        $r6 = virtualinvoke $r0.<com.facebook.lite.photo.MediaContentProvider: android.content.Context getContext()>();
+        $r7 = virtualinvoke $r6.<android.content.Context: java.io.File getFilesDir()>();
+        $r2 = virtualinvoke $r1.<android.net.Uri: java.lang.String getLastPathSegment()>();
+        specialinvoke $r5.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r2);
+        $z0 = virtualinvoke $r5.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        virtualinvoke $r5.<java.io.File: boolean createNewFile()>();
+
+     label1:
+        $r8 = staticinvoke <android.os.ParcelFileDescriptor: android.os.ParcelFileDescriptor open(java.io.File,int)>($r5, 805306368);
+        return $r8;
+
+     label2:
+        $r9 := @caughtexception;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("MediaContentProvider", "photo/create new file failed", $r9);
+        goto label1;
+
+     label3:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("photo/unsupported uri: ");
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r11 = new java.io.FileNotFoundException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unsupported uri: ");
+        $r10 = virtualinvoke $r1.<android.net.Uri: java.lang.String toString()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r10);
+        throw $r11;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+
+    public android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String[] $r2, $r4;
+        java.lang.String $r3, $r5;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: java.lang.String[];
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String[];
+        $r5 := @parameter4: java.lang.String;
+        return null;
+    }
+
+    public int update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])
+    {
+        com.facebook.lite.photo.MediaContentProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+        java.lang.String $r3;
+        java.lang.String[] $r4;
+
+        $r0 := @this: com.facebook.lite.photo.MediaContentProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: android.content.ContentValues;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String[];
+        return 0;
+    }
+}

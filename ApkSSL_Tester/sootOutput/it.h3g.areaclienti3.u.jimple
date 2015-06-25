@@ -1,0 +1,79 @@
+public class it.h3g.areaclienti3.u extends java.lang.Object implements android.content.ServiceConnection
+{
+    protected it.h3g.areaclienti3.remoteservice.IService a;
+    protected android.os.Handler b;
+    protected it.h3g.areaclienti3.remoteservice.IServiceCallback c;
+    final it.h3g.areaclienti3.BaseActivity d;
+
+    public void <init>(it.h3g.areaclienti3.BaseActivity, android.os.Handler, it.h3g.areaclienti3.remoteservice.IServiceCallback)
+    {
+        it.h3g.areaclienti3.u $r0;
+        it.h3g.areaclienti3.BaseActivity $r1;
+        android.os.Handler $r2;
+        it.h3g.areaclienti3.remoteservice.IServiceCallback $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.u;
+        $r1 := @parameter0: it.h3g.areaclienti3.BaseActivity;
+        $r2 := @parameter1: android.os.Handler;
+        $r3 := @parameter2: it.h3g.areaclienti3.remoteservice.IServiceCallback;
+        $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.BaseActivity d> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.u: android.os.Handler b> = $r2;
+        $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.remoteservice.IServiceCallback c> = $r3;
+        return;
+    }
+
+    public void onServiceConnected(android.content.ComponentName, android.os.IBinder)
+    {
+        it.h3g.areaclienti3.u $r0;
+        android.content.ComponentName $r1;
+        android.os.IBinder $r2;
+        it.h3g.areaclienti3.remoteservice.IService $r3;
+        it.h3g.areaclienti3.BaseActivity $r4;
+        android.os.Handler $r5, $r6;
+        android.os.Message $r7;
+        it.h3g.areaclienti3.remoteservice.IServiceCallback $r8;
+        android.os.RemoteException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.u;
+        $r1 := @parameter0: android.content.ComponentName;
+        $r2 := @parameter1: android.os.IBinder;
+        $r3 = staticinvoke <it.h3g.areaclienti3.remoteservice.IService$Stub: it.h3g.areaclienti3.remoteservice.IService a(android.os.IBinder)>($r2);
+        $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.remoteservice.IService a> = $r3;
+        $r4 = $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.BaseActivity d>;
+        $r3 = $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.remoteservice.IService a>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.BaseActivity: void a(it.h3g.areaclienti3.remoteservice.IService)>($r3);
+        $r5 = $r0.<it.h3g.areaclienti3.u: android.os.Handler b>;
+        $r6 = $r0.<it.h3g.areaclienti3.u: android.os.Handler b>;
+        $r7 = virtualinvoke $r6.<android.os.Handler: android.os.Message obtainMessage(int)>(2);
+        virtualinvoke $r5.<android.os.Handler: boolean sendMessage(android.os.Message)>($r7);
+        $r3 = $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.remoteservice.IService a>;
+        $r8 = $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.remoteservice.IServiceCallback c>;
+
+     label0:
+        interfaceinvoke $r3.<it.h3g.areaclienti3.remoteservice.IService: void a(it.h3g.areaclienti3.remoteservice.IServiceCallback)>($r8);
+
+     label1:
+        return;
+
+     label2:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BaseActivity", "Service has crashed before activity could bind");
+        goto label1;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void onServiceDisconnected(android.content.ComponentName)
+    {
+        it.h3g.areaclienti3.u $r0;
+        android.content.ComponentName $r1;
+        it.h3g.areaclienti3.BaseActivity $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.u;
+        $r1 := @parameter0: android.content.ComponentName;
+        $r2 = $r0.<it.h3g.areaclienti3.u: it.h3g.areaclienti3.BaseActivity d>;
+        $r2.<it.h3g.areaclienti3.BaseActivity: it.h3g.areaclienti3.remoteservice.IService z> = null;
+        return;
+    }
+}

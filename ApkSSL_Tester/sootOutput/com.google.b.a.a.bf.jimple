@@ -1,0 +1,281 @@
+public class com.google.b.a.a.bf extends java.lang.Object implements com.google.b.a.a.r
+{
+    private final java.util.TreeSet a;
+
+    public void <init>(android.content.Context, java.util.Collection)
+    {
+        com.google.b.a.a.bf $r0;
+        android.content.Context $r1;
+        java.util.Collection $r2;
+        java.util.TreeSet $r3;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.Collection;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = new java.util.TreeSet;
+        specialinvoke $r3.<java.util.TreeSet: void <init>()>();
+        $r0.<com.google.b.a.a.bf: java.util.TreeSet a> = $r3;
+        virtualinvoke $r0.<com.google.b.a.a.bf: void a(android.content.Context,java.util.Collection)>($r1, $r2);
+        return;
+    }
+
+    public java.lang.String a(java.lang.String, java.lang.Throwable)
+    {
+        com.google.b.a.a.bf $r0;
+        java.lang.String $r1;
+        java.lang.Throwable $r2, $r3;
+        java.lang.StackTraceElement $r4;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.Throwable;
+        $r3 = virtualinvoke $r0.<com.google.b.a.a.bf: java.lang.Throwable a(java.lang.Throwable)>($r2);
+        $r2 = virtualinvoke $r0.<com.google.b.a.a.bf: java.lang.Throwable a(java.lang.Throwable)>($r2);
+        $r4 = virtualinvoke $r0.<com.google.b.a.a.bf: java.lang.StackTraceElement b(java.lang.Throwable)>($r2);
+        $r1 = virtualinvoke $r0.<com.google.b.a.a.bf: java.lang.String a(java.lang.Throwable,java.lang.StackTraceElement,java.lang.String)>($r3, $r4, $r1);
+        return $r1;
+    }
+
+    protected java.lang.String a(java.lang.Throwable, java.lang.StackTraceElement, java.lang.String)
+    {
+        com.google.b.a.a.bf $r0;
+        java.lang.Throwable $r1;
+        java.lang.StackTraceElement $r2;
+        java.lang.String $r3, $r6, $r7;
+        java.lang.Class $r4;
+        java.lang.StringBuilder $r5;
+        int $i0;
+        java.lang.String[] $r8;
+        java.lang.Object[] $r9;
+        java.lang.Integer $r10;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 := @parameter1: java.lang.StackTraceElement;
+        $r3 := @parameter2: java.lang.String;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r1.<java.lang.Object: java.lang.Class getClass()>();
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.String getSimpleName()>();
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        if $r2 == null goto label1;
+
+        $r7 = virtualinvoke $r2.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+        $r8 = virtualinvoke $r7.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.");
+        $r7 = "unknown";
+        if $r8 == null goto label0;
+
+        $i0 = lengthof $r8;
+        if $i0 <= 0 goto label0;
+
+        $i0 = lengthof $r8;
+        $i0 = $i0 + -1;
+        $r7 = $r8[$i0];
+
+     label0:
+        $r9 = newarray (java.lang.Object)[3];
+        $r9[0] = $r7;
+        $r7 = virtualinvoke $r2.<java.lang.StackTraceElement: java.lang.String getMethodName()>();
+        $r9[1] = $r7;
+        $i0 = virtualinvoke $r2.<java.lang.StackTraceElement: int getLineNumber()>();
+        $r10 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r9[2] = $r10;
+        $r7 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(" (@%s:%s:%s)", $r9);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+
+     label1:
+        if $r3 == null goto label2;
+
+        $r9 = newarray (java.lang.Object)[1];
+        $r9[0] = $r3;
+        $r7 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(" {%s}", $r9);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+
+     label2:
+        $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r7;
+    }
+
+    protected java.lang.Throwable a(java.lang.Throwable)
+    {
+        com.google.b.a.a.bf $r0;
+        java.lang.Throwable $r1, $r2;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: java.lang.Throwable;
+
+     label0:
+        $r2 = virtualinvoke $r1.<java.lang.Throwable: java.lang.Throwable getCause()>();
+        if $r2 == null goto label1;
+
+        $r1 = virtualinvoke $r1.<java.lang.Throwable: java.lang.Throwable getCause()>();
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    public void a(android.content.Context, java.util.Collection)
+    {
+        com.google.b.a.a.bf $r0;
+        android.content.Context $r1, $r6;
+        java.util.Collection $r2;
+        java.util.TreeSet $r3;
+        java.util.HashSet $r4;
+        byte $b1;
+        android.content.pm.ActivityInfo $r5;
+        boolean $z0;
+        java.lang.String $r7, $r15;
+        android.content.pm.PackageManager $r8;
+        android.content.pm.PackageInfo $r9;
+        android.content.pm.ActivityInfo[] $r10;
+        int $i2, $i3;
+        android.content.pm.PackageManager$NameNotFoundException $r11;
+        java.util.Iterator $r12, $r14;
+        java.lang.Object $r13;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.Collection;
+        $r3 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        virtualinvoke $r3.<java.util.TreeSet: void clear()>();
+        $r4 = new java.util.HashSet;
+        specialinvoke $r4.<java.util.HashSet: void <init>()>();
+        if $r2 == null goto label0;
+
+        interfaceinvoke $r4.<java.util.Set: boolean addAll(java.util.Collection)>($r2);
+
+     label0:
+        if $r1 == null goto label5;
+
+     label1:
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r7 = virtualinvoke $r6.<android.content.Context: java.lang.String getPackageName()>();
+        $r3 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        virtualinvoke $r3.<java.util.TreeSet: boolean add(java.lang.Object)>($r7);
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r8 = virtualinvoke $r6.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r9 = virtualinvoke $r8.<android.content.pm.PackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)>($r7, 15);
+        $r10 = $r9.<android.content.pm.PackageInfo: android.content.pm.ActivityInfo[] activities>;
+        if $r10 == null goto label5;
+
+        $i2 = lengthof $r10;
+        $i3 = 0;
+
+     label2:
+        if $i3 >= $i2 goto label5;
+
+        $r5 = $r10[$i3];
+        $r7 = $r5.<android.content.pm.ActivityInfo: java.lang.String packageName>;
+        interfaceinvoke $r4.<java.util.Set: boolean add(java.lang.Object)>($r7);
+
+     label3:
+        $i3 = $i3 + 1;
+        goto label2;
+
+     label4:
+        $r11 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void b(java.lang.String)>("No package found");
+
+     label5:
+        $r12 = interfaceinvoke $r4.<java.util.Set: java.util.Iterator iterator()>();
+
+     label6:
+        $z0 = interfaceinvoke $r12.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label10;
+
+        $r13 = interfaceinvoke $r12.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.lang.String) $r13;
+        $r3 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        $r14 = virtualinvoke $r3.<java.util.TreeSet: java.util.Iterator iterator()>();
+        $b1 = 1;
+
+     label7:
+        $z0 = interfaceinvoke $r14.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label8;
+
+        $r13 = interfaceinvoke $r14.<java.util.Iterator: java.lang.Object next()>();
+        $r15 = (java.lang.String) $r13;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean startsWith(java.lang.String)>($r15);
+        if $z0 != 0 goto label9;
+
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean startsWith(java.lang.String)>($r7);
+        if $z0 == 0 goto label8;
+
+        $r3 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        virtualinvoke $r3.<java.util.TreeSet: boolean remove(java.lang.Object)>($r15);
+
+     label8:
+        if $b1 == 0 goto label6;
+
+        $r3 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        virtualinvoke $r3.<java.util.TreeSet: boolean add(java.lang.Object)>($r7);
+        goto label6;
+
+     label9:
+        $b1 = 0;
+        goto label7;
+
+     label10:
+        return;
+
+        catch android.content.pm.PackageManager$NameNotFoundException from label1 to label3 with label4;
+    }
+
+    protected java.lang.StackTraceElement b(java.lang.Throwable)
+    {
+        com.google.b.a.a.bf $r0;
+        java.lang.Throwable $r1;
+        int $i0, $i2;
+        java.lang.StackTraceElement $r2;
+        java.lang.StackTraceElement[] $r3;
+        java.lang.String $r4, $r8;
+        java.util.Iterator $r5;
+        java.util.TreeSet $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+
+        $r0 := @this: com.google.b.a.a.bf;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r3 = virtualinvoke $r1.<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>();
+        if $r3 == null goto label0;
+
+        $i0 = lengthof $r3;
+        if $i0 != 0 goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $i2 = lengthof $r3;
+        $i0 = 0;
+
+     label2:
+        if $i0 >= $i2 goto label5;
+
+        $r2 = $r3[$i0];
+        $r4 = virtualinvoke $r2.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+        $r6 = $r0.<com.google.b.a.a.bf: java.util.TreeSet a>;
+        $r5 = virtualinvoke $r6.<java.util.TreeSet: java.util.Iterator iterator()>();
+
+     label3:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r7 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (java.lang.String) $r7;
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean startsWith(java.lang.String)>($r8);
+        if $z0 == 0 goto label3;
+
+        return $r2;
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label5:
+        $r2 = $r3[0];
+        return $r2;
+    }
+}

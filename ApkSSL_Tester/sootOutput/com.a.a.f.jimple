@@ -1,0 +1,120 @@
+public final class com.a.a.f extends java.lang.Object implements java.io.Closeable
+{
+    final com.a.a.a a;
+    private final java.lang.String b;
+    private final long[] c;
+    private final java.io.RandomAccessFile[] d;
+    private final long e;
+
+    private void <init>(com.a.a.a, java.lang.String, long, java.io.RandomAccessFile[], long[])
+    {
+        com.a.a.f $r0;
+        com.a.a.a $r1;
+        java.lang.String $r2;
+        long $l0;
+        java.io.RandomAccessFile[] $r3;
+        long[] $r4;
+
+        $r0 := @this: com.a.a.f;
+        $r1 := @parameter0: com.a.a.a;
+        $r2 := @parameter1: java.lang.String;
+        $l0 := @parameter2: long;
+        $r3 := @parameter3: java.io.RandomAccessFile[];
+        $r4 := @parameter4: long[];
+        $r0.<com.a.a.f: com.a.a.a a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.a.a.f: java.lang.String b> = $r2;
+        $r0.<com.a.a.f: long e> = $l0;
+        $r0.<com.a.a.f: java.io.RandomAccessFile[] d> = $r3;
+        $r0.<com.a.a.f: long[] c> = $r4;
+        return;
+    }
+
+    void <init>(com.a.a.a, java.lang.String, long, java.io.RandomAccessFile[], long[], byte)
+    {
+        com.a.a.f $r0;
+        com.a.a.a $r1;
+        java.lang.String $r2;
+        long $l0;
+        java.io.RandomAccessFile[] $r3;
+        long[] $r4;
+        byte $b1;
+
+        $r0 := @this: com.a.a.f;
+        $r1 := @parameter0: com.a.a.a;
+        $r2 := @parameter1: java.lang.String;
+        $l0 := @parameter2: long;
+        $r3 := @parameter3: java.io.RandomAccessFile[];
+        $r4 := @parameter4: long[];
+        $b1 := @parameter5: byte;
+        specialinvoke $r0.<com.a.a.f: void <init>(com.a.a.a,java.lang.String,long,java.io.RandomAccessFile[],long[])>($r1, $r2, $l0, $r3, $r4);
+        return;
+    }
+
+    public final byte[] a()
+    {
+        com.a.a.f $r0;
+        java.io.RandomAccessFile[] $r1;
+        java.nio.channels.FileChannel $r2;
+        java.io.RandomAccessFile $r3;
+        long[] $r4;
+        long $l2;
+        int $i3;
+        java.nio.ByteBuffer $r5;
+        byte[] $r6;
+        java.io.IOException $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: com.a.a.f;
+        $r1 = $r0.<com.a.a.f: java.io.RandomAccessFile[] d>;
+        $r3 = $r1[0];
+
+     label0:
+        $r2 = virtualinvoke $r3.<java.io.RandomAccessFile: java.nio.channels.FileChannel getChannel()>();
+        $r4 = $r0.<com.a.a.f: long[] c>;
+        $l2 = $r4[0];
+        $i3 = (int) $l2;
+        $r5 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>($i3);
+        virtualinvoke $r2.<java.nio.channels.FileChannel: int read(java.nio.ByteBuffer)>($r5);
+        $r6 = virtualinvoke $r5.<java.nio.ByteBuffer: byte[] array()>();
+        virtualinvoke $r2.<java.nio.channels.FileChannel: void close()>();
+        virtualinvoke $r0.<com.a.a.f: void close()>();
+        virtualinvoke $r5.<java.nio.ByteBuffer: java.nio.Buffer clear()>();
+
+     label1:
+        return $r6;
+
+     label2:
+        $r7 := @caughtexception;
+        $r8 = <com.a.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r8, "diskcache/asyncread failure", $r7);
+        $r6 = newarray (byte)[0];
+        return $r6;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+
+    public final void close()
+    {
+        com.a.a.f $r0;
+        int $i0, $i1;
+        java.io.RandomAccessFile[] $r1;
+        java.io.RandomAccessFile $r2;
+
+        $r0 := @this: com.a.a.f;
+        $r1 = $r0.<com.a.a.f: java.io.RandomAccessFile[] d>;
+        $i1 = lengthof $r1;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label1;
+
+        $r2 = $r1[$i0];
+        staticinvoke <com.a.a.i: void a(java.io.Closeable)>($r2);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        return;
+    }
+}

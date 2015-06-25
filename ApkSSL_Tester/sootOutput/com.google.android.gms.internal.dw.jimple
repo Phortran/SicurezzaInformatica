@@ -1,0 +1,394 @@
+public abstract class com.google.android.gms.internal.dw extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.dw $r0;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private void a(java.lang.StringBuilder, com.google.android.gms.internal.dw$a, java.lang.Object)
+    {
+        com.google.android.gms.internal.dw $r0;
+        java.lang.StringBuilder $r1;
+        com.google.android.gms.internal.dw$a $r2;
+        java.lang.Object $r3;
+        int $i0;
+        java.lang.Class $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: java.lang.StringBuilder;
+        $r2 := @parameter1: com.google.android.gms.internal.dw$a;
+        $r3 := @parameter2: java.lang.Object;
+        $i0 = virtualinvoke $r2.<com.google.android.gms.internal.dw$a: int b()>();
+        if $i0 != 11 goto label1;
+
+        $r4 = virtualinvoke $r2.<com.google.android.gms.internal.dw$a: java.lang.Class h()>();
+        $r3 = virtualinvoke $r4.<java.lang.Class: java.lang.Object cast(java.lang.Object)>($r3);
+        $r0 = (com.google.android.gms.internal.dw) $r3;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.lang.String toString()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+     label0:
+        return;
+
+     label1:
+        $i0 = virtualinvoke $r2.<com.google.android.gms.internal.dw$a: int b()>();
+        if $i0 != 7 goto label2;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r5 = (java.lang.String) $r3;
+        $r5 = staticinvoke <com.google.android.gms.internal.gq: java.lang.String a(java.lang.String)>($r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        goto label0;
+
+     label2:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+        goto label0;
+    }
+
+    private void a(java.lang.StringBuilder, com.google.android.gms.internal.dw$a, java.util.ArrayList)
+    {
+        com.google.android.gms.internal.dw $r0;
+        java.lang.StringBuilder $r1;
+        com.google.android.gms.internal.dw$a $r2;
+        java.util.ArrayList $r3;
+        int $i0, $i1;
+        java.lang.Object $r5;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: java.lang.StringBuilder;
+        $r2 := @parameter1: com.google.android.gms.internal.dw$a;
+        $r3 := @parameter2: java.util.ArrayList;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[");
+        $i1 = 0;
+        $i0 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+
+     label0:
+        if $i1 >= $i0 goto label3;
+
+        if $i1 <= 0 goto label1;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+
+     label1:
+        $r5 = virtualinvoke $r3.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        if $r5 == null goto label2;
+
+        specialinvoke $r0.<com.google.android.gms.internal.dw: void a(java.lang.StringBuilder,com.google.android.gms.internal.dw$a,java.lang.Object)>($r1, $r2, $r5);
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label3:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");
+        return;
+    }
+
+    protected java.lang.Object a(com.google.android.gms.internal.dw$a, java.lang.Object)
+    {
+        com.google.android.gms.internal.dw $r0;
+        com.google.android.gms.internal.dw$a $r1;
+        java.lang.Object $r2;
+        com.google.android.gms.internal.ge $r3;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: com.google.android.gms.internal.dw$a;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = staticinvoke <com.google.android.gms.internal.dw$a: com.google.android.gms.internal.ge a(com.google.android.gms.internal.dw$a)>($r1);
+        if $r3 == null goto label0;
+
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.Object a(java.lang.Object)>($r2);
+
+     label0:
+        return $r2;
+    }
+
+    protected abstract java.lang.Object a(java.lang.String);
+
+    public abstract java.util.HashMap a();
+
+    protected boolean a(com.google.android.gms.internal.dw$a)
+    {
+        com.google.android.gms.internal.dw $r0;
+        com.google.android.gms.internal.dw$a $r1;
+        int $i0;
+        boolean $z0;
+        java.lang.String $r2;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: com.google.android.gms.internal.dw$a;
+        $i0 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: int d()>();
+        if $i0 != 11 goto label1;
+
+        $z0 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: boolean e()>();
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $z0 = virtualinvoke $r0.<com.google.android.gms.internal.dw: boolean d(java.lang.String)>($r2);
+        return $z0;
+
+     label0:
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $z0 = virtualinvoke $r0.<com.google.android.gms.internal.dw: boolean c(java.lang.String)>($r2);
+        return $z0;
+
+     label1:
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $z0 = virtualinvoke $r0.<com.google.android.gms.internal.dw: boolean b(java.lang.String)>($r2);
+        return $z0;
+    }
+
+    protected java.lang.Object b(com.google.android.gms.internal.dw$a)
+    {
+        com.google.android.gms.internal.dw $r0;
+        com.google.android.gms.internal.dw$a $r1;
+        boolean $z0, $z1;
+        java.lang.String $r2, $r4;
+        java.lang.Class $r3;
+        java.lang.Object $r5;
+        java.lang.StringBuilder $r6;
+        java.util.HashMap $r7;
+        char $c1;
+        java.lang.Class[] $r8;
+        java.lang.reflect.Method $r9;
+        java.lang.Object[] $r10;
+        java.lang.Exception $r11;
+        java.lang.RuntimeException $r12;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: com.google.android.gms.internal.dw$a;
+        $z0 = 1;
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $r3 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.Class h()>();
+        if $r3 == null goto label8;
+
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.lang.Object a(java.lang.String)>($r4);
+        if $r5 != null goto label2;
+
+     label0:
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Concrete field shouldn\'t be value object: ");
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.fz: void a(boolean,java.lang.Object)>($z0, $r4);
+        $z1 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: boolean e()>();
+        if $z1 == 0 goto label3;
+
+        $r7 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.util.HashMap c()>();
+
+     label1:
+        if $r7 == null goto label4;
+
+        $r5 = interfaceinvoke $r7.<java.util.Map: java.lang.Object get(java.lang.Object)>($r2);
+        return $r5;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+
+     label3:
+        $r7 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.util.HashMap b()>();
+        goto label1;
+
+     label4:
+        $r6 = new java.lang.StringBuilder;
+
+     label5:
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("get");
+        $c1 = virtualinvoke $r2.<java.lang.String: char charAt(int)>(0);
+        $c1 = staticinvoke <java.lang.Character: char toUpperCase(char)>($c1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c1);
+        $r4 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int)>(1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        $r8 = newarray (java.lang.Class)[0];
+        $r9 = virtualinvoke $r3.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>($r4, $r8);
+        $r10 = newarray (java.lang.Object)[0];
+        $r5 = virtualinvoke $r9.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r0, $r10);
+
+     label6:
+        return $r5;
+
+     label7:
+        $r11 := @caughtexception;
+        $r12 = new java.lang.RuntimeException;
+        specialinvoke $r12.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r11);
+        throw $r12;
+
+     label8:
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dw$a: java.lang.String f()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.lang.Object a(java.lang.String)>($r4);
+        return $r5;
+
+        catch java.lang.Exception from label5 to label6 with label7;
+    }
+
+    public java.util.HashMap b()
+    {
+        com.google.android.gms.internal.dw $r0;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        return null;
+    }
+
+    protected abstract boolean b(java.lang.String);
+
+    public java.util.HashMap c()
+    {
+        com.google.android.gms.internal.dw $r0;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        return null;
+    }
+
+    protected boolean c(java.lang.String)
+    {
+        com.google.android.gms.internal.dw $r0;
+        java.lang.String $r1;
+        java.lang.UnsupportedOperationException $r2;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r2.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>("Concrete types not supported");
+        throw $r2;
+    }
+
+    protected boolean d(java.lang.String)
+    {
+        com.google.android.gms.internal.dw $r0;
+        java.lang.String $r1;
+        java.lang.UnsupportedOperationException $r2;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r2.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>("Concrete type arrays not supported");
+        throw $r2;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.internal.dw $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        java.util.HashMap $r2, $r12;
+        java.lang.StringBuilder $r3, $r9;
+        java.util.Iterator $r4;
+        int $i1;
+        java.util.Set $r5;
+        java.lang.String $r6, $r8;
+        com.google.android.gms.internal.dw$a $r7;
+        java.util.ArrayList $r10;
+        byte[] $r11;
+
+        $r0 := @this: com.google.android.gms.internal.dw;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.util.HashMap a()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(int)>(100);
+        $r5 = virtualinvoke $r2.<java.util.HashMap: java.util.Set keySet()>();
+        $r4 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label9;
+
+        $r1 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (java.lang.String) $r1;
+        $r1 = virtualinvoke $r2.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r6);
+        $r7 = (com.google.android.gms.internal.dw$a) $r1;
+        $z0 = virtualinvoke $r0.<com.google.android.gms.internal.dw: boolean a(com.google.android.gms.internal.dw$a)>($r7);
+        if $z0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.lang.Object b(com.google.android.gms.internal.dw$a)>($r7);
+        $r1 = virtualinvoke $r0.<com.google.android.gms.internal.dw: java.lang.Object a(com.google.android.gms.internal.dw$a,java.lang.Object)>($r7, $r1);
+        $i1 = virtualinvoke $r3.<java.lang.StringBuilder: int length()>();
+        if $i1 != 0 goto label2;
+
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{");
+
+     label1:
+        $r9 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\":");
+        if $r1 != null goto label3;
+
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null");
+        goto label0;
+
+     label2:
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        goto label1;
+
+     label3:
+        $i1 = virtualinvoke $r7.<com.google.android.gms.internal.dw$a: int d()>();
+        lookupswitch($i1)
+        {
+            case 8: goto label5;
+            case 9: goto label6;
+            case 10: goto label7;
+            default: goto label4;
+        };
+
+     label4:
+        $z0 = virtualinvoke $r7.<com.google.android.gms.internal.dw$a: boolean c()>();
+        if $z0 == 0 goto label8;
+
+        $r10 = (java.util.ArrayList) $r1;
+        specialinvoke $r0.<com.google.android.gms.internal.dw: void a(java.lang.StringBuilder,com.google.android.gms.internal.dw$a,java.util.ArrayList)>($r3, $r7, $r10);
+        goto label0;
+
+     label5:
+        $r9 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r11 = (byte[]) $r1;
+        $r11 = (byte[]) $r11;
+        $r8 = staticinvoke <com.google.android.gms.internal.go: java.lang.String a(byte[])>($r11);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        goto label0;
+
+     label6:
+        $r9 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r11 = (byte[]) $r1;
+        $r11 = (byte[]) $r11;
+        $r8 = staticinvoke <com.google.android.gms.internal.go: java.lang.String b(byte[])>($r11);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        goto label0;
+
+     label7:
+        $r12 = (java.util.HashMap) $r1;
+        staticinvoke <com.google.android.gms.internal.gr: void a(java.lang.StringBuilder,java.util.HashMap)>($r3, $r12);
+        goto label0;
+
+     label8:
+        specialinvoke $r0.<com.google.android.gms.internal.dw: void a(java.lang.StringBuilder,com.google.android.gms.internal.dw$a,java.lang.Object)>($r3, $r7, $r1);
+        goto label0;
+
+     label9:
+        $i1 = virtualinvoke $r3.<java.lang.StringBuilder: int length()>();
+        if $i1 <= 0 goto label11;
+
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+
+     label10:
+        $r8 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r8;
+
+     label11:
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{}");
+        goto label10;
+    }
+}

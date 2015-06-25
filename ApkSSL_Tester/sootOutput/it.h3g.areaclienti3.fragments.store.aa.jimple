@@ -1,0 +1,85 @@
+class it.h3g.areaclienti3.fragments.store.aa extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.store.z a;
+
+    void <init>(it.h3g.areaclienti3.fragments.store.z)
+    {
+        it.h3g.areaclienti3.fragments.store.aa $r0;
+        it.h3g.areaclienti3.fragments.store.z $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.aa;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.store.z;
+        $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.store.aa $r0;
+        android.view.View $r1;
+        int $i0;
+        it.h3g.areaclienti3.fragments.store.z $r2;
+        java.lang.String $r3, $r7, $r8;
+        java.util.ArrayList $r4;
+        java.lang.Object $r5;
+        android.os.Bundle $r6, $r10;
+        boolean $z0;
+        it.h3g.areaclienti3.fragments.d $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.aa;
+        $r1 := @parameter0: android.view.View;
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.store.z: java.util.ArrayList a(it.h3g.areaclienti3.fragments.store.z)>($r2);
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r6 = (android.os.Bundle) $r5;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r3 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("name");
+        staticinvoke <it.h3g.areaclienti3.fragments.store.z: void a(it.h3g.areaclienti3.fragments.store.z,java.lang.String)>($r2, $r3);
+        $r7 = "";
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.fragments.store.z: java.lang.String b(it.h3g.areaclienti3.fragments.store.z)>($r2);
+        if $r3 != null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        staticinvoke <it.h3g.areaclienti3.fragments.store.z: void b(it.h3g.areaclienti3.fragments.store.z,java.lang.String)>($r2, "");
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.fragments.store.z: java.lang.String b(it.h3g.areaclienti3.fragments.store.z)>($r2);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r8 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.store.z: java.lang.String getString(int)>(2131231239);
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r8);
+        if $z0 == 0 goto label3;
+
+        $r7 = "getShopsInCityAction";
+
+     label1:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r9 = $r2.<it.h3g.areaclienti3.fragments.store.z: it.h3g.areaclienti3.fragments.d mService>;
+        if $r9 == null goto label2;
+
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        $r3 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("id");
+        virtualinvoke $r10.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("city_id", $r3);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r9 = $r2.<it.h3g.areaclienti3.fragments.store.z: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r9.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>($r7, $r10, 1);
+
+     label2:
+        return;
+
+     label3:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.fragments.store.z: java.lang.String b(it.h3g.areaclienti3.fragments.store.z)>($r2);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.aa: it.h3g.areaclienti3.fragments.store.z a>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.store.z: java.lang.String getString(int)>(2131231240);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label1;
+
+        $r7 = "getServicesInCityAction";
+        goto label1;
+    }
+}

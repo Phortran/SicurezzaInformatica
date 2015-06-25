@@ -1,0 +1,117 @@
+public class com.facebook.rti.b.e.b.b extends java.lang.Object
+{
+    private static final java.lang.String d;
+    public java.lang.String a;
+    public java.lang.String b;
+    public int c;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/b/e/b/b";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.rti.b.e.b.b: java.lang.String d> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.b.e.b.b $r0;
+
+        $r0 := @this: com.facebook.rti.b.e.b.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.e.b.b: java.lang.String a> = "";
+        $r0.<com.facebook.rti.b.e.b.b: java.lang.String b> = "";
+        return;
+    }
+
+    public static com.facebook.rti.b.e.b.b a(java.lang.String)
+    {
+        java.lang.String $r0;
+        com.facebook.rti.b.e.b.b $r1;
+        org.json.JSONObject $r2;
+        int $i2;
+        org.json.JSONException $r3;
+        java.lang.Object[] $r5;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new com.facebook.rti.b.e.b.b;
+        specialinvoke $r1.<com.facebook.rti.b.e.b.b: void <init>()>();
+        if $r0 != null goto label0;
+
+        return $r1;
+
+     label0:
+        $r2 = new org.json.JSONObject;
+
+     label1:
+        specialinvoke $r2.<org.json.JSONObject: void <init>(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String optString(java.lang.String)>("ck");
+        $r1.<com.facebook.rti.b.e.b.b: java.lang.String a> = $r0;
+        $r0 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String optString(java.lang.String)>("cs");
+        $r1.<com.facebook.rti.b.e.b.b: java.lang.String b> = $r0;
+        $i2 = virtualinvoke $r2.<org.json.JSONObject: int optInt(java.lang.String,int)>("sr", 0);
+
+     label2:
+        $r1.<com.facebook.rti.b.e.b.b: int c> = $i2;
+        return $r1;
+
+     label3:
+        $r3 := @caughtexception;
+        $r0 = <com.facebook.rti.b.e.b.b: java.lang.String d>;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void c(java.lang.String,java.lang.String,java.lang.Object[])>($r0, "Failed to serialize ConnAckPayload", $r5);
+        $r1 = new com.facebook.rti.b.e.b.b;
+        specialinvoke $r1.<com.facebook.rti.b.e.b.b: void <init>()>();
+        return $r1;
+
+        catch org.json.JSONException from label1 to label2 with label3;
+    }
+
+    private java.lang.String a()
+    {
+        com.facebook.rti.b.e.b.b $r0;
+        org.json.JSONObject $r1;
+        java.lang.String $r2, $r3;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.e.b.b;
+        $r1 = new org.json.JSONObject;
+        specialinvoke $r1.<org.json.JSONObject: void <init>()>();
+        $r3 = $r0.<com.facebook.rti.b.e.b.b: java.lang.String a>;
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("ck", $r3);
+        $r2 = $r0.<com.facebook.rti.b.e.b.b: java.lang.String b>;
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("cs", $r2);
+        $i0 = $r0.<com.facebook.rti.b.e.b.b: int c>;
+        virtualinvoke $r1.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,int)>("sr", $i0);
+        $r3 = virtualinvoke $r1.<org.json.JSONObject: java.lang.String toString()>();
+        return $r3;
+    }
+
+    public java.lang.String toString()
+    {
+        com.facebook.rti.b.e.b.b $r0;
+        java.lang.String $r1, $r2;
+        org.json.JSONException $r3;
+        java.lang.Object[] $r4;
+
+        $r0 := @this: com.facebook.rti.b.e.b.b;
+
+     label0:
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.e.b.b: java.lang.String a()>();
+
+     label1:
+        return $r2;
+
+     label2:
+        $r3 := @caughtexception;
+        $r1 = <com.facebook.rti.b.e.b.b: java.lang.String d>;
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r1, $r3, "failed to serialize", $r4);
+        return "";
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+}

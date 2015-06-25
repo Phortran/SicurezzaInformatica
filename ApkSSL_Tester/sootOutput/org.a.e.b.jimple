@@ -1,0 +1,188 @@
+public class org.a.e.b extends java.lang.Object
+{
+    private static final java.text.NumberFormat a;
+
+    static void <clinit>()
+    {
+        java.text.NumberFormat $r0;
+
+        $r0 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getNumberInstance()>();
+        <org.a.e.b: java.text.NumberFormat a> = $r0;
+        return;
+    }
+
+    private static double a(double)
+    {
+        double $d0, $d1, $d4;
+        int $i0, $i2;
+        byte $b1;
+
+        $d0 := @parameter0: double;
+        $d1 = 5.0;
+        $d4 = staticinvoke <java.lang.Math: double log10(double)>($d0);
+        $d4 = staticinvoke <java.lang.Math: double floor(double)>($d4);
+        $i0 = (int) $d4;
+        $i2 = neg $i0;
+        $d4 = (double) $i2;
+        $d4 = staticinvoke <java.lang.Math: double pow(double,double)>(10.0, $d4);
+        $d4 = $d4 * $d0;
+        $b1 = $d4 cmpl 5.0;
+        if $b1 <= 0 goto label1;
+
+        $d1 = 10.0;
+
+     label0:
+        $d4 = (double) $i0;
+        $d4 = staticinvoke <java.lang.Math: double pow(double,double)>(10.0, $d4);
+        $d4 = $d1 * $d4;
+        return $d4;
+
+     label1:
+        $b1 = $d4 cmpl 2.0;
+        if $b1 > 0 goto label0;
+
+        $b1 = $d4 cmpl 1.0;
+        if $b1 <= 0 goto label2;
+
+        $d1 = 2.0;
+        goto label0;
+
+     label2:
+        $d1 = $d4;
+        goto label0;
+    }
+
+    public static java.util.List a(double, double, int)
+    {
+        double $d0, $d1, $d2;
+        int $i0, $i2;
+        java.util.ArrayList $r0;
+        double[] $r1;
+        java.text.NumberFormat $r2, $r3;
+        java.lang.String $r4;
+        java.lang.Number $r5;
+        java.lang.Double $r6;
+        java.text.ParseException $r7;
+
+        $d0 := @parameter0: double;
+        $d1 := @parameter1: double;
+        $i0 := @parameter2: int;
+        $r0 = new java.util.ArrayList;
+        specialinvoke $r0.<java.util.ArrayList: void <init>()>();
+        if $i0 > 0 goto label0;
+
+        return $r0;
+
+     label0:
+        $r2 = <org.a.e.b: java.text.NumberFormat a>;
+        virtualinvoke $r2.<java.text.NumberFormat: void setMaximumFractionDigits(int)>(5);
+        $r1 = staticinvoke <org.a.e.b: double[] b(double,double,int)>($d0, $d1, $i0);
+        $d0 = $r1[1];
+        $d1 = $r1[0];
+        $d1 = $d0 - $d1;
+        $d0 = $r1[2];
+        $d1 = $d1 / $d0;
+        $i0 = (int) $d1;
+        $i0 = $i0 + 1;
+        $i2 = 0;
+
+     label1:
+        if $i2 >= $i0 goto label5;
+
+        $d0 = $r1[0];
+        $d1 = (double) $i2;
+        $d2 = $r1[2];
+        $d2 = $d1 * $d2;
+        $d2 = $d0 + $d2;
+        $r3 = <org.a.e.b: java.text.NumberFormat a>;
+        $r2 = <org.a.e.b: java.text.NumberFormat a>;
+
+     label2:
+        $r4 = virtualinvoke $r2.<java.text.NumberFormat: java.lang.String format(double)>($d2);
+        $r5 = virtualinvoke $r3.<java.text.NumberFormat: java.lang.Number parse(java.lang.String)>($r4);
+        $d1 = virtualinvoke $r5.<java.lang.Number: double doubleValue()>();
+
+     label3:
+        $d2 = $d1;
+
+     label4:
+        $r6 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d2);
+        interfaceinvoke $r0.<java.util.List: boolean add(java.lang.Object)>($r6);
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label5:
+        return $r0;
+
+     label6:
+        $r7 := @caughtexception;
+        goto label4;
+
+        catch java.text.ParseException from label2 to label3 with label6;
+    }
+
+    private static double[] b(double, double, int)
+    {
+        double $d0, $d1, $d2, $d3;
+        int $i0;
+        byte $b1;
+        double[] $r0;
+        boolean $z0;
+
+        $d0 := @parameter0: double;
+        $d1 := @parameter1: double;
+        $i0 := @parameter2: int;
+        $d2 = $d0 - $d1;
+        $d3 = staticinvoke <java.lang.Math: double abs(double)>($d2);
+        $b1 = $d3 cmpg 1.0000000116860974E-7;
+        if $b1 >= 0 goto label0;
+
+        $r0 = newarray (double)[3];
+        $r0[0] = $d0;
+        $r0[1] = $d0;
+        $d3 = (double) 0L;
+        $r0[2] = $d3;
+        return $r0;
+
+     label0:
+        $z0 = 0;
+        $b1 = $d0 cmpl $d1;
+        if $b1 <= 0 goto label3;
+
+        $z0 = 1;
+
+     label1:
+        $d3 = $d1 - $d0;
+        $d3 = staticinvoke <java.lang.Math: double abs(double)>($d3);
+        $d2 = (double) $i0;
+        $d3 = $d3 / $d2;
+        $d3 = staticinvoke <org.a.e.b: double a(double)>($d3);
+        $d2 = $d1 / $d3;
+        $d2 = staticinvoke <java.lang.Math: double ceil(double)>($d2);
+        $d1 = $d2 * $d3;
+        $d2 = $d0 / $d3;
+        $d2 = staticinvoke <java.lang.Math: double floor(double)>($d2);
+        $d2 = $d2 * $d3;
+        if $z0 == 0 goto label2;
+
+        $r0 = newarray (double)[3];
+        $r0[0] = $d2;
+        $r0[1] = $d1;
+        $d3 = $d3 * -1.0;
+        $r0[2] = $d3;
+        return $r0;
+
+     label2:
+        $r0 = newarray (double)[3];
+        $r0[0] = $d1;
+        $r0[1] = $d2;
+        $r0[2] = $d3;
+        return $r0;
+
+     label3:
+        $d2 = $d1;
+        $d1 = $d0;
+        $d0 = $d2;
+        goto label1;
+    }
+}

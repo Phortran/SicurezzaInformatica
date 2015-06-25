@@ -1,0 +1,70 @@
+class com.google.b.a.a.x extends java.lang.Object implements android.os.Handler$Callback
+{
+    final com.google.b.a.a.v a;
+
+    void <init>(com.google.b.a.a.v)
+    {
+        com.google.b.a.a.x $r0;
+        com.google.b.a.a.v $r1;
+
+        $r0 := @this: com.google.b.a.a.x;
+        $r1 := @parameter0: com.google.b.a.a.v;
+        $r0.<com.google.b.a.a.x: com.google.b.a.a.v a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public boolean handleMessage(android.os.Message)
+    {
+        com.google.b.a.a.x $r0;
+        android.os.Message $r1;
+        int $i0, i2;
+        java.lang.Object $r2, $r3;
+        boolean $z1;
+        com.google.b.a.a.al $r4;
+        com.google.b.a.a.v $r5;
+        android.os.Handler $r6, $r7;
+        long $l1;
+
+        $r0 := @this: com.google.b.a.a.x;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        i2 = (int) 1;
+        if i2 != $i0 goto label0;
+
+        $r3 = staticinvoke <com.google.b.a.a.v: java.lang.Object f()>();
+        $r2 = $r1.<android.os.Message: java.lang.Object obj>;
+        $z1 = virtualinvoke $r3.<java.lang.Object: boolean equals(java.lang.Object)>($r2);
+        if $z1 == 0 goto label0;
+
+        $r4 = staticinvoke <com.google.b.a.a.al: com.google.b.a.a.al a()>();
+        virtualinvoke $r4.<com.google.b.a.a.al: void a(boolean)>(1);
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        virtualinvoke $r5.<com.google.b.a.a.v: void c()>();
+        $r4 = staticinvoke <com.google.b.a.a.al: com.google.b.a.a.al a()>();
+        virtualinvoke $r4.<com.google.b.a.a.al: void a(boolean)>(0);
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        $i0 = staticinvoke <com.google.b.a.a.v: int b(com.google.b.a.a.v)>($r5);
+        if $i0 <= 0 goto label0;
+
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        $z1 = staticinvoke <com.google.b.a.a.v: boolean c(com.google.b.a.a.v)>($r5);
+        if $z1 != 0 goto label0;
+
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        $r6 = staticinvoke <com.google.b.a.a.v: android.os.Handler d(com.google.b.a.a.v)>($r5);
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        $r7 = staticinvoke <com.google.b.a.a.v: android.os.Handler d(com.google.b.a.a.v)>($r5);
+        $r2 = staticinvoke <com.google.b.a.a.v: java.lang.Object f()>();
+        i2 = (int) 1;
+        $r1 = virtualinvoke $r7.<android.os.Handler: android.os.Message obtainMessage(int,java.lang.Object)>(i2, $r2);
+        $r5 = $r0.<com.google.b.a.a.x: com.google.b.a.a.v a>;
+        $i0 = staticinvoke <com.google.b.a.a.v: int b(com.google.b.a.a.v)>($r5);
+        $i0 = $i0 * 1000;
+        $l1 = (long) $i0;
+        virtualinvoke $r6.<android.os.Handler: boolean sendMessageDelayed(android.os.Message,long)>($r1, $l1);
+
+     label0:
+        return 1;
+    }
+}

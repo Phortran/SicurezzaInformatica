@@ -1,0 +1,60 @@
+class it.h3g.areaclienti3.i.c extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.i.a a;
+
+    void <init>(it.h3g.areaclienti3.i.a)
+    {
+        it.h3g.areaclienti3.i.c $r0;
+        it.h3g.areaclienti3.i.a $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.i.c;
+        $r1 := @parameter0: it.h3g.areaclienti3.i.a;
+        $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.i.c $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.i.a $r2;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r4;
+        boolean $z0;
+        android.webkit.WebView $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.i.c;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.i.a: java.lang.String c(it.h3g.areaclienti3.i.a)>($r2);
+        if $r3 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.i.a: java.lang.String c(it.h3g.areaclienti3.i.a)>($r2);
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean contains(java.lang.CharSequence)>("http");
+        if $z0 == 0 goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        $r2 = $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.i.a: java.lang.String c(it.h3g.areaclienti3.i.a)>($r2);
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/home");
+        $r2 = $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.i.a: java.lang.String d(it.h3g.areaclienti3.i.a)>($r2);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r2 = $r0.<it.h3g.areaclienti3.i.c: it.h3g.areaclienti3.i.a a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.i.a: android.webkit.WebView e(it.h3g.areaclienti3.i.a)>($r2);
+        virtualinvoke $r6.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Url: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("TreConsiglia", $r5);
+
+     label0:
+        return;
+    }
+}

@@ -1,0 +1,49 @@
+class it.h3g.areaclienti3.nwmonitoring.ai extends java.lang.Object implements android.view.View$OnClickListener
+{
+    private final android.content.Context a;
+    private final android.app.AlertDialog b;
+
+    void <init>(android.content.Context, android.app.AlertDialog)
+    {
+        it.h3g.areaclienti3.nwmonitoring.ai $r0;
+        android.content.Context $r1;
+        android.app.AlertDialog $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.ai;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.app.AlertDialog;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.content.Context a> = $r1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.app.AlertDialog b> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.nwmonitoring.ai $r0;
+        android.view.View $r1;
+        android.content.Context $r2;
+        boolean $z0;
+        android.content.Intent $r4;
+        android.app.AlertDialog $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.ai;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.content.Context a>;
+        $z0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: boolean f(android.content.Context)>($r2);
+        if $z0 != 0 goto label0;
+
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(java.lang.String)>("android.settings.LOCATION_SOURCE_SETTINGS");
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.content.Context a>;
+        virtualinvoke $r2.<android.content.Context: void startActivity(android.content.Intent)>($r4);
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.content.Context a>;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: void b(int,android.content.Context)>(1, $r2);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.ai: android.app.AlertDialog b>;
+        virtualinvoke $r5.<android.app.AlertDialog: void dismiss()>();
+        <it.h3g.areaclienti3.BaseActivity: boolean n> = 0;
+        return;
+    }
+}

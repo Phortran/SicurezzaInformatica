@@ -1,0 +1,95 @@
+final class com.google.android.gms.internal.d extends java.lang.Object implements com.google.android.gms.internal.k
+{
+
+    void <init>()
+    {
+        com.google.android.gms.internal.d $r0;
+
+        $r0 := @this: com.google.android.gms.internal.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.d $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        java.lang.String $r3, $r8, $r11;
+        java.lang.String[] $r4, $r10;
+        java.util.HashMap $r5;
+        android.content.pm.PackageManager $r6;
+        int $i0, $i1, $i2, i3;
+        java.lang.Object $r7;
+        android.content.Context $r9;
+        android.net.Uri $r12;
+        android.content.Intent $r13;
+        android.content.pm.ResolveInfo $r14;
+        boolean $z2;
+        java.lang.Boolean $r15;
+
+        $r0 := @this: com.google.android.gms.internal.d;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r7 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("urls");
+        $r8 = (java.lang.String) $r7;
+        if $r8 != null goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("URLs missing in canOpenURLs GMSG.");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r8.<java.lang.String: java.lang.String[] split(java.lang.String)>(",");
+        $r5 = new java.util.HashMap;
+        specialinvoke $r5.<java.util.HashMap: void <init>()>();
+        $r9 = virtualinvoke $r1.<com.google.android.gms.internal.dg: android.content.Context getContext()>();
+        $r6 = virtualinvoke $r9.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $i0 = lengthof $r4;
+        $i2 = (int) 0;
+
+     label2:
+        if $i2 >= $i0 goto label7;
+
+        $r3 = $r4[$i2];
+        $r10 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String,int)>(";", 2);
+        $i1 = (int) 0;
+        $r8 = $r10[$i1];
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String trim()>();
+        $i1 = lengthof $r10;
+        i3 = (int) 1;
+        if $i1 <= i3 goto label5;
+
+        i3 = (int) 1;
+        $r11 = $r10[i3];
+        $r11 = virtualinvoke $r11.<java.lang.String: java.lang.String trim()>();
+
+     label3:
+        $r12 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r8);
+        $r13 = new android.content.Intent;
+        specialinvoke $r13.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>($r11, $r12);
+        $r14 = virtualinvoke $r6.<android.content.pm.PackageManager: android.content.pm.ResolveInfo resolveActivity(android.content.Intent,int)>($r13, 65536);
+        if $r14 == null goto label6;
+
+        $z2 = 1;
+
+     label4:
+        $r15 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z2);
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r15);
+        $i2 = $i2 + 1;
+        goto label2;
+
+     label5:
+        $r11 = "android.intent.action.VIEW";
+        goto label3;
+
+     label6:
+        $z2 = 0;
+        goto label4;
+
+     label7:
+        virtualinvoke $r1.<com.google.android.gms.internal.dg: void a(java.lang.String,java.util.Map)>("openableURLs", $r5);
+        goto label0;
+    }
+}

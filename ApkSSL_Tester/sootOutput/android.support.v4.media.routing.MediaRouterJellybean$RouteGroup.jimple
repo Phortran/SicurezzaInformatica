@@ -1,0 +1,39 @@
+public final class android.support.v4.media.routing.MediaRouterJellybean$RouteGroup extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        android.support.v4.media.routing.MediaRouterJellybean$RouteGroup $r0;
+
+        $r0 := @this: android.support.v4.media.routing.MediaRouterJellybean$RouteGroup;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.util.List getGroupedRoutes(java.lang.Object)
+    {
+        java.lang.Object $r0;
+        int $i0, $i1;
+        java.util.ArrayList $r1;
+        android.media.MediaRouter$RouteInfo $r2;
+        android.media.MediaRouter$RouteGroup $r3;
+
+        $r0 := @parameter0: java.lang.Object;
+        $r3 = (android.media.MediaRouter$RouteGroup) $r0;
+        $i0 = virtualinvoke $r3.<android.media.MediaRouter$RouteGroup: int getRouteCount()>();
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>(int)>($i0);
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i0 goto label1;
+
+        $r2 = virtualinvoke $r3.<android.media.MediaRouter$RouteGroup: android.media.MediaRouter$RouteInfo getRouteAt(int)>($i1);
+        interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>($r2);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+}

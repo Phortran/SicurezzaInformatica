@@ -1,0 +1,86 @@
+public final class com.facebook.rti.a.h.a extends java.lang.Object
+{
+
+    public static transient java.lang.String a(java.lang.String, java.lang.Object[])
+    {
+        java.lang.String $r0;
+        java.lang.Object[] $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.Object[];
+        $r0 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>(null, $r0, $r1);
+        return $r0;
+    }
+
+    public static java.lang.String a(byte[])
+    {
+        byte[] $r0;
+        java.lang.String $r1;
+        java.io.UnsupportedEncodingException $r3;
+        java.lang.RuntimeException $r4;
+
+        $r0 := @parameter0: byte[];
+        $r1 = new java.lang.String;
+
+     label0:
+        specialinvoke $r1.<java.lang.String: void <init>(byte[],java.lang.String)>($r0, "UTF-8");
+
+     label1:
+        return $r1;
+
+     label2:
+        $r3 := @caughtexception;
+        $r4 = new java.lang.RuntimeException;
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("UTF-8 not supported");
+        throw $r4;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label2;
+    }
+
+    public static boolean a(java.lang.String)
+    {
+        java.lang.String $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r0);
+        return $z0;
+    }
+
+    public static byte[] b(java.lang.String)
+    {
+        java.lang.String $r0;
+        byte[] $r2;
+        java.io.UnsupportedEncodingException $r3;
+        java.lang.RuntimeException $r4;
+
+        $r0 := @parameter0: java.lang.String;
+
+     label0:
+        $r2 = virtualinvoke $r0.<java.lang.String: byte[] getBytes(java.lang.String)>("UTF-8");
+
+     label1:
+        return $r2;
+
+     label2:
+        $r3 := @caughtexception;
+        $r4 = new java.lang.RuntimeException;
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("UTF-8 not supported");
+        throw $r4;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label2;
+    }
+
+    public static java.lang.String c(java.lang.String)
+    {
+        java.lang.String $r0;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 != null goto label0;
+
+        $r0 = "";
+
+     label0:
+        return $r0;
+    }
+}

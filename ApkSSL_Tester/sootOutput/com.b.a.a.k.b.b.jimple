@@ -1,0 +1,460 @@
+public final class com.b.a.a.k.b.b extends java.io.InputStream
+{
+    private boolean a;
+    private java.io.IOException b;
+    private java.io.DataInputStream c;
+    private boolean d;
+    private final com.b.a.a.k.b.a e;
+    private com.b.a.a.k.b.g f;
+    private boolean g;
+    private boolean h;
+    private final com.b.a.a.k.b.m i;
+    private int j;
+
+    public void <init>(java.io.InputStream, int, com.b.a.a.j.d)
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.InputStream $r1;
+        int $i0;
+        com.b.a.a.j.d $r2;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 := @parameter0: java.io.InputStream;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: com.b.a.a.j.d;
+        specialinvoke $r0.<com.b.a.a.k.b.b: void <init>(java.io.InputStream,int,com.b.a.a.j.d,byte)>($r1, $i0, $r2, 0);
+        return;
+    }
+
+    private void <init>(java.io.InputStream, int, com.b.a.a.j.d, byte)
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.InputStream $r1;
+        int $i0, i2;
+        com.b.a.a.j.d $r2;
+        byte $b1;
+        java.lang.NullPointerException $r3;
+        java.io.DataInputStream $r4;
+        com.b.a.a.k.b.a $r5;
+        com.b.a.a.k.b.m $r6;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 := @parameter0: java.io.InputStream;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: com.b.a.a.j.d;
+        $b1 := @parameter3: byte;
+        specialinvoke $r0.<java.io.InputStream: void <init>()>();
+        $r0.<com.b.a.a.k.b.b: boolean a> = 0;
+        $r0.<com.b.a.a.k.b.b: java.io.IOException b> = null;
+        $r0.<com.b.a.a.k.b.b: boolean g> = 1;
+        $r0.<com.b.a.a.k.b.b: boolean h> = 1;
+        i2 = (int) 0;
+        $r0.<com.b.a.a.k.b.b: int j> = i2;
+        if $r1 != null goto label0;
+
+        $r3 = new java.lang.NullPointerException;
+        specialinvoke $r3.<java.lang.NullPointerException: void <init>()>();
+        throw $r3;
+
+     label0:
+        $r4 = new java.io.DataInputStream;
+        specialinvoke $r4.<java.io.DataInputStream: void <init>(java.io.InputStream)>($r1);
+        $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c> = $r4;
+        $r5 = new com.b.a.a.k.b.a;
+        $i0 = staticinvoke <com.b.a.a.k.b.b: int a(int)>($i0);
+        specialinvoke $r5.<com.b.a.a.k.b.a: void <init>(int,com.b.a.a.j.d)>($i0, $r2);
+        $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e> = $r5;
+        $r6 = new com.b.a.a.k.b.m;
+        specialinvoke $r6.<com.b.a.a.k.b.m: void <init>(com.b.a.a.j.d)>($r2);
+        $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.m i> = $r6;
+        return;
+    }
+
+    private static int a(int)
+    {
+        int $i0, $i2;
+        java.lang.StringBuffer $r0;
+        java.lang.String $r1;
+        java.lang.IllegalArgumentException $r2;
+
+        $i0 := @parameter0: int;
+        if $i0 < 4096 goto label0;
+
+        if $i0 <= 2147483632 goto label1;
+
+     label0:
+        $r2 = new java.lang.IllegalArgumentException;
+        $r0 = new java.lang.StringBuffer;
+        specialinvoke $r0.<java.lang.StringBuffer: void <init>(java.lang.String)>("Unsupported dictionary size ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i0);
+        $r1 = virtualinvoke $r0.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label1:
+        $i2 = $i0 + 15;
+        $i2 = $i2 & -16;
+        return $i2;
+    }
+
+    private void a()
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.DataInputStream $r1;
+        int $i0, $i1, $i2;
+        com.b.a.a.k.b.a $r2;
+        com.b.a.a.k.b.m $r3;
+        boolean $z2;
+        java.io.IOException $r4;
+        com.b.a.a.k.b.g $r5;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        $i1 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        if $i1 != 0 goto label1;
+
+        $r0.<com.b.a.a.k.b.b: boolean a> = 1;
+
+     label0:
+        return;
+
+     label1:
+        if $i1 >= 224 goto label2;
+
+        $i2 = (int) 1;
+        if $i1 != $i2 goto label5;
+
+     label2:
+        $r0.<com.b.a.a.k.b.b: boolean h> = 1;
+        $r0.<com.b.a.a.k.b.b: boolean g> = 0;
+        $r2 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+        virtualinvoke $r2.<com.b.a.a.k.b.a: void e()>();
+
+     label3:
+        if $i1 < 128 goto label8;
+
+        $r0.<com.b.a.a.k.b.b: boolean d> = 1;
+        $i0 = $i1 & 31;
+        $i0 = $i0 << 16;
+        $r0.<com.b.a.a.k.b.b: int j> = $i0;
+        $i0 = $r0.<com.b.a.a.k.b.b: int j>;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        $i2 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedShort()>();
+        $i2 = $i2 + 1;
+        $i2 = $i0 + $i2;
+        $r0.<com.b.a.a.k.b.b: int j> = $i2;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        $i2 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedShort()>();
+        $i2 = $i2 + 1;
+        if $i1 < 192 goto label6;
+
+        $r0.<com.b.a.a.k.b.b: boolean h> = 0;
+        specialinvoke $r0.<com.b.a.a.k.b.b: void b()>();
+
+     label4:
+        $r3 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.m i>;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        virtualinvoke $r3.<com.b.a.a.k.b.m: void a(java.io.DataInputStream,int)>($r1, $i2);
+        goto label0;
+
+     label5:
+        $z2 = $r0.<com.b.a.a.k.b.b: boolean g>;
+        if $z2 == 0 goto label3;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>()>();
+        throw $r4;
+
+     label6:
+        $z2 = $r0.<com.b.a.a.k.b.b: boolean h>;
+        if $z2 == 0 goto label7;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>()>();
+        throw $r4;
+
+     label7:
+        if $i1 < 160 goto label4;
+
+        $r5 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.g f>;
+        virtualinvoke $r5.<com.b.a.a.k.b.g: void a()>();
+        goto label4;
+
+     label8:
+        if $i1 <= 2 goto label9;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>()>();
+        throw $r4;
+
+     label9:
+        $r0.<com.b.a.a.k.b.b: boolean d> = 0;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        $i2 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedShort()>();
+        $i2 = $i2 + 1;
+        $r0.<com.b.a.a.k.b.b: int j> = $i2;
+        goto label0;
+    }
+
+    private void b()
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.DataInputStream $r1;
+        com.b.a.a.k.b.m $r2;
+        int $i1, $i2, $i3, $i4;
+        java.io.IOException $r3;
+        com.b.a.a.k.b.g $r4;
+        com.b.a.a.k.b.a $r5;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        $i2 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        if $i2 <= 224 goto label0;
+
+        $r3 = new java.io.IOException;
+        specialinvoke $r3.<java.io.IOException: void <init>()>();
+        throw $r3;
+
+     label0:
+        $i3 = $i2 / 45;
+        $i1 = $i3 * 9;
+        $i1 = $i1 * 5;
+        $i1 = $i2 - $i1;
+        $i2 = $i1 / 9;
+        $i4 = $i2 * 9;
+        $i1 = $i1 - $i4;
+        $i4 = $i1 + $i2;
+        if $i4 <= 4 goto label1;
+
+        $r3 = new java.io.IOException;
+        specialinvoke $r3.<java.io.IOException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $r4 = new com.b.a.a.k.b.g;
+        $r5 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+        $r2 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.m i>;
+        specialinvoke $r4.<com.b.a.a.k.b.g: void <init>(com.b.a.a.k.b.a,com.b.a.a.k.b.l,int,int,int)>($r5, $r2, $i1, $i2, $i3);
+        $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.g f> = $r4;
+        return;
+    }
+
+    public final int available()
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.DataInputStream $r1;
+        java.io.IOException $r3;
+        int $i0;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        if $r1 != null goto label0;
+
+        $r3 = new java.io.IOException;
+        specialinvoke $r3.<java.io.IOException: void <init>(java.lang.String)>("Stream closed");
+        throw $r3;
+
+     label0:
+        $r3 = $r0.<com.b.a.a.k.b.b: java.io.IOException b>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<com.b.a.a.k.b.b: java.io.IOException b>;
+        throw $r3;
+
+     label1:
+        $i0 = $r0.<com.b.a.a.k.b.b: int j>;
+        if $i0 != 0 goto label2;
+
+        specialinvoke $r0.<com.b.a.a.k.b.b: void a()>();
+
+     label2:
+        $i0 = $r0.<com.b.a.a.k.b.b: int j>;
+        return $i0;
+    }
+
+    public final void close()
+    {
+        com.b.a.a.k.b.b $r0;
+        java.io.DataInputStream $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        if $r1 == null goto label2;
+
+     label0:
+        $r1 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        virtualinvoke $r1.<java.io.DataInputStream: void close()>();
+
+     label1:
+        $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c> = null;
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+        $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c> = null;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public final int read()
+    {
+        com.b.a.a.k.b.b $r0;
+        short $s0;
+        byte[] $r1;
+        byte $b2;
+        int $i3;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 = newarray (byte)[1];
+        $i3 = virtualinvoke $r0.<com.b.a.a.k.b.b: int read(byte[],int,int)>($r1, 0, 1);
+        if $i3 != -1 goto label0;
+
+        return -1;
+
+     label0:
+        $b2 = $r1[0];
+        $s0 = $b2 & 255;
+        return $s0;
+    }
+
+    public final int read(byte[], int, int)
+    {
+        com.b.a.a.k.b.b $r0;
+        byte[] $r1;
+        int $i0, $i1, $i2, $i4, $i5;
+        java.io.DataInputStream $r2;
+        java.lang.IndexOutOfBoundsException $r3;
+        java.io.IOException $r4;
+        boolean $z0;
+        com.b.a.a.k.b.a $r6;
+        com.b.a.a.k.b.m $r7;
+        com.b.a.a.k.b.g $r8;
+
+        $r0 := @this: com.b.a.a.k.b.b;
+        $r1 := @parameter0: byte[];
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 = 0;
+        if $i0 < 0 goto label0;
+
+        if $i1 < 0 goto label0;
+
+        $i4 = $i0 + $i1;
+        if $i4 < 0 goto label0;
+
+        $i5 = $i0 + $i1;
+        $i4 = lengthof $r1;
+        if $i5 <= $i4 goto label1;
+
+     label0:
+        $r3 = new java.lang.IndexOutOfBoundsException;
+        specialinvoke $r3.<java.lang.IndexOutOfBoundsException: void <init>()>();
+        throw $r3;
+
+     label1:
+        if $i1 != 0 goto label3;
+
+     label2:
+        return $i2;
+
+     label3:
+        $r2 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        if $r2 != null goto label4;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>(java.lang.String)>("Stream closed");
+        throw $r4;
+
+     label4:
+        $r4 = $r0.<com.b.a.a.k.b.b: java.io.IOException b>;
+        if $r4 == null goto label5;
+
+        $r4 = $r0.<com.b.a.a.k.b.b: java.io.IOException b>;
+        throw $r4;
+
+     label5:
+        $z0 = $r0.<com.b.a.a.k.b.b: boolean a>;
+        if $z0 == 0 goto label6;
+
+        return -1;
+
+     label6:
+        if $i1 <= 0 goto label2;
+
+        $i5 = $r0.<com.b.a.a.k.b.b: int j>;
+        if $i5 != 0 goto label8;
+
+     label7:
+        specialinvoke $r0.<com.b.a.a.k.b.b: void a()>();
+        $z0 = $r0.<com.b.a.a.k.b.b: boolean a>;
+        if $z0 == 0 goto label8;
+
+        if $i2 != 0 goto label2;
+
+        return -1;
+
+     label8:
+        $i5 = $r0.<com.b.a.a.k.b.b: int j>;
+        $i5 = staticinvoke <java.lang.Math: int min(int,int)>($i5, $i1);
+        $z0 = $r0.<com.b.a.a.k.b.b: boolean d>;
+        if $z0 != 0 goto label12;
+
+        $r6 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+        $r2 = $r0.<com.b.a.a.k.b.b: java.io.DataInputStream c>;
+        virtualinvoke $r6.<com.b.a.a.k.b.a: void a(java.io.DataInputStream,int)>($r2, $i5);
+
+     label9:
+        $r6 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+        $i5 = virtualinvoke $r6.<com.b.a.a.k.b.a: int a(byte[],int)>($r1, $i0);
+        $i0 = $i0 + $i5;
+        $i1 = $i1 - $i5;
+        $i2 = $i2 + $i5;
+        $i4 = $r0.<com.b.a.a.k.b.b: int j>;
+        $i5 = $i4 - $i5;
+        $r0.<com.b.a.a.k.b.b: int j> = $i5;
+        $i5 = $r0.<com.b.a.a.k.b.b: int j>;
+        if $i5 != 0 goto label6;
+
+        $r7 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.m i>;
+        $z0 = virtualinvoke $r7.<com.b.a.a.k.b.m: boolean b()>();
+        if $z0 == 0 goto label10;
+
+        $r6 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+        $z0 = virtualinvoke $r6.<com.b.a.a.k.b.a: boolean b()>();
+        if $z0 == 0 goto label6;
+
+     label10:
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>()>();
+        throw $r4;
+
+     label11:
+        $r4 := @caughtexception;
+        $r0.<com.b.a.a.k.b.b: java.io.IOException b> = $r4;
+        throw $r4;
+
+     label12:
+        $r6 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.a e>;
+
+     label13:
+        virtualinvoke $r6.<com.b.a.a.k.b.a: void b(int)>($i5);
+        $r8 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.g f>;
+        virtualinvoke $r8.<com.b.a.a.k.b.g: void b()>();
+        $r7 = $r0.<com.b.a.a.k.b.b: com.b.a.a.k.b.m i>;
+        $z0 = virtualinvoke $r7.<com.b.a.a.k.b.m: boolean c()>();
+        if $z0 != 0 goto label9;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>()>();
+
+     label14:
+        throw $r4;
+
+        catch java.io.IOException from label7 to label11 with label11;
+        catch java.io.IOException from label13 to label14 with label11;
+    }
+}

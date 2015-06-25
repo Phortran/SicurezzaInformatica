@@ -1,0 +1,199 @@
+public class it.h3g.areaclienti3.customview.l extends android.app.Dialog
+{
+    private android.content.Context a;
+    private int b;
+
+    public void <init>(android.content.Context, java.util.Calendar, it.h3g.areaclienti3.customview.s)
+    {
+        it.h3g.areaclienti3.customview.l $r0;
+        android.content.Context $r1;
+        java.util.Calendar $r2, $r19;
+        it.h3g.areaclienti3.customview.s $r3;
+        int $i1, $i2, $i3, $i4, $i6;
+        android.view.View $r5;
+        it.h3g.areaclienti3.customview.m $r6;
+        it.h3g.areaclienti3.customview.n $r7;
+        java.lang.Object $r8;
+        android.view.LayoutInflater $r11;
+        android.widget.LinearLayout $r12;
+        android.widget.Button $r13, $r14;
+        it.h3g.areaclienti3.customview.datepicker.PickerView $r15, $r16, $r17;
+        android.view.Window $r18;
+        android.content.res.Resources $r20;
+        java.lang.String[] $r21;
+        it.h3g.areaclienti3.customview.q $r22;
+        it.h3g.areaclienti3.customview.r $r24;
+        it.h3g.areaclienti3.customview.o $r25;
+        it.h3g.areaclienti3.customview.p $r27;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.l;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.Calendar;
+        $r3 := @parameter2: it.h3g.areaclienti3.customview.s;
+        specialinvoke $r0.<android.app.Dialog: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.customview.l: int b> = 40;
+        $r0.<it.h3g.areaclienti3.customview.l: android.content.Context a> = $r1;
+        $r8 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r11 = (android.view.LayoutInflater) $r8;
+        $r5 = virtualinvoke $r11.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903076, null, 0);
+        $r12 = (android.widget.LinearLayout) $r5;
+        $r5 = virtualinvoke $r12.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165412);
+        $r13 = (android.widget.Button) $r5;
+        $r5 = virtualinvoke $r12.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165411);
+        $r14 = (android.widget.Button) $r5;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.l: void setCancelable(boolean)>(0);
+        $r5 = virtualinvoke $r12.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165408);
+        $r15 = (it.h3g.areaclienti3.customview.datepicker.PickerView) $r5;
+        $r5 = virtualinvoke $r12.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165409);
+        $r16 = (it.h3g.areaclienti3.customview.datepicker.PickerView) $r5;
+        $r5 = virtualinvoke $r12.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165407);
+        $r17 = (it.h3g.areaclienti3.customview.datepicker.PickerView) $r5;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.l: boolean requestWindowFeature(int)>(1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.l: void setContentView(android.view.View)>($r12);
+        $r18 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.l: android.view.Window getWindow()>();
+        virtualinvoke $r18.<android.view.Window: void setLayout(int,int)>(-1, -2);
+        $r6 = new it.h3g.areaclienti3.customview.m;
+        specialinvoke $r6.<it.h3g.areaclienti3.customview.m: void <init>(it.h3g.areaclienti3.customview.l,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView)>($r0, $r16, $r15, $r17);
+        $r7 = new it.h3g.areaclienti3.customview.n;
+        specialinvoke $r7.<it.h3g.areaclienti3.customview.n: void <init>(it.h3g.areaclienti3.customview.l,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView)>($r0, $r16, $r15, $r17);
+        $i4 = virtualinvoke $r2.<java.util.Calendar: int get(int)>(2);
+        $r20 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r21 = virtualinvoke $r20.<android.content.res.Resources: java.lang.String[] getStringArray(int)>(2131427328);
+        $r22 = new it.h3g.areaclienti3.customview.q;
+        specialinvoke $r22.<it.h3g.areaclienti3.customview.q: void <init>(it.h3g.areaclienti3.customview.l,android.content.Context,java.lang.String[],int)>($r0, $r1, $r21, $i4);
+        virtualinvoke $r15.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setViewAdapter(it.h3g.areaclienti3.customview.datepicker.p)>($r22);
+        virtualinvoke $r15.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setCurrentItem(int)>($i4);
+        virtualinvoke $r15.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(it.h3g.areaclienti3.customview.datepicker.f)>($r6);
+        virtualinvoke $r15.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(it.h3g.areaclienti3.customview.datepicker.h)>($r7);
+        $r19 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $i3 = virtualinvoke $r2.<java.util.Calendar: int get(int)>(1);
+        $i4 = virtualinvoke $r19.<java.util.Calendar: int get(int)>(1);
+        $r24 = new it.h3g.areaclienti3.customview.r;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        $i6 = $i4 - $i2;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        $i1 = $i4 + $i2;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        specialinvoke $r24.<it.h3g.areaclienti3.customview.r: void <init>(it.h3g.areaclienti3.customview.l,android.content.Context,int,int,int)>($r0, $r1, $i6, $i1, $i2);
+        virtualinvoke $r16.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setViewAdapter(it.h3g.areaclienti3.customview.datepicker.p)>($r24);
+        $i6 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        $i6 = $i4 - $i6;
+        $i6 = $i3 - $i6;
+        virtualinvoke $r16.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setCurrentItem(int)>($i6);
+        virtualinvoke $r16.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(it.h3g.areaclienti3.customview.datepicker.f)>($r6);
+        virtualinvoke $r16.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(it.h3g.areaclienti3.customview.datepicker.h)>($r7);
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.l: java.util.Calendar a(it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView)>($r16, $r15, $r17);
+        $i6 = virtualinvoke $r2.<java.util.Calendar: int get(int)>(5);
+        $i6 = $i6 + -1;
+        virtualinvoke $r17.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setCurrentItem(int)>($i6);
+        virtualinvoke $r17.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(it.h3g.areaclienti3.customview.datepicker.h)>($r7);
+        $r25 = new it.h3g.areaclienti3.customview.o;
+        specialinvoke $r25.<it.h3g.areaclienti3.customview.o: void <init>(it.h3g.areaclienti3.customview.l,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.s)>($r0, $r16, $r15, $r17, $r3);
+        virtualinvoke $r13.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r25);
+        $r27 = new it.h3g.areaclienti3.customview.p;
+        specialinvoke $r27.<it.h3g.areaclienti3.customview.p: void <init>(it.h3g.areaclienti3.customview.l,it.h3g.areaclienti3.customview.s)>($r0, $r3);
+        virtualinvoke $r14.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r27);
+        return;
+    }
+
+    static void a(it.h3g.areaclienti3.customview.l, it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView)
+    {
+        it.h3g.areaclienti3.customview.l $r0;
+        it.h3g.areaclienti3.customview.datepicker.PickerView $r1, $r2, $r3;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.customview.l;
+        $r1 := @parameter1: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r2 := @parameter2: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r3 := @parameter3: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        specialinvoke $r0.<it.h3g.areaclienti3.customview.l: void b(it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView,it.h3g.areaclienti3.customview.datepicker.PickerView)>($r1, $r2, $r3);
+        return;
+    }
+
+    private void b(it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView)
+    {
+        it.h3g.areaclienti3.customview.l $r0;
+        it.h3g.areaclienti3.customview.datepicker.PickerView $r1, $r2, $r3;
+        java.util.Calendar $r4, $r5;
+        int $i0, $i1, $i2, $i4;
+        java.util.Date $r6, $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.l;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r2 := @parameter1: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r3 := @parameter2: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r4 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r5 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $i2 = (int) 1;
+        $i0 = virtualinvoke $r5.<java.util.Calendar: int get(int)>($i2);
+        $i1 = virtualinvoke $r1.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        $i2 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        $i2 = $i1 - $i2;
+        $i2 = $i0 + $i2;
+        $i1 = (int) 1;
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>($i1, $i2);
+        $i2 = virtualinvoke $r2.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>(2, $i2);
+        $i2 = virtualinvoke $r3.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        $i2 = $i2 + 1;
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>(5, $i2);
+        $r6 = virtualinvoke $r4.<java.util.Calendar: java.util.Date getTime()>();
+        $r7 = virtualinvoke $r5.<java.util.Calendar: java.util.Date getTime()>();
+        $i2 = staticinvoke <it.h3g.areaclienti3.j.m: int a(java.util.Date,java.util.Date)>($r6, $r7);
+        if $i2 >= 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("DatePickerCustom", "selezionata data maggiore del giorno attuale");
+        $i4 = virtualinvoke $r4.<java.util.Calendar: int get(int)>(5);
+        $i4 = $i4 + -1;
+        virtualinvoke $r3.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(int,boolean)>($i4, 1);
+        $i4 = virtualinvoke $r4.<java.util.Calendar: int get(int)>(2);
+        virtualinvoke $r2.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(int,boolean)>($i4, 1);
+        $i4 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(int,boolean)>($i4, 1);
+
+     label0:
+        return;
+    }
+
+    protected java.util.Calendar a(it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView, it.h3g.areaclienti3.customview.datepicker.PickerView)
+    {
+        it.h3g.areaclienti3.customview.l $r0;
+        it.h3g.areaclienti3.customview.datepicker.PickerView $r1, $r2, $r3;
+        int $i0, $i1, $i2;
+        java.util.Calendar $r5;
+        it.h3g.areaclienti3.customview.r $r6;
+        android.content.Context $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.l;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r2 := @parameter1: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r3 := @parameter2: it.h3g.areaclienti3.customview.datepicker.PickerView;
+        $r5 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $i2 = (int) 1;
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>(5, $i2);
+        $i2 = (int) 1;
+        $i0 = virtualinvoke $r5.<java.util.Calendar: int get(int)>($i2);
+        $i1 = virtualinvoke $r1.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        $i2 = $r0.<it.h3g.areaclienti3.customview.l: int b>;
+        $i2 = $i1 - $i2;
+        $i2 = $i0 + $i2;
+        $i1 = (int) 1;
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>($i1, $i2);
+        $i1 = virtualinvoke $r2.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>(2, $i1);
+        $i2 = virtualinvoke $r5.<java.util.Calendar: int getActualMaximum(int)>(5);
+        $r6 = new it.h3g.areaclienti3.customview.r;
+        $r7 = $r0.<it.h3g.areaclienti3.customview.l: android.content.Context a>;
+        $i1 = virtualinvoke $r5.<java.util.Calendar: int get(int)>(5);
+        $i1 = $i1 + -1;
+        $i0 = (int) 1;
+        specialinvoke $r6.<it.h3g.areaclienti3.customview.r: void <init>(it.h3g.areaclienti3.customview.l,android.content.Context,int,int,int)>($r0, $r7, $i0, $i2, $i1);
+        virtualinvoke $r3.<it.h3g.areaclienti3.customview.datepicker.PickerView: void setViewAdapter(it.h3g.areaclienti3.customview.datepicker.p)>($r6);
+        $i1 = virtualinvoke $r3.<it.h3g.areaclienti3.customview.datepicker.PickerView: int getCurrentItem()>();
+        $i1 = $i1 + 1;
+        $i2 = staticinvoke <java.lang.Math: int min(int,int)>($i2, $i1);
+        $i1 = $i2 + -1;
+        virtualinvoke $r3.<it.h3g.areaclienti3.customview.datepicker.PickerView: void a(int,boolean)>($i1, 1);
+        virtualinvoke $r5.<java.util.Calendar: void set(int,int)>(5, $i2);
+        return $r5;
+    }
+}

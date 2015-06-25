@@ -1,0 +1,59 @@
+public final class com.facebook.lite.deviceid.c extends java.lang.Object
+{
+    private final java.lang.String a;
+    private final long b;
+
+    public void <init>(java.lang.String, long)
+    {
+        com.facebook.lite.deviceid.c $r0;
+        java.lang.String $r1;
+        long $l0;
+
+        $r0 := @this: com.facebook.lite.deviceid.c;
+        $r1 := @parameter0: java.lang.String;
+        $l0 := @parameter1: long;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.lite.deviceid.c: java.lang.String a> = $r1;
+        $r0.<com.facebook.lite.deviceid.c: long b> = $l0;
+        return;
+    }
+
+    public final java.lang.String a()
+    {
+        com.facebook.lite.deviceid.c $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.lite.deviceid.c;
+        $r1 = $r0.<com.facebook.lite.deviceid.c: java.lang.String a>;
+        return $r1;
+    }
+
+    public final long b()
+    {
+        com.facebook.lite.deviceid.c $r0;
+        long $l0;
+
+        $r0 := @this: com.facebook.lite.deviceid.c;
+        $l0 = $r0.<com.facebook.lite.deviceid.c: long b>;
+        return $l0;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.lite.deviceid.c $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        long $l0;
+
+        $r0 := @this: com.facebook.lite.deviceid.c;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("id=");
+        $r2 = $r0.<com.facebook.lite.deviceid.c: java.lang.String a>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", timestamp=");
+        $l0 = $r0.<com.facebook.lite.deviceid.c: long b>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+}

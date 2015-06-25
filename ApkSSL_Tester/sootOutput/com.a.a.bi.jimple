@@ -1,0 +1,22 @@
+class com.a.a.bi extends java.lang.Object
+{
+
+    static java.lang.Object a(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.net.http.HttpResponseCache $r1;
+        java.io.File $r2;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = staticinvoke <com.a.a.bj: java.io.File b(android.content.Context)>($r0);
+        $r1 = staticinvoke <android.net.http.HttpResponseCache: android.net.http.HttpResponseCache getInstalled()>();
+        if $r1 != null goto label0;
+
+        $l0 = staticinvoke <com.a.a.bj: long a(java.io.File)>($r2);
+        $r1 = staticinvoke <android.net.http.HttpResponseCache: android.net.http.HttpResponseCache install(java.io.File,long)>($r2, $l0);
+
+     label0:
+        return $r1;
+    }
+}

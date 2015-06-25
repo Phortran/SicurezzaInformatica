@@ -1,0 +1,53 @@
+final class com.facebook.lite.photo.v extends android.os.Handler
+{
+    final com.facebook.lite.photo.t a;
+
+    void <init>(com.facebook.lite.photo.t)
+    {
+        com.facebook.lite.photo.v $r0;
+        com.facebook.lite.photo.t $r1;
+
+        $r0 := @this: com.facebook.lite.photo.v;
+        $r1 := @parameter0: com.facebook.lite.photo.t;
+        $r0.<com.facebook.lite.photo.v: com.facebook.lite.photo.t a> = $r1;
+        specialinvoke $r0.<android.os.Handler: void <init>()>();
+        return;
+    }
+
+    public final void handleMessage(android.os.Message)
+    {
+        com.facebook.lite.photo.v $r0;
+        android.os.Message $r1;
+        int $i0;
+        java.lang.String $r2, $r4;
+        java.lang.StringBuilder $r3;
+        java.lang.Object $r5, $r8;
+        com.facebook.lite.photo.t $r6;
+        java.util.WeakHashMap $r7;
+
+        $r0 := @this: com.facebook.lite.photo.v;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        if $i0 != 0 goto label0;
+
+        $r5 = $r1.<android.os.Message: java.lang.Object obj>;
+        if $r5 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = staticinvoke <com.facebook.lite.photo.t: java.lang.String c()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("thumbnail/got a request for origId: ");
+        $r6 = $r0.<com.facebook.lite.photo.v: com.facebook.lite.photo.t a>;
+        $r7 = $r6.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        $r8 = virtualinvoke $r7.<java.util.WeakHashMap: java.lang.Object get(java.lang.Object)>($r5);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, $r4);
+        $r6 = $r0.<com.facebook.lite.photo.v: com.facebook.lite.photo.t a>;
+        staticinvoke <com.facebook.lite.photo.t: void a(com.facebook.lite.photo.t,java.lang.Object)>($r6, $r5);
+        goto label0;
+    }
+}

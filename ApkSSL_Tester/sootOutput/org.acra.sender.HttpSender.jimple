@@ -1,0 +1,313 @@
+public class org.acra.sender.HttpSender extends java.lang.Object implements org.acra.sender.ReportSender
+{
+    private final android.net.Uri mFormUri;
+    private final java.util.Map mMapping;
+    private final org.acra.sender.HttpSender$Method mMethod;
+    private final org.acra.sender.HttpSender$Type mType;
+
+    public void <init>(org.acra.sender.HttpSender$Method, org.acra.sender.HttpSender$Type, java.lang.String, java.util.Map)
+    {
+        org.acra.sender.HttpSender $r0;
+        org.acra.sender.HttpSender$Method $r1;
+        org.acra.sender.HttpSender$Type $r2;
+        java.lang.String $r3;
+        java.util.Map $r4;
+        android.net.Uri $r5;
+
+        $r0 := @this: org.acra.sender.HttpSender;
+        $r1 := @parameter0: org.acra.sender.HttpSender$Method;
+        $r2 := @parameter1: org.acra.sender.HttpSender$Type;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.util.Map;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod> = $r1;
+        $r5 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        $r0.<org.acra.sender.HttpSender: android.net.Uri mFormUri> = $r5;
+        $r0.<org.acra.sender.HttpSender: java.util.Map mMapping> = $r4;
+        $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Type mType> = $r2;
+        return;
+    }
+
+    public void <init>(org.acra.sender.HttpSender$Method, org.acra.sender.HttpSender$Type, java.util.Map)
+    {
+        org.acra.sender.HttpSender $r0;
+        org.acra.sender.HttpSender$Method $r1;
+        org.acra.sender.HttpSender$Type $r2;
+        java.util.Map $r3;
+
+        $r0 := @this: org.acra.sender.HttpSender;
+        $r1 := @parameter0: org.acra.sender.HttpSender$Method;
+        $r2 := @parameter1: org.acra.sender.HttpSender$Type;
+        $r3 := @parameter2: java.util.Map;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod> = $r1;
+        $r0.<org.acra.sender.HttpSender: android.net.Uri mFormUri> = null;
+        $r0.<org.acra.sender.HttpSender: java.util.Map mMapping> = $r3;
+        $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Type mType> = $r2;
+        return;
+    }
+
+    private java.util.Map remap(java.util.Map)
+    {
+        org.acra.sender.HttpSender $r0;
+        java.util.Map $r1, $r5;
+        org.acra.ACRAConfiguration $r2;
+        int $i0, $i1;
+        java.util.HashMap $r3;
+        org.acra.ReportField $r4;
+        org.acra.ReportField[] $r6;
+        java.lang.Object $r7, $r9;
+        java.lang.String $r8;
+
+        $r0 := @this: org.acra.sender.HttpSender;
+        $r1 := @parameter0: java.util.Map;
+        $r2 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r2.<org.acra.ACRAConfiguration: org.acra.ReportField[] customReportContent()>();
+        $i0 = lengthof $r6;
+        if $i0 != 0 goto label0;
+
+        $r6 = <org.acra.ACRAConstants: org.acra.ReportField[] DEFAULT_REPORT_FIELDS>;
+
+     label0:
+        $r3 = new java.util.HashMap;
+        $i0 = interfaceinvoke $r1.<java.util.Map: int size()>();
+        specialinvoke $r3.<java.util.HashMap: void <init>(int)>($i0);
+        $i0 = lengthof $r6;
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i0 goto label5;
+
+        $r4 = $r6[$i1];
+        $r5 = $r0.<org.acra.sender.HttpSender: java.util.Map mMapping>;
+        if $r5 == null goto label2;
+
+        $r5 = $r0.<org.acra.sender.HttpSender: java.util.Map mMapping>;
+        $r7 = interfaceinvoke $r5.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+        if $r7 != null goto label4;
+
+     label2:
+        $r8 = virtualinvoke $r4.<org.acra.ReportField: java.lang.String toString()>();
+        $r7 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r8, $r7);
+
+     label3:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label4:
+        $r5 = $r0.<org.acra.sender.HttpSender: java.util.Map mMapping>;
+        $r7 = interfaceinvoke $r5.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+        $r9 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r7, $r9);
+        goto label3;
+
+     label5:
+        return $r3;
+    }
+
+    public void send(org.acra.collector.CrashReportData)
+    {
+        org.acra.sender.HttpSender $r0;
+        org.acra.collector.CrashReportData $r1;
+        android.net.Uri $r2;
+        java.lang.String $r3, $r6, $r8;
+        org.acra.ACRAConfiguration $r4;
+        java.lang.StringBuilder $r5;
+        java.net.URL $r7, $r19;
+        boolean $z0;
+        org.acra.util.HttpRequest $r9;
+        int $i0;
+        java.util.Map $r10;
+        int[] $r11;
+        org.acra.sender.HttpSender$Type $r12;
+        org.acra.sender.HttpSender$Method $r13;
+        java.lang.UnsupportedOperationException $r14;
+        java.io.IOException $r15;
+        org.acra.sender.ReportSenderException $r16;
+        org.acra.util.JSONReportBuilder$JSONReportException $r17;
+        org.json.JSONObject $r18;
+        org.acra.ReportField $r20;
+
+        $r0 := @this: org.acra.sender.HttpSender;
+        $r1 := @parameter0: org.acra.collector.CrashReportData;
+        $r3 = null;
+        $r2 = $r0.<org.acra.sender.HttpSender: android.net.Uri mFormUri>;
+        if $r2 != null goto label9;
+
+        $r7 = new java.net.URL;
+
+     label0:
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.lang.String formUri()>();
+        specialinvoke $r7.<java.net.URL: void <init>(java.lang.String)>($r6);
+
+     label1:
+        $r8 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Connect to ");
+        $r6 = virtualinvoke $r7.<java.net.URL: java.lang.String toString()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r8, $r6);
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r8 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.lang.String formUriBasicAuthLogin()>();
+        $z0 = staticinvoke <org.acra.ACRAConfiguration: boolean isNull(java.lang.String)>($r8);
+        if $z0 == 0 goto label13;
+
+        $r8 = null;
+
+     label2:
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.lang.String formUriBasicAuthPassword()>();
+        $z0 = staticinvoke <org.acra.ACRAConfiguration: boolean isNull(java.lang.String)>($r6);
+        if $z0 == 0 goto label14;
+
+     label3:
+        $r9 = new org.acra.util.HttpRequest;
+        specialinvoke $r9.<org.acra.util.HttpRequest: void <init>()>();
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = virtualinvoke $r4.<org.acra.ACRAConfiguration: int connectionTimeout()>();
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setConnectionTimeOut(int)>($i0);
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = virtualinvoke $r4.<org.acra.ACRAConfiguration: int socketTimeout()>();
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setSocketTimeOut(int)>($i0);
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = virtualinvoke $r4.<org.acra.ACRAConfiguration: int maxNumberOfRequestRetries()>();
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setMaxNrRetries(int)>($i0);
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setLogin(java.lang.String)>($r8);
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setPassword(java.lang.String)>($r3);
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r10 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.util.Map getHttpHeaders()>();
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void setHeaders(java.util.Map)>($r10);
+        $r11 = <org.acra.sender.HttpSender$1: int[] $SwitchMap$org$acra$sender$HttpSender$Type>;
+        $r12 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Type mType>;
+        $i0 = virtualinvoke $r12.<org.acra.sender.HttpSender$Type: int ordinal()>();
+        $i0 = $r11[$i0];
+        lookupswitch($i0)
+        {
+            case 1: goto label15;
+            default: goto label4;
+        };
+
+     label4:
+        $r10 = specialinvoke $r0.<org.acra.sender.HttpSender: java.util.Map remap(java.util.Map)>($r1);
+        $r8 = staticinvoke <org.acra.util.HttpRequest: java.lang.String getParamsAsFormString(java.util.Map)>($r10);
+
+     label5:
+        $r11 = <org.acra.sender.HttpSender$1: int[] $SwitchMap$org$acra$sender$HttpSender$Method>;
+        $r13 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod>;
+        $i0 = virtualinvoke $r13.<org.acra.sender.HttpSender$Method: int ordinal()>();
+        $i0 = $r11[$i0];
+        lookupswitch($i0)
+        {
+            case 1: goto label17;
+            case 2: goto label16;
+            default: goto label6;
+        };
+
+     label6:
+        $r14 = new java.lang.UnsupportedOperationException;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unknown method: ");
+        $r13 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod>;
+        $r8 = virtualinvoke $r13.<org.acra.sender.HttpSender$Method: java.lang.String name()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r14.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>($r8);
+
+     label7:
+        throw $r14;
+
+     label8:
+        $r15 := @caughtexception;
+        $r16 = new org.acra.sender.ReportSenderException;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error while sending ");
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r12 = virtualinvoke $r4.<org.acra.ACRAConfiguration: org.acra.sender.HttpSender$Type reportType()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r12);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" report via Http ");
+        $r13 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod>;
+        $r8 = virtualinvoke $r13.<org.acra.sender.HttpSender$Method: java.lang.String name()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r16.<org.acra.sender.ReportSenderException: void <init>(java.lang.String,java.lang.Throwable)>($r8, $r15);
+        throw $r16;
+
+     label9:
+        $r7 = new java.net.URL;
+        $r2 = $r0.<org.acra.sender.HttpSender: android.net.Uri mFormUri>;
+
+     label10:
+        $r8 = virtualinvoke $r2.<android.net.Uri: java.lang.String toString()>();
+        specialinvoke $r7.<java.net.URL: void <init>(java.lang.String)>($r8);
+
+     label11:
+        goto label1;
+
+     label12:
+        $r17 := @caughtexception;
+        $r16 = new org.acra.sender.ReportSenderException;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error while sending ");
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r12 = virtualinvoke $r4.<org.acra.ACRAConfiguration: org.acra.sender.HttpSender$Type reportType()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r12);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" report via Http ");
+        $r13 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod>;
+        $r8 = virtualinvoke $r13.<org.acra.sender.HttpSender$Method: java.lang.String name()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r16.<org.acra.sender.ReportSenderException: void <init>(java.lang.String,java.lang.Throwable)>($r8, $r17);
+        throw $r16;
+
+     label13:
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r8 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.lang.String formUriBasicAuthLogin()>();
+        goto label2;
+
+     label14:
+        $r4 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r3 = virtualinvoke $r4.<org.acra.ACRAConfiguration: java.lang.String formUriBasicAuthPassword()>();
+        goto label3;
+
+     label15:
+        $r18 = virtualinvoke $r1.<org.acra.collector.CrashReportData: org.json.JSONObject toJSON()>();
+        $r8 = virtualinvoke $r18.<org.json.JSONObject: java.lang.String toString()>();
+        goto label5;
+
+     label16:
+        $r19 = new java.net.URL;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r7.<java.net.URL: java.lang.String toString()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+        $r20 = <org.acra.ReportField: org.acra.ReportField REPORT_ID>;
+        $r6 = virtualinvoke $r1.<org.acra.collector.CrashReportData: java.lang.String getProperty(org.acra.ReportField)>($r20);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r19.<java.net.URL: void <init>(java.lang.String)>($r6);
+        $r7 = $r19;
+
+     label17:
+        $r13 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Method mMethod>;
+        $r12 = $r0.<org.acra.sender.HttpSender: org.acra.sender.HttpSender$Type mType>;
+        virtualinvoke $r9.<org.acra.util.HttpRequest: void send(java.net.URL,org.acra.sender.HttpSender$Method,java.lang.String,org.acra.sender.HttpSender$Type)>($r7, $r13, $r8, $r12);
+
+     label18:
+        return;
+
+        catch java.io.IOException from label0 to label7 with label8;
+        catch org.acra.util.JSONReportBuilder$JSONReportException from label0 to label7 with label12;
+        catch java.io.IOException from label10 to label11 with label8;
+        catch org.acra.util.JSONReportBuilder$JSONReportException from label10 to label11 with label12;
+        catch java.io.IOException from label13 to label18 with label8;
+        catch org.acra.util.JSONReportBuilder$JSONReportException from label13 to label18 with label12;
+    }
+}

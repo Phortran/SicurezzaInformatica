@@ -1,0 +1,44 @@
+final class com.facebook.lite.photo.b extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.lite.photo.AlbumGalleryActivity a;
+
+    void <init>(com.facebook.lite.photo.AlbumGalleryActivity)
+    {
+        com.facebook.lite.photo.b $r0;
+        com.facebook.lite.photo.AlbumGalleryActivity $r1;
+
+        $r0 := @this: com.facebook.lite.photo.b;
+        $r1 := @parameter0: com.facebook.lite.photo.AlbumGalleryActivity;
+        $r0.<com.facebook.lite.photo.b: com.facebook.lite.photo.AlbumGalleryActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.lite.photo.b $r0;
+        com.facebook.lite.photo.AlbumGalleryActivity $r1;
+        com.facebook.lite.widget.HorizontalProgressBar $r2;
+        boolean $z0;
+        android.os.Handler $r3;
+        java.lang.Runnable $r4;
+
+        $r0 := @this: com.facebook.lite.photo.b;
+        $r1 = $r0.<com.facebook.lite.photo.b: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r2 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: com.facebook.lite.widget.HorizontalProgressBar b(com.facebook.lite.photo.AlbumGalleryActivity)>($r1);
+        $z0 = virtualinvoke $r2.<com.facebook.lite.widget.HorizontalProgressBar: boolean a()>();
+        if $z0 != 0 goto label0;
+
+        $r1 = $r0.<com.facebook.lite.photo.b: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r2 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: com.facebook.lite.widget.HorizontalProgressBar b(com.facebook.lite.photo.AlbumGalleryActivity)>($r1);
+        virtualinvoke $r2.<com.facebook.lite.widget.HorizontalProgressBar: void b()>();
+        $r1 = $r0.<com.facebook.lite.photo.b: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r3 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: android.os.Handler d(com.facebook.lite.photo.AlbumGalleryActivity)>($r1);
+        $r1 = $r0.<com.facebook.lite.photo.b: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r4 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: java.lang.Runnable c(com.facebook.lite.photo.AlbumGalleryActivity)>($r1);
+        virtualinvoke $r3.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r4, 25L);
+
+     label0:
+        return;
+    }
+}

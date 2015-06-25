@@ -1,0 +1,324 @@
+public class it.h3g.areaclienti3.remoteservice.a.i extends java.lang.Object
+{
+    private android.content.Context a;
+    private it.h3g.areaclienti3.j.m b;
+    private final java.lang.String c;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.m $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.a.i: java.lang.String c> = "NewsAndPollsAction";
+        $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a> = $r1;
+        $r3 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r3.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.i: it.h3g.areaclienti3.j.m b> = $r3;
+        return;
+    }
+
+    public android.os.Bundle a()
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.g.b $r2;
+        android.content.Context $r3;
+        boolean $z0;
+        int $i1, $i2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.g.b;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a>;
+        specialinvoke $r2.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r3);
+        $z0 = virtualinvoke $r2.<it.h3g.areaclienti3.g.b: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        $i1 = virtualinvoke $r2.<it.h3g.areaclienti3.g.b: int b()>();
+        $i1 = 0 + $i1;
+        $i2 = virtualinvoke $r2.<it.h3g.areaclienti3.g.b: int c()>();
+        $i2 = $i1 + $i2;
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("result", $i2);
+        return $r1;
+
+     label0:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR getCheckUnreadNewsAndPollsAction: parametri mancanti!");
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("error", "Parameters not registered");
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("result", 0);
+        return $r1;
+    }
+
+    public android.os.Bundle a(int)
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        int $i0;
+        it.h3g.areaclienti3.g.b $r1;
+        android.os.Bundle $r2, $r3;
+        android.content.Context $r4;
+        java.util.Iterator $r5;
+        java.lang.String $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.k.a $r7;
+        java.util.ArrayList $r8;
+        it.h3g.areaclienti3.remoteservice.a.j $r9;
+        java.lang.StringBuilder $r10;
+        java.lang.Object $r11;
+        it.h3g.areaclienti3.d.ag $r12;
+        java.lang.Exception $r13;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $i0 := @parameter0: int;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $r1 = new it.h3g.areaclienti3.g.b;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a>;
+        specialinvoke $r1.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r4);
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.g.b: boolean d()>();
+        if $z0 == 0 goto label8;
+
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a g()>();
+
+     label0:
+        virtualinvoke $r1.<it.h3g.areaclienti3.g.b: void a(it.h3g.areaclienti3.k.a,int)>($r7, $i0);
+        virtualinvoke $r1.<it.h3g.areaclienti3.g.b: void b(it.h3g.areaclienti3.k.a,int)>($r7, $i0);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList c()>();
+        $r9 = new it.h3g.areaclienti3.remoteservice.a.j;
+        specialinvoke $r9.<it.h3g.areaclienti3.remoteservice.a.j: void <init>(it.h3g.areaclienti3.remoteservice.a.i)>($r0);
+        staticinvoke <java.util.Collections: void sort(java.util.List,java.util.Comparator)>($r8, $r9);
+        $r5 = virtualinvoke $r8.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $i0 = 0;
+
+     label1:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+
+     label2:
+        if $z0 != 0 goto label4;
+
+     label3:
+        virtualinvoke $r2.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r3);
+        return $r2;
+
+     label4:
+        $r10 = new java.lang.StringBuilder;
+
+     label5:
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>("row");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r11 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.d.ag) $r11;
+        virtualinvoke $r3.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>($r6, $r12);
+
+     label6:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label7:
+        $r13 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR getNewsAndPollsList");
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: it.h3g.areaclienti3.j.m b>;
+        $r2 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r13, $r2);
+        $r3 = null;
+        goto label3;
+
+     label8:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR getNewsAndPollsList: parametri mancanti!");
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("error", "Parameters not registered");
+        goto label3;
+
+        catch java.lang.Exception from label0 to label2 with label7;
+        catch java.lang.Exception from label5 to label6 with label7;
+    }
+
+    public android.os.Bundle a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        android.os.Bundle $r1, $r3;
+        it.h3g.areaclienti3.d.ag $r2;
+        it.h3g.areaclienti3.g.b $r4;
+        android.content.Context $r5;
+        java.lang.String $r6, $r7, $r10, $r11;
+        boolean $z0;
+        java.lang.Boolean $r8;
+        java.lang.StringBuilder $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = null;
+        $r4 = new it.h3g.areaclienti3.g.b;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r5);
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.g.b: boolean d()>();
+        if $z0 == 0 goto label5;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("news");
+        if $z0 == 0 goto label3;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("id");
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("update");
+        $r2 = virtualinvoke $r4.<it.h3g.areaclienti3.g.b: it.h3g.areaclienti3.d.ag b(java.lang.String,java.lang.String)>($r7, $r6);
+
+     label0:
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("update");
+        $r8 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r6);
+        $z0 = virtualinvoke $r8.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r3.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("update", $z0);
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("typeMessage", $r6);
+        if $r2 == null goto label1;
+
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.d.ag: java.lang.String p()>();
+        if $r7 == null goto label1;
+
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Errore dettaglio News e Polls: ");
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.d.ag: java.lang.String p()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", $r6);
+        virtualinvoke $r3.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 25);
+
+     label1:
+        if $r2 == null goto label2;
+
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.d.ag: java.lang.String p()>();
+        if $r7 == null goto label2;
+
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.d.ag: java.lang.String p()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("OWNER_NOT_CORRECT");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r3.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 25);
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("news");
+        if $z0 == 0 goto label4;
+
+        $r11 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("NEWSPOLLIST_NEWS_NOT_ASSOCIATE", "error", "title");
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r11);
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", "NEWSPOLLIST_NEWS_NOT_ASSOCIATE");
+
+     label2:
+        virtualinvoke $r3.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("result", $r2);
+        return $r3;
+
+     label3:
+        $r11 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z0 = virtualinvoke $r11.<java.lang.String: boolean equals(java.lang.Object)>("poll");
+        if $z0 == 0 goto label0;
+
+        $r11 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("id");
+        $r10 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("update");
+        $r2 = virtualinvoke $r4.<it.h3g.areaclienti3.g.b: it.h3g.areaclienti3.d.ag c(java.lang.String,java.lang.String)>($r11, $r10);
+        goto label0;
+
+     label4:
+        $r10 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("NEWSPOLLIST_POLL_NOT_ASSOCIATE", "error", "title");
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r10);
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", "NEWSPOLLIST_POLL_NOT_ASSOCIATE");
+        goto label2;
+
+     label5:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR notificationNewsAndPollsDetails: parametri mancanti!");
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("error", "Parameters not registered");
+        goto label2;
+    }
+
+    public android.os.Bundle b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        android.os.Bundle $r1, $r5;
+        java.lang.String $r2, $r7, $r8;
+        android.content.Context $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.g.b $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("NewsAndPollsAction", "call NewsAndPoolView");
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        $r6 = new it.h3g.areaclienti3.g.b;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a>;
+        specialinvoke $r6.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r4);
+        $z0 = virtualinvoke $r6.<it.h3g.areaclienti3.g.b: boolean d()>();
+        if $z0 == 0 goto label2;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("newsOrPoolType");
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("newsOrPoolId");
+        $r8 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("optionActivation");
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("news");
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.g.b: void a(java.lang.String,java.lang.String)>($r7, $r8);
+
+     label0:
+        return $r5;
+
+     label1:
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("poll");
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.g.b: void c(java.lang.String)>($r7);
+        return $r5;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR notificationNewsAndPoolViewAction: parametri mancanti!");
+        virtualinvoke $r5.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("error", "Parameters not registered");
+        return $r5;
+    }
+
+    public android.os.Bundle c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.i $r0;
+        android.os.Bundle $r1, $r6;
+        java.lang.String $r2, $r3, $r8;
+        it.h3g.areaclienti3.g.b $r4;
+        android.content.Context $r5;
+        boolean $z0;
+        it.h3g.areaclienti3.d.ag $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.i;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("NewsAndPollsAction", "call getPollNextPageDetail");
+        $r6 = new android.os.Bundle;
+        specialinvoke $r6.<android.os.Bundle: void <init>()>();
+        $r7 = null;
+        $r4 = new it.h3g.areaclienti3.g.b;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.i: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r5);
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.g.b: boolean d()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("pollId");
+        $r8 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("pageId");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("gotoPage");
+        $r7 = virtualinvoke $r4.<it.h3g.areaclienti3.g.b: it.h3g.areaclienti3.d.ag a(java.lang.String,java.lang.String,java.lang.String)>($r2, $r8, $r3);
+
+     label0:
+        if $r7 != null goto label2;
+
+        virtualinvoke $r6.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", "error");
+        virtualinvoke $r6.<android.os.Bundle: void putInt(java.lang.String,int)>("errorCode", 3);
+        return $r6;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("NewsAndPollsAction", "ERROR getPollNextPageDetailAction: parametri mancanti!");
+        virtualinvoke $r6.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("error", "Parameters not registered");
+        goto label0;
+
+     label2:
+        virtualinvoke $r6.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("result", $r7);
+        return $r6;
+    }
+}

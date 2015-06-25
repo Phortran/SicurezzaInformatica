@@ -1,0 +1,1437 @@
+public class it.h3g.areaclienti3.j.p extends java.lang.Object
+{
+    private static it.h3g.areaclienti3.j.m a;
+    private static it.h3g.areaclienti3.e.b.a c;
+    private static java.util.HashMap d;
+    private static final java.util.HashMap e;
+    private static java.util.HashMap f;
+    private static java.util.ArrayList g;
+    private it.h3g.areaclienti3.j.l b;
+
+    static void <clinit>()
+    {
+        java.util.HashMap $r0;
+        java.util.ArrayList $r1;
+
+        <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a> = null;
+        $r0 = new java.util.HashMap;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.HashMap d> = $r0;
+        $r0 = new java.util.HashMap;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.HashMap e> = $r0;
+        $r0 = new java.util.HashMap;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.HashMap f> = $r0;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.ArrayList g> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.j.p $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.e.b.b $r3;
+        it.h3g.areaclienti3.e.b.a $r4;
+        it.h3g.areaclienti3.j.m $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.j.p;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.l b>;
+        if $r2 != null goto label0;
+
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.l b> = $r2;
+
+     label0:
+        $r4 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+        if $r4 != null goto label1;
+
+        $r4 = new it.h3g.areaclienti3.e.b.a;
+        $r3 = staticinvoke <it.h3g.areaclienti3.e.b.b: it.h3g.areaclienti3.e.b.b a(android.content.Context)>($r1);
+        specialinvoke $r4.<it.h3g.areaclienti3.e.b.a: void <init>(it.h3g.areaclienti3.e.b.b)>($r3);
+        <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c> = $r4;
+
+     label1:
+        $r5 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r5.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a> = $r5;
+        return;
+    }
+
+    public static it.h3g.areaclienti3.d.bl a(it.h3g.areaclienti3.d.bl, it.h3g.areaclienti3.d.al)
+    {
+        it.h3g.areaclienti3.d.bl $r0;
+        it.h3g.areaclienti3.d.al $r1;
+        boolean $z0;
+        java.lang.String $r2, $r3;
+        java.util.Iterator $r4;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.d.bk $r6;
+        int $i1;
+        java.lang.StringBuilder $r7;
+        it.h3g.areaclienti3.d.ak $r8;
+        it.h3g.areaclienti3.d.aj $r10, $r11;
+        java.util.Date $r12;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.d.bl;
+        $r1 := @parameter1: it.h3g.areaclienti3.d.al;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.d.bl: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        return $r0;
+
+     label1:
+        $r5 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (it.h3g.areaclienti3.d.bk) $r5;
+        $r2 = "opzione";
+        $r3 = virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: java.lang.String x()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: java.lang.String w()>();
+        $i1 = virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: int h()>();
+        if $i1 <= 0 goto label2;
+
+        $r7 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2);
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("#");
+        $i1 = virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: int h()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r2 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label2:
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.d.al: boolean containsKey(java.lang.Object)>($r2);
+        if $z0 == 0 goto label5;
+
+        $r5 = virtualinvoke $r1.<it.h3g.areaclienti3.d.al: java.lang.Object get(java.lang.Object)>($r2);
+        $r8 = (it.h3g.areaclienti3.d.ak) $r5;
+        $z0 = $r8 instanceof it.h3g.areaclienti3.d.aj;
+        if $z0 == 0 goto label0;
+
+        $r10 = (it.h3g.areaclienti3.d.aj) $r8;
+        $r11 = (it.h3g.areaclienti3.d.aj) $r8;
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.aj: java.lang.String c()>();
+        $i1 = virtualinvoke $r10.<it.h3g.areaclienti3.d.aj: int u()>();
+        if $i1 != 3 goto label3;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: void a(boolean)>(1);
+        goto label0;
+
+     label3:
+        $i1 = virtualinvoke $r10.<it.h3g.areaclienti3.d.aj: int u()>();
+        if $i1 != 2 goto label4;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: void c(boolean)>(1);
+        goto label0;
+
+     label4:
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.aj: java.lang.String N()>();
+        if $r3 == null goto label0;
+
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.aj: java.lang.String N()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label0;
+
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.aj: java.lang.String N()>();
+        $r12 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date l(java.lang.String)>($r3);
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: void a(java.util.Date)>($r12);
+        goto label0;
+
+     label5:
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("FU_key not found: ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("UtilsService", $r3);
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bk: void c(boolean)>(1);
+        goto label0;
+    }
+
+    public static java.lang.String a(java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2, $r3, $r7;
+        java.lang.StringBuilder $r4;
+        boolean $z0;
+        java.util.HashMap $r5;
+        java.lang.Object $r6;
+        byte $b0;
+        it.h3g.areaclienti3.d.p $r8;
+        it.h3g.areaclienti3.j.m $r9;
+        int $i1;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        if $r0 != null goto label1;
+
+        $r3 = "";
+
+     label0:
+        return $r3;
+
+     label1:
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $z0 = virtualinvoke $r5.<java.util.HashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label48;
+
+        staticinvoke <it.h3g.areaclienti3.j.p: void c()>();
+
+     label2:
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $r4 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r6 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r3);
+        $r5 = (java.util.HashMap) $r6;
+        $b0 = -1;
+        $r3 = "title";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label3;
+
+        $b0 = 0;
+
+     label3:
+        $r3 = "shortdescription";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label4;
+
+        $b0 = 1;
+
+     label4:
+        $r3 = "description";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label5;
+
+        $b0 = 2;
+
+     label5:
+        $r3 = "priority";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label6;
+
+        $b0 = 3;
+
+     label6:
+        $r3 = "colorefu";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label7;
+
+        $b0 = 4;
+
+     label7:
+        $r3 = "colorebackgroundfu";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label8;
+
+        $b0 = 5;
+
+     label8:
+        $r3 = "misura";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label9;
+
+        $b0 = 6;
+
+     label9:
+        $r3 = "intro";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label10;
+
+        $b0 = 7;
+
+     label10:
+        $r3 = "testosospesa";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label11;
+
+        $b0 = 8;
+
+     label11:
+        $r3 = "visibile";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label12;
+
+        $b0 = 9;
+
+     label12:
+        $r3 = "colore";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label13;
+
+        $b0 = 10;
+
+     label13:
+        $r3 = "transcodifica";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label14;
+
+        $b0 = 11;
+
+     label14:
+        $r3 = "marca";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label15;
+
+        $b0 = 15;
+
+     label15:
+        $r3 = "modello";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label16;
+
+        $b0 = 16;
+
+     label16:
+        $r3 = "transcodificamarca";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label17;
+
+        $b0 = 17;
+
+     label17:
+        $r3 = "transcodificamodello";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label18;
+
+        $b0 = 18;
+
+     label18:
+        $r3 = "offerta";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label19;
+
+        $b0 = 19;
+
+     label19:
+        $r3 = "tipo";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label20;
+
+        $b0 = 20;
+
+     label20:
+        $r3 = "prodotto";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label21;
+
+        $b0 = 21;
+
+     label21:
+        $r3 = "modalitaricarica";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label22;
+
+        $b0 = 22;
+
+     label22:
+        $r3 = "nascondiCampi";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label23;
+
+        $b0 = 23;
+
+     label23:
+        $r3 = "label";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label24;
+
+        $b0 = 24;
+
+     label24:
+        $r3 = "no_extraSoglia_message";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label25;
+
+        $b0 = 25;
+
+     label25:
+        $r3 = "transcodificaLabel";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label26;
+
+        $b0 = 26;
+
+     label26:
+        $r3 = "descrizioneUtilizzo";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label27;
+
+        $b0 = 27;
+
+     label27:
+        $r3 = "scratchtype";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label28;
+
+        $b0 = 29;
+
+     label28:
+        $r3 = "tipologiasenonscratchtype";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label29;
+
+        $b0 = 28;
+
+     label29:
+        $r3 = "codiceIcona";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label30;
+
+        $b0 = 30;
+
+     label30:
+        $r3 = "labelFuDaVisualizzare";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label31;
+
+        $b0 = 31;
+
+     label31:
+        $r3 = "coloreFuNonUtilizzata";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label32;
+
+        $b0 = 32;
+
+     label32:
+        $r3 = "coloreFuUtilizzata";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label33;
+
+        $b0 = 33;
+
+     label33:
+        $r3 = "coloreFuNonUtilizzataOpzioni";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label34;
+
+        $b0 = 34;
+
+     label34:
+        $r3 = "raggruppamento";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label35;
+
+        $b0 = 35;
+
+     label35:
+        $r3 = "fuUnlimited";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label36;
+
+        $b0 = 36;
+
+     label36:
+        $r3 = "fuMyBusiness";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label37;
+
+        $b0 = 37;
+
+     label37:
+        $r3 = "titleUnlimited";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label38;
+
+        $b0 = 38;
+
+     label38:
+        $r3 = "value";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label39;
+
+        $b0 = 39;
+
+     label39:
+        $r3 = "titoloUnlimited";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label40;
+
+        $b0 = 40;
+
+     label40:
+        $r3 = "groupC";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label41;
+
+        $b0 = 44;
+
+     label41:
+        $r3 = "groupB";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label42;
+
+        $b0 = 45;
+
+     label42:
+        $r3 = "consumer";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label43;
+
+        $b0 = 46;
+
+     label43:
+        $r3 = "business";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label44;
+
+        $b0 = 47;
+
+     label44:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("valore codeMapping: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r3);
+        if $r5 == null goto label45;
+
+        $z0 = virtualinvoke $r5.<java.util.HashMap: boolean containsKey(java.lang.Object)>($r0);
+        if $z0 == 0 goto label45;
+
+        $r6 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r0);
+        $r8 = (it.h3g.areaclienti3.d.p) $r6;
+        lookupswitch($b0)
+        {
+            case 0: goto label49;
+            case 1: goto label50;
+            case 2: goto label51;
+            case 3: goto label52;
+            case 4: goto label53;
+            case 5: goto label54;
+            case 6: goto label55;
+            case 7: goto label56;
+            case 8: goto label57;
+            case 9: goto label58;
+            case 10: goto label59;
+            case 11: goto label60;
+            case 12: goto label45;
+            case 13: goto label45;
+            case 14: goto label45;
+            case 15: goto label61;
+            case 16: goto label63;
+            case 17: goto label82;
+            case 18: goto label84;
+            case 19: goto label65;
+            case 20: goto label67;
+            case 21: goto label66;
+            case 22: goto label68;
+            case 23: goto label69;
+            case 24: goto label70;
+            case 25: goto label71;
+            case 26: goto label72;
+            case 27: goto label73;
+            case 28: goto label75;
+            case 29: goto label74;
+            case 30: goto label76;
+            case 31: goto label77;
+            case 32: goto label78;
+            case 33: goto label79;
+            case 34: goto label80;
+            case 35: goto label81;
+            case 36: goto label86;
+            case 37: goto label87;
+            case 38: goto label88;
+            case 39: goto label89;
+            case 40: goto label90;
+            case 41: goto label45;
+            case 42: goto label45;
+            case 43: goto label45;
+            case 44: goto label91;
+            case 45: goto label93;
+            case 46: goto label95;
+            case 47: goto label97;
+            default: goto label45;
+        };
+
+     label45:
+        $r3 = $r0;
+
+     label46:
+        $r9 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a>;
+        if $r9 == null goto label0;
+
+        if $r3 == null goto label47;
+
+        $r7 = virtualinvoke $r3.<java.lang.String: java.lang.String trim()>();
+        $i1 = virtualinvoke $r7.<java.lang.String: int length()>();
+        if $i1 != 0 goto label100;
+
+     label47:
+        if $r1 == null goto label99;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 != 0 goto label99;
+
+        if $r2 == null goto label99;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 != 0 goto label99;
+
+        $r9 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("TRANSC_XML_CODE_NOT_DISPLAYED#");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>(null, $r7, $r0);
+        return $r3;
+
+     label48:
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $r4 = new java.lang.StringBuilder;
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r6 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r7);
+        if $r6 == null goto label2;
+
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $r4 = new java.lang.StringBuilder;
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r6 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r7);
+        $r5 = (java.util.HashMap) $r6;
+        $z0 = virtualinvoke $r5.<java.util.HashMap: boolean isEmpty()>();
+        if $z0 == 0 goto label2;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Ricarico la seguente mappa: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r3);
+        staticinvoke <it.h3g.areaclienti3.j.p: void c()>();
+        goto label2;
+
+     label49:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String f()>();
+        goto label46;
+
+     label50:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String d()>();
+        goto label46;
+
+     label51:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String g()>();
+        goto label46;
+
+     label52:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String e()>();
+        goto label46;
+
+     label53:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String h()>();
+        goto label46;
+
+     label54:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String i()>();
+        goto label46;
+
+     label55:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String j()>();
+        goto label46;
+
+     label56:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String k()>();
+        goto label46;
+
+     label57:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String l()>();
+        goto label46;
+
+     label58:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String m()>();
+        goto label46;
+
+     label59:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String n()>();
+        goto label46;
+
+     label60:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String o()>();
+        goto label46;
+
+     label61:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String s()>();
+        if $r7 != null goto label62;
+
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String q()>();
+        goto label46;
+
+     label62:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String s()>();
+        goto label46;
+
+     label63:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String t()>();
+        if $r7 != null goto label64;
+
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String r()>();
+        goto label46;
+
+     label64:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String t()>();
+        goto label46;
+
+     label65:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String u()>();
+        goto label46;
+
+     label66:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String w()>();
+        goto label46;
+
+     label67:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String v()>();
+        goto label46;
+
+     label68:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String x()>();
+        goto label46;
+
+     label69:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String y()>();
+        goto label46;
+
+     label70:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String a()>();
+        goto label46;
+
+     label71:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String b()>();
+        goto label46;
+
+     label72:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String z()>();
+        goto label46;
+
+     label73:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String A()>();
+        goto label46;
+
+     label74:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String C()>();
+        goto label46;
+
+     label75:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String B()>();
+        goto label46;
+
+     label76:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String D()>();
+        goto label46;
+
+     label77:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String E()>();
+        goto label46;
+
+     label78:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String F()>();
+        goto label46;
+
+     label79:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String G()>();
+        goto label46;
+
+     label80:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String H()>();
+        goto label46;
+
+     label81:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String I()>();
+        goto label46;
+
+     label82:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String s()>();
+        if $r7 != null goto label83;
+
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String q()>();
+        goto label46;
+
+     label83:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String s()>();
+        goto label46;
+
+     label84:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String t()>();
+        if $r7 != null goto label85;
+
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String r()>();
+        goto label46;
+
+     label85:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String t()>();
+        goto label46;
+
+     label86:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String J()>();
+        goto label46;
+
+     label87:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String K()>();
+        goto label46;
+
+     label88:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String L()>();
+        goto label46;
+
+     label89:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String M()>();
+        goto label46;
+
+     label90:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String N()>();
+        goto label46;
+
+     label91:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String O()>();
+        if $r7 != null goto label92;
+
+        $r3 = "false";
+        goto label46;
+
+     label92:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String O()>();
+        goto label46;
+
+     label93:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String P()>();
+        if $r7 != null goto label94;
+
+        $r3 = "false";
+        goto label46;
+
+     label94:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String P()>();
+        goto label46;
+
+     label95:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String Q()>();
+        if $r7 != null goto label96;
+
+        $r3 = "false";
+        goto label46;
+
+     label96:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String Q()>();
+        goto label46;
+
+     label97:
+        $r7 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String Q()>();
+        if $r7 != null goto label98;
+
+        $r3 = "false";
+        goto label46;
+
+     label98:
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.d.p: java.lang.String R()>();
+        goto label46;
+
+     label99:
+        $r9 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>(null, "TRANSC_XML_CODE_NOT_DISPLAYED", $r0);
+        return $r3;
+
+     label100:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r0);
+        if $z0 == 0 goto label0;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("abilitazioneMenu");
+        if $z0 != 0 goto label0;
+
+        if $r1 == null goto label101;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 != 0 goto label101;
+
+        if $r2 == null goto label101;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 != 0 goto label101;
+
+        $r9 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("TRANSC_XML_CODE_NOT_TRANSCODED#");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>(null, $r7, $r0);
+        return $r3;
+
+     label101:
+        $r9 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.j.m a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>(null, "TRANSC_XML_CODE_NOT_TRANSCODED", $r0);
+        return $r3;
+    }
+
+    public static java.util.ArrayList a()
+    {
+        java.util.ArrayList $r0;
+
+        $r0 = <it.h3g.areaclienti3.j.p: java.util.ArrayList g>;
+        return $r0;
+    }
+
+    public static java.util.ArrayList a(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.util.HashMap $r1, $r2;
+        java.lang.Object $r4;
+        java.util.ArrayList $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = <it.h3g.areaclienti3.j.p: java.util.HashMap e>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = <it.h3g.areaclienti3.j.p: java.util.HashMap e>;
+        $r4 = virtualinvoke $r1.<java.util.HashMap: java.lang.Object get(java.lang.Object)>("changeplanMapping");
+        $r1 = (java.util.HashMap) $r4;
+        $r4 = virtualinvoke $r1.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r0);
+        $r5 = (java.util.ArrayList) $r4;
+        exitmonitor $r2;
+        return $r5;
+
+     label1:
+        $r6 := @caughtexception;
+        exitmonitor $r2;
+
+     label2:
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label1;
+    }
+
+    public static void a(java.io.InputStream, java.lang.String)
+    {
+        java.io.InputStream $r0;
+        java.lang.String $r1, $r2, $r4;
+        java.lang.StringBuilder $r3;
+        java.util.HashMap $r5, $r6, $r10;
+        boolean $z0;
+        it.h3g.areaclienti3.k.a $r7;
+        java.util.ArrayList $r8;
+        java.util.Iterator $r9;
+        int $i1;
+        java.lang.Object $r11;
+        it.h3g.areaclienti3.d.p $r12;
+        java.lang.Throwable $r13;
+        org.xmlpull.v1.XmlPullParserException $r14, $r18;
+        java.io.IOException $r15, $r19;
+        it.h3g.areaclienti3.d.be $r16;
+        it.h3g.areaclienti3.d.v $r17;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.lang.String;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" start loading");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r4);
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("changeplan");
+        if $z0 == 0 goto label10;
+
+        $r6 = <it.h3g.areaclienti3.j.p: java.util.HashMap e>;
+        entermonitor $r6;
+
+     label0:
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a f()>();
+        virtualinvoke $r7.<it.h3g.areaclienti3.k.a: void a(java.io.InputStream)>($r0);
+        $r5 = new java.util.HashMap;
+        specialinvoke $r5.<java.util.HashMap: void <init>()>();
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList a()>();
+        $r9 = virtualinvoke $r8.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label4;
+
+        $r10 = <it.h3g.areaclienti3.j.p: java.util.HashMap e>;
+        virtualinvoke $r10.<java.util.HashMap: void clear()>();
+        $i1 = virtualinvoke $r5.<java.util.HashMap: int size()>();
+        if $i1 < 0 goto label8;
+
+        $r10 = <it.h3g.areaclienti3.j.p: java.util.HashMap e>;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r10.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r5);
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" loaded");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+
+     label2:
+        exitmonitor $r6;
+
+     label3:
+        return;
+
+     label4:
+        $r11 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.d.p) $r11;
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String p()>();
+        if $r4 == null goto label1;
+
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String p()>();
+        $i1 = virtualinvoke $r4.<java.lang.String: int length()>();
+        if $i1 <= 0 goto label1;
+
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String c()>();
+        $z0 = virtualinvoke $r5.<java.util.HashMap: boolean containsKey(java.lang.Object)>($r4);
+        if $z0 == 0 goto label7;
+
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String c()>();
+        $r11 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r4);
+        $r8 = (java.util.ArrayList) $r11;
+        virtualinvoke $r8.<java.util.ArrayList: boolean add(java.lang.Object)>($r12);
+        goto label1;
+
+     label5:
+        $r13 := @caughtexception;
+        exitmonitor $r6;
+
+     label6:
+        throw $r13;
+
+     label7:
+        $r8 = new java.util.ArrayList;
+        specialinvoke $r8.<java.util.ArrayList: void <init>()>();
+        virtualinvoke $r8.<java.util.ArrayList: boolean add(java.lang.Object)>($r12);
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String c()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r8);
+        goto label1;
+
+     label8:
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is empty");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("UtilsService", $r2);
+
+     label9:
+        goto label2;
+
+     label10:
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("marcaModello");
+        if $z0 == 0 goto label14;
+
+        $r10 = new java.util.HashMap;
+        specialinvoke $r10.<java.util.HashMap: void <init>()>();
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a f()>();
+        virtualinvoke $r7.<it.h3g.areaclienti3.k.a: void a(java.io.InputStream)>($r0);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList a()>();
+        $r9 = virtualinvoke $r8.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label11:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label12;
+
+        $i1 = virtualinvoke $r10.<java.util.HashMap: int size()>();
+        if $i1 <= 0 goto label13;
+
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r10);
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" loaded");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        goto label3;
+
+     label12:
+        $r11 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.d.p) $r11;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String q()>();
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String r()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r10.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r12);
+        goto label11;
+
+     label13:
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is empty");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        goto label3;
+
+     label14:
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("spending");
+        if $z0 == 0 goto label21;
+
+        $r10 = new java.util.HashMap;
+        specialinvoke $r10.<java.util.HashMap: void <init>()>();
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a f()>();
+
+     label15:
+        virtualinvoke $r7.<it.h3g.areaclienti3.k.a: void h(java.io.InputStream)>($r0);
+
+     label16:
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList d()>();
+        $r9 = virtualinvoke $r8.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label17:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label20;
+
+        <it.h3g.areaclienti3.j.p: java.util.HashMap f> = $r10;
+        goto label3;
+
+     label18:
+        $r14 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("XmlSpending", "", $r14);
+        goto label16;
+
+     label19:
+        $r15 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("XmlSpending", "", $r15);
+        goto label16;
+
+     label20:
+        $r11 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r16 = (it.h3g.areaclienti3.d.be) $r11;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = virtualinvoke $r16.<it.h3g.areaclienti3.d.be: java.lang.String b()>();
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String b(java.lang.String)>($r4);
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r4 = virtualinvoke $r16.<it.h3g.areaclienti3.d.be: java.lang.String a()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r10.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r16);
+        goto label17;
+
+     label21:
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("faqmail");
+        if $z0 == 0 goto label26;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", "in faqmail ");
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a g()>();
+
+     label22:
+        virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList g(java.io.InputStream)>($r0);
+
+     label23:
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList e()>();
+        <it.h3g.areaclienti3.j.p: java.util.ArrayList g> = $r8;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("in faqmail size ");
+        $r8 = <it.h3g.areaclienti3.j.p: java.util.ArrayList g>;
+        $i1 = virtualinvoke $r8.<java.util.ArrayList: int size()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("in faqmail getKey ");
+        $r8 = <it.h3g.areaclienti3.j.p: java.util.ArrayList g>;
+        $r11 = virtualinvoke $r8.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (it.h3g.areaclienti3.d.v) $r11;
+        $r2 = virtualinvoke $r17.<it.h3g.areaclienti3.d.v: java.lang.String a()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("in faqmail ogg ");
+        $r8 = <it.h3g.areaclienti3.j.p: java.util.ArrayList g>;
+        $r11 = virtualinvoke $r8.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (it.h3g.areaclienti3.d.v) $r11;
+        $r2 = virtualinvoke $r17.<it.h3g.areaclienti3.d.v: java.lang.String h()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("in faqmail so ");
+        $r8 = <it.h3g.areaclienti3.j.p: java.util.ArrayList g>;
+        $r11 = virtualinvoke $r8.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (it.h3g.areaclienti3.d.v) $r11;
+        $r2 = virtualinvoke $r17.<it.h3g.areaclienti3.d.v: java.lang.String j()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        goto label3;
+
+     label24:
+        $r18 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("XmlSpending", "", $r18);
+        goto label23;
+
+     label25:
+        $r19 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("XmlSpending", "", $r19);
+        goto label23;
+
+     label26:
+        $r10 = new java.util.HashMap;
+        specialinvoke $r10.<java.util.HashMap: void <init>()>();
+        $r7 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a f()>();
+        virtualinvoke $r7.<it.h3g.areaclienti3.k.a: void a(java.io.InputStream)>($r0);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.k.a: java.util.ArrayList a()>();
+        $r9 = virtualinvoke $r8.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label27:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label28;
+
+        $i1 = virtualinvoke $r10.<java.util.HashMap: int size()>();
+        if $i1 <= 0 goto label29;
+
+        $r5 = <it.h3g.areaclienti3.j.p: java.util.HashMap d>;
+        $r3 = new java.lang.StringBuilder;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Mapping");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r10);
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" loaded");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        goto label3;
+
+     label28:
+        $r11 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.d.p) $r11;
+        $r4 = virtualinvoke $r12.<it.h3g.areaclienti3.d.p: java.lang.String c()>();
+        virtualinvoke $r10.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r4, $r12);
+        goto label27;
+
+     label29:
+        $r3 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is empty");
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("UtilsService", $r2);
+        goto label3;
+
+        catch java.lang.Throwable from label0 to label6 with label5;
+        catch java.lang.Throwable from label7 to label9 with label5;
+        catch org.xmlpull.v1.XmlPullParserException from label15 to label16 with label18;
+        catch java.io.IOException from label15 to label16 with label19;
+        catch org.xmlpull.v1.XmlPullParserException from label22 to label23 with label24;
+        catch java.io.IOException from label22 to label23 with label25;
+    }
+
+    public static boolean a(it.h3g.areaclienti3.d.bl)
+    {
+        it.h3g.areaclienti3.d.bl $r0;
+        boolean $z0;
+        java.util.Iterator $r1;
+        java.lang.String $r2, $r5;
+        java.lang.Object $r3;
+        it.h3g.areaclienti3.d.bk $r4;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.d.bl;
+        if $r0 == null goto label1;
+
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.d.bl: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r1.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+     label1:
+        return 0;
+
+     label2:
+        $r3 = interfaceinvoke $r1.<java.util.Iterator: java.lang.Object next()>();
+        $r4 = (it.h3g.areaclienti3.d.bk) $r3;
+        $r2 = "opzione";
+        $r5 = virtualinvoke $r4.<it.h3g.areaclienti3.d.bk: java.lang.String x()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r5);
+        if $z0 == 0 goto label0;
+
+        return 1;
+    }
+
+    public static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 != null goto label1;
+
+        $r0 = "";
+
+     label0:
+        return $r0;
+
+     label1:
+        $r1 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase()>();
+        $r2 = "business";
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String toLowerCase()>();
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean endsWith(java.lang.String)>($r2);
+        if $z0 == 0 goto label2;
+
+        return "business";
+
+     label2:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase()>();
+        $r1 = "consumer";
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String toLowerCase()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>($r1);
+        if $z0 == 0 goto label3;
+
+        return "consumer";
+
+     label3:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase()>();
+        $r1 = "companyPin";
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String toLowerCase()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>($r1);
+        if $z0 == 0 goto label0;
+
+        return "companyPin";
+    }
+
+    public static void b()
+    {
+        java.util.HashMap $r0;
+        java.util.ArrayList $r1;
+
+        $r0 = new java.util.HashMap;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.HashMap d> = $r0;
+        $r0 = new java.util.HashMap;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.HashMap f> = $r0;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        <it.h3g.areaclienti3.j.p: java.util.ArrayList g> = $r1;
+        return;
+    }
+
+    private static void c()
+    {
+        it.h3g.areaclienti3.e.b.a $r0;
+        android.database.Cursor $r1;
+        int $i0, $i1;
+        java.lang.String $r2;
+        boolean $z0;
+        java.io.ByteArrayInputStream $r4;
+        byte[] $r5;
+        java.lang.Exception $r6;
+        java.lang.Throwable $r8;
+
+        $r1 = null;
+
+     label0:
+        $r0 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.e.b.a: void a()>();
+        $r0 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.e.b.a: android.database.Cursor d()>();
+        if $r1 == null goto label4;
+
+        $z0 = interfaceinvoke $r1.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label4;
+
+        $i1 = 0;
+
+     label2:
+        $i0 = interfaceinvoke $r1.<android.database.Cursor: int getCount()>();
+
+     label3:
+        if $i1 < $i0 goto label7;
+
+     label4:
+        if $r1 == null goto label5;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+
+     label5:
+        $r0 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.e.b.a: void b()>();
+
+     label6:
+        return;
+
+     label7:
+        $r4 = new java.io.ByteArrayInputStream;
+
+     label8:
+        $r2 = interfaceinvoke $r1.<android.database.Cursor: java.lang.String getString(int)>(1);
+        $r5 = virtualinvoke $r2.<java.lang.String: byte[] getBytes()>();
+        specialinvoke $r4.<java.io.ByteArrayInputStream: void <init>(byte[])>($r5);
+        $r2 = interfaceinvoke $r1.<android.database.Cursor: java.lang.String getString(int)>(3);
+        staticinvoke <it.h3g.areaclienti3.j.p: void a(java.io.InputStream,java.lang.String)>($r4, $r2);
+        virtualinvoke $r4.<java.io.InputStream: void close()>();
+        interfaceinvoke $r1.<android.database.Cursor: boolean moveToNext()>();
+        $i1 = interfaceinvoke $r1.<android.database.Cursor: int getPosition()>();
+
+     label9:
+        goto label2;
+
+     label10:
+        $r6 := @caughtexception;
+
+     label11:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("UtilsService", "retrieveMappingsXML", $r6);
+
+     label12:
+        if $r1 == null goto label13;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+
+     label13:
+        $r0 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.e.b.a: void b()>();
+        goto label6;
+
+     label14:
+        $r8 := @caughtexception;
+        if $r1 == null goto label15;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+
+     label15:
+        $r0 = <it.h3g.areaclienti3.j.p: it.h3g.areaclienti3.e.b.a c>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.e.b.a: void b()>();
+        throw $r8;
+
+        catch java.lang.Exception from label1 to label3 with label10;
+        catch java.lang.Throwable from label0 to label3 with label14;
+        catch java.lang.Exception from label8 to label9 with label10;
+        catch java.lang.Throwable from label7 to label9 with label14;
+        catch java.lang.Throwable from label11 to label12 with label14;
+    }
+}

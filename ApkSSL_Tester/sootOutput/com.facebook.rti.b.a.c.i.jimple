@@ -1,0 +1,374 @@
+public final class com.facebook.rti.b.a.c.i extends java.util.concurrent.AbstractExecutorService implements com.facebook.rti.b.a.c.h
+{
+    protected final android.os.Handler a;
+
+    public void <init>(android.os.Handler)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        android.os.Handler $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: android.os.Handler;
+        specialinvoke $r0.<java.util.concurrent.AbstractExecutorService: void <init>()>();
+        $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a> = $r1;
+        return;
+    }
+
+    private android.os.Handler a()
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        android.os.Handler $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 = $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a>;
+        return $r1;
+    }
+
+    private com.facebook.rti.b.a.c.n a(java.lang.Runnable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        com.facebook.rti.b.a.c.n $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n b(java.lang.Runnable,java.lang.Object)>($r1, null);
+        return $r2;
+    }
+
+    private com.facebook.rti.b.a.c.n a(java.lang.Runnable, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        long $l0;
+        java.util.concurrent.TimeUnit $r2;
+        android.os.Handler $r3;
+        com.facebook.rti.b.a.c.o $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.util.concurrent.TimeUnit;
+        $r4 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.o a(java.lang.Runnable,java.lang.Object)>($r1, null);
+        $r3 = $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a>;
+        $l0 = virtualinvoke $r2.<java.util.concurrent.TimeUnit: long toMillis(long)>($l0);
+        virtualinvoke $r3.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r4, $l0);
+        return $r4;
+    }
+
+    private com.facebook.rti.b.a.c.n a(java.util.concurrent.Callable, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        long $l0;
+        java.util.concurrent.TimeUnit $r2;
+        android.os.Handler $r4;
+        com.facebook.rti.b.a.c.o $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.util.concurrent.TimeUnit;
+        $r5 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.o a(java.util.concurrent.Callable)>($r1);
+        $r4 = $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a>;
+        $l0 = virtualinvoke $r2.<java.util.concurrent.TimeUnit: long toMillis(long)>($l0);
+        virtualinvoke $r4.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r5, $l0);
+        return $r5;
+    }
+
+    private com.facebook.rti.b.a.c.o a(java.lang.Runnable, java.lang.Object)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        java.lang.Object $r2;
+        com.facebook.rti.b.a.c.o $r3;
+        android.os.Handler $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = new com.facebook.rti.b.a.c.o;
+        $r4 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a()>();
+        specialinvoke $r3.<com.facebook.rti.b.a.c.o: void <init>(android.os.Handler,java.lang.Runnable,java.lang.Object)>($r4, $r1, $r2);
+        return $r3;
+    }
+
+    private com.facebook.rti.b.a.c.o a(java.util.concurrent.Callable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        com.facebook.rti.b.a.c.o $r2;
+        android.os.Handler $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        $r2 = new com.facebook.rti.b.a.c.o;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a()>();
+        specialinvoke $r2.<com.facebook.rti.b.a.c.o: void <init>(android.os.Handler,java.util.concurrent.Callable)>($r3, $r1);
+        return $r2;
+    }
+
+    private static com.facebook.rti.b.a.c.n b()
+    {
+        java.lang.UnsupportedOperationException $r0;
+
+        $r0 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r0.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r0;
+    }
+
+    private com.facebook.rti.b.a.c.n b(java.lang.Runnable, java.lang.Object)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        java.lang.Object $r2;
+        java.lang.NullPointerException $r3;
+        com.facebook.rti.b.a.c.o $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 := @parameter1: java.lang.Object;
+        if $r1 != null goto label0;
+
+        $r3 = new java.lang.NullPointerException;
+        specialinvoke $r3.<java.lang.NullPointerException: void <init>()>();
+        throw $r3;
+
+     label0:
+        $r4 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.o a(java.lang.Runnable,java.lang.Object)>($r1, $r2);
+        virtualinvoke $r0.<com.facebook.rti.b.a.c.i: void execute(java.lang.Runnable)>($r4);
+        return $r4;
+    }
+
+    private com.facebook.rti.b.a.c.n b(java.util.concurrent.Callable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        java.lang.NullPointerException $r2;
+        com.facebook.rti.b.a.c.o $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.NullPointerException;
+        specialinvoke $r2.<java.lang.NullPointerException: void <init>()>();
+        throw $r2;
+
+     label0:
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.o a(java.util.concurrent.Callable)>($r1);
+        virtualinvoke $r0.<com.facebook.rti.b.a.c.i: void execute(java.lang.Runnable)>($r3);
+        return $r3;
+    }
+
+    private static com.facebook.rti.b.a.c.n c()
+    {
+        java.lang.UnsupportedOperationException $r0;
+
+        $r0 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r0.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r0;
+    }
+
+    public final boolean awaitTermination(long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        long $l0;
+        java.util.concurrent.TimeUnit $r1;
+        java.lang.UnsupportedOperationException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $l0 := @parameter0: long;
+        $r1 := @parameter1: java.util.concurrent.TimeUnit;
+        $r2 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r2.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r2;
+    }
+
+    public final void execute(java.lang.Runnable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        android.os.Handler $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a>;
+        virtualinvoke $r2.<android.os.Handler: boolean post(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final boolean isShutdown()
+    {
+        com.facebook.rti.b.a.c.i $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        return 0;
+    }
+
+    public final boolean isTerminated()
+    {
+        com.facebook.rti.b.a.c.i $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        return 0;
+    }
+
+    protected final java.util.concurrent.RunnableFuture newTaskFor(java.lang.Runnable, java.lang.Object)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        java.lang.Object $r2;
+        com.facebook.rti.b.a.c.j $r3;
+        android.os.Handler $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = new com.facebook.rti.b.a.c.j;
+        $r4 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a()>();
+        specialinvoke $r3.<com.facebook.rti.b.a.c.j: void <init>(android.os.Handler,java.lang.Runnable,java.lang.Object)>($r4, $r1, $r2);
+        return $r3;
+    }
+
+    protected final java.util.concurrent.RunnableFuture newTaskFor(java.util.concurrent.Callable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        com.facebook.rti.b.a.c.j $r2;
+        android.os.Handler $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        $r2 = new com.facebook.rti.b.a.c.j;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: android.os.Handler a()>();
+        specialinvoke $r2.<com.facebook.rti.b.a.c.j: void <init>(android.os.Handler,java.util.concurrent.Callable)>($r3, $r1);
+        return $r2;
+    }
+
+    public final java.util.concurrent.ScheduledFuture schedule(java.lang.Runnable, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        long $l0;
+        java.util.concurrent.TimeUnit $r2;
+        com.facebook.rti.b.a.c.n $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.util.concurrent.TimeUnit;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n a(java.lang.Runnable,long,java.util.concurrent.TimeUnit)>($r1, $l0, $r2);
+        return $r3;
+    }
+
+    public final java.util.concurrent.ScheduledFuture schedule(java.util.concurrent.Callable, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        long $l0;
+        java.util.concurrent.TimeUnit $r2;
+        com.facebook.rti.b.a.c.n $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.util.concurrent.TimeUnit;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n a(java.util.concurrent.Callable,long,java.util.concurrent.TimeUnit)>($r1, $l0, $r2);
+        return $r3;
+    }
+
+    public final java.util.concurrent.ScheduledFuture scheduleAtFixedRate(java.lang.Runnable, long, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        long $l0, $l1;
+        java.util.concurrent.TimeUnit $r2;
+        com.facebook.rti.b.a.c.n $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $l0 := @parameter1: long;
+        $l1 := @parameter2: long;
+        $r2 := @parameter3: java.util.concurrent.TimeUnit;
+        $r3 = staticinvoke <com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n b()>();
+        return $r3;
+    }
+
+    public final java.util.concurrent.ScheduledFuture scheduleWithFixedDelay(java.lang.Runnable, long, long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        long $l0, $l1;
+        java.util.concurrent.TimeUnit $r2;
+        com.facebook.rti.b.a.c.n $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $l0 := @parameter1: long;
+        $l1 := @parameter2: long;
+        $r2 := @parameter3: java.util.concurrent.TimeUnit;
+        $r3 = staticinvoke <com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n c()>();
+        return $r3;
+    }
+
+    public final void shutdown()
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.UnsupportedOperationException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r1.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r1;
+    }
+
+    public final java.util.List shutdownNow()
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.UnsupportedOperationException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r1.<java.lang.UnsupportedOperationException: void <init>()>();
+        throw $r1;
+    }
+
+    public final java.util.concurrent.Future submit(java.lang.Runnable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        com.facebook.rti.b.a.c.n $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n a(java.lang.Runnable)>($r1);
+        return $r2;
+    }
+
+    public final java.util.concurrent.Future submit(java.lang.Runnable, java.lang.Object)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.lang.Runnable $r1;
+        java.lang.Object $r2;
+        com.facebook.rti.b.a.c.n $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n b(java.lang.Runnable,java.lang.Object)>($r1, $r2);
+        return $r3;
+    }
+
+    public final java.util.concurrent.Future submit(java.util.concurrent.Callable)
+    {
+        com.facebook.rti.b.a.c.i $r0;
+        java.util.concurrent.Callable $r1;
+        com.facebook.rti.b.a.c.n $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.i;
+        $r1 := @parameter0: java.util.concurrent.Callable;
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.a.c.i: com.facebook.rti.b.a.c.n b(java.util.concurrent.Callable)>($r1);
+        return $r2;
+    }
+}

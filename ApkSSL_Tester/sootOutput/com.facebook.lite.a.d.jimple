@@ -1,0 +1,138 @@
+public final class com.facebook.lite.a.d extends java.util.concurrent.ThreadPoolExecutor
+{
+    final com.facebook.lite.a.b a;
+    private boolean b;
+    private final java.lang.Object c;
+
+    public void <init>(com.facebook.lite.a.b, java.util.concurrent.TimeUnit, java.util.concurrent.BlockingQueue, java.util.concurrent.ThreadFactory)
+    {
+        com.facebook.lite.a.d $r0;
+        com.facebook.lite.a.b $r1;
+        java.util.concurrent.TimeUnit $r2;
+        java.util.concurrent.BlockingQueue $r3;
+        java.util.concurrent.ThreadFactory $r4;
+        java.lang.Object $r5;
+
+        $r0 := @this: com.facebook.lite.a.d;
+        $r1 := @parameter0: com.facebook.lite.a.b;
+        $r2 := @parameter1: java.util.concurrent.TimeUnit;
+        $r3 := @parameter2: java.util.concurrent.BlockingQueue;
+        $r4 := @parameter3: java.util.concurrent.ThreadFactory;
+        $r0.<com.facebook.lite.a.d: com.facebook.lite.a.b a> = $r1;
+        specialinvoke $r0.<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory)>(1, 1, 2147483647L, $r2, $r3, $r4);
+        $r5 = new java.lang.Object;
+        specialinvoke $r5.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.lite.a.d: java.lang.Object c> = $r5;
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.lite.a.d $r0;
+
+        $r0 := @this: com.facebook.lite.a.d;
+        $r0.<com.facebook.lite.a.d: boolean b> = 1;
+        return;
+    }
+
+    public final void b()
+    {
+        com.facebook.lite.a.d $r0;
+        boolean $z0;
+        java.lang.Object $r1, $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: com.facebook.lite.a.d;
+        $z0 = $r0.<com.facebook.lite.a.d: boolean b>;
+        if $z0 == 0 goto label1;
+
+        $r0.<com.facebook.lite.a.d: boolean b> = 0;
+        $r1 = $r0.<com.facebook.lite.a.d: java.lang.Object c>;
+        entermonitor $r1;
+
+     label0:
+        $r2 = $r0.<com.facebook.lite.a.d: java.lang.Object c>;
+        virtualinvoke $r2.<java.lang.Object: void notifyAll()>();
+        exitmonitor $r1;
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        exitmonitor $r1;
+
+     label3:
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label3 with label2;
+    }
+
+    protected final void beforeExecute(java.lang.Thread, java.lang.Runnable)
+    {
+        com.facebook.lite.a.d $r0;
+        java.lang.Thread $r1;
+        java.lang.Runnable $r2;
+        boolean $z0;
+        java.lang.Object $r3, $r5;
+        com.facebook.lite.a.g $r4;
+        java.lang.Throwable $r6;
+        java.lang.InterruptedException $r7;
+        com.facebook.lite.a.e $r8;
+        java.lang.StringBuilder $r9;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.a.d;
+        $r1 := @parameter0: java.lang.Thread;
+        $r2 := @parameter1: java.lang.Runnable;
+        specialinvoke $r0.<java.util.concurrent.ThreadPoolExecutor: void beforeExecute(java.lang.Thread,java.lang.Runnable)>($r1, $r2);
+
+     label0:
+        $z0 = $r0.<com.facebook.lite.a.d: boolean b>;
+        if $z0 == 0 goto label7;
+
+     label1:
+        staticinvoke <com.facebook.lite.a.b: java.lang.String c()>();
+
+     label2:
+        $r3 = $r0.<com.facebook.lite.a.d: java.lang.Object c>;
+        entermonitor $r3;
+
+     label3:
+        $r5 = $r0.<com.facebook.lite.a.d: java.lang.Object c>;
+        virtualinvoke $r5.<java.lang.Object: void wait()>();
+        exitmonitor $r3;
+        goto label0;
+
+     label4:
+        $r6 := @caughtexception;
+        exitmonitor $r3;
+
+     label5:
+        throw $r6;
+
+     label6:
+        $r7 := @caughtexception;
+
+     label7:
+        $z0 = $r2 instanceof com.facebook.lite.a.e;
+        if $z0 == 0 goto label8;
+
+        $r8 = (com.facebook.lite.a.e) $r2;
+        staticinvoke <com.facebook.lite.a.b: java.lang.String c()>();
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("diskcache/taskqueue/perform: ");
+        $r4 = staticinvoke <com.facebook.lite.a.e: com.facebook.lite.a.g a(com.facebook.lite.a.e)>($r8);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" id:");
+        $i0 = staticinvoke <com.facebook.lite.a.e: int b(com.facebook.lite.a.e)>($r8);
+        virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+     label8:
+        return;
+
+        catch java.lang.InterruptedException from label1 to label2 with label6;
+        catch java.lang.Throwable from label3 to label5 with label4;
+        catch java.lang.InterruptedException from label5 to label6 with label6;
+    }
+}

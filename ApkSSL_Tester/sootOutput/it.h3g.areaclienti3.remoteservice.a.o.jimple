@@ -1,0 +1,271 @@
+public class it.h3g.areaclienti3.remoteservice.a.o extends java.lang.Object
+{
+    private android.content.Context a;
+    private it.h3g.areaclienti3.j.m b;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.a.o $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.m $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.o;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.a.o: it.h3g.areaclienti3.j.m b> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.o: android.content.Context a> = $r1;
+        $r2 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.o: it.h3g.areaclienti3.j.m b> = $r2;
+        return;
+    }
+
+    public android.os.Bundle a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.o $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r2, $r3;
+        java.util.ArrayList $r4;
+        int $i0, $i1;
+        android.content.res.Resources $r5;
+        android.content.Context $r6;
+        java.lang.String[] $r7;
+        it.h3g.areaclienti3.d.au $r9;
+        java.lang.Exception $r10;
+        it.h3g.areaclienti3.j.m $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.o;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RoamingAction", "GET ROAMING ZONES ACTION  ");
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r4 = new java.util.ArrayList;
+
+     label0:
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: android.content.Context a>;
+        $r5 = virtualinvoke $r6.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String[] getStringArray(int)>(2131427331);
+        $i1 = 0;
+
+     label1:
+        $i0 = lengthof $r7;
+        if $i1 < $i0 goto label2;
+
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r8.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("roaming_key_contients", $r4);
+        virtualinvoke $r1.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r8);
+        return $r1;
+
+     label2:
+        $r9 = new it.h3g.areaclienti3.d.au;
+        $i0 = $i1 + 1;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $r3 = $r7[$i1];
+        specialinvoke $r9.<it.h3g.areaclienti3.d.au: void <init>(java.lang.String,java.lang.String)>($r2, $r3);
+        virtualinvoke $r4.<java.util.ArrayList: boolean add(java.lang.Object)>($r9);
+
+     label3:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label4:
+        $r10 := @caughtexception;
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: it.h3g.areaclienti3.j.m b>;
+        $r8 = virtualinvoke $r11.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r10, $r1);
+        return $r8;
+
+        catch java.lang.Exception from label0 to label3 with label4;
+    }
+
+    public android.os.Bundle b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.o $r0;
+        android.os.Bundle $r1, $r7;
+        java.lang.String $r3;
+        it.h3g.areaclienti3.remoteservice.b.m.a $r4;
+        android.content.Context $r5;
+        java.util.Vector $r6;
+        it.h3g.areaclienti3.remoteservice.b.m.b $r8;
+        java.lang.Object $r9;
+        java.util.ArrayList $r10;
+        java.util.Iterator $r11;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.m.c $r12;
+        it.h3g.areaclienti3.d.av $r13;
+        java.lang.Exception $r14;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.o;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RoamingAction", "GET ROAMING COUNTRIES ACTION  ");
+        $r7 = new android.os.Bundle;
+        specialinvoke $r7.<android.os.Bundle: void <init>()>();
+
+     label0:
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_contienentId");
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.m.a: void <init>(android.content.Context)>($r5);
+        $r8 = new it.h3g.areaclienti3.remoteservice.b.m.b;
+        specialinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.m.b: void <init>()>();
+        $r6 = new java.util.Vector;
+        specialinvoke $r6.<java.util.Vector: void <init>()>();
+        virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.m.b: void a(java.lang.String)>($r3);
+        $r9 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.m.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r8);
+        $r6 = (java.util.Vector) $r9;
+        $r10 = new java.util.ArrayList;
+        specialinvoke $r10.<java.util.ArrayList: void <init>()>();
+        $r11 = virtualinvoke $r6.<java.util.Vector: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r11.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("roaming_key_countries", $r10);
+        virtualinvoke $r7.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+        return $r7;
+
+     label2:
+        $r9 = interfaceinvoke $r11.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.remoteservice.b.m.c) $r9;
+        $r13 = new it.h3g.areaclienti3.d.av;
+        specialinvoke $r13.<it.h3g.areaclienti3.d.av: void <init>(it.h3g.areaclienti3.remoteservice.b.m.c)>($r12);
+        virtualinvoke $r10.<java.util.ArrayList: boolean add(java.lang.Object)>($r13);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r14 := @caughtexception;
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: it.h3g.areaclienti3.j.m b>;
+        $r7 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r14, $r7);
+        return $r7;
+
+        catch java.lang.Exception from label0 to label3 with label4;
+    }
+
+    public android.os.Bundle c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.o $r0;
+        android.os.Bundle $r1, $r7;
+        java.lang.String $r2, $r3, $r8;
+        it.h3g.areaclienti3.remoteservice.b.m.d $r4;
+        android.content.Context $r5;
+        it.h3g.areaclienti3.remoteservice.b.m.f $r6;
+        it.h3g.areaclienti3.remoteservice.b.m.e $r9;
+        java.lang.Object $r10;
+        it.h3g.areaclienti3.d.aw $r11;
+        java.lang.Exception $r12;
+        it.h3g.areaclienti3.j.m $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.o;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RoamingAction", "GET ROAMING INFO ACTION  ");
+        $r7 = new android.os.Bundle;
+        specialinvoke $r7.<android.os.Bundle: void <init>()>();
+
+     label0:
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_country_id");
+        $r8 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_subscription");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_propsition");
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.m.d;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.m.d: void <init>(android.content.Context)>($r5);
+        $r9 = new it.h3g.areaclienti3.remoteservice.b.m.e;
+        specialinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.m.e: void <init>()>();
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.m.f;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.m.f: void <init>()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.m.e: void a(java.lang.String)>($r2);
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.m.e: void b(java.lang.String)>($r8);
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.m.e: void c(java.lang.String)>($r3);
+        $r10 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.m.d: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r9);
+        $r6 = (it.h3g.areaclienti3.remoteservice.b.m.f) $r10;
+        $r11 = new it.h3g.areaclienti3.d.aw;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.aw: void <init>(it.h3g.areaclienti3.remoteservice.b.m.f)>($r6);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("romaing_key_info_country", $r11);
+        virtualinvoke $r7.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+
+     label1:
+        return $r7;
+
+     label2:
+        $r12 := @caughtexception;
+        virtualinvoke $r12.<java.lang.Exception: void printStackTrace()>();
+        $r13 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: it.h3g.areaclienti3.j.m b>;
+        $r7 = virtualinvoke $r13.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r12, $r7);
+        return $r7;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public android.os.Bundle d(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.o $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r4, $r5;
+        boolean $z0;
+        java.lang.StringBuilder $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        android.content.Context $r8;
+        android.graphics.Bitmap $r9;
+        java.io.IOException $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.o;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_country_id");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("roaming_key_res_flag");
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r5 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("getRoamingFlagAction", "");
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("RoamingAction", "Roaming flag url is null");
+        return null;
+
+     label0:
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{COUNTRY_ID}", $r2);
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{RES_CODE}", $r3);
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RoamingAction", $r3);
+        $r7 = new it.h3g.areaclienti3.j.f;
+        $r8 = $r0.<it.h3g.areaclienti3.remoteservice.a.o: android.content.Context a>;
+
+     label1:
+        specialinvoke $r7.<it.h3g.areaclienti3.j.f: void <init>(android.content.Context)>($r8);
+        $r9 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: android.graphics.Bitmap b(java.lang.String)>($r5);
+        if $r9 == null goto label3;
+
+        virtualinvoke $r1.<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)>("flag", $r9);
+
+     label2:
+        return $r1;
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RoamingAction", "Flag bytes null");
+
+     label4:
+        goto label2;
+
+     label5:
+        $r10 := @caughtexception;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error during network connection: ");
+        $r4 = virtualinvoke $r10.<java.io.IOException: java.lang.String getMessage()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("RoamingAction", $r4);
+        return null;
+
+        catch java.io.IOException from label1 to label4 with label5;
+    }
+}

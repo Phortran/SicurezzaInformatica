@@ -1,0 +1,65 @@
+class com.google.android.gms.internal.cg extends java.lang.Object implements com.google.android.gms.internal.k
+{
+    final com.google.android.gms.internal.cf a;
+
+    void <init>(com.google.android.gms.internal.cf)
+    {
+        com.google.android.gms.internal.cg $r0;
+        com.google.android.gms.internal.cf $r1;
+
+        $r0 := @this: com.google.android.gms.internal.cg;
+        $r1 := @parameter0: com.google.android.gms.internal.cf;
+        $r0.<com.google.android.gms.internal.cg: com.google.android.gms.internal.cf a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.cg $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        com.google.android.gms.internal.cf $r3;
+        java.lang.Object $r5, $r7;
+        java.lang.StringBuilder $r6;
+        java.lang.String $r8, $r9;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: com.google.android.gms.internal.cg;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r3 = $r0.<com.google.android.gms.internal.cg: com.google.android.gms.internal.cf a>;
+        $r5 = staticinvoke <com.google.android.gms.internal.cf: java.lang.Object a(com.google.android.gms.internal.cf)>($r3);
+        entermonitor $r5;
+
+     label0:
+        $r7 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("type");
+        $r8 = (java.lang.String) $r7;
+        $r7 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("errors");
+        $r9 = (java.lang.String) $r7;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" request error: ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r9);
+        $r3 = $r0.<com.google.android.gms.internal.cg: com.google.android.gms.internal.cf a>;
+        staticinvoke <com.google.android.gms.internal.cf: int a(com.google.android.gms.internal.cf,int)>($r3, 1);
+        $r3 = $r0.<com.google.android.gms.internal.cg: com.google.android.gms.internal.cf a>;
+        $r7 = staticinvoke <com.google.android.gms.internal.cf: java.lang.Object a(com.google.android.gms.internal.cf)>($r3);
+        virtualinvoke $r7.<java.lang.Object: void notify()>();
+        exitmonitor $r5;
+        return;
+
+     label1:
+        $r10 := @caughtexception;
+        exitmonitor $r5;
+
+     label2:
+        throw $r10;
+
+        catch java.lang.Throwable from label0 to label2 with label1;
+    }
+}

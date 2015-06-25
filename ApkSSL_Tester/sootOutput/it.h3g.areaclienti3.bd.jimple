@@ -1,0 +1,416 @@
+class it.h3g.areaclienti3.bd extends android.content.BroadcastReceiver
+{
+    final it.h3g.areaclienti3.PagerActivity a;
+
+    void <init>(it.h3g.areaclienti3.PagerActivity)
+    {
+        it.h3g.areaclienti3.bd $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.bd;
+        $r1 := @parameter0: it.h3g.areaclienti3.PagerActivity;
+        $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a> = $r1;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    static it.h3g.areaclienti3.PagerActivity a(it.h3g.areaclienti3.bd)
+    {
+        it.h3g.areaclienti3.bd $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.bd;
+        $r1 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        return $r1;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.bd $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        android.os.Bundle $r3, $r23;
+        java.lang.String $r4, $r8, $r27;
+        it.h3g.areaclienti3.PagerActivity $r5, $r9;
+        int $i1, $i2;
+        boolean $z1;
+        java.lang.Object $r6;
+        android.app.NotificationManager $r7;
+        android.view.View$OnClickListener $r10, $r11;
+        java.lang.StringBuilder $r12;
+        java.io.Serializable $r13;
+        it.h3g.areaclienti3.d.bq $r14;
+        it.h3g.areaclienti3.remoteservice.IService $r15;
+        android.os.RemoteException $r16, $r24, $r29;
+        it.h3g.areaclienti3.d.an $r17;
+        it.h3g.areaclienti3.d.al $r18;
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r19;
+        java.lang.Integer $r20;
+        it.h3g.areaclienti3.fragments.a $r21;
+        it.h3g.areaclienti3.d.e $r22;
+        it.h3g.areaclienti3.j.m $r25;
+        it.h3g.areaclienti3.j.l $r26;
+        it.h3g.areaclienti3.be $r28;
+        java.lang.StackTraceElement[] $r30;
+        java.lang.StackTraceElement $r31;
+        java.lang.Exception $r32;
+
+        $r0 := @this: it.h3g.areaclienti3.bd;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = virtualinvoke $r2.<android.content.Intent: android.os.Bundle getExtras()>();
+        if $r3 == null goto label1;
+
+        $z1 = virtualinvoke $r3.<android.os.Bundle: boolean containsKey(java.lang.String)>("gcm");
+        if $z1 == 0 goto label4;
+
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void e(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r6 = virtualinvoke $r5.<it.h3g.areaclienti3.PagerActivity: java.lang.Object getSystemService(java.lang.String)>("notification");
+        $r7 = (android.app.NotificationManager) $r6;
+        virtualinvoke $r7.<android.app.NotificationManager: void cancelAll()>();
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = virtualinvoke $r2.<android.content.Intent: android.os.Bundle getBundleExtra(java.lang.String)>("gcm");
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,android.os.Bundle)>($r5, $r3);
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        if $r4 == null goto label2;
+
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("news");
+        if $z1 != 0 goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>("poll");
+        if $z1 == 0 goto label2;
+
+     label0:
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.PagerActivity: void i()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.view.View$OnClickListener g(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r11 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.view.View$OnClickListener h(it.h3g.areaclienti3.PagerActivity)>($r5);
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void a(java.lang.String,android.view.View$OnClickListener,android.view.View$OnClickListener)>("C\'\u00e8 una comunicazione per te. Vuoi leggerla?", $r10, $r11);
+
+     label1:
+        return;
+
+     label2:
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        if $r8 == null goto label3;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>("banner");
+        if $z1 == 0 goto label3;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("id");
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,java.lang.String,boolean)>($r9, $r8, 0);
+        goto label1;
+
+     label3:
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        if $r8 == null goto label1;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle f(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r8 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>("ticket");
+        if $z1 == 0 goto label1;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r11 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.view.View$OnClickListener g(it.h3g.areaclienti3.PagerActivity)>($r5);
+        $r5 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.view.View$OnClickListener h(it.h3g.areaclienti3.PagerActivity)>($r5);
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void a(java.lang.String,android.view.View$OnClickListener,android.view.View$OnClickListener)>("C\'\u00e8 una comunicazione per te. Vuoi leggerla?", $r11, $r10);
+        goto label1;
+
+     label4:
+        $z1 = virtualinvoke $r3.<android.os.Bundle: boolean containsKey(java.lang.String)>("customUri");
+        if $z1 == 0 goto label18;
+
+        $r3 = virtualinvoke $r2.<android.content.Intent: android.os.Bundle getBundleExtra(java.lang.String)>("customUri");
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("Open Section with Custom Uri: ");
+        $r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("host");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", $r4);
+        $r13 = virtualinvoke $r3.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("uriObject");
+        $r14 = (it.h3g.areaclienti3.d.bq) $r13;
+        $z1 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: boolean b()>();
+        if $z1 == 0 goto label8;
+
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: java.lang.String g()>();
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("id", $r4);
+        $r4 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: java.lang.String f()>();
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("type", $r4);
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("update", "true");
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+
+     label5:
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void j()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r15.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("notificationNewsAndPollsDetails", $r3);
+
+     label6:
+        goto label1;
+
+     label7:
+        $r16 := @caughtexception;
+        goto label1;
+
+     label8:
+        $z1 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: boolean a()>();
+        if $z1 == 0 goto label9;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r17 = staticinvoke <it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.d.an i(it.h3g.areaclienti3.PagerActivity)>($r9);
+        if $r17 == null goto label9;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r17 = staticinvoke <it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.d.an i(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r18 = virtualinvoke $r17.<it.h3g.areaclienti3.d.an: it.h3g.areaclienti3.d.al a()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,it.h3g.areaclienti3.d.al,it.h3g.areaclienti3.d.bq)>($r9, $r18, $r14);
+        goto label1;
+
+     label9:
+        $i1 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: int i()>();
+        if $i1 == -1 goto label10;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void s()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r19 = staticinvoke <it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.customview.ViewPagerCustom c(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $i1 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: int i()>();
+        $r20 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $i1 = virtualinvoke $r20.<java.lang.Integer: int intValue()>();
+        virtualinvoke $r19.<it.h3g.areaclienti3.customview.ViewPagerCustom: void a(int,boolean)>($i1, 0);
+        goto label1;
+
+     label10:
+        $i1 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: int i()>();
+        if $i1 != -1 goto label1;
+
+        $r21 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: it.h3g.areaclienti3.fragments.a e()>();
+        if $r21 == null goto label1;
+
+        $z1 = $r21 instanceof it.h3g.areaclienti3.fragments.g.a;
+        if $z1 == 0 goto label11;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r22 = staticinvoke <it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.d.e j(it.h3g.areaclienti3.PagerActivity)>($r9);
+        if $r22 == null goto label11;
+
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r22 = staticinvoke <it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.d.e j(it.h3g.areaclienti3.PagerActivity)>($r9);
+        virtualinvoke $r3.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("auto", $r22);
+        virtualinvoke $r21.<it.h3g.areaclienti3.fragments.a: void setArguments(android.os.Bundle)>($r3);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,android.support.v4.app.Fragment)>($r9, $r21);
+        goto label1;
+
+     label11:
+        $z1 = $r21 instanceof it.h3g.areaclienti3.fragments.f;
+        if $z1 == 0 goto label12;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $z1 = staticinvoke <it.h3g.areaclienti3.PagerActivity: boolean k(it.h3g.areaclienti3.PagerActivity)>($r9);
+        if $z1 == 0 goto label12;
+
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r23 = staticinvoke <it.h3g.areaclienti3.PagerActivity: android.os.Bundle l(it.h3g.areaclienti3.PagerActivity)>($r9);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("data", $r23);
+        virtualinvoke $r21.<it.h3g.areaclienti3.fragments.a: void setArguments(android.os.Bundle)>($r3);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,android.support.v4.app.Fragment)>($r9, $r21);
+        goto label1;
+
+     label12:
+        $z1 = $r21 instanceof it.h3g.areaclienti3.fragments.store.z;
+        if $z1 == 0 goto label17;
+
+        $r8 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: java.lang.String j()>();
+        if $r8 == null goto label1;
+
+        $r23 = new android.os.Bundle;
+        specialinvoke $r23.<android.os.Bundle: void <init>()>();
+        $r4 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: java.lang.String j()>();
+        virtualinvoke $r23.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("city_id", $r4);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r8 = virtualinvoke $r14.<it.h3g.areaclienti3.d.bq: java.lang.String h()>();
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,java.lang.String)>($r9, $r8);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+
+     label13:
+        $r8 = staticinvoke <it.h3g.areaclienti3.PagerActivity: java.lang.String m(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r4 = virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: java.lang.String getString(int)>(2131231240);
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r4);
+        if $z1 == 0 goto label15;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void j()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r15.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("getStoreServicesInCityAction", $r23);
+        goto label1;
+
+     label14:
+        $r24 := @caughtexception;
+        goto label1;
+
+     label15:
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.PagerActivity: java.lang.String m(it.h3g.areaclienti3.PagerActivity)>($r9);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r4 = virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: java.lang.String getString(int)>(2131231239);
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r4);
+        if $z1 == 0 goto label1;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void j()>();
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r15.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("getStoreShopsInCityAction", $r23);
+
+     label16:
+        goto label1;
+
+     label17:
+        $z1 = $r21 instanceof it.h3g.areaclienti3.fragments.g.a;
+        if $z1 != 0 goto label1;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,android.support.v4.app.Fragment)>($r9, $r21);
+        goto label1;
+
+     label18:
+        $z1 = virtualinvoke $r3.<android.os.Bundle: boolean containsKey(java.lang.String)>("network");
+        if $z1 == 0 goto label25;
+
+        $r23 = virtualinvoke $r3.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("network");
+        $z1 = virtualinvoke $r23.<android.os.Bundle: boolean getBoolean(java.lang.String)>("switchWifi");
+        if $z1 == 0 goto label25;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r25 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.j.m o>;
+        $z1 = virtualinvoke $r25.<it.h3g.areaclienti3.j.m: boolean e()>();
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("ENABLE_AUTOLOGIN: ");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z1);
+        $r4 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Pager Activity", $r4);
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r15 == null goto label20;
+
+        $r12 = new java.lang.StringBuilder;
+
+     label19:
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("mService.loggingStatus(): ");
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        $i2 = interfaceinvoke $r15.<it.h3g.areaclienti3.remoteservice.IService: int c()>();
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r4 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Pager Activity", $r4);
+
+     label20:
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r15 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        $i2 = interfaceinvoke $r15.<it.h3g.areaclienti3.remoteservice.IService: int c()>();
+        if $i2 != 1 goto label1;
+
+        if $z1 != 0 goto label1;
+
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r26 = $r9.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.j.l p>;
+        $z1 = virtualinvoke $r26.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z1 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Pager Activity", "Connection changed: user will be logged with your credential!");
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Pager Activity", "You are in autoLogin but you aren\'t in 3G");
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        $r27 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("SWTCH_WIFI_P", "error", "title");
+        $r28 = new it.h3g.areaclienti3.be;
+        specialinvoke $r28.<it.h3g.areaclienti3.be: void <init>(it.h3g.areaclienti3.bd)>($r0);
+        virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: void a(java.lang.String,int,android.view.View$OnClickListener,boolean)>($r27, 2, $r28, 1);
+
+     label21:
+        goto label1;
+
+     label22:
+        $r29 := @caughtexception;
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error: ");
+        $r8 = virtualinvoke $r29.<android.os.RemoteException: java.lang.String getMessage()>();
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Pager Activity", $r8);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Pager Activity", ">>>>>>>>>>>>>>>>>>>>>");
+        $r30 = virtualinvoke $r29.<android.os.RemoteException: java.lang.StackTraceElement[] getStackTrace()>();
+        $i2 = lengthof $r30;
+        $i1 = (int) 0;
+
+     label23:
+        if $i1 < $i2 goto label24;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Pager Activity", "<<<<<<<<<<<<<<<<<<<<<");
+        goto label1;
+
+     label24:
+        $r31 = $r30[$i1];
+        $r8 = virtualinvoke $r31.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Pager Activity", $r8);
+        $i1 = $i1 + 1;
+        goto label23;
+
+     label25:
+        $z1 = virtualinvoke $r3.<android.os.Bundle: boolean containsKey(java.lang.String)>("refreshSession");
+        if $z1 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", "Automatic switch in autologin");
+
+     label26:
+        $r9 = $r0.<it.h3g.areaclienti3.bd: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void n(it.h3g.areaclienti3.PagerActivity)>($r9);
+
+     label27:
+        goto label1;
+
+     label28:
+        $r32 := @caughtexception;
+        goto label1;
+
+        catch android.os.RemoteException from label5 to label6 with label7;
+        catch android.os.RemoteException from label13 to label16 with label14;
+        catch android.os.RemoteException from label19 to label21 with label22;
+        catch java.lang.Exception from label26 to label27 with label28;
+    }
+}

@@ -1,0 +1,231 @@
+public abstract enum class com.google.c.c extends java.lang.Enum implements com.google.c.i
+{
+    public static final enum com.google.c.c a;
+    public static final enum com.google.c.c b;
+    public static final enum com.google.c.c c;
+    public static final enum com.google.c.c d;
+    public static final enum com.google.c.c e;
+    private static final com.google.c.c[] f;
+
+    static void <clinit>()
+    {
+        com.google.c.d $r0;
+        com.google.c.e $r2;
+        com.google.c.f $r3;
+        com.google.c.g $r4;
+        com.google.c.h $r5;
+        com.google.c.c[] $r6;
+        com.google.c.c $r7;
+
+        $r0 = new com.google.c.d;
+        specialinvoke $r0.<com.google.c.d: void <init>(java.lang.String,int)>("IDENTITY", 0);
+        <com.google.c.c: com.google.c.c a> = $r0;
+        $r2 = new com.google.c.e;
+        specialinvoke $r2.<com.google.c.e: void <init>(java.lang.String,int)>("UPPER_CAMEL_CASE", 1);
+        <com.google.c.c: com.google.c.c b> = $r2;
+        $r3 = new com.google.c.f;
+        specialinvoke $r3.<com.google.c.f: void <init>(java.lang.String,int)>("UPPER_CAMEL_CASE_WITH_SPACES", 2);
+        <com.google.c.c: com.google.c.c c> = $r3;
+        $r4 = new com.google.c.g;
+        specialinvoke $r4.<com.google.c.g: void <init>(java.lang.String,int)>("LOWER_CASE_WITH_UNDERSCORES", 3);
+        <com.google.c.c: com.google.c.c d> = $r4;
+        $r5 = new com.google.c.h;
+        specialinvoke $r5.<com.google.c.h: void <init>(java.lang.String,int)>("LOWER_CASE_WITH_DASHES", 4);
+        <com.google.c.c: com.google.c.c e> = $r5;
+        $r6 = newarray (com.google.c.c)[5];
+        $r7 = <com.google.c.c: com.google.c.c a>;
+        $r6[0] = $r7;
+        $r7 = <com.google.c.c: com.google.c.c b>;
+        $r6[1] = $r7;
+        $r7 = <com.google.c.c: com.google.c.c c>;
+        $r6[2] = $r7;
+        $r7 = <com.google.c.c: com.google.c.c d>;
+        $r6[3] = $r7;
+        $r7 = <com.google.c.c: com.google.c.c e>;
+        $r6[4] = $r7;
+        <com.google.c.c: com.google.c.c[] f> = $r6;
+        return;
+    }
+
+    private void <init>(java.lang.String, int)
+    {
+        com.google.c.c $r0;
+        java.lang.String $r1;
+        int $i0;
+
+        $r0 := @this: com.google.c.c;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<java.lang.Enum: void <init>(java.lang.String,int)>($r1, $i0);
+        return;
+    }
+
+    void <init>(java.lang.String, int, com.google.c.d)
+    {
+        com.google.c.c $r0;
+        java.lang.String $r1;
+        int $i0;
+        com.google.c.d $r2;
+
+        $r0 := @this: com.google.c.c;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: com.google.c.d;
+        specialinvoke $r0.<com.google.c.c: void <init>(java.lang.String,int)>($r1, $i0);
+        return;
+    }
+
+    private static java.lang.String a(char, java.lang.String, int)
+    {
+        char $c0;
+        java.lang.String $r0;
+        int $i1, $i2;
+        java.lang.StringBuilder $r1;
+
+        $c0 := @parameter0: char;
+        $r0 := @parameter1: java.lang.String;
+        $i1 := @parameter2: int;
+        $i2 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i1 >= $i2 goto label0;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c0);
+        $r0 = virtualinvoke $r0.<java.lang.String: java.lang.String substring(int)>($i1);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r0;
+
+     label0:
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(char)>($c0);
+        return $r0;
+    }
+
+    static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r0 = staticinvoke <com.google.c.c: java.lang.String b(java.lang.String)>($r0);
+        return $r0;
+    }
+
+    static java.lang.String a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r1 = staticinvoke <com.google.c.c: java.lang.String b(java.lang.String,java.lang.String)>($r0, $r1);
+        return $r1;
+    }
+
+    private static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0;
+        char $c0;
+        int $i1, $i2;
+        java.lang.StringBuilder $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $i1 = 0;
+        $c0 = virtualinvoke $r0.<java.lang.String: char charAt(int)>(0);
+
+     label0:
+        $i2 = virtualinvoke $r0.<java.lang.String: int length()>();
+        $i2 = $i2 + -1;
+        if $i1 >= $i2 goto label1;
+
+        $z0 = staticinvoke <java.lang.Character: boolean isLetter(char)>($c0);
+        if $z0 == 0 goto label3;
+
+     label1:
+        $i2 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i1 != $i2 goto label4;
+
+        $r0 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label2:
+        return $r0;
+
+     label3:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c0);
+        $i1 = $i1 + 1;
+        $c0 = virtualinvoke $r0.<java.lang.String: char charAt(int)>($i1);
+        goto label0;
+
+     label4:
+        $z0 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>($c0);
+        if $z0 != 0 goto label2;
+
+        $c0 = staticinvoke <java.lang.Character: char toUpperCase(char)>($c0);
+        $i2 = $i1 + 1;
+        $r0 = staticinvoke <com.google.c.c: java.lang.String a(char,java.lang.String,int)>($c0, $r0, $i2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r0;
+    }
+
+    private static java.lang.String b(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        int $i0, $i1;
+        java.lang.StringBuilder $r2;
+        boolean $z0;
+        char $c2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $i0 = 0;
+
+     label0:
+        $i1 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 >= $i1 goto label2;
+
+        $c2 = virtualinvoke $r0.<java.lang.String: char charAt(int)>($i0);
+        $z0 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>($c2);
+        if $z0 == 0 goto label1;
+
+        $i1 = virtualinvoke $r2.<java.lang.StringBuilder: int length()>();
+        if $i1 == 0 goto label1;
+
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+     label1:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c2);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label2:
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+
+    public static com.google.c.c valueOf(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.Enum $r2;
+        com.google.c.c $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "com/google/c/c", $r0);
+        $r3 = (com.google.c.c) $r2;
+        return $r3;
+    }
+
+    public static com.google.c.c[] values()
+    {
+        com.google.c.c[] $r0;
+        java.lang.Object $r1;
+
+        $r0 = <com.google.c.c: com.google.c.c[] f>;
+        $r1 = virtualinvoke $r0.<java.lang.Object: java.lang.Object clone()>();
+        $r0 = (com.google.c.c[]) $r1;
+        return $r0;
+    }
+}

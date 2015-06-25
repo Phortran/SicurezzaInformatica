@@ -1,0 +1,126 @@
+class com.a.a.as extends java.util.concurrent.ThreadPoolExecutor
+{
+
+    void <init>()
+    {
+        com.a.a.as $r0;
+        java.util.concurrent.TimeUnit $r1;
+        java.util.concurrent.PriorityBlockingQueue $r2;
+        com.a.a.bo $r3;
+
+        $r0 := @this: com.a.a.as;
+        $r1 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+        $r2 = new java.util.concurrent.PriorityBlockingQueue;
+        specialinvoke $r2.<java.util.concurrent.PriorityBlockingQueue: void <init>()>();
+        $r3 = new com.a.a.bo;
+        specialinvoke $r3.<com.a.a.bo: void <init>()>();
+        specialinvoke $r0.<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory)>(3, 3, 0L, $r1, $r2, $r3);
+        return;
+    }
+
+    private void a(int)
+    {
+        com.a.a.as $r0;
+        int $i0;
+
+        $r0 := @this: com.a.a.as;
+        $i0 := @parameter0: int;
+        virtualinvoke $r0.<com.a.a.as: void setCorePoolSize(int)>($i0);
+        virtualinvoke $r0.<com.a.a.as: void setMaximumPoolSize(int)>($i0);
+        return;
+    }
+
+    void a(android.net.NetworkInfo)
+    {
+        com.a.a.as $r0;
+        android.net.NetworkInfo $r1;
+        boolean $z0;
+        int $i1;
+
+        $r0 := @this: com.a.a.as;
+        $r1 := @parameter0: android.net.NetworkInfo;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<android.net.NetworkInfo: boolean isConnectedOrConnecting()>();
+        if $z0 != 0 goto label2;
+
+     label0:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(3);
+
+     label1:
+        return;
+
+     label2:
+        $i1 = virtualinvoke $r1.<android.net.NetworkInfo: int getType()>();
+        lookupswitch($i1)
+        {
+            case 0: goto label5;
+            case 1: goto label4;
+            case 6: goto label4;
+            case 9: goto label4;
+            default: goto label3;
+        };
+
+     label3:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(3);
+        goto label1;
+
+     label4:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(4);
+        goto label1;
+
+     label5:
+        $i1 = virtualinvoke $r1.<android.net.NetworkInfo: int getSubtype()>();
+        lookupswitch($i1)
+        {
+            case 1: goto label9;
+            case 2: goto label9;
+            case 3: goto label8;
+            case 4: goto label8;
+            case 5: goto label8;
+            case 6: goto label8;
+            case 7: goto label6;
+            case 8: goto label6;
+            case 9: goto label6;
+            case 10: goto label6;
+            case 11: goto label6;
+            case 12: goto label8;
+            case 13: goto label7;
+            case 14: goto label7;
+            case 15: goto label7;
+            default: goto label6;
+        };
+
+     label6:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(3);
+        goto label1;
+
+     label7:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(3);
+        goto label1;
+
+     label8:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(2);
+        goto label1;
+
+     label9:
+        specialinvoke $r0.<com.a.a.as: void a(int)>(1);
+        goto label1;
+    }
+
+    public java.util.concurrent.Future submit(java.lang.Runnable)
+    {
+        com.a.a.as $r0;
+        java.lang.Runnable $r1;
+        com.a.a.at $r2;
+        com.a.a.d $r3;
+
+        $r0 := @this: com.a.a.as;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = new com.a.a.at;
+        $r3 = (com.a.a.d) $r1;
+        specialinvoke $r2.<com.a.a.at: void <init>(com.a.a.d)>($r3);
+        virtualinvoke $r0.<com.a.a.as: void execute(java.lang.Runnable)>($r2);
+        return $r2;
+    }
+}

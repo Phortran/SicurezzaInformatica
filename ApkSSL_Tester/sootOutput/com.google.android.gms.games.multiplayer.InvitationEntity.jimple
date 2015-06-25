@@ -1,0 +1,486 @@
+public final class com.google.android.gms.games.multiplayer.InvitationEntity extends com.google.android.gms.internal.en implements com.google.android.gms.games.multiplayer.Invitation
+{
+    public static final android.os.Parcelable$Creator CREATOR;
+    private final int a;
+    private final com.google.android.gms.games.GameEntity b;
+    private final java.lang.String c;
+    private final long d;
+    private final int e;
+    private final com.google.android.gms.games.multiplayer.ParticipantEntity f;
+    private final java.util.ArrayList g;
+    private final int h;
+
+    static void <clinit>()
+    {
+        com.google.android.gms.games.multiplayer.c $r0;
+
+        $r0 = new com.google.android.gms.games.multiplayer.c;
+        specialinvoke $r0.<com.google.android.gms.games.multiplayer.c: void <init>()>();
+        <com.google.android.gms.games.multiplayer.InvitationEntity: android.os.Parcelable$Creator CREATOR> = $r0;
+        return;
+    }
+
+    void <init>(int, com.google.android.gms.games.GameEntity, java.lang.String, long, int, com.google.android.gms.games.multiplayer.ParticipantEntity, java.util.ArrayList, int)
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        int $i0, $i2, $i3;
+        com.google.android.gms.games.GameEntity $r1;
+        java.lang.String $r2;
+        long $l1;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r3;
+        java.util.ArrayList $r4;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: com.google.android.gms.games.GameEntity;
+        $r2 := @parameter2: java.lang.String;
+        $l1 := @parameter3: long;
+        $i2 := @parameter4: int;
+        $r3 := @parameter5: com.google.android.gms.games.multiplayer.ParticipantEntity;
+        $r4 := @parameter6: java.util.ArrayList;
+        $i3 := @parameter7: int;
+        specialinvoke $r0.<com.google.android.gms.internal.en: void <init>()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int a> = $i0;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.GameEntity b> = $r1;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.String c> = $r2;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: long d> = $l1;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int e> = $i2;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.multiplayer.ParticipantEntity f> = $r3;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g> = $r4;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int h> = $i3;
+        return;
+    }
+
+    void <init>(com.google.android.gms.games.multiplayer.Invitation)
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        com.google.android.gms.games.multiplayer.Invitation $r1;
+        com.google.android.gms.games.Game $r2;
+        int $i1, $i2;
+        java.lang.String $r3, $r5;
+        java.util.ArrayList $r4, $r8;
+        com.google.android.gms.games.GameEntity $r6;
+        long $l3;
+        com.google.android.gms.games.multiplayer.Participant $r7, $r10;
+        java.lang.Object $r9;
+        boolean $z0;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r11;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 := @parameter0: com.google.android.gms.games.multiplayer.Invitation;
+        specialinvoke $r0.<com.google.android.gms.internal.en: void <init>()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int a> = 1;
+        $r6 = new com.google.android.gms.games.GameEntity;
+        $r2 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.Game a()>();
+        specialinvoke $r6.<com.google.android.gms.games.GameEntity: void <init>(com.google.android.gms.games.Game)>($r2);
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.GameEntity b> = $r6;
+        $r5 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: java.lang.String b()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.String c> = $r5;
+        $l3 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: long d()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: long d> = $l3;
+        $i2 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: int e()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int e> = $i2;
+        $i2 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: int f()>();
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int h> = $i2;
+        $r7 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.multiplayer.Participant c()>();
+        $r3 = interfaceinvoke $r7.<com.google.android.gms.games.multiplayer.Participant: java.lang.String i()>();
+        $r7 = null;
+        $r4 = interfaceinvoke $r1.<com.google.android.gms.games.multiplayer.Invitation: java.util.ArrayList i()>();
+        $i2 = virtualinvoke $r4.<java.util.ArrayList: int size()>();
+        $r8 = new java.util.ArrayList;
+        specialinvoke $r8.<java.util.ArrayList: void <init>(int)>($i2);
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g> = $r8;
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i2 goto label2;
+
+        $r9 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r10 = (com.google.android.gms.games.multiplayer.Participant) $r9;
+        $r5 = interfaceinvoke $r10.<com.google.android.gms.games.multiplayer.Participant: java.lang.String i()>();
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label1;
+
+        $r7 = $r10;
+
+     label1:
+        $r8 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g>;
+        $r9 = interfaceinvoke $r10.<com.google.android.gms.games.multiplayer.Participant: java.lang.Object h()>();
+        $r11 = (com.google.android.gms.games.multiplayer.ParticipantEntity) $r9;
+        virtualinvoke $r8.<java.util.ArrayList: boolean add(java.lang.Object)>($r11);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label2:
+        staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object,java.lang.Object)>($r7, "Must have a valid inviter!");
+        $r9 = interfaceinvoke $r7.<com.google.android.gms.games.multiplayer.Participant: java.lang.Object h()>();
+        $r11 = (com.google.android.gms.games.multiplayer.ParticipantEntity) $r9;
+        $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.multiplayer.ParticipantEntity f> = $r11;
+        return;
+    }
+
+    static int a(com.google.android.gms.games.multiplayer.Invitation)
+    {
+        com.google.android.gms.games.multiplayer.Invitation $r0;
+        com.google.android.gms.games.Game $r1;
+        java.lang.Object[] $r2;
+        java.lang.String $r3;
+        long $l1;
+        java.lang.Long $r4;
+        int $i2;
+        java.lang.Integer $r5;
+        com.google.android.gms.games.multiplayer.Participant $r6;
+        java.util.ArrayList $r7;
+
+        $r0 := @parameter0: com.google.android.gms.games.multiplayer.Invitation;
+        $r2 = newarray (java.lang.Object)[7];
+        $r1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.Game a()>();
+        $r2[0] = $r1;
+        $r3 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.lang.String b()>();
+        $r2[1] = $r3;
+        $l1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: long d()>();
+        $r4 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r2[2] = $r4;
+        $i2 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int e()>();
+        $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r2[3] = $r5;
+        $r6 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.multiplayer.Participant c()>();
+        $r2[4] = $r6;
+        $r7 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.util.ArrayList i()>();
+        $r2[5] = $r7;
+        $i2 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int f()>();
+        $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r2[6] = $r5;
+        $i2 = staticinvoke <com.google.android.gms.internal.fw: int a(java.lang.Object[])>($r2);
+        return $i2;
+    }
+
+    static boolean a(com.google.android.gms.games.multiplayer.Invitation, java.lang.Object)
+    {
+        com.google.android.gms.games.multiplayer.Invitation $r0, $r3;
+        java.lang.Object $r1;
+        boolean $z0, $z2;
+        com.google.android.gms.games.Game $r2, $r4;
+        java.lang.String $r5, $r6;
+        long $l0;
+        java.lang.Long $r7, $r8;
+        int $i1;
+        java.lang.Integer $r9, $r10;
+        com.google.android.gms.games.multiplayer.Participant $r11, $r12;
+        java.util.ArrayList $r13, $r14;
+
+        $r0 := @parameter0: com.google.android.gms.games.multiplayer.Invitation;
+        $r1 := @parameter1: java.lang.Object;
+        $z0 = 1;
+        $z2 = $r1 instanceof com.google.android.gms.games.multiplayer.Invitation;
+        if $z2 != 0 goto label1;
+
+        $z0 = 0;
+
+     label0:
+        return $z0;
+
+     label1:
+        if $r0 == $r1 goto label0;
+
+        $r3 = (com.google.android.gms.games.multiplayer.Invitation) $r1;
+        $r4 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.Game a()>();
+        $r2 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.Game a()>();
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r4, $r2);
+        if $z2 == 0 goto label2;
+
+        $r5 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: java.lang.String b()>();
+        $r6 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.lang.String b()>();
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r5, $r6);
+        if $z2 == 0 goto label2;
+
+        $l0 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: long d()>();
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $l0 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: long d()>();
+        $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r7, $r8);
+        if $z2 == 0 goto label2;
+
+        $i1 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: int e()>();
+        $r9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $i1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int e()>();
+        $r10 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r9, $r10);
+        if $z2 == 0 goto label2;
+
+        $r11 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.multiplayer.Participant c()>();
+        $r12 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.multiplayer.Participant c()>();
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r11, $r12);
+        if $z2 == 0 goto label2;
+
+        $r13 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: java.util.ArrayList i()>();
+        $r14 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.util.ArrayList i()>();
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r13, $r14);
+        if $z2 == 0 goto label2;
+
+        $i1 = interfaceinvoke $r3.<com.google.android.gms.games.multiplayer.Invitation: int f()>();
+        $r10 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $i1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int f()>();
+        $r9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $z2 = staticinvoke <com.google.android.gms.internal.fw: boolean a(java.lang.Object,java.lang.Object)>($r10, $r9);
+        if $z2 != 0 goto label0;
+
+     label2:
+        return 0;
+    }
+
+    static boolean a(java.lang.Integer)
+    {
+        java.lang.Integer $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.Integer;
+        $z0 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: boolean b(java.lang.Integer)>($r0);
+        return $z0;
+    }
+
+    static boolean a(java.lang.String)
+    {
+        java.lang.String $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: boolean b(java.lang.String)>($r0);
+        return $z0;
+    }
+
+    static java.lang.String b(com.google.android.gms.games.multiplayer.Invitation)
+    {
+        com.google.android.gms.games.multiplayer.Invitation $r0;
+        com.google.android.gms.internal.fy $r1;
+        com.google.android.gms.games.Game $r3;
+        java.lang.String $r4;
+        long $l0;
+        java.lang.Long $r5;
+        int $i1;
+        java.lang.Integer $r6;
+        com.google.android.gms.games.multiplayer.Participant $r7;
+        java.util.ArrayList $r8;
+
+        $r0 := @parameter0: com.google.android.gms.games.multiplayer.Invitation;
+        $r1 = staticinvoke <com.google.android.gms.internal.fw: com.google.android.gms.internal.fy a(java.lang.Object)>($r0);
+        $r3 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.Game a()>();
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("Game", $r3);
+        $r4 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.lang.String b()>();
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("InvitationId", $r4);
+        $l0 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: long d()>();
+        $r5 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("CreationTimestamp", $r5);
+        $i1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int e()>();
+        $r6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("InvitationType", $r6);
+        $r7 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: com.google.android.gms.games.multiplayer.Participant c()>();
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("Inviter", $r7);
+        $r8 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: java.util.ArrayList i()>();
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("Participants", $r8);
+        $i1 = interfaceinvoke $r0.<com.google.android.gms.games.multiplayer.Invitation: int f()>();
+        $r6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("Variant", $r6);
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.fy: java.lang.String toString()>();
+        return $r4;
+    }
+
+    static java.lang.Integer k()
+    {
+        java.lang.Integer $r0;
+
+        $r0 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.Integer u()>();
+        return $r0;
+    }
+
+    public com.google.android.gms.games.Game a()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        com.google.android.gms.games.GameEntity $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.GameEntity b>;
+        return $r1;
+    }
+
+    public java.lang.String b()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.String c>;
+        return $r1;
+    }
+
+    public com.google.android.gms.games.multiplayer.Participant c()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.multiplayer.ParticipantEntity f>;
+        return $r1;
+    }
+
+    public long d()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        long $l0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $l0 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: long d>;
+        return $l0;
+    }
+
+    public int describeContents()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        return 0;
+    }
+
+    public int e()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int e>;
+        return $i0;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: boolean a(com.google.android.gms.games.multiplayer.Invitation,java.lang.Object)>($r0, $r1);
+        return $z0;
+    }
+
+    public int f()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int h>;
+        return $i0;
+    }
+
+    public int g()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int a>;
+        return $i0;
+    }
+
+    public java.lang.Object h()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        com.google.android.gms.games.multiplayer.Invitation $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.multiplayer.Invitation j()>();
+        return $r1;
+    }
+
+    public int hashCode()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $i0 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: int a(com.google.android.gms.games.multiplayer.Invitation)>($r0);
+        return $i0;
+    }
+
+    public java.util.ArrayList i()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        java.util.ArrayList $r1, $r2;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = new java.util.ArrayList;
+        $r2 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g>;
+        specialinvoke $r1.<java.util.ArrayList: void <init>(java.util.Collection)>($r2);
+        return $r1;
+    }
+
+    public com.google.android.gms.games.multiplayer.Invitation j()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        return $r0;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 = staticinvoke <com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.String b(com.google.android.gms.games.multiplayer.Invitation)>($r0);
+        return $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        com.google.android.gms.games.multiplayer.InvitationEntity $r0;
+        android.os.Parcel $r1;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        com.google.android.gms.games.GameEntity $r2;
+        java.lang.String $r3;
+        long $l3;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r4;
+        java.util.ArrayList $r5;
+        java.lang.Object $r6;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.InvitationEntity;
+        $r1 := @parameter0: android.os.Parcel;
+        $i0 := @parameter1: int;
+        $z0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: boolean v()>();
+        if $z0 != 0 goto label1;
+
+        staticinvoke <com.google.android.gms.games.multiplayer.i: void a(com.google.android.gms.games.multiplayer.InvitationEntity,android.os.Parcel,int)>($r0, $r1, $i0);
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.GameEntity b>;
+        virtualinvoke $r2.<com.google.android.gms.games.GameEntity: void writeToParcel(android.os.Parcel,int)>($r1, $i0);
+        $r3 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.lang.String c>;
+        virtualinvoke $r1.<android.os.Parcel: void writeString(java.lang.String)>($r3);
+        $l3 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: long d>;
+        virtualinvoke $r1.<android.os.Parcel: void writeLong(long)>($l3);
+        $i2 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: int e>;
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($i2);
+        $r4 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: com.google.android.gms.games.multiplayer.ParticipantEntity f>;
+        virtualinvoke $r4.<com.google.android.gms.games.multiplayer.ParticipantEntity: void writeToParcel(android.os.Parcel,int)>($r1, $i0);
+        $r5 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g>;
+        $i2 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($i2);
+        $i1 = 0;
+
+     label2:
+        if $i1 >= $i2 goto label0;
+
+        $r5 = $r0.<com.google.android.gms.games.multiplayer.InvitationEntity: java.util.ArrayList g>;
+        $r6 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r4 = (com.google.android.gms.games.multiplayer.ParticipantEntity) $r6;
+        virtualinvoke $r4.<com.google.android.gms.games.multiplayer.ParticipantEntity: void writeToParcel(android.os.Parcel,int)>($r1, $i0);
+        $i1 = $i1 + 1;
+        goto label2;
+    }
+}

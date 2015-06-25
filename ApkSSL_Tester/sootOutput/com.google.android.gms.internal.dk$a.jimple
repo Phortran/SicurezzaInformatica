@@ -1,0 +1,53 @@
+public abstract class com.google.android.gms.internal.dk$a extends android.os.Binder implements com.google.android.gms.internal.dk
+{
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.dk$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        boolean $z0;
+        android.os.IBinder $r4;
+        com.google.android.gms.dynamic.b $r5;
+
+        $r0 := @this: com.google.android.gms.internal.dk$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.common.internal.ISignInButtonCreator");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.common.internal.ISignInButtonCreator");
+        $r4 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r4);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.internal.dk$a: com.google.android.gms.dynamic.b a(com.google.android.gms.dynamic.b,int,int)>($r5, $i1, $i0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label4;
+
+        $r4 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r4);
+        return 1;
+
+     label4:
+        $r4 = null;
+        goto label3;
+    }
+}

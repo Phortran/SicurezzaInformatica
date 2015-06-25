@@ -1,0 +1,307 @@
+abstract class android.support.v4.c.g extends java.lang.Object
+{
+    android.support.v4.c.i b;
+    android.support.v4.c.j c;
+    android.support.v4.c.l d;
+
+    void <init>()
+    {
+        android.support.v4.c.g $r0;
+
+        $r0 := @this: android.support.v4.c.g;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static boolean a(java.util.Map, java.util.Collection)
+    {
+        java.util.Map $r0;
+        java.util.Collection $r1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.util.Collection;
+        $r2 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $z0 = interfaceinvoke $r0.<java.util.Map: boolean containsKey(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        return 0;
+
+     label1:
+        return 1;
+    }
+
+    public static boolean a(java.util.Set, java.lang.Object)
+    {
+        java.util.Set $r0, $r2;
+        java.lang.Object $r1;
+        boolean $z0, $z1, $z2;
+        int $i0, $i1;
+        java.lang.ClassCastException $r3;
+        java.lang.NullPointerException $r4;
+
+        $r0 := @parameter0: java.util.Set;
+        $r1 := @parameter1: java.lang.Object;
+        $z0 = 1;
+        $z1 = 0;
+        if $r0 != $r1 goto label1;
+
+        $z1 = 1;
+
+     label0:
+        return $z1;
+
+     label1:
+        $z2 = $r1 instanceof java.util.Set;
+        if $z2 == 0 goto label0;
+
+        $r2 = (java.util.Set) $r1;
+
+     label2:
+        $i1 = interfaceinvoke $r0.<java.util.Set: int size()>();
+        $i0 = interfaceinvoke $r2.<java.util.Set: int size()>();
+        if $i1 != $i0 goto label5;
+
+        $z2 = interfaceinvoke $r0.<java.util.Set: boolean containsAll(java.util.Collection)>($r2);
+
+     label3:
+        if $z2 == 0 goto label5;
+
+     label4:
+        return $z0;
+
+     label5:
+        $z0 = 0;
+        goto label4;
+
+     label6:
+        $r3 := @caughtexception;
+        return 0;
+
+     label7:
+        $r4 := @caughtexception;
+        return 0;
+
+        catch java.lang.NullPointerException from label2 to label3 with label7;
+        catch java.lang.ClassCastException from label2 to label3 with label6;
+    }
+
+    public static boolean b(java.util.Map, java.util.Collection)
+    {
+        java.util.Map $r0;
+        java.util.Collection $r1;
+        int $i0, $i1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.util.Collection;
+        $i0 = interfaceinvoke $r0.<java.util.Map: int size()>();
+        $r2 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        interfaceinvoke $r0.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r3);
+        goto label0;
+
+     label1:
+        $i1 = interfaceinvoke $r0.<java.util.Map: int size()>();
+        if $i0 == $i1 goto label2;
+
+        return 1;
+
+     label2:
+        return 0;
+    }
+
+    public static boolean c(java.util.Map, java.util.Collection)
+    {
+        java.util.Map $r0;
+        java.util.Collection $r1;
+        int $i0, $i1;
+        java.util.Set $r2;
+        boolean $z0;
+        java.util.Iterator $r3;
+        java.lang.Object $r4;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.util.Collection;
+        $i0 = interfaceinvoke $r0.<java.util.Map: int size()>();
+        $r2 = interfaceinvoke $r0.<java.util.Map: java.util.Set keySet()>();
+        $r3 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $z0 = interfaceinvoke $r1.<java.util.Collection: boolean contains(java.lang.Object)>($r4);
+        if $z0 != 0 goto label0;
+
+        interfaceinvoke $r3.<java.util.Iterator: void remove()>();
+        goto label0;
+
+     label1:
+        $i1 = interfaceinvoke $r0.<java.util.Map: int size()>();
+        if $i0 == $i1 goto label2;
+
+        return 1;
+
+     label2:
+        return 0;
+    }
+
+    protected abstract int a();
+
+    protected abstract int a(java.lang.Object);
+
+    protected abstract java.lang.Object a(int, int);
+
+    protected abstract java.lang.Object a(int, java.lang.Object);
+
+    protected abstract void a(int);
+
+    protected abstract void a(java.lang.Object, java.lang.Object);
+
+    public java.lang.Object[] a(java.lang.Object[], int)
+    {
+        android.support.v4.c.g $r0;
+        java.lang.Object[] $r1;
+        int $i0, $i1, $i2;
+        java.lang.Object $r2;
+        java.lang.Class $r3;
+
+        $r0 := @this: android.support.v4.c.g;
+        $r1 := @parameter0: java.lang.Object[];
+        $i0 := @parameter1: int;
+        $i2 = virtualinvoke $r0.<android.support.v4.c.g: int a()>();
+        $i1 = lengthof $r1;
+        if $i1 >= $i2 goto label4;
+
+        $r3 = virtualinvoke $r1.<java.lang.Object: java.lang.Class getClass()>();
+        $r3 = virtualinvoke $r3.<java.lang.Class: java.lang.Class getComponentType()>();
+        $r2 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>($r3, $i2);
+        $r1 = (java.lang.Object[]) $r2;
+        $r1 = (java.lang.Object[]) $r1;
+
+     label0:
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i2 goto label2;
+
+        $r2 = virtualinvoke $r0.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, $i0);
+        $r1[$i1] = $r2;
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label2:
+        $i1 = lengthof $r1;
+        if $i1 <= $i2 goto label3;
+
+        $r1[$i2] = null;
+
+     label3:
+        return $r1;
+
+     label4:
+        goto label0;
+    }
+
+    protected abstract int b(java.lang.Object);
+
+    protected abstract java.util.Map b();
+
+    public java.lang.Object[] b(int)
+    {
+        android.support.v4.c.g $r0;
+        int $i0, $i1, $i2;
+        java.lang.Object[] $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: android.support.v4.c.g;
+        $i0 := @parameter0: int;
+        $i2 = virtualinvoke $r0.<android.support.v4.c.g: int a()>();
+        $r1 = newarray (java.lang.Object)[$i2];
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i2 goto label1;
+
+        $r2 = virtualinvoke $r0.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, $i0);
+        $r1[$i1] = $r2;
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    protected abstract void c();
+
+    public java.util.Set d()
+    {
+        android.support.v4.c.g $r0;
+        android.support.v4.c.i $r1;
+
+        $r0 := @this: android.support.v4.c.g;
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.i b>;
+        if $r1 != null goto label0;
+
+        $r1 = new android.support.v4.c.i;
+        specialinvoke $r1.<android.support.v4.c.i: void <init>(android.support.v4.c.g)>($r0);
+        $r0.<android.support.v4.c.g: android.support.v4.c.i b> = $r1;
+
+     label0:
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.i b>;
+        return $r1;
+    }
+
+    public java.util.Set e()
+    {
+        android.support.v4.c.g $r0;
+        android.support.v4.c.j $r1;
+
+        $r0 := @this: android.support.v4.c.g;
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.j c>;
+        if $r1 != null goto label0;
+
+        $r1 = new android.support.v4.c.j;
+        specialinvoke $r1.<android.support.v4.c.j: void <init>(android.support.v4.c.g)>($r0);
+        $r0.<android.support.v4.c.g: android.support.v4.c.j c> = $r1;
+
+     label0:
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.j c>;
+        return $r1;
+    }
+
+    public java.util.Collection f()
+    {
+        android.support.v4.c.g $r0;
+        android.support.v4.c.l $r1;
+
+        $r0 := @this: android.support.v4.c.g;
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.l d>;
+        if $r1 != null goto label0;
+
+        $r1 = new android.support.v4.c.l;
+        specialinvoke $r1.<android.support.v4.c.l: void <init>(android.support.v4.c.g)>($r0);
+        $r0.<android.support.v4.c.g: android.support.v4.c.l d> = $r1;
+
+     label0:
+        $r1 = $r0.<android.support.v4.c.g: android.support.v4.c.l d>;
+        return $r1;
+    }
+}

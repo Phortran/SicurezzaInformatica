@@ -1,0 +1,977 @@
+public class it.h3g.areaclienti3.nwmonitoring.as extends java.lang.Object
+{
+    public int a;
+    private android.telephony.TelephonyManager b;
+    private android.net.ConnectivityManager c;
+    private it.h3g.areaclienti3.nwmonitoring.bf d;
+    private android.content.Context e;
+    private it.h3g.areaclienti3.nwmonitoring.j f;
+    private int g;
+    private int h;
+    private int i;
+    private int j;
+    private java.lang.String k;
+    private int l;
+    private int m;
+    private boolean n;
+    private boolean o;
+    private int p;
+    private int q;
+    private java.lang.String r;
+    private boolean s;
+    private android.telephony.PhoneStateListener t;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.content.Context $r1;
+        java.lang.Object $r2;
+        it.h3g.areaclienti3.nwmonitoring.bf $r4;
+        android.telephony.TelephonyManager $r5;
+        android.net.ConnectivityManager $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g> = -1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int i> = -1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int j> = -1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String k> = "-1";
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int a> = 0;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e> = $r1;
+        $r4 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        specialinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.bf d> = $r4;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        $r2 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r5 = (android.telephony.TelephonyManager) $r2;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b> = $r5;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        $r2 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r6 = (android.net.ConnectivityManager) $r2;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.net.ConnectivityManager c> = $r6;
+        return;
+    }
+
+    static it.h3g.areaclienti3.nwmonitoring.j a(it.h3g.areaclienti3.nwmonitoring.as)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        it.h3g.areaclienti3.nwmonitoring.j $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f>;
+        return $r1;
+    }
+
+    static void a(it.h3g.areaclienti3.nwmonitoring.as, int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 := @parameter1: int;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int h> = $i0;
+        return;
+    }
+
+    private void v()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        it.h3g.areaclienti3.nwmonitoring.j $r1;
+        int $i1, $i2;
+        it.h3g.areaclienti3.nwmonitoring.at $r4;
+        android.telephony.TelephonyManager $r5;
+        android.telephony.PhoneStateListener $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f>;
+        if $r1 == null goto label1;
+
+        $i2 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i2 <= 17 goto label3;
+
+        $i2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int a>;
+        $i1 = (int) 1;
+        if $i2 == $i1 goto label3;
+
+        $i2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int l()>();
+
+     label0:
+        if $i2 == -1 goto label2;
+
+        if $i2 == 2147483647 goto label2;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean s> = 1;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SIGNAL_API17", "OK");
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f>;
+        interfaceinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.j: void a()>();
+
+     label1:
+        return;
+
+     label2:
+        $i2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int a>;
+        if $i2 == 2 goto label1;
+
+        $r4 = new it.h3g.areaclienti3.nwmonitoring.at;
+        specialinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.at: void <init>(it.h3g.areaclienti3.nwmonitoring.as)>($r0);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.PhoneStateListener t> = $r4;
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.PhoneStateListener t>;
+        virtualinvoke $r5.<android.telephony.TelephonyManager: void listen(android.telephony.PhoneStateListener,int)>($r6, 288);
+        goto label1;
+
+     label3:
+        $i2 = -1;
+        goto label0;
+    }
+
+    protected int a(int, int, int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0, $i1, $i2, $i3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        lookupswitch($i2)
+        {
+            case 0: goto label1;
+            case 1: goto label0;
+            case 2: goto label2;
+            case 3: goto label3;
+            case 4: goto label4;
+            default: goto label0;
+        };
+
+     label0:
+        return -1;
+
+     label1:
+        return 0;
+
+     label2:
+        return -2;
+
+     label3:
+        if $i0 == -1 goto label0;
+
+        if $i1 == -1 goto label0;
+
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int k()>();
+        $i2 = $i3 / 10000;
+        $i3 = $i0 >>> 16;
+        $i3 = $i3 % 10;
+        if $i3 != $i2 goto label0;
+
+        $i3 = 100000 * $i3;
+        $i2 = 65535 & $i0;
+        $i3 = $i3 + $i2;
+        return $i3;
+
+     label4:
+        if $i0 <= 0 goto label0;
+
+        $i3 = $i0 & 255;
+        if $i3 > 9 goto label0;
+
+        $i2 = $i0 >>> 8;
+        $i2 = $i2 * 10;
+        $i3 = $i2 + $i3;
+        return $i3;
+    }
+
+    public android.os.Bundle a()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        boolean $z0;
+        java.lang.String $r1, $r3;
+        int $i0;
+        android.os.Bundle $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean s>;
+        if $z0 == 0 goto label0;
+
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int l()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g> = $i0;
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: void r()>();
+
+     label0:
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("signalStength", $i0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int i>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("phoneNetworkState", $i0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int j>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("dataNetworkState", $i0);
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String k>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mobileOperator", $r3);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int h>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("callState", $i0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int l>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("cellId", $i0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int m>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("lac", $i0);
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean n>;
+        virtualinvoke $r2.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("flightMode", $z0);
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean o>;
+        virtualinvoke $r2.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("dataEnabled", $z0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int p>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("batteryLevel", $i0);
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int q>;
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("globalCell", $i0);
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String r>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("dataSet", $r1);
+        return $r2;
+    }
+
+    protected java.lang.String a(java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 := @parameter0: java.lang.String;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("0");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label0;
+
+        $r2 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>(2147483647);
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r1 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>(-1);
+
+     label1:
+        return $r1;
+    }
+
+    public void a(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 := @parameter0: int;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int a> = $i0;
+        return;
+    }
+
+    public void a(android.telephony.SignalStrength)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.SignalStrength $r1;
+        java.lang.String $r2, $r3;
+        int $i1, $i4, $i5;
+        java.lang.String[] $r4;
+        boolean $z0;
+        java.lang.Exception $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 := @parameter0: android.telephony.SignalStrength;
+        $r3 = virtualinvoke $r1.<android.telephony.SignalStrength: java.lang.String toString()>();
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String)>(" ");
+        $i1 = lengthof $r4;
+        if $i1 < 10 goto label4;
+
+     label0:
+        $r2 = $r4[9];
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r2);
+
+     label1:
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean t()>();
+        if $z0 == 0 goto label5;
+
+     label2:
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r5.<java.lang.Exception: void printStackTrace()>();
+
+     label4:
+        $i1 = -1;
+        goto label1;
+
+     label5:
+        $i4 = virtualinvoke $r1.<android.telephony.SignalStrength: int getGsmSignalStrength()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean contains(java.lang.CharSequence)>("lte");
+        if $z0 == 0 goto label6;
+
+        if $i1 == 99 goto label6;
+
+        if $i1 == 2147483647 goto label6;
+
+        if $i1 == -1 goto label6;
+
+        if $i1 <= -140 goto label6;
+
+        if $i1 >= 0 goto label6;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g> = $i1;
+        goto label2;
+
+     label6:
+        if $i4 == 99 goto label7;
+
+        $i5 = $i4 * 2;
+        $i5 = $i5 + -113;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g> = $i5;
+        goto label2;
+
+     label7:
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int g> = 0;
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public void a(it.h3g.areaclienti3.nwmonitoring.j)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        it.h3g.areaclienti3.nwmonitoring.j $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 := @parameter0: it.h3g.areaclienti3.nwmonitoring.j;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f> = $r1;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f>;
+        if $r1 == null goto label0;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: void v()>();
+
+     label0:
+        return;
+    }
+
+    public int b(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 := @parameter0: int;
+        lookupswitch($i0)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            case 2: goto label2;
+            case 3: goto label3;
+            case 4: goto label2;
+            case 5: goto label3;
+            case 6: goto label3;
+            case 7: goto label2;
+            case 8: goto label3;
+            case 9: goto label3;
+            case 10: goto label3;
+            case 11: goto label2;
+            case 12: goto label3;
+            case 13: goto label4;
+            case 14: goto label3;
+            case 15: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+
+     label2:
+        return 2;
+
+     label3:
+        return 3;
+
+     label4:
+        return 4;
+    }
+
+    public void b()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        android.telephony.PhoneStateListener $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.PhoneStateListener t>;
+        virtualinvoke $r1.<android.telephony.TelephonyManager: void listen(android.telephony.PhoneStateListener,int)>($r2, 0);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.j f> = null;
+        return;
+    }
+
+    protected int c(int)
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 := @parameter0: int;
+        if $i0 == 0 goto label0;
+
+        if $i0 != 2147483647 goto label1;
+
+     label0:
+        $i0 = -1;
+
+     label1:
+        return $i0;
+    }
+
+    java.lang.String c()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String a(java.lang.String)>($r2);
+        return $r2;
+    }
+
+    java.lang.String d()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.lang.String getSubscriberId()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String a(java.lang.String)>($r2);
+        return $r2;
+    }
+
+    java.lang.String e()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.lang.String getSimOperator()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String a(java.lang.String)>($r2);
+        return $r2;
+    }
+
+    boolean f()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $i1 = virtualinvoke $r1.<android.telephony.TelephonyManager: int getSimState()>();
+        if $i1 != 2 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean g()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        it.h3g.areaclienti3.nwmonitoring.bf $r1;
+        boolean $z0;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.bf d>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.bf: boolean v()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String e()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("22299");
+        return $z0;
+    }
+
+    public boolean h()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        boolean $z0, $z1;
+        android.telephony.TelephonyManager $r1;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $z0 = 0;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r3 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.lang.String getSubscriberId()>();
+        if $r3 == null goto label0;
+
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z1 == 0 goto label1;
+
+     label0:
+        $z0 = 1;
+
+     label1:
+        return $z0;
+    }
+
+    public boolean i()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        it.h3g.areaclienti3.nwmonitoring.bf $r1;
+        boolean $z1;
+        java.lang.String $r2, $r3, $r4;
+        int $i3;
+        java.lang.Exception $r5;
+        java.lang.StringBuilder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: it.h3g.areaclienti3.nwmonitoring.bf d>;
+        $z1 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.bf: boolean v()>();
+        if $z1 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int,int)>(0, 3);
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String m()>();
+        if $r3 == null goto label0;
+
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z1 != 0 goto label0;
+
+        $i3 = virtualinvoke $r3.<java.lang.String: int length()>();
+        if $i3 < 3 goto label0;
+
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String substring(int,int)>(0, 3);
+        $z1 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r4);
+
+     label2:
+        if $z1 != 0 goto label0;
+
+        return 1;
+
+     label3:
+        $r5 := @caughtexception;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("errore durante calcolo risposta, ");
+        $r7 = virtualinvoke $r5.<java.lang.Exception: java.lang.Throwable getCause()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-PHONEDATAMANAGER_ISINTERNATIONALROAMING", $r3);
+        return 1;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+
+    int j()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        android.telephony.CellLocation $r2;
+        android.telephony.gsm.GsmCellLocation $r3;
+        int $i0;
+        java.lang.Exception $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: android.telephony.CellLocation getCellLocation()>();
+        $r3 = (android.telephony.gsm.GsmCellLocation) $r2;
+        $i0 = virtualinvoke $r3.<android.telephony.gsm.GsmCellLocation: int getCid()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int c(int)>($i0);
+
+     label1:
+        return $i0;
+
+     label2:
+        $r4 := @caughtexception;
+        return -1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    int k()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        android.telephony.CellLocation $r2;
+        android.telephony.gsm.GsmCellLocation $r3;
+        int $i0;
+        java.lang.Exception $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: android.telephony.CellLocation getCellLocation()>();
+        $r3 = (android.telephony.gsm.GsmCellLocation) $r2;
+        $i0 = virtualinvoke $r3.<android.telephony.gsm.GsmCellLocation: int getLac()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int c(int)>($i0);
+
+     label1:
+        return $i0;
+
+     label2:
+        $r4 := @caughtexception;
+        return -1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    int l()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        int $i0, $i1;
+        java.util.List $r2;
+        java.lang.Object $r3;
+        android.telephony.CellInfo $r4;
+        boolean $z0;
+        android.telephony.CellInfoGsm $r5;
+        android.telephony.CellSignalStrengthGsm $r6;
+        android.telephony.CellInfoCdma $r8;
+        android.telephony.CellSignalStrengthCdma $r9;
+        android.telephony.CellIdentityCdma $r10;
+        android.telephony.CellInfoLte $r11;
+        android.telephony.CellSignalStrengthLte $r12;
+        android.telephony.CellIdentityLte $r13;
+        android.telephony.CellInfoWcdma $r14;
+        android.telephony.CellSignalStrengthWcdma $r15;
+        android.telephony.CellIdentityWcdma $r16;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i1 = -1;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.util.List getAllCellInfo()>();
+        if $r2 == null goto label0;
+
+        $i0 = interfaceinvoke $r2.<java.util.List: int size()>();
+        if $i0 <= 0 goto label0;
+
+        $r3 = interfaceinvoke $r2.<java.util.List: java.lang.Object get(int)>(0);
+        $r4 = (android.telephony.CellInfo) $r3;
+        $z0 = $r4 instanceof android.telephony.CellInfoGsm;
+        if $z0 == 0 goto label1;
+
+        $r5 = (android.telephony.CellInfoGsm) $r4;
+        $r6 = virtualinvoke $r5.<android.telephony.CellInfoGsm: android.telephony.CellSignalStrengthGsm getCellSignalStrength()>();
+        $i1 = virtualinvoke $r6.<android.telephony.CellSignalStrengthGsm: int getDbm()>();
+
+     label0:
+        return $i1;
+
+     label1:
+        $z0 = $r4 instanceof android.telephony.CellInfoCdma;
+        if $z0 == 0 goto label2;
+
+        $r8 = (android.telephony.CellInfoCdma) $r4;
+        $r9 = virtualinvoke $r8.<android.telephony.CellInfoCdma: android.telephony.CellSignalStrengthCdma getCellSignalStrength()>();
+        $i1 = virtualinvoke $r9.<android.telephony.CellSignalStrengthCdma: int getCdmaDbm()>();
+        virtualinvoke $r9.<android.telephony.CellSignalStrengthCdma: int getCdmaEcio()>();
+        $r8 = (android.telephony.CellInfoCdma) $r4;
+        $r10 = virtualinvoke $r8.<android.telephony.CellInfoCdma: android.telephony.CellIdentityCdma getCellIdentity()>();
+        $i0 = virtualinvoke $r10.<android.telephony.CellIdentityCdma: int getBasestationId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int c(int)>($i0);
+        return $i1;
+
+     label2:
+        $z0 = $r4 instanceof android.telephony.CellInfoLte;
+        if $z0 == 0 goto label5;
+
+        $r11 = (android.telephony.CellInfoLte) $r4;
+        $r12 = virtualinvoke $r11.<android.telephony.CellInfoLte: android.telephony.CellSignalStrengthLte getCellSignalStrength()>();
+        $i0 = virtualinvoke $r12.<android.telephony.CellSignalStrengthLte: int getDbm()>();
+        if $i0 < -140 goto label3;
+
+        if $i0 <= 0 goto label4;
+
+     label3:
+        $i0 = -1;
+
+     label4:
+        $r11 = (android.telephony.CellInfoLte) $r4;
+        $r13 = virtualinvoke $r11.<android.telephony.CellInfoLte: android.telephony.CellIdentityLte getCellIdentity()>();
+        $i1 = virtualinvoke $r13.<android.telephony.CellIdentityLte: int getCi()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int c(int)>($i1);
+        return $i0;
+
+     label5:
+        $z0 = $r4 instanceof android.telephony.CellInfoWcdma;
+        if $z0 == 0 goto label0;
+
+        $r14 = (android.telephony.CellInfoWcdma) $r4;
+        $r15 = virtualinvoke $r14.<android.telephony.CellInfoWcdma: android.telephony.CellSignalStrengthWcdma getCellSignalStrength()>();
+        $i0 = virtualinvoke $r15.<android.telephony.CellSignalStrengthWcdma: int getDbm()>();
+        if $i0 < -113 goto label6;
+
+        if $i0 <= 0 goto label7;
+
+     label6:
+        $r14 = (android.telephony.CellInfoWcdma) $r4;
+        $r16 = virtualinvoke $r14.<android.telephony.CellInfoWcdma: android.telephony.CellIdentityWcdma getCellIdentity()>();
+        $i0 = virtualinvoke $r16.<android.telephony.CellIdentityWcdma: int getCid()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int c(int)>($i0);
+        return $i1;
+
+     label7:
+        $i1 = $i0;
+        goto label6;
+    }
+
+    java.lang.String m()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $r2 = virtualinvoke $r1.<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String a(java.lang.String)>($r2);
+        return $r2;
+    }
+
+    public boolean n()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $i1 = virtualinvoke $r1.<android.telephony.TelephonyManager: int getDataState()>();
+        if $i1 != 2 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public java.lang.String o()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.net.ConnectivityManager $r1;
+        java.lang.String $r3;
+        java.lang.Class $r4;
+        java.lang.Class[] $r5;
+        java.lang.reflect.Method $r6;
+        boolean $z0;
+        java.lang.Object[] $r7;
+        java.lang.Object $r8;
+        java.lang.Boolean $r9;
+        java.lang.Exception $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.net.ConnectivityManager c>;
+        $r4 = virtualinvoke $r1.<java.lang.Object: java.lang.Class getClass()>();
+        $r3 = virtualinvoke $r4.<java.lang.Class: java.lang.String getName()>();
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r3);
+        $r5 = newarray (java.lang.Class)[0];
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("getMobileDataEnabled", $r5);
+        virtualinvoke $r6.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.net.ConnectivityManager c>;
+        $r7 = newarray (java.lang.Object)[0];
+        $r8 = virtualinvoke $r6.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r1, $r7);
+        $r9 = (java.lang.Boolean) $r8;
+        $z0 = virtualinvoke $r9.<java.lang.Boolean: boolean booleanValue()>();
+
+     label1:
+        if $z0 == 0 goto label2;
+
+        return "1";
+
+     label2:
+        return "0";
+
+     label3:
+        $r10 := @caughtexception;
+        virtualinvoke $r10.<java.lang.Exception: void printStackTrace()>();
+        return "";
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public int p()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.telephony.TelephonyManager $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.telephony.TelephonyManager b>;
+        $i0 = virtualinvoke $r1.<android.telephony.TelephonyManager: int getNetworkType()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int b(int)>($i0);
+        return $i0;
+    }
+
+    public int q()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.net.ConnectivityManager $r1;
+        boolean $z0;
+        android.net.NetworkInfo $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.net.ConnectivityManager c>;
+        $r2 = virtualinvoke $r1.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r2 == null goto label1;
+
+        $i0 = virtualinvoke $r2.<android.net.NetworkInfo: int getSubtype()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int b(int)>($i0);
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean u()>();
+        if $z0 == 0 goto label0;
+
+        $i0 = 5;
+
+     label0:
+        return $i0;
+
+     label1:
+        return 0;
+    }
+
+    public void r()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0, $i1, $i2;
+        java.lang.String $r1;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int p()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int i> = $i0;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int q()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int j> = $i1;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String m()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String k> = $r1;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int j()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int l> = $i1;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int k()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int m> = $i1;
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean t()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean n> = $z0;
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean n()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: boolean o> = $z0;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int s()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int p> = $i1;
+        $i2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int l>;
+        $i0 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int m>;
+        $i1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: int i>;
+        $i2 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: int a(int,int,int)>($i2, $i0, $i1);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: int q> = $i2;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String o()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String r> = $r1;
+        return;
+    }
+
+    public int s()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0, $i1;
+        android.content.Context $r1;
+        android.content.IntentFilter $r2;
+        android.content.Intent $r4;
+        double $d1, $d2;
+        byte $b2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        $r2 = new android.content.IntentFilter;
+        specialinvoke $r2.<android.content.IntentFilter: void <init>(java.lang.String)>("android.intent.action.BATTERY_CHANGED");
+        $r4 = virtualinvoke $r1.<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>(null, $r2);
+        $i1 = virtualinvoke $r4.<android.content.Intent: int getIntExtra(java.lang.String,int)>("level", -1);
+        $d1 = (double) $i1;
+        $i1 = virtualinvoke $r4.<android.content.Intent: int getIntExtra(java.lang.String,int)>("scale", -1);
+        $d2 = (double) $i1;
+        $b2 = $d1 cmpl -1.0;
+        if $b2 == 0 goto label0;
+
+        $b2 = $d2 cmpl -1.0;
+        if $b2 != 0 goto label1;
+
+     label0:
+        return -1;
+
+     label1:
+        $d2 = $d1 / $d2;
+        $d2 = $d2 * 100.0;
+        $i0 = (int) $d2;
+        return $i0;
+    }
+
+    public boolean t()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        int $i0, $i1;
+        android.content.ContentResolver $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 17 goto label2;
+
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        $r1 = virtualinvoke $r2.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $i1 = (int) 0;
+        $i1 = staticinvoke <android.provider.Settings$System: int getInt(android.content.ContentResolver,java.lang.String,int)>($r1, "airplane_mode_on", $i1);
+        if $i1 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+
+     label2:
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.content.Context e>;
+        $r1 = virtualinvoke $r2.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $i1 = (int) 0;
+        $i1 = staticinvoke <android.provider.Settings$Global: int getInt(android.content.ContentResolver,java.lang.String,int)>($r1, "airplane_mode_on", $i1);
+        if $i1 != 0 goto label0;
+
+        return 0;
+    }
+
+    boolean u()
+    {
+        it.h3g.areaclienti3.nwmonitoring.as $r0;
+        android.net.ConnectivityManager $r1;
+        android.net.NetworkInfo $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.as;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.as: android.net.ConnectivityManager c>;
+        $r2 = virtualinvoke $r1.<android.net.ConnectivityManager: android.net.NetworkInfo getNetworkInfo(int)>(1);
+        if $r2 == null goto label0;
+
+        $z0 = virtualinvoke $r2.<android.net.NetworkInfo: boolean isConnected()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+}

@@ -1,0 +1,228 @@
+public class org.acra.sender.GoogleFormSender extends java.lang.Object implements org.acra.sender.ReportSender
+{
+    private final android.net.Uri mFormUri;
+
+    public void <init>()
+    {
+        org.acra.sender.GoogleFormSender $r0;
+
+        $r0 := @this: org.acra.sender.GoogleFormSender;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.sender.GoogleFormSender: android.net.Uri mFormUri> = null;
+        return;
+    }
+
+    public void <init>(java.lang.String)
+    {
+        org.acra.sender.GoogleFormSender $r0;
+        java.lang.String $r1, $r3;
+        org.acra.ACRAConfiguration $r2;
+        java.lang.Object[] $r4;
+        android.net.Uri $r5;
+
+        $r0 := @this: org.acra.sender.GoogleFormSender;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r3 = virtualinvoke $r2.<org.acra.ACRAConfiguration: java.lang.String googleFormUrlFormat()>();
+        $r4 = newarray (java.lang.Object)[1];
+        $r4[0] = $r1;
+        $r3 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r3, $r4);
+        $r5 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        $r0.<org.acra.sender.GoogleFormSender: android.net.Uri mFormUri> = $r5;
+        return;
+    }
+
+    private java.util.Map remap(java.util.Map)
+    {
+        org.acra.sender.GoogleFormSender $r0;
+        java.util.Map $r1;
+        org.acra.ACRAConfiguration $r2;
+        int $i0, $i1, $i2, $i3;
+        java.util.HashMap $r3;
+        int[] $r4;
+        java.lang.String $r5, $r10;
+        org.acra.ReportField[] $r6;
+        org.acra.ReportField $r7;
+        java.lang.StringBuilder $r8;
+        java.lang.Object $r9;
+
+        $r0 := @this: org.acra.sender.GoogleFormSender;
+        $r1 := @parameter0: java.util.Map;
+        $i1 = 0;
+        $r2 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r2.<org.acra.ACRAConfiguration: org.acra.ReportField[] customReportContent()>();
+        $i0 = lengthof $r6;
+        if $i0 != 0 goto label7;
+
+        $r6 = <org.acra.ACRAConstants: org.acra.ReportField[] DEFAULT_REPORT_FIELDS>;
+
+     label0:
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $i2 = lengthof $r6;
+        $i0 = 0;
+
+     label1:
+        if $i1 >= $i2 goto label6;
+
+        $r7 = $r6[$i1];
+        $r4 = <org.acra.sender.GoogleFormSender$1: int[] $SwitchMap$org$acra$ReportField>;
+        $i3 = virtualinvoke $r7.<org.acra.ReportField: int ordinal()>();
+        $i3 = $r4[$i3];
+        lookupswitch($i3)
+        {
+            case 1: goto label4;
+            case 2: goto label5;
+            default: goto label2;
+        };
+
+     label2:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("entry.");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".single");
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r9 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r9);
+
+     label3:
+        $i0 = $i0 + 1;
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label4:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("entry.");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".single");
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'");
+        $r9 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        $r5 = (java.lang.String) $r9;
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r10, $r5);
+        goto label3;
+
+     label5:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("entry.");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".single");
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'");
+        $r9 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        $r5 = (java.lang.String) $r9;
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r10, $r5);
+        goto label3;
+
+     label6:
+        return $r3;
+
+     label7:
+        goto label0;
+    }
+
+    public void send(org.acra.collector.CrashReportData)
+    {
+        org.acra.sender.GoogleFormSender $r0;
+        org.acra.collector.CrashReportData $r1;
+        android.net.Uri $r2;
+        org.acra.ACRAConfiguration $r3;
+        java.lang.String $r4, $r6;
+        java.lang.Object[] $r5;
+        java.util.Map $r7;
+        java.net.URL $r8;
+        java.lang.StringBuilder $r9;
+        org.acra.ReportField $r10;
+        java.lang.Object $r11;
+        org.acra.util.HttpRequest $r12;
+        int $i1;
+        org.acra.sender.HttpSender$Method $r13;
+        org.acra.sender.HttpSender$Type $r14;
+        java.io.IOException $r15;
+        org.acra.sender.ReportSenderException $r16;
+
+        $r0 := @this: org.acra.sender.GoogleFormSender;
+        $r1 := @parameter0: org.acra.collector.CrashReportData;
+        $r2 = $r0.<org.acra.sender.GoogleFormSender: android.net.Uri mFormUri>;
+        if $r2 != null goto label3;
+
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r4 = virtualinvoke $r3.<org.acra.ACRAConfiguration: java.lang.String googleFormUrlFormat()>();
+        $r5 = newarray (java.lang.Object)[1];
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r3.<org.acra.ACRAConfiguration: java.lang.String formKey()>();
+        $r5[0] = $r6;
+        $r6 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r4, $r5);
+        $r2 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r6);
+
+     label0:
+        $r7 = specialinvoke $r0.<org.acra.sender.GoogleFormSender: java.util.Map remap(java.util.Map)>($r1);
+        interfaceinvoke $r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("pageNumber", "0");
+        interfaceinvoke $r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("backupCache", "");
+        interfaceinvoke $r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("submit", "Envoyer");
+        $r8 = new java.net.URL;
+
+     label1:
+        $r6 = virtualinvoke $r2.<android.net.Uri: java.lang.String toString()>();
+        specialinvoke $r8.<java.net.URL: void <init>(java.lang.String)>($r6);
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Sending report ");
+        $r10 = <org.acra.ReportField: org.acra.ReportField REPORT_ID>;
+        $r11 = virtualinvoke $r1.<org.acra.collector.CrashReportData: java.lang.Object get(java.lang.Object)>($r10);
+        $r4 = (java.lang.String) $r11;
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r6, $r4);
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Connect to ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r6, $r4);
+        $r12 = new org.acra.util.HttpRequest;
+        specialinvoke $r12.<org.acra.util.HttpRequest: void <init>()>();
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i1 = virtualinvoke $r3.<org.acra.ACRAConfiguration: int connectionTimeout()>();
+        virtualinvoke $r12.<org.acra.util.HttpRequest: void setConnectionTimeOut(int)>($i1);
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i1 = virtualinvoke $r3.<org.acra.ACRAConfiguration: int socketTimeout()>();
+        virtualinvoke $r12.<org.acra.util.HttpRequest: void setSocketTimeOut(int)>($i1);
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i1 = virtualinvoke $r3.<org.acra.ACRAConfiguration: int maxNumberOfRequestRetries()>();
+        virtualinvoke $r12.<org.acra.util.HttpRequest: void setMaxNrRetries(int)>($i1);
+        $r13 = <org.acra.sender.HttpSender$Method: org.acra.sender.HttpSender$Method POST>;
+        $r6 = staticinvoke <org.acra.util.HttpRequest: java.lang.String getParamsAsFormString(java.util.Map)>($r7);
+        $r14 = <org.acra.sender.HttpSender$Type: org.acra.sender.HttpSender$Type FORM>;
+        virtualinvoke $r12.<org.acra.util.HttpRequest: void send(java.net.URL,org.acra.sender.HttpSender$Method,java.lang.String,org.acra.sender.HttpSender$Type)>($r8, $r13, $r6, $r14);
+
+     label2:
+        return;
+
+     label3:
+        $r2 = $r0.<org.acra.sender.GoogleFormSender: android.net.Uri mFormUri>;
+        goto label0;
+
+     label4:
+        $r15 := @caughtexception;
+        $r16 = new org.acra.sender.ReportSenderException;
+        specialinvoke $r16.<org.acra.sender.ReportSenderException: void <init>(java.lang.String,java.lang.Throwable)>("Error while sending report to Google Form.", $r15);
+        throw $r16;
+
+        catch java.io.IOException from label1 to label2 with label4;
+    }
+}

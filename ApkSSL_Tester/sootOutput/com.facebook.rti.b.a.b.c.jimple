@@ -1,0 +1,67 @@
+public final class com.facebook.rti.b.a.b.c extends android.content.BroadcastReceiver
+{
+    final com.facebook.rti.b.a.b.b a;
+
+    public void <init>(com.facebook.rti.b.a.b.b)
+    {
+        com.facebook.rti.b.a.b.c $r0;
+        com.facebook.rti.b.a.b.b $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.b.c;
+        $r1 := @parameter0: com.facebook.rti.b.a.b.b;
+        $r0.<com.facebook.rti.b.a.b.c: com.facebook.rti.b.a.b.b a> = $r1;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.rti.b.a.b.c $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r4;
+        java.lang.Object[] $r5;
+        boolean $z0;
+        int $i2;
+        com.facebook.rti.b.a.b.b $r6;
+        android.content.SharedPreferences $r7;
+        android.content.SharedPreferences$Editor $r8;
+
+        $r0 := @this: com.facebook.rti.b.a.b.c;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        if $r2 != null goto label1;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConfigUpdateBroadcastReceiver", "null intent", $r5);
+
+     label0:
+        return;
+
+     label1:
+        $r5 = newarray (java.lang.Object)[1];
+        $r5[0] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConfigUpdateBroadcastReceiver", "intent received=%s", $r5);
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = staticinvoke <com.facebook.rti.a.d.a.b: boolean a(java.lang.Object,java.lang.Object)>("com.facebook.rti.mqtt.ACTION_MQTT_CONFIG_OVERRIDE", $r4);
+        if $z0 == 0 goto label0;
+
+        $i2 = virtualinvoke $r2.<android.content.Intent: int getIntExtra(java.lang.String,int)>("device_on_keepalive_s", 0);
+        if $i2 <= 0 goto label2;
+
+        $r6 = $r0.<com.facebook.rti.b.a.b.c: com.facebook.rti.b.a.b.b a>;
+        $r7 = staticinvoke <com.facebook.rti.b.a.b.b: android.content.SharedPreferences a(com.facebook.rti.b.a.b.b)>($r6);
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r8 = interfaceinvoke $r8.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)>("device_on_keepalive_override", $i2);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r8);
+        goto label0;
+
+     label2:
+        $r6 = $r0.<com.facebook.rti.b.a.b.c: com.facebook.rti.b.a.b.b a>;
+        $r7 = staticinvoke <com.facebook.rti.b.a.b.b: android.content.SharedPreferences a(com.facebook.rti.b.a.b.b)>($r6);
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r8 = interfaceinvoke $r8.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor remove(java.lang.String)>("device_on_keepalive_override");
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r8);
+        goto label0;
+    }
+}

@@ -1,0 +1,636 @@
+class com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a extends java.lang.Object implements com.google.android.gms.maps.internal.IUiSettingsDelegate
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 1;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label3;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $b0 = 0;
+        goto label1;
+
+     label4:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label4;
+    }
+
+    public boolean a()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(9, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $r1 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+
+    public void b(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean b()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(10, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void c(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(3, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean c()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(11, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void d(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(4, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean d()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(12, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void e(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(5, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean e()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(13, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void f(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(6, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean f()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(14, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void g(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(7, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public boolean g()
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(15, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label2;
+
+        $z0 = 1;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public void h(boolean)
+    {
+        com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a $r0;
+        boolean $z0;
+        byte $b0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a;
+        $z0 := @parameter0: boolean;
+        $b0 = 0;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label1:
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($b0);
+        $r4 = $r0.<com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(8, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+}

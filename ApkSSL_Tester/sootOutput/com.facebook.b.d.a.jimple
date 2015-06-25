@@ -1,0 +1,147 @@
+public class com.facebook.b.d.a extends java.lang.Object
+{
+    private static final java.lang.String a;
+    private double b;
+    private final org.json.JSONObject c;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/b/d/a";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.b.d.a: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.b.d.a $r0;
+        org.json.JSONObject $r1;
+
+        $r0 := @this: com.facebook.b.d.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new org.json.JSONObject;
+        specialinvoke $r1.<org.json.JSONObject: void <init>()>();
+        $r0.<com.facebook.b.d.a: org.json.JSONObject c> = $r1;
+        $r0.<com.facebook.b.d.a: double b> = 0.0;
+        return;
+    }
+
+    public final org.json.JSONObject a()
+    {
+        com.facebook.b.d.a $r0;
+        org.json.JSONObject $r1;
+
+        $r0 := @this: com.facebook.b.d.a;
+        $r1 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+        return $r1;
+    }
+
+    public final void a(double)
+    {
+        com.facebook.b.d.a $r0;
+        double $d0;
+
+        $r0 := @this: com.facebook.b.d.a;
+        $d0 := @parameter0: double;
+        $r0.<com.facebook.b.d.a: double b> = $d0;
+        virtualinvoke $r0.<com.facebook.b.d.a: void a(java.lang.String,double)>("lite_percent", $d0);
+        return;
+    }
+
+    public final void a(java.lang.String)
+    {
+        com.facebook.b.d.a $r0;
+        java.lang.String $r1, $r3;
+        org.json.JSONObject $r2;
+        org.json.JSONArray $r4;
+        boolean $z0;
+        org.json.JSONException $r5;
+
+        $r0 := @this: com.facebook.b.d.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+
+     label0:
+        $z0 = virtualinvoke $r2.<org.json.JSONObject: boolean has(java.lang.String)>("errors");
+        if $z0 != 0 goto label1;
+
+        $r2 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+        $r4 = new org.json.JSONArray;
+        specialinvoke $r4.<org.json.JSONArray: void <init>()>();
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("errors", $r4);
+
+     label1:
+        $r2 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+        $r4 = virtualinvoke $r2.<org.json.JSONObject: org.json.JSONArray getJSONArray(java.lang.String)>("errors");
+        virtualinvoke $r4.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r1);
+
+     label2:
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+        $r3 = <com.facebook.b.d.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r3, "batteryusageinfo/fail to parse json for error info ", $r5);
+        goto label2;
+
+        catch org.json.JSONException from label0 to label2 with label3;
+    }
+
+    public final void a(java.lang.String, double)
+    {
+        com.facebook.b.d.a $r0;
+        java.lang.String $r1;
+        double $d0;
+        org.json.JSONObject $r2;
+        org.json.JSONException $r4;
+
+        $r0 := @this: com.facebook.b.d.a;
+        $r1 := @parameter0: java.lang.String;
+        $d0 := @parameter1: double;
+        $r2 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+
+     label0:
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,double)>($r1, $d0);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        $r1 = <com.facebook.b.d.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, "batteryusageinfo/fail to put double value to battery usage info", $r4);
+        goto label1;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+
+    public final void a(java.lang.String, org.json.JSONObject)
+    {
+        com.facebook.b.d.a $r0;
+        java.lang.String $r1;
+        org.json.JSONObject $r2, $r3;
+        org.json.JSONException $r5;
+
+        $r0 := @this: com.facebook.b.d.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: org.json.JSONObject;
+        $r3 = $r0.<com.facebook.b.d.a: org.json.JSONObject c>;
+
+     label0:
+        virtualinvoke $r3.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r2);
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        $r1 = <com.facebook.b.d.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, "batteryusageinfo/fail to put json object to battery usage info", $r5);
+        goto label1;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+}

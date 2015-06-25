@@ -1,0 +1,98 @@
+public final class com.facebook.lite.photo.s extends android.os.AsyncTask
+{
+    final com.facebook.lite.photo.PreviewActivity a;
+
+    public void <init>(com.facebook.lite.photo.PreviewActivity)
+    {
+        com.facebook.lite.photo.s $r0;
+        com.facebook.lite.photo.PreviewActivity $r1;
+
+        $r0 := @this: com.facebook.lite.photo.s;
+        $r1 := @parameter0: com.facebook.lite.photo.PreviewActivity;
+        $r0.<com.facebook.lite.photo.s: com.facebook.lite.photo.PreviewActivity a> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    private transient android.graphics.Bitmap a()
+    {
+        com.facebook.lite.photo.s $r0;
+        com.facebook.lite.photo.PreviewActivity $r1;
+        java.lang.String $r2;
+        android.graphics.Bitmap $r4;
+        int $i0;
+        java.lang.OutOfMemoryError $r5;
+
+        $r0 := @this: com.facebook.lite.photo.s;
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.photo.s: com.facebook.lite.photo.PreviewActivity a>;
+        $r4 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.graphics.Bitmap c(com.facebook.lite.photo.PreviewActivity)>($r1);
+        $r1 = $r0.<com.facebook.lite.photo.s: com.facebook.lite.photo.PreviewActivity a>;
+        $i0 = staticinvoke <com.facebook.lite.photo.PreviewActivity: int a(com.facebook.lite.photo.PreviewActivity)>($r1);
+        $r4 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(android.graphics.Bitmap,int)>($r4, $i0);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r1 = $r0.<com.facebook.lite.photo.s: com.facebook.lite.photo.PreviewActivity a>;
+        $r4 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.graphics.Bitmap c(com.facebook.lite.photo.PreviewActivity)>($r1);
+        $r2 = staticinvoke <com.facebook.lite.photo.PreviewActivity: java.lang.String a()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "preview/out of memory while rotating the photo.", $r5);
+        return $r4;
+
+        catch java.lang.OutOfMemoryError from label0 to label1 with label2;
+    }
+
+    private void a(android.graphics.Bitmap)
+    {
+        com.facebook.lite.photo.s $r0;
+        android.graphics.Bitmap $r1;
+        boolean $z0;
+        com.facebook.lite.photo.PreviewActivity $r2;
+        android.widget.ImageView $r3;
+
+        $r0 := @this: com.facebook.lite.photo.s;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<android.graphics.Bitmap: boolean isRecycled()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.photo.s: com.facebook.lite.photo.PreviewActivity a>;
+        $r3 = staticinvoke <com.facebook.lite.photo.PreviewActivity: android.widget.ImageView d(com.facebook.lite.photo.PreviewActivity)>($r2);
+        virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>($r1);
+        goto label0;
+    }
+
+    protected final java.lang.Object doInBackground(java.lang.Object[])
+    {
+        com.facebook.lite.photo.s $r0;
+        java.lang.Object[] $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.s;
+        $r1 := @parameter0: java.lang.Object[];
+        $r2 = specialinvoke $r0.<com.facebook.lite.photo.s: android.graphics.Bitmap a()>();
+        return $r2;
+    }
+
+    protected final void onPostExecute(java.lang.Object)
+    {
+        com.facebook.lite.photo.s $r0;
+        java.lang.Object $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.s;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        specialinvoke $r0.<com.facebook.lite.photo.s: void a(android.graphics.Bitmap)>($r2);
+        return;
+    }
+}

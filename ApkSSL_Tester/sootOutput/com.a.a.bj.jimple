@@ -1,0 +1,833 @@
+final class com.a.a.bj extends java.lang.Object
+{
+    static final java.lang.StringBuilder a;
+
+    static void <clinit>()
+    {
+        java.lang.StringBuilder $r0;
+
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        <com.a.a.bj: java.lang.StringBuilder a> = $r0;
+        return;
+    }
+
+    static int a(android.content.res.Resources, com.a.a.au)
+    {
+        android.content.res.Resources $r0;
+        com.a.a.au $r1;
+        int $i0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3, $r9, $r10;
+        android.net.Uri $r4;
+        java.io.FileNotFoundException $r5;
+        java.util.List $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+        java.lang.NumberFormatException $r8;
+
+        $r0 := @parameter0: android.content.res.Resources;
+        $r1 := @parameter1: com.a.a.au;
+        $i0 = $r1.<com.a.a.au: int e>;
+        if $i0 != 0 goto label0;
+
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        if $r4 != null goto label1;
+
+     label0:
+        $i0 = $r1.<com.a.a.au: int e>;
+        return $i0;
+
+     label1:
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r3 = virtualinvoke $r4.<android.net.Uri: java.lang.String getAuthority()>();
+        if $r3 != null goto label2;
+
+        $r5 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No package provided: ");
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+
+     label2:
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r6 = virtualinvoke $r4.<android.net.Uri: java.util.List getPathSegments()>();
+        if $r6 == null goto label3;
+
+        $z0 = interfaceinvoke $r6.<java.util.List: boolean isEmpty()>();
+        if $z0 == 0 goto label4;
+
+     label3:
+        $r5 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No path segments: ");
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+
+     label4:
+        $i0 = interfaceinvoke $r6.<java.util.List: int size()>();
+        if $i0 != 1 goto label8;
+
+     label5:
+        $r7 = interfaceinvoke $r6.<java.util.List: java.lang.Object get(int)>(0);
+        $r3 = (java.lang.String) $r7;
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r3);
+
+     label6:
+        return $i0;
+
+     label7:
+        $r8 := @caughtexception;
+        $r5 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Last path segment is not a resource ID: ");
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r3);
+        throw $r5;
+
+     label8:
+        $i0 = interfaceinvoke $r6.<java.util.List: int size()>();
+        if $i0 != 2 goto label9;
+
+        $r7 = interfaceinvoke $r6.<java.util.List: java.lang.Object get(int)>(0);
+        $r9 = (java.lang.String) $r7;
+        $r7 = interfaceinvoke $r6.<java.util.List: java.lang.Object get(int)>(1);
+        $r10 = (java.lang.String) $r7;
+        $i0 = virtualinvoke $r0.<android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>($r10, $r9, $r3);
+        return $i0;
+
+     label9:
+        $r5 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("More than two path segments: ");
+        $r4 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r10);
+        throw $r5;
+
+        catch java.lang.NumberFormatException from label5 to label6 with label7;
+    }
+
+    static int a(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i2;
+        java.lang.String $r1;
+        java.lang.IllegalStateException $r2;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 12 goto label1;
+
+        $i0 = staticinvoke <com.a.a.bl: int a(android.graphics.Bitmap)>($r0);
+
+     label0:
+        if $i0 >= 0 goto label2;
+
+        $r2 = new java.lang.IllegalStateException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Negative size: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label1:
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getRowBytes()>();
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i0 = $i0 * $i2;
+        goto label0;
+
+     label2:
+        return $i0;
+    }
+
+    static long a(java.io.File)
+    {
+        java.io.File $r0;
+        android.os.StatFs $r1;
+        java.lang.String $r2;
+        long $l1, $l3;
+        int $i2;
+        java.lang.IllegalArgumentException $r3;
+
+        $r0 := @parameter0: java.io.File;
+        $r1 = new android.os.StatFs;
+
+     label0:
+        $r2 = virtualinvoke $r0.<java.io.File: java.lang.String getAbsolutePath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r2);
+        $i2 = virtualinvoke $r1.<android.os.StatFs: int getBlockCount()>();
+        $l1 = (long) $i2;
+        $i2 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+
+     label1:
+        $l3 = (long) $i2;
+        $l3 = $l3 * $l1;
+        $l3 = $l3 / 50L;
+
+     label2:
+        $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l3, 52428800L);
+        $l3 = staticinvoke <java.lang.Math: long max(long,long)>($l3, 5242880L);
+        return $l3;
+
+     label3:
+        $r3 := @caughtexception;
+        $l3 = 5242880L;
+        goto label2;
+
+        catch java.lang.IllegalArgumentException from label0 to label1 with label3;
+    }
+
+    static android.content.res.Resources a(android.content.Context, com.a.a.au)
+    {
+        android.content.Context $r0;
+        com.a.a.au $r1;
+        int $i0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.content.res.Resources $r4;
+        android.net.Uri $r5;
+        java.io.FileNotFoundException $r6;
+        android.content.pm.PackageManager $r7;
+        android.content.pm.PackageManager$NameNotFoundException $r8;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: com.a.a.au;
+        $i0 = $r1.<com.a.a.au: int e>;
+        if $i0 != 0 goto label0;
+
+        $r5 = $r1.<com.a.a.au: android.net.Uri d>;
+        if $r5 != null goto label1;
+
+     label0:
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        return $r4;
+
+     label1:
+        $r5 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r3 = virtualinvoke $r5.<android.net.Uri: java.lang.String getAuthority()>();
+        if $r3 != null goto label2;
+
+        $r6 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No package provided: ");
+        $r5 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r6.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r3);
+        throw $r6;
+
+     label2:
+        $r7 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r4 = virtualinvoke $r7.<android.content.pm.PackageManager: android.content.res.Resources getResourcesForApplication(java.lang.String)>($r3);
+
+     label3:
+        return $r4;
+
+     label4:
+        $r8 := @caughtexception;
+        $r6 = new java.io.FileNotFoundException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unable to obtain resources for package: ");
+        $r5 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r6.<java.io.FileNotFoundException: void <init>(java.lang.String)>($r3);
+        throw $r6;
+
+        catch android.content.pm.PackageManager$NameNotFoundException from label2 to label3 with label4;
+    }
+
+    static com.a.a.w a(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0, $z2;
+        com.a.a.w $r2;
+        java.lang.RuntimeException $r3;
+        java.lang.ClassNotFoundException $r4, $r5;
+        com.a.a.bh $r6;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 = 1;
+
+     label0:
+        staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("com.squareup.okhttp.OkUrlFactory");
+
+     label1:
+        $z2 = 1;
+
+     label2:
+        staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("com.squareup.okhttp.OkHttpClient");
+
+     label3:
+        if $z0 == $z2 goto label6;
+
+        $r3 = new java.lang.RuntimeException;
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Picasso detected an unsupported OkHttp on the classpath.\nTo use OkHttp with this version of Picasso, you\'ll need:\n1. com.squareup.okhttp:okhttp:1.6.0 (or newer)\n2. com.squareup.okhttp:okhttp-urlconnection:1.6.0 (or newer)\nNote that OkHttp 2.0.0+ is supported!");
+        throw $r3;
+
+     label4:
+        $r4 := @caughtexception;
+        $z2 = 0;
+        goto label2;
+
+     label5:
+        $r5 := @caughtexception;
+        $z0 = 0;
+        goto label3;
+
+     label6:
+        if $z0 == 0 goto label7;
+
+        $r2 = staticinvoke <com.a.a.bm: com.a.a.w a(android.content.Context)>($r0);
+        return $r2;
+
+     label7:
+        $r6 = new com.a.a.bh;
+        specialinvoke $r6.<com.a.a.bh: void <init>(android.content.Context)>($r0);
+        return $r6;
+
+        catch java.lang.ClassNotFoundException from label0 to label1 with label4;
+        catch java.lang.ClassNotFoundException from label2 to label3 with label5;
+    }
+
+    static java.lang.Object a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        java.lang.Object $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>($r1);
+        return $r2;
+    }
+
+    static java.lang.String a(com.a.a.au)
+    {
+        com.a.a.au $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: com.a.a.au;
+        $r1 = <com.a.a.bj: java.lang.StringBuilder a>;
+        $r2 = staticinvoke <com.a.a.bj: java.lang.String a(com.a.a.au,java.lang.StringBuilder)>($r0, $r1);
+        $r1 = <com.a.a.bj: java.lang.StringBuilder a>;
+        virtualinvoke $r1.<java.lang.StringBuilder: void setLength(int)>(0);
+        return $r2;
+    }
+
+    static java.lang.String a(com.a.a.au, java.lang.StringBuilder)
+    {
+        com.a.a.au $r0;
+        java.lang.StringBuilder $r1, $r3;
+        java.lang.String $r2;
+        int $i2, $i5;
+        float $f1;
+        byte $b3;
+        boolean $z0;
+        java.util.List $r4;
+        java.lang.Object $r5;
+        com.a.a.bg $r6;
+        android.net.Uri $r7;
+
+        $r0 := @parameter0: com.a.a.au;
+        $r1 := @parameter1: java.lang.StringBuilder;
+        $r2 = $r0.<com.a.a.au: java.lang.String f>;
+        if $r2 == null goto label6;
+
+        $r2 = $r0.<com.a.a.au: java.lang.String f>;
+        $i2 = virtualinvoke $r2.<java.lang.String: int length()>();
+        $i2 = $i2 + 50;
+        virtualinvoke $r1.<java.lang.StringBuilder: void ensureCapacity(int)>($i2);
+        $r2 = $r0.<com.a.a.au: java.lang.String f>;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+
+     label0:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $f1 = $r0.<com.a.a.au: float l>;
+        $b3 = $f1 cmpl 0.0F;
+        if $b3 == 0 goto label2;
+
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("rotation:");
+        $f1 = $r0.<com.a.a.au: float l>;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1);
+        $z0 = $r0.<com.a.a.au: boolean o>;
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(64);
+        $f1 = $r0.<com.a.a.au: float m>;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(120);
+        $f1 = $r0.<com.a.a.au: float n>;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1);
+
+     label1:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+
+     label2:
+        $z0 = virtualinvoke $r0.<com.a.a.au: boolean d()>();
+        if $z0 == 0 goto label3;
+
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("resize:");
+        $i2 = $r0.<com.a.a.au: int h>;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(120);
+        $i2 = $r0.<com.a.a.au: int i>;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+
+     label3:
+        $z0 = $r0.<com.a.a.au: boolean j>;
+        if $z0 == 0 goto label8;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("centerCrop\n");
+
+     label4:
+        $r4 = $r0.<com.a.a.au: java.util.List g>;
+        if $r4 == null goto label9;
+
+        $r4 = $r0.<com.a.a.au: java.util.List g>;
+        $i2 = interfaceinvoke $r4.<java.util.List: int size()>();
+        $i5 = 0;
+
+     label5:
+        if $i5 >= $i2 goto label9;
+
+        $r4 = $r0.<com.a.a.au: java.util.List g>;
+        $r5 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>($i5);
+        $r6 = (com.a.a.bg) $r5;
+        $r2 = interfaceinvoke $r6.<com.a.a.bg: java.lang.String a()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $i5 = $i5 + 1;
+        goto label5;
+
+     label6:
+        $r7 = $r0.<com.a.a.au: android.net.Uri d>;
+        if $r7 == null goto label7;
+
+        $r7 = $r0.<com.a.a.au: android.net.Uri d>;
+        $r2 = virtualinvoke $r7.<android.net.Uri: java.lang.String toString()>();
+        $i5 = virtualinvoke $r2.<java.lang.String: int length()>();
+        $i5 = $i5 + 50;
+        virtualinvoke $r1.<java.lang.StringBuilder: void ensureCapacity(int)>($i5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        goto label0;
+
+     label7:
+        virtualinvoke $r1.<java.lang.StringBuilder: void ensureCapacity(int)>(50);
+        $i5 = $r0.<com.a.a.au: int e>;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        goto label0;
+
+     label8:
+        $z0 = $r0.<com.a.a.au: boolean k>;
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("centerInside\n");
+        goto label4;
+
+     label9:
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+
+    static java.lang.String a(com.a.a.d)
+    {
+        com.a.a.d $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.a.a.d;
+        $r1 = staticinvoke <com.a.a.bj: java.lang.String a(com.a.a.d,java.lang.String)>($r0, "");
+        return $r1;
+    }
+
+    static java.lang.String a(com.a.a.d, java.lang.String)
+    {
+        com.a.a.d $r0;
+        java.lang.String $r1;
+        com.a.a.au $r2;
+        int $i0, $i1;
+        java.lang.StringBuilder $r3;
+        com.a.a.a $r4, $r7;
+        java.util.List $r5;
+        java.lang.Object $r6;
+
+        $r0 := @parameter0: com.a.a.d;
+        $r1 := @parameter1: java.lang.String;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r0.<com.a.a.d: com.a.a.a i()>();
+        if $r4 == null goto label0;
+
+        $r2 = $r4.<com.a.a.a: com.a.a.au b>;
+        $r1 = virtualinvoke $r2.<com.a.a.au: java.lang.String a()>();
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+     label0:
+        $r5 = virtualinvoke $r0.<com.a.a.d: java.util.List k()>();
+        if $r5 == null goto label4;
+
+        $i1 = interfaceinvoke $r5.<java.util.List: int size()>();
+        $i0 = 0;
+
+     label1:
+        if $i0 >= $i1 goto label4;
+
+        if $i0 > 0 goto label2;
+
+        if $r4 == null goto label3;
+
+     label2:
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+     label3:
+        $r6 = interfaceinvoke $r5.<java.util.List: java.lang.Object get(int)>($i0);
+        $r7 = (com.a.a.a) $r6;
+        $r2 = $r7.<com.a.a.a: com.a.a.au b>;
+        $r1 = virtualinvoke $r2.<com.a.a.au: java.lang.String a()>();
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label4:
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+
+    static void a()
+    {
+        boolean $z0;
+        java.lang.IllegalStateException $r1;
+
+        $z0 = staticinvoke <com.a.a.bj: boolean b()>();
+        if $z0 != 0 goto label0;
+
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Method call should happen from the main thread.");
+        throw $r1;
+
+     label0:
+        return;
+    }
+
+    static void a(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.IOException $r1;
+
+        $r0 := @parameter0: java.io.InputStream;
+        if $r0 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r0.<java.io.InputStream: void close()>();
+
+     label2:
+        goto label0;
+
+     label3:
+        $r1 := @caughtexception;
+        goto label0;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+
+    static void a(java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        staticinvoke <com.a.a.bj: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>($r0, $r1, $r2, "");
+        return;
+    }
+
+    static void a(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2, $r3, $r5;
+        java.lang.Object[] $r6;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r6 = newarray (java.lang.Object)[4];
+        $r6[0] = $r0;
+        $r6[1] = $r1;
+        $r6[2] = $r2;
+        $r6[3] = $r3;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%1$-11s %2$-12s %3$s %4$s", $r6);
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("Picasso", $r5);
+        return;
+    }
+
+    static void a(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        staticinvoke <com.a.a.bj: void b(java.lang.Throwable)>($r0);
+        return;
+    }
+
+    static boolean a(java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0, $z2;
+        int $i0, $i1;
+        java.lang.String[] $r2;
+        java.lang.NumberFormatException $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = 1;
+        if $r0 != null goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String[] split(java.lang.String,int)>(" ", 2);
+        $r0 = "CACHE";
+        $i1 = (int) 0;
+        $r1 = $r2[$i1];
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z2 == 0 goto label2;
+
+        return 1;
+
+     label2:
+        $i0 = lengthof $r2;
+        $i1 = (int) 1;
+        if $i0 == $i1 goto label0;
+
+        $r1 = "CONDITIONAL_CACHE";
+        $r0 = $r2[0];
+
+     label3:
+        $z2 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r0);
+        if $z2 == 0 goto label6;
+
+        $r1 = $r2[1];
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+
+     label4:
+        if $i0 != 304 goto label6;
+
+     label5:
+        return $z0;
+
+     label6:
+        $z0 = 0;
+        goto label5;
+
+     label7:
+        $r3 := @caughtexception;
+        return 0;
+
+        catch java.lang.NumberFormatException from label3 to label4 with label7;
+    }
+
+    static java.io.File b(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.io.File $r1, $r3;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = new java.io.File;
+        $r0 = virtualinvoke $r0.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r3 = virtualinvoke $r0.<android.content.Context: java.io.File getCacheDir()>();
+        specialinvoke $r1.<java.io.File: void <init>(java.io.File,java.lang.String)>($r3, "picasso-cache");
+        $z0 = virtualinvoke $r1.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r1.<java.io.File: boolean mkdirs()>();
+
+     label0:
+        return $r1;
+    }
+
+    private static void b(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        throw $r0;
+    }
+
+    static boolean b()
+    {
+        android.os.Looper $r0;
+        java.lang.Thread $r1, $r2;
+
+        $r0 = staticinvoke <android.os.Looper: android.os.Looper getMainLooper()>();
+        $r2 = virtualinvoke $r0.<android.os.Looper: java.lang.Thread getThread()>();
+        $r1 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>();
+        if $r2 != $r1 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    static boolean b(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $i0 = virtualinvoke $r0.<android.content.Context: int checkCallingOrSelfPermission(java.lang.String)>($r1);
+        if $i0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    static byte[] b(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.ByteArrayOutputStream $r1;
+        int $i2;
+        byte[] $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r2 = newarray (byte)[4096];
+
+     label0:
+        $i2 = virtualinvoke $r0.<java.io.InputStream: int read(byte[])>($r2);
+        if -1 == $i2 goto label1;
+
+        virtualinvoke $r1.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r2, 0, $i2);
+        goto label0;
+
+     label1:
+        $r2 = virtualinvoke $r1.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return $r2;
+    }
+
+    static int c(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.content.pm.ApplicationInfo $r2;
+        int $i0, $i3;
+        java.lang.Object $r3;
+        android.app.ActivityManager $r4;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r3 = staticinvoke <com.a.a.bj: java.lang.Object a(android.content.Context,java.lang.String)>($r0, "activity");
+        $r4 = (android.app.ActivityManager) $r3;
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $i0 = $r2.<android.content.pm.ApplicationInfo: int flags>;
+        $i0 = $i0 & 1048576;
+        if $i0 == 0 goto label2;
+
+        $z0 = 1;
+
+     label0:
+        $i0 = virtualinvoke $r4.<android.app.ActivityManager: int getMemoryClass()>();
+        if $z0 == 0 goto label3;
+
+        $i3 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i3 < 11 goto label3;
+
+        $i3 = staticinvoke <com.a.a.bk: int a(android.app.ActivityManager)>($r4);
+
+     label1:
+        $i3 = $i3 * 1048576;
+        $i3 = $i3 / 7;
+        return $i3;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+
+     label3:
+        $i3 = $i0;
+        goto label1;
+    }
+
+    static boolean c(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        boolean $z0, $z1;
+        byte[] $r1;
+        int $i0, $i1;
+        java.lang.String $r3, $r4;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $z0 = 0;
+        $r1 = newarray (byte)[12];
+        $i0 = (int) 0;
+        $i0 = virtualinvoke $r0.<java.io.InputStream: int read(byte[],int,int)>($r1, $i0, 12);
+        if $i0 != 12 goto label0;
+
+        $r3 = "RIFF";
+        $r4 = new java.lang.String;
+        $i1 = (int) 0;
+        specialinvoke $r4.<java.lang.String: void <init>(byte[],int,int,java.lang.String)>($r1, $i1, 4, "US-ASCII");
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z1 == 0 goto label0;
+
+        $r4 = "WEBP";
+        $r3 = new java.lang.String;
+        specialinvoke $r3.<java.lang.String: void <init>(byte[],int,int,java.lang.String)>($r1, 8, 4, "US-ASCII");
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label0;
+
+        $z0 = 1;
+
+     label0:
+        return $z0;
+    }
+
+    static boolean d(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+        android.content.ContentResolver $r1;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 = 0;
+        $r1 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $i0 = (int) 0;
+        $i0 = staticinvoke <android.provider.Settings$System: int getInt(android.content.ContentResolver,java.lang.String,int)>($r1, "airplane_mode_on", $i0);
+        if $i0 == 0 goto label0;
+
+        $z0 = 1;
+
+     label0:
+        return $z0;
+    }
+}

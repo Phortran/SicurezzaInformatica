@@ -1,0 +1,34 @@
+public final class com.google.android.gms.maps.s extends java.lang.Object
+{
+
+    public static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+        com.google.android.gms.maps.internal.c $r1;
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r2;
+        com.google.android.gms.maps.model.internal.a $r3;
+        android.os.RemoteException $r4;
+        com.google.android.gms.maps.model.m $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r0);
+        $r1 = staticinvoke <com.google.android.gms.maps.internal.q: com.google.android.gms.maps.internal.c a(android.content.Context)>($r0);
+
+     label0:
+        $r2 = interfaceinvoke $r1.<com.google.android.gms.maps.internal.c: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a()>();
+        staticinvoke <com.google.android.gms.maps.b: void a(com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate)>($r2);
+        $r3 = interfaceinvoke $r1.<com.google.android.gms.maps.internal.c: com.google.android.gms.maps.model.internal.a b()>();
+        staticinvoke <com.google.android.gms.maps.model.b: void a(com.google.android.gms.maps.model.internal.a)>($r3);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        $r5 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r5.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r4);
+        throw $r5;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+}

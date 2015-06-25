@@ -1,0 +1,366 @@
+public class com.google.b.a.a.p extends com.google.b.a.a.bg
+{
+    private static com.google.b.a.a.p a;
+    private static java.lang.String b;
+    private final com.google.b.a.a.an c;
+    private boolean d;
+    private boolean e;
+    private int f;
+    private long g;
+    private android.content.Context h;
+    private final java.util.Map i;
+    private com.google.b.a.a.au j;
+    private com.google.b.a.a.bc k;
+    private com.google.b.a.a.l l;
+    private boolean m;
+    private boolean n;
+
+    private void <init>(android.content.Context)
+    {
+        com.google.b.a.a.p $r0;
+        android.content.Context $r1;
+        com.google.b.a.a.av $r2;
+        com.google.b.a.a.an $r3;
+        com.google.b.a.a.v $r4;
+
+        $r0 := @this: com.google.b.a.a.p;
+        $r1 := @parameter0: android.content.Context;
+        $r2 = new com.google.b.a.a.av;
+        specialinvoke $r2.<com.google.b.a.a.av: void <init>(android.content.Context)>($r1);
+        $r3 = staticinvoke <com.google.b.a.a.an: com.google.b.a.a.an a(android.content.Context)>($r1);
+        $r4 = staticinvoke <com.google.b.a.a.v: com.google.b.a.a.v a()>();
+        specialinvoke $r0.<com.google.b.a.a.p: void <init>(android.content.Context,com.google.b.a.a.au,com.google.b.a.a.an,com.google.b.a.a.bc,com.google.b.a.a.bh)>($r1, $r2, $r3, $r4, null);
+        return;
+    }
+
+    private void <init>(android.content.Context, com.google.b.a.a.au, com.google.b.a.a.an, com.google.b.a.a.bc, com.google.b.a.a.bh)
+    {
+        com.google.b.a.a.p $r0;
+        android.content.Context $r1;
+        com.google.b.a.a.au $r2;
+        com.google.b.a.a.an $r3;
+        com.google.b.a.a.bc $r4;
+        com.google.b.a.a.bh $r5;
+        java.lang.String $r6;
+        java.util.HashMap $r7;
+        com.google.b.a.a.q $r8;
+        int i0;
+
+        $r0 := @this: com.google.b.a.a.p;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.google.b.a.a.au;
+        $r3 := @parameter2: com.google.b.a.a.an;
+        $r4 := @parameter3: com.google.b.a.a.bc;
+        $r5 := @parameter4: com.google.b.a.a.bh;
+        if $r5 == null goto label2;
+
+     label0:
+        specialinvoke $r0.<com.google.b.a.a.bg: void <init>(java.lang.String,java.lang.String,com.google.b.a.a.bh)>("easy_tracker", null, $r5);
+        $r0.<com.google.b.a.a.p: boolean e> = 0;
+        i0 = (int) 0;
+        $r0.<com.google.b.a.a.p: int f> = i0;
+        $r7 = new java.util.HashMap;
+        specialinvoke $r7.<java.util.HashMap: void <init>()>();
+        $r0.<com.google.b.a.a.p: java.util.Map i> = $r7;
+        $r0.<com.google.b.a.a.p: boolean m> = 0;
+        $r0.<com.google.b.a.a.p: boolean n> = 0;
+        $r6 = <com.google.b.a.a.p: java.lang.String b>;
+        if $r6 == null goto label1;
+
+        $r6 = <com.google.b.a.a.p: java.lang.String b>;
+        interfaceinvoke $r2.<com.google.b.a.a.au: void d(java.lang.String)>($r6);
+
+     label1:
+        $r0.<com.google.b.a.a.p: com.google.b.a.a.an c> = $r3;
+        specialinvoke $r0.<com.google.b.a.a.p: void a(android.content.Context,com.google.b.a.a.au,com.google.b.a.a.bc)>($r1, $r2, $r4);
+        $r8 = new com.google.b.a.a.q;
+        specialinvoke $r8.<com.google.b.a.a.q: void <init>(com.google.b.a.a.p)>($r0);
+        $r0.<com.google.b.a.a.p: com.google.b.a.a.l l> = $r8;
+        return;
+
+     label2:
+        $r5 = $r3;
+        goto label0;
+    }
+
+    private com.google.b.a.a.as a(java.lang.String)
+    {
+        com.google.b.a.a.p $r0;
+        java.lang.String $r1;
+        com.google.b.a.a.as $r2;
+        java.lang.IllegalArgumentException $r3;
+
+        $r0 := @this: com.google.b.a.a.p;
+        $r1 := @parameter0: java.lang.String;
+
+     label0:
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String toUpperCase()>();
+        $r2 = staticinvoke <com.google.b.a.a.as: com.google.b.a.a.as valueOf(java.lang.String)>($r1);
+
+     label1:
+        return $r2;
+
+     label2:
+        $r3 := @caughtexception;
+        return null;
+
+        catch java.lang.IllegalArgumentException from label0 to label1 with label2;
+    }
+
+    public static com.google.b.a.a.p a(android.content.Context)
+    {
+        android.content.Context $r0;
+        com.google.b.a.a.p $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <com.google.b.a.a.p: com.google.b.a.a.p a>;
+        if $r1 != null goto label0;
+
+        $r1 = new com.google.b.a.a.p;
+        specialinvoke $r1.<com.google.b.a.a.p: void <init>(android.content.Context)>($r0);
+        <com.google.b.a.a.p: com.google.b.a.a.p a> = $r1;
+
+     label0:
+        $r1 = <com.google.b.a.a.p: com.google.b.a.a.p a>;
+        return $r1;
+    }
+
+    private void a()
+    {
+        com.google.b.a.a.p $r0;
+        java.lang.String $r1, $r3;
+        byte $b0;
+        com.google.b.a.a.au $r2;
+        boolean $z0;
+        java.lang.StringBuilder $r4;
+        com.google.b.a.a.as $r5;
+        com.google.b.a.a.an $r6;
+        com.google.b.a.a.ar $r7;
+        java.lang.Double $r8;
+        int $i1;
+        double $d0, $d1;
+        com.google.b.a.a.bc $r9;
+        long $l3;
+        com.google.b.a.a.s $r10;
+        java.lang.Thread$UncaughtExceptionHandler $r11;
+        android.content.Context $r12;
+
+        $r0 := @this: com.google.b.a.a.p;
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>("Starting EasyTracker.");
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.String a(java.lang.String)>("ga_trackingId");
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.String a(java.lang.String)>("ga_api_key");
+
+     label0:
+        virtualinvoke $r0.<com.google.b.a.a.p: void a(java.lang.String,java.lang.String)>("&tid", $r3);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] trackingId loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.String a(java.lang.String)>("ga_appName");
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 != 0 goto label1;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] app name loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r1 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r1);
+        virtualinvoke $r0.<com.google.b.a.a.p: void a(java.lang.String,java.lang.String)>("&an", $r3);
+
+     label1:
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.String a(java.lang.String)>("ga_appVersion");
+        if $r3 == null goto label2;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] app version loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r1 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r1);
+        virtualinvoke $r0.<com.google.b.a.a.p: void a(java.lang.String,java.lang.String)>("&av", $r3);
+
+     label2:
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.String a(java.lang.String)>("ga_logLevel");
+        if $r3 == null goto label3;
+
+        $r5 = specialinvoke $r0.<com.google.b.a.a.p: com.google.b.a.a.as a(java.lang.String)>($r3);
+        if $r5 == null goto label3;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] log level loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r6 = $r0.<com.google.b.a.a.p: com.google.b.a.a.an c>;
+        $r7 = virtualinvoke $r6.<com.google.b.a.a.an: com.google.b.a.a.ar d()>();
+        interfaceinvoke $r7.<com.google.b.a.a.ar: void a(com.google.b.a.a.as)>($r5);
+
+     label3:
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $r8 = interfaceinvoke $r2.<com.google.b.a.a.au: java.lang.Double b(java.lang.String)>("ga_sampleFrequency");
+        if $r8 != null goto label4;
+
+        $r8 = new java.lang.Double;
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $i1 = interfaceinvoke $r2.<com.google.b.a.a.au: int a(java.lang.String,int)>("ga_sampleRate", 100);
+        $d0 = (double) $i1;
+        specialinvoke $r8.<java.lang.Double: void <init>(double)>($d0);
+
+     label4:
+        $d0 = virtualinvoke $r8.<java.lang.Double: double doubleValue()>();
+        $b0 = $d0 cmpl 100.0;
+        if $b0 == 0 goto label5;
+
+        $d1 = virtualinvoke $r8.<java.lang.Double: double doubleValue()>();
+        $r1 = staticinvoke <java.lang.Double: java.lang.String toString(double)>($d1);
+        virtualinvoke $r0.<com.google.b.a.a.p: void a(java.lang.String,java.lang.String)>("&sf", $r1);
+
+     label5:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] sample rate loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $i1 = interfaceinvoke $r2.<com.google.b.a.a.au: int a(java.lang.String,int)>("ga_dispatchPeriod", 1800);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] dispatch period loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r9 = $r0.<com.google.b.a.a.p: com.google.b.a.a.bc k>;
+        virtualinvoke $r9.<com.google.b.a.a.bc: void a(int)>($i1);
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $i1 = interfaceinvoke $r2.<com.google.b.a.a.au: int a(java.lang.String,int)>("ga_sessionTimeout", 30);
+        $i1 = $i1 * 1000;
+        $l3 = (long) $i1;
+        $r0.<com.google.b.a.a.p: long g> = $l3;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] session timeout loaded: ");
+        $l3 = $r0.<com.google.b.a.a.p: long g>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $z0 = interfaceinvoke $r2.<com.google.b.a.a.au: boolean c(java.lang.String)>("ga_autoActivityTracking");
+        if $z0 != 0 goto label6;
+
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $z0 = interfaceinvoke $r2.<com.google.b.a.a.au: boolean c(java.lang.String)>("ga_auto_activity_tracking");
+        if $z0 == 0 goto label10;
+
+     label6:
+        $z0 = 1;
+
+     label7:
+        $r0.<com.google.b.a.a.p: boolean e> = $z0;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] auto activity tracking loaded: ");
+        $z0 = $r0.<com.google.b.a.a.p: boolean e>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $z0 = interfaceinvoke $r2.<com.google.b.a.a.au: boolean c(java.lang.String)>("ga_anonymizeIp");
+        if $z0 == 0 goto label8;
+
+        virtualinvoke $r0.<com.google.b.a.a.p: void a(java.lang.String,java.lang.String)>("&aip", "1");
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] anonymize ip loaded: ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+
+     label8:
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $z0 = interfaceinvoke $r2.<com.google.b.a.a.au: boolean c(java.lang.String)>("ga_reportUncaughtExceptions");
+        $r0.<com.google.b.a.a.p: boolean d> = $z0;
+        $z0 = $r0.<com.google.b.a.a.p: boolean d>;
+        if $z0 == 0 goto label9;
+
+        $r10 = new com.google.b.a.a.s;
+        $r9 = $r0.<com.google.b.a.a.p: com.google.b.a.a.bc k>;
+        $r11 = staticinvoke <java.lang.Thread: java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()>();
+        $r12 = $r0.<com.google.b.a.a.p: android.content.Context h>;
+        specialinvoke $r10.<com.google.b.a.a.s: void <init>(com.google.b.a.a.bg,com.google.b.a.a.bc,java.lang.Thread$UncaughtExceptionHandler,android.content.Context)>($r0, $r9, $r11, $r12);
+        staticinvoke <java.lang.Thread: void setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)>($r10);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[EasyTracker] report uncaught exceptions loaded: ");
+        $z0 = $r0.<com.google.b.a.a.p: boolean d>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r3);
+
+     label9:
+        $r2 = $r0.<com.google.b.a.a.p: com.google.b.a.a.au j>;
+        $z0 = interfaceinvoke $r2.<com.google.b.a.a.au: boolean c(java.lang.String)>("ga_dryRun");
+        $r6 = $r0.<com.google.b.a.a.p: com.google.b.a.a.an c>;
+        virtualinvoke $r6.<com.google.b.a.a.an: void a(boolean)>($z0);
+        return;
+
+     label10:
+        $z0 = 0;
+        goto label7;
+    }
+
+    private void a(android.content.Context, com.google.b.a.a.au, com.google.b.a.a.bc)
+    {
+        com.google.b.a.a.p $r0;
+        android.content.Context $r1;
+        com.google.b.a.a.au $r2;
+        com.google.b.a.a.bc $r3;
+
+        $r0 := @this: com.google.b.a.a.p;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.google.b.a.a.au;
+        $r3 := @parameter2: com.google.b.a.a.bc;
+        if $r1 != null goto label0;
+
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Context cannot be null");
+
+     label0:
+        $r1 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.google.b.a.a.p: android.content.Context h> = $r1;
+        $r0.<com.google.b.a.a.p: com.google.b.a.a.bc k> = $r3;
+        $r0.<com.google.b.a.a.p: com.google.b.a.a.au j> = $r2;
+        specialinvoke $r0.<com.google.b.a.a.p: void a()>();
+        return;
+    }
+
+    public void a(java.util.Map)
+    {
+        com.google.b.a.a.p $r0;
+        java.util.Map $r1;
+        boolean $z0;
+
+        $r0 := @this: com.google.b.a.a.p;
+        $r1 := @parameter0: java.util.Map;
+        $z0 = $r0.<com.google.b.a.a.p: boolean n>;
+        if $z0 == 0 goto label0;
+
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("&sc", "start");
+        $r0.<com.google.b.a.a.p: boolean n> = 0;
+
+     label0:
+        specialinvoke $r0.<com.google.b.a.a.bg: void a(java.util.Map)>($r1);
+        return;
+    }
+}

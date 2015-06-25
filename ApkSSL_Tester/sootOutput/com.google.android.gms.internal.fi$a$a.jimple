@@ -1,0 +1,124 @@
+class com.google.android.gms.internal.fi$a$a extends java.lang.Object implements com.google.android.gms.internal.fi
+{
+    private android.os.IBinder a;
+
+    public com.google.android.gms.dynamic.b a(com.google.android.gms.dynamic.b, int, int, java.lang.String, int)
+    {
+        com.google.android.gms.internal.fi$a$a $r0;
+        com.google.android.gms.dynamic.b $r1;
+        int $i0, $i1, $i2;
+        java.lang.String $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.fi$a$a;
+        $r1 := @parameter0: com.google.android.gms.dynamic.b;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 := @parameter3: java.lang.String;
+        $i2 := @parameter4: int;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusOneButtonCreator");
+        if $r1 == null goto label3;
+
+        $r6 = interfaceinvoke $r1.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label1:
+        virtualinvoke $r4.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r6);
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i0);
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i1);
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i2);
+        $r6 = $r0.<com.google.android.gms.internal.fi$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+        $r6 = virtualinvoke $r5.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r1 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r6);
+
+     label2:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return $r1;
+
+     label3:
+        $r6 = null;
+        goto label1;
+
+     label4:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label2 with label4;
+    }
+
+    public com.google.android.gms.dynamic.b a(com.google.android.gms.dynamic.b, int, int, java.lang.String, java.lang.String)
+    {
+        com.google.android.gms.internal.fi$a$a $r0;
+        com.google.android.gms.dynamic.b $r1;
+        int $i0, $i1;
+        java.lang.String $r2, $r3;
+        android.os.Parcel $r5, $r6;
+        android.os.IBinder $r7;
+        java.lang.Throwable $r8;
+
+        $r0 := @this: com.google.android.gms.internal.fi$a$a;
+        $r1 := @parameter0: com.google.android.gms.dynamic.b;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 := @parameter3: java.lang.String;
+        $r3 := @parameter4: java.lang.String;
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r6 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r5.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusOneButtonCreator");
+        if $r1 == null goto label3;
+
+        $r7 = interfaceinvoke $r1.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label1:
+        virtualinvoke $r5.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r7);
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>($i0);
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>($i1);
+        virtualinvoke $r5.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        virtualinvoke $r5.<android.os.Parcel: void writeString(java.lang.String)>($r3);
+        $r7 = $r0.<com.google.android.gms.internal.fi$a$a: android.os.IBinder a>;
+        interfaceinvoke $r7.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r5, $r6, 0);
+        virtualinvoke $r6.<android.os.Parcel: void readException()>();
+        $r7 = virtualinvoke $r6.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r1 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r7);
+
+     label2:
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        return $r1;
+
+     label3:
+        $r7 = null;
+        goto label1;
+
+     label4:
+        $r8 := @caughtexception;
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        throw $r8;
+
+        catch java.lang.Throwable from label0 to label2 with label4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.fi$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.fi$a$a;
+        $r1 = $r0.<com.google.android.gms.internal.fi$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+}

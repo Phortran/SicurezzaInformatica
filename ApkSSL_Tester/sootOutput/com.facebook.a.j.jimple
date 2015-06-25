@@ -1,0 +1,3052 @@
+public final class com.facebook.a.j extends java.lang.Object implements java.lang.Thread$UncaughtExceptionHandler
+{
+    private static java.util.concurrent.atomic.AtomicBoolean D;
+    private static final java.util.regex.Pattern c;
+    private static final com.facebook.a.m[] j;
+    private static com.facebook.a.j n;
+    private static int q;
+    private static int r;
+    private boolean A;
+    private boolean B;
+    private com.facebook.a.o C;
+    java.util.Map a;
+    java.util.Map b;
+    private long d;
+    private boolean e;
+    private java.util.ArrayList f;
+    private final java.util.Map g;
+    private final java.util.Map h;
+    private com.facebook.a.c.g i;
+    private boolean k;
+    private final java.lang.Object l;
+    private java.lang.Thread$UncaughtExceptionHandler m;
+    private android.content.Context o;
+    private java.io.File p;
+    private final com.facebook.a.c.k s;
+    private java.lang.String t;
+    private java.lang.String u;
+    private volatile java.lang.String v;
+    private volatile boolean w;
+    private boolean x;
+    private java.lang.String y;
+    private final android.text.format.Time z;
+
+    static void <clinit>()
+    {
+        com.facebook.a.m $r1;
+        java.util.regex.Pattern $r2;
+        int $i0;
+        com.facebook.a.m[] $r3;
+        java.util.concurrent.atomic.AtomicBoolean $r4;
+
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("^\\d+-[a-zA-Z0-9_\\-]+-(\\d+)\\.(temp_stacktrace|stacktrace)$");
+        <com.facebook.a.j: java.util.regex.Pattern c> = $r2;
+        $r3 = newarray (com.facebook.a.m)[3];
+        $r1 = <com.facebook.a.m: com.facebook.a.m a>;
+        $i0 = (int) 0;
+        $r3[$i0] = $r1;
+        $r1 = <com.facebook.a.m: com.facebook.a.m b>;
+        $r3[1] = $r1;
+        $r1 = <com.facebook.a.m: com.facebook.a.m c>;
+        $r3[2] = $r1;
+        <com.facebook.a.j: com.facebook.a.m[] j> = $r3;
+        <com.facebook.a.j: int q> = 5;
+        <com.facebook.a.j: int r> = 20;
+        $r4 = new java.util.concurrent.atomic.AtomicBoolean;
+        specialinvoke $r4.<java.util.concurrent.atomic.AtomicBoolean: void <init>(boolean)>(0);
+        <com.facebook.a.j: java.util.concurrent.atomic.AtomicBoolean D> = $r4;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.a.j $r0;
+        int $i1;
+        java.util.ArrayList $r1;
+        java.util.HashMap $r2;
+        java.util.concurrent.ConcurrentHashMap $r3;
+        java.lang.Object $r4;
+        com.facebook.a.c.k $r5;
+        android.text.format.Time $r6;
+
+        $r0 := @this: com.facebook.a.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.a.j: long d> = 51200L;
+        $r0.<com.facebook.a.j: boolean e> = 0;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<com.facebook.a.j: java.util.ArrayList f> = $r1;
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.a.j: java.util.Map g> = $r2;
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.a.j: java.util.Map h> = $r2;
+        $r3 = new java.util.concurrent.ConcurrentHashMap;
+        specialinvoke $r3.<java.util.concurrent.ConcurrentHashMap: void <init>()>();
+        $r0.<com.facebook.a.j: java.util.Map a> = $r3;
+        $r3 = new java.util.concurrent.ConcurrentHashMap;
+        specialinvoke $r3.<java.util.concurrent.ConcurrentHashMap: void <init>()>();
+        $r0.<com.facebook.a.j: java.util.Map b> = $r3;
+        $r0.<com.facebook.a.j: boolean k> = 0;
+        $r4 = new java.lang.Object;
+        specialinvoke $r4.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.a.j: java.lang.Object l> = $r4;
+        $r0.<com.facebook.a.j: java.io.File p> = null;
+        $r5 = new com.facebook.a.c.k;
+        $i1 = <com.facebook.a.j: int r>;
+        specialinvoke $r5.<com.facebook.a.c.k: void <init>(int)>($i1);
+        $r0.<com.facebook.a.j: com.facebook.a.c.k s> = $r5;
+        $r0.<com.facebook.a.j: boolean w> = 0;
+        $r6 = new android.text.format.Time;
+        specialinvoke $r6.<android.text.format.Time: void <init>()>();
+        $r0.<com.facebook.a.j: android.text.format.Time z> = $r6;
+        $r0.<com.facebook.a.j: boolean A> = 0;
+        return;
+    }
+
+    private int a(android.content.Context, com.facebook.a.m)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        com.facebook.a.m $r2;
+        java.lang.String $r3, $r9, $r15;
+        java.lang.String[] $r4;
+        com.facebook.a.l $r5;
+        com.facebook.a.s[] $r6;
+        com.facebook.a.e $r7, $r13;
+        int $i0, $i1, $i3, $i5;
+        java.lang.Exception $r10;
+        java.lang.StringBuilder $r11;
+        com.facebook.a.s $r12;
+        java.lang.Object $r14;
+        com.facebook.a.b.c $r16;
+        java.lang.Throwable $r17;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.facebook.a.m;
+        $i0 = 0;
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        $r3 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r2);
+        $r4 = staticinvoke <com.facebook.a.m: java.lang.String[] b(com.facebook.a.m)>($r2);
+        $r4 = specialinvoke $r0.<com.facebook.a.j: java.lang.String[] a(java.lang.String,java.lang.String[])>($r3, $r4);
+        if $r4 == null goto label11;
+
+        $i1 = lengthof $r4;
+        if $i1 <= 0 goto label11;
+
+        staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>($r4);
+        $r7 = new com.facebook.a.e;
+        specialinvoke $r7.<com.facebook.a.e: void <init>()>();
+        $r5 = new com.facebook.a.l;
+
+     label0:
+        specialinvoke $r5.<com.facebook.a.l: void <init>(com.facebook.a.j,byte)>($r0, 0);
+        $r6 = <com.facebook.a.a: com.facebook.a.s[] b>;
+        specialinvoke $r0.<com.facebook.a.j: void a(java.lang.String,java.lang.Throwable,com.facebook.a.s[],com.facebook.a.e,java.io.Writer,java.util.Map)>("crash attachment", $r5, $r6, $r7, null, null);
+
+     label1:
+        $i1 = lengthof $r4;
+        $i3 = 0;
+
+     label2:
+        if $i0 >= $i1 goto label9;
+
+        $r3 = $r4[$i0];
+        if $i3 < 5 goto label5;
+
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, "minidumps", $r3);
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label4:
+        $r10 := @caughtexception;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("retrieve exception: ");
+        $r9 = virtualinvoke $r10.<java.lang.Exception: java.lang.String getMessage()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r12 = <com.facebook.a.s: com.facebook.a.s T>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r12, $r9, $r7, null);
+        goto label1;
+
+     label5:
+        $r13 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.e a(android.content.Context,java.lang.String,com.facebook.a.m)>($r1, $r3, $r2);
+        $r9 = "load failed";
+        if $r13 == null goto label6;
+
+        $r12 = staticinvoke <com.facebook.a.m: com.facebook.a.s c(com.facebook.a.m)>($r2);
+        $r14 = virtualinvoke $r13.<com.facebook.a.e: java.lang.Object get(java.lang.Object)>($r12);
+        $r9 = (java.lang.String) $r14;
+
+     label6:
+        $r12 = <com.facebook.a.s: com.facebook.a.s a>;
+        $i5 = virtualinvoke $r3.<java.lang.String: int lastIndexOf(int)>(46);
+        $r15 = virtualinvoke $r3.<java.lang.String: java.lang.String substring(int,int)>(0, $i5);
+        virtualinvoke $r7.<com.facebook.a.e: java.lang.String a(com.facebook.a.s,java.lang.String,java.io.Writer)>($r12, $r15, null);
+        $r12 = staticinvoke <com.facebook.a.m: com.facebook.a.s c(com.facebook.a.m)>($r2);
+        virtualinvoke $r7.<com.facebook.a.e: java.lang.String a(com.facebook.a.s,java.lang.String,java.io.Writer)>($r12, $r9, null);
+        $r12 = <com.facebook.a.s: com.facebook.a.s S>;
+        virtualinvoke $r7.<com.facebook.a.e: java.lang.String a(com.facebook.a.s,java.lang.String,java.io.Writer)>($r12, "crash attachment", null);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.e)>($r7);
+        $r15 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r2);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, $r15, $r3);
+
+     label7:
+        $i3 = $i3 + 1;
+        goto label3;
+
+     label8:
+        $r16 := @caughtexception;
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed to send crash attachment report ");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r9 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, $r9, $r16);
+
+     label9:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("#checkAndSendCrashAttachments - finish, sent: ");
+        $r15 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i3);
+        virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        return $i3;
+
+     label10:
+        $r17 := @caughtexception;
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed on crash attachment file ");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r9 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, $r9, $r17);
+        $r15 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r2);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, $r15, $r3);
+        goto label9;
+
+     label11:
+        $i3 = 0;
+        goto label9;
+
+        catch java.lang.Exception from label0 to label1 with label4;
+        catch com.facebook.a.b.c from label5 to label7 with label8;
+        catch java.lang.Throwable from label5 to label7 with label10;
+    }
+
+    static android.content.Context a(com.facebook.a.j)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: com.facebook.a.j;
+        $r1 = $r0.<com.facebook.a.j: android.content.Context o>;
+        return $r1;
+    }
+
+    private com.facebook.a.e a(android.content.Context, java.lang.String)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        com.facebook.a.m $r3;
+        long $l0;
+        com.facebook.a.e $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = <com.facebook.a.m: com.facebook.a.m a>;
+        $l0 = $r0.<com.facebook.a.j: long d>;
+        $r4 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.e a(android.content.Context,java.lang.String,com.facebook.a.m,long)>($r1, $r2, $r3, $l0);
+        return $r4;
+    }
+
+    private com.facebook.a.e a(android.content.Context, java.lang.String, com.facebook.a.m)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        com.facebook.a.m $r3;
+        long $l0;
+        com.facebook.a.e $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: com.facebook.a.m;
+        $l0 = staticinvoke <com.facebook.a.m: long d(com.facebook.a.m)>($r3);
+        $r4 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.e a(android.content.Context,java.lang.String,com.facebook.a.m,long)>($r1, $r2, $r3, $l0);
+        return $r4;
+    }
+
+    private com.facebook.a.e a(android.content.Context, java.lang.String, com.facebook.a.m, long)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        java.lang.String $r2, $r5, $r8;
+        com.facebook.a.m $r3, $r10;
+        long $l0, $l1, $l2;
+        com.facebook.a.e $r4;
+        java.io.File $r6;
+        java.lang.StringBuilder $r7;
+        byte $b3;
+        boolean $z0;
+        java.io.FileInputStream $r9;
+        com.facebook.a.s $r11;
+        int $i4;
+        java.lang.Throwable $r12, $r13;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: com.facebook.a.m;
+        $l0 := @parameter3: long;
+        $r4 = new com.facebook.a.e;
+        specialinvoke $r4.<com.facebook.a.e: void <init>()>();
+        $r5 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r3);
+        $r6 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r1, $r5, $r2);
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l2 = virtualinvoke $r6.<java.io.File: long lastModified()>();
+        $l2 = $l1 - $l2;
+        $b3 = $l2 cmp 86400000L;
+        if $b3 <= 0 goto label0;
+
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("crash report ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" was too old; deleted");
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r5, $r8);
+        $r8 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r3);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, $r8, $r2);
+        return null;
+
+     label0:
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>(".temp_stacktrace");
+        if $z0 == 0 goto label1;
+
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l1 = virtualinvoke $r6.<java.io.File: long lastModified()>();
+        $l2 = $l2 - $l1;
+        $b3 = $l2 cmp 600000L;
+        if $b3 >= 0 goto label1;
+
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("temp file ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is too recent; skipping");
+        $r5 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r8, $r5);
+        return null;
+
+     label1:
+        $l2 = virtualinvoke $r6.<java.io.File: long length()>();
+        $b3 = $l2 cmp $l0;
+        if $b3 <= 0 goto label2;
+
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $l2 = virtualinvoke $r6.<java.io.File: long length()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("-byte crash report ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" exceeded max size of ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" bytes; deleted");
+        $r5 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r8, $r5);
+        $r8 = staticinvoke <com.facebook.a.m: java.lang.String a(com.facebook.a.m)>($r3);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, $r8, $r2);
+        return null;
+
+     label2:
+        $r9 = new java.io.FileInputStream;
+        specialinvoke $r9.<java.io.FileInputStream: void <init>(java.io.File)>($r6);
+        $z0 = 0;
+
+     label3:
+        $r10 = <com.facebook.a.m: com.facebook.a.m a>;
+        if $r3 != $r10 goto label6;
+
+        virtualinvoke $r4.<com.facebook.a.e: void a(java.io.InputStream)>($r9);
+
+     label4:
+        virtualinvoke $r9.<java.io.FileInputStream: void close()>();
+
+     label5:
+        $r11 = <com.facebook.a.s: com.facebook.a.s R>;
+        virtualinvoke $r4.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r2);
+        specialinvoke $r0.<com.facebook.a.j: void b(com.facebook.a.e)>($r4);
+        return $r4;
+
+     label6:
+        $l2 = virtualinvoke $r6.<java.io.File: long length()>();
+        $i4 = (int) $l2;
+        $r8 = staticinvoke <com.facebook.a.j: java.lang.String a(java.io.InputStream,int)>($r9, $i4);
+        $r11 = staticinvoke <com.facebook.a.m: com.facebook.a.s c(com.facebook.a.m)>($r3);
+        virtualinvoke $r4.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r8);
+
+     label7:
+        goto label4;
+
+     label8:
+        $r12 := @caughtexception;
+
+     label9:
+        $r11 = <com.facebook.a.s: com.facebook.a.s T>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("throwable: ");
+        $r8 = virtualinvoke $r12.<java.lang.Throwable: java.lang.String getMessage()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r8);
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("Could not load crash report:");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r12);
+        $r5 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r8, $r5);
+        virtualinvoke $r9.<java.io.FileInputStream: void close()>();
+        $z0 = 1;
+        virtualinvoke $r1.<android.content.Context: boolean deleteFile(java.lang.String)>($r2);
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("Crash report:");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" deleted");
+        $r5 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r8, $r5);
+
+     label10:
+        goto label5;
+
+     label11:
+        $r13 := @caughtexception;
+        if $z0 != 0 goto label12;
+
+        virtualinvoke $r9.<java.io.FileInputStream: void close()>();
+
+     label12:
+        throw $r13;
+
+        catch java.lang.Throwable from label3 to label4 with label8;
+        catch java.lang.Throwable from label6 to label7 with label8;
+        catch java.lang.Throwable from label9 to label10 with label11;
+    }
+
+    public static com.facebook.a.j a()
+    {
+        com.facebook.a.j $r0;
+
+        $r0 = <com.facebook.a.j: com.facebook.a.j n>;
+        if $r0 != null goto label0;
+
+        $r0 = new com.facebook.a.j;
+        specialinvoke $r0.<com.facebook.a.j: void <init>()>();
+        <com.facebook.a.j: com.facebook.a.j n> = $r0;
+
+     label0:
+        $r0 = <com.facebook.a.j: com.facebook.a.j n>;
+        return $r0;
+    }
+
+    private com.facebook.a.n a(java.lang.Throwable, java.util.Map)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Throwable $r1;
+        java.util.Map $r2;
+        boolean $z0;
+        com.facebook.a.s[] $r3;
+        com.facebook.a.n $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 := @parameter1: java.util.Map;
+        $z0 = $r1 instanceof java.lang.OutOfMemoryError;
+        if $z0 != 0 goto label1;
+
+        $z0 = 1;
+
+     label0:
+        $r3 = staticinvoke <com.facebook.a.j: com.facebook.a.s[] c(java.lang.Throwable)>($r1);
+        $r4 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.n a(java.lang.Throwable,java.util.Map,com.facebook.a.s[],boolean)>($r1, $r2, $r3, $z0);
+        return $r4;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+    }
+
+    private com.facebook.a.n a(java.lang.Throwable, java.util.Map, com.facebook.a.s[], boolean)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Throwable $r1, $r4, $r31;
+        java.util.Map $r2;
+        com.facebook.a.s[] $r3;
+        boolean $z0, $z1;
+        java.lang.String $r5, $r9, $r15;
+        java.lang.StringBuilder $r6;
+        java.lang.Class $r7;
+        com.facebook.a.e $r8;
+        java.io.RandomAccessFile $r10, $r19;
+        java.io.File $r11, $r12, $r18;
+        com.facebook.a.n $r13;
+        com.facebook.a.q $r14;
+        android.content.Context $r16;
+        java.io.Writer $r17, $r22;
+        java.io.FileOutputStream $r20;
+        java.io.FileDescriptor $r21;
+        com.facebook.a.s $r23;
+        java.nio.channels.FileChannel $r25;
+        long $l0;
+        java.lang.Exception $r26, $r27, $r28, $r29, $r30, $r32;
+        com.facebook.a.m[] $r33;
+        com.facebook.a.m $r34;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 := @parameter1: java.util.Map;
+        $r3 := @parameter2: com.facebook.a.s[];
+        $z0 := @parameter3: boolean;
+        $r4 = staticinvoke <com.facebook.a.j: java.lang.Throwable d(java.lang.Throwable)>($r1);
+        $r7 = virtualinvoke $r4.<java.lang.Object: java.lang.Class getClass()>();
+        $z1 = specialinvoke $r0.<com.facebook.a.j: boolean e(java.lang.Throwable)>($r4);
+        if $z1 != 0 goto label0;
+
+        return null;
+
+     label0:
+        $r8 = new com.facebook.a.e;
+        specialinvoke $r8.<com.facebook.a.e: void <init>()>();
+        $z1 = $r1 instanceof com.facebook.a.q;
+        if $z1 == 0 goto label13;
+
+        $r14 = (com.facebook.a.q) $r1;
+        $r15 = interfaceinvoke $r14.<com.facebook.a.q: java.lang.String a()>();
+
+     label1:
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Handling exception for ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        $r15 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(java.lang.String,java.lang.String,java.lang.Throwable)>($r5, $r15, $r1);
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        $r15 = specialinvoke $r0.<com.facebook.a.j: java.lang.String a(java.lang.Class,java.lang.String)>($r7, ".temp_stacktrace");
+        $r16 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r11 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r16, "acra-reports", $r15);
+        $r9 = specialinvoke $r0.<com.facebook.a.j: java.lang.String a(java.lang.Class,java.lang.String)>($r7, ".stacktrace");
+        $r16 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r12 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r16, "acra-reports", $r9);
+        $r10 = null;
+        $r17 = null;
+
+     label2:
+        $z1 = $r0.<com.facebook.a.j: boolean A>;
+        if $z1 == 0 goto label3;
+
+        $r18 = $r0.<com.facebook.a.j: java.io.File p>;
+        virtualinvoke $r18.<java.io.File: boolean renameTo(java.io.File)>($r11);
+
+     label3:
+        $r19 = new java.io.RandomAccessFile;
+        specialinvoke $r19.<java.io.RandomAccessFile: void <init>(java.io.File,java.lang.String)>($r11, "rw");
+
+     label4:
+        $r20 = new java.io.FileOutputStream;
+
+     label5:
+        $r21 = virtualinvoke $r19.<java.io.RandomAccessFile: java.io.FileDescriptor getFD()>();
+        specialinvoke $r20.<java.io.FileOutputStream: void <init>(java.io.FileDescriptor)>($r21);
+        $r22 = staticinvoke <com.facebook.a.e: java.io.Writer a(java.io.OutputStream)>($r20);
+
+     label6:
+        $r17 = $r22;
+        $r10 = $r19;
+
+     label7:
+        $r23 = <com.facebook.a.s: com.facebook.a.s R>;
+
+     label8:
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r23, $r9, $r8, $r17);
+        $r23 = <com.facebook.a.s: com.facebook.a.s S>;
+        $r15 = virtualinvoke $r7.<java.lang.Class: java.lang.String getName()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r23, $r15, $r8, $r17);
+        $r15 = staticinvoke <com.facebook.a.j: java.lang.String b(java.lang.Throwable)>($r1);
+        specialinvoke $r0.<com.facebook.a.j: void a(java.lang.String,java.lang.Throwable,com.facebook.a.s[],com.facebook.a.e,java.io.Writer,java.util.Map)>($r15, $r1, $r3, $r8, $r17, $r2);
+
+     label9:
+        if $r10 == null goto label11;
+
+     label10:
+        $r25 = virtualinvoke $r10.<java.io.RandomAccessFile: java.nio.channels.FileChannel getChannel()>();
+        $l0 = virtualinvoke $r25.<java.nio.channels.FileChannel: long position()>();
+        virtualinvoke $r25.<java.nio.channels.FileChannel: java.nio.channels.FileChannel truncate(long)>($l0);
+        virtualinvoke $r10.<java.io.RandomAccessFile: void close()>();
+        virtualinvoke $r11.<java.io.File: boolean renameTo(java.io.File)>($r12);
+
+     label11:
+        if $z0 == 0 goto label36;
+
+        $z1 = $r0.<com.facebook.a.j: boolean w>;
+        if $z1 == 0 goto label35;
+
+        $r13 = new com.facebook.a.n;
+        specialinvoke $r13.<com.facebook.a.n: void <init>(com.facebook.a.j,com.facebook.a.e)>($r0, $r8);
+
+     label12:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        virtualinvoke $r13.<com.facebook.a.n: void start()>();
+        return $r13;
+
+     label13:
+        $r15 = "crash";
+        goto label1;
+
+     label14:
+        $r26 := @caughtexception;
+
+     label15:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while creating the report file ...", $r26);
+        $r0.<com.facebook.a.j: boolean w> = 1;
+        goto label7;
+
+     label16:
+        $r27 := @caughtexception;
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while deleting closing the report file ...", $r27);
+        goto label11;
+
+     label17:
+        $r28 := @caughtexception;
+
+     label18:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+
+     label19:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while gathering crash data ...", $r28);
+        $r23 = <com.facebook.a.s: com.facebook.a.s N>;
+        $r15 = staticinvoke <com.facebook.a.j: java.lang.String b(java.lang.Throwable)>($r28);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r23, $r15, $r8, $r17);
+
+     label20:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while gathering crash data ...", $r28);
+
+     label21:
+        if $r10 == null goto label11;
+
+     label22:
+        $r25 = virtualinvoke $r10.<java.io.RandomAccessFile: java.nio.channels.FileChannel getChannel()>();
+        $l0 = virtualinvoke $r25.<java.nio.channels.FileChannel: long position()>();
+        virtualinvoke $r25.<java.nio.channels.FileChannel: java.nio.channels.FileChannel truncate(long)>($l0);
+        virtualinvoke $r10.<java.io.RandomAccessFile: void close()>();
+        virtualinvoke $r11.<java.io.File: boolean renameTo(java.io.File)>($r12);
+
+     label23:
+        goto label11;
+
+     label24:
+        $r29 := @caughtexception;
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while deleting closing the report file ...", $r29);
+        goto label11;
+
+     label25:
+        $r30 := @caughtexception;
+
+     label26:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while gathering internal crash data ...", $r30);
+        $r23 = <com.facebook.a.s: com.facebook.a.s N>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r23, "ACRA_INTERNAL=java.lang.Exception: An exception occurred while trying to collect data about an ACRA internal error\n\tat com.facebook.acra.ErrorReporter.handleException(ErrorReporter.java:810)\n\tat com.facebook.acra.ErrorReporter.handleException(ErrorReporter.java:866)\n\tat com.facebook.acra.ErrorReporter.uncaughtException(ErrorReporter.java:666)\n\tat java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:693)\n\tat java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:690)\n", $r8, $r17);
+
+     label27:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while gathering crash data ...", $r28);
+
+     label28:
+        goto label21;
+
+     label29:
+        $r31 := @caughtexception;
+        if $r10 == null goto label31;
+
+     label30:
+        $r25 = virtualinvoke $r10.<java.io.RandomAccessFile: java.nio.channels.FileChannel getChannel()>();
+        $l0 = virtualinvoke $r25.<java.nio.channels.FileChannel: long position()>();
+        virtualinvoke $r25.<java.nio.channels.FileChannel: java.nio.channels.FileChannel truncate(long)>($l0);
+        virtualinvoke $r10.<java.io.RandomAccessFile: void close()>();
+        virtualinvoke $r11.<java.io.File: boolean renameTo(java.io.File)>($r12);
+
+     label31:
+        throw $r31;
+
+     label32:
+        $r4 := @caughtexception;
+
+     label33:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while gathering crash data ...", $r28);
+        throw $r4;
+
+     label34:
+        $r32 := @caughtexception;
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r15, "An error occurred while deleting closing the report file ...", $r32);
+        goto label31;
+
+     label35:
+        $r13 = new com.facebook.a.n;
+        $r33 = newarray (com.facebook.a.m)[1];
+        $r34 = <com.facebook.a.m: com.facebook.a.m a>;
+        $r33[0] = $r34;
+        specialinvoke $r13.<com.facebook.a.n: void <init>(com.facebook.a.j,com.facebook.a.m[])>($r0, $r33);
+        goto label12;
+
+     label36:
+        $r15 = <com.facebook.a.a: java.lang.String a>;
+        return null;
+
+     label37:
+        $r26 := @caughtexception;
+        $r10 = $r19;
+        goto label15;
+
+        catch java.lang.Exception from label2 to label4 with label14;
+        catch java.lang.Exception from label5 to label6 with label37;
+        catch java.lang.Exception from label8 to label9 with label17;
+        catch java.lang.Throwable from label7 to label9 with label29;
+        catch java.lang.Exception from label10 to label11 with label16;
+        catch java.lang.Exception from label19 to label20 with label25;
+        catch java.lang.Throwable from label18 to label20 with label32;
+        catch java.lang.Throwable from label20 to label21 with label29;
+        catch java.lang.Exception from label22 to label23 with label24;
+        catch java.lang.Throwable from label26 to label27 with label32;
+        catch java.lang.Throwable from label27 to label28 with label29;
+        catch java.lang.Exception from label30 to label31 with label34;
+        catch java.lang.Throwable from label33 to label34 with label29;
+    }
+
+    private transient com.facebook.a.n a(com.facebook.a.m[])
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.m[] $r1;
+        com.facebook.a.n $r2;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.m[];
+        $r2 = new com.facebook.a.n;
+        specialinvoke $r2.<com.facebook.a.n: void <init>(com.facebook.a.j,com.facebook.a.m[])>($r0, $r1);
+        virtualinvoke $r2.<com.facebook.a.n: void start()>();
+        return $r2;
+    }
+
+    private static java.io.File a(android.content.Context, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2;
+        java.io.File $r3, $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r4 = virtualinvoke $r0.<android.content.Context: java.io.File getDir(java.lang.String,int)>($r1, 0);
+        $r3 = new java.io.File;
+        specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r4, $r2);
+        return $r3;
+    }
+
+    private static java.lang.String a(long)
+    {
+        long $l0;
+        android.text.format.Time $r0;
+        java.lang.String $r1;
+
+        $l0 := @parameter0: long;
+        $r0 = new android.text.format.Time;
+        specialinvoke $r0.<android.text.format.Time: void <init>()>();
+        virtualinvoke $r0.<android.text.format.Time: void set(long)>($l0);
+        $r1 = virtualinvoke $r0.<android.text.format.Time: java.lang.String format3339(boolean)>(0);
+        return $r1;
+    }
+
+    private static java.lang.String a(android.view.Display)
+    {
+        android.view.Display $r0;
+        android.util.DisplayMetrics $r1;
+        java.lang.StringBuilder $r2, $r4;
+        java.lang.String $r3;
+        int $i0;
+        float $f0;
+
+        $r0 := @parameter0: android.view.Display;
+        $r1 = new android.util.DisplayMetrics;
+        specialinvoke $r1.<android.util.DisplayMetrics: void <init>()>();
+        virtualinvoke $r0.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r1);
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("width=");
+        $i0 = virtualinvoke $r0.<android.view.Display: int getWidth()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("height=");
+        $i0 = virtualinvoke $r0.<android.view.Display: int getHeight()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("pixelFormat=");
+        $i0 = virtualinvoke $r0.<android.view.Display: int getPixelFormat()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("refreshRate=");
+        $f0 = virtualinvoke $r0.<android.view.Display: float getRefreshRate()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("fps\nmetrics.density=x");
+        $f0 = $r1.<android.util.DisplayMetrics: float density>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("metrics.scaledDensity=x");
+        $f0 = $r1.<android.util.DisplayMetrics: float scaledDensity>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("metrics.widthPixels=");
+        $i0 = $r1.<android.util.DisplayMetrics: int widthPixels>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("metrics.heightPixels=");
+        $i0 = $r1.<android.util.DisplayMetrics: int heightPixels>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("metrics.xdpi=");
+        $f0 = $r1.<android.util.DisplayMetrics: float xdpi>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("metrics.ydpi=");
+        $f0 = $r1.<android.util.DisplayMetrics: float ydpi>;
+        virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+
+    private static java.lang.String a(java.io.InputStream, int)
+    {
+        java.io.InputStream $r0;
+        int $i0, $i1, $i2, $i3;
+        byte[] $r1;
+        java.io.ByteArrayOutputStream $r2;
+        java.util.zip.GZIPOutputStream $r3;
+        java.lang.String $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $i0 := @parameter1: int;
+        $i1 = 0;
+        $r1 = newarray (byte)[$i0];
+        $i2 = 0;
+
+     label0:
+        $i3 = $i0 - $i2;
+        if $i3 <= 0 goto label1;
+
+        $i3 = $i0 - $i2;
+        $i1 = virtualinvoke $r0.<java.io.InputStream: int read(byte[],int,int)>($r1, $i2, $i3);
+        if $i1 == -1 goto label1;
+
+        $i2 = $i2 + $i1;
+        goto label0;
+
+     label1:
+        if $i1 != 0 goto label2;
+
+        return "";
+
+     label2:
+        $r2 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>();
+
+     label3:
+        $r3 = new java.util.zip.GZIPOutputStream;
+        specialinvoke $r3.<java.util.zip.GZIPOutputStream: void <init>(java.io.OutputStream)>($r2);
+
+     label4:
+        $i3 = lengthof $r1;
+        virtualinvoke $r3.<java.util.zip.GZIPOutputStream: void write(byte[],int,int)>($r1, 0, $i3);
+        virtualinvoke $r3.<java.util.zip.GZIPOutputStream: void finish()>();
+        $r1 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        $r4 = staticinvoke <android.util.Base64: java.lang.String encodeToString(byte[],int)>($r1, 0);
+
+     label5:
+        virtualinvoke $r3.<java.util.zip.GZIPOutputStream: void close()>();
+        return $r4;
+
+     label6:
+        $r5 := @caughtexception;
+        $r3 = null;
+
+     label7:
+        if $r3 == null goto label8;
+
+        virtualinvoke $r3.<java.util.zip.GZIPOutputStream: void close()>();
+
+     label8:
+        throw $r5;
+
+     label9:
+        $r5 := @caughtexception;
+        goto label7;
+
+        catch java.lang.Throwable from label3 to label4 with label6;
+        catch java.lang.Throwable from label4 to label5 with label9;
+    }
+
+    private java.lang.String a(java.lang.Class, java.lang.String)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Class $r1;
+        java.lang.String $r2, $r4;
+        java.lang.StringBuilder $r3, $r5;
+        long $l0;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Class;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r4 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("-");
+        $r4 = virtualinvoke $r1.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = $r0.<com.facebook.a.j: java.lang.String t>;
+        if $r4 == null goto label1;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("-");
+        $r4 = $r0.<com.facebook.a.j: java.lang.String t>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        $r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+
+     label1:
+        $r4 = "";
+        goto label0;
+    }
+
+    private java.lang.String a(java.lang.String)
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1;
+        java.util.Map $r2;
+        java.lang.Object $r3;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.facebook.a.j: java.util.Map a>;
+        $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r1);
+        $r1 = (java.lang.String) $r3;
+        return $r1;
+    }
+
+    private java.lang.String a(java.util.Map)
+    {
+        com.facebook.a.j $r0;
+        java.util.Map $r1, $r3;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.util.Map;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r3 = $r0.<com.facebook.a.j: java.util.Map a>;
+        staticinvoke <com.facebook.a.j: void b(java.lang.StringBuilder,java.util.Map)>($r2, $r3);
+        if $r1 == null goto label0;
+
+        staticinvoke <com.facebook.a.j: void b(java.lang.StringBuilder,java.util.Map)>($r2, $r1);
+
+     label0:
+        $r3 = $r0.<com.facebook.a.j: java.util.Map b>;
+        staticinvoke <com.facebook.a.j: void a(java.lang.StringBuilder,java.util.Map)>($r2, $r3);
+        $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+    }
+
+    private void a(android.content.Context, java.lang.Throwable, com.facebook.a.s[], com.facebook.a.e, java.io.Writer)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1, $r15;
+        java.lang.Throwable $r2;
+        com.facebook.a.s[] $r3;
+        com.facebook.a.e $r4;
+        java.io.Writer $r5;
+        com.facebook.a.s $r6;
+        java.util.List $r7;
+        java.util.UUID $r8;
+        java.lang.String $r9;
+        boolean $z1;
+        android.text.format.Time $r10;
+        long $l0;
+        android.content.res.Resources $r11;
+        android.content.res.Configuration $r12;
+        com.facebook.a.c.k $r13;
+        int $i1;
+        com.facebook.a.c.i $r14;
+        com.facebook.a.a.b $r16;
+        java.lang.String[] $r17;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.Throwable;
+        $r3 := @parameter2: com.facebook.a.s[];
+        $r4 := @parameter3: com.facebook.a.e;
+        $r5 := @parameter4: java.io.Writer;
+        $r7 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r3);
+        $r6 = <com.facebook.a.s: com.facebook.a.s a>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label0;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s a>;
+        $r8 = staticinvoke <java.util.UUID: java.util.UUID randomUUID()>();
+        $r9 = virtualinvoke $r8.<java.util.UUID: java.lang.String toString()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label0:
+        $r6 = <com.facebook.a.s: com.facebook.a.s J>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label1;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s J>;
+        $r9 = specialinvoke $r0.<com.facebook.a.j: java.lang.String h()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label1:
+        $r6 = <com.facebook.a.s: com.facebook.a.s u>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label2;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s u>;
+        $r10 = $r0.<com.facebook.a.j: android.text.format.Time z>;
+        $r9 = virtualinvoke $r10.<android.text.format.Time: java.lang.String format3339(boolean)>(0);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label2:
+        $r6 = <com.facebook.a.s: com.facebook.a.s O>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label3;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s O>;
+        $l0 = staticinvoke <com.facebook.a.j: long j()>();
+        $r9 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label3:
+        $r6 = <com.facebook.a.s: com.facebook.a.s P>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label4;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s P>;
+        $l0 = staticinvoke <com.facebook.a.j: long k()>();
+        $r9 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label4:
+        $r6 = <com.facebook.a.s: com.facebook.a.s s>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label5;
+
+        $r11 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r12 = virtualinvoke $r11.<android.content.res.Resources: android.content.res.Configuration getConfiguration()>();
+        $r6 = <com.facebook.a.s: com.facebook.a.s s>;
+        $r9 = staticinvoke <com.facebook.a.d: java.lang.String a(android.content.res.Configuration)>($r12);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label5:
+        $r6 = <com.facebook.a.s: com.facebook.a.s p>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label6;
+
+        $l0 = staticinvoke <com.facebook.a.j: long m()>();
+        $r9 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        $r6 = <com.facebook.a.s: com.facebook.a.s p>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label6:
+        $r6 = <com.facebook.a.s: com.facebook.a.s w>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label7;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s w>;
+        $r9 = staticinvoke <com.facebook.a.i: java.lang.String a(android.content.Context)>($r1);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label7:
+        $r6 = <com.facebook.a.s: com.facebook.a.s v>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label8;
+
+        $r10 = new android.text.format.Time;
+        specialinvoke $r10.<android.text.format.Time: void <init>()>();
+        virtualinvoke $r10.<android.text.format.Time: void setToNow()>();
+        $r6 = <com.facebook.a.s: com.facebook.a.s v>;
+        $r9 = virtualinvoke $r10.<android.text.format.Time: java.lang.String format3339(boolean)>(0);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label8:
+        $r6 = <com.facebook.a.s: com.facebook.a.s M>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label10;
+
+        $z1 = $r2 instanceof java.lang.OutOfMemoryError;
+        if $z1 == 0 goto label21;
+
+        $r13 = $r0.<com.facebook.a.j: com.facebook.a.c.k s>;
+        $r9 = virtualinvoke $r13.<com.facebook.a.c.k: java.lang.String toString()>();
+
+     label9:
+        $r6 = <com.facebook.a.s: com.facebook.a.s M>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label10:
+        $r6 = <com.facebook.a.s: com.facebook.a.s K>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label11;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s K>;
+        $r9 = specialinvoke $r0.<com.facebook.a.j: java.lang.String g()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label11:
+        specialinvoke $r0.<com.facebook.a.j: void f()>();
+        $r6 = <com.facebook.a.s: com.facebook.a.s V>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label12;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s V>;
+        $i1 = staticinvoke <com.facebook.a.c.h: int a()>();
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label12:
+        $r6 = <com.facebook.a.s: com.facebook.a.s W>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 != 0 goto label13;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s X>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label15;
+
+     label13:
+        $r14 = staticinvoke <com.facebook.a.c.h: com.facebook.a.c.i b()>();
+        if $r14 == null goto label15;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s W>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label14;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s W>;
+        $r9 = $r14.<com.facebook.a.c.i: java.lang.String a>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label14:
+        $r6 = <com.facebook.a.s: com.facebook.a.s X>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label15;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s X>;
+        $r9 = $r14.<com.facebook.a.c.i: java.lang.String b>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label15:
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 16 goto label19;
+
+        $z1 = $r0.<com.facebook.a.j: boolean B>;
+        if $z1 == 0 goto label19;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s y>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label16;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s y>;
+        $r9 = staticinvoke <com.facebook.a.p: java.lang.String a(java.lang.String)>(null);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label16:
+        $r6 = <com.facebook.a.s: com.facebook.a.s z>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label17;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s z>;
+        $r9 = staticinvoke <com.facebook.a.p: java.lang.String a(java.lang.String)>("events");
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label17:
+        $r6 = <com.facebook.a.s: com.facebook.a.s A>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label18;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s A>;
+        $r9 = staticinvoke <com.facebook.a.p: java.lang.String a(java.lang.String)>("radio");
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label18:
+        $r6 = <com.facebook.a.s: com.facebook.a.s x>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label19;
+
+        $r15 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r16 = staticinvoke <com.facebook.a.a: com.facebook.a.a.b a()>();
+        $r17 = interfaceinvoke $r16.<com.facebook.a.a.b: java.lang.String[] a()>();
+        $r9 = staticinvoke <com.facebook.a.h: java.lang.String a(android.content.Context,java.lang.String[])>($r15, $r17);
+        $r6 = <com.facebook.a.s: com.facebook.a.s x>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label19:
+        $r6 = <com.facebook.a.s: com.facebook.a.s ad>;
+        $z1 = interfaceinvoke $r7.<java.util.List: boolean contains(java.lang.Object)>($r6);
+        if $z1 == 0 goto label20;
+
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 11 goto label20;
+
+        $r6 = <com.facebook.a.s: com.facebook.a.s ad>;
+        $r9 = staticinvoke <com.facebook.a.i: java.lang.String b(android.content.Context)>($r1);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r6, $r9, $r4, $r5);
+
+     label20:
+        return;
+
+     label21:
+        $r13 = $r0.<com.facebook.a.j: com.facebook.a.c.k s>;
+        $i1 = <com.facebook.a.j: int q>;
+        $r9 = virtualinvoke $r13.<com.facebook.a.c.k: java.lang.String a(int)>($i1);
+        goto label9;
+    }
+
+    private void a(com.facebook.a.e)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.e $r1;
+        boolean $z0, $z1;
+        java.util.ArrayList $r2;
+        java.util.Iterator $r3;
+        com.facebook.a.b.c $r4;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6, $r9;
+        java.lang.Object $r7;
+        com.facebook.a.b.b $r8;
+        java.lang.Class $r10;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.e;
+        $r2 = $r0.<com.facebook.a.j: java.util.ArrayList f>;
+        $r3 = virtualinvoke $r2.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $z0 = 0;
+
+     label0:
+        $z1 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label5;
+
+        $r7 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (com.facebook.a.b.b) $r7;
+
+     label1:
+        interfaceinvoke $r8.<com.facebook.a.b.b: void a(com.facebook.a.e)>($r1);
+
+     label2:
+        $z0 = 1;
+        goto label0;
+
+     label3:
+        $r4 := @caughtexception;
+        if $z0 != 0 goto label4;
+
+        throw $r4;
+
+     label4:
+        $r9 = <com.facebook.a.a: java.lang.String a>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("ReportSender of class ");
+        $r10 = virtualinvoke $r8.<java.lang.Object: java.lang.Class getClass()>();
+        $r6 = virtualinvoke $r10.<java.lang.Class: java.lang.String getName()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" failed but other senders completed their task. ACRA will not send this report again.");
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r9, $r6);
+        goto label0;
+
+     label5:
+        return;
+
+        catch com.facebook.a.b.c from label1 to label2 with label3;
+    }
+
+    private void a(com.facebook.a.e, java.io.Writer)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.e $r1;
+        java.io.Writer $r2;
+        java.util.Map $r3;
+        java.lang.Object $r4;
+        java.util.Iterator $r5;
+        java.util.Set $r6;
+        boolean $z0;
+        java.util.Map$Entry $r7;
+        com.facebook.a.s $r8;
+        java.lang.String $r9;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.e;
+        $r2 := @parameter1: java.io.Writer;
+        $r3 = specialinvoke $r0.<com.facebook.a.j: java.util.Map o()>();
+        $r6 = interfaceinvoke $r3.<java.util.Map: java.util.Set entrySet()>();
+        $r5 = interfaceinvoke $r6.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r4 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.util.Map$Entry) $r4;
+        $r4 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r8 = (com.facebook.a.s) $r4;
+        $r4 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r9 = (java.lang.String) $r4;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r8, $r9, $r1, $r2);
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    private void a(com.facebook.a.s, java.lang.String, com.facebook.a.e, java.io.Writer)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.s $r1;
+        java.lang.String $r2;
+        com.facebook.a.e $r3;
+        java.io.Writer $r4;
+        boolean $z0;
+        java.io.IOException $r5;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.s;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: com.facebook.a.e;
+        $r4 := @parameter3: java.io.Writer;
+        $z0 = $r0.<com.facebook.a.j: boolean w>;
+        if $z0 == 0 goto label0;
+
+        $r4 = null;
+
+     label0:
+        virtualinvoke $r3.<com.facebook.a.e: java.lang.String a(com.facebook.a.s,java.lang.String,java.io.Writer)>($r1, $r2, $r4);
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        $r0.<com.facebook.a.j: boolean w> = 1;
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+
+    private void a(java.lang.String, java.lang.String, java.lang.Throwable)
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1, $r2;
+        java.lang.Throwable $r3;
+        com.facebook.a.o $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.Throwable;
+        $r4 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.o c()>();
+        if $r4 == null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, $r2, $r3);
+        goto label0;
+    }
+
+    private void a(java.lang.String, java.lang.Throwable, com.facebook.a.s[], com.facebook.a.e, java.io.Writer, java.util.Map)
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1, $r8;
+        java.lang.Throwable $r2;
+        com.facebook.a.s[] $r3;
+        com.facebook.a.e $r4;
+        java.io.Writer $r5;
+        java.util.Map $r6, $r12;
+        com.facebook.a.s $r7;
+        java.util.Iterator $r9;
+        java.util.Set $r13;
+        boolean $z0;
+        java.lang.Object $r14;
+        java.util.Map$Entry $r15;
+        android.content.Context $r16;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.Throwable;
+        $r3 := @parameter2: com.facebook.a.s[];
+        $r4 := @parameter3: com.facebook.a.e;
+        $r5 := @parameter4: java.io.Writer;
+        $r6 := @parameter5: java.util.Map;
+        if $r3 != null goto label3;
+
+        $r3 = <com.facebook.a.a: com.facebook.a.s[] c>;
+
+     label0:
+        $r7 = <com.facebook.a.s: com.facebook.a.s c>;
+        $r8 = specialinvoke $r0.<com.facebook.a.j: java.lang.String d()>();
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r7, $r8, $r4, $r5);
+        $r7 = <com.facebook.a.s: com.facebook.a.s r>;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r7, $r1, $r4, $r5);
+        $r12 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r13 = interfaceinvoke $r12.<java.util.Map: java.util.Set entrySet()>();
+        $r9 = interfaceinvoke $r13.<java.util.Set: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label2;
+
+        $r14 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r15 = (java.util.Map$Entry) $r14;
+        $r14 = interfaceinvoke $r15.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r7 = (com.facebook.a.s) $r14;
+        $r14 = interfaceinvoke $r15.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r8 = (java.lang.String) $r14;
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r7, $r8, $r4, $r5);
+        goto label1;
+
+     label2:
+        $r16 = $r0.<com.facebook.a.j: android.content.Context o>;
+        specialinvoke $r0.<com.facebook.a.j: void a(android.content.Context,java.lang.Throwable,com.facebook.a.s[],com.facebook.a.e,java.io.Writer)>($r16, $r2, $r3, $r4, $r5);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.e,java.io.Writer)>($r4, $r5);
+        $r7 = <com.facebook.a.s: com.facebook.a.s q>;
+        $r8 = specialinvoke $r0.<com.facebook.a.j: java.lang.String a(java.util.Map)>($r6);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.s,java.lang.String,com.facebook.a.e,java.io.Writer)>($r7, $r8, $r4, $r5);
+        return;
+
+     label3:
+        goto label0;
+    }
+
+    private static void a(java.lang.StringBuilder, java.lang.String, java.lang.String)
+    {
+        java.lang.StringBuilder $r0;
+        java.lang.String $r1, $r2, $r3, $r5;
+
+        $r0 := @parameter0: java.lang.StringBuilder;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = null;
+        if $r1 == null goto label2;
+
+        $r5 = virtualinvoke $r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "\\n");
+
+     label0:
+        if $r2 == null goto label1;
+
+        $r3 = virtualinvoke $r2.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "\\n");
+
+     label1:
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" = ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        return;
+
+     label2:
+        $r5 = null;
+        goto label0;
+    }
+
+    private static void a(java.lang.StringBuilder, java.util.Map)
+    {
+        java.lang.StringBuilder $r0;
+        java.util.Map $r1;
+        java.util.Set $r2;
+        java.lang.Object $r3;
+        java.util.Iterator $r4;
+        java.lang.String $r5, $r8;
+        boolean $z0;
+        java.util.Map$Entry $r6;
+        com.facebook.a.f $r7;
+        java.lang.Throwable $r9;
+
+        $r0 := @parameter0: java.lang.StringBuilder;
+        $r1 := @parameter1: java.util.Map;
+        $r2 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
+        $r4 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (java.util.Map$Entry) $r3;
+        $r3 = interfaceinvoke $r6.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r5 = (java.lang.String) $r3;
+
+     label1:
+        $r3 = interfaceinvoke $r6.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r7 = (com.facebook.a.f) $r3;
+        $r8 = interfaceinvoke $r7.<com.facebook.a.f: java.lang.String a()>();
+
+     label2:
+        if $r8 == null goto label0;
+
+        staticinvoke <com.facebook.a.j: void a(java.lang.StringBuilder,java.lang.String,java.lang.String)>($r0, $r5, $r8);
+        goto label0;
+
+     label3:
+        $r9 := @caughtexception;
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r8, "Caught throwable while getting custom report data", $r9);
+        goto label0;
+
+     label4:
+        return;
+
+        catch java.lang.Throwable from label1 to label2 with label3;
+    }
+
+    private transient java.lang.String[] a(java.lang.String, java.lang.String[])
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1, $r5;
+        java.lang.String[] $r2;
+        android.content.Context $r3;
+        java.io.File $r4;
+        java.lang.StringBuilder $r6;
+        com.facebook.a.k $r7;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String[];
+        $r3 = $r0.<com.facebook.a.j: android.content.Context o>;
+        if $r3 != null goto label1;
+
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r5, "Trying to get ACRA reports but ACRA is not initialized.");
+        $r2 = newarray (java.lang.String)[0];
+
+     label0:
+        return $r2;
+
+     label1:
+        $r3 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r4 = virtualinvoke $r3.<android.content.Context: java.io.File getDir(java.lang.String,int)>($r1, 0);
+        if $r4 == null goto label2;
+
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("Looking for error files in ");
+        $r5 = virtualinvoke $r4.<java.io.File: java.lang.String getAbsolutePath()>();
+        virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r7 = new com.facebook.a.k;
+        specialinvoke $r7.<com.facebook.a.k: void <init>(com.facebook.a.j,java.lang.String[])>($r0, $r2);
+        $r2 = virtualinvoke $r4.<java.io.File: java.lang.String[] list(java.io.FilenameFilter)>($r7);
+        if $r2 != null goto label0;
+
+        $r2 = newarray (java.lang.String)[0];
+        return $r2;
+
+     label2:
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r5, "Application files directory does not exist! The application may not be installed correctly. Please try reinstalling.");
+        $r2 = newarray (java.lang.String)[0];
+        return $r2;
+    }
+
+    private static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.util.regex.Pattern $r1;
+        boolean $z0;
+        java.util.regex.Matcher $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label0;
+
+        $r1 = <com.facebook.a.j: java.util.regex.Pattern c>;
+        $r2 = virtualinvoke $r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z0 = virtualinvoke $r2.<java.util.regex.Matcher: boolean matches()>();
+        if $z0 == 0 goto label0;
+
+        $r0 = virtualinvoke $r2.<java.util.regex.Matcher: java.lang.String group(int)>(1);
+        return $r0;
+
+     label0:
+        return "";
+    }
+
+    private static java.lang.String b(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+        java.lang.String $r1;
+        java.lang.Exception r4;
+        java.io.StringWriter r5;
+        java.io.PrintWriter r6;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        if $r0 != null goto label0;
+
+        r4 = new java.lang.Exception;
+        $r0 = r4;
+        specialinvoke r4.<java.lang.Exception: void <init>(java.lang.String)>("Report requested by developer");
+
+     label0:
+        r5 = new java.io.StringWriter;
+        specialinvoke r5.<java.io.StringWriter: void <init>()>();
+        r6 = new java.io.PrintWriter;
+        specialinvoke r6.<java.io.PrintWriter: void <init>(java.io.Writer)>(r5);
+        virtualinvoke $r0.<java.lang.Throwable: void printStackTrace(java.io.PrintWriter)>(r6);
+        virtualinvoke r6.<java.io.PrintWriter: void close()>();
+        $r1 = virtualinvoke r5.<java.lang.Object: java.lang.String toString()>();
+        return $r1;
+    }
+
+    private void b(android.content.Context)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        int $i0, $i2, $i3;
+        java.lang.String $r2, $r3, $r7, $r9;
+        com.facebook.a.s $r4;
+        java.lang.StringBuilder $r5;
+        java.lang.String[] $r6;
+        com.facebook.a.e $r8;
+        java.lang.RuntimeException $r10;
+        java.io.IOException $r11;
+        com.facebook.a.b.c $r12;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $i0 = 0;
+        $r6 = newarray (java.lang.String)[2];
+        $r6[0] = ".stacktrace";
+        $r6[1] = ".temp_stacktrace";
+        $r6 = specialinvoke $r0.<com.facebook.a.j: java.lang.String[] a(java.lang.String,java.lang.String[])>("acra-reports", $r6);
+        staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>($r6);
+        $r7 = specialinvoke $r0.<com.facebook.a.j: java.lang.String g()>();
+        $i2 = lengthof $r6;
+        $i3 = 0;
+
+     label0:
+        if $i3 >= $i2 goto label6;
+
+        $r3 = $r6[$i3];
+        if $i0 < 5 goto label2;
+
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", $r3);
+
+     label1:
+        $i3 = $i3 + 1;
+        goto label0;
+
+     label2:
+        $r2 = <com.facebook.a.a: java.lang.String a>;
+
+     label3:
+        $r8 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.e a(android.content.Context,java.lang.String)>($r1, $r3);
+        if $r8 == null goto label4;
+
+        $r4 = <com.facebook.a.s: com.facebook.a.s R>;
+        virtualinvoke $r8.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r4, $r3);
+        $r4 = <com.facebook.a.s: com.facebook.a.s L>;
+        virtualinvoke $r8.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r4, $r7);
+        $r9 = <com.facebook.a.a: java.lang.String a>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Sending file ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r9, $r2);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.e)>($r8);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", $r3);
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label5:
+        $r10 := @caughtexception;
+        $r9 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, "Failed to send crash reports", $r10);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", $r3);
+
+     label6:
+        return;
+
+     label7:
+        $r11 := @caughtexception;
+        $r9 = <com.facebook.a.a: java.lang.String a>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed to load crash report for ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, $r7, $r11);
+        staticinvoke <com.facebook.a.j: void b(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", $r3);
+        goto label6;
+
+     label8:
+        $r12 := @caughtexception;
+        $r9 = <com.facebook.a.a: java.lang.String a>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed to send crash report for ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, $r7, $r12);
+        goto label6;
+
+        catch java.lang.RuntimeException from label3 to label4 with label5;
+        catch java.io.IOException from label3 to label4 with label7;
+        catch com.facebook.a.b.c from label3 to label4 with label8;
+    }
+
+    private static void b(android.content.Context, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2, $r5;
+        java.io.File $r3;
+        java.lang.StringBuilder $r4;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r0, $r1, $r2);
+        $z0 = virtualinvoke $r3.<java.io.File: boolean delete()>();
+        if $z0 != 0 goto label0;
+
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Could not delete error report : ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r5, $r2);
+
+     label0:
+        return;
+    }
+
+    private void b(com.facebook.a.b.b)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.b.b $r1;
+        java.util.ArrayList $r2;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.b.b;
+        $r2 = $r0.<com.facebook.a.j: java.util.ArrayList f>;
+        virtualinvoke $r2.<java.util.ArrayList: boolean add(java.lang.Object)>($r1);
+        return;
+    }
+
+    private void b(com.facebook.a.e)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.e $r1;
+        com.facebook.a.s $r2, $r10;
+        java.lang.String $r3, $r5;
+        boolean $z0, $z1;
+        java.util.Iterator $r4;
+        java.lang.Object $r6;
+        int $i0;
+        java.util.Map $r7;
+        java.util.Set $r8;
+        java.util.Map$Entry $r9;
+        java.lang.Enum $r11;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.e;
+        $r2 = <com.facebook.a.s: com.facebook.a.s R>;
+        $r3 = virtualinvoke $r1.<com.facebook.a.e: java.lang.String a(com.facebook.a.s)>($r2);
+        $r5 = staticinvoke <com.facebook.a.j: java.lang.String b(java.lang.String)>($r3);
+        $r3 = $r0.<com.facebook.a.j: java.lang.String t>;
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label3;
+
+        $z0 = 1;
+
+     label0:
+        $r2 = <com.facebook.a.s: com.facebook.a.s a>;
+        $r6 = virtualinvoke $r1.<com.facebook.a.e: java.lang.Object get(java.lang.Object)>($r2);
+        $r5 = (java.lang.String) $r6;
+        if $r5 == null goto label1;
+
+        $i0 = virtualinvoke $r5.<java.lang.String: int length()>();
+        if $i0 != 0 goto label5;
+
+     label1:
+        $r7 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r8 = interfaceinvoke $r7.<java.util.Map: java.util.Set entrySet()>();
+        $r4 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+
+     label2:
+        $z1 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label5;
+
+        $r6 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.util.Map$Entry) $r6;
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r10 = (com.facebook.a.s) $r6;
+        $r2 = <com.facebook.a.s: com.facebook.a.s e>;
+        $z1 = virtualinvoke $r10.<com.facebook.a.s: boolean equals(java.lang.Object)>($r2);
+        if $z1 == 0 goto label4;
+
+        if $z0 != 0 goto label2;
+
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r11 = (java.lang.Enum) $r6;
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        virtualinvoke $r1.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r6);
+        goto label2;
+
+     label3:
+        $z0 = 0;
+        goto label0;
+
+     label4:
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r6 = virtualinvoke $r1.<com.facebook.a.e: java.lang.Object get(java.lang.Object)>($r6);
+        if $r6 != null goto label2;
+
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r11 = (java.lang.Enum) $r6;
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        virtualinvoke $r1.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r6);
+        goto label2;
+
+     label5:
+        $r5 = specialinvoke $r0.<com.facebook.a.j: java.lang.String d()>();
+        $r10 = <com.facebook.a.s: com.facebook.a.s c>;
+        $r6 = virtualinvoke $r1.<com.facebook.a.e: java.lang.Object get(java.lang.Object)>($r10);
+        $r3 = (java.lang.String) $r6;
+        $z1 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r5);
+        if $z1 != 0 goto label6;
+
+        $z1 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z1 == 0 goto label6;
+
+        $r10 = <com.facebook.a.s: com.facebook.a.s c>;
+        virtualinvoke $r1.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r10, $r5);
+
+     label6:
+        return;
+    }
+
+    private static void b(java.lang.StringBuilder, java.util.Map)
+    {
+        java.lang.StringBuilder $r0;
+        java.util.Map $r1;
+        java.util.Set $r2;
+        java.lang.Object $r3;
+        java.util.Iterator $r4;
+        boolean $z0;
+        java.util.Map$Entry $r5;
+        java.lang.String $r6, $r7;
+
+        $r0 := @parameter0: java.lang.StringBuilder;
+        $r1 := @parameter1: java.util.Map;
+        $r2 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
+        $r4 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (java.util.Map$Entry) $r3;
+        $r3 = interfaceinvoke $r5.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r6 = (java.lang.String) $r3;
+        $r3 = interfaceinvoke $r5.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r7 = (java.lang.String) $r3;
+        staticinvoke <com.facebook.a.j: void a(java.lang.StringBuilder,java.lang.String,java.lang.String)>($r0, $r6, $r7);
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    private com.facebook.a.o c()
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.o $r1;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 = $r0.<com.facebook.a.j: com.facebook.a.o C>;
+        return $r1;
+    }
+
+    private static com.facebook.a.s[] c(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+        boolean $z0;
+        com.facebook.a.s[] $r1;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        $z0 = $r0 instanceof java.lang.OutOfMemoryError;
+        if $z0 == 0 goto label0;
+
+        $r1 = <com.facebook.a.a: com.facebook.a.s[] c>;
+        return $r1;
+
+     label0:
+        $r1 = <com.facebook.a.a: com.facebook.a.s[] b>;
+        return $r1;
+    }
+
+    private java.lang.String d()
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 = $r0.<com.facebook.a.j: java.lang.String v>;
+        return $r1;
+    }
+
+    private static java.lang.Throwable d(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0, $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        $z0 = $r0 instanceof com.facebook.a.q;
+        if $z0 == 0 goto label1;
+
+     label0:
+        return $r0;
+
+     label1:
+        $r1 = virtualinvoke $r0.<java.lang.Throwable: java.lang.Throwable getCause()>();
+        if $r1 == null goto label0;
+
+        $r0 = virtualinvoke $r0.<java.lang.Throwable: java.lang.Throwable getCause()>();
+        goto label1;
+    }
+
+    private java.lang.String e()
+    {
+        com.facebook.a.j $r0;
+        boolean $z0;
+        int $i0, $i1;
+        java.lang.String $r1;
+        android.content.Context $r2;
+        java.lang.Object $r3;
+        android.app.ActivityManager $r4;
+        java.util.List $r5;
+        java.util.Iterator $r6;
+        android.app.ActivityManager$RunningAppProcessInfo $r7;
+
+        $r0 := @this: com.facebook.a.j;
+        $z0 = $r0.<com.facebook.a.j: boolean x>;
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<com.facebook.a.j: java.lang.String y>;
+        return $r1;
+
+     label0:
+        $r0.<com.facebook.a.j: java.lang.String y> = null;
+        $i0 = staticinvoke <android.os.Process: int myPid()>();
+        $r2 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r3 = virtualinvoke $r2.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("activity");
+        $r4 = (android.app.ActivityManager) $r3;
+        if $r4 != null goto label1;
+
+        $r1 = $r0.<com.facebook.a.j: java.lang.String y>;
+        return $r1;
+
+     label1:
+        $r5 = virtualinvoke $r4.<android.app.ActivityManager: java.util.List getRunningAppProcesses()>();
+        if $r5 != null goto label2;
+
+        $r1 = $r0.<com.facebook.a.j: java.lang.String y>;
+        return $r1;
+
+     label2:
+        $r6 = interfaceinvoke $r5.<java.util.List: java.util.Iterator iterator()>();
+
+     label3:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (android.app.ActivityManager$RunningAppProcessInfo) $r3;
+        $i1 = $r7.<android.app.ActivityManager$RunningAppProcessInfo: int pid>;
+        if $i1 != $i0 goto label3;
+
+        $r1 = $r7.<android.app.ActivityManager$RunningAppProcessInfo: java.lang.String processName>;
+        $r0.<com.facebook.a.j: java.lang.String y> = $r1;
+
+     label4:
+        $r0.<com.facebook.a.j: boolean x> = 1;
+        $r1 = $r0.<com.facebook.a.j: java.lang.String y>;
+        return $r1;
+    }
+
+    private boolean e(java.lang.Throwable)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Throwable $r1, $r3;
+        java.lang.Object $r2;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 = $r0.<com.facebook.a.j: java.lang.Object l>;
+        entermonitor $r2;
+
+     label0:
+        $z0 = $r0.<com.facebook.a.j: boolean k>;
+        if $z0 == 0 goto label1;
+
+        exitmonitor $r2;
+        return 0;
+
+     label1:
+        $z0 = $r1 instanceof java.lang.OutOfMemoryError;
+        if $z0 == 0 goto label2;
+
+        $r0.<com.facebook.a.j: boolean k> = 1;
+
+     label2:
+        exitmonitor $r2;
+        return 1;
+
+     label3:
+        $r3 := @caughtexception;
+        exitmonitor $r2;
+
+     label4:
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+    }
+
+    private void f()
+    {
+        com.facebook.a.j $r0;
+
+        $r0 := @this: com.facebook.a.j;
+        $r0.<com.facebook.a.j: java.lang.String y> = null;
+        $r0.<com.facebook.a.j: boolean x> = 0;
+        return;
+    }
+
+    private java.lang.String g()
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 = specialinvoke $r0.<com.facebook.a.j: java.lang.String e()>();
+        if $r1 != null goto label0;
+
+        $r1 = "n/a";
+
+     label0:
+        return $r1;
+    }
+
+    private java.lang.String h()
+    {
+        com.facebook.a.j $r0;
+        java.io.FileReader $r1;
+        java.io.BufferedReader $r2, $r6;
+        java.lang.String $r3, $r4, $r8;
+        java.io.IOException $r5, $r7, $r9;
+
+        $r0 := @this: com.facebook.a.j;
+        $r4 = specialinvoke $r0.<com.facebook.a.j: java.lang.String e()>();
+        if $r4 != null goto label14;
+
+        $r2 = null;
+        $r1 = new java.io.FileReader;
+
+     label0:
+        specialinvoke $r1.<java.io.FileReader: void <init>(java.lang.String)>("/proc/self/cmdline");
+        $r6 = new java.io.BufferedReader;
+        specialinvoke $r6.<java.io.BufferedReader: void <init>(java.io.Reader,int)>($r1, 128);
+
+     label1:
+        $r3 = virtualinvoke $r6.<java.io.BufferedReader: java.lang.String readLine()>();
+
+     label2:
+        $r4 = $r3;
+        if $r3 == null goto label5;
+
+     label3:
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String trim()>();
+
+     label4:
+        $r4 = $r3;
+
+     label5:
+        if $r6 == null goto label7;
+
+     label6:
+        virtualinvoke $r6.<java.io.BufferedReader: void close()>();
+
+     label7:
+        if $r4 != null goto label8;
+
+        $r4 = "";
+
+     label8:
+        return $r4;
+
+     label9:
+        $r7 := @caughtexception;
+
+     label10:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r3, "Failed to get process name.", $r7);
+        $r6 = $r2;
+        goto label5;
+
+     label11:
+        $r9 := @caughtexception;
+        $r8 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r8, "Failed to close file.", $r9);
+        goto label7;
+
+     label12:
+        $r7 := @caughtexception;
+        $r2 = $r6;
+        goto label10;
+
+     label13:
+        $r5 := @caughtexception;
+        $r2 = $r6;
+        $r7 = $r5;
+        goto label10;
+
+     label14:
+        goto label7;
+
+        catch java.io.IOException from label0 to label1 with label9;
+        catch java.io.IOException from label1 to label2 with label12;
+        catch java.io.IOException from label3 to label4 with label13;
+        catch java.io.IOException from label6 to label7 with label11;
+    }
+
+    private static java.lang.String i()
+    {
+        java.lang.String $r0, $r1;
+        int $i0, $i2;
+        java.lang.StringBuilder $r2;
+        boolean $z0;
+        java.io.File $r3;
+        java.lang.Exception $r4, $r8;
+        java.util.Map $r5;
+        java.lang.Object $r6;
+        java.lang.String[] $r7;
+
+        $r0 = <android.os.Build: java.lang.String TAGS>;
+        if $r0 == null goto label0;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("test-keys");
+        if $z0 == 0 goto label0;
+
+        return "yes";
+
+     label0:
+        $r3 = new java.io.File;
+
+     label1:
+        specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>("/system/app/Superuser.apk");
+        $z0 = virtualinvoke $r3.<java.io.File: boolean exists()>();
+
+     label2:
+        if $z0 == 0 goto label4;
+
+        return "yes";
+
+     label3:
+        $r4 := @caughtexception;
+        $r0 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r0, "Failed to find Superuser.pak", $r4);
+
+     label4:
+        $r5 = staticinvoke <java.lang.System: java.util.Map getenv()>();
+        if $r5 == null goto label10;
+
+        $r6 = interfaceinvoke $r5.<java.util.Map: java.lang.Object get(java.lang.Object)>("PATH");
+        $r1 = (java.lang.String) $r6;
+        $r7 = virtualinvoke $r1.<java.lang.String: java.lang.String[] split(java.lang.String)>(":");
+        $i0 = lengthof $r7;
+        $i2 = 0;
+
+     label5:
+        if $i2 >= $i0 goto label10;
+
+        $r1 = $r7[$i2];
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/su");
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = new java.io.File;
+
+     label6:
+        specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>($r1);
+        $z0 = virtualinvoke $r3.<java.io.File: boolean exists()>();
+
+     label7:
+        if $z0 == 0 goto label9;
+
+        return "yes";
+
+     label8:
+        $r8 := @caughtexception;
+        $r0 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r0, "Failed to find su binary in the PATH", $r8);
+
+     label9:
+        $i2 = $i2 + 1;
+        goto label5;
+
+     label10:
+        return "no";
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Exception from label6 to label7 with label8;
+    }
+
+    private static long j()
+    {
+        long $l0;
+
+        $l0 = staticinvoke <android.os.Process: long getElapsedCpuTime()>();
+        return $l0;
+    }
+
+    private static long k()
+    {
+        long $l0;
+
+        $l0 = staticinvoke <android.os.SystemClock: long elapsedRealtime()>();
+        return $l0;
+    }
+
+    private void l()
+    {
+        com.facebook.a.j $r0;
+        java.io.File $r1;
+        java.io.FileOutputStream $r2, $r3;
+        byte[] $r4;
+        long $l0;
+        boolean $z0;
+        int $i3;
+        byte $b4;
+        java.io.IOException $r5, $r8, $r10, $r11;
+        java.lang.String $r6;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: com.facebook.a.j;
+        $r3 = null;
+
+     label0:
+        $r1 = $r0.<com.facebook.a.j: java.io.File p>;
+
+     label1:
+        $z0 = virtualinvoke $r1.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label6;
+
+        $r4 = newarray (byte)[10240];
+        $r2 = new java.io.FileOutputStream;
+        $r1 = $r0.<com.facebook.a.j: java.io.File p>;
+        specialinvoke $r2.<java.io.FileOutputStream: void <init>(java.io.File)>($r1);
+
+     label2:
+        $i3 = 0;
+
+     label3:
+        $l0 = (long) $i3;
+        $b4 = $l0 cmp 51200L;
+        if $b4 >= 0 goto label7;
+
+     label4:
+        virtualinvoke $r2.<java.io.FileOutputStream: void write(byte[])>($r4);
+
+     label5:
+        $i3 = $i3 + 10240;
+        goto label3;
+
+     label6:
+        $r2 = null;
+
+     label7:
+        if $r2 == null goto label9;
+
+     label8:
+        virtualinvoke $r2.<java.io.FileOutputStream: void close()>();
+
+     label9:
+        return;
+
+     label10:
+        $r5 := @caughtexception;
+        $r2 = null;
+
+     label11:
+        $r6 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, "Failed to pre-allocate crash report file", $r5);
+
+     label12:
+        if $r2 == null goto label9;
+
+     label13:
+        virtualinvoke $r2.<java.io.FileOutputStream: void close()>();
+
+     label14:
+        goto label9;
+
+     label15:
+        $r8 := @caughtexception;
+        goto label9;
+
+     label16:
+        $r9 := @caughtexception;
+
+     label17:
+        if $r3 == null goto label19;
+
+     label18:
+        virtualinvoke $r3.<java.io.FileOutputStream: void close()>();
+
+     label19:
+        throw $r9;
+
+     label20:
+        $r10 := @caughtexception;
+        goto label9;
+
+     label21:
+        $r11 := @caughtexception;
+        goto label19;
+
+     label22:
+        $r9 := @caughtexception;
+        $r3 = $r2;
+        goto label17;
+
+     label23:
+        $r5 := @caughtexception;
+        goto label11;
+
+        catch java.io.IOException from label1 to label2 with label10;
+        catch java.lang.Throwable from label0 to label2 with label16;
+        catch java.io.IOException from label4 to label5 with label23;
+        catch java.lang.Throwable from label4 to label5 with label22;
+        catch java.io.IOException from label8 to label9 with label20;
+        catch java.lang.Throwable from label11 to label12 with label22;
+        catch java.io.IOException from label13 to label14 with label15;
+        catch java.io.IOException from label18 to label19 with label21;
+    }
+
+    private static long m()
+    {
+        java.io.File $r0;
+        android.os.StatFs $r1;
+        long $l0, $l2;
+        java.lang.String $r2;
+        int $i1;
+        java.lang.Exception $r3;
+
+     label0:
+        $r0 = staticinvoke <android.os.Environment: java.io.File getDataDirectory()>();
+        $r1 = new android.os.StatFs;
+        $r2 = virtualinvoke $r0.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r2);
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+        $l0 = (long) $i1;
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getAvailableBlocks()>();
+
+     label1:
+        $l2 = (long) $i1;
+        $l2 = $l2 * $l0;
+        return $l2;
+
+     label2:
+        $r3 := @caughtexception;
+        return -1L;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private static long n()
+    {
+        java.io.File $r0;
+        android.os.StatFs $r1;
+        long $l0, $l2;
+        java.lang.String $r2;
+        int $i1;
+        java.lang.Exception $r3;
+
+     label0:
+        $r0 = staticinvoke <android.os.Environment: java.io.File getDataDirectory()>();
+        $r1 = new android.os.StatFs;
+        $r2 = virtualinvoke $r0.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r2);
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+        $l0 = (long) $i1;
+        $i1 = virtualinvoke $r1.<android.os.StatFs: int getBlockCount()>();
+
+     label1:
+        $l2 = (long) $i1;
+        $l2 = $l2 * $l0;
+        return $l2;
+
+     label2:
+        $r3 := @caughtexception;
+        return -1L;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private java.util.Map o()
+    {
+        com.facebook.a.j $r0;
+        java.util.Map $r1, $r2;
+        com.facebook.a.s $r3;
+        long $l0;
+        boolean $z0;
+        java.lang.String $r5;
+        android.content.Context $r6;
+        com.facebook.a.c.g $r7;
+        java.lang.Object $r8;
+        android.telephony.TelephonyManager $r9;
+        android.view.WindowManager $r10;
+        android.view.Display $r11;
+        int $i1;
+        android.app.ActivityManager $r12;
+        java.lang.Throwable $r13;
+
+        $r0 := @this: com.facebook.a.j;
+        $r2 = $r0.<com.facebook.a.j: java.util.Map h>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $z0 = interfaceinvoke $r1.<java.util.Map: boolean isEmpty()>();
+        if $z0 == 0 goto label3;
+
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s l>;
+        $r5 = staticinvoke <com.facebook.a.r: java.lang.String a(java.lang.Class)>(class "android/os/Build");
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s Q>;
+        $r5 = staticinvoke <com.facebook.a.j: java.lang.String i()>();
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s D>;
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r5 = staticinvoke <com.facebook.a.c.f: java.lang.String a(android.content.Context)>($r6);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s o>;
+        $l0 = staticinvoke <com.facebook.a.j: long n()>();
+        $r5 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r7 = $r0.<com.facebook.a.j: com.facebook.a.c.g i>;
+        $z0 = virtualinvoke $r7.<com.facebook.a.c.g: boolean a(java.lang.String)>("android.permission.READ_PHONE_STATE");
+        if $z0 == 0 goto label1;
+
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r8 = virtualinvoke $r6.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r9 = (android.telephony.TelephonyManager) $r8;
+        $r5 = virtualinvoke $r9.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>();
+        if $r5 == null goto label1;
+
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s C>;
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+
+     label1:
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r8 = virtualinvoke $r6.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+        $r10 = (android.view.WindowManager) $r8;
+        $r11 = interfaceinvoke $r10.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s t>;
+        $r5 = staticinvoke <com.facebook.a.j: java.lang.String a(android.view.Display)>($r11);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s G>;
+        $r5 = staticinvoke <com.facebook.a.r: java.lang.String b(java.lang.Class)>(class "android/os/Environment");
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s F>;
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r5 = staticinvoke <com.facebook.a.g: java.lang.String a(android.content.Context)>($r6);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s H>;
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r5 = staticinvoke <com.facebook.a.t: java.lang.String a(android.content.Context)>($r6);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s I>;
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r5 = staticinvoke <com.facebook.a.t: java.lang.String b(android.content.Context)>($r6);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 19 goto label2;
+
+        $r6 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r8 = virtualinvoke $r6.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("activity");
+        $r12 = (android.app.ActivityManager) $r8;
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s ab>;
+        $z0 = virtualinvoke $r12.<android.app.ActivityManager: boolean isLowRamDevice()>();
+        $r5 = staticinvoke <java.lang.Boolean: java.lang.String toString(boolean)>($z0);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+
+     label2:
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        $r3 = <com.facebook.a.s: com.facebook.a.s ae>;
+        $r5 = staticinvoke <com.facebook.a.j: java.lang.String p()>();
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r5);
+
+     label3:
+        $r1 = $r0.<com.facebook.a.j: java.util.Map h>;
+        exitmonitor $r2;
+        return $r1;
+
+     label4:
+        $r13 := @caughtexception;
+        exitmonitor $r2;
+
+     label5:
+        throw $r13;
+
+        catch java.lang.Throwable from label0 to label5 with label4;
+    }
+
+    private static java.lang.String p()
+    {
+        int $i0;
+        java.lang.String $r0;
+        boolean $z0;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 19 goto label0;
+
+        return "DALVIK";
+
+     label0:
+        $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.boot.class.path");
+        if $r0 == null goto label2;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("/system/framework/core-libart.jar");
+        if $z0 == 0 goto label1;
+
+        return "ART";
+
+     label1:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("/system/framework/core.jar");
+        if $z0 == 0 goto label2;
+
+        return "DALVIK";
+
+     label2:
+        return "UNKNOWN";
+    }
+
+    private void q()
+    {
+        com.facebook.a.j $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 = $r0.<com.facebook.a.j: java.util.ArrayList f>;
+        virtualinvoke $r1.<java.util.ArrayList: void clear()>();
+        return;
+    }
+
+    public final com.facebook.a.n a(java.lang.Throwable)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Throwable $r1;
+        com.facebook.a.n $r2;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.n a(java.lang.Throwable,java.util.Map)>($r1, null);
+        return $r2;
+    }
+
+    public final java.lang.String a(java.lang.String, java.lang.String)
+    {
+        com.facebook.a.j $r0;
+        java.lang.String $r1, $r2;
+        java.util.Map $r3;
+        java.lang.Object $r4;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        if $r2 == null goto label0;
+
+        $r3 = $r0.<com.facebook.a.j: java.util.Map a>;
+        $r4 = interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $r2 = (java.lang.String) $r4;
+        return $r2;
+
+     label0:
+        $r2 = specialinvoke $r0.<com.facebook.a.j: java.lang.String a(java.lang.String)>($r1);
+        return $r2;
+    }
+
+    public final void a(android.content.Context)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        java.lang.Thread$UncaughtExceptionHandler $r2;
+        boolean $z0;
+        android.content.pm.PackageInfo $r3;
+        java.lang.String $r4, $r7;
+        com.facebook.a.s $r5;
+        android.content.ContentResolver $r6;
+        com.facebook.a.c.g $r8;
+        int $i0;
+        android.text.format.Time $r9;
+        java.util.Map $r10;
+        java.io.File $r11;
+        long $l2;
+        java.lang.Exception $r12;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 = $r0.<com.facebook.a.j: java.lang.Thread$UncaughtExceptionHandler m>;
+        if $r2 != null goto label6;
+
+        $r2 = staticinvoke <java.lang.Thread: java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()>();
+        $r0.<com.facebook.a.j: java.lang.Thread$UncaughtExceptionHandler m> = $r2;
+        $r0.<com.facebook.a.j: boolean B> = 0;
+        $r0.<com.facebook.a.j: android.content.Context o> = $r1;
+        $r8 = new com.facebook.a.c.g;
+        specialinvoke $r8.<com.facebook.a.c.g: void <init>(android.content.Context)>($r1);
+        $r3 = virtualinvoke $r8.<com.facebook.a.c.g: android.content.pm.PackageInfo a()>();
+        if $r3 == null goto label1;
+
+        $i0 = $r3.<android.content.pm.PackageInfo: int versionCode>;
+        $r7 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r0.<com.facebook.a.j: java.lang.String t> = $r7;
+        $r7 = $r3.<android.content.pm.PackageInfo: java.lang.String versionName>;
+        if $r7 == null goto label7;
+
+        $r7 = $r3.<android.content.pm.PackageInfo: java.lang.String versionName>;
+
+     label0:
+        $r0.<com.facebook.a.j: java.lang.String u> = $r7;
+
+     label1:
+        $r8 = new com.facebook.a.c.g;
+        specialinvoke $r8.<com.facebook.a.c.g: void <init>(android.content.Context)>($r1);
+        $r0.<com.facebook.a.j: com.facebook.a.c.g i> = $r8;
+        $r4 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.version");
+        if $r4 == null goto label8;
+
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("cyanogenmod");
+
+     label2:
+        $r9 = $r0.<com.facebook.a.j: android.text.format.Time z>;
+        virtualinvoke $r9.<android.text.format.Time: void setToNow()>();
+
+     label3:
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s b>;
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r7 = staticinvoke <android.provider.Settings$Secure: java.lang.String getString(android.content.ContentResolver,java.lang.String)>($r6, "android_id");
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s d>;
+        $r7 = $r0.<com.facebook.a.j: java.lang.String t>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s e>;
+        $r7 = $r0.<com.facebook.a.j: java.lang.String u>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s f>;
+        $r7 = virtualinvoke $r1.<android.content.Context: java.lang.String getPackageName()>();
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s h>;
+        $r7 = <android.os.Build: java.lang.String MODEL>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s i>;
+        $r7 = <android.os.Build$VERSION: java.lang.String RELEASE>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s j>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r4);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s k>;
+        $r7 = staticinvoke <java.lang.Boolean: java.lang.String toString(boolean)>($z0);
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s m>;
+        $r7 = <android.os.Build: java.lang.String BRAND>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s n>;
+        $r7 = <android.os.Build: java.lang.String PRODUCT>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r7 = "n/a";
+        $r11 = virtualinvoke $r1.<android.content.Context: java.io.File getFilesDir()>();
+        if $r11 == null goto label4;
+
+        $r7 = virtualinvoke $r11.<java.io.File: java.lang.String getAbsolutePath()>();
+
+     label4:
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s g>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 9 goto label5;
+
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s aa>;
+        $r7 = <android.os.Build: java.lang.String SERIAL>;
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        if $r3 == null goto label5;
+
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s Y>;
+        $l2 = $r3.<android.content.pm.PackageInfo: long firstInstallTime>;
+        $r7 = staticinvoke <com.facebook.a.j: java.lang.String a(long)>($l2);
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+        $r10 = $r0.<com.facebook.a.j: java.util.Map g>;
+        $r5 = <com.facebook.a.s: com.facebook.a.s Z>;
+        $l2 = $r3.<android.content.pm.PackageInfo: long lastUpdateTime>;
+        $r7 = staticinvoke <com.facebook.a.j: java.lang.String a(long)>($l2);
+        interfaceinvoke $r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r5, $r7);
+
+     label5:
+        $r11 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", "reportfile.prealloc");
+        $r0.<com.facebook.a.j: java.io.File p> = $r11;
+        specialinvoke $r0.<com.facebook.a.j: void l()>();
+
+     label6:
+        return;
+
+     label7:
+        $r7 = "not set";
+        goto label0;
+
+     label8:
+        $z0 = 0;
+        goto label2;
+
+     label9:
+        $r12 := @caughtexception;
+        $r7 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r7, "failed to install constants", $r12);
+        goto label5;
+
+        catch java.lang.Exception from label3 to label5 with label9;
+    }
+
+    final void a(android.content.Context, com.facebook.a.e)
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        com.facebook.a.e $r2;
+        java.lang.String $r3, $r4;
+        com.facebook.a.s $r5;
+        java.lang.Object $r6;
+        java.io.File $r7;
+        java.lang.Exception $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.facebook.a.e;
+        entermonitor $r0;
+
+     label0:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r3, "Sending in-memory report");
+
+     label1:
+        $r4 = specialinvoke $r0.<com.facebook.a.j: java.lang.String g()>();
+        $r5 = <com.facebook.a.s: com.facebook.a.s L>;
+        virtualinvoke $r2.<com.facebook.a.e: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r5, $r4);
+        specialinvoke $r0.<com.facebook.a.j: void a(com.facebook.a.e)>($r2);
+        $r5 = <com.facebook.a.s: com.facebook.a.s R>;
+        $r6 = virtualinvoke $r2.<com.facebook.a.e: java.lang.Object get(java.lang.Object)>($r5);
+        $r4 = (java.lang.String) $r6;
+        if $r4 == null goto label2;
+
+        $r7 = staticinvoke <com.facebook.a.j: java.io.File a(android.content.Context,java.lang.String,java.lang.String)>($r1, "acra-reports", $r4);
+        virtualinvoke $r7.<java.io.File: boolean delete()>();
+
+     label2:
+        exitmonitor $r0;
+        return;
+
+     label3:
+        $r8 := @caughtexception;
+
+     label4:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r3, "Failed to send in-memory crash report: ", $r8);
+
+     label5:
+        goto label2;
+
+     label6:
+        $r9 := @caughtexception;
+        exitmonitor $r0;
+        throw $r9;
+
+        catch java.lang.Throwable from label0 to label1 with label6;
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label1 to label2 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    final transient void a(android.content.Context, com.facebook.a.m[])
+    {
+        com.facebook.a.j $r0;
+        android.content.Context $r1;
+        com.facebook.a.m[] $r2;
+        java.lang.String $r3;
+        int $i0, $i1;
+        com.facebook.a.m $r4, $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.facebook.a.m[];
+        entermonitor $r0;
+
+     label0:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        $i0 = lengthof $r2;
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i0 goto label6;
+
+        $r4 = $r2[$i1];
+        $r5 = <com.facebook.a.m: com.facebook.a.m a>;
+        if $r5 != $r4 goto label3;
+
+        specialinvoke $r0.<com.facebook.a.j: void b(android.content.Context)>($r1);
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label3:
+        specialinvoke $r0.<com.facebook.a.j: int a(android.content.Context,com.facebook.a.m)>($r1, $r4);
+
+     label4:
+        goto label2;
+
+     label5:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+        throw $r6;
+
+     label6:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+
+     label7:
+        exitmonitor $r0;
+        return;
+
+        catch java.lang.Throwable from label0 to label4 with label5;
+        catch java.lang.Throwable from label6 to label7 with label5;
+    }
+
+    public final void a(com.facebook.a.b.b)
+    {
+        com.facebook.a.j $r0;
+        com.facebook.a.b.b $r1;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: com.facebook.a.b.b;
+        specialinvoke $r0.<com.facebook.a.j: void q()>();
+        specialinvoke $r0.<com.facebook.a.j: void b(com.facebook.a.b.b)>($r1);
+        return;
+    }
+
+    public final com.facebook.a.n b()
+    {
+        com.facebook.a.j $r0;
+        java.lang.String[] $r2, $r4;
+        java.lang.String $r3;
+        int $i0, i1;
+        com.facebook.a.m[] $r5;
+        com.facebook.a.n $r6;
+
+        $r0 := @this: com.facebook.a.j;
+        i1 = (int) 1;
+        $r2 = newarray (java.lang.String)[i1];
+        $r2[0] = ".stacktrace";
+        $r2 = specialinvoke $r0.<com.facebook.a.j: java.lang.String[] a(java.lang.String,java.lang.String[])>("acra-reports", $r2);
+        i1 = (int) 1;
+        $r4 = newarray (java.lang.String)[i1];
+        $r4[0] = ".dmp";
+        $r4 = specialinvoke $r0.<com.facebook.a.j: java.lang.String[] a(java.lang.String,java.lang.String[])>("minidumps", $r4);
+        if $r2 == null goto label0;
+
+        $i0 = lengthof $r2;
+        if $i0 > 0 goto label1;
+
+     label0:
+        if $r4 == null goto label3;
+
+        $i0 = lengthof $r4;
+        if $i0 <= 0 goto label3;
+
+     label1:
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        if $r4 == null goto label2;
+
+        $i0 = lengthof $r4;
+        if $i0 <= 0 goto label2;
+
+        $r0.<com.facebook.a.j: boolean e> = 1;
+
+     label2:
+        $r5 = <com.facebook.a.j: com.facebook.a.m[] j>;
+        $r6 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.n a(com.facebook.a.m[])>($r5);
+        return $r6;
+
+     label3:
+        return null;
+    }
+
+    public final void uncaughtException(java.lang.Thread, java.lang.Throwable)
+    {
+        com.facebook.a.j $r0;
+        java.lang.Thread $r1;
+        java.lang.Throwable $r2, $r12;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r4;
+        boolean $z0;
+        java.lang.Class $r6;
+        android.content.Context $r7;
+        java.util.concurrent.atomic.AtomicBoolean $r8;
+        java.util.HashMap $r9;
+        com.facebook.a.n $r10;
+        java.lang.InterruptedException $r11;
+        com.facebook.a.s[] $r13;
+        java.lang.Thread$UncaughtExceptionHandler $r14;
+        java.lang.OutOfMemoryError $r15, $r16;
+
+        $r0 := @this: com.facebook.a.j;
+        $r1 := @parameter0: java.lang.Thread;
+        $r2 := @parameter1: java.lang.Throwable;
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("ACRA caught a ");
+        $r6 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = virtualinvoke $r6.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" exception for ");
+        $r7 = $r0.<com.facebook.a.j: android.content.Context o>;
+        $r5 = virtualinvoke $r7.<android.content.Context: java.lang.String getPackageName()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". Building report.");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r3, $r5);
+        $r0.<com.facebook.a.j: boolean A> = 1;
+        $r8 = <com.facebook.a.j: java.util.concurrent.atomic.AtomicBoolean D>;
+        $z0 = virtualinvoke $r8.<java.util.concurrent.atomic.AtomicBoolean: boolean getAndSet(boolean)>(1);
+
+     label0:
+        $r9 = new java.util.HashMap;
+        specialinvoke $r9.<java.util.HashMap: void <init>()>();
+
+     label1:
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(boolean)>($z0);
+        interfaceinvoke $r9.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("IS_PROCESSING_ANOTHER_EXCEPTION", $r3);
+
+     label2:
+        $r10 = specialinvoke $r0.<com.facebook.a.j: com.facebook.a.n a(java.lang.Throwable,java.util.Map)>($r2, $r9);
+        if $r10 == null goto label8;
+
+     label3:
+        $z0 = virtualinvoke $r10.<com.facebook.a.n: boolean isAlive()>();
+        if $z0 == 0 goto label7;
+
+     label4:
+        staticinvoke <java.lang.Thread: void sleep(long)>(100L);
+
+     label5:
+        goto label3;
+
+     label6:
+        $r11 := @caughtexception;
+        $r3 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r3, "Error : ", $r11);
+        goto label3;
+
+     label7:
+        $r12 = virtualinvoke $r10.<com.facebook.a.n: java.lang.Throwable a()>();
+        if $r12 == null goto label8;
+
+        $r5 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r5, "ReportsWorkerSender failed with exception", $r12);
+        $r13 = staticinvoke <com.facebook.a.j: com.facebook.a.s[] c(java.lang.Throwable)>($r2);
+        specialinvoke $r0.<com.facebook.a.j: com.facebook.a.n a(java.lang.Throwable,java.util.Map,com.facebook.a.s[],boolean)>($r12, $r9, $r13, 0);
+
+     label8:
+        $r14 = $r0.<com.facebook.a.j: java.lang.Thread$UncaughtExceptionHandler m>;
+        if $r14 == null goto label9;
+
+        $r14 = $r0.<com.facebook.a.j: java.lang.Thread$UncaughtExceptionHandler m>;
+        interfaceinvoke $r14.<java.lang.Thread$UncaughtExceptionHandler: void uncaughtException(java.lang.Thread,java.lang.Throwable)>($r1, $r2);
+
+     label9:
+        return;
+
+     label10:
+        $r15 := @caughtexception;
+        $r9 = null;
+        goto label2;
+
+     label11:
+        $r16 := @caughtexception;
+        goto label2;
+
+        catch java.lang.OutOfMemoryError from label0 to label1 with label10;
+        catch java.lang.OutOfMemoryError from label1 to label2 with label11;
+        catch java.lang.InterruptedException from label4 to label5 with label6;
+    }
+}

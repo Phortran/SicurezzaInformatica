@@ -1,0 +1,92 @@
+public final class com.facebook.rti.b.a.f.a.b.b extends java.lang.Object
+{
+    private static java.lang.reflect.Field a;
+    private static java.lang.reflect.Field b;
+    private static boolean c;
+
+    static void <clinit>()
+    {
+        java.lang.reflect.Field $r1;
+        java.lang.Class $r2;
+        java.lang.Throwable $r3;
+
+        <com.facebook.rti.b.a.f.a.b.b: boolean c> = 0;
+
+     label0:
+        staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("b.a.a.a.a.a.f");
+        staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("b.a.a.a.a.a.c");
+        $r2 = class "b/a/a/a/a/a/c";
+        $r1 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("sslParameters");
+        <com.facebook.rti.b.a.f.a.b.b: java.lang.reflect.Field a> = $r1;
+        virtualinvoke $r1.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        $r2 = class "b/a/a/a/a/a/f";
+        $r1 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("clientSessionContext");
+        <com.facebook.rti.b.a.f.a.b.b: java.lang.reflect.Field b> = $r1;
+        virtualinvoke $r1.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        <com.facebook.rti.b.a.f.a.b.b: boolean c> = 1;
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.b.a.f.a.b.b $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static b.a.a.a.a.a.f a(javax.net.ssl.SSLSocketFactory)
+    {
+        javax.net.ssl.SSLSocketFactory $r0;
+        java.lang.reflect.Field $r1;
+        com.facebook.rti.b.a.f.a.d $r2;
+        java.lang.Object $r3;
+        b.a.a.a.a.a.f $r4;
+        java.lang.IllegalAccessException $r5;
+        java.lang.RuntimeException $r6;
+
+        $r0 := @parameter0: javax.net.ssl.SSLSocketFactory;
+        $r1 = <com.facebook.rti.b.a.f.a.b.b: java.lang.reflect.Field a>;
+
+     label0:
+        $r3 = virtualinvoke $r1.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r0);
+
+     label1:
+        $r4 = (b.a.a.a.a.a.f) $r3;
+
+     label2:
+        return $r4;
+
+     label3:
+        $r5 := @caughtexception;
+        $r2 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r2.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r5);
+        throw $r2;
+
+     label4:
+        $r6 := @caughtexception;
+        $r2 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r2.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r6);
+        throw $r2;
+
+        catch java.lang.IllegalAccessException from label0 to label1 with label3;
+        catch java.lang.RuntimeException from label0 to label2 with label4;
+    }
+
+    public static boolean a()
+    {
+        boolean $z0;
+
+        $z0 = <com.facebook.rti.b.a.f.a.b.b: boolean c>;
+        return $z0;
+    }
+}

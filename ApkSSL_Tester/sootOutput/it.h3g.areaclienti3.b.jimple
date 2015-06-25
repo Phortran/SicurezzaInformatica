@@ -1,0 +1,71 @@
+class it.h3g.areaclienti3.b extends java.lang.Object implements android.view.View$OnTouchListener
+{
+    final it.h3g.areaclienti3.BannerFilmActivity a;
+
+    void <init>(it.h3g.areaclienti3.BannerFilmActivity)
+    {
+        it.h3g.areaclienti3.b $r0;
+        it.h3g.areaclienti3.BannerFilmActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.b;
+        $r1 := @parameter0: it.h3g.areaclienti3.BannerFilmActivity;
+        $r0.<it.h3g.areaclienti3.b: it.h3g.areaclienti3.BannerFilmActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public boolean onTouch(android.view.View, android.view.MotionEvent)
+    {
+        it.h3g.areaclienti3.b $r0;
+        android.view.View $r1;
+        android.view.MotionEvent $r2;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        it.h3g.areaclienti3.BannerFilmActivity $r5;
+        android.widget.RelativeLayout $r6;
+        it.h3g.areaclienti3.d.h $r7;
+        it.h3g.areaclienti3.d.i $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.b;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.MotionEvent;
+        $i0 = virtualinvoke $r2.<android.view.MotionEvent: int getAction()>();
+        lookupswitch($i0)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            default: goto label0;
+        };
+
+     label0:
+        return 0;
+
+     label1:
+        $r5 = $r0.<it.h3g.areaclienti3.b: it.h3g.areaclienti3.BannerFilmActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.BannerFilmActivity: android.widget.RelativeLayout b(it.h3g.areaclienti3.BannerFilmActivity)>($r5);
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("#80");
+        $r5 = $r0.<it.h3g.areaclienti3.b: it.h3g.areaclienti3.BannerFilmActivity a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.BannerFilmActivity: it.h3g.areaclienti3.d.h a(it.h3g.areaclienti3.BannerFilmActivity)>($r5);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.h: it.h3g.areaclienti3.d.i e()>();
+        $r4 = virtualinvoke $r8.<it.h3g.areaclienti3.d.i: java.lang.String c()>();
+        $r4 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int)>(3);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i0 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>($r4);
+        virtualinvoke $r6.<android.widget.RelativeLayout: void setBackgroundColor(int)>($i0);
+        goto label0;
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.b: it.h3g.areaclienti3.BannerFilmActivity a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.BannerFilmActivity: android.widget.RelativeLayout b(it.h3g.areaclienti3.BannerFilmActivity)>($r5);
+        $r5 = $r0.<it.h3g.areaclienti3.b: it.h3g.areaclienti3.BannerFilmActivity a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.BannerFilmActivity: it.h3g.areaclienti3.d.h a(it.h3g.areaclienti3.BannerFilmActivity)>($r5);
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.h: it.h3g.areaclienti3.d.i e()>();
+        $r4 = virtualinvoke $r8.<it.h3g.areaclienti3.d.i: java.lang.String c()>();
+        $i0 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>($r4);
+        virtualinvoke $r6.<android.widget.RelativeLayout: void setBackgroundColor(int)>($i0);
+        goto label0;
+    }
+}

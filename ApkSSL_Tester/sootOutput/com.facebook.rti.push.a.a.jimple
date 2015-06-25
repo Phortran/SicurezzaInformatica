@@ -1,0 +1,116 @@
+public abstract class com.facebook.rti.push.a.a extends android.app.IntentService
+{
+
+    protected void <init>(java.lang.String)
+    {
+        com.facebook.rti.push.a.a $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.push.a.a;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>($r1);
+        return;
+    }
+
+    private void b(android.content.Intent)
+    {
+        com.facebook.rti.push.a.a $r0;
+        android.content.Intent $r1;
+        java.lang.String $r2, $r3;
+        java.lang.Object[] $r4;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.push.a.a;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r3 = "com.facebook.rti.fbns.intent.RECEIVE";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = virtualinvoke $r1.<android.content.Intent: java.lang.String toString()>();
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsCallbackHandlerBase", $r2, $r4);
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("receive_type");
+        $r2 = "message";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r0.<com.facebook.rti.push.a.a: void a(android.content.Intent)>($r1);
+        goto label0;
+
+     label2:
+        $r2 = "registered";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label3;
+
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("data");
+        virtualinvoke $r0.<com.facebook.rti.push.a.a: void a(java.lang.String)>($r3);
+        goto label0;
+
+     label3:
+        $r2 = "reg_error";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label4;
+
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("data");
+        virtualinvoke $r0.<com.facebook.rti.push.a.a: void b(java.lang.String)>($r3);
+        goto label0;
+
+     label4:
+        $r2 = "deleted";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        $r2 = "unregistered";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label5;
+
+        virtualinvoke $r0.<com.facebook.rti.push.a.a: void a()>();
+        goto label0;
+
+     label5:
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsCallbackHandlerBase", "Unknown message type", $r4);
+        goto label0;
+    }
+
+    protected abstract void a();
+
+    protected abstract void a(android.content.Intent);
+
+    protected abstract void a(java.lang.String);
+
+    protected abstract void b(java.lang.String);
+
+    protected final void onHandleIntent(android.content.Intent)
+    {
+        com.facebook.rti.push.a.a $r0;
+        android.content.Intent $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.push.a.a;
+        $r1 := @parameter0: android.content.Intent;
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        specialinvoke $r0.<com.facebook.rti.push.a.a: void b(android.content.Intent)>($r1);
+
+     label2:
+        staticinvoke <com.facebook.rti.push.a.b: boolean a(android.content.Intent)>($r1);
+        goto label0;
+
+     label3:
+        $r2 := @caughtexception;
+        staticinvoke <com.facebook.rti.push.a.b: boolean a(android.content.Intent)>($r1);
+        throw $r2;
+
+        catch java.lang.Throwable from label1 to label2 with label3;
+    }
+}

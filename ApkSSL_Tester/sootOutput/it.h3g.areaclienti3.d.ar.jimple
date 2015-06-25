@@ -1,0 +1,36 @@
+public class it.h3g.areaclienti3.d.ar extends java.util.ArrayList implements java.io.Serializable
+{
+
+    public void <init>(java.util.ArrayList)
+    {
+        it.h3g.areaclienti3.d.ar $r0;
+        java.util.ArrayList $r1;
+        boolean $z0;
+        java.util.Iterator $r2;
+        it.h3g.areaclienti3.d.aq $r3;
+        java.lang.Object $r4;
+        it.h3g.areaclienti3.remoteservice.b.n.c $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.d.ar;
+        $r1 := @parameter0: java.util.ArrayList;
+        specialinvoke $r0.<java.util.ArrayList: void <init>()>();
+        if $r1 == null goto label1;
+
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $r4 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (it.h3g.areaclienti3.remoteservice.b.n.c) $r4;
+        $r3 = new it.h3g.areaclienti3.d.aq;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.aq: void <init>(it.h3g.areaclienti3.remoteservice.b.n.c)>($r5);
+        virtualinvoke $r0.<it.h3g.areaclienti3.d.ar: boolean add(java.lang.Object)>($r3);
+        goto label0;
+    }
+}

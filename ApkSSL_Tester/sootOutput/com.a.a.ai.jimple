@@ -1,0 +1,104 @@
+final class com.a.a.ai extends android.os.Handler
+{
+
+    void <init>(android.os.Looper)
+    {
+        com.a.a.ai $r0;
+        android.os.Looper $r1;
+
+        $r0 := @this: com.a.a.ai;
+        $r1 := @parameter0: android.os.Looper;
+        specialinvoke $r0.<android.os.Handler: void <init>(android.os.Looper)>($r1);
+        return;
+    }
+
+    public void handleMessage(android.os.Message)
+    {
+        com.a.a.ai $r0;
+        android.os.Message $r1;
+        int $i0, $i2;
+        java.lang.String $r2, $r12;
+        com.a.a.ah $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.AssertionError $r5;
+        java.lang.Object $r6;
+        java.util.List $r7;
+        com.a.a.d $r8;
+        com.a.a.a $r9;
+        boolean $z0;
+        com.a.a.au $r11;
+
+        $r0 := @this: com.a.a.ai;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        lookupswitch($i0)
+        {
+            case 3: goto label3;
+            case 8: goto label1;
+            case 13: goto label6;
+            default: goto label0;
+        };
+
+     label0:
+        $r5 = new java.lang.AssertionError;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unknown handler message received: ");
+        $i0 = $r1.<android.os.Message: int what>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.AssertionError: void <init>(java.lang.Object)>($r2);
+        throw $r5;
+
+     label1:
+        $r6 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r7 = (java.util.List) $r6;
+        $i0 = interfaceinvoke $r7.<java.util.List: int size()>();
+        $i2 = 0;
+
+     label2:
+        if $i2 >= $i0 goto label5;
+
+        $r6 = interfaceinvoke $r7.<java.util.List: java.lang.Object get(int)>($i2);
+        $r8 = (com.a.a.d) $r6;
+        $r3 = $r8.<com.a.a.d: com.a.a.ah b>;
+        virtualinvoke $r3.<com.a.a.ah: void a(com.a.a.d)>($r8);
+        $i2 = $i2 + 1;
+        goto label2;
+
+     label3:
+        $r6 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r9 = (com.a.a.a) $r6;
+        $r3 = virtualinvoke $r9.<com.a.a.a: com.a.a.ah h()>();
+        $z0 = $r3.<com.a.a.ah: boolean k>;
+        if $z0 == 0 goto label4;
+
+        $r11 = $r9.<com.a.a.a: com.a.a.au b>;
+        $r12 = virtualinvoke $r11.<com.a.a.au: java.lang.String a()>();
+        staticinvoke <com.a.a.bj: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("Main", "canceled", $r12, "target got garbage collected");
+
+     label4:
+        $r3 = $r9.<com.a.a.a: com.a.a.ah a>;
+        $r6 = virtualinvoke $r9.<com.a.a.a: java.lang.Object d()>();
+        staticinvoke <com.a.a.ah: void a(com.a.a.ah,java.lang.Object)>($r3, $r6);
+
+     label5:
+        return;
+
+     label6:
+        $r6 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r7 = (java.util.List) $r6;
+        $i2 = interfaceinvoke $r7.<java.util.List: int size()>();
+        $i0 = 0;
+
+     label7:
+        if $i0 >= $i2 goto label5;
+
+        $r6 = interfaceinvoke $r7.<java.util.List: java.lang.Object get(int)>($i0);
+        $r9 = (com.a.a.a) $r6;
+        $r3 = $r9.<com.a.a.a: com.a.a.ah a>;
+        virtualinvoke $r3.<com.a.a.ah: void c(com.a.a.a)>($r9);
+        $i0 = $i0 + 1;
+        goto label7;
+    }
+}

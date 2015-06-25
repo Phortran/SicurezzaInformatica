@@ -1,0 +1,95 @@
+public class com.google.android.gms.internal.ft extends java.lang.Object
+{
+    private static final android.net.Uri a;
+    private static final android.net.Uri b;
+
+    static void <clinit>()
+    {
+        android.net.Uri $r1;
+        android.net.Uri$Builder $r2;
+
+        $r1 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("http://plus.google.com/");
+        <com.google.android.gms.internal.ft: android.net.Uri a> = $r1;
+        $r1 = <com.google.android.gms.internal.ft: android.net.Uri a>;
+        $r2 = virtualinvoke $r1.<android.net.Uri: android.net.Uri$Builder buildUpon()>();
+        $r2 = virtualinvoke $r2.<android.net.Uri$Builder: android.net.Uri$Builder appendPath(java.lang.String)>("circles");
+        $r2 = virtualinvoke $r2.<android.net.Uri$Builder: android.net.Uri$Builder appendPath(java.lang.String)>("find");
+        $r1 = virtualinvoke $r2.<android.net.Uri$Builder: android.net.Uri build()>();
+        <com.google.android.gms.internal.ft: android.net.Uri b> = $r1;
+        return;
+    }
+
+    public static android.content.Intent a()
+    {
+        android.content.Intent $r0;
+
+        $r0 = new android.content.Intent;
+        specialinvoke $r0.<android.content.Intent: void <init>(java.lang.String)>("android.settings.DATE_SETTINGS");
+        return $r0;
+    }
+
+    public static android.content.Intent a(java.lang.String)
+    {
+        java.lang.String $r0;
+        android.net.Uri $r2;
+        android.content.Intent $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <android.net.Uri: android.net.Uri fromParts(java.lang.String,java.lang.String,java.lang.String)>("package", $r0, null);
+        $r3 = new android.content.Intent;
+        specialinvoke $r3.<android.content.Intent: void <init>(java.lang.String)>("android.settings.APPLICATION_DETAILS_SETTINGS");
+        virtualinvoke $r3.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r2);
+        return $r3;
+    }
+
+    public static android.content.Intent b(java.lang.String)
+    {
+        java.lang.String $r0;
+        android.content.Intent $r1;
+        android.net.Uri $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        $r3 = staticinvoke <com.google.android.gms.internal.ft: android.net.Uri d(java.lang.String)>($r0);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r3);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setPackage(java.lang.String)>("com.android.vending");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent addFlags(int)>(524288);
+        return $r1;
+    }
+
+    public static android.content.Intent c(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        java.lang.StringBuilder $r1;
+        android.net.Uri $r3;
+        android.content.Intent $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("bazaar://search?q=pname:");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r2);
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r3);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setFlags(int)>(524288);
+        return $r4;
+    }
+
+    private static android.net.Uri d(java.lang.String)
+    {
+        java.lang.String $r0;
+        android.net.Uri $r2;
+        android.net.Uri$Builder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("market://details");
+        $r3 = virtualinvoke $r2.<android.net.Uri: android.net.Uri$Builder buildUpon()>();
+        $r3 = virtualinvoke $r3.<android.net.Uri$Builder: android.net.Uri$Builder appendQueryParameter(java.lang.String,java.lang.String)>("id", $r0);
+        $r2 = virtualinvoke $r3.<android.net.Uri$Builder: android.net.Uri build()>();
+        return $r2;
+    }
+}

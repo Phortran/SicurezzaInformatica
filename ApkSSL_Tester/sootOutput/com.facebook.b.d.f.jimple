@@ -1,0 +1,219 @@
+public final class com.facebook.b.d.f extends java.lang.Object
+{
+    byte[] a;
+    private long b;
+    private long c;
+    private long d;
+
+    public void <init>()
+    {
+        com.facebook.b.d.f $r0;
+        byte[] $r1;
+
+        $r0 := @this: com.facebook.b.d.f;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = newarray (byte)[1024];
+        $r0.<com.facebook.b.d.f: byte[] a> = $r1;
+        return;
+    }
+
+    private static long a(byte[], int)
+    {
+        byte[] $r0;
+        int $i0, $i1, $i6;
+        byte $b5;
+        java.lang.String $r1;
+        long $l7, $l8;
+
+        $r0 := @parameter0: byte[];
+        $i0 := @parameter1: int;
+
+     label0:
+        $i1 = lengthof $r0;
+        if $i0 >= $i1 goto label4;
+
+        $b5 = $r0[$i0];
+        if $b5 == 10 goto label4;
+
+        $b5 = $r0[$i0];
+        if $b5 < 48 goto label3;
+
+        $b5 = $r0[$i0];
+        if $b5 > 57 goto label3;
+
+        $i1 = $i0 + 1;
+
+     label1:
+        $i6 = lengthof $r0;
+        if $i1 >= $i6 goto label2;
+
+        $b5 = $r0[$i1];
+        if $b5 < 48 goto label2;
+
+        $b5 = $r0[$i1];
+        if $b5 > 57 goto label2;
+
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label2:
+        $r1 = new java.lang.String;
+        $i6 = $i1 - $i0;
+        specialinvoke $r1.<java.lang.String: void <init>(byte[],int,int,int)>($r0, 0, $i0, $i6);
+        $i6 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+        $l7 = (long) $i6;
+        $l8 = $l7 * 1024L;
+        return $l8;
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label4:
+        return 0L;
+    }
+
+    private static boolean a(byte[], int, java.lang.String)
+    {
+        byte[] $r0;
+        int $i0, $i2, $i3, $i4;
+        java.lang.String $r1;
+        byte $b1;
+        char $c5;
+
+        $r0 := @parameter0: byte[];
+        $i0 := @parameter1: int;
+        $r1 := @parameter2: java.lang.String;
+        $i3 = virtualinvoke $r1.<java.lang.String: int length()>();
+        $i2 = $i0 + $i3;
+        $i4 = lengthof $r0;
+        if $i2 < $i4 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $i4 = 0;
+
+     label2:
+        if $i4 >= $i3 goto label3;
+
+        $i2 = $i0 + $i4;
+        $b1 = $r0[$i2];
+        $c5 = virtualinvoke $r1.<java.lang.String: char charAt(int)>($i4);
+        if $b1 != $c5 goto label0;
+
+        $i4 = $i4 + 1;
+        goto label2;
+
+     label3:
+        return 1;
+    }
+
+    public final long a()
+    {
+        com.facebook.b.d.f $r0;
+        long $l0;
+
+        $r0 := @this: com.facebook.b.d.f;
+        $l0 = $r0.<com.facebook.b.d.f: long d>;
+        return $l0;
+    }
+
+    public final void b()
+    {
+        com.facebook.b.d.f $r0;
+        int $i0, $i2, $i4, $i5;
+        java.io.FileInputStream $r1;
+        long $l1;
+        byte $b3;
+        byte[] $r3;
+        boolean $z0;
+        java.io.IOException $r4;
+        java.io.FileNotFoundException $r5;
+
+        $r0 := @this: com.facebook.b.d.f;
+        $i0 = 0;
+        $r0.<com.facebook.b.d.f: long d> = 0L;
+        $r0.<com.facebook.b.d.f: long c> = 0L;
+        $r0.<com.facebook.b.d.f: long b> = 0L;
+        $r1 = new java.io.FileInputStream;
+
+     label0:
+        specialinvoke $r1.<java.io.FileInputStream: void <init>(java.lang.String)>("/proc/meminfo");
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $i4 = virtualinvoke $r1.<java.io.FileInputStream: int read(byte[])>($r3);
+        virtualinvoke $r1.<java.io.FileInputStream: void close()>();
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $i2 = lengthof $r3;
+        $i5 = 0;
+
+     label1:
+        if $i0 >= $i4 goto label8;
+
+        if $i5 >= 3 goto label8;
+
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $z0 = staticinvoke <com.facebook.b.d.f: boolean a(byte[],int,java.lang.String)>($r3, $i0, "MemTotal");
+        if $z0 == 0 goto label3;
+
+        $i0 = $i0 + 8;
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $l1 = staticinvoke <com.facebook.b.d.f: long a(byte[],int)>($r3, $i0);
+        $r0.<com.facebook.b.d.f: long d> = $l1;
+        $i5 = $i5 + 1;
+
+     label2:
+        if $i0 >= $i2 goto label6;
+
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $b3 = $r3[$i0];
+        if $b3 == 10 goto label6;
+
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label3:
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $z0 = staticinvoke <com.facebook.b.d.f: boolean a(byte[],int,java.lang.String)>($r3, $i0, "MemFree");
+        if $z0 == 0 goto label4;
+
+        $i0 = $i0 + 7;
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $l1 = staticinvoke <com.facebook.b.d.f: long a(byte[],int)>($r3, $i0);
+        $r0.<com.facebook.b.d.f: long c> = $l1;
+        $i5 = $i5 + 1;
+        goto label2;
+
+     label4:
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $z0 = staticinvoke <com.facebook.b.d.f: boolean a(byte[],int,java.lang.String)>($r3, $i0, "Cached");
+        if $z0 == 0 goto label2;
+
+        $i0 = $i0 + 6;
+        $r3 = $r0.<com.facebook.b.d.f: byte[] a>;
+        $l1 = staticinvoke <com.facebook.b.d.f: long a(byte[],int)>($r3, $i0);
+
+     label5:
+        $r0.<com.facebook.b.d.f: long b> = $l1;
+        $i5 = $i5 + 1;
+        goto label2;
+
+     label6:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label7:
+        $r4 := @caughtexception;
+
+     label8:
+        return;
+
+     label9:
+        $r5 := @caughtexception;
+        goto label8;
+
+        catch java.io.FileNotFoundException from label0 to label5 with label9;
+        catch java.io.IOException from label0 to label5 with label7;
+    }
+}

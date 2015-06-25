@@ -1,0 +1,53 @@
+final class com.facebook.rti.a.a.l extends android.os.Handler
+{
+    final com.facebook.rti.a.a.k a;
+
+    void <init>(com.facebook.rti.a.a.k)
+    {
+        com.facebook.rti.a.a.l $r0;
+        com.facebook.rti.a.a.k $r1;
+
+        $r0 := @this: com.facebook.rti.a.a.l;
+        $r1 := @parameter0: com.facebook.rti.a.a.k;
+        $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a> = $r1;
+        specialinvoke $r0.<android.os.Handler: void <init>()>();
+        return;
+    }
+
+    public final void handleMessage(android.os.Message)
+    {
+        com.facebook.rti.a.a.l $r0;
+        android.os.Message $r1;
+        int $i0, $i1;
+        com.facebook.rti.a.a.k $r2, $r3;
+        com.facebook.rti.a.a.o $r4;
+        com.facebook.rti.a.a.p $r5;
+
+        $r0 := @this: com.facebook.rti.a.a.l;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        if $i0 != 1 goto label1;
+
+        $r2 = $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a>;
+        staticinvoke <com.facebook.rti.a.a.k: void a(com.facebook.rti.a.a.k)>($r2);
+
+     label0:
+        return;
+
+     label1:
+        $i1 = $r1.<android.os.Message: int what>;
+        if $i1 != 2 goto label0;
+
+        $r3 = $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a>;
+        $r4 = new com.facebook.rti.a.a.o;
+        $r2 = $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a>;
+        specialinvoke $r4.<com.facebook.rti.a.a.o: void <init>(com.facebook.rti.a.a.k,byte)>($r2, 0);
+        staticinvoke <com.facebook.rti.a.a.k: void a(com.facebook.rti.a.a.k,java.lang.Runnable)>($r3, $r4);
+        $r3 = $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a>;
+        $r5 = new com.facebook.rti.a.a.p;
+        $r2 = $r0.<com.facebook.rti.a.a.l: com.facebook.rti.a.a.k a>;
+        specialinvoke $r5.<com.facebook.rti.a.a.p: void <init>(com.facebook.rti.a.a.k,byte)>($r2, 0);
+        staticinvoke <com.facebook.rti.a.a.k: void a(com.facebook.rti.a.a.k,java.lang.Runnable)>($r3, $r5);
+        goto label0;
+    }
+}

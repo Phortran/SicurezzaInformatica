@@ -1,0 +1,129 @@
+class it.h3g.areaclienti3.nwmonitoring.o extends org.xml.sax.helpers.DefaultHandler
+{
+    boolean a;
+    boolean b;
+    boolean c;
+    final it.h3g.areaclienti3.nwmonitoring.n d;
+
+    void <init>(it.h3g.areaclienti3.nwmonitoring.n)
+    {
+        it.h3g.areaclienti3.nwmonitoring.o $r0;
+        it.h3g.areaclienti3.nwmonitoring.n $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.o;
+        $r1 := @parameter0: it.h3g.areaclienti3.nwmonitoring.n;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: it.h3g.areaclienti3.nwmonitoring.n d> = $r1;
+        specialinvoke $r0.<org.xml.sax.helpers.DefaultHandler: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean a> = 0;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean b> = 0;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean c> = 0;
+        return;
+    }
+
+    public void endElement(java.lang.String, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.o $r0;
+        java.lang.String $r1, $r2, $r3;
+        boolean $z0;
+        it.h3g.areaclienti3.nwmonitoring.n $r4;
+        org.xml.sax.SAXException $r5;
+        it.h3g.areaclienti3.nwmonitoring.p $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.o;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("device");
+        if $z0 == 0 goto label0;
+
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean a>;
+        if $z0 == 0 goto label0;
+
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean b>;
+        if $z0 == 0 goto label0;
+
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: it.h3g.areaclienti3.nwmonitoring.n d>;
+        $r4.<it.h3g.areaclienti3.nwmonitoring.n: boolean c> = 1;
+        $r5 = new org.xml.sax.SAXException;
+        $r6 = new it.h3g.areaclienti3.nwmonitoring.p;
+        $r4 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: it.h3g.areaclienti3.nwmonitoring.n d>;
+        specialinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.p: void <init>(it.h3g.areaclienti3.nwmonitoring.n,it.h3g.areaclienti3.nwmonitoring.p)>($r4, null);
+        specialinvoke $r5.<org.xml.sax.SAXException: void <init>(java.lang.Exception)>($r6);
+        throw $r5;
+
+     label0:
+        return;
+    }
+
+    public void startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+    {
+        it.h3g.areaclienti3.nwmonitoring.o $r0;
+        java.lang.String $r1, $r2, $r3;
+        org.xml.sax.Attributes $r4;
+        int $i0, $i1;
+        boolean $z2;
+        it.h3g.areaclienti3.nwmonitoring.n $r5;
+        java.lang.Boolean $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.o;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: org.xml.sax.Attributes;
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("device");
+        if $z2 == 0 goto label1;
+
+        $i1 = (int) 0;
+
+     label0:
+        $i0 = interfaceinvoke $r4.<org.xml.sax.Attributes: int getLength()>();
+        if $i1 < $i0 goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $r1 = interfaceinvoke $r4.<org.xml.sax.Attributes: java.lang.String getQName(int)>($i1);
+        $r3 = interfaceinvoke $r4.<org.xml.sax.Attributes: java.lang.String getValue(int)>($i1);
+        $z2 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("vendor");
+        if $z2 == 0 goto label3;
+
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: it.h3g.areaclienti3.nwmonitoring.n d>;
+        $r2 = $r5.<it.h3g.areaclienti3.nwmonitoring.n: java.lang.String b>;
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z2 == 0 goto label6;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean a> = 1;
+
+     label3:
+        $z2 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("model");
+        if $z2 == 0 goto label4;
+
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.o: it.h3g.areaclienti3.nwmonitoring.n d>;
+        $r2 = $r5.<it.h3g.areaclienti3.nwmonitoring.n: java.lang.String a>;
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z2 == 0 goto label7;
+
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean b> = 1;
+
+     label4:
+        $z2 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("signal_status");
+        if $z2 == 0 goto label5;
+
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r3);
+        $z2 = virtualinvoke $r6.<java.lang.Boolean: boolean booleanValue()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean c> = $z2;
+
+     label5:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label6:
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean a> = 0;
+        goto label3;
+
+     label7:
+        $r0.<it.h3g.areaclienti3.nwmonitoring.o: boolean b> = 0;
+        goto label4;
+    }
+}

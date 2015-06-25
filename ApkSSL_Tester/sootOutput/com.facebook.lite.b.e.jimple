@@ -1,0 +1,911 @@
+public final class com.facebook.lite.b.e extends java.lang.Object
+{
+
+    public static int A(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "soft_keyboard_height", 0);
+        return $i1;
+    }
+
+    public static java.lang.String B(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "sso_token", "");
+        return $r2;
+    }
+
+    public static int C(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "android_transition_steps", 8);
+        return $i1;
+    }
+
+    public static int D(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "android_transition_time", 160);
+        return $i1;
+    }
+
+    public static boolean E(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 = staticinvoke <com.facebook.lite.b.e: boolean a(android.content.Context,java.lang.String,boolean)>($r0, "push_reception_enabled", 1);
+        return $z0;
+    }
+
+    public static boolean F(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 = staticinvoke <com.facebook.lite.b.e: boolean a(android.content.Context,java.lang.String,boolean)>($r0, "push_registration_enabled", 1);
+        return $z0;
+    }
+
+    public static void G(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <com.facebook.lite.b.e: void j(android.content.Context,java.lang.String)>($r0, "uid_and_nonce");
+        return;
+    }
+
+    public static void H(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <com.facebook.lite.b.e: void e(android.content.Context,int)>($r0, 0);
+        staticinvoke <com.facebook.lite.b.e: void d(android.content.Context,int)>($r0, 0);
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,int)>($r0, 0);
+        return;
+    }
+
+    private static android.content.SharedPreferences I(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        android.content.SharedPreferences $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>($r1, 0);
+        return $r2;
+    }
+
+    public static int a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("counter_");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, $r3, 0);
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, $r3, 0);
+        return $i1;
+    }
+
+    private static int a(android.content.Context, java.lang.String, int)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        int $i0;
+        android.content.SharedPreferences $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $i0 = interfaceinvoke $r2.<android.content.SharedPreferences: int getInt(java.lang.String,int)>($r1, $i0);
+        return $i0;
+    }
+
+    private static long a(android.content.Context, java.lang.String, long)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        long $l0;
+        android.content.SharedPreferences $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $l0 := @parameter2: long;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $l0 = interfaceinvoke $r2.<android.content.SharedPreferences: long getLong(java.lang.String,long)>($r1, $l0);
+        return $l0;
+    }
+
+    public static java.lang.String a(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "android_id", "");
+        return $r2;
+    }
+
+    public static void a(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "app_version_code", $i0);
+        return;
+    }
+
+    public static void a(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "battery_status", $l0);
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.Integer)
+    {
+        android.content.Context $r0;
+        java.lang.Integer $r1;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.Integer;
+        $i0 = virtualinvoke $r1.<java.lang.Integer: int intValue()>();
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "android_transition_steps", $i0);
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2;
+        android.content.SharedPreferences $r3;
+        android.content.SharedPreferences$Editor $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        interfaceinvoke $r4.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>($r1, $r2);
+        interfaceinvoke $r4.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    public static void a(android.content.Context, boolean)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 := @parameter1: boolean;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,boolean)>($r0, "gl_debug_mode", $z0);
+        return;
+    }
+
+    private static boolean a(android.content.Context, java.lang.String, boolean)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.content.SharedPreferences $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $z0 = interfaceinvoke $r2.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>($r1, $z0);
+        return $z0;
+    }
+
+    public static int b(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "view_height", 0);
+        return $i1;
+    }
+
+    public static java.lang.String b(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r1 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, $r1, null);
+        return $r1;
+    }
+
+    private static java.lang.String b(android.content.Context, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2;
+        android.content.SharedPreferences $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r2 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r1, $r2);
+        return $r2;
+    }
+
+    public static void b(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "view_width", $i0);
+        return;
+    }
+
+    public static void b(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "cache_last_report_date", $l0);
+        return;
+    }
+
+    public static void b(android.content.Context, java.lang.Integer)
+    {
+        android.content.Context $r0;
+        java.lang.Integer $r1;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.Integer;
+        $i0 = virtualinvoke $r1.<java.lang.Integer: int intValue()>();
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "android_transition_time", $i0);
+        return;
+    }
+
+    private static void b(android.content.Context, java.lang.String, int)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        int $i0;
+        android.content.SharedPreferences $r2;
+        android.content.SharedPreferences$Editor $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)>($r1, $i0);
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    private static void b(android.content.Context, java.lang.String, long)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        long $l0;
+        android.content.SharedPreferences $r2;
+        android.content.SharedPreferences$Editor $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $l0 := @parameter2: long;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)>($r1, $l0);
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    private static void b(android.content.Context, java.lang.String, boolean)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.content.SharedPreferences $r2;
+        android.content.SharedPreferences$Editor $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>($r1, $z0);
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    public static void b(android.content.Context, boolean)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 := @parameter1: boolean;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,boolean)>($r0, "push_reception_enabled", $z0);
+        return;
+    }
+
+    public static int c(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "app_version_code", 0);
+        return $i1;
+    }
+
+    public static int c(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("counter_");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, $r3, 0);
+        $i1 = $i1 + 1;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, $r3, $i1);
+        return $i1;
+    }
+
+    public static void c(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "cache_data_saved_in_bytes", $i0);
+        return;
+    }
+
+    public static void c(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "current_user_id", $l0);
+        return;
+    }
+
+    private static void c(android.content.Context, java.lang.String, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2;
+        android.content.SharedPreferences $r3;
+        android.content.SharedPreferences$Editor $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        interfaceinvoke $r4.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>($r1, $r2);
+        interfaceinvoke $r4.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    public static void c(android.content.Context, boolean)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 := @parameter1: boolean;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,boolean)>($r0, "push_registration_enabled", $z0);
+        return;
+    }
+
+    public static int d(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "view_width", 0);
+        return $i1;
+    }
+
+    public static void d(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "cache_hit_count", $i0);
+        return;
+    }
+
+    public static void d(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "device_id_generated_timestamp", $l0);
+        return;
+    }
+
+    public static void d(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "android_id", $r1);
+        return;
+    }
+
+    public static int e(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "cache_data_saved_in_bytes", 0);
+        return $i1;
+    }
+
+    public static void e(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "cache_request_count", $i0);
+        return;
+    }
+
+    public static void e(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "periodic_report_daily_timestamp", $l0);
+        return;
+    }
+
+    public static void e(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "device_id", $r1);
+        return;
+    }
+
+    public static int f(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "cache_hit_count", 0);
+        return $i1;
+    }
+
+    public static void f(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "font_cache_version", $i0);
+        return;
+    }
+
+    public static void f(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "last_device_info", $l0);
+        return;
+    }
+
+    public static void f(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "installation_source", $r1);
+        return;
+    }
+
+    public static long g(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "cache_last_report_date", 0L);
+        return $l0;
+    }
+
+    public static void g(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "largest_supported_picture_size", $i0);
+        return;
+    }
+
+    public static void g(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "periodic_report_hourly_timestamp", $l0);
+        return;
+    }
+
+    public static void g(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "uid_and_nonce", $r1);
+        return;
+    }
+
+    public static int h(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "cache_request_count", 0);
+        return $i1;
+    }
+
+    public static void h(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "renderer_type", $i0);
+        return;
+    }
+
+    public static void h(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "push_received_timestamp", $l0);
+        return;
+    }
+
+    public static void h(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "server_locale", $r1);
+        return;
+    }
+
+    public static long i(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "current_user_id", 0L);
+        return $l0;
+    }
+
+    public static void i(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "renderer_type_override", $i0);
+        return;
+    }
+
+    public static void i(android.content.Context, long)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,long)>($r0, "push_registered_timestamp", $l0);
+        return;
+    }
+
+    public static void i(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,java.lang.String,java.lang.String)>($r0, "sso_token", $r1);
+        return;
+    }
+
+    public static java.lang.String j(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "device_id", null);
+        return $r1;
+    }
+
+    public static void j(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "soft_keyboard_height", $i0);
+        return;
+    }
+
+    private static void j(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        android.content.SharedPreferences $r2;
+        android.content.SharedPreferences$Editor $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = staticinvoke <com.facebook.lite.b.e: android.content.SharedPreferences I(android.content.Context)>($r0);
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r3 = interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor remove(java.lang.String)>($r1);
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: boolean commit()>();
+        return;
+    }
+
+    public static long k(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "device_id_generated_timestamp", 9223372036854775807L);
+        return $l0;
+    }
+
+    public static void k(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void b(android.content.Context,java.lang.String,int)>($r0, "view_height", $i0);
+        return;
+    }
+
+    public static int l(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "font_cache_version", -1);
+        return $i1;
+    }
+
+    public static int m(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "font_cache_max_size", 524288);
+        return $i0;
+    }
+
+    public static java.lang.String n(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "installation_source", null);
+        return $r1;
+    }
+
+    public static boolean o(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $z0 = staticinvoke <com.facebook.lite.b.e: boolean a(android.content.Context,java.lang.String,boolean)>($r0, "gl_debug_mode", 0);
+        return $z0;
+    }
+
+    public static int p(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "largest_supported_picture_size", -2147483648);
+        return $i0;
+    }
+
+    public static long q(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "battery_status", -9223372036854775808L);
+        return $l0;
+    }
+
+    public static long r(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "periodic_report_daily_timestamp", 0L);
+        return $l0;
+    }
+
+    public static long s(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "last_device_info", -9223372036854775808L);
+        return $l0;
+    }
+
+    public static long t(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "periodic_report_hourly_timestamp", 0L);
+        return $l0;
+    }
+
+    public static java.lang.String u(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "uid_and_nonce", null);
+        return $r1;
+    }
+
+    public static long v(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "push_received_timestamp", 9223372036854775807L);
+        return $l0;
+    }
+
+    public static long w(android.content.Context)
+    {
+        android.content.Context $r0;
+        long $l0;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 = staticinvoke <com.facebook.lite.b.e: long a(android.content.Context,java.lang.String,long)>($r0, "push_registered_timestamp", 9223372036854775807L);
+        return $l0;
+    }
+
+    public static int x(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "renderer_type", 0);
+        return $i1;
+    }
+
+    public static int y(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int a(android.content.Context,java.lang.String,int)>($r0, "renderer_type_override", 0);
+        return $i1;
+    }
+
+    public static java.lang.String z(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.facebook.lite.b.e: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "server_locale", null);
+        return $r1;
+    }
+}

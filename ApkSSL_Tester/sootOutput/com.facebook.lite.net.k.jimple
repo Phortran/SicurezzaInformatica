@@ -1,0 +1,289 @@
+public class com.facebook.lite.net.k extends android.telephony.PhoneStateListener implements com.facebook.lite.net.f
+{
+    private static final java.lang.String a;
+    private final android.content.Context b;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/net/k";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.net.k: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.lite.net.k $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.net.k;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.telephony.PhoneStateListener: void <init>()>();
+        $r0.<com.facebook.lite.net.k: android.content.Context b> = $r1;
+        staticinvoke <com.facebook.lite.net.ConnectivityReceiver: void a(com.facebook.lite.net.f)>($r0);
+        return;
+    }
+
+    private static int a(int)
+    {
+        int $i0;
+
+        $i0 := @parameter0: int;
+        if $i0 != 99 goto label0;
+
+        return 0;
+
+     label0:
+        $i0 = $i0 * 2;
+        $i0 = $i0 + -113;
+        return $i0;
+    }
+
+    private static int a(android.content.Context, android.net.NetworkInfo, android.telephony.SignalStrength)
+    {
+        android.content.Context $r0;
+        android.net.NetworkInfo $r1;
+        android.telephony.SignalStrength $r2;
+        int $i0, $i1, $i2, $i3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.NetworkInfo;
+        $r2 := @parameter2: android.telephony.SignalStrength;
+        $i0 = 0;
+        if $r1 != null goto label1;
+
+     label0:
+        return $i0;
+
+     label1:
+        $i2 = virtualinvoke $r1.<android.net.NetworkInfo: int getType()>();
+        if 1 != $i2 goto label2;
+
+        $i2 = staticinvoke <com.facebook.lite.net.k: int c(android.content.Context)>($r0);
+        return $i2;
+
+     label2:
+        $i2 = virtualinvoke $r1.<android.net.NetworkInfo: int getType()>();
+        if $i2 != 0 goto label0;
+
+        $i1 = staticinvoke <com.facebook.lite.net.k: int a(android.telephony.SignalStrength)>($r2);
+        $i3 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i3 < 17 goto label3;
+
+        $i0 = staticinvoke <com.facebook.lite.net.k: int b(android.content.Context)>($r0);
+
+     label3:
+        if $i0 != 0 goto label0;
+
+        return $i1;
+    }
+
+    private static int a(android.telephony.SignalStrength)
+    {
+        android.telephony.SignalStrength $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        int $i0;
+
+        $r0 := @parameter0: android.telephony.SignalStrength;
+        if $r0 != null goto label0;
+
+        return 0;
+
+     label0:
+        $z0 = virtualinvoke $r0.<android.telephony.SignalStrength: boolean isGsm()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("connstats/onSignalStrengthsChanged: gsmSignalStrength ");
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getGsmSignalStrength()>();
+        $i0 = staticinvoke <com.facebook.lite.net.k: int a(int)>($i0);
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getGsmSignalStrength()>();
+        $i0 = staticinvoke <com.facebook.lite.net.k: int a(int)>($i0);
+        return $i0;
+
+     label1:
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getCdmaDbm()>();
+        if $i0 <= 0 goto label2;
+
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("connstats/onSignalStrengthsChanged: cdmaDbm ");
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getCdmaDbm()>();
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getCdmaDbm()>();
+        return $i0;
+
+     label2:
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("connstats/onSignalStrengthsChanged: evdoDbm ");
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getEvdoDbm()>();
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $i0 = virtualinvoke $r0.<android.telephony.SignalStrength: int getEvdoDbm()>();
+        return $i0;
+    }
+
+    private static void a(android.content.Context, android.telephony.SignalStrength)
+    {
+        android.content.Context $r0;
+        android.telephony.SignalStrength $r1;
+        java.lang.String $r2;
+        int $i0, $i1, $i2;
+        com.facebook.lite.net.l $r3;
+        java.lang.Object $r4;
+        android.net.ConnectivityManager $r5;
+        android.net.NetworkInfo $r6;
+        java.lang.StringBuilder $r7;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.telephony.SignalStrength;
+        $r4 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r5 = (android.net.ConnectivityManager) $r4;
+        $r6 = virtualinvoke $r5.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r6 == null goto label0;
+
+        $i0 = staticinvoke <com.facebook.lite.net.k: int a(android.content.Context,android.net.NetworkInfo,android.telephony.SignalStrength)>($r0, $r6, $r1);
+        $r3 = staticinvoke <com.facebook.lite.net.l: com.facebook.lite.net.l a()>();
+        $i1 = virtualinvoke $r6.<android.net.NetworkInfo: int getType()>();
+        $i2 = virtualinvoke $r6.<android.net.NetworkInfo: int getSubtype()>();
+        virtualinvoke $r3.<com.facebook.lite.net.l: void a(int,int)>($i1, $i2);
+        $r3 = staticinvoke <com.facebook.lite.net.l: com.facebook.lite.net.l a()>();
+        virtualinvoke $r3.<com.facebook.lite.net.l: void a(int)>($i0);
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("connstats/activenetwork: ");
+        $r2 = virtualinvoke $r6.<android.net.NetworkInfo: java.lang.String getTypeName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r2 = virtualinvoke $r6.<android.net.NetworkInfo: java.lang.String getSubtypeName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - signal strength: ");
+        virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+     label0:
+        return;
+    }
+
+    private static int b(android.content.Context)
+    {
+        android.content.Context $r0;
+        boolean $z0;
+        java.lang.Object $r2;
+        android.telephony.TelephonyManager $r3;
+        java.util.List $r4;
+        android.telephony.CellInfo $r5;
+        android.telephony.CellInfoGsm $r6;
+        android.telephony.CellSignalStrengthGsm $r7;
+        int $i2;
+        android.telephony.CellInfoCdma $r8;
+        android.telephony.CellSignalStrengthCdma $r9;
+        android.telephony.CellInfoWcdma $r10;
+        android.telephony.CellSignalStrengthWcdma $r11;
+        android.telephony.CellInfoLte $r12;
+        android.telephony.CellSignalStrengthLte $r13;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r3 = (android.telephony.TelephonyManager) $r2;
+        $r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.util.List getAllCellInfo()>();
+        if $r4 == null goto label0;
+
+        $z0 = interfaceinvoke $r4.<java.util.List: boolean isEmpty()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r2 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>(0);
+        $r5 = (android.telephony.CellInfo) $r2;
+        $z0 = $r5 instanceof android.telephony.CellInfoGsm;
+        if $z0 == 0 goto label2;
+
+        $r6 = (android.telephony.CellInfoGsm) $r5;
+        $r7 = virtualinvoke $r6.<android.telephony.CellInfoGsm: android.telephony.CellSignalStrengthGsm getCellSignalStrength()>();
+        $i2 = virtualinvoke $r7.<android.telephony.CellSignalStrengthGsm: int getDbm()>();
+        return $i2;
+
+     label2:
+        $z0 = $r5 instanceof android.telephony.CellInfoCdma;
+        if $z0 == 0 goto label3;
+
+        $r8 = (android.telephony.CellInfoCdma) $r5;
+        $r9 = virtualinvoke $r8.<android.telephony.CellInfoCdma: android.telephony.CellSignalStrengthCdma getCellSignalStrength()>();
+        $i2 = virtualinvoke $r9.<android.telephony.CellSignalStrengthCdma: int getDbm()>();
+        return $i2;
+
+     label3:
+        $i2 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i2 < 18 goto label4;
+
+        $z0 = $r5 instanceof android.telephony.CellInfoWcdma;
+        if $z0 == 0 goto label4;
+
+        $r10 = (android.telephony.CellInfoWcdma) $r5;
+        $r11 = virtualinvoke $r10.<android.telephony.CellInfoWcdma: android.telephony.CellSignalStrengthWcdma getCellSignalStrength()>();
+        $i2 = virtualinvoke $r11.<android.telephony.CellSignalStrengthWcdma: int getDbm()>();
+        return $i2;
+
+     label4:
+        $z0 = $r5 instanceof android.telephony.CellInfoLte;
+        if $z0 == 0 goto label5;
+
+        $r12 = (android.telephony.CellInfoLte) $r5;
+        $r13 = virtualinvoke $r12.<android.telephony.CellInfoLte: android.telephony.CellSignalStrengthLte getCellSignalStrength()>();
+        $i2 = virtualinvoke $r13.<android.telephony.CellSignalStrengthLte: int getDbm()>();
+        return $i2;
+
+     label5:
+        return 0;
+    }
+
+    private static int c(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.Object $r2;
+        android.net.wifi.WifiManager $r3;
+        android.net.wifi.WifiInfo $r4;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("wifi");
+        $r3 = (android.net.wifi.WifiManager) $r2;
+        $r4 = virtualinvoke $r3.<android.net.wifi.WifiManager: android.net.wifi.WifiInfo getConnectionInfo()>();
+        if $r4 == null goto label0;
+
+        $i0 = virtualinvoke $r4.<android.net.wifi.WifiInfo: int getRssi()>();
+        return $i0;
+
+     label0:
+        return 0;
+    }
+
+    public final void a(android.content.Context)
+    {
+        com.facebook.lite.net.k $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.net.k;
+        $r1 := @parameter0: android.content.Context;
+        staticinvoke <com.facebook.lite.net.k: void a(android.content.Context,android.telephony.SignalStrength)>($r1, null);
+        return;
+    }
+
+    public void onSignalStrengthsChanged(android.telephony.SignalStrength)
+    {
+        com.facebook.lite.net.k $r0;
+        android.telephony.SignalStrength $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.lite.net.k;
+        $r1 := @parameter0: android.telephony.SignalStrength;
+        specialinvoke $r0.<android.telephony.PhoneStateListener: void onSignalStrengthsChanged(android.telephony.SignalStrength)>($r1);
+        $r2 = $r0.<com.facebook.lite.net.k: android.content.Context b>;
+        staticinvoke <com.facebook.lite.net.k: void a(android.content.Context,android.telephony.SignalStrength)>($r2, $r1);
+        return;
+    }
+}

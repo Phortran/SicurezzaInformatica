@@ -1,0 +1,125 @@
+class it.h3g.areaclienti3.remoteservice.c extends it.h3g.areaclienti3.remoteservice.d
+{
+    final it.h3g.areaclienti3.remoteservice.ScrapingService$2 a;
+
+    void <init>(it.h3g.areaclienti3.remoteservice.ScrapingService$2, it.h3g.areaclienti3.remoteservice.ScrapingService, java.lang.String, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.c $r0;
+        it.h3g.areaclienti3.remoteservice.ScrapingService$2 $r1;
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r2;
+        java.lang.String $r3;
+        android.os.Bundle $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.c;
+        $r1 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService$2;
+        $r2 := @parameter1: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: android.os.Bundle;
+        $r0.<it.h3g.areaclienti3.remoteservice.c: it.h3g.areaclienti3.remoteservice.ScrapingService$2 a> = $r1;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.d: void <init>(it.h3g.areaclienti3.remoteservice.ScrapingService,java.lang.String,android.os.Bundle)>($r2, $r3, $r4);
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.remoteservice.c $r0;
+        java.lang.Class $r1;
+        java.lang.String $r2;
+        java.lang.reflect.Method $r4;
+        java.lang.Class[] $r5;
+        it.h3g.areaclienti3.remoteservice.ScrapingService$2 $r6;
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r7;
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r8;
+        android.os.Bundle $r10;
+        java.lang.Object[] $r11;
+        java.lang.Object $r12;
+        java.lang.IllegalArgumentException $r13;
+        java.lang.IllegalAccessException $r14;
+        java.lang.reflect.InvocationTargetException $r15;
+        java.lang.StringBuilder $r16;
+        java.lang.SecurityException $r17;
+        java.lang.NoSuchMethodException $r18;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.c;
+        $r1 = class "it/h3g/areaclienti3/remoteservice/HtmlActions";
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.c: java.lang.String b>;
+        $r5 = newarray (java.lang.Class)[1];
+        $r5[0] = class "android/os/Bundle";
+
+     label0:
+        $r4 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>($r2, $r5);
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.c: it.h3g.areaclienti3.remoteservice.ScrapingService$2 a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService$2: it.h3g.areaclienti3.remoteservice.ScrapingService a(it.h3g.areaclienti3.remoteservice.ScrapingService$2)>($r6);
+        $r8 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.HtmlActions c(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        if $r8 != null goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Html actions IS NULL");
+
+     label1:
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.c: android.os.Bundle c>;
+        if $r10 != null goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Params IS NULL");
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.c: android.os.Bundle c> = $r10;
+
+     label2:
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.c: it.h3g.areaclienti3.remoteservice.ScrapingService$2 a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService$2: it.h3g.areaclienti3.remoteservice.ScrapingService a(it.h3g.areaclienti3.remoteservice.ScrapingService$2)>($r6);
+        $r8 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: it.h3g.areaclienti3.remoteservice.HtmlActions c(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        $r11 = newarray (java.lang.Object)[1];
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.c: android.os.Bundle c>;
+        $r11[0] = $r10;
+        $r12 = virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r8, $r11);
+        $r10 = (android.os.Bundle) $r12;
+        virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.c: void a(android.os.Bundle)>($r10);
+
+     label3:
+        return;
+
+     label4:
+        $r13 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Action illegal argument");
+        virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.c: void c()>();
+        goto label3;
+
+     label5:
+        $r14 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Action illegal access");
+        goto label3;
+
+     label6:
+        $r15 := @caughtexception;
+        $r16 = new java.lang.StringBuilder;
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action invocation target : ");
+        $r2 = virtualinvoke $r15.<java.lang.reflect.InvocationTargetException: java.lang.String getLocalizedMessage()>();
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", $r2);
+        goto label3;
+
+     label7:
+        $r17 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Security exception");
+        goto label3;
+
+     label8:
+        $r18 := @caughtexception;
+        $r16 = new java.lang.StringBuilder;
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action ");
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.c: java.lang.String b>;
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" NOT FOUND as a HtmlActions method");
+        $r2 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", $r2);
+        virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.c: void c()>();
+        goto label3;
+
+        catch java.lang.IllegalArgumentException from label0 to label3 with label4;
+        catch java.lang.IllegalAccessException from label0 to label3 with label5;
+        catch java.lang.reflect.InvocationTargetException from label0 to label3 with label6;
+        catch java.lang.SecurityException from label0 to label3 with label7;
+        catch java.lang.NoSuchMethodException from label0 to label3 with label8;
+    }
+}

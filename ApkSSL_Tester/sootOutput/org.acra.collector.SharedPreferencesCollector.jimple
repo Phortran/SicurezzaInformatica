@@ -1,0 +1,154 @@
+final class org.acra.collector.SharedPreferencesCollector extends java.lang.Object
+{
+
+    void <init>()
+    {
+        org.acra.collector.SharedPreferencesCollector $r0;
+
+        $r0 := @this: org.acra.collector.SharedPreferencesCollector;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String collect(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r12;
+        java.lang.StringBuilder $r2, $r13;
+        java.util.TreeMap $r3;
+        android.content.SharedPreferences $r4;
+        int $i1, $i4;
+        org.acra.ACRAConfiguration $r5;
+        java.lang.String[] $r6;
+        java.util.Set $r7;
+        java.util.Iterator $r8, $r11;
+        boolean $z0;
+        java.lang.Object $r9;
+        java.util.Map $r10;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r3 = new java.util.TreeMap;
+        specialinvoke $r3.<java.util.TreeMap: void <init>()>();
+        $r4 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("default", $r4);
+        $r5 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r6 = virtualinvoke $r5.<org.acra.ACRAConfiguration: java.lang.String[] additionalSharedPreferences()>();
+        if $r6 == null goto label1;
+
+        $i1 = lengthof $r6;
+        $i4 = 0;
+
+     label0:
+        if $i4 >= $i1 goto label1;
+
+        $r1 = $r6[$i4];
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>($r1, 0);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r4);
+        $i4 = $i4 + 1;
+        goto label0;
+
+     label1:
+        $r7 = interfaceinvoke $r3.<java.util.Map: java.util.Set keySet()>();
+        $r8 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r8.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label8;
+
+        $r9 = interfaceinvoke $r8.<java.util.Iterator: java.lang.Object next()>();
+        $r1 = (java.lang.String) $r9;
+        $r9 = interfaceinvoke $r3.<java.util.Map: java.lang.Object get(java.lang.Object)>($r1);
+        $r4 = (android.content.SharedPreferences) $r9;
+        if $r4 == null goto label7;
+
+        $r10 = interfaceinvoke $r4.<android.content.SharedPreferences: java.util.Map getAll()>();
+        if $r10 == null goto label5;
+
+        $i4 = interfaceinvoke $r10.<java.util.Map: int size()>();
+        if $i4 <= 0 goto label5;
+
+        $r7 = interfaceinvoke $r10.<java.util.Map: java.util.Set keySet()>();
+        $r11 = interfaceinvoke $r7.<java.util.Set: java.util.Iterator iterator()>();
+
+     label3:
+        $z0 = interfaceinvoke $r11.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label6;
+
+        $r9 = interfaceinvoke $r11.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (java.lang.String) $r9;
+        $z0 = staticinvoke <org.acra.collector.SharedPreferencesCollector: boolean filteredKey(java.lang.String)>($r12);
+        if $z0 != 0 goto label3;
+
+        $r9 = interfaceinvoke $r10.<java.util.Map: java.lang.Object get(java.lang.Object)>($r12);
+        if $r9 == null goto label4;
+
+        $r13 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(46);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r9 = interfaceinvoke $r10.<java.util.Map: java.lang.Object get(java.lang.Object)>($r12);
+        $r12 = virtualinvoke $r9.<java.lang.Object: java.lang.String toString()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        goto label3;
+
+     label4:
+        $r13 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(46);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null\n");
+        goto label3;
+
+     label5:
+        $r13 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("empty\n");
+
+     label6:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(10);
+        goto label2;
+
+     label7:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null\n");
+        goto label6;
+
+     label8:
+        $r12 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r12;
+    }
+
+    private static boolean filteredKey(java.lang.String)
+    {
+        java.lang.String $r0, $r3;
+        boolean $z0, $z1;
+        org.acra.ACRAConfiguration $r1;
+        java.lang.String[] $r2;
+        int $i0, $i1;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = 0;
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r2 = virtualinvoke $r1.<org.acra.ACRAConfiguration: java.lang.String[] excludeMatchingSharedPreferencesKeys()>();
+        $i0 = lengthof $r2;
+        $i1 = (int) 0;
+
+     label0:
+        if $i1 >= $i0 goto label1;
+
+        $r3 = $r2[$i1];
+        $z1 = virtualinvoke $r0.<java.lang.String: boolean matches(java.lang.String)>($r3);
+        if $z1 == 0 goto label2;
+
+        $z0 = 1;
+
+     label1:
+        return $z0;
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+}

@@ -1,0 +1,727 @@
+public final class com.google.android.gms.internal.cs extends java.lang.Object
+{
+    private static final java.lang.Object a;
+    private static boolean b;
+    private static java.lang.String c;
+    private static boolean d;
+
+    static void <clinit>()
+    {
+        java.lang.Object $r0;
+
+        $r0 = new java.lang.Object;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        <com.google.android.gms.internal.cs: java.lang.Object a> = $r0;
+        <com.google.android.gms.internal.cs: boolean b> = 1;
+        <com.google.android.gms.internal.cs: boolean d> = 0;
+        return;
+    }
+
+    public static int a()
+    {
+        int $i0;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 9 goto label0;
+
+        return 6;
+
+     label0:
+        return 0;
+    }
+
+    private static java.lang.String a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r2;
+        java.lang.Object $r3, $r8;
+        int $i1;
+        java.lang.StringBuilder $r4;
+        java.lang.Throwable $r5;
+        boolean $z0;
+        android.os.Handler $r6;
+        com.google.android.gms.internal.ct $r7;
+        java.lang.InterruptedException $r9;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r3 = <com.google.android.gms.internal.cs: java.lang.Object a>;
+        entermonitor $r3;
+
+     label0:
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+        if $r2 == null goto label1;
+
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+        exitmonitor $r3;
+        return $r2;
+
+     label1:
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 17 goto label5;
+
+        $r2 = staticinvoke <com.google.android.gms.internal.cz: java.lang.String a(android.content.Context)>($r0);
+        <com.google.android.gms.internal.cs: java.lang.String c> = $r2;
+
+     label2:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (Mobile; ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        <com.google.android.gms.internal.cs: java.lang.String c> = $r2;
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+        exitmonitor $r3;
+        return $r2;
+
+     label3:
+        $r5 := @caughtexception;
+        exitmonitor $r3;
+
+     label4:
+        throw $r5;
+
+     label5:
+        $z0 = staticinvoke <com.google.android.gms.internal.db: boolean b()>();
+        if $z0 != 0 goto label13;
+
+        $r6 = <com.google.android.gms.internal.db: android.os.Handler a>;
+        $r7 = new com.google.android.gms.internal.ct;
+        specialinvoke $r7.<com.google.android.gms.internal.ct: void <init>(android.content.Context)>($r0);
+        virtualinvoke $r6.<android.os.Handler: boolean post(java.lang.Runnable)>($r7);
+
+     label6:
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+
+     label7:
+        if $r2 != null goto label2;
+
+     label8:
+        $r8 = <com.google.android.gms.internal.cs: java.lang.Object a>;
+
+     label9:
+        virtualinvoke $r8.<java.lang.Object: void wait()>();
+
+     label10:
+        goto label6;
+
+     label11:
+        $r9 := @caughtexception;
+
+     label12:
+        $r2 = <com.google.android.gms.internal.cs: java.lang.String c>;
+        exitmonitor $r3;
+        return $r2;
+
+     label13:
+        $r2 = staticinvoke <com.google.android.gms.internal.cs: java.lang.String c(android.content.Context)>($r0);
+        <com.google.android.gms.internal.cs: java.lang.String c> = $r2;
+
+     label14:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+        catch java.lang.Throwable from label5 to label7 with label3;
+        catch java.lang.InterruptedException from label9 to label10 with label11;
+        catch java.lang.Throwable from label8 to label10 with label3;
+        catch java.lang.Throwable from label12 to label14 with label3;
+    }
+
+    public static java.lang.String a(java.lang.Readable)
+    {
+        java.lang.Readable $r0;
+        java.lang.StringBuilder $r1;
+        int $i1;
+        java.nio.CharBuffer $r2;
+        java.lang.String $r3;
+
+        $r0 := @parameter0: java.lang.Readable;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = staticinvoke <java.nio.CharBuffer: java.nio.CharBuffer allocate(int)>(2048);
+
+     label0:
+        $i1 = interfaceinvoke $r0.<java.lang.Readable: int read(java.nio.CharBuffer)>($r2);
+        if $i1 == -1 goto label1;
+
+        virtualinvoke $r2.<java.nio.CharBuffer: java.nio.Buffer flip()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence,int,int)>($r2, 0, $i1);
+        goto label0;
+
+     label1:
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+
+    public static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0;
+        android.net.Uri $r1;
+        android.net.Uri$Builder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r1.<android.net.Uri: android.net.Uri$Builder buildUpon()>();
+        $r2 = virtualinvoke $r2.<android.net.Uri$Builder: android.net.Uri$Builder query(java.lang.String)>(null);
+        $r1 = virtualinvoke $r2.<android.net.Uri$Builder: android.net.Uri build()>();
+        $r0 = virtualinvoke $r1.<android.net.Uri: java.lang.String toString()>();
+        return $r0;
+    }
+
+    private static org.json.JSONArray a(java.util.Collection)
+    {
+        java.util.Collection $r0;
+        org.json.JSONArray $r1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+
+        $r0 := @parameter0: java.util.Collection;
+        $r1 = new org.json.JSONArray;
+        specialinvoke $r1.<org.json.JSONArray: void <init>()>();
+        $r2 = interfaceinvoke $r0.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        staticinvoke <com.google.android.gms.internal.cs: void a(org.json.JSONArray,java.lang.Object)>($r1, $r3);
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    private static org.json.JSONArray a(java.lang.Object[])
+    {
+        java.lang.Object[] $r0;
+        int $i0, $i1;
+        org.json.JSONArray $r1;
+        java.lang.Object $r2;
+
+        $r0 := @parameter0: java.lang.Object[];
+        $r1 = new org.json.JSONArray;
+        specialinvoke $r1.<org.json.JSONArray: void <init>()>();
+        $i1 = lengthof $r0;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label1;
+
+        $r2 = $r0[$i0];
+        staticinvoke <com.google.android.gms.internal.cs: void a(org.json.JSONArray,java.lang.Object)>($r1, $r2);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    private static org.json.JSONObject a(android.os.Bundle)
+    {
+        android.os.Bundle $r0;
+        java.util.Set $r1;
+        org.json.JSONObject $r2;
+        java.util.Iterator $r3;
+        java.lang.Object $r4;
+        boolean $z0;
+        java.lang.String $r5;
+
+        $r0 := @parameter0: android.os.Bundle;
+        $r2 = new org.json.JSONObject;
+        specialinvoke $r2.<org.json.JSONObject: void <init>()>();
+        $r1 = virtualinvoke $r0.<android.os.Bundle: java.util.Set keySet()>();
+        $r3 = interfaceinvoke $r1.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (java.lang.String) $r4;
+        $r4 = virtualinvoke $r0.<android.os.Bundle: java.lang.Object get(java.lang.String)>($r5);
+        staticinvoke <com.google.android.gms.internal.cs: void a(org.json.JSONObject,java.lang.String,java.lang.Object)>($r2, $r5, $r4);
+        goto label0;
+
+     label1:
+        return $r2;
+    }
+
+    public static org.json.JSONObject a(java.util.Map)
+    {
+        java.util.Map $r0;
+        java.util.Set $r1;
+        org.json.JSONObject $r2;
+        java.util.Iterator $r3;
+        java.lang.Object $r4;
+        boolean $z0;
+        java.lang.String $r5;
+        java.lang.ClassCastException $r6;
+        org.json.JSONException $r7;
+        java.lang.StringBuilder $r8;
+
+        $r0 := @parameter0: java.util.Map;
+        $r2 = new org.json.JSONObject;
+
+     label0:
+        specialinvoke $r2.<org.json.JSONObject: void <init>()>();
+        $r1 = interfaceinvoke $r0.<java.util.Map: java.util.Set keySet()>();
+        $r3 = interfaceinvoke $r1.<java.util.Set: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (java.lang.String) $r4;
+        $r4 = interfaceinvoke $r0.<java.util.Map: java.lang.Object get(java.lang.Object)>($r5);
+        staticinvoke <com.google.android.gms.internal.cs: void a(org.json.JSONObject,java.lang.String,java.lang.Object)>($r2, $r5, $r4);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r6 := @caughtexception;
+        $r7 = new org.json.JSONException;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not convert map to JSON: ");
+        $r5 = virtualinvoke $r6.<java.lang.ClassCastException: java.lang.String getMessage()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r7.<org.json.JSONException: void <init>(java.lang.String)>($r5);
+        throw $r7;
+
+     label4:
+        return $r2;
+
+        catch java.lang.ClassCastException from label0 to label2 with label3;
+    }
+
+    public static void a(android.content.Context, java.lang.String, android.webkit.WebSettings)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        android.webkit.WebSettings $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: android.webkit.WebSettings;
+        $r1 = staticinvoke <com.google.android.gms.internal.cs: java.lang.String a(android.content.Context,java.lang.String)>($r0, $r1);
+        virtualinvoke $r2.<android.webkit.WebSettings: void setUserAgentString(java.lang.String)>($r1);
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.String, java.util.List)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r6;
+        java.util.List $r2;
+        boolean $z0;
+        java.util.Iterator $r3;
+        com.google.android.gms.internal.da $r4;
+        java.lang.Object $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.util.List;
+        $r3 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (java.lang.String) $r5;
+        $r4 = new com.google.android.gms.internal.da;
+        specialinvoke $r4.<com.google.android.gms.internal.da: void <init>(android.content.Context,java.lang.String,java.lang.String)>($r0, $r1, $r6);
+        virtualinvoke $r4.<com.google.android.gms.internal.da: void e()>();
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.String, boolean, java.net.HttpURLConnection)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        java.net.HttpURLConnection $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        $r2 := @parameter3: java.net.HttpURLConnection;
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setConnectTimeout(int)>(60000);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setInstanceFollowRedirects(boolean)>($z0);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setReadTimeout(int)>(60000);
+        $r1 = staticinvoke <com.google.android.gms.internal.cs: java.lang.String a(android.content.Context,java.lang.String)>($r0, $r1);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("User-Agent", $r1);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setUseCaches(boolean)>(0);
+        return;
+    }
+
+    public static void a(android.webkit.WebView)
+    {
+        android.webkit.WebView $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.webkit.WebView;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+        staticinvoke <com.google.android.gms.internal.cu: void a(android.webkit.WebView)>($r0);
+
+     label0:
+        return;
+    }
+
+    private static void a(org.json.JSONArray, java.lang.Object)
+    {
+        org.json.JSONArray $r0, $r6;
+        java.lang.Object $r1;
+        boolean $z0;
+        org.json.JSONObject $r2;
+        android.os.Bundle $r3;
+        java.util.Map $r4;
+        java.util.Collection $r5;
+        java.lang.Object[] $r7;
+
+        $r0 := @parameter0: org.json.JSONArray;
+        $r1 := @parameter1: java.lang.Object;
+        $z0 = $r1 instanceof android.os.Bundle;
+        if $z0 == 0 goto label1;
+
+        $r3 = (android.os.Bundle) $r1;
+        $r2 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(android.os.Bundle)>($r3);
+        virtualinvoke $r0.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r2);
+
+     label0:
+        return;
+
+     label1:
+        $z0 = $r1 instanceof java.util.Map;
+        if $z0 == 0 goto label2;
+
+        $r4 = (java.util.Map) $r1;
+        $r2 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(java.util.Map)>($r4);
+        virtualinvoke $r0.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r2);
+        goto label0;
+
+     label2:
+        $z0 = $r1 instanceof java.util.Collection;
+        if $z0 == 0 goto label3;
+
+        $r5 = (java.util.Collection) $r1;
+        $r6 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONArray a(java.util.Collection)>($r5);
+        virtualinvoke $r0.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r6);
+        goto label0;
+
+     label3:
+        $z0 = $r1 instanceof java.lang.Object[];
+        if $z0 == 0 goto label4;
+
+        $r7 = (java.lang.Object[]) $r1;
+        $r7 = (java.lang.Object[]) $r7;
+        $r6 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONArray a(java.lang.Object[])>($r7);
+        virtualinvoke $r0.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r6);
+        goto label0;
+
+     label4:
+        virtualinvoke $r0.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r1);
+        goto label0;
+    }
+
+    private static void a(org.json.JSONObject, java.lang.String, java.lang.Object)
+    {
+        org.json.JSONObject $r0, $r3;
+        java.lang.String $r1;
+        java.lang.Object $r2;
+        boolean $z0;
+        android.os.Bundle $r4;
+        java.util.Map $r5;
+        java.util.Collection $r6;
+        org.json.JSONArray $r7;
+        java.lang.Object[] $r8;
+        java.util.List $r9;
+
+        $r0 := @parameter0: org.json.JSONObject;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.Object;
+        $z0 = $r2 instanceof android.os.Bundle;
+        if $z0 == 0 goto label1;
+
+        $r4 = (android.os.Bundle) $r2;
+        $r3 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(android.os.Bundle)>($r4);
+        virtualinvoke $r0.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r3);
+
+     label0:
+        return;
+
+     label1:
+        $z0 = $r2 instanceof java.util.Map;
+        if $z0 == 0 goto label2;
+
+        $r5 = (java.util.Map) $r2;
+        $r3 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(java.util.Map)>($r5);
+        virtualinvoke $r0.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r3);
+        goto label0;
+
+     label2:
+        $z0 = $r2 instanceof java.util.Collection;
+        if $z0 == 0 goto label5;
+
+        if $r1 == null goto label4;
+
+     label3:
+        $r6 = (java.util.Collection) $r2;
+        $r7 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONArray a(java.util.Collection)>($r6);
+        virtualinvoke $r0.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r7);
+        goto label0;
+
+     label4:
+        $r1 = "null";
+        goto label3;
+
+     label5:
+        $z0 = $r2 instanceof java.lang.Object[];
+        if $z0 == 0 goto label6;
+
+        $r8 = (java.lang.Object[]) $r2;
+        $r8 = (java.lang.Object[]) $r8;
+        $r9 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r8);
+        $r7 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONArray a(java.util.Collection)>($r9);
+        virtualinvoke $r0.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r7);
+        goto label0;
+
+     label6:
+        virtualinvoke $r0.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r1, $r2);
+        goto label0;
+    }
+
+    public static boolean a(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        java.lang.String $r2, $r6;
+        int $i0;
+        android.content.pm.PackageManager $r3;
+        android.content.pm.ResolveInfo $r4;
+        android.content.pm.ActivityInfo $r5;
+        java.lang.Object[] $r7;
+        boolean $z2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>()>();
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent setClassName(android.content.Context,java.lang.String)>($r0, "com.google.android.gms.ads.AdActivity");
+        $r3 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r4 = virtualinvoke $r3.<android.content.pm.PackageManager: android.content.pm.ResolveInfo resolveActivity(android.content.Intent,int)>($r1, 65536);
+        if $r4 == null goto label0;
+
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        if $r5 != null goto label1;
+
+     label0:
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Could not find com.google.android.gms.ads.AdActivity, please make sure it is declared in AndroidManifest.xml.");
+        return 0;
+
+     label1:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 16;
+        if $i0 != 0 goto label9;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "keyboard";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label2:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 32;
+        if $i0 != 0 goto label3;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "keyboardHidden";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label3:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 128;
+        if $i0 != 0 goto label4;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "orientation";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label4:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 256;
+        if $i0 != 0 goto label5;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "screenLayout";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label5:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 512;
+        if $i0 != 0 goto label6;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "uiMode";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label6:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 1024;
+        if $i0 != 0 goto label7;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "screenSize";
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        $z2 = 0;
+
+     label7:
+        $r5 = $r4.<android.content.pm.ResolveInfo: android.content.pm.ActivityInfo activityInfo>;
+        $i0 = $r5.<android.content.pm.ActivityInfo: int configChanges>;
+        $i0 = $i0 & 2048;
+        if $i0 != 0 goto label8;
+
+        $i0 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i0];
+        $i0 = (int) 0;
+        $r7[$i0] = "smallestScreenSize";
+        $r6 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("com.google.android.gms.ads.AdActivity requires the android:configChanges value to contain \"%s\".", $r7);
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r6);
+        return 0;
+
+     label8:
+        return $z2;
+
+     label9:
+        $z2 = 1;
+        goto label2;
+    }
+
+    public static boolean a(android.content.pm.PackageManager, java.lang.String, java.lang.String)
+    {
+        android.content.pm.PackageManager $r0;
+        java.lang.String $r1, $r2;
+        int $i0;
+
+        $r0 := @parameter0: android.content.pm.PackageManager;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $i0 = virtualinvoke $r0.<android.content.pm.PackageManager: int checkPermission(java.lang.String,java.lang.String)>($r2, $r1);
+        if $i0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static int b()
+    {
+        int $i0;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 9 goto label0;
+
+        return 7;
+
+     label0:
+        return 1;
+    }
+
+    static java.lang.String b(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.google.android.gms.internal.cs: java.lang.String c(android.content.Context)>($r0);
+        return $r1;
+    }
+
+    static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0;
+
+        $r0 := @parameter0: java.lang.String;
+        <com.google.android.gms.internal.cs: java.lang.String c> = $r0;
+        return $r0;
+    }
+
+    public static void b(android.webkit.WebView)
+    {
+        android.webkit.WebView $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.webkit.WebView;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+        staticinvoke <com.google.android.gms.internal.cu: void b(android.webkit.WebView)>($r0);
+
+     label0:
+        return;
+    }
+
+    static java.lang.Object c()
+    {
+        java.lang.Object $r0;
+
+        $r0 = <com.google.android.gms.internal.cs: java.lang.Object a>;
+        return $r0;
+    }
+
+    private static java.lang.String c(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.webkit.WebView $r1;
+        android.webkit.WebSettings $r2;
+        java.lang.String $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = new android.webkit.WebView;
+        specialinvoke $r1.<android.webkit.WebView: void <init>(android.content.Context)>($r0);
+        $r2 = virtualinvoke $r1.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        $r3 = virtualinvoke $r2.<android.webkit.WebSettings: java.lang.String getUserAgentString()>();
+        return $r3;
+    }
+}

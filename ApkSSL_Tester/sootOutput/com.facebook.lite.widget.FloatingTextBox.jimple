@@ -1,0 +1,519 @@
+public class com.facebook.lite.widget.FloatingTextBox extends android.widget.RelativeLayout
+{
+    private static final android.text.InputFilter[] a;
+    private final android.widget.RelativeLayout$LayoutParams b;
+    private final java.lang.StringBuilder c;
+    private final android.widget.RelativeLayout d;
+    private final android.widget.EditText e;
+    private final android.widget.TextView f;
+    private final android.widget.RelativeLayout g;
+    private final android.widget.RelativeLayout h;
+    private boolean i;
+    private final android.widget.RelativeLayout$LayoutParams j;
+
+    static void <clinit>()
+    {
+        android.text.InputFilter[] $r0;
+
+        $r0 = newarray (android.text.InputFilter)[0];
+        <com.facebook.lite.widget.FloatingTextBox: android.text.InputFilter[] a> = $r0;
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        android.widget.RelativeLayout$LayoutParams $r3;
+        java.lang.Object $r4;
+        android.view.LayoutInflater $r6;
+        int $i2;
+        android.view.View $r7;
+        android.widget.RelativeLayout $r8;
+        android.widget.EditText $r9;
+        android.widget.TextView $r10;
+        com.facebook.lite.widget.d $r11;
+        com.facebook.lite.widget.e $r12;
+        com.facebook.lite.widget.f $r13;
+        java.lang.StringBuilder $r14;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        specialinvoke $r0.<android.widget.RelativeLayout: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r3 = new android.widget.RelativeLayout$LayoutParams;
+        specialinvoke $r3.<android.widget.RelativeLayout$LayoutParams: void <init>(int,int)>(-1, -1);
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout$LayoutParams b> = $r3;
+        $r3 = new android.widget.RelativeLayout$LayoutParams;
+        specialinvoke $r3.<android.widget.RelativeLayout$LayoutParams: void <init>(int,int)>(-1, -2);
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout$LayoutParams j> = $r3;
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r6 = (android.view.LayoutInflater) $r4;
+        virtualinvoke $r6.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903043, $r0, 1);
+        $r7 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.View findViewById(int)>(2131296272);
+        $r8 = (android.widget.RelativeLayout) $r7;
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout d> = $r8;
+        $r7 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.View findViewById(int)>(2131296275);
+        $r8 = (android.widget.RelativeLayout) $r7;
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout h> = $r8;
+        $r7 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.View findViewById(int)>(2131296273);
+        $r8 = (android.widget.RelativeLayout) $r7;
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout g> = $r8;
+        $r7 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.View findViewById(int)>(2131296276);
+        $r9 = (android.widget.EditText) $r7;
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e> = $r9;
+        $r7 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.View findViewById(int)>(2131296274);
+        $r10 = (android.widget.TextView) $r7;
+        $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.TextView f> = $r10;
+        $r9 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r11 = new com.facebook.lite.widget.d;
+        specialinvoke $r11.<com.facebook.lite.widget.d: void <init>(com.facebook.lite.widget.FloatingTextBox,android.content.Context)>($r0, $r1);
+        virtualinvoke $r9.<android.widget.EditText: void setOnFocusChangeListener(android.view.View$OnFocusChangeListener)>($r11);
+        $r9 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r12 = new com.facebook.lite.widget.e;
+        specialinvoke $r12.<com.facebook.lite.widget.e: void <init>(com.facebook.lite.widget.FloatingTextBox,android.content.Context)>($r0, $r1);
+        virtualinvoke $r9.<android.widget.EditText: void setOnEditorActionListener(android.widget.TextView$OnEditorActionListener)>($r12);
+        $r9 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $i2 = (int) 1;
+        virtualinvoke $r9.<android.widget.EditText: void setMinLines(int)>($i2);
+        $r10 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.TextView f>;
+        $r13 = new com.facebook.lite.widget.f;
+        specialinvoke $r13.<com.facebook.lite.widget.f: void <init>(com.facebook.lite.widget.FloatingTextBox,android.content.Context)>($r0, $r1);
+        virtualinvoke $r10.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>()>();
+        $r0.<com.facebook.lite.widget.FloatingTextBox: java.lang.StringBuilder c> = $r14;
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet, int)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        return;
+    }
+
+    static android.widget.EditText a(com.facebook.lite.widget.FloatingTextBox)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @parameter0: com.facebook.lite.widget.FloatingTextBox;
+        $r1 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        return $r1;
+    }
+
+    static void b(com.facebook.lite.widget.FloatingTextBox)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+
+        $r0 := @parameter0: com.facebook.lite.widget.FloatingTextBox;
+        specialinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void e()>();
+        return;
+    }
+
+    private boolean d()
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        boolean $z0;
+        android.widget.RelativeLayout $r1;
+        android.view.View $r2;
+        int $i0, $i1;
+        float $f0;
+        android.content.Context $r3;
+        byte $b2;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $z0 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r1 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout d>;
+        $r2 = virtualinvoke $r1.<android.widget.RelativeLayout: android.view.View getRootView()>();
+        $i0 = virtualinvoke $r2.<android.view.View: int getHeight()>();
+        $r1 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout d>;
+        $i1 = virtualinvoke $r1.<android.widget.RelativeLayout: int getHeight()>();
+        $i1 = $i0 - $i1;
+        $f0 = (float) $i1;
+        $r3 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.content.Context getContext()>();
+        $f0 = staticinvoke <com.facebook.lite.b.b: float a(float,android.content.Context)>($f0, $r3);
+        $b2 = $f0 cmpl 100.0F;
+        if $b2 <= 0 goto label0;
+
+        return 1;
+    }
+
+    private void e()
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        com.facebook.lite.a $r1;
+        android.widget.EditText $r2;
+        android.text.Editable $r3;
+        java.lang.String $r4;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r2 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r3 = virtualinvoke $r2.<android.widget.EditText: android.text.Editable getText()>();
+        $r4 = virtualinvoke $r3.<java.lang.Object: java.lang.String toString()>();
+        virtualinvoke $r1.<com.facebook.lite.a: void f(java.lang.String)>($r4);
+        virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void setVisibility(int)>(8);
+        $r2 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        virtualinvoke $r2.<android.widget.EditText: void clearComposingText()>();
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        java.lang.StringBuilder $r1;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 = $r0.<com.facebook.lite.widget.FloatingTextBox: java.lang.StringBuilder c>;
+        virtualinvoke $r1.<java.lang.StringBuilder: void setLength(int)>(0);
+        return;
+    }
+
+    public final void a(int, java.lang.String, java.lang.String, int)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        int $i0, $i1, $i3, $i4;
+        java.lang.String $r1, $r2;
+        android.widget.EditText $r3, $r10;
+        boolean $z0, $z1, $z2, $z3, $z4;
+        android.text.InputFilter[] $r4;
+        android.text.InputFilter$LengthFilter $r5;
+        android.widget.TextView $r6;
+        java.lang.StringBuilder $r7;
+        android.widget.RelativeLayout$LayoutParams $r8;
+        android.text.Editable $r9;
+        android.widget.RelativeLayout $r11;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $i1 := @parameter3: int;
+        $z0 = 1;
+        $z1 = 0;
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        virtualinvoke $r3.<android.widget.EditText: boolean requestFocus()>();
+        $z2 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: boolean c()>();
+        if $z2 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $i4 = (int) 0;
+        virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void setVisibility(int)>($i4);
+        if $i1 <= 0 goto label14;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $i4 = (int) 1;
+        $r4 = newarray (android.text.InputFilter)[$i4];
+        $r5 = new android.text.InputFilter$LengthFilter;
+        specialinvoke $r5.<android.text.InputFilter$LengthFilter: void <init>(int)>($i1);
+        $i4 = (int) 0;
+        $r4[$i4] = $r5;
+        virtualinvoke $r3.<android.widget.EditText: void setFilters(android.text.InputFilter[])>($r4);
+
+     label2:
+        $r6 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.TextView f>;
+        virtualinvoke $r6.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $i1 = 15728640 & $i0;
+        $i1 = $i1 >>> 20;
+        $i3 = $i0 & 240;
+        $i3 = $i1 | $i3;
+        $i1 = $i0 & 3840;
+        lookupswitch($i1)
+        {
+            case 0: goto label15;
+            case 512: goto label16;
+            case 768: goto label17;
+            default: goto label3;
+        };
+
+     label3:
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        virtualinvoke $r3.<android.widget.EditText: void setInputType(int)>($i3);
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $i3 = $i0 & 15;
+        virtualinvoke $r3.<android.widget.EditText: void setImeOptions(int)>($i3);
+        $i3 = $i0 & 251658240;
+        $i1 = 983040 & $i0;
+        if $i1 != 65536 goto label18;
+
+        $z2 = 1;
+
+     label4:
+        $r0.<com.facebook.lite.widget.FloatingTextBox: boolean i> = $z2;
+        if $i3 != 33554432 goto label19;
+
+        $z2 = 1;
+
+     label5:
+        if $i3 != 67108864 goto label20;
+
+        $z3 = 1;
+
+     label6:
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        virtualinvoke $r3.<android.widget.EditText: void setSingleLine(boolean)>($z2);
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        if $z3 == 0 goto label21;
+
+        $i4 = 2147483647;
+
+     label7:
+        virtualinvoke $r3.<android.widget.EditText: void setMaxLines(int)>($i4);
+        $r7 = $r0.<com.facebook.lite.widget.FloatingTextBox: java.lang.StringBuilder c>;
+        $z4 = staticinvoke <com.facebook.lite.b.g: boolean a(java.lang.CharSequence)>($r7);
+        if $z4 == 0 goto label23;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        virtualinvoke $r3.<android.widget.EditText: void setText(java.lang.CharSequence)>($r1);
+
+     label8:
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        if $z3 == 0 goto label24;
+
+        $r8 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout$LayoutParams b>;
+
+     label9:
+        virtualinvoke $r3.<android.widget.EditText: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r8);
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        if $z2 == 0 goto label25;
+
+        $i4 = 16;
+
+     label10:
+        virtualinvoke $r3.<android.widget.EditText: void setGravity(int)>($i4);
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        if $z2 != 0 goto label26;
+
+     label11:
+        virtualinvoke $r3.<android.widget.EditText: void setVerticalScrollBarEnabled(boolean)>($z0);
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r9 = virtualinvoke $r3.<android.widget.EditText: android.text.Editable getText()>();
+        if $r9 == null goto label12;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r10 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r9 = virtualinvoke $r10.<android.widget.EditText: android.text.Editable getText()>();
+        $i4 = interfaceinvoke $r9.<android.text.Editable: int length()>();
+        virtualinvoke $r3.<android.widget.EditText: void setSelection(int)>($i4);
+
+     label12:
+        $r11 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout g>;
+        $i4 = 61440 & $i0;
+        if $i4 != 0 goto label13;
+
+        $z1 = (boolean) 8;
+
+     label13:
+        $i4 = (int) $z1;
+        virtualinvoke $r11.<android.widget.RelativeLayout: void setVisibility(int)>($i4);
+        goto label0;
+
+     label14:
+        $r10 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r4 = <com.facebook.lite.widget.FloatingTextBox: android.text.InputFilter[] a>;
+        virtualinvoke $r10.<android.widget.EditText: void setFilters(android.text.InputFilter[])>($r4);
+        goto label2;
+
+     label15:
+        $i3 = $i3 | 32768;
+        goto label3;
+
+     label16:
+        $i3 = $i3 | 32768;
+
+     label17:
+        $i3 = $i3 | 524288;
+        goto label3;
+
+     label18:
+        $z2 = 0;
+        goto label4;
+
+     label19:
+        $z2 = 0;
+        goto label5;
+
+     label20:
+        $z3 = 0;
+        goto label6;
+
+     label21:
+        if $z2 == 0 goto label22;
+
+        $i4 = (int) 1;
+        goto label7;
+
+     label22:
+        $i4 = 4;
+        goto label7;
+
+     label23:
+        $r10 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r7 = $r0.<com.facebook.lite.widget.FloatingTextBox: java.lang.StringBuilder c>;
+        virtualinvoke $r10.<android.widget.EditText: void setText(java.lang.CharSequence)>($r7);
+        virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void a()>();
+        goto label8;
+
+     label24:
+        $r8 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout$LayoutParams j>;
+        goto label9;
+
+     label25:
+        $i4 = 48;
+        goto label10;
+
+     label26:
+        $z0 = 0;
+        goto label11;
+    }
+
+    public final boolean a(android.view.MotionEvent)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.view.MotionEvent $r1;
+        android.widget.RelativeLayout $r2;
+        boolean $z0;
+        android.widget.EditText $r3;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $r2 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.RelativeLayout h>;
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean a(android.view.MotionEvent,android.view.View)>($r1, $r2);
+        if $z0 == 0 goto label0;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean a(android.view.MotionEvent,android.view.View)>($r1, $r3);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    public final void b()
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.content.Context $r1;
+        android.widget.EditText $r2;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.content.Context getContext()>();
+        $r2 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        staticinvoke <com.facebook.lite.b.b: void a(android.content.Context,android.view.View)>($r1, $r2);
+        virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: void setVisibility(int)>(8);
+        return;
+    }
+
+    public final boolean b(android.view.MotionEvent)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.view.MotionEvent $r1;
+        boolean $z0;
+        android.widget.EditText $r2;
+        android.widget.TextView $r3;
+        int $i1;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $z0 = $r0.<com.facebook.lite.widget.FloatingTextBox: boolean i>;
+        if $z0 == 0 goto label0;
+
+        $z0 = specialinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean a(android.view.MotionEvent,android.view.View)>($r1, $r2);
+        if $z0 != 0 goto label0;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.TextView f>;
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean a(android.view.MotionEvent,android.view.View)>($r1, $r3);
+        if $z0 != 0 goto label0;
+
+        $i1 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        if $i1 != 1 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final boolean c()
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $i0 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: int getVisibility()>();
+        if $i0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean dispatchKeyEventPreIme(android.view.KeyEvent)
+    {
+        com.facebook.lite.widget.FloatingTextBox $r0;
+        android.view.KeyEvent $r1;
+        int $i0;
+        boolean $z0;
+        android.view.KeyEvent$DispatcherState $r2;
+        java.lang.StringBuilder $r3;
+        android.widget.EditText $r4;
+        android.text.Editable $r5;
+        java.lang.String $r6;
+
+        $r0 := @this: com.facebook.lite.widget.FloatingTextBox;
+        $r1 := @parameter0: android.view.KeyEvent;
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getKeyCode()>();
+        if $i0 == 4 goto label0;
+
+        $z0 = specialinvoke $r0.<android.widget.RelativeLayout: boolean dispatchKeyEventPreIme(android.view.KeyEvent)>($r1);
+        return $z0;
+
+     label0:
+        $r2 = virtualinvoke $r0.<com.facebook.lite.widget.FloatingTextBox: android.view.KeyEvent$DispatcherState getKeyDispatcherState()>();
+        if $r2 == null goto label1;
+
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getAction()>();
+        if $i0 != 0 goto label1;
+
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getRepeatCount()>();
+        if $i0 != 0 goto label1;
+
+        $r3 = $r0.<com.facebook.lite.widget.FloatingTextBox: java.lang.StringBuilder c>;
+        $r4 = $r0.<com.facebook.lite.widget.FloatingTextBox: android.widget.EditText e>;
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r6 = virtualinvoke $r5.<java.lang.Object: java.lang.String toString()>();
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        return 1;
+
+     label1:
+        $z0 = specialinvoke $r0.<android.widget.RelativeLayout: boolean dispatchKeyEventPreIme(android.view.KeyEvent)>($r1);
+        return $z0;
+    }
+}

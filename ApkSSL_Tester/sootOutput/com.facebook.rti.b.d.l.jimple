@@ -1,0 +1,108 @@
+final class com.facebook.rti.b.d.l extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.b.e.b.m a;
+    final long b;
+    final com.facebook.rti.b.d.f c;
+
+    void <init>(com.facebook.rti.b.d.f, com.facebook.rti.b.e.b.m, long)
+    {
+        com.facebook.rti.b.d.l $r0;
+        com.facebook.rti.b.d.f $r1;
+        com.facebook.rti.b.e.b.m $r2;
+        long $l0;
+
+        $r0 := @this: com.facebook.rti.b.d.l;
+        $r1 := @parameter0: com.facebook.rti.b.d.f;
+        $r2 := @parameter1: com.facebook.rti.b.e.b.m;
+        $l0 := @parameter2: long;
+        $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.d.f c> = $r1;
+        $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.e.b.m a> = $r2;
+        $r0.<com.facebook.rti.b.d.l: long b> = $l0;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.b.d.l $r0;
+        com.facebook.rti.b.d.f $r1;
+        com.facebook.rti.b.e.b.m $r2;
+        java.lang.Object[] $r3;
+        com.facebook.rti.b.e.h $r4, $r6;
+        com.facebook.rti.b.d.b $r5;
+        com.facebook.rti.a.d.a.c $r7;
+        int[] $r8;
+        com.facebook.rti.b.e.b.j $r9;
+        int $i2;
+        java.lang.String $r12;
+        boolean $z0;
+        java.lang.Object $r13;
+        com.facebook.rti.b.e.b.i $r14;
+        java.lang.Integer $r15;
+        com.facebook.rti.b.d.p $r16;
+
+        $r0 := @this: com.facebook.rti.b.d.l;
+        $r1 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.d.f c>;
+        $r5 = $r1.<com.facebook.rti.b.d.f: com.facebook.rti.b.d.b a>;
+        $r4 = staticinvoke <com.facebook.rti.b.d.b: com.facebook.rti.b.e.h d(com.facebook.rti.b.d.b)>($r5);
+        $r1 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.d.f c>;
+        $r6 = staticinvoke <com.facebook.rti.b.d.f: com.facebook.rti.b.e.h a(com.facebook.rti.b.d.f)>($r1);
+        if $r4 != $r6 goto label1;
+
+        $r7 = staticinvoke <com.facebook.rti.a.d.a.c: com.facebook.rti.a.d.a.c c()>();
+        $r8 = <com.facebook.rti.b.d.e: int[] b>;
+        $r2 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.e.b.m a>;
+        $r9 = virtualinvoke $r2.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.j e()>();
+        $i2 = virtualinvoke $r9.<com.facebook.rti.b.e.b.j: int ordinal()>();
+        $i2 = $r8[$i2];
+        lookupswitch($i2)
+        {
+            case 1: goto label2;
+            case 2: goto label2;
+            case 3: goto label2;
+            case 4: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        $r3 = newarray (java.lang.Object)[1];
+        $r2 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.e.b.m a>;
+        $r9 = virtualinvoke $r2.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.j e()>();
+        $r12 = virtualinvoke $r9.<com.facebook.rti.b.e.b.j: java.lang.String name()>();
+        $r3[0] = $r12;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MqttConnectionManager", "messageReceived %s", $r3);
+        $z0 = virtualinvoke $r7.<com.facebook.rti.a.d.a.c: boolean a()>();
+        if $z0 != 0 goto label4;
+
+     label1:
+        return;
+
+     label2:
+        $r2 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.e.b.m a>;
+        $r13 = virtualinvoke $r2.<com.facebook.rti.b.e.b.m: java.lang.Object d()>();
+        $r14 = (com.facebook.rti.b.e.b.i) $r13;
+        $i2 = $r14.<com.facebook.rti.b.e.b.i: int a>;
+        $r15 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r7 = staticinvoke <com.facebook.rti.a.d.a.c: com.facebook.rti.a.d.a.c a(java.lang.Object)>($r15);
+        goto label0;
+
+     label3:
+        $r15 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(-1);
+        $r7 = staticinvoke <com.facebook.rti.a.d.a.c: com.facebook.rti.a.d.a.c a(java.lang.Object)>($r15);
+        goto label0;
+
+     label4:
+        $r3 = newarray (java.lang.Object)[1];
+        $r13 = virtualinvoke $r7.<com.facebook.rti.a.d.a.c: java.lang.Object b()>();
+        $r3[0] = $r13;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MqttConnectionManager", "operationId %d", $r3);
+        $r1 = $r0.<com.facebook.rti.b.d.l: com.facebook.rti.b.d.f c>;
+        $r5 = $r1.<com.facebook.rti.b.d.f: com.facebook.rti.b.d.b a>;
+        $r16 = staticinvoke <com.facebook.rti.b.d.b: com.facebook.rti.b.d.p m(com.facebook.rti.b.d.b)>($r5);
+        $r13 = virtualinvoke $r7.<com.facebook.rti.a.d.a.c: java.lang.Object b()>();
+        $r15 = (java.lang.Integer) $r13;
+        $i2 = virtualinvoke $r15.<java.lang.Integer: int intValue()>();
+        virtualinvoke $r16.<com.facebook.rti.b.d.p: com.facebook.rti.b.d.o a(int)>($i2);
+        goto label1;
+    }
+}

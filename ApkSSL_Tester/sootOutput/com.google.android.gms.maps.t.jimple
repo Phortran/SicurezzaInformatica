@@ -1,0 +1,308 @@
+class com.google.android.gms.maps.t extends java.lang.Object implements com.google.android.gms.dynamic.a
+{
+    private final android.support.v4.app.Fragment a;
+    private final com.google.android.gms.maps.internal.IMapFragmentDelegate b;
+
+    public void <init>(android.support.v4.app.Fragment, com.google.android.gms.maps.internal.IMapFragmentDelegate)
+    {
+        com.google.android.gms.maps.t $r0;
+        android.support.v4.app.Fragment $r1;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r2;
+        java.lang.Object $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 := @parameter0: android.support.v4.app.Fragment;
+        $r2 := @parameter1: com.google.android.gms.maps.internal.IMapFragmentDelegate;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r2);
+        $r2 = (com.google.android.gms.maps.internal.IMapFragmentDelegate) $r3;
+        $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b> = $r2;
+        $r3 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r1);
+        $r1 = (android.support.v4.app.Fragment) $r3;
+        $r0.<com.google.android.gms.maps.t: android.support.v4.app.Fragment a> = $r1;
+        return;
+    }
+
+    public android.view.View a(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        com.google.android.gms.maps.t $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r4;
+        com.google.android.gms.dynamic.b $r5, $r6;
+        java.lang.Object $r7;
+        android.view.View $r8;
+        android.os.RemoteException $r9;
+        com.google.android.gms.maps.model.m $r10;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        $r5 = staticinvoke <com.google.android.gms.dynamic.c: com.google.android.gms.dynamic.b a(java.lang.Object)>($r1);
+        $r6 = staticinvoke <com.google.android.gms.dynamic.c: com.google.android.gms.dynamic.b a(java.lang.Object)>($r2);
+        $r6 = interfaceinvoke $r4.<com.google.android.gms.maps.internal.IMapFragmentDelegate: com.google.android.gms.dynamic.b a(com.google.android.gms.dynamic.b,com.google.android.gms.dynamic.b,android.os.Bundle)>($r5, $r6, $r3);
+
+     label1:
+        $r7 = staticinvoke <com.google.android.gms.dynamic.c: java.lang.Object a(com.google.android.gms.dynamic.b)>($r6);
+        $r8 = (android.view.View) $r7;
+        return $r8;
+
+     label2:
+        $r9 := @caughtexception;
+        $r10 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r10.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r9);
+        throw $r10;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void a()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void b()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void a(android.app.Activity, android.os.Bundle, android.os.Bundle)
+    {
+        com.google.android.gms.maps.t $r0;
+        android.app.Activity $r1;
+        android.os.Bundle $r2, $r3;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r5;
+        com.google.android.gms.dynamic.b $r6;
+        android.os.Parcelable $r7;
+        com.google.android.gms.maps.GoogleMapOptions $r8;
+        android.os.RemoteException $r9;
+        com.google.android.gms.maps.model.m $r10;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 := @parameter0: android.app.Activity;
+        $r2 := @parameter1: android.os.Bundle;
+        $r3 := @parameter2: android.os.Bundle;
+        $r7 = virtualinvoke $r2.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("MapOptions");
+        $r8 = (com.google.android.gms.maps.GoogleMapOptions) $r7;
+        $r5 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        $r6 = staticinvoke <com.google.android.gms.dynamic.c: com.google.android.gms.dynamic.b a(java.lang.Object)>($r1);
+        interfaceinvoke $r5.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void a(com.google.android.gms.dynamic.b,com.google.android.gms.maps.GoogleMapOptions,android.os.Bundle)>($r6, $r8, $r3);
+
+     label1:
+        return;
+
+     label2:
+        $r9 := @caughtexception;
+        $r10 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r10.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r9);
+        throw $r10;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void a(android.os.Bundle)
+    {
+        com.google.android.gms.maps.t $r0;
+        android.os.Bundle $r1, $r4;
+        android.support.v4.app.Fragment $r2;
+        boolean $z0;
+        android.os.Parcelable $r6;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r7;
+        android.os.RemoteException $r8;
+        com.google.android.gms.maps.model.m $r9;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 := @parameter0: android.os.Bundle;
+        if $r1 != null goto label1;
+
+        $r1 = new android.os.Bundle;
+
+     label0:
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label1:
+        $r2 = $r0.<com.google.android.gms.maps.t: android.support.v4.app.Fragment a>;
+        $r4 = virtualinvoke $r2.<android.support.v4.app.Fragment: android.os.Bundle getArguments()>();
+        if $r4 == null goto label2;
+
+        $z0 = virtualinvoke $r4.<android.os.Bundle: boolean containsKey(java.lang.String)>("MapOptions");
+        if $z0 == 0 goto label2;
+
+        $r6 = virtualinvoke $r4.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("MapOptions");
+        staticinvoke <com.google.android.gms.maps.internal.p: void a(android.os.Bundle,java.lang.String,android.os.Parcelable)>($r1, "MapOptions", $r6);
+
+     label2:
+        $r7 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+        interfaceinvoke $r7.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void a(android.os.Bundle)>($r1);
+
+     label3:
+        return;
+
+     label4:
+        $r8 := @caughtexception;
+        $r9 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r9.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r8);
+        throw $r9;
+
+        catch android.os.RemoteException from label0 to label3 with label4;
+    }
+
+    public void b()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void c()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void b(android.os.Bundle)
+    {
+        com.google.android.gms.maps.t $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r2;
+        com.google.android.gms.maps.model.m $r3;
+        android.os.RemoteException $r4;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r2.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void b(android.os.Bundle)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        $r3 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r3.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r4);
+        throw $r3;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void c()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void d()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void d()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void e()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public void e()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IMapFragmentDelegate: void f()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public com.google.android.gms.maps.internal.IMapFragmentDelegate f()
+    {
+        com.google.android.gms.maps.t $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+
+        $r0 := @this: com.google.android.gms.maps.t;
+        $r1 = $r0.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate b>;
+        return $r1;
+    }
+}

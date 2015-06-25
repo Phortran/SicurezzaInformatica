@@ -1,0 +1,67 @@
+class it.h3g.areaclienti3.ussdservices.s extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.ussdservices.p a;
+
+    void <init>(it.h3g.areaclienti3.ussdservices.p)
+    {
+        it.h3g.areaclienti3.ussdservices.s $r0;
+        it.h3g.areaclienti3.ussdservices.p $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.s;
+        $r1 := @parameter0: it.h3g.areaclienti3.ussdservices.p;
+        $r0.<it.h3g.areaclienti3.ussdservices.s: it.h3g.areaclienti3.ussdservices.p a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static it.h3g.areaclienti3.ussdservices.p a(it.h3g.areaclienti3.ussdservices.s)
+    {
+        it.h3g.areaclienti3.ussdservices.s $r0;
+        it.h3g.areaclienti3.ussdservices.p $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.ussdservices.s;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.s: it.h3g.areaclienti3.ussdservices.p a>;
+        return $r1;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.ussdservices.s $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.ussdservices.p $r2;
+        android.app.AlertDialog$Builder $r3;
+        java.util.Map $r4;
+        java.util.Set $r5;
+        java.lang.String[] $r6;
+        java.lang.Object[] $r7;
+        int $i1;
+        android.content.Context $r8;
+        it.h3g.areaclienti3.ussdservices.t $r9;
+        it.h3g.areaclienti3.ussdservices.u $r10;
+        android.app.AlertDialog $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.s;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.s: it.h3g.areaclienti3.ussdservices.p a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.ussdservices.p: java.util.Map d(it.h3g.areaclienti3.ussdservices.p)>($r2);
+        $r5 = interfaceinvoke $r4.<java.util.Map: java.util.Set keySet()>();
+        $r6 = newarray (java.lang.String)[0];
+        $r7 = interfaceinvoke $r5.<java.util.Set: java.lang.Object[] toArray(java.lang.Object[])>($r6);
+        $r6 = (java.lang.String[]) $r7;
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.s: it.h3g.areaclienti3.ussdservices.p a>;
+        $i1 = staticinvoke <it.h3g.areaclienti3.ussdservices.p: int e(it.h3g.areaclienti3.ussdservices.p)>($r2);
+        $r3 = new android.app.AlertDialog$Builder;
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.s: it.h3g.areaclienti3.ussdservices.p a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.ussdservices.p: android.content.Context f(it.h3g.areaclienti3.ussdservices.p)>($r2);
+        specialinvoke $r3.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r8);
+        $r9 = new it.h3g.areaclienti3.ussdservices.t;
+        specialinvoke $r9.<it.h3g.areaclienti3.ussdservices.t: void <init>(it.h3g.areaclienti3.ussdservices.s)>($r0);
+        $r3 = virtualinvoke $r3.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setSingleChoiceItems(java.lang.CharSequence[],int,android.content.DialogInterface$OnClickListener)>($r6, $i1, $r9);
+        $r10 = new it.h3g.areaclienti3.ussdservices.u;
+        specialinvoke $r10.<it.h3g.areaclienti3.ussdservices.u: void <init>(it.h3g.areaclienti3.ussdservices.s)>($r0);
+        $r3 = virtualinvoke $r3.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNegativeButton(int,android.content.DialogInterface$OnClickListener)>(2131230856, $r10);
+        $r11 = virtualinvoke $r3.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        virtualinvoke $r11.<android.app.Dialog: void show()>();
+        return;
+    }
+}

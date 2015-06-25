@@ -1,0 +1,177 @@
+final class com.facebook.lite.webview.b extends android.webkit.WebViewClient
+{
+    final com.facebook.lite.webview.FbWebView a;
+
+    private void <init>(com.facebook.lite.webview.FbWebView)
+    {
+        com.facebook.lite.webview.b $r0;
+        com.facebook.lite.webview.FbWebView $r1;
+
+        $r0 := @this: com.facebook.lite.webview.b;
+        $r1 := @parameter0: com.facebook.lite.webview.FbWebView;
+        $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a> = $r1;
+        specialinvoke $r0.<android.webkit.WebViewClient: void <init>()>();
+        return;
+    }
+
+    void <init>(com.facebook.lite.webview.FbWebView, byte)
+    {
+        com.facebook.lite.webview.b $r0;
+        com.facebook.lite.webview.FbWebView $r1;
+        byte $b0;
+
+        $r0 := @this: com.facebook.lite.webview.b;
+        $r1 := @parameter0: com.facebook.lite.webview.FbWebView;
+        $b0 := @parameter1: byte;
+        specialinvoke $r0.<com.facebook.lite.webview.b: void <init>(com.facebook.lite.webview.FbWebView)>($r1);
+        return;
+    }
+
+    public final void onPageFinished(android.webkit.WebView, java.lang.String)
+    {
+        com.facebook.lite.webview.b $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        com.facebook.lite.webview.FbWebView $r4;
+        android.webkit.WebBackForwardList $r5;
+        int $i1;
+        android.webkit.WebHistoryItem $r6;
+
+        $r0 := @this: com.facebook.lite.webview.b;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = "about:blank";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r2);
+        if $z0 == 0 goto label1;
+
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: void clearHistory()>();
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: void clearCache(boolean)>(1);
+
+     label0:
+        return;
+
+     label1:
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        $z0 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: boolean canGoBackOrForward(int)>(-1);
+        if $z0 == 0 goto label0;
+
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        $z0 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: boolean canGoBackOrForward(int)>(-2);
+        if $z0 != 0 goto label0;
+
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        $r5 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: android.webkit.WebBackForwardList copyBackForwardList()>();
+        if $r5 == null goto label0;
+
+        $i1 = virtualinvoke $r5.<android.webkit.WebBackForwardList: int getSize()>();
+        if $i1 <= 0 goto label0;
+
+        $r6 = virtualinvoke $r5.<android.webkit.WebBackForwardList: android.webkit.WebHistoryItem getItemAtIndex(int)>(0);
+        if $r6 == null goto label0;
+
+        $r3 = "about:blank";
+        $r2 = virtualinvoke $r6.<android.webkit.WebHistoryItem: java.lang.String getUrl()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r2);
+        if $z0 == 0 goto label0;
+
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: void clearHistory()>();
+        goto label0;
+    }
+
+    public final void onReceivedError(android.webkit.WebView, int, java.lang.String, java.lang.String)
+    {
+        com.facebook.lite.webview.b $r0;
+        android.webkit.WebView $r1;
+        int $i0;
+        java.lang.String $r2, $r3;
+        com.facebook.lite.webview.FbWebView $r4;
+        java.lang.StringBuilder $r5;
+        android.content.Context $r6;
+        android.widget.Toast $r7;
+
+        $r0 := @this: com.facebook.lite.webview.b;
+        $r1 := @parameter0: android.webkit.WebView;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r4 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        $r6 = virtualinvoke $r4.<com.facebook.lite.webview.FbWebView: android.content.Context getContext()>();
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r7 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r6, $r3, 0);
+        virtualinvoke $r7.<android.widget.Toast: void show()>();
+        return;
+    }
+
+    public final boolean shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String)
+    {
+        com.facebook.lite.webview.b $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3, $r5;
+        int $i0, $i1;
+        android.net.Uri $r4;
+        com.facebook.lite.webview.c[] $r6;
+        com.facebook.lite.webview.c $r7;
+        boolean $z1;
+        java.lang.String[] $r8;
+        com.facebook.lite.a $r9;
+        com.facebook.lite.g.a $r10;
+        com.b.a.a.b.b $r11;
+        com.facebook.lite.webview.FbWebView $r12;
+        android.content.Context $r13;
+        android.content.Intent $r14;
+
+        $r0 := @this: com.facebook.lite.webview.b;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r4.<android.net.Uri: java.lang.String getScheme()>();
+        $r5 = "fblite";
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z1 == 0 goto label0;
+
+        $r8 = newarray (java.lang.String)[2];
+        $i1 = (int) 0;
+        $r8[$i1] = "d";
+        $r8[1] = $r2;
+        $r9 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        $r10 = virtualinvoke $r9.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        $r11 = virtualinvoke $r10.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        virtualinvoke $r11.<com.b.a.a.b.b: void a(java.lang.String[])>($r8);
+        return 1;
+
+     label0:
+        $r5 = virtualinvoke $r4.<android.net.Uri: java.lang.String getHost()>();
+        $r6 = staticinvoke <com.facebook.lite.webview.c: com.facebook.lite.webview.c[] values()>();
+        $i0 = lengthof $r6;
+        $i1 = (int) 0;
+
+     label1:
+        if $i1 >= $i0 goto label3;
+
+        $r7 = $r6[$i1];
+        $z1 = virtualinvoke $r7.<com.facebook.lite.webview.c: boolean a(java.lang.String)>($r5);
+        if $z1 == 0 goto label2;
+
+        return 0;
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label3:
+        $r12 = $r0.<com.facebook.lite.webview.b: com.facebook.lite.webview.FbWebView a>;
+        $r13 = virtualinvoke $r12.<com.facebook.lite.webview.FbWebView: android.content.Context getContext()>();
+        $r14 = new android.content.Intent;
+        specialinvoke $r14.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r4);
+        $r14 = virtualinvoke $r14.<android.content.Intent: android.content.Intent addFlags(int)>(268435456);
+        virtualinvoke $r13.<android.content.Context: void startActivity(android.content.Intent)>($r14);
+        return 1;
+    }
+}

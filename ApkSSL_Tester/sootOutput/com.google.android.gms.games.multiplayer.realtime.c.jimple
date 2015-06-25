@@ -1,0 +1,220 @@
+public final class com.google.android.gms.games.multiplayer.realtime.c extends com.google.android.gms.common.data.e implements com.google.android.gms.games.multiplayer.realtime.Room
+{
+    private final int c;
+
+    void <init>(com.google.android.gms.common.data.d, int, int)
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        com.google.android.gms.common.data.d $r1;
+        int $i0, $i1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        specialinvoke $r0.<com.google.android.gms.common.data.e: void <init>(com.google.android.gms.common.data.d,int)>($r1, $i0);
+        $r0.<com.google.android.gms.games.multiplayer.realtime.c: int c> = $i1;
+        return;
+    }
+
+    public java.lang.String a()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: java.lang.String d(java.lang.String)>("external_match_id");
+        return $r1;
+    }
+
+    public java.lang.String b()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: java.lang.String d(java.lang.String)>("creator_external");
+        return $r1;
+    }
+
+    public long c()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        long $l0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $l0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: long a(java.lang.String)>("creation_timestamp");
+        return $l0;
+    }
+
+    public int d()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $i0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b(java.lang.String)>("status");
+        return $i0;
+    }
+
+    public int describeContents()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        return 0;
+    }
+
+    public java.lang.String e()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: java.lang.String d(java.lang.String)>("description");
+        return $r1;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = staticinvoke <com.google.android.gms.games.multiplayer.realtime.RoomEntity: boolean a(com.google.android.gms.games.multiplayer.realtime.Room,java.lang.Object)>($r0, $r1);
+        return $z0;
+    }
+
+    public int f()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $i0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b(java.lang.String)>("variant");
+        return $i0;
+    }
+
+    public android.os.Bundle g()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        boolean $z0;
+        int $i0, $i1;
+        long $l2;
+        android.os.Bundle $r2;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $z0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: boolean c(java.lang.String)>("has_automatch_criteria");
+        if $z0 != 0 goto label0;
+
+        return null;
+
+     label0:
+        $i0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b(java.lang.String)>("automatch_min_players");
+        $i1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b(java.lang.String)>("automatch_max_players");
+        $l2 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: long a(java.lang.String)>("automatch_bit_mask");
+        $r2 = staticinvoke <com.google.android.gms.games.multiplayer.realtime.e: android.os.Bundle a(int,int,long)>($i0, $i1, $l2);
+        return $r2;
+    }
+
+    public java.lang.Object h()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        com.google.android.gms.games.multiplayer.realtime.Room $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: com.google.android.gms.games.multiplayer.realtime.Room k()>();
+        return $r1;
+    }
+
+    public int hashCode()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $i0 = staticinvoke <com.google.android.gms.games.multiplayer.realtime.RoomEntity: int a(com.google.android.gms.games.multiplayer.realtime.Room)>($r0);
+        return $i0;
+    }
+
+    public java.util.ArrayList i()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        int $i0, $i1;
+        java.util.ArrayList $r1;
+        com.google.android.gms.common.data.d $r2;
+        com.google.android.gms.games.multiplayer.d $r3;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = new java.util.ArrayList;
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.realtime.c: int c>;
+        specialinvoke $r1.<java.util.ArrayList: void <init>(int)>($i0);
+        $i1 = 0;
+
+     label0:
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.realtime.c: int c>;
+        if $i1 >= $i0 goto label1;
+
+        $r3 = new com.google.android.gms.games.multiplayer.d;
+        $r2 = $r0.<com.google.android.gms.games.multiplayer.realtime.c: com.google.android.gms.common.data.d a>;
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b>;
+        $i0 = $i0 + $i1;
+        specialinvoke $r3.<com.google.android.gms.games.multiplayer.d: void <init>(com.google.android.gms.common.data.d,int)>($r2, $i0);
+        virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r3);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    public int j()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $i0 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: int b(java.lang.String)>("automatch_wait_estimate_sec");
+        return $i0;
+    }
+
+    public com.google.android.gms.games.multiplayer.realtime.Room k()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        com.google.android.gms.games.multiplayer.realtime.RoomEntity $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = new com.google.android.gms.games.multiplayer.realtime.RoomEntity;
+        specialinvoke $r1.<com.google.android.gms.games.multiplayer.realtime.RoomEntity: void <init>(com.google.android.gms.games.multiplayer.realtime.Room)>($r0);
+        return $r1;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 = staticinvoke <com.google.android.gms.games.multiplayer.realtime.RoomEntity: java.lang.String b(com.google.android.gms.games.multiplayer.realtime.Room)>($r0);
+        return $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        com.google.android.gms.games.multiplayer.realtime.c $r0;
+        android.os.Parcel $r1;
+        int $i0;
+        com.google.android.gms.games.multiplayer.realtime.Room $r2;
+        com.google.android.gms.games.multiplayer.realtime.RoomEntity $r3;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.c;
+        $r1 := @parameter0: android.os.Parcel;
+        $i0 := @parameter1: int;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.c: com.google.android.gms.games.multiplayer.realtime.Room k()>();
+        $r3 = (com.google.android.gms.games.multiplayer.realtime.RoomEntity) $r2;
+        virtualinvoke $r3.<com.google.android.gms.games.multiplayer.realtime.RoomEntity: void writeToParcel(android.os.Parcel,int)>($r1, $i0);
+        return;
+    }
+}

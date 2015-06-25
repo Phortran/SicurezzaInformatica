@@ -1,0 +1,134 @@
+class it.h3g.areaclienti3.fragments.ba extends android.os.AsyncTask
+{
+    int a;
+    int b;
+    final it.h3g.areaclienti3.fragments.x c;
+
+    private void <init>(it.h3g.areaclienti3.fragments.x)
+    {
+        it.h3g.areaclienti3.fragments.ba $r0;
+        it.h3g.areaclienti3.fragments.x $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.x;
+        $r0.<it.h3g.areaclienti3.fragments.ba: it.h3g.areaclienti3.fragments.x c> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.ba: int a> = -1;
+        $r0.<it.h3g.areaclienti3.fragments.ba: int b> = -1;
+        return;
+    }
+
+    void <init>(it.h3g.areaclienti3.fragments.x, it.h3g.areaclienti3.fragments.ba)
+    {
+        it.h3g.areaclienti3.fragments.ba $r0, $r2;
+        it.h3g.areaclienti3.fragments.x $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.x;
+        $r2 := @parameter1: it.h3g.areaclienti3.fragments.ba;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.ba: void <init>(it.h3g.areaclienti3.fragments.x)>($r1);
+        return;
+    }
+
+    protected transient android.graphics.Bitmap a(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.fragments.ba $r0;
+        java.lang.Object[] $r1;
+        int $i0;
+        java.lang.Object $r2;
+        java.lang.Integer $r3;
+        java.lang.String $r4;
+        android.graphics.Bitmap $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: java.lang.Object[];
+        $i0 = lengthof $r1;
+        if $i0 < 3 goto label0;
+
+        $r2 = $r1[0];
+        $r3 = (java.lang.Integer) $r2;
+        $i0 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $r0.<it.h3g.areaclienti3.fragments.ba: int a> = $i0;
+        $r2 = $r1[1];
+        $r4 = (java.lang.String) $r2;
+        $r2 = $r1[2];
+        $r3 = (java.lang.Integer) $r2;
+        $i0 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $r0.<it.h3g.areaclienti3.fragments.ba: int b> = $i0;
+        $r5 = staticinvoke <it.h3g.areaclienti3.fragments.x: android.graphics.Bitmap a(java.lang.String)>($r4);
+        return $r5;
+
+     label0:
+        return null;
+    }
+
+    protected void a(android.graphics.Bitmap)
+    {
+        it.h3g.areaclienti3.fragments.ba $r0;
+        android.graphics.Bitmap $r1;
+        int $i0;
+        android.view.View $r2;
+        it.h3g.areaclienti3.fragments.x $r3;
+        android.widget.ImageView $r4;
+        android.widget.LinearLayout $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        $i0 = $r0.<it.h3g.areaclienti3.fragments.ba: int a>;
+        if $i0 == -1 goto label1;
+
+        $i0 = $r0.<it.h3g.areaclienti3.fragments.ba: int b>;
+        if $i0 == -1 goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.ba: it.h3g.areaclienti3.fragments.x c>;
+        $r2 = staticinvoke <it.h3g.areaclienti3.fragments.x: android.view.View a(it.h3g.areaclienti3.fragments.x)>($r3);
+        if $r2 == null goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.ba: it.h3g.areaclienti3.fragments.x c>;
+        $r2 = staticinvoke <it.h3g.areaclienti3.fragments.x: android.view.View a(it.h3g.areaclienti3.fragments.x)>($r3);
+        $i0 = $r0.<it.h3g.areaclienti3.fragments.ba: int a>;
+        $r2 = virtualinvoke $r2.<android.view.View: android.view.View findViewById(int)>($i0);
+        $r4 = (android.widget.ImageView) $r2;
+        if $r1 == null goto label0;
+
+        virtualinvoke $r4.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>($r1);
+        virtualinvoke $r4.<android.widget.ImageView: void setVisibility(int)>(0);
+
+     label0:
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.ba: it.h3g.areaclienti3.fragments.x c>;
+        $r2 = staticinvoke <it.h3g.areaclienti3.fragments.x: android.view.View a(it.h3g.areaclienti3.fragments.x)>($r3);
+        $i0 = $r0.<it.h3g.areaclienti3.fragments.ba: int b>;
+        $r2 = virtualinvoke $r2.<android.view.View: android.view.View findViewById(int)>($i0);
+        $r5 = (android.widget.LinearLayout) $r2;
+        virtualinvoke $r5.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+     label1:
+        return;
+    }
+
+    protected transient java.lang.Object doInBackground(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.fragments.ba $r0;
+        java.lang.Object[] $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: java.lang.Object[];
+        $r1 = (java.lang.Object[]) $r1;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.ba: android.graphics.Bitmap a(java.lang.Object[])>($r1);
+        return $r2;
+    }
+
+    protected void onPostExecute(java.lang.Object)
+    {
+        it.h3g.areaclienti3.fragments.ba $r0;
+        java.lang.Object $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ba;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.ba: void a(android.graphics.Bitmap)>($r2);
+        return;
+    }
+}

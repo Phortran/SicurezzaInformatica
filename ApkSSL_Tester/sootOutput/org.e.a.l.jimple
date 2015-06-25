@@ -1,0 +1,1626 @@
+public class org.e.a.l extends org.e.b
+{
+    static final org.e.a.g k;
+    static java.lang.Class v;
+    public java.util.Hashtable l;
+    java.util.Hashtable m;
+    java.util.Vector n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public boolean r;
+    protected java.util.Hashtable s;
+    protected java.util.Hashtable t;
+    protected boolean u;
+
+    static void <clinit>()
+    {
+        org.e.a.c $r0;
+
+        $r0 = new org.e.a.c;
+        specialinvoke $r0.<org.e.a.c: void <init>()>();
+        <org.e.a.l: org.e.a.g k> = $r0;
+        return;
+    }
+
+    public void <init>(int)
+    {
+        org.e.a.l $r0;
+        int $i0;
+        java.util.Hashtable $r1;
+        java.lang.Class $r3;
+        java.lang.String $r4;
+        org.e.a.g $r5;
+
+        $r0 := @this: org.e.a.l;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<org.e.b: void <init>(int)>($i0);
+        $r1 = new java.util.Hashtable;
+        specialinvoke $r1.<java.util.Hashtable: void <init>()>();
+        $r0.<org.e.a.l: java.util.Hashtable l> = $r1;
+        $r1 = new java.util.Hashtable;
+        specialinvoke $r1.<java.util.Hashtable: void <init>()>();
+        $r0.<org.e.a.l: java.util.Hashtable m> = $r1;
+        $r1 = new java.util.Hashtable;
+        specialinvoke $r1.<java.util.Hashtable: void <init>()>();
+        $r0.<org.e.a.l: java.util.Hashtable s> = $r1;
+        $r1 = new java.util.Hashtable;
+        specialinvoke $r1.<java.util.Hashtable: void <init>()>();
+        $r0.<org.e.a.l: java.util.Hashtable t> = $r1;
+        $r0.<org.e.a.l: boolean u> = 1;
+        $r4 = $r0.<org.e.a.l: java.lang.String h>;
+        $r3 = <org.e.a.i: java.lang.Class f>;
+        virtualinvoke $r0.<org.e.a.l: void a(java.lang.String,java.lang.String,java.lang.Class)>($r4, "Array", $r3);
+        $r5 = <org.e.a.l: org.e.a.g k>;
+        interfaceinvoke $r5.<org.e.a.g: void a(org.e.a.l)>($r0);
+        return;
+    }
+
+    private int a(java.lang.String, int, int)
+    {
+        org.e.a.l $r0;
+        java.lang.String $r1;
+        int $i0, $i1, $i2;
+        java.lang.Exception $r2;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        if $r1 != null goto label1;
+
+     label0:
+        return $i1;
+
+     label1:
+        $i2 = virtualinvoke $r1.<java.lang.String: int length()>();
+        $i2 = $i2 - $i0;
+        if $i2 < 3 goto label0;
+
+        $i2 = $i0 + 1;
+        $i0 = virtualinvoke $r1.<java.lang.String: int length()>();
+        $i0 = $i0 + -1;
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int,int)>($i2, $i0);
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+
+     label2:
+        return $i2;
+
+     label3:
+        $r2 := @caughtexception;
+        return $i1;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+
+    private void a(org.xmlpull.v1.XmlSerializer, org.e.a.e)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        org.e.a.e $r2;
+        int $i1, $i2;
+        java.lang.String $r3, $r4, $r7;
+        java.lang.Object $r5;
+        org.e.a.b $r6;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: org.e.a.e;
+        $i2 = interfaceinvoke $r2.<org.e.a.e: int a()>();
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i2 goto label3;
+
+        $r6 = new org.e.a.b;
+        specialinvoke $r6.<org.e.a.b: void <init>()>();
+        interfaceinvoke $r2.<org.e.a.e: void a(int,org.e.a.b)>($i1, $r6);
+        $r3 = virtualinvoke $r6.<org.e.a.b: java.lang.String c()>();
+        $r4 = virtualinvoke $r6.<org.e.a.b: java.lang.String b()>();
+        $r5 = virtualinvoke $r6.<org.e.a.b: java.lang.Object e()>();
+        if $r5 == null goto label2;
+
+        $r5 = virtualinvoke $r6.<org.e.a.b: java.lang.Object e()>();
+        $r7 = virtualinvoke $r5.<java.lang.Object: java.lang.String toString()>();
+
+     label1:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r3, $r4, $r7);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label2:
+        $r7 = "";
+        goto label1;
+
+     label3:
+        return;
+    }
+
+    static java.lang.Class b(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.NoClassDefFoundError $r1;
+        java.lang.Class $r2;
+        java.lang.ClassNotFoundException $r3;
+
+        $r0 := @parameter0: java.lang.String;
+
+     label0:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r0);
+
+     label1:
+        return $r2;
+
+     label2:
+        $r3 := @caughtexception;
+        $r1 = new java.lang.NoClassDefFoundError;
+        $r0 = virtualinvoke $r3.<java.lang.ClassNotFoundException: java.lang.String getMessage()>();
+        specialinvoke $r1.<java.lang.NoClassDefFoundError: void <init>(java.lang.String)>($r0);
+        throw $r1;
+
+        catch java.lang.ClassNotFoundException from label0 to label1 with label2;
+    }
+
+    public java.lang.Object a()
+    {
+        org.e.a.l $r0;
+        java.lang.Object $r1;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        org.e.c $r2;
+        org.e.a.f $r3;
+        java.util.Vector $r4;
+
+        $r0 := @this: org.e.a.l;
+        $i0 = 0;
+        $r1 = $r0.<org.e.a.l: java.lang.Object a>;
+        $z0 = $r1 instanceof org.e.c;
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<org.e.a.l: java.lang.Object a>;
+        $r2 = (org.e.c) $r1;
+        throw $r2;
+
+     label0:
+        $r1 = $r0.<org.e.a.l: java.lang.Object a>;
+        $r3 = (org.e.a.f) $r1;
+        $i1 = interfaceinvoke $r3.<org.e.a.f: int c()>();
+        if $i1 != 0 goto label1;
+
+        return null;
+
+     label1:
+        $i2 = interfaceinvoke $r3.<org.e.a.f: int c()>();
+        if $i2 != 1 goto label2;
+
+        $r1 = interfaceinvoke $r3.<org.e.a.f: java.lang.Object a(int)>(0);
+        return $r1;
+
+     label2:
+        $r4 = new java.util.Vector;
+        specialinvoke $r4.<java.util.Vector: void <init>()>();
+
+     label3:
+        $i2 = interfaceinvoke $r3.<org.e.a.f: int c()>();
+        if $i0 >= $i2 goto label4;
+
+        $r1 = interfaceinvoke $r3.<org.e.a.f: java.lang.Object a(int)>($i0);
+        virtualinvoke $r4.<java.util.Vector: boolean add(java.lang.Object)>($r1);
+        $i0 = $i0 + 1;
+        goto label3;
+
+     label4:
+        return $r4;
+    }
+
+    public java.lang.Object a(org.xmlpull.v1.XmlPullParser, java.lang.Object, int, java.lang.String, java.lang.String, org.e.a.i)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.Object $r2, $r10;
+        int $i0, $i2, $i3;
+        java.lang.String $r3, $r4, $r6, $r7, $r13, $r14;
+        org.e.a.i $r5;
+        boolean $z0, $z1;
+        java.lang.RuntimeException $r8;
+        java.util.Hashtable $r9;
+        org.e.a.d $r11, $r12;
+        org.e.a.f $r15;
+        java.lang.Object[] $r16;
+        java.util.Vector $r17;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.lang.Object;
+        $i0 := @parameter2: int;
+        $r3 := @parameter3: java.lang.String;
+        $r4 := @parameter4: java.lang.String;
+        $r5 := @parameter5: org.e.a.i;
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $r6 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "href");
+        if $r6 == null goto label4;
+
+        if $r2 != null goto label0;
+
+        $r8 = new java.lang.RuntimeException;
+        specialinvoke $r8.<java.lang.RuntimeException: void <init>(java.lang.String)>("href at root level?!?");
+        throw $r8;
+
+     label0:
+        $i3 = (int) 1;
+        $r6 = virtualinvoke $r6.<java.lang.String: java.lang.String substring(int)>($i3);
+        $r9 = $r0.<org.e.a.l: java.util.Hashtable m>;
+        $r10 = virtualinvoke $r9.<java.util.Hashtable: java.lang.Object get(java.lang.Object)>($r6);
+        if $r10 == null goto label1;
+
+        $z0 = $r10 instanceof org.e.a.d;
+        if $z0 == 0 goto label2;
+
+     label1:
+        $r11 = new org.e.a.d;
+        specialinvoke $r11.<org.e.a.d: void <init>()>();
+        $r12 = (org.e.a.d) $r10;
+        $r11.<org.e.a.d: org.e.a.d a> = $r12;
+        $r11.<org.e.a.d: java.lang.Object b> = $r2;
+        $r11.<org.e.a.d: int c> = $i0;
+        $r9 = $r0.<org.e.a.l: java.util.Hashtable m>;
+        virtualinvoke $r9.<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r11);
+        $r10 = null;
+
+     label2:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, null, $r7);
+
+     label3:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, null, $r7);
+        return $r10;
+
+     label4:
+        $r6 = $r0.<org.e.a.l: java.lang.String i>;
+        $r13 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r6, "nil");
+        $r6 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        if $r13 != null goto label5;
+
+        $r13 = $r0.<org.e.a.l: java.lang.String i>;
+        $r13 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r13, "null");
+
+     label5:
+        if $r13 == null goto label11;
+
+        $z1 = staticinvoke <org.e.b: boolean a(java.lang.String)>($r13);
+        if $z1 == 0 goto label11;
+
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, null, $r7);
+        $r10 = null;
+
+     label6:
+        if $r6 == null goto label10;
+
+        $r9 = $r0.<org.e.a.l: java.util.Hashtable m>;
+        $r2 = virtualinvoke $r9.<java.util.Hashtable: java.lang.Object get(java.lang.Object)>($r6);
+        $z1 = $r2 instanceof org.e.a.d;
+        if $z1 == 0 goto label19;
+
+        $r12 = (org.e.a.d) $r2;
+
+     label7:
+        $r2 = $r12.<org.e.a.d: java.lang.Object b>;
+        $z1 = $r2 instanceof org.e.a.f;
+        if $z1 == 0 goto label18;
+
+        $r2 = $r12.<org.e.a.d: java.lang.Object b>;
+        $r15 = (org.e.a.f) $r2;
+        $i2 = $r12.<org.e.a.d: int c>;
+        interfaceinvoke $r15.<org.e.a.f: void a(int,java.lang.Object)>($i2, $r10);
+
+     label8:
+        $r12 = $r12.<org.e.a.d: org.e.a.d a>;
+        if $r12 != null goto label20;
+
+     label9:
+        $r9 = $r0.<org.e.a.l: java.util.Hashtable m>;
+        virtualinvoke $r9.<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r10);
+
+     label10:
+        goto label3;
+
+     label11:
+        $r14 = $r0.<org.e.a.l: java.lang.String i>;
+        $r14 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r14, "type");
+        if $r14 == null goto label16;
+
+        $i0 = virtualinvoke $r14.<java.lang.String: int indexOf(int)>(58);
+        $i3 = $i0 + 1;
+        $r4 = virtualinvoke $r14.<java.lang.String: java.lang.String substring(int)>($i3);
+        if $i0 != -1 goto label15;
+
+        $r13 = "";
+
+     label12:
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace(java.lang.String)>($r13);
+
+     label13:
+        if $r14 != null goto label14;
+
+        $r0.<org.e.a.l: boolean o> = 1;
+
+     label14:
+        $r10 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r3, $r4, $r5);
+        if $r10 != null goto label6;
+
+        $r10 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.String,java.lang.String)>($r1, $r3, $r4);
+        goto label6;
+
+     label15:
+        $r13 = virtualinvoke $r14.<java.lang.String: java.lang.String substring(int,int)>(0, $i0);
+        goto label12;
+
+     label16:
+        if $r4 != null goto label13;
+
+        if $r3 != null goto label13;
+
+        $r13 = $r0.<org.e.a.l: java.lang.String h>;
+        $r13 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r13, "arrayType");
+        if $r13 == null goto label17;
+
+        $r3 = $r0.<org.e.a.l: java.lang.String h>;
+        $r4 = "Array";
+        goto label13;
+
+     label17:
+        $r10 = $r5.<org.e.a.i: java.lang.Object l>;
+        $r16 = virtualinvoke $r0.<org.e.a.l: java.lang.Object[] a(java.lang.Object,java.lang.Object)>($r10, null);
+        $r10 = $r16[0];
+        $r13 = (java.lang.String) $r10;
+        $i3 = (int) 1;
+        $r10 = $r16[$i3];
+        $r4 = (java.lang.String) $r10;
+        $r3 = $r13;
+        goto label13;
+
+     label18:
+        $r2 = $r12.<org.e.a.d: java.lang.Object b>;
+        $r17 = (java.util.Vector) $r2;
+        $i3 = $r12.<org.e.a.d: int c>;
+        virtualinvoke $r17.<java.util.Vector: void setElementAt(java.lang.Object,int)>($r10, $i3);
+        goto label8;
+
+     label19:
+        if $r2 == null goto label9;
+
+        $r8 = new java.lang.RuntimeException;
+        specialinvoke $r8.<java.lang.RuntimeException: void <init>(java.lang.String)>("double ID");
+        throw $r8;
+
+     label20:
+        goto label7;
+    }
+
+    protected java.lang.Object a(org.xmlpull.v1.XmlPullParser, java.lang.String, java.lang.String)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.String $r2, $r3, $r4, $r7, $r8;
+        int $i0, $i1, $i2;
+        org.e.a.b $r9, r18;
+        java.lang.Object $r10;
+        org.e.a.a $r11;
+        org.e.a.j $r13, r21;
+        org.e.a.i $r14;
+        java.util.Vector r17;
+        org.e.a.k r19;
+        java.lang.RuntimeException r20;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $i1 = 0;
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $r8 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace()>();
+        r17 = new java.util.Vector;
+        specialinvoke r17.<java.util.Vector: void <init>()>();
+        $i0 = 0;
+
+     label0:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getAttributeCount()>();
+        if $i0 >= $i2 goto label1;
+
+        r18 = new org.e.a.b;
+        specialinvoke r18.<org.e.a.b: void <init>()>();
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeName(int)>($i0);
+        virtualinvoke r18.<org.e.a.b: void a(java.lang.String)>($r4);
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(int)>($i0);
+        virtualinvoke r18.<org.e.a.b: void b(java.lang.Object)>($r4);
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeNamespace(int)>($i0);
+        virtualinvoke r18.<org.e.a.b: void b(java.lang.String)>($r4);
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeType(int)>($i0);
+        virtualinvoke r18.<org.e.a.b: void a(java.lang.Object)>($r4);
+        virtualinvoke r17.<java.util.Vector: void addElement(java.lang.Object)>(r18);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i2 != 4 goto label5;
+
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        r19 = new org.e.a.k;
+        specialinvoke r19.<org.e.a.k: void <init>(java.lang.String,java.lang.String,java.lang.Object)>($r2, $r3, $r4);
+        $i2 = 0;
+
+     label2:
+        $i0 = virtualinvoke r17.<java.util.Vector: int size()>();
+        if $i2 >= $i0 goto label3;
+
+        $r10 = virtualinvoke r17.<java.util.Vector: java.lang.Object elementAt(int)>($i2);
+        $r9 = (org.e.a.b) $r10;
+        virtualinvoke r19.<org.e.a.k: void a(org.e.a.b)>($r9);
+        $i2 = $i2 + 1;
+        goto label2;
+
+     label3:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+        $r11 = r19;
+
+     label4:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i2 != 2 goto label11;
+
+        if $r4 == null goto label8;
+
+        $r4 = virtualinvoke $r4.<java.lang.String: java.lang.String trim()>();
+        $i2 = virtualinvoke $r4.<java.lang.String: int length()>();
+        if $i2 == 0 goto label8;
+
+        r20 = new java.lang.RuntimeException;
+        specialinvoke r20.<java.lang.RuntimeException: void <init>(java.lang.String)>("Malformed input: Mixed content");
+        throw r20;
+
+     label5:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i2 != 3 goto label12;
+
+        r21 = new org.e.a.j;
+        $r13 = r21;
+        specialinvoke r21.<org.e.a.j: void <init>(java.lang.String,java.lang.String)>($r2, $r3);
+        $i2 = 0;
+
+     label6:
+        $i0 = virtualinvoke r17.<java.util.Vector: int size()>();
+        if $i2 >= $i0 goto label7;
+
+        $r10 = virtualinvoke r17.<java.util.Vector: java.lang.Object elementAt(int)>($i2);
+        $r9 = (org.e.a.b) $r10;
+        virtualinvoke $r13.<org.e.a.j: void a(org.e.a.b)>($r9);
+        $i2 = $i2 + 1;
+        goto label6;
+
+     label7:
+        $r4 = null;
+        $r11 = $r13;
+        goto label4;
+
+     label8:
+        r21 = new org.e.a.j;
+        $r11 = r21;
+        specialinvoke r21.<org.e.a.j: void <init>(java.lang.String,java.lang.String)>($r2, $r3);
+
+     label9:
+        $i2 = virtualinvoke r17.<java.util.Vector: int size()>();
+        if $i1 >= $i2 goto label10;
+
+        $r10 = virtualinvoke r17.<java.util.Vector: java.lang.Object elementAt(int)>($i1);
+        $r9 = (org.e.a.b) $r10;
+        r21 = (org.e.a.j) $r11;
+        virtualinvoke r21.<org.e.a.j: void a(org.e.a.b)>($r9);
+        $i1 = $i1 + 1;
+        goto label9;
+
+     label10:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i2 == 3 goto label11;
+
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        r21 = (org.e.a.j) $r11;
+        $i2 = virtualinvoke r21.<org.e.a.j: int c()>();
+        $r14 = <org.e.a.i: org.e.a.i g>;
+        $r10 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r11, $i2, null, null, $r14);
+        r21 = (org.e.a.j) $r11;
+        virtualinvoke r21.<org.e.a.j: org.e.a.j c(java.lang.String,java.lang.Object)>($r4, $r10);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        goto label10;
+
+     label11:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, $r8, $r7);
+        return $r11;
+
+     label12:
+        $r4 = null;
+        $r11 = null;
+        goto label4;
+    }
+
+    public java.lang.Object a(org.xmlpull.v1.XmlPullParser, java.lang.String, java.lang.String, org.e.a.i)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.String $r2, $r3, $r12;
+        org.e.a.i $r4;
+        java.util.Hashtable $r5;
+        java.lang.Object $r6, $r10;
+        boolean $z0;
+        org.e.a.g $r8;
+        org.e.a.j $r9;
+        java.lang.Class $r11;
+        java.lang.Exception $r13;
+        org.e.a.f $r15;
+        java.util.Vector $r16;
+        java.lang.StringBuffer $r17, r20;
+        org.e.a.k r18;
+        java.lang.RuntimeException r19;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: org.e.a.i;
+        $r5 = $r0.<org.e.a.l: java.util.Hashtable s>;
+        r18 = new org.e.a.k;
+        specialinvoke r18.<org.e.a.k: void <init>(java.lang.String,java.lang.String,java.lang.Object)>($r2, $r3, null);
+        $r6 = virtualinvoke $r5.<java.util.Hashtable: java.lang.Object get(java.lang.Object)>(r18);
+        if $r6 != null goto label0;
+
+        return null;
+
+     label0:
+        $z0 = $r6 instanceof org.e.a.g;
+        if $z0 == 0 goto label1;
+
+        $r8 = (org.e.a.g) $r6;
+        $r6 = interfaceinvoke $r8.<org.e.a.g: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r2, $r3, $r4);
+        return $r6;
+
+     label1:
+        $z0 = $r6 instanceof org.e.a.j;
+        if $z0 == 0 goto label3;
+
+        $r9 = (org.e.a.j) $r6;
+        $r6 = virtualinvoke $r9.<org.e.a.j: org.e.a.j e()>();
+
+     label2:
+        $z0 = $r6 instanceof org.e.a.j;
+        if $z0 == 0 goto label9;
+
+        $r9 = (org.e.a.j) $r6;
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlPullParser,org.e.a.j)>($r1, $r9);
+        return $r6;
+
+     label3:
+        $r11 = <org.e.a.l: java.lang.Class v>;
+        if $r11 != null goto label5;
+
+        $r11 = staticinvoke <org.e.a.l: java.lang.Class b(java.lang.String)>("org.e.a.j");
+        <org.e.a.l: java.lang.Class v> = $r11;
+
+     label4:
+        if $r6 != $r11 goto label6;
+
+        $r9 = new org.e.a.j;
+        $r6 = $r9;
+        specialinvoke $r9.<org.e.a.j: void <init>(java.lang.String,java.lang.String)>($r2, $r3);
+        goto label2;
+
+     label5:
+        $r11 = <org.e.a.l: java.lang.Class v>;
+        goto label4;
+
+     label6:
+        $r11 = (java.lang.Class) $r6;
+        $r10 = virtualinvoke $r11.<java.lang.Class: java.lang.Object newInstance()>();
+
+     label7:
+        $r6 = $r10;
+        goto label2;
+
+     label8:
+        $r13 := @caughtexception;
+        r19 = new java.lang.RuntimeException;
+        $r12 = virtualinvoke $r13.<java.lang.Exception: java.lang.String toString()>();
+        specialinvoke r19.<java.lang.RuntimeException: void <init>(java.lang.String)>($r12);
+        throw r19;
+
+     label9:
+        $z0 = $r6 instanceof org.e.a.f;
+        if $z0 == 0 goto label10;
+
+        $r15 = (org.e.a.f) $r6;
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlPullParser,org.e.a.f)>($r1, $r15);
+        return $r6;
+
+     label10:
+        $z0 = $r6 instanceof java.util.Vector;
+        if $z0 == 0 goto label11;
+
+        $r16 = (java.util.Vector) $r6;
+        $r4 = $r4.<org.e.a.i: org.e.a.i n>;
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlPullParser,java.util.Vector,org.e.a.i)>($r1, $r16, $r4);
+        return $r6;
+
+     label11:
+        r19 = new java.lang.RuntimeException;
+        r20 = new java.lang.StringBuffer;
+        specialinvoke r20.<java.lang.StringBuffer: void <init>()>();
+        $r17 = virtualinvoke r20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("no deserializer for ");
+        $r11 = virtualinvoke $r6.<java.lang.Object: java.lang.Class getClass()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>($r11);
+        $r12 = virtualinvoke $r17.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke r19.<java.lang.RuntimeException: void <init>(java.lang.String)>($r12);
+        throw r19;
+
+        catch java.lang.Exception from label6 to label7 with label8;
+    }
+
+    public void a(java.lang.String, java.lang.String, java.lang.Class)
+    {
+        org.e.a.l $r0;
+        java.lang.String $r1, $r2;
+        java.lang.Class $r3;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.Class;
+        virtualinvoke $r0.<org.e.a.l: void a(java.lang.String,java.lang.String,java.lang.Class,org.e.a.g)>($r1, $r2, $r3, null);
+        return;
+    }
+
+    public void a(java.lang.String, java.lang.String, java.lang.Class, org.e.a.g)
+    {
+        org.e.a.l $r0;
+        java.lang.String $r1, $r2, $r8;
+        java.lang.Class $r3;
+        org.e.a.g $r4;
+        java.lang.Object $r5;
+        java.util.Hashtable $r6;
+        org.e.a.k $r7;
+        java.lang.Object[] $r9;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.Class;
+        $r4 := @parameter3: org.e.a.g;
+        $r6 = $r0.<org.e.a.l: java.util.Hashtable s>;
+        $r7 = new org.e.a.k;
+        specialinvoke $r7.<org.e.a.k: void <init>(java.lang.String,java.lang.String,java.lang.Object)>($r1, $r2, null);
+        if $r4 != null goto label1;
+
+        $r5 = $r3;
+
+     label0:
+        virtualinvoke $r6.<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>($r7, $r5);
+        $r6 = $r0.<org.e.a.l: java.util.Hashtable t>;
+        $r8 = virtualinvoke $r3.<java.lang.Class: java.lang.String getName()>();
+        $r9 = newarray (java.lang.Object)[4];
+        $r9[0] = $r1;
+        $r9[1] = $r2;
+        $r9[2] = null;
+        $r9[3] = $r4;
+        virtualinvoke $r6.<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>($r8, $r9);
+        return;
+
+     label1:
+        $r5 = $r4;
+        goto label0;
+    }
+
+    protected void a(org.xmlpull.v1.XmlPullParser, java.util.Vector, org.e.a.i)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.util.Vector $r2;
+        org.e.a.i $r3;
+        int $i0, $i6, $i7;
+        java.lang.String $r4, $r5, $r6, $r7;
+        byte $b2;
+        java.lang.Object $r11;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.util.Vector;
+        $r3 := @parameter2: org.e.a.i;
+        $i0 = virtualinvoke $r2.<java.util.Vector: int size()>();
+        $r4 = $r0.<org.e.a.l: java.lang.String h>;
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r4, "arrayType");
+        if $r4 == null goto label9;
+
+        $i6 = virtualinvoke $r4.<java.lang.String: int indexOf(int)>(58);
+        $i7 = virtualinvoke $r4.<java.lang.String: int indexOf(java.lang.String,int)>("[", $i6);
+        $i0 = $i6 + 1;
+        $r5 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int,int)>($i0, $i7);
+        if $i6 != -1 goto label5;
+
+        $r6 = "";
+
+     label0:
+        $r6 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace(java.lang.String)>($r6);
+        $i7 = specialinvoke $r0.<org.e.a.l: int a(java.lang.String,int,int)>($r4, $i7, -1);
+        if $i7 == -1 goto label8;
+
+        virtualinvoke $r2.<java.util.Vector: void setSize(int)>($i7);
+        $b2 = 0;
+
+     label1:
+        if $r3 != null goto label7;
+
+        $r3 = <org.e.a.i: org.e.a.i g>;
+
+     label2:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        $r4 = $r0.<org.e.a.l: java.lang.String h>;
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r4, "offset");
+        $i6 = specialinvoke $r0.<org.e.a.l: int a(java.lang.String,int,int)>($r7, 0, 0);
+
+     label3:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i0 == 3 goto label6;
+
+        $r7 = $r0.<org.e.a.l: java.lang.String h>;
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r7, "position");
+        $i6 = specialinvoke $r0.<org.e.a.l: int a(java.lang.String,int,int)>($r7, 0, $i6);
+        if $b2 == 0 goto label4;
+
+        if $i6 < $i7 goto label4;
+
+        $i7 = $i6 + 1;
+        virtualinvoke $r2.<java.util.Vector: void setSize(int)>($i7);
+
+     label4:
+        $r11 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r2, $i6, $r6, $r5, $r3);
+        virtualinvoke $r2.<java.util.Vector: void setElementAt(java.lang.Object,int)>($r11, $i6);
+        $i6 = $i6 + 1;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        goto label3;
+
+     label5:
+        $r6 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int,int)>(0, $i6);
+        goto label0;
+
+     label6:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, null, null);
+        return;
+
+     label7:
+        goto label2;
+
+     label8:
+        $b2 = 1;
+        goto label1;
+
+     label9:
+        $b2 = 1;
+        $r5 = null;
+        $r6 = null;
+        $i7 = $i0;
+        goto label1;
+    }
+
+    protected void a(org.xmlpull.v1.XmlPullParser, org.e.a.f)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        org.e.a.f $r2;
+        int $i0, $i2;
+        java.lang.String $r3, $r5, $r7;
+        org.e.a.i $r4;
+        boolean $z0, $z1;
+        java.util.Hashtable $r6;
+        java.lang.Object $r11;
+        java.lang.RuntimeException $r12;
+        java.lang.StringBuffer $r13;
+        org.e.a.j $r14, $r15;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: org.e.a.f;
+
+     label0:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        if $i0 == 3 goto label10;
+
+        $r5 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = $r0.<org.e.a.l: boolean o>;
+        if $z0 == 0 goto label1;
+
+        $z0 = $r2 instanceof org.e.a.j;
+        if $z0 != 0 goto label9;
+
+     label1:
+        $r4 = new org.e.a.i;
+        specialinvoke $r4.<org.e.a.i: void <init>()>();
+        $i2 = interfaceinvoke $r2.<org.e.a.f: int c()>();
+        $z0 = 0;
+        $i0 = 0;
+
+     label2:
+        if $i0 >= $i2 goto label6;
+
+        if $z0 != 0 goto label6;
+
+        virtualinvoke $r4.<org.e.a.i: void a()>();
+        $r6 = $r0.<org.e.a.l: java.util.Hashtable l>;
+        interfaceinvoke $r2.<org.e.a.f: void a(int,java.util.Hashtable,org.e.a.i)>($i0, $r6, $r4);
+        $r3 = $r4.<org.e.a.i: java.lang.String h>;
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label3;
+
+        $r3 = $r4.<org.e.a.i: java.lang.String i>;
+        if $r3 == null goto label4;
+
+     label3:
+        $r3 = $r4.<org.e.a.i: java.lang.String h>;
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label5;
+
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace()>();
+        $r3 = $r4.<org.e.a.i: java.lang.String i>;
+        $z1 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z1 == 0 goto label5;
+
+     label4:
+        $r11 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r2, $i0, null, null, $r4);
+        interfaceinvoke $r2.<org.e.a.f: void a(int,java.lang.Object)>($i0, $r11);
+        $z0 = 1;
+
+     label5:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label6:
+        if $z0 != 0 goto label0;
+
+        $z1 = $r0.<org.e.a.l: boolean r>;
+        if $z1 == 0 goto label8;
+
+     label7:
+        $i2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int next()>();
+        if $i2 != 3 goto label7;
+
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z1 != 0 goto label0;
+
+        goto label7;
+
+     label8:
+        $r12 = new java.lang.RuntimeException;
+        $r13 = new java.lang.StringBuffer;
+        specialinvoke $r13.<java.lang.StringBuffer: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Unknown Property: ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r5);
+        $r7 = virtualinvoke $r13.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r12.<java.lang.RuntimeException: void <init>(java.lang.String)>($r7);
+        throw $r12;
+
+     label9:
+        $r14 = (org.e.a.j) $r2;
+        $r7 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $i2 = interfaceinvoke $r2.<org.e.a.f: int c()>();
+        $r15 = (org.e.a.j) $r2;
+        $r3 = virtualinvoke $r15.<org.e.a.j: java.lang.String d()>();
+        $r4 = <org.e.a.i: org.e.a.i g>;
+        $r11 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.e.a.i)>($r1, $r2, $i2, $r3, $r5, $r4);
+        virtualinvoke $r14.<org.e.a.j: org.e.a.j c(java.lang.String,java.lang.Object)>($r7, $r11);
+        goto label0;
+
+     label10:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: void require(int,java.lang.String,java.lang.String)>(3, null, null);
+        return;
+    }
+
+    protected void a(org.xmlpull.v1.XmlPullParser, org.e.a.j)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        org.e.a.j $r2;
+        int $i0, $i1;
+        java.lang.String $r3, $r4;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: org.e.a.j;
+        $i0 = 0;
+
+     label0:
+        $i1 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getAttributeCount()>();
+        if $i0 >= $i1 goto label1;
+
+        $r4 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeName(int)>($i0);
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(int)>($i0);
+        virtualinvoke $r2.<org.e.a.j: void a(java.lang.String,java.lang.Object)>($r4, $r3);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlPullParser,org.e.a.f)>($r1, $r2);
+        return;
+    }
+
+    protected void a(org.xmlpull.v1.XmlSerializer, java.lang.Object, org.e.a.i)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.lang.Object $r2, $r4;
+        org.e.a.i $r3;
+        java.lang.String $r5, $r7, $r8;
+        java.lang.Object[] $r6;
+        int $i1;
+        boolean $z1;
+        java.util.Vector $r9;
+        java.lang.StringBuffer $r10;
+        java.lang.Class $r11;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 := @parameter2: org.e.a.i;
+        if $r2 == null goto label0;
+
+        $r4 = <org.e.a.k: java.lang.Object f>;
+        if $r2 != $r4 goto label4;
+
+     label0:
+        $r5 = $r0.<org.e.a.l: java.lang.String i>;
+        $i1 = $r0.<org.e.a.l: int f>;
+        if $i1 < 120 goto label3;
+
+        $r7 = "nil";
+
+     label1:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r5, $r7, "true");
+
+     label2:
+        return;
+
+     label3:
+        $r7 = "null";
+        goto label1;
+
+     label4:
+        $r6 = virtualinvoke $r0.<org.e.a.l: java.lang.Object[] a(java.lang.Object,java.lang.Object)>(null, $r2);
+        $z1 = $r3.<org.e.a.i: boolean m>;
+        if $z1 != 0 goto label5;
+
+        $r4 = $r6[2];
+        if $r4 == null goto label9;
+
+     label5:
+        $r9 = $r0.<org.e.a.l: java.util.Vector n>;
+        $i1 = virtualinvoke $r9.<java.util.Vector: int indexOf(java.lang.Object)>($r2);
+        if $i1 != -1 goto label6;
+
+        $r9 = $r0.<org.e.a.l: java.util.Vector n>;
+        $i1 = virtualinvoke $r9.<java.util.Vector: int size()>();
+        $r9 = $r0.<org.e.a.l: java.util.Vector n>;
+        virtualinvoke $r9.<java.util.Vector: void addElement(java.lang.Object)>($r2);
+
+     label6:
+        $r4 = $r6[2];
+        if $r4 != null goto label8;
+
+        $r10 = new java.lang.StringBuffer;
+        specialinvoke $r10.<java.lang.StringBuffer: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("#o");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i1);
+        $r7 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.String toString()>();
+
+     label7:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "href", $r7);
+        goto label2;
+
+     label8:
+        $r10 = new java.lang.StringBuffer;
+        specialinvoke $r10.<java.lang.StringBuffer: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("#");
+        $r4 = $r6[2];
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>($r4);
+        $r7 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.String toString()>();
+        goto label7;
+
+     label9:
+        $z1 = $r0.<org.e.a.l: boolean o>;
+        if $z1 == 0 goto label10;
+
+        $r11 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        $r4 = $r3.<org.e.a.i: java.lang.Object l>;
+        if $r11 == $r4 goto label11;
+
+     label10:
+        $r4 = $r6[0];
+        $r8 = (java.lang.String) $r4;
+        $r8 = interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: java.lang.String getPrefix(java.lang.String,boolean)>($r8, 1);
+        $r7 = $r0.<org.e.a.l: java.lang.String i>;
+        $r10 = new java.lang.StringBuffer;
+        specialinvoke $r10.<java.lang.StringBuffer: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r8);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(":");
+        $i1 = (int) 1;
+        $r4 = $r6[$i1];
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>($r4);
+        $r8 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.String toString()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r7, "type", $r8);
+
+     label11:
+        $r4 = $r6[3];
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.e.a.i,java.lang.Object)>($r1, $r2, $r3, $r4);
+        goto label2;
+    }
+
+    protected void a(org.xmlpull.v1.XmlSerializer, java.lang.Object, org.e.a.i, java.lang.Object)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.lang.Object $r2, $r4;
+        org.e.a.i $r3;
+        boolean $z0;
+        java.lang.StringBuffer $r5;
+        java.lang.String $r6;
+        org.e.a.g $r7;
+        org.e.a.f $r8;
+        java.util.Vector $r9;
+        java.lang.RuntimeException $r10;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 := @parameter2: org.e.a.i;
+        $r4 := @parameter3: java.lang.Object;
+        if $r4 == null goto label1;
+
+        $r7 = (org.e.a.g) $r4;
+        interfaceinvoke $r7.<org.e.a.g: void a(org.xmlpull.v1.XmlSerializer,java.lang.Object)>($r1, $r2);
+
+     label0:
+        return;
+
+     label1:
+        $z0 = $r2 instanceof org.e.a.f;
+        if $z0 != 0 goto label2;
+
+        $r4 = <org.e.a.k: java.lang.Object f>;
+        if $r2 == $r4 goto label2;
+
+        $r4 = <org.e.a.k: java.lang.Object e>;
+        if $r2 != $r4 goto label3;
+
+     label2:
+        $r8 = (org.e.a.f) $r2;
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,org.e.a.f)>($r1, $r8);
+        goto label0;
+
+     label3:
+        $z0 = $r2 instanceof java.util.Vector;
+        if $z0 == 0 goto label4;
+
+        $r9 = (java.util.Vector) $r2;
+        $r3 = $r3.<org.e.a.i: org.e.a.i n>;
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,java.util.Vector,org.e.a.i)>($r1, $r9, $r3);
+        goto label0;
+
+     label4:
+        $r10 = new java.lang.RuntimeException;
+        $r5 = new java.lang.StringBuffer;
+        specialinvoke $r5.<java.lang.StringBuffer: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Cannot serialize: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>($r2);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r10.<java.lang.RuntimeException: void <init>(java.lang.String)>($r6);
+        throw $r10;
+    }
+
+    protected void a(org.xmlpull.v1.XmlSerializer, java.util.Vector, org.e.a.i)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.util.Vector $r2;
+        org.e.a.i $r3;
+        java.lang.String $r4, $r6, $r9, $r11;
+        java.lang.Object $r5;
+        int $i1, $i2, i3;
+        java.lang.StringBuffer $r8;
+        java.lang.Object[] $r10;
+        boolean $z1;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: java.util.Vector;
+        $r3 := @parameter2: org.e.a.i;
+        if $r3 != null goto label4;
+
+        $r3 = <org.e.a.i: org.e.a.i g>;
+        $r4 = "item";
+        $r9 = null;
+
+     label0:
+        $i1 = virtualinvoke $r2.<java.util.Vector: int size()>();
+        $r5 = $r3.<org.e.a.i: java.lang.Object l>;
+        $r10 = virtualinvoke $r0.<org.e.a.l: java.lang.Object[] a(java.lang.Object,java.lang.Object)>($r5, null);
+        $z1 = $r0.<org.e.a.l: boolean o>;
+        if $z1 != 0 goto label5;
+
+        $r6 = $r0.<org.e.a.l: java.lang.String h>;
+        $r8 = new java.lang.StringBuffer;
+        specialinvoke $r8.<java.lang.StringBuffer: void <init>()>();
+        $i2 = (int) 0;
+        $r5 = $r10[$i2];
+        $r11 = (java.lang.String) $r5;
+        $r11 = interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: java.lang.String getPrefix(java.lang.String,boolean)>($r11, 0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(":");
+        $r5 = $r10[1];
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>($r5);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("]");
+        $r11 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.String toString()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r6, "arrayType", $r11);
+
+     label1:
+        $i2 = (int) 0;
+        $z1 = 0;
+
+     label2:
+        if $i2 >= $i1 goto label8;
+
+        $r5 = virtualinvoke $r2.<java.util.Vector: java.lang.Object elementAt(int)>($i2);
+        if $r5 != null goto label6;
+
+        $z1 = (boolean) 1;
+
+     label3:
+        $i2 = $i2 + 1;
+        goto label2;
+
+     label4:
+        $z1 = $r3 instanceof org.e.a.i;
+        if $z1 == 0 goto label9;
+
+        $r11 = $r3.<org.e.a.i: java.lang.String h>;
+        if $r11 == null goto label9;
+
+        $r4 = $r3.<org.e.a.i: java.lang.String h>;
+        $r9 = $r3.<org.e.a.i: java.lang.String i>;
+        goto label0;
+
+     label5:
+        if $r9 != null goto label1;
+
+        i3 = (int) 0;
+        $r5 = $r10[i3];
+        $r9 = (java.lang.String) $r5;
+        goto label1;
+
+     label6:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>($r9, $r4);
+        if $z1 == 0 goto label7;
+
+        $r11 = $r0.<org.e.a.l: java.lang.String h>;
+        $r8 = new java.lang.StringBuffer;
+        specialinvoke $r8.<java.lang.StringBuffer: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i2);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("]");
+        $r6 = virtualinvoke $r8.<java.lang.StringBuffer: java.lang.String toString()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r11, "position", $r6);
+        $z1 = 0;
+
+     label7:
+        $r5 = virtualinvoke $r2.<java.util.Vector: java.lang.Object elementAt(int)>($i2);
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.e.a.i)>($r1, $r5, $r3);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>($r9, $r4);
+        goto label3;
+
+     label8:
+        return;
+
+     label9:
+        $r4 = "item";
+        $r9 = null;
+        goto label0;
+    }
+
+    public void a(org.xmlpull.v1.XmlSerializer, org.e.a.f)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        org.e.a.f $r2;
+        boolean $z0;
+        org.e.a.e $r4;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: org.e.a.f;
+        $z0 = $r2 instanceof org.e.a.e;
+        if $z0 == 0 goto label0;
+
+        $r4 = (org.e.a.e) $r2;
+        specialinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,org.e.a.e)>($r1, $r4);
+
+     label0:
+        virtualinvoke $r0.<org.e.a.l: void b(org.xmlpull.v1.XmlSerializer,org.e.a.f)>($r1, $r2);
+        return;
+    }
+
+    public java.lang.Object[] a(java.lang.Object, java.lang.Object)
+    {
+        org.e.a.l $r0;
+        java.lang.Object $r1, $r2;
+        boolean $z0;
+        java.lang.String $r3;
+        org.e.a.j $r4;
+        java.lang.Object[] $r5;
+        java.lang.Class $r6;
+        org.e.a.k $r7;
+        org.e.a.g $r8;
+        java.util.Hashtable $r9;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        if $r1 != null goto label6;
+
+        $z0 = $r2 instanceof org.e.a.j;
+        if $z0 != 0 goto label0;
+
+        $z0 = $r2 instanceof org.e.a.k;
+        if $z0 == 0 goto label2;
+
+     label0:
+        $z0 = $r2 instanceof org.e.a.j;
+        if $z0 == 0 goto label3;
+
+        $r4 = (org.e.a.j) $r2;
+        $r5 = newarray (java.lang.Object)[4];
+        $r3 = virtualinvoke $r4.<org.e.a.j: java.lang.String d()>();
+        $r5[0] = $r3;
+        $r3 = virtualinvoke $r4.<org.e.a.j: java.lang.String b()>();
+        $r5[1] = $r3;
+        $r5[2] = null;
+        $r5[3] = null;
+
+     label1:
+        return $r5;
+
+     label2:
+        $r2 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        goto label0;
+
+     label3:
+        $z0 = $r2 instanceof org.e.a.k;
+        if $z0 == 0 goto label4;
+
+        $r7 = (org.e.a.k) $r2;
+        $r5 = newarray (java.lang.Object)[4];
+        $r3 = virtualinvoke $r7.<org.e.a.k: java.lang.String b()>();
+        $r5[0] = $r3;
+        $r3 = virtualinvoke $r7.<org.e.a.k: java.lang.String c()>();
+        $r5[1] = $r3;
+        $r5[2] = null;
+        $r8 = <org.e.a.l: org.e.a.g k>;
+        $r5[3] = $r8;
+        return $r5;
+
+     label4:
+        $z0 = $r2 instanceof java.lang.Class;
+        if $z0 == 0 goto label5;
+
+        $r6 = <org.e.a.i: java.lang.Class a>;
+        if $r2 == $r6 goto label5;
+
+        $r9 = $r0.<org.e.a.l: java.util.Hashtable t>;
+        $r6 = (java.lang.Class) $r2;
+        $r3 = virtualinvoke $r6.<java.lang.Class: java.lang.String getName()>();
+        $r2 = virtualinvoke $r9.<java.util.Hashtable: java.lang.Object get(java.lang.Object)>($r3);
+        $r5 = (java.lang.Object[]) $r2;
+        $r5 = (java.lang.Object[]) $r5;
+        if $r5 != null goto label1;
+
+     label5:
+        $r5 = newarray (java.lang.Object)[4];
+        $r3 = $r0.<org.e.a.l: java.lang.String j>;
+        $r5[0] = $r3;
+        $r5[1] = "anyType";
+        $r5[2] = null;
+        $r5[3] = null;
+        return $r5;
+
+     label6:
+        $r2 = $r1;
+        goto label0;
+    }
+
+    public void b(org.xmlpull.v1.XmlSerializer, org.e.a.f)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        org.e.a.f $r2;
+        java.lang.Object $r3, $r11;
+        java.util.Hashtable $r4;
+        java.lang.String $r5, $r8, $r9, $r13, $r14, $r15;
+        int $i0, $i2, $i3;
+        org.e.a.i $r6;
+        java.lang.Object[] $r7;
+        java.lang.StringBuffer $r10;
+        boolean $z1;
+        org.e.a.j $r12;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: org.e.a.f;
+        $i2 = interfaceinvoke $r2.<org.e.a.f: int c()>();
+        $r6 = new org.e.a.i;
+        specialinvoke $r6.<org.e.a.i: void <init>()>();
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i2 goto label9;
+
+        $r3 = interfaceinvoke $r2.<org.e.a.f: java.lang.Object a(int)>($i0);
+        $r4 = $r0.<org.e.a.l: java.util.Hashtable l>;
+        interfaceinvoke $r2.<org.e.a.f: void a(int,java.util.Hashtable,org.e.a.i)>($i0, $r4, $r6);
+        $z1 = $r3 instanceof org.e.a.j;
+        if $z1 != 0 goto label3;
+
+        $i3 = $r6.<org.e.a.i: int j>;
+        $i3 = $i3 & 1;
+        if $i3 != 0 goto label2;
+
+        $r11 = interfaceinvoke $r2.<org.e.a.f: java.lang.Object a(int)>($i0);
+        if $r3 != null goto label1;
+
+        $z1 = $r0.<org.e.a.l: boolean p>;
+        if $z1 != 0 goto label2;
+
+     label1:
+        $r3 = <org.e.a.k: java.lang.Object e>;
+        if $r11 == $r3 goto label2;
+
+        $r9 = $r6.<org.e.a.i: java.lang.String i>;
+        $r5 = $r6.<org.e.a.i: java.lang.String h>;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>($r9, $r5);
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.e.a.i)>($r1, $r11, $r6);
+        $r9 = $r6.<org.e.a.i: java.lang.String i>;
+        $r8 = $r6.<org.e.a.i: java.lang.String h>;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>($r9, $r8);
+
+     label2:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        $r12 = (org.e.a.j) $r3;
+        $r7 = virtualinvoke $r0.<org.e.a.l: java.lang.Object[] a(java.lang.Object,java.lang.Object)>(null, $r12);
+        $r11 = $r7[0];
+        $r9 = (java.lang.String) $r11;
+        $i3 = (int) 1;
+        $r11 = $r7[$i3];
+        $r13 = (java.lang.String) $r11;
+        $r9 = $r6.<org.e.a.i: java.lang.String h>;
+        if $r9 == null goto label7;
+
+        $r9 = $r6.<org.e.a.i: java.lang.String h>;
+        $i3 = virtualinvoke $r9.<java.lang.String: int length()>();
+        if $i3 <= 0 goto label7;
+
+        $r5 = $r6.<org.e.a.i: java.lang.String h>;
+
+     label4:
+        $r9 = $r6.<org.e.a.i: java.lang.String i>;
+        if $r9 == null goto label8;
+
+        $r9 = $r6.<org.e.a.i: java.lang.String i>;
+        $i3 = virtualinvoke $r9.<java.lang.String: int length()>();
+        if $i3 <= 0 goto label8;
+
+        $r14 = $r6.<org.e.a.i: java.lang.String i>;
+
+     label5:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>($r14, $r5);
+        $z1 = $r0.<org.e.a.l: boolean o>;
+        if $z1 != 0 goto label6;
+
+        $r15 = interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: java.lang.String getPrefix(java.lang.String,boolean)>($r14, 1);
+        $r8 = $r0.<org.e.a.l: java.lang.String i>;
+        $r10 = new java.lang.StringBuffer;
+        specialinvoke $r10.<java.lang.StringBuffer: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r15);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(":");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r13);
+        $r15 = virtualinvoke $r10.<java.lang.StringBuffer: java.lang.String toString()>();
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r8, "type", $r15);
+
+     label6:
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,org.e.a.f)>($r1, $r12);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>($r14, $r5);
+        goto label2;
+
+     label7:
+        $i3 = (int) 1;
+        $r11 = $r7[$i3];
+        $r5 = (java.lang.String) $r11;
+        goto label4;
+
+     label8:
+        $r11 = $r7[0];
+        $r14 = (java.lang.String) $r11;
+        goto label5;
+
+     label9:
+        return;
+    }
+
+    public void c(org.xmlpull.v1.XmlPullParser)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        int $i0;
+        java.lang.String $r2, $r3, $r5;
+        org.e.a.i $r4;
+        boolean $z0;
+        org.e.c $r6, r11;
+        java.lang.Object $r9, $r10;
+        org.e.d r12;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r0.<org.e.a.l: java.lang.Object a> = null;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i0 != 2 goto label3;
+
+        $r5 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace()>();
+        $r2 = $r0.<org.e.a.l: java.lang.String g>;
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label3;
+
+        $r5 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("Fault");
+        if $z0 == 0 goto label3;
+
+        $i0 = $r0.<org.e.a.l: int f>;
+        if $i0 >= 120 goto label2;
+
+        r11 = new org.e.c;
+        $r6 = r11;
+        $i0 = $r0.<org.e.a.l: int f>;
+        specialinvoke r11.<org.e.c: void <init>(int)>($i0);
+
+     label0:
+        virtualinvoke $r6.<org.e.c: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        $r0.<org.e.a.l: java.lang.Object a> = $r6;
+
+     label1:
+        return;
+
+     label2:
+        r12 = new org.e.d;
+        $r6 = r12;
+        $i0 = $r0.<org.e.a.l: int f>;
+        specialinvoke r12.<org.e.d: void <init>(int)>($i0);
+        goto label0;
+
+     label3:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        if $i0 != 2 goto label1;
+
+        $r5 = $r0.<org.e.a.l: java.lang.String h>;
+        $r5 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r5, "root");
+        $r2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace()>();
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $r4 = <org.e.a.i: org.e.a.i g>;
+        $r9 = virtualinvoke $r0.<org.e.a.l: java.lang.Object a(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.e.a.i)>($r1, null, -1, $r2, $r3, $r4);
+        $r3 = "1";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 != 0 goto label4;
+
+        $r10 = $r0.<org.e.a.l: java.lang.Object a>;
+        if $r10 != null goto label5;
+
+     label4:
+        $r0.<org.e.a.l: java.lang.Object a> = $r9;
+
+     label5:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextTag()>();
+        goto label3;
+    }
+
+    public void c(org.xmlpull.v1.XmlSerializer)
+    {
+        org.e.a.l $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.lang.Object $r2, $r8;
+        java.lang.Object[] $r3;
+        java.util.Vector $r4;
+        boolean $z0;
+        java.lang.String $r5, $r6, $r7;
+
+        $r0 := @this: org.e.a.l;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 = $r0.<org.e.a.l: java.lang.Object b>;
+        if $r2 == null goto label5;
+
+        $r4 = new java.util.Vector;
+        specialinvoke $r4.<java.util.Vector: void <init>()>();
+        $r0.<org.e.a.l: java.util.Vector n> = $r4;
+        $r4 = $r0.<org.e.a.l: java.util.Vector n>;
+        $r2 = $r0.<org.e.a.l: java.lang.Object b>;
+        virtualinvoke $r4.<java.util.Vector: void addElement(java.lang.Object)>($r2);
+        $r2 = $r0.<org.e.a.l: java.lang.Object b>;
+        $r3 = virtualinvoke $r0.<org.e.a.l: java.lang.Object[] a(java.lang.Object,java.lang.Object)>(null, $r2);
+        $z0 = $r0.<org.e.a.l: boolean q>;
+        if $z0 == 0 goto label6;
+
+        $r5 = "";
+
+     label0:
+        $r2 = $r3[1];
+        $r6 = (java.lang.String) $r2;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String)>($r5, $r6);
+        $z0 = $r0.<org.e.a.l: boolean q>;
+        if $z0 == 0 goto label1;
+
+        $r2 = $r3[0];
+        $r5 = (java.lang.String) $r2;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "xmlns", $r5);
+
+     label1:
+        $z0 = $r0.<org.e.a.l: boolean u>;
+        if $z0 == 0 goto label3;
+
+        $r2 = $r3[2];
+        if $r2 != null goto label7;
+
+        $r5 = "o0";
+
+     label2:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>(null, "id", $r5);
+        $r6 = $r0.<org.e.a.l: java.lang.String h>;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String)>($r6, "root", "1");
+
+     label3:
+        $r2 = $r0.<org.e.a.l: java.lang.Object b>;
+        $r8 = $r3[3];
+        virtualinvoke $r0.<org.e.a.l: void a(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.e.a.i,java.lang.Object)>($r1, $r2, null, $r8);
+        $z0 = $r0.<org.e.a.l: boolean q>;
+        if $z0 == 0 goto label8;
+
+        $r7 = "";
+
+     label4:
+        $r8 = $r3[1];
+        $r6 = (java.lang.String) $r8;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String)>($r7, $r6);
+
+     label5:
+        return;
+
+     label6:
+        $r8 = $r3[0];
+        $r5 = (java.lang.String) $r8;
+        goto label0;
+
+     label7:
+        $r8 = $r3[2];
+        $r5 = (java.lang.String) $r8;
+        goto label2;
+
+     label8:
+        $r8 = $r3[0];
+        $r7 = (java.lang.String) $r8;
+        goto label4;
+    }
+}

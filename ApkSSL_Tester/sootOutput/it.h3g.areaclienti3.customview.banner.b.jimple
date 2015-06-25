@@ -1,0 +1,58 @@
+class it.h3g.areaclienti3.customview.banner.b extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.customview.banner.BannerSwipe a;
+
+    void <init>(it.h3g.areaclienti3.customview.banner.BannerSwipe)
+    {
+        it.h3g.areaclienti3.customview.banner.b $r0;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.b;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.banner.BannerSwipe;
+        $r0.<it.h3g.areaclienti3.customview.banner.b: it.h3g.areaclienti3.customview.banner.BannerSwipe a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.customview.banner.b $r0;
+        android.view.View $r1;
+        java.lang.Object $r2;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r3;
+        java.lang.Integer $r5;
+        int $i0;
+        java.util.ArrayList $r6;
+        it.h3g.areaclienti3.d.g $r7;
+        java.lang.String $r8;
+        android.content.Intent $r9;
+        android.net.Uri $r10;
+        android.content.Context $r11;
+        it.h3g.areaclienti3.customview.banner.d $r12;
+        java.lang.Object[] $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.b;
+        $r1 := @parameter0: android.view.View;
+        $r2 = virtualinvoke $r1.<android.view.View: java.lang.Object getTag()>();
+        $r5 = (java.lang.Integer) $r2;
+        $i0 = virtualinvoke $r5.<java.lang.Integer: int intValue()>();
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.b: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r3);
+        $r2 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r7 = (it.h3g.areaclienti3.d.g) $r2;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.g: java.lang.String c()>();
+        $r9 = new android.content.Intent;
+        $r10 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r8);
+        specialinvoke $r9.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r10);
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.b: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r11 = virtualinvoke $r3.<it.h3g.areaclienti3.customview.banner.BannerSwipe: android.content.Context getContext()>();
+        virtualinvoke $r11.<android.content.Context: void startActivity(android.content.Intent)>($r9);
+        $r12 = new it.h3g.areaclienti3.customview.banner.d;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.b: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        specialinvoke $r12.<it.h3g.areaclienti3.customview.banner.d: void <init>(it.h3g.areaclienti3.customview.banner.BannerSwipe,it.h3g.areaclienti3.customview.banner.d)>($r3, null);
+        $r13 = newarray (java.lang.Object)[1];
+        $r13[0] = "E";
+        virtualinvoke $r12.<it.h3g.areaclienti3.customview.banner.d: android.os.AsyncTask execute(java.lang.Object[])>($r13);
+        return;
+    }
+}

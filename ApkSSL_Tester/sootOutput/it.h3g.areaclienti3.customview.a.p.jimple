@@ -1,0 +1,123 @@
+final class it.h3g.areaclienti3.customview.a.p extends java.lang.Object implements java.lang.Runnable
+{
+    final it.h3g.areaclienti3.customview.a.f a;
+    private final android.view.animation.Interpolator b;
+    private final int c;
+    private final int d;
+    private final long e;
+    private it.h3g.areaclienti3.customview.a.n f;
+    private boolean g;
+    private long h;
+    private int i;
+
+    public void <init>(it.h3g.areaclienti3.customview.a.f, int, int, long, it.h3g.areaclienti3.customview.a.n)
+    {
+        it.h3g.areaclienti3.customview.a.p $r0;
+        it.h3g.areaclienti3.customview.a.f $r1;
+        int $i0, $i1;
+        long $l2;
+        it.h3g.areaclienti3.customview.a.n $r2;
+        android.view.animation.Interpolator $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a.p;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.a.f;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $l2 := @parameter3: long;
+        $r2 := @parameter4: it.h3g.areaclienti3.customview.a.n;
+        $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.f a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.customview.a.p: boolean g> = 1;
+        $r0.<it.h3g.areaclienti3.customview.a.p: long h> = -1L;
+        $r0.<it.h3g.areaclienti3.customview.a.p: int i> = -1;
+        $r0.<it.h3g.areaclienti3.customview.a.p: int d> = $i0;
+        $r0.<it.h3g.areaclienti3.customview.a.p: int c> = $i1;
+        $r3 = staticinvoke <it.h3g.areaclienti3.customview.a.f: android.view.animation.Interpolator a(it.h3g.areaclienti3.customview.a.f)>($r1);
+        $r0.<it.h3g.areaclienti3.customview.a.p: android.view.animation.Interpolator b> = $r3;
+        $r0.<it.h3g.areaclienti3.customview.a.p: long e> = $l2;
+        $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.n f> = $r2;
+        return;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.customview.a.p $r0;
+        it.h3g.areaclienti3.customview.a.f $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a.p;
+        $r0.<it.h3g.areaclienti3.customview.a.p: boolean g> = 0;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.f a>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.customview.a.f: boolean removeCallbacks(java.lang.Runnable)>($r0);
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.customview.a.p $r0;
+        long $l0, $l2, $l3;
+        int $i1, $i5;
+        byte $b4;
+        boolean $z0;
+        it.h3g.areaclienti3.customview.a.f $r1;
+        float $f0, $f1, $f2;
+        android.view.animation.Interpolator $r2;
+        it.h3g.areaclienti3.customview.a.n $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a.p;
+        $l0 = $r0.<it.h3g.areaclienti3.customview.a.p: long h>;
+        $b4 = $l0 cmp -1L;
+        if $b4 != 0 goto label2;
+
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<it.h3g.areaclienti3.customview.a.p: long h> = $l3;
+
+     label0:
+        $z0 = $r0.<it.h3g.areaclienti3.customview.a.p: boolean g>;
+        if $z0 == 0 goto label3;
+
+        $i5 = $r0.<it.h3g.areaclienti3.customview.a.p: int c>;
+        $i1 = $r0.<it.h3g.areaclienti3.customview.a.p: int i>;
+        if $i5 == $i1 goto label3;
+
+        $r1 = $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.f a>;
+        staticinvoke <it.h3g.areaclienti3.customview.a.t: void a(android.view.View,java.lang.Runnable)>($r1, $r0);
+
+     label1:
+        return;
+
+     label2:
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l0 = $r0.<it.h3g.areaclienti3.customview.a.p: long h>;
+        $l2 = $l2 - $l0;
+        $l2 = $l2 * 1000L;
+        $l0 = $r0.<it.h3g.areaclienti3.customview.a.p: long e>;
+        $l2 = $l2 / $l0;
+        $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l2, 1000L);
+        $l3 = staticinvoke <java.lang.Math: long max(long,long)>($l3, 0L);
+        $i5 = $r0.<it.h3g.areaclienti3.customview.a.p: int d>;
+        $i1 = $r0.<it.h3g.areaclienti3.customview.a.p: int c>;
+        $i5 = $i5 - $i1;
+        $f0 = (float) $i5;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.a.p: android.view.animation.Interpolator b>;
+        $f1 = (float) $l3;
+        $f2 = $f1 / 1000.0F;
+        $f2 = interfaceinvoke $r2.<android.view.animation.Interpolator: float getInterpolation(float)>($f2);
+        $f2 = $f2 * $f0;
+        $i5 = staticinvoke <java.lang.Math: int round(float)>($f2);
+        $i1 = $r0.<it.h3g.areaclienti3.customview.a.p: int d>;
+        $i5 = $i1 - $i5;
+        $r0.<it.h3g.areaclienti3.customview.a.p: int i> = $i5;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.f a>;
+        $i5 = $r0.<it.h3g.areaclienti3.customview.a.p: int i>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.customview.a.f: void setHeaderScroll(int)>($i5);
+        goto label0;
+
+     label3:
+        $r3 = $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.n f>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.customview.a.p: it.h3g.areaclienti3.customview.a.n f>;
+        interfaceinvoke $r3.<it.h3g.areaclienti3.customview.a.n: void a()>();
+        goto label1;
+    }
+}

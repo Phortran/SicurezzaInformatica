@@ -1,0 +1,143 @@
+public class com.google.android.gms.internal.gg extends java.lang.Object implements android.os.Parcelable$Creator
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.gg $r0;
+
+        $r0 := @this: com.google.android.gms.internal.gg;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static void a(com.google.android.gms.internal.dz$b, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.dz$b $r0;
+        android.os.Parcel $r1;
+        int $i0, $i1, $i3;
+        java.lang.String $r2;
+        com.google.android.gms.internal.dw$a $r3;
+
+        $r0 := @parameter0: com.google.android.gms.internal.dz$b;
+        $r1 := @parameter1: android.os.Parcel;
+        $i0 := @parameter2: int;
+        $i1 = staticinvoke <com.google.android.gms.common.internal.safeparcel.c: int a(android.os.Parcel)>($r1);
+        $i3 = $r0.<com.google.android.gms.internal.dz$b: int b>;
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,int)>($r1, 1, $i3);
+        $r2 = $r0.<com.google.android.gms.internal.dz$b: java.lang.String c>;
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,java.lang.String,boolean)>($r1, 2, $r2, 0);
+        $r3 = $r0.<com.google.android.gms.internal.dz$b: com.google.android.gms.internal.dw$a d>;
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,android.os.Parcelable,int,boolean)>($r1, 3, $r3, $i0, 0);
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int)>($r1, $i1);
+        return;
+    }
+
+    public com.google.android.gms.internal.dz$b a(android.os.Parcel)
+    {
+        com.google.android.gms.internal.gg $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.internal.dw$a $r2;
+        java.lang.Object $r3;
+        int $i0, $i1, $i2, $i3;
+        java.lang.String $r4;
+        com.google.android.gms.internal.gf $r5;
+        android.os.Parcelable $r6;
+        java.lang.StringBuilder $r8, r10;
+        com.google.android.gms.common.internal.safeparcel.b r11;
+        com.google.android.gms.internal.dz$b r12;
+
+        $r0 := @this: com.google.android.gms.internal.gg;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = null;
+        $i1 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int b(android.os.Parcel)>($r1);
+        $i0 = 0;
+        $r3 = null;
+
+     label0:
+        $i2 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i2 >= $i1 goto label5;
+
+        $i3 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(android.os.Parcel)>($r1);
+        $i2 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(int)>($i3);
+        lookupswitch($i2)
+        {
+            case 1: goto label2;
+            case 2: goto label3;
+            case 3: goto label4;
+            default: goto label1;
+        };
+
+     label1:
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.a: void b(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label2:
+        $i0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int f(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label3:
+        $r3 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: java.lang.String l(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label4:
+        $r5 = <com.google.android.gms.internal.dw$a: com.google.android.gms.internal.gf i>;
+        $r6 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: android.os.Parcelable a(android.os.Parcel,int,android.os.Parcelable$Creator)>($r1, $i3, $r5);
+        $r2 = (com.google.android.gms.internal.dw$a) $r6;
+        goto label0;
+
+     label5:
+        $i3 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i3 == $i1 goto label6;
+
+        r11 = new com.google.android.gms.common.internal.safeparcel.b;
+        r10 = new java.lang.StringBuilder;
+        specialinvoke r10.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Overread allowed size end=");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke r11.<com.google.android.gms.common.internal.safeparcel.b: void <init>(java.lang.String,android.os.Parcel)>($r4, $r1);
+        throw r11;
+
+     label6:
+        r12 = new com.google.android.gms.internal.dz$b;
+        $r4 = (java.lang.String) $r3;
+        specialinvoke r12.<com.google.android.gms.internal.dz$b: void <init>(int,java.lang.String,com.google.android.gms.internal.dw$a)>($i0, $r4, $r2);
+        return r12;
+    }
+
+    public com.google.android.gms.internal.dz$b[] a(int)
+    {
+        com.google.android.gms.internal.gg $r0;
+        int $i0;
+        com.google.android.gms.internal.dz$b[] $r1;
+
+        $r0 := @this: com.google.android.gms.internal.gg;
+        $i0 := @parameter0: int;
+        $r1 = newarray (com.google.android.gms.internal.dz$b)[$i0];
+        return $r1;
+    }
+
+    public java.lang.Object createFromParcel(android.os.Parcel)
+    {
+        com.google.android.gms.internal.gg $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.internal.dz$b $r2;
+
+        $r0 := @this: com.google.android.gms.internal.gg;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.internal.gg: com.google.android.gms.internal.dz$b a(android.os.Parcel)>($r1);
+        return $r2;
+    }
+
+    public java.lang.Object[] newArray(int)
+    {
+        com.google.android.gms.internal.gg $r0;
+        int $i0;
+        com.google.android.gms.internal.dz$b[] $r1;
+
+        $r0 := @this: com.google.android.gms.internal.gg;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.internal.gg: com.google.android.gms.internal.dz$b[] a(int)>($i0);
+        return $r1;
+    }
+}

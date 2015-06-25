@@ -1,0 +1,74 @@
+public final class com.google.android.gms.internal.av extends com.google.android.gms.internal.aw$a
+{
+    private java.util.Map a;
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.av $r0;
+
+        $r0 := @this: com.google.android.gms.internal.av;
+        specialinvoke $r0.<com.google.android.gms.internal.aw$a: void <init>()>();
+        return;
+    }
+
+    private com.google.android.gms.internal.ax b(java.lang.String)
+    {
+        com.google.android.gms.internal.av $r0;
+        java.lang.String $r1, $r10;
+        java.lang.Class $r2;
+        java.util.Map $r3;
+        java.lang.Object $r4;
+        com.google.a.a.b $r5;
+        com.google.a.a.j $r6;
+        com.google.android.gms.internal.az $r7;
+        java.lang.Throwable $r8;
+        java.lang.StringBuilder $r9;
+        android.os.RemoteException $r11;
+
+        $r0 := @this: com.google.android.gms.internal.av;
+        $r1 := @parameter0: java.lang.String;
+
+     label0:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r2.<java.lang.Class: java.lang.Object newInstance()>();
+        $r5 = (com.google.a.a.b) $r4;
+        $r3 = $r0.<com.google.android.gms.internal.av: java.util.Map a>;
+        $r2 = interfaceinvoke $r5.<com.google.a.a.b: java.lang.Class b()>();
+        $r4 = interfaceinvoke $r3.<java.util.Map: java.lang.Object get(java.lang.Object)>($r2);
+        $r6 = (com.google.a.a.j) $r4;
+        $r7 = new com.google.android.gms.internal.az;
+        specialinvoke $r7.<com.google.android.gms.internal.az: void <init>(com.google.a.a.b,com.google.a.a.j)>($r5, $r6);
+
+     label1:
+        return $r7;
+
+     label2:
+        $r8 := @caughtexception;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not instantiate mediation adapter: ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". ");
+        $r10 = virtualinvoke $r8.<java.lang.Throwable: java.lang.String getMessage()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r10);
+        $r11 = new android.os.RemoteException;
+        specialinvoke $r11.<android.os.RemoteException: void <init>()>();
+        throw $r11;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public com.google.android.gms.internal.ax a(java.lang.String)
+    {
+        com.google.android.gms.internal.av $r0;
+        java.lang.String $r1;
+        com.google.android.gms.internal.ax $r2;
+
+        $r0 := @this: com.google.android.gms.internal.av;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = specialinvoke $r0.<com.google.android.gms.internal.av: com.google.android.gms.internal.ax b(java.lang.String)>($r1);
+        return $r2;
+    }
+}

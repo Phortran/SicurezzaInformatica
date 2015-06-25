@@ -1,0 +1,60 @@
+public class com.google.android.gms.internal.gr extends java.lang.Object
+{
+
+    public static void a(java.lang.StringBuilder, java.util.HashMap)
+    {
+        java.lang.StringBuilder $r0, $r8;
+        java.util.HashMap $r1;
+        java.util.Set $r3;
+        java.util.Iterator $r4;
+        boolean $z0, $z1;
+        java.lang.Object $r5;
+        java.lang.String $r6, $r7;
+
+        $r0 := @parameter0: java.lang.StringBuilder;
+        $r1 := @parameter1: java.util.HashMap;
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{");
+        $r3 = virtualinvoke $r1.<java.util.HashMap: java.util.Set keySet()>();
+        $r4 = interfaceinvoke $r3.<java.util.Set: java.util.Iterator iterator()>();
+        $z0 = 1;
+
+     label0:
+        $z1 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label5;
+
+        $r5 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (java.lang.String) $r5;
+        if $z0 != 0 goto label3;
+
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $z1 = $z0;
+
+     label1:
+        $r5 = virtualinvoke $r1.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r6);
+        $r7 = (java.lang.String) $r5;
+        $r8 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\":");
+        if $r7 != null goto label4;
+
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null");
+
+     label2:
+        $z0 = $z1;
+        goto label0;
+
+     label3:
+        $z1 = 0;
+        goto label1;
+
+     label4:
+        $r8 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");
+        goto label2;
+
+     label5:
+        virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+        return;
+    }
+}

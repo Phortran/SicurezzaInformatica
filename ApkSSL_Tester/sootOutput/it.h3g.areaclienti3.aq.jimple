@@ -1,0 +1,36 @@
+class it.h3g.areaclienti3.aq extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.LoginDialogActivity a;
+
+    void <init>(it.h3g.areaclienti3.LoginDialogActivity)
+    {
+        it.h3g.areaclienti3.aq $r0;
+        it.h3g.areaclienti3.LoginDialogActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.aq;
+        $r1 := @parameter0: it.h3g.areaclienti3.LoginDialogActivity;
+        $r0.<it.h3g.areaclienti3.aq: it.h3g.areaclienti3.LoginDialogActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.aq $r0;
+        android.view.View $r1;
+        android.content.Intent $r2;
+        it.h3g.areaclienti3.LoginDialogActivity $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.aq;
+        $r1 := @parameter0: android.view.View;
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setClassName(java.lang.String,java.lang.String)>("it.h3g.areaclienti3", "it.h3g.areaclienti3.LoginActivity");
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("autoLogin", 1);
+        $r5 = $r0.<it.h3g.areaclienti3.aq: it.h3g.areaclienti3.LoginDialogActivity a>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.LoginDialogActivity: void startActivity(android.content.Intent)>($r2);
+        $r5 = $r0.<it.h3g.areaclienti3.aq: it.h3g.areaclienti3.LoginDialogActivity a>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.LoginDialogActivity: void i()>();
+        return;
+    }
+}

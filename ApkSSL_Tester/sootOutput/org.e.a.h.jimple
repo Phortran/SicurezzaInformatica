@@ -1,0 +1,75 @@
+public class org.e.a.h extends java.lang.Object implements org.e.a.g
+{
+    public static java.lang.Class b;
+
+    static void <clinit>()
+    {
+        java.util.Date $r0;
+        java.lang.Class $r1;
+
+        $r0 = new java.util.Date;
+        specialinvoke $r0.<java.util.Date: void <init>()>();
+        $r1 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        <org.e.a.h: java.lang.Class b> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        org.e.a.h $r0;
+
+        $r0 := @this: org.e.a.h;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public java.lang.Object a(org.xmlpull.v1.XmlPullParser, java.lang.String, java.lang.String, org.e.a.i)
+    {
+        org.e.a.h $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.String $r2, $r3;
+        org.e.a.i $r4;
+        java.util.Date $r5;
+
+        $r0 := @this: org.e.a.h;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: org.e.a.i;
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String nextText()>();
+        $r5 = staticinvoke <org.d.b.a: java.util.Date a(java.lang.String,int)>($r3, 3);
+        return $r5;
+    }
+
+    public void a(org.e.a.l)
+    {
+        org.e.a.h $r0;
+        org.e.a.l $r1;
+        java.lang.String $r2;
+        java.lang.Class $r4;
+
+        $r0 := @this: org.e.a.h;
+        $r1 := @parameter0: org.e.a.l;
+        $r2 = $r1.<org.e.a.l: java.lang.String j>;
+        $r4 = <org.e.a.h: java.lang.Class b>;
+        virtualinvoke $r1.<org.e.a.l: void a(java.lang.String,java.lang.String,java.lang.Class,org.e.a.g)>($r2, "dateTime", $r4, $r0);
+        return;
+    }
+
+    public void a(org.xmlpull.v1.XmlSerializer, java.lang.Object)
+    {
+        org.e.a.h $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.lang.Object $r2;
+        java.lang.String $r3;
+        java.util.Date $r4;
+
+        $r0 := @this: org.e.a.h;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: java.lang.Object;
+        $r4 = (java.util.Date) $r2;
+        $r3 = staticinvoke <org.d.b.a: java.lang.String a(java.util.Date,int)>($r4, 3);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer text(java.lang.String)>($r3);
+        return;
+    }
+}

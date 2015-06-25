@@ -1,0 +1,229 @@
+final class com.google.android.gms.internal.gj$a extends com.google.android.gms.internal.gi$a
+{
+    final com.google.android.gms.internal.gj a;
+    private final int b;
+
+    public void a(int, com.google.android.gms.wallet.FullWallet, android.os.Bundle)
+    {
+        com.google.android.gms.internal.gj$a $r0;
+        int $i0;
+        com.google.android.gms.wallet.FullWallet $r1;
+        android.os.Bundle $r2;
+        android.app.PendingIntent $r3;
+        com.google.android.gms.common.a $r4;
+        android.os.Parcelable $r5;
+        boolean $z0;
+        com.google.android.gms.internal.gj $r7;
+        android.app.Activity $r8;
+        android.content.IntentSender$SendIntentException $r9;
+        byte $b2;
+        android.content.Intent $r11;
+        android.app.PendingIntent$CanceledException $r12;
+
+        $r0 := @this: com.google.android.gms.internal.gj$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: com.google.android.gms.wallet.FullWallet;
+        $r2 := @parameter2: android.os.Bundle;
+        $r3 = null;
+        if $r2 == null goto label0;
+
+        $r5 = virtualinvoke $r2.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("com.google.android.gms.wallet.EXTRA_PENDING_INTENT");
+        $r3 = (android.app.PendingIntent) $r5;
+
+     label0:
+        $r4 = new com.google.android.gms.common.a;
+        specialinvoke $r4.<com.google.android.gms.common.a: void <init>(int,android.app.PendingIntent)>($i0, $r3);
+        $z0 = virtualinvoke $r4.<com.google.android.gms.common.a: boolean a()>();
+        if $z0 == 0 goto label4;
+
+        $r7 = $r0.<com.google.android.gms.internal.gj$a: com.google.android.gms.internal.gj a>;
+
+     label1:
+        $r8 = staticinvoke <com.google.android.gms.internal.gj: android.app.Activity a(com.google.android.gms.internal.gj)>($r7);
+        $i0 = $r0.<com.google.android.gms.internal.gj$a: int b>;
+        virtualinvoke $r4.<com.google.android.gms.common.a: void a(android.app.Activity,int)>($r8, $i0);
+
+     label2:
+        return;
+
+     label3:
+        $r9 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("WalletClientImpl", "Exception starting pending intent", $r9);
+        goto label2;
+
+     label4:
+        $z0 = virtualinvoke $r4.<com.google.android.gms.common.a: boolean b()>();
+        if $z0 == 0 goto label9;
+
+        $b2 = -1;
+        $r11 = new android.content.Intent;
+        specialinvoke $r11.<android.content.Intent: void <init>()>();
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("com.google.android.gms.wallet.EXTRA_FULL_WALLET", $r1);
+
+     label5:
+        $r7 = $r0.<com.google.android.gms.internal.gj$a: com.google.android.gms.internal.gj a>;
+
+     label6:
+        $r8 = staticinvoke <com.google.android.gms.internal.gj: android.app.Activity a(com.google.android.gms.internal.gj)>($r7);
+        $i0 = $r0.<com.google.android.gms.internal.gj$a: int b>;
+        $r3 = virtualinvoke $r8.<android.app.Activity: android.app.PendingIntent createPendingResult(int,android.content.Intent,int)>($i0, $r11, 1073741824);
+        virtualinvoke $r3.<android.app.PendingIntent: void send(int)>($b2);
+
+     label7:
+        goto label2;
+
+     label8:
+        $r12 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("WalletClientImpl", "Exception setting pending result", $r12);
+        goto label2;
+
+     label9:
+        if $i0 != 408 goto label11;
+
+        $b2 = 0;
+
+     label10:
+        $r11 = new android.content.Intent;
+        specialinvoke $r11.<android.content.Intent: void <init>()>();
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)>("com.google.android.gms.wallet.EXTRA_ERROR_CODE", $i0);
+        goto label5;
+
+     label11:
+        $b2 = 1;
+        goto label10;
+
+        catch android.content.IntentSender$SendIntentException from label1 to label2 with label3;
+        catch android.app.PendingIntent$CanceledException from label6 to label7 with label8;
+    }
+
+    public void a(int, com.google.android.gms.wallet.MaskedWallet, android.os.Bundle)
+    {
+        com.google.android.gms.internal.gj$a $r0;
+        int $i0;
+        com.google.android.gms.wallet.MaskedWallet $r1;
+        android.os.Bundle $r2;
+        android.app.PendingIntent $r3;
+        com.google.android.gms.common.a $r4;
+        android.os.Parcelable $r5;
+        boolean $z0;
+        com.google.android.gms.internal.gj $r7;
+        android.app.Activity $r8;
+        android.content.IntentSender$SendIntentException $r9;
+        byte $b2;
+        android.content.Intent $r11;
+        android.app.PendingIntent$CanceledException $r12;
+
+        $r0 := @this: com.google.android.gms.internal.gj$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: com.google.android.gms.wallet.MaskedWallet;
+        $r2 := @parameter2: android.os.Bundle;
+        $r3 = null;
+        if $r2 == null goto label0;
+
+        $r5 = virtualinvoke $r2.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("com.google.android.gms.wallet.EXTRA_PENDING_INTENT");
+        $r3 = (android.app.PendingIntent) $r5;
+
+     label0:
+        $r4 = new com.google.android.gms.common.a;
+        specialinvoke $r4.<com.google.android.gms.common.a: void <init>(int,android.app.PendingIntent)>($i0, $r3);
+        $z0 = virtualinvoke $r4.<com.google.android.gms.common.a: boolean a()>();
+        if $z0 == 0 goto label4;
+
+        $r7 = $r0.<com.google.android.gms.internal.gj$a: com.google.android.gms.internal.gj a>;
+
+     label1:
+        $r8 = staticinvoke <com.google.android.gms.internal.gj: android.app.Activity a(com.google.android.gms.internal.gj)>($r7);
+        $i0 = $r0.<com.google.android.gms.internal.gj$a: int b>;
+        virtualinvoke $r4.<com.google.android.gms.common.a: void a(android.app.Activity,int)>($r8, $i0);
+
+     label2:
+        return;
+
+     label3:
+        $r9 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("WalletClientImpl", "Exception starting pending intent", $r9);
+        goto label2;
+
+     label4:
+        $z0 = virtualinvoke $r4.<com.google.android.gms.common.a: boolean b()>();
+        if $z0 == 0 goto label9;
+
+        $b2 = -1;
+        $r11 = new android.content.Intent;
+        specialinvoke $r11.<android.content.Intent: void <init>()>();
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("com.google.android.gms.wallet.EXTRA_MASKED_WALLET", $r1);
+
+     label5:
+        $r7 = $r0.<com.google.android.gms.internal.gj$a: com.google.android.gms.internal.gj a>;
+
+     label6:
+        $r8 = staticinvoke <com.google.android.gms.internal.gj: android.app.Activity a(com.google.android.gms.internal.gj)>($r7);
+        $i0 = $r0.<com.google.android.gms.internal.gj$a: int b>;
+        $r3 = virtualinvoke $r8.<android.app.Activity: android.app.PendingIntent createPendingResult(int,android.content.Intent,int)>($i0, $r11, 1073741824);
+        virtualinvoke $r3.<android.app.PendingIntent: void send(int)>($b2);
+
+     label7:
+        goto label2;
+
+     label8:
+        $r12 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("WalletClientImpl", "Exception setting pending result", $r12);
+        goto label2;
+
+     label9:
+        if $i0 != 408 goto label11;
+
+        $b2 = 0;
+
+     label10:
+        $r11 = new android.content.Intent;
+        specialinvoke $r11.<android.content.Intent: void <init>()>();
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)>("com.google.android.gms.wallet.EXTRA_ERROR_CODE", $i0);
+        goto label5;
+
+     label11:
+        $b2 = 1;
+        goto label10;
+
+        catch android.content.IntentSender$SendIntentException from label1 to label2 with label3;
+        catch android.app.PendingIntent$CanceledException from label6 to label7 with label8;
+    }
+
+    public void a(int, boolean, android.os.Bundle)
+    {
+        com.google.android.gms.internal.gj$a $r0;
+        int $i0;
+        boolean $z0;
+        android.os.Bundle $r1;
+        android.content.Intent $r2;
+        android.app.Activity $r4;
+        com.google.android.gms.internal.gj $r5;
+        android.app.PendingIntent $r6;
+        android.app.PendingIntent$CanceledException $r7;
+
+        $r0 := @this: com.google.android.gms.internal.gj$a;
+        $i0 := @parameter0: int;
+        $z0 := @parameter1: boolean;
+        $r1 := @parameter2: android.os.Bundle;
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("com.google.android.gm.wallet.EXTRA_IS_USER_PREAUTHORIZED", $z0);
+        $r5 = $r0.<com.google.android.gms.internal.gj$a: com.google.android.gms.internal.gj a>;
+
+     label0:
+        $r4 = staticinvoke <com.google.android.gms.internal.gj: android.app.Activity a(com.google.android.gms.internal.gj)>($r5);
+        $i0 = $r0.<com.google.android.gms.internal.gj$a: int b>;
+        $r6 = virtualinvoke $r4.<android.app.Activity: android.app.PendingIntent createPendingResult(int,android.content.Intent,int)>($i0, $r2, 1073741824);
+        virtualinvoke $r6.<android.app.PendingIntent: void send(int)>(-1);
+
+     label1:
+        return;
+
+     label2:
+        $r7 := @caughtexception;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>("WalletClientImpl", "Exception setting pending result", $r7);
+        goto label1;
+
+        catch android.app.PendingIntent$CanceledException from label0 to label1 with label2;
+    }
+}

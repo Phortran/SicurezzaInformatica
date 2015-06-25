@@ -1,0 +1,112 @@
+public final class com.google.android.gms.internal.da extends com.google.android.gms.internal.cm
+{
+    private final java.lang.String a;
+    private final android.content.Context b;
+    private final java.lang.String c;
+
+    public void <init>(android.content.Context, java.lang.String, java.lang.String)
+    {
+        com.google.android.gms.internal.da $r0;
+        android.content.Context $r1;
+        java.lang.String $r2, $r3;
+
+        $r0 := @this: com.google.android.gms.internal.da;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        specialinvoke $r0.<com.google.android.gms.internal.cm: void <init>()>();
+        $r0.<com.google.android.gms.internal.da: android.content.Context b> = $r1;
+        $r0.<com.google.android.gms.internal.da: java.lang.String a> = $r2;
+        $r0.<com.google.android.gms.internal.da: java.lang.String c> = $r3;
+        return;
+    }
+
+    public void a()
+    {
+        com.google.android.gms.internal.da $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        java.net.URL $r3;
+        java.net.URLConnection $r4;
+        java.net.HttpURLConnection $r5;
+        android.content.Context $r6;
+        int $i0;
+        java.lang.Throwable $r7;
+        java.io.IOException $r8;
+
+        $r0 := @this: com.google.android.gms.internal.da;
+        $r1 = new java.lang.StringBuilder;
+
+     label0:
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Pinging URL: ");
+        $r2 = $r0.<com.google.android.gms.internal.da: java.lang.String c>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void d(java.lang.String)>($r2);
+        $r3 = new java.net.URL;
+        $r2 = $r0.<com.google.android.gms.internal.da: java.lang.String c>;
+        specialinvoke $r3.<java.net.URL: void <init>(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r3.<java.net.URL: java.net.URLConnection openConnection()>();
+
+     label1:
+        $r5 = (java.net.HttpURLConnection) $r4;
+
+     label2:
+        $r6 = $r0.<com.google.android.gms.internal.da: android.content.Context b>;
+        $r2 = $r0.<com.google.android.gms.internal.da: java.lang.String a>;
+        staticinvoke <com.google.android.gms.internal.cs: void a(android.content.Context,java.lang.String,boolean,java.net.HttpURLConnection)>($r6, $r2, 1, $r5);
+        $i0 = virtualinvoke $r5.<java.net.HttpURLConnection: int getResponseCode()>();
+        if $i0 < 200 goto label3;
+
+        if $i0 < 300 goto label4;
+
+     label3:
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Received non-success response code ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from pinging URL: ");
+        $r2 = $r0.<com.google.android.gms.internal.da: java.lang.String c>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+
+     label4:
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+
+     label5:
+        return;
+
+     label6:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<java.net.HttpURLConnection: void disconnect()>();
+        throw $r7;
+
+     label7:
+        $r8 := @caughtexception;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error while pinging URL: ");
+        $r2 = $r0.<com.google.android.gms.internal.da: java.lang.String c>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". ");
+        $r2 = virtualinvoke $r8.<java.io.IOException: java.lang.String getMessage()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r2);
+        goto label5;
+
+        catch java.io.IOException from label0 to label1 with label7;
+        catch java.lang.Throwable from label2 to label4 with label6;
+        catch java.io.IOException from label4 to label7 with label7;
+    }
+
+    public void b()
+    {
+        com.google.android.gms.internal.da $r0;
+
+        $r0 := @this: com.google.android.gms.internal.da;
+        return;
+    }
+}

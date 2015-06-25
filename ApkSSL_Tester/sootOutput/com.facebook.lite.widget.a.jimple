@@ -1,0 +1,36 @@
+final class com.facebook.lite.widget.a extends java.lang.Object implements android.view.Choreographer$FrameCallback
+{
+    final com.facebook.lite.widget.AbstractGLRendererView a;
+
+    void <init>(com.facebook.lite.widget.AbstractGLRendererView)
+    {
+        com.facebook.lite.widget.a $r0;
+        com.facebook.lite.widget.AbstractGLRendererView $r1;
+
+        $r0 := @this: com.facebook.lite.widget.a;
+        $r1 := @parameter0: com.facebook.lite.widget.AbstractGLRendererView;
+        $r0.<com.facebook.lite.widget.a: com.facebook.lite.widget.AbstractGLRendererView a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void doFrame(long)
+    {
+        com.facebook.lite.widget.a $r0;
+        long $l0, $l1;
+        com.facebook.lite.widget.AbstractGLRendererView $r1;
+        android.view.Choreographer $r2;
+        android.view.Choreographer$FrameCallback $r3;
+
+        $r0 := @this: com.facebook.lite.widget.a;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.lite.widget.a: com.facebook.lite.widget.AbstractGLRendererView a>;
+        $l1 = $l0 / 1000000L;
+        staticinvoke <com.facebook.lite.widget.AbstractGLRendererView: long a(com.facebook.lite.widget.AbstractGLRendererView,long)>($r1, $l1);
+        $r2 = staticinvoke <android.view.Choreographer: android.view.Choreographer getInstance()>();
+        $r1 = $r0.<com.facebook.lite.widget.a: com.facebook.lite.widget.AbstractGLRendererView a>;
+        $r3 = staticinvoke <com.facebook.lite.widget.AbstractGLRendererView: android.view.Choreographer$FrameCallback a(com.facebook.lite.widget.AbstractGLRendererView)>($r1);
+        virtualinvoke $r2.<android.view.Choreographer: void postFrameCallback(android.view.Choreographer$FrameCallback)>($r3);
+        return;
+    }
+}

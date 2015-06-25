@@ -1,0 +1,194 @@
+public class com.facebook.lite.diode.UserValuesProvider extends android.content.ContentProvider
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/diode/UserValuesProvider";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.diode.UserValuesProvider: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        specialinvoke $r0.<android.content.ContentProvider: void <init>()>();
+        return;
+    }
+
+    private static boolean a(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0, $i1;
+        android.content.pm.ApplicationInfo $r1;
+        android.content.pm.PackageManager $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <android.os.Binder: int getCallingUid()>();
+        $r1 = virtualinvoke $r0.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $i1 = $r1.<android.content.pm.ApplicationInfo: int uid>;
+        if $i0 != $i1 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $i1 = virtualinvoke $r2.<android.content.pm.PackageManager: int checkSignatures(int,int)>($i1, $i0);
+        if $i1 == 0 goto label0;
+
+        return 0;
+    }
+
+    public int delete(android.net.Uri, java.lang.String, java.lang.String[])
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String[];
+        return 0;
+    }
+
+    public java.lang.String getType(android.net.Uri)
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+        android.net.Uri $r1;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        $r1 := @parameter0: android.net.Uri;
+        return null;
+    }
+
+    public android.net.Uri insert(android.net.Uri, android.content.ContentValues)
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: android.content.ContentValues;
+        return null;
+    }
+
+    public boolean onCreate()
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        return 1;
+    }
+
+    public android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+        android.net.Uri $r1;
+        java.lang.String[] $r2, $r4;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r6;
+        java.util.ArrayList $r7;
+        int $i0, $i1;
+        boolean $z0;
+        java.lang.IllegalArgumentException $r8;
+        android.content.Context $r9;
+        android.database.MatrixCursor $r10;
+        java.lang.Object[] $r11;
+        java.lang.SecurityException $r12;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: java.lang.String[];
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String[];
+        $r5 := @parameter4: java.lang.String;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("query: ");
+        $r5 = virtualinvoke $r1.<android.net.Uri: java.lang.String toString()>();
+        virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = "name=\'active_session_info\'";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z0 != 0 goto label0;
+
+        $r8 = new java.lang.IllegalArgumentException;
+        specialinvoke $r8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Bad selection");
+        throw $r8;
+
+     label0:
+        $r9 = virtualinvoke $r0.<com.facebook.lite.diode.UserValuesProvider: android.content.Context getContext()>();
+        $z0 = staticinvoke <com.facebook.lite.diode.UserValuesProvider: boolean a(android.content.Context)>($r9);
+        if $z0 == 0 goto label6;
+
+        $r10 = new android.database.MatrixCursor;
+        specialinvoke $r10.<android.database.MatrixCursor: void <init>(java.lang.String[])>($r2);
+        $r7 = new java.util.ArrayList;
+        specialinvoke $r7.<java.util.ArrayList: void <init>()>();
+        $i0 = lengthof $r2;
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i0 goto label5;
+
+        $r5 = $r2[$i1];
+        $r3 = "name";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r7.<java.util.ArrayList: boolean add(java.lang.Object)>("active_session_info");
+
+     label2:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label3:
+        $r3 = "value";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label4;
+
+        $r9 = virtualinvoke $r0.<com.facebook.lite.diode.UserValuesProvider: android.content.Context getContext()>();
+        $r5 = staticinvoke <com.facebook.lite.b.e: java.lang.String B(android.content.Context)>($r9);
+        virtualinvoke $r7.<java.util.ArrayList: boolean add(java.lang.Object)>($r5);
+        goto label2;
+
+     label4:
+        $r8 = new java.lang.IllegalArgumentException;
+        specialinvoke $r8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Bad projection");
+        throw $r8;
+
+     label5:
+        $r11 = virtualinvoke $r7.<java.util.ArrayList: java.lang.Object[] toArray()>();
+        virtualinvoke $r10.<android.database.MatrixCursor: void addRow(java.lang.Object[])>($r11);
+        return $r10;
+
+     label6:
+        $r12 = new java.lang.SecurityException;
+        specialinvoke $r12.<java.lang.SecurityException: void <init>(java.lang.String)>("Signatures did not match!");
+        throw $r12;
+    }
+
+    public int update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])
+    {
+        com.facebook.lite.diode.UserValuesProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+        java.lang.String $r3;
+        java.lang.String[] $r4;
+
+        $r0 := @this: com.facebook.lite.diode.UserValuesProvider;
+        $r1 := @parameter0: android.net.Uri;
+        $r2 := @parameter1: android.content.ContentValues;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String[];
+        return 0;
+    }
+}

@@ -1,0 +1,86 @@
+final class com.google.c.b.ai extends java.io.Writer
+{
+    private final java.lang.Appendable a;
+    private final com.google.c.b.aj b;
+
+    private void <init>(java.lang.Appendable)
+    {
+        com.google.c.b.ai $r0;
+        java.lang.Appendable $r1;
+        com.google.c.b.aj $r2;
+
+        $r0 := @this: com.google.c.b.ai;
+        $r1 := @parameter0: java.lang.Appendable;
+        specialinvoke $r0.<java.io.Writer: void <init>()>();
+        $r2 = new com.google.c.b.aj;
+        specialinvoke $r2.<com.google.c.b.aj: void <init>()>();
+        $r0.<com.google.c.b.ai: com.google.c.b.aj b> = $r2;
+        $r0.<com.google.c.b.ai: java.lang.Appendable a> = $r1;
+        return;
+    }
+
+    void <init>(java.lang.Appendable, com.google.c.b.ah)
+    {
+        com.google.c.b.ai $r0;
+        java.lang.Appendable $r1;
+        com.google.c.b.ah $r2;
+
+        $r0 := @this: com.google.c.b.ai;
+        $r1 := @parameter0: java.lang.Appendable;
+        $r2 := @parameter1: com.google.c.b.ah;
+        specialinvoke $r0.<com.google.c.b.ai: void <init>(java.lang.Appendable)>($r1);
+        return;
+    }
+
+    public void close()
+    {
+        com.google.c.b.ai $r0;
+
+        $r0 := @this: com.google.c.b.ai;
+        return;
+    }
+
+    public void flush()
+    {
+        com.google.c.b.ai $r0;
+
+        $r0 := @this: com.google.c.b.ai;
+        return;
+    }
+
+    public void write(int)
+    {
+        com.google.c.b.ai $r0;
+        int $i0;
+        java.lang.Appendable $r1;
+        char $c1;
+
+        $r0 := @this: com.google.c.b.ai;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<com.google.c.b.ai: java.lang.Appendable a>;
+        $c1 = (char) $i0;
+        interfaceinvoke $r1.<java.lang.Appendable: java.lang.Appendable append(char)>($c1);
+        return;
+    }
+
+    public void write(char[], int, int)
+    {
+        com.google.c.b.ai $r0;
+        char[] $r1;
+        int $i0, $i1;
+        com.google.c.b.aj $r2;
+        java.lang.Appendable $r3;
+
+        $r0 := @this: com.google.c.b.ai;
+        $r1 := @parameter0: char[];
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 = $r0.<com.google.c.b.ai: com.google.c.b.aj b>;
+        $r2.<com.google.c.b.aj: char[] a> = $r1;
+        $r3 = $r0.<com.google.c.b.ai: java.lang.Appendable a>;
+        $r2 = $r0.<com.google.c.b.ai: com.google.c.b.aj b>;
+        $i1 = $i0 + $i1;
+        interfaceinvoke $r3.<java.lang.Appendable: java.lang.Appendable append(java.lang.CharSequence,int,int)>($r2, $i0, $i1);
+        return;
+    }
+}

@@ -1,0 +1,144 @@
+public class it.h3g.areaclienti3.b.b extends android.widget.BaseAdapter
+{
+    private java.util.ArrayList a;
+    private android.content.Context b;
+    private android.view.LayoutInflater c;
+
+    public void <init>(android.content.Context, java.util.ArrayList)
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        android.content.Context $r1;
+        java.util.ArrayList $r2;
+        java.lang.Object $r4;
+        android.view.LayoutInflater $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.ArrayList;
+        specialinvoke $r0.<android.widget.BaseAdapter: void <init>()>();
+        $r0.<it.h3g.areaclienti3.b.b: java.util.ArrayList a> = $r2;
+        $r0.<it.h3g.areaclienti3.b.b: android.content.Context b> = $r1;
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r5 = (android.view.LayoutInflater) $r4;
+        $r0.<it.h3g.areaclienti3.b.b: android.view.LayoutInflater c> = $r5;
+        return;
+    }
+
+    public it.h3g.areaclienti3.d.bh a(int)
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        int $i0, $i1;
+        java.util.ArrayList $r1;
+        java.lang.Object $r2;
+        it.h3g.areaclienti3.d.bh $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<it.h3g.areaclienti3.b.b: java.util.ArrayList a>;
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        if $i0 >= $i1 goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.b.b: java.util.ArrayList a>;
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r3 = (it.h3g.areaclienti3.d.bh) $r2;
+        return $r3;
+
+     label0:
+        return null;
+    }
+
+    public int getCount()
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        java.util.ArrayList $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $r1 = $r0.<it.h3g.areaclienti3.b.b: java.util.ArrayList a>;
+        $i0 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        return $i0;
+    }
+
+    public java.lang.Object getItem(int)
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        int $i0;
+        it.h3g.areaclienti3.d.bh $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.b.b: it.h3g.areaclienti3.d.bh a(int)>($i0);
+        return $r1;
+    }
+
+    public long getItemId(int)
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $i0 := @parameter0: int;
+        return 0L;
+    }
+
+    public android.view.View getView(int, android.view.View, android.view.ViewGroup)
+    {
+        it.h3g.areaclienti3.b.b $r0;
+        int $i0, $i1;
+        android.view.View $r1;
+        android.view.ViewGroup $r2;
+        android.view.LayoutInflater $r3;
+        android.graphics.drawable.ShapeDrawable $r4;
+        android.graphics.Paint $r5;
+        android.content.Context $r6;
+        java.lang.Integer[] $r7;
+        android.widget.LinearLayout $r8, $r13;
+        android.widget.TextView $r9, $r10, $r11, $r12;
+        android.content.res.Resources $r14;
+        java.lang.Integer $r15;
+        it.h3g.areaclienti3.d.bh $r16;
+        java.lang.String $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.b.b;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.View;
+        $r2 := @parameter2: android.view.ViewGroup;
+        $r3 = $r0.<it.h3g.areaclienti3.b.b: android.view.LayoutInflater c>;
+        $r1 = virtualinvoke $r3.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903121, $r2, 0);
+        $r8 = (android.widget.LinearLayout) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165695);
+        $r9 = (android.widget.TextView) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165696);
+        $r10 = (android.widget.TextView) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165698);
+        $r11 = (android.widget.TextView) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165699);
+        $r12 = (android.widget.TextView) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165697);
+        $r13 = (android.widget.LinearLayout) $r1;
+        $r4 = new android.graphics.drawable.ShapeDrawable;
+        specialinvoke $r4.<android.graphics.drawable.ShapeDrawable: void <init>()>();
+        $r5 = virtualinvoke $r4.<android.graphics.drawable.ShapeDrawable: android.graphics.Paint getPaint()>();
+        $r6 = $r0.<it.h3g.areaclienti3.b.b: android.content.Context b>;
+        $r14 = virtualinvoke $r6.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = <it.h3g.areaclienti3.j.e: java.lang.Integer[] e>;
+        $r15 = $r7[$i0];
+        $i1 = virtualinvoke $r15.<java.lang.Integer: int intValue()>();
+        $i1 = virtualinvoke $r14.<android.content.res.Resources: int getColor(int)>($i1);
+        virtualinvoke $r5.<android.graphics.Paint: void setColor(int)>($i1);
+        virtualinvoke $r13.<android.widget.LinearLayout: void setBackgroundDrawable(android.graphics.drawable.Drawable)>($r4);
+        $r16 = virtualinvoke $r0.<it.h3g.areaclienti3.b.b: it.h3g.areaclienti3.d.bh a(int)>($i0);
+        $r17 = virtualinvoke $r16.<it.h3g.areaclienti3.d.bh: java.lang.String a()>();
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r17);
+        $r16 = virtualinvoke $r0.<it.h3g.areaclienti3.b.b: it.h3g.areaclienti3.d.bh a(int)>($i0);
+        $r17 = virtualinvoke $r16.<it.h3g.areaclienti3.d.bh: java.lang.String b()>();
+        virtualinvoke $r10.<android.widget.TextView: void setText(java.lang.CharSequence)>($r17);
+        $r16 = virtualinvoke $r0.<it.h3g.areaclienti3.b.b: it.h3g.areaclienti3.d.bh a(int)>($i0);
+        $r17 = virtualinvoke $r16.<it.h3g.areaclienti3.d.bh: java.lang.String c()>();
+        virtualinvoke $r11.<android.widget.TextView: void setText(java.lang.CharSequence)>($r17);
+        $r16 = virtualinvoke $r0.<it.h3g.areaclienti3.b.b: it.h3g.areaclienti3.d.bh a(int)>($i0);
+        $r17 = virtualinvoke $r16.<it.h3g.areaclienti3.d.bh: java.lang.String d()>();
+        virtualinvoke $r12.<android.widget.TextView: void setText(java.lang.CharSequence)>($r17);
+        return $r8;
+    }
+}

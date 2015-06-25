@@ -1,0 +1,507 @@
+public final class com.b.a.a.k.h extends java.lang.Object
+{
+    private static final java.lang.Class a;
+    private com.b.a.a.k.i[] b;
+    private final java.lang.Class c;
+    private final boolean d;
+    private final int e;
+    private int f;
+
+    static void <clinit>()
+    {
+        com.b.a.a.k.i $r0;
+        java.lang.Class $r1;
+
+        $r0 = new com.b.a.a.k.i;
+        specialinvoke $r0.<com.b.a.a.k.i: void <init>()>();
+        $r1 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        <com.b.a.a.k.h: java.lang.Class a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.b.a.a.k.h $r0;
+        java.lang.Class $r1;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $r1 = <com.b.a.a.k.h: java.lang.Class a>;
+        specialinvoke $r0.<com.b.a.a.k.h: void <init>(java.lang.Class)>($r1);
+        return;
+    }
+
+    public void <init>(java.lang.Class)
+    {
+        com.b.a.a.k.h $r0;
+        java.lang.Class $r1;
+        boolean $z0;
+        int $i0, $i1;
+        com.b.a.a.k.i[] $r2;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $r1 := @parameter0: java.lang.Class;
+        $z0 = 1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.b.a.a.k.h: java.lang.Class c> = $r1;
+        $i0 = (int) 1;
+
+     label0:
+        if 21 <= $i0 goto label1;
+
+        $i0 = $i0 << 1;
+        goto label0;
+
+     label1:
+        if $i0 != 21 goto label3;
+
+     label2:
+        $r0.<com.b.a.a.k.h: boolean d> = $z0;
+        $r2 = newarray (com.b.a.a.k.i)[21];
+        $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b> = $r2;
+        $r0.<com.b.a.a.k.h: int e> = 75;
+        $i1 = (int) 0;
+        $r0.<com.b.a.a.k.h: int f> = $i1;
+        return;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+    }
+
+    private com.b.a.a.k.i b(int, java.lang.Object)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0;
+        java.lang.Object $r1, $r3;
+        java.lang.Class $r2;
+        com.b.a.a.k.i $r4;
+        java.lang.Exception $r5;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.Object;
+        $r2 = $r0.<com.b.a.a.k.h: java.lang.Class c>;
+        if $r2 != null goto label1;
+
+        $r4 = new com.b.a.a.k.i;
+        specialinvoke $r4.<com.b.a.a.k.i: void <init>()>();
+
+     label0:
+        staticinvoke <com.b.a.a.k.i: int a(com.b.a.a.k.i,int)>($r4, $i0);
+        staticinvoke <com.b.a.a.k.i: java.lang.Object a(com.b.a.a.k.i,java.lang.Object)>($r4, $r1);
+        return $r4;
+
+     label1:
+        $r2 = $r0.<com.b.a.a.k.h: java.lang.Class c>;
+        $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.Object newInstance()>();
+        $r4 = (com.b.a.a.k.i) $r3;
+
+     label2:
+        goto label0;
+
+     label3:
+        $r5 := @caughtexception;
+        return null;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+
+    private void d()
+    {
+        com.b.a.a.k.h $r0;
+        boolean $z0;
+        int $i0, $i1, $i3, $i4;
+        com.b.a.a.k.i[] $r1, $r3;
+        com.b.a.a.k.i $r2, $r4, $r5;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $z0 = $r0.<com.b.a.a.k.h: boolean d>;
+        if $z0 == 0 goto label5;
+
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i1 = lengthof $r3;
+        $i3 = $i1 << 1;
+
+     label0:
+        $r3 = newarray (com.b.a.a.k.i)[$i3];
+        $i0 = 0;
+
+     label1:
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i1 = lengthof $r1;
+        if $i0 >= $i1 goto label10;
+
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r2 = $r1[$i0];
+
+     label2:
+        if $r2 == null goto label9;
+
+        $z0 = $r0.<com.b.a.a.k.h: boolean d>;
+        if $z0 == 0 goto label6;
+
+        $i1 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r2);
+        $i4 = $i1 & 2147483647;
+        $i1 = $i3 + -1;
+        $i4 = $i4 & $i1;
+
+     label3:
+        $r4 = $r3[$i4];
+        if $r4 != null goto label11;
+
+        $r3[$i4] = $r2;
+
+     label4:
+        $r4 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r2);
+        staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i a(com.b.a.a.k.i,com.b.a.a.k.i)>($r2, null);
+        $r2 = $r4;
+        goto label2;
+
+     label5:
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i4 = lengthof $r3;
+        $i4 = $i4 << 1;
+        $i3 = $i4 + -1;
+        goto label0;
+
+     label6:
+        $i4 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r2);
+        $i4 = $i4 & 2147483647;
+        $i4 = $i4 % $i3;
+        goto label3;
+
+     label7:
+        $r4 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r5);
+        if $r4 == null goto label8;
+
+        $r5 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r5);
+        goto label7;
+
+     label8:
+        staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i a(com.b.a.a.k.i,com.b.a.a.k.i)>($r5, $r2);
+        goto label4;
+
+     label9:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label10:
+        $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b> = $r3;
+        return;
+
+     label11:
+        $r5 = $r4;
+        goto label7;
+    }
+
+    public final java.lang.Object a(int, java.lang.Object)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0, $i2, $i3;
+        java.lang.Object $r1, $r8;
+        java.lang.IllegalArgumentException $r2;
+        java.lang.StringBuffer $r3;
+        java.lang.String $r4;
+        com.b.a.a.k.i[] $r5;
+        boolean $z0;
+        com.b.a.a.k.i $r6, $r7;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.Object;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.IllegalArgumentException;
+        $r3 = new java.lang.StringBuffer;
+        specialinvoke $r3.<java.lang.StringBuffer: void <init>(java.lang.String)>("Illegal null value or key: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r4);
+        throw $r2;
+
+     label0:
+        $i2 = $r0.<com.b.a.a.k.h: int f>;
+        $i2 = $i2 * 100;
+        $r5 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i3 = lengthof $r5;
+        $i3 = $i2 / $i3;
+        $i2 = $r0.<com.b.a.a.k.h: int e>;
+        if $i3 <= $i2 goto label1;
+
+        specialinvoke $r0.<com.b.a.a.k.h: void d()>();
+
+     label1:
+        $z0 = $r0.<com.b.a.a.k.h: boolean d>;
+        if $z0 == 0 goto label3;
+
+        $i3 = $i0 & 2147483647;
+        $r5 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i2 = lengthof $r5;
+        $i2 = $i2 + -1;
+        $i3 = $i3 & $i2;
+
+     label2:
+        $r5 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r6 = $r5[$i3];
+        if $r6 != null goto label4;
+
+        $r6 = specialinvoke $r0.<com.b.a.a.k.h: com.b.a.a.k.i b(int,java.lang.Object)>($i0, $r1);
+        $r5 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r5[$i3] = $r6;
+        $i3 = $r0.<com.b.a.a.k.h: int f>;
+        $i3 = $i3 + 1;
+        $r0.<com.b.a.a.k.h: int f> = $i3;
+        return null;
+
+     label3:
+        $i3 = $i0 & 2147483647;
+        $r5 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i2 = lengthof $r5;
+        $i3 = $i3 % $i2;
+        goto label2;
+
+     label4:
+        $r7 = $r6;
+        $i3 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r6);
+        if $i3 != $i0 goto label5;
+
+        $r8 = staticinvoke <com.b.a.a.k.i: java.lang.Object a(com.b.a.a.k.i)>($r6);
+        staticinvoke <com.b.a.a.k.i: java.lang.Object a(com.b.a.a.k.i,java.lang.Object)>($r6, $r1);
+        return $r8;
+
+     label5:
+        $r6 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r6);
+        if $r6 != null goto label4;
+
+        $r6 = specialinvoke $r0.<com.b.a.a.k.h: com.b.a.a.k.i b(int,java.lang.Object)>($i0, $r1);
+        staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i a(com.b.a.a.k.i,com.b.a.a.k.i)>($r7, $r6);
+        $i3 = $r0.<com.b.a.a.k.h: int f>;
+        $i3 = $i3 + 1;
+        $r0.<com.b.a.a.k.h: int f> = $i3;
+        return null;
+    }
+
+    public final void a()
+    {
+        com.b.a.a.k.h $r0;
+        int $i0, $i2;
+        com.b.a.a.k.i[] $r1;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 = 0;
+
+     label0:
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i2 = lengthof $r1;
+        if $i0 >= $i2 goto label1;
+
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r1[$i0] = null;
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $r0.<com.b.a.a.k.h: int f> = 0;
+        return;
+    }
+
+    public final boolean a(int)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0;
+        java.lang.Object $r1;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.b.a.a.k.h: java.lang.Object b(int)>($i0);
+        if $r1 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final java.lang.Object b(int)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0;
+        com.b.a.a.k.i $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.b.a.a.k.h: com.b.a.a.k.i c(int)>($i0);
+        if $r1 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = staticinvoke <com.b.a.a.k.i: java.lang.Object a(com.b.a.a.k.i)>($r1);
+        return $r2;
+    }
+
+    public final int[] b()
+    {
+        com.b.a.a.k.h $r0;
+        int $i0, $i1, $i2;
+        com.b.a.a.k.i[] $r1;
+        int[] $r2;
+        com.b.a.a.k.i $r3;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 = 0;
+        $i1 = $r0.<com.b.a.a.k.h: int f>;
+        $r2 = newarray (int)[$i1];
+        $i2 = 0;
+
+     label0:
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i1 = lengthof $r1;
+        if $i0 >= $i1 goto label3;
+
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r3 = $r1[$i0];
+
+     label1:
+        if $r3 == null goto label2;
+
+        $i1 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r3);
+        $r2[$i2] = $i1;
+        $r3 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r3);
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label2:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        return $r2;
+    }
+
+    public final int c()
+    {
+        com.b.a.a.k.h $r0;
+        int $i0;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 = $r0.<com.b.a.a.k.h: int f>;
+        return $i0;
+    }
+
+    public final com.b.a.a.k.i c(int)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        com.b.a.a.k.i[] $r1;
+        com.b.a.a.k.i $r2;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $z0 = $r0.<com.b.a.a.k.h: boolean d>;
+        if $z0 == 0 goto label2;
+
+        $i1 = $i0 & 2147483647;
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i2 = lengthof $r1;
+        $i2 = $i2 + -1;
+        $i2 = $i1 & $i2;
+
+     label0:
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r2 = $r1[$i2];
+        if $r2 != null goto label3;
+
+        $r2 = null;
+
+     label1:
+        return $r2;
+
+     label2:
+        $i2 = $i0 & 2147483647;
+        $r1 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i1 = lengthof $r1;
+        $i2 = $i2 % $i1;
+        goto label0;
+
+     label3:
+        $i2 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r2);
+        if $i2 == $i0 goto label1;
+
+        $r2 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r2);
+        if $r2 != null goto label3;
+
+        return null;
+    }
+
+    public final java.lang.Object d(int)
+    {
+        com.b.a.a.k.h $r0;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        com.b.a.a.k.i $r1, $r2, $r5;
+        com.b.a.a.k.i[] $r3;
+        java.lang.Object $r4;
+
+        $r0 := @this: com.b.a.a.k.h;
+        $i0 := @parameter0: int;
+        $z0 = $r0.<com.b.a.a.k.h: boolean d>;
+        if $z0 == 0 goto label2;
+
+        $i1 = $i0 & 2147483647;
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i2 = lengthof $r3;
+        $i2 = $i2 + -1;
+        $i2 = $i1 & $i2;
+
+     label0:
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r1 = $r3[$i2];
+        if $r1 != null goto label3;
+
+     label1:
+        return null;
+
+     label2:
+        $i2 = $i0 & 2147483647;
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $i1 = lengthof $r3;
+        $i2 = $i2 % $i1;
+        goto label0;
+
+     label3:
+        $r2 = null;
+
+     label4:
+        $i1 = staticinvoke <com.b.a.a.k.i: int c(com.b.a.a.k.i)>($r1);
+        if $i1 != $i0 goto label7;
+
+        if $r2 != null goto label6;
+
+        $r3 = $r0.<com.b.a.a.k.h: com.b.a.a.k.i[] b>;
+        $r2 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r1);
+        $r3[$i2] = $r2;
+
+     label5:
+        $i2 = $r0.<com.b.a.a.k.h: int f>;
+        $i2 = $i2 + -1;
+        $r0.<com.b.a.a.k.h: int f> = $i2;
+        $r4 = staticinvoke <com.b.a.a.k.i: java.lang.Object a(com.b.a.a.k.i)>($r1);
+        return $r4;
+
+     label6:
+        $r5 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r1);
+        staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i a(com.b.a.a.k.i,com.b.a.a.k.i)>($r2, $r5);
+        goto label5;
+
+     label7:
+        $r5 = staticinvoke <com.b.a.a.k.i: com.b.a.a.k.i b(com.b.a.a.k.i)>($r1);
+        if $r5 == null goto label1;
+
+        $r2 = $r1;
+        $r1 = $r5;
+        goto label4;
+    }
+}

@@ -1,0 +1,155 @@
+public final class com.facebook.rti.push.service.h extends java.lang.Object
+{
+    private android.content.Context a;
+    private android.app.AlarmManager b;
+    private android.content.SharedPreferences c;
+    private com.facebook.rti.a.g.b d;
+    private java.util.Map e;
+
+    public void <init>(android.content.Context, android.app.AlarmManager, com.facebook.rti.a.g.b)
+    {
+        com.facebook.rti.push.service.h $r0;
+        android.content.Context $r1;
+        android.app.AlarmManager $r2;
+        com.facebook.rti.a.g.b $r3;
+        com.facebook.rti.a.f.a $r4;
+        android.content.SharedPreferences $r6;
+        java.util.HashMap $r7;
+
+        $r0 := @this: com.facebook.rti.push.service.h;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.app.AlarmManager;
+        $r3 := @parameter2: com.facebook.rti.a.g.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.push.service.h: android.content.Context a> = $r1;
+        $r0.<com.facebook.rti.push.service.h: android.app.AlarmManager b> = $r2;
+        $r4 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r1 = $r0.<com.facebook.rti.push.service.h: android.content.Context a>;
+        $r6 = virtualinvoke $r4.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r1, "rti.mqtt.retry");
+        $r0.<com.facebook.rti.push.service.h: android.content.SharedPreferences c> = $r6;
+        $r0.<com.facebook.rti.push.service.h: com.facebook.rti.a.g.b d> = $r3;
+        $r7 = new java.util.HashMap;
+        specialinvoke $r7.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.rti.push.service.h: java.util.Map e> = $r7;
+        return;
+    }
+
+    private void a(java.lang.String, java.lang.String, java.lang.Class)
+    {
+        com.facebook.rti.push.service.h $r0;
+        java.lang.String $r1, $r2;
+        java.lang.Class $r3;
+        long $l0, $l1, $l4;
+        android.content.Intent $r4;
+        java.lang.Long $r6;
+        byte $b3;
+        android.app.PendingIntent $r7;
+        android.content.Context $r8;
+        java.util.Map $r9;
+        android.content.SharedPreferences $r10;
+        java.lang.Object[] $r11;
+        android.app.AlarmManager $r12;
+        com.facebook.rti.a.g.b $r13;
+        android.content.SharedPreferences$Editor $r14;
+
+        $r0 := @this: com.facebook.rti.push.service.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.Class;
+        $l0 = 86400000L;
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(java.lang.String)>("com.facebook.rti.fbns.intent.REGISTER_RETRY");
+        $r8 = $r0.<com.facebook.rti.push.service.h: android.content.Context a>;
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r8, $r3);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setPackage(java.lang.String)>($r1);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("pkg_name", $r1);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("appid", $r2);
+        $r8 = $r0.<com.facebook.rti.push.service.h: android.content.Context a>;
+        $r7 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getService(android.content.Context,int,android.content.Intent,int)>($r8, 0, $r4, 0);
+        $r9 = $r0.<com.facebook.rti.push.service.h: java.util.Map e>;
+        interfaceinvoke $r9.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r7);
+        $r10 = $r0.<com.facebook.rti.push.service.h: android.content.SharedPreferences c>;
+        $l1 = interfaceinvoke $r10.<android.content.SharedPreferences: long getLong(java.lang.String,long)>($r1, 120000L);
+        $r11 = newarray (java.lang.Object)[1];
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r11[0] = $r6;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsRegistrarRetry", "scheduleRetry %s", $r11);
+        $r12 = $r0.<com.facebook.rti.push.service.h: android.app.AlarmManager b>;
+        $r13 = $r0.<com.facebook.rti.push.service.h: com.facebook.rti.a.g.b d>;
+        $l4 = interfaceinvoke $r13.<com.facebook.rti.a.g.b: long a()>();
+        $l4 = $l4 + $l1;
+        virtualinvoke $r12.<android.app.AlarmManager: void set(int,long,android.app.PendingIntent)>(2, $l4, $r7);
+        $l4 = 2L * $l1;
+        $b3 = $l4 cmp 86400000L;
+        if $b3 <= 0 goto label1;
+
+     label0:
+        $r10 = $r0.<com.facebook.rti.push.service.h: android.content.SharedPreferences c>;
+        $r14 = interfaceinvoke $r10.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r14 = interfaceinvoke $r14.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)>($r1, $l0);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r14);
+        return;
+
+     label1:
+        $l0 = $l4;
+        goto label0;
+    }
+
+    private void b(java.lang.String)
+    {
+        com.facebook.rti.push.service.h $r0;
+        java.lang.String $r1;
+        android.content.SharedPreferences$Editor $r4;
+        java.lang.Object[] $r5;
+        android.content.SharedPreferences $r6;
+
+        $r0 := @this: com.facebook.rti.push.service.h;
+        $r1 := @parameter0: java.lang.String;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsRegistrarRetry", "Registration reset retry.", $r5);
+        $r6 = $r0.<com.facebook.rti.push.service.h: android.content.SharedPreferences c>;
+        $r4 = interfaceinvoke $r6.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r4 = interfaceinvoke $r4.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)>($r1, 120000L);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r4);
+        return;
+    }
+
+    public final void a(java.lang.String)
+    {
+        com.facebook.rti.push.service.h $r0;
+        java.lang.String $r1;
+        java.lang.Object $r4;
+        java.lang.Object[] $r5;
+        java.util.Map $r6;
+        android.app.PendingIntent $r7;
+        android.app.AlarmManager $r8;
+
+        $r0 := @this: com.facebook.rti.push.service.h;
+        $r1 := @parameter0: java.lang.String;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("FbnsRegistrarRetry", "Registration alarmManager retry cancelled.", $r5);
+        $r6 = $r0.<com.facebook.rti.push.service.h: java.util.Map e>;
+        $r4 = interfaceinvoke $r6.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r1);
+        $r7 = (android.app.PendingIntent) $r4;
+        if $r7 == null goto label0;
+
+        $r8 = $r0.<com.facebook.rti.push.service.h: android.app.AlarmManager b>;
+        virtualinvoke $r8.<android.app.AlarmManager: void cancel(android.app.PendingIntent)>($r7);
+
+     label0:
+        specialinvoke $r0.<com.facebook.rti.push.service.h: void b(java.lang.String)>($r1);
+        return;
+    }
+
+    public final void a(java.lang.String, java.lang.String)
+    {
+        com.facebook.rti.push.service.h $r0;
+        java.lang.String $r1, $r2;
+
+        $r0 := @this: com.facebook.rti.push.service.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        specialinvoke $r0.<com.facebook.rti.push.service.h: void a(java.lang.String,java.lang.String,java.lang.Class)>($r1, $r2, class "com/facebook/rti/push/service/FbnsService");
+        return;
+    }
+}

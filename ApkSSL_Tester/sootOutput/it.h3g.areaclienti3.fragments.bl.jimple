@@ -1,0 +1,72 @@
+class it.h3g.areaclienti3.fragments.bl extends java.lang.Object implements java.util.Comparator
+{
+    final it.h3g.areaclienti3.fragments.bf a;
+
+    void <init>(it.h3g.areaclienti3.fragments.bf)
+    {
+        it.h3g.areaclienti3.fragments.bl $r0;
+        it.h3g.areaclienti3.fragments.bf $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bl;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.bf;
+        $r0.<it.h3g.areaclienti3.fragments.bl: it.h3g.areaclienti3.fragments.bf a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public int a(it.h3g.areaclienti3.d.bn, it.h3g.areaclienti3.d.bn)
+    {
+        it.h3g.areaclienti3.fragments.bl $r0;
+        it.h3g.areaclienti3.d.bn $r1, $r2;
+        java.util.Date $r3;
+        long $l0;
+        java.lang.Long $r4, $r5;
+        int $i1;
+        java.lang.Exception $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bl;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.bn;
+        $r2 := @parameter1: it.h3g.areaclienti3.d.bn;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bn: java.util.Date d()>();
+        if $r3 == null goto label3;
+
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bn: java.util.Date d()>();
+        if $r3 == null goto label3;
+
+     label0:
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bn: java.util.Date d()>();
+        $l0 = virtualinvoke $r3.<java.util.Date: long getTime()>();
+        $r4 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.bn: java.util.Date d()>();
+        $l0 = virtualinvoke $r3.<java.util.Date: long getTime()>();
+        $r5 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $i1 = virtualinvoke $r4.<java.lang.Long: int compareTo(java.lang.Long)>($r5);
+
+     label1:
+        return $i1;
+
+     label2:
+        $r6 := @caughtexception;
+
+     label3:
+        return 0;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public int compare(java.lang.Object, java.lang.Object)
+    {
+        it.h3g.areaclienti3.fragments.bl $r0;
+        java.lang.Object $r1, $r2;
+        int $i0;
+        it.h3g.areaclienti3.d.bn $r3, $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bl;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (it.h3g.areaclienti3.d.bn) $r1;
+        $r4 = (it.h3g.areaclienti3.d.bn) $r2;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bl: int a(it.h3g.areaclienti3.d.bn,it.h3g.areaclienti3.d.bn)>($r3, $r4);
+        return $i0;
+    }
+}

@@ -1,0 +1,434 @@
+public class org.e.b.b extends org.e.b.e
+{
+
+    public void <init>(java.lang.String, int)
+    {
+        org.e.b.b $r0;
+        java.lang.String $r1;
+        int $i0;
+
+        $r0 := @this: org.e.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<org.e.b.e: void <init>(java.lang.String,int)>($r1, $i0);
+        return;
+    }
+
+    private java.io.InputStream a(java.io.InputStream)
+    {
+        org.e.b.b $r0;
+        java.io.InputStream $r1;
+        java.lang.ClassCastException $r2;
+        java.util.zip.GZIPInputStream $r3;
+
+        $r0 := @this: org.e.b.b;
+        $r1 := @parameter0: java.io.InputStream;
+
+     label0:
+        $r3 = (java.util.zip.GZIPInputStream) $r1;
+
+     label1:
+        return $r3;
+
+     label2:
+        $r2 := @caughtexception;
+        $r3 = new java.util.zip.GZIPInputStream;
+        specialinvoke $r3.<java.util.zip.GZIPInputStream: void <init>(java.io.InputStream)>($r1);
+        return $r3;
+
+        catch java.lang.ClassCastException from label0 to label1 with label2;
+    }
+
+    private java.io.InputStream a(java.io.InputStream, int, java.io.File)
+    {
+        org.e.b.b $r0;
+        java.io.InputStream $r1;
+        int $i0;
+        java.io.File $r2;
+        java.io.OutputStream $r3;
+        byte[] $r4;
+        boolean $z0;
+        java.io.ByteArrayOutputStream $r5;
+        java.io.FileOutputStream r9;
+        java.lang.String r10;
+        java.io.FileInputStream r11;
+        java.io.ByteArrayInputStream r12;
+
+        $r0 := @this: org.e.b.b;
+        $r1 := @parameter0: java.io.InputStream;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.io.File;
+        if $r2 == null goto label3;
+
+        r9 = new java.io.FileOutputStream;
+        $r3 = r9;
+        specialinvoke r9.<java.io.FileOutputStream: void <init>(java.io.File)>($r2);
+
+     label0:
+        $r4 = newarray (byte)[256];
+
+     label1:
+        $i0 = virtualinvoke $r1.<java.io.InputStream: int read(byte[],int,int)>($r4, 0, 256);
+        if $i0 != -1 goto label6;
+
+        virtualinvoke $r3.<java.io.OutputStream: void flush()>();
+        $z0 = $r3 instanceof java.io.ByteArrayOutputStream;
+        if $z0 == 0 goto label8;
+
+        $r5 = (java.io.ByteArrayOutputStream) $r3;
+        $r4 = virtualinvoke $r5.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+
+     label2:
+        r10 = new java.lang.String;
+        specialinvoke r10.<java.lang.String: void <init>(byte[])>($r4);
+        $r0.<org.e.b.b: java.lang.String f> = r10;
+        virtualinvoke $r1.<java.io.InputStream: void close()>();
+        if $r2 == null goto label7;
+
+        r11 = new java.io.FileInputStream;
+        specialinvoke r11.<java.io.FileInputStream: void <init>(java.io.File)>($r2);
+        return r11;
+
+     label3:
+        $r5 = new java.io.ByteArrayOutputStream;
+        $r3 = $r5;
+        if $i0 <= 0 goto label5;
+
+     label4:
+        specialinvoke $r5.<java.io.ByteArrayOutputStream: void <init>(int)>($i0);
+        goto label0;
+
+     label5:
+        $i0 = 262144;
+        goto label4;
+
+     label6:
+        virtualinvoke $r3.<java.io.OutputStream: void write(byte[],int,int)>($r4, 0, $i0);
+        goto label1;
+
+     label7:
+        r12 = new java.io.ByteArrayInputStream;
+        specialinvoke r12.<java.io.ByteArrayInputStream: void <init>(byte[])>($r4);
+        return r12;
+
+     label8:
+        goto label2;
+    }
+
+    public java.util.List a(java.lang.String, org.e.b, java.util.List)
+    {
+        org.e.b.b $r0;
+        java.lang.String $r1;
+        org.e.b $r2;
+        java.util.List $r3;
+
+        $r0 := @this: org.e.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: org.e.b;
+        $r3 := @parameter2: java.util.List;
+        $r3 = virtualinvoke $r0.<org.e.b.b: java.util.List a(java.lang.String,org.e.b,java.util.List,java.io.File)>($r1, $r2, $r3, null);
+        return $r3;
+    }
+
+    public java.util.List a(java.lang.String, org.e.b, java.util.List, java.io.File)
+    {
+        org.e.b.b $r0;
+        java.lang.String $r1, $r6, $r10;
+        org.e.b $r2;
+        java.util.List $r3, $r5;
+        java.io.File $r4;
+        byte[] $r7;
+        java.io.InputStream $r8, $r20, $r21;
+        int $i0, $i1, $i3, $i4;
+        org.e.b.c $r9;
+        boolean $z0, $z1, $z2;
+        java.lang.StringBuffer $r11, r22;
+        java.lang.Object $r12;
+        org.e.a $r13;
+        java.io.OutputStream $r14;
+        java.lang.NumberFormatException $r15;
+        java.io.IOException $r17, $r18;
+        org.e.b.a r23;
+        java.io.BufferedInputStream r24;
+
+        $r0 := @this: org.e.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: org.e.b;
+        $r3 := @parameter2: java.util.List;
+        $r4 := @parameter3: java.io.File;
+        if $r1 != null goto label0;
+
+        $r1 = "\"\"";
+
+     label0:
+        $r7 = virtualinvoke $r0.<org.e.b.b: byte[] a(org.e.b,java.lang.String)>($r2, "UTF-8");
+        $z0 = $r0.<org.e.b.b: boolean d>;
+        if $z0 == 0 goto label5;
+
+        $r10 = new java.lang.String;
+        $r6 = $r10;
+        specialinvoke $r10.<java.lang.String: void <init>(byte[])>($r7);
+
+     label1:
+        $r0.<org.e.b.b: java.lang.String e> = $r6;
+        $r0.<org.e.b.b: java.lang.String f> = null;
+        $r9 = virtualinvoke $r0.<org.e.b.b: org.e.b.c a()>();
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("User-Agent", "ksoap2-android/2.6.0+");
+        $i1 = $r2.<org.e.b: int f>;
+        if $i1 == 120 goto label2;
+
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("SOAPAction", $r1);
+
+     label2:
+        $i1 = $r2.<org.e.b: int f>;
+        if $i1 != 120 goto label6;
+
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("Content-Type", "application/soap+xml;charset=utf-8");
+
+     label3:
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("Accept-Encoding", "gzip");
+        r22 = new java.lang.StringBuffer;
+        specialinvoke r22.<java.lang.StringBuffer: void <init>()>();
+        $r11 = virtualinvoke r22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("");
+        $i1 = lengthof $r7;
+        $r11 = virtualinvoke $r11.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i1);
+        $r6 = virtualinvoke $r11.<java.lang.StringBuffer: java.lang.String toString()>();
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("Content-Length", $r6);
+        $i1 = lengthof $r7;
+        interfaceinvoke $r9.<org.e.b.c: void a(int)>($i1);
+        if $r3 == null goto label7;
+
+        $i1 = 0;
+
+     label4:
+        $i0 = interfaceinvoke $r3.<java.util.List: int size()>();
+        if $i1 >= $i0 goto label7;
+
+        $r12 = interfaceinvoke $r3.<java.util.List: java.lang.Object get(int)>($i1);
+        $r13 = (org.e.a) $r12;
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String a()>();
+        $r6 = virtualinvoke $r13.<org.e.a: java.lang.String b()>();
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>($r10, $r6);
+        $i1 = $i1 + 1;
+        goto label4;
+
+     label5:
+        $r6 = null;
+        goto label1;
+
+     label6:
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String,java.lang.String)>("Content-Type", "text/xml;charset=utf-8");
+        goto label3;
+
+     label7:
+        interfaceinvoke $r9.<org.e.b.c: void a(java.lang.String)>("POST");
+        $r14 = interfaceinvoke $r9.<org.e.b.c: java.io.OutputStream d()>();
+        $i1 = lengthof $r7;
+        virtualinvoke $r14.<java.io.OutputStream: void write(byte[],int,int)>($r7, 0, $i1);
+        virtualinvoke $r14.<java.io.OutputStream: void flush()>();
+        virtualinvoke $r14.<java.io.OutputStream: void close()>();
+        $r8 = null;
+        $i3 = 8192;
+        $z0 = 0;
+        $z1 = 0;
+        $i1 = interfaceinvoke $r9.<org.e.b.c: int c()>();
+
+     label8:
+        $r5 = interfaceinvoke $r9.<org.e.b.c: java.util.List b()>();
+
+     label9:
+        $i0 = 0;
+
+     label10:
+        $i4 = interfaceinvoke $r5.<java.util.List: int size()>();
+        if $i0 >= $i4 goto label19;
+
+        $r12 = interfaceinvoke $r5.<java.util.List: java.lang.Object get(int)>($i0);
+        $r13 = (org.e.a) $r12;
+        $r6 = virtualinvoke $r13.<org.e.a: java.lang.String a()>();
+        if $r6 != null goto label12;
+
+        $i4 = $i3;
+
+     label11:
+        $i0 = $i0 + 1;
+        $i3 = $i4;
+        goto label10;
+
+     label12:
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String a()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("content-length");
+        if $z2 == 0 goto label16;
+
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String b()>();
+
+     label13:
+        if $r10 == null goto label16;
+
+     label14:
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String b()>();
+        $i4 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r10);
+
+     label15:
+        $i3 = $i4;
+
+     label16:
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String a()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("Content-Type");
+        if $z2 == 0 goto label17;
+
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String b()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean contains(java.lang.CharSequence)>("xml");
+        if $z2 == 0 goto label17;
+
+        $z1 = 1;
+
+     label17:
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String a()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("Content-Encoding");
+        if $z2 == 0 goto label35;
+
+        $r10 = virtualinvoke $r13.<org.e.a: java.lang.String b()>();
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("gzip");
+        if $z2 == 0 goto label35;
+
+        $i4 = $i3;
+        $z0 = 1;
+        goto label11;
+
+     label18:
+        $r15 := @caughtexception;
+        $i3 = 8192;
+        goto label16;
+
+     label19:
+        if $i1 == 200 goto label24;
+
+        r23 = new org.e.b.a;
+        r22 = new java.lang.StringBuffer;
+        specialinvoke r22.<java.lang.StringBuffer: void <init>()>();
+        $r11 = virtualinvoke r22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("HTTP request failed, HTTP status: ");
+        $r11 = virtualinvoke $r11.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>($i1);
+        $r10 = virtualinvoke $r11.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke r23.<org.e.b.a: void <init>(java.lang.String,int)>($r10, $i1);
+        throw r23;
+
+     label20:
+        $r17 := @caughtexception;
+        $z2 = $z0;
+        $r18 = $r17;
+
+     label21:
+        if $i3 <= 0 goto label22;
+
+        if $z2 == 0 goto label32;
+
+        if $i3 <= 0 goto label32;
+
+        r24 = new java.io.BufferedInputStream;
+        $r8 = interfaceinvoke $r9.<org.e.b.c: java.io.InputStream f()>();
+        specialinvoke r24.<java.io.BufferedInputStream: void <init>(java.io.InputStream,int)>($r8, $i3);
+        $r8 = specialinvoke $r0.<org.e.b.b: java.io.InputStream a(java.io.InputStream)>(r24);
+
+     label22:
+        $z2 = $r18 instanceof org.e.b.a;
+        if $z2 == 0 goto label27;
+
+        if $z1 != 0 goto label27;
+
+        $z2 = $r0.<org.e.b.b: boolean d>;
+        if $z2 == 0 goto label23;
+
+        if $r8 == null goto label23;
+
+        specialinvoke $r0.<org.e.b.b: java.io.InputStream a(java.io.InputStream,int,java.io.File)>($r8, $i3, $r4);
+
+     label23:
+        interfaceinvoke $r9.<org.e.b.c: void a()>();
+        throw $r18;
+
+     label24:
+        if $i3 <= 0 goto label34;
+
+        if $z0 == 0 goto label29;
+
+        r24 = new java.io.BufferedInputStream;
+
+     label25:
+        $r20 = interfaceinvoke $r9.<org.e.b.c: java.io.InputStream e()>();
+        specialinvoke r24.<java.io.BufferedInputStream: void <init>(java.io.InputStream,int)>($r20, $i3);
+        $r20 = specialinvoke $r0.<org.e.b.b: java.io.InputStream a(java.io.InputStream)>(r24);
+
+     label26:
+        $r8 = $r20;
+
+     label27:
+        $z2 = $r0.<org.e.b.b: boolean d>;
+        if $z2 == 0 goto label28;
+
+        $r8 = specialinvoke $r0.<org.e.b.b: java.io.InputStream a(java.io.InputStream,int,java.io.File)>($r8, $i3, $r4);
+
+     label28:
+        virtualinvoke $r0.<org.e.b.b: void a(org.e.b,java.io.InputStream)>($r2, $r8);
+        interfaceinvoke $r9.<org.e.b.c: void a()>();
+        return $r5;
+
+     label29:
+        r24 = new java.io.BufferedInputStream;
+        $r20 = r24;
+
+     label30:
+        $r21 = interfaceinvoke $r9.<org.e.b.c: java.io.InputStream e()>();
+        specialinvoke r24.<java.io.BufferedInputStream: void <init>(java.io.InputStream,int)>($r21, $i3);
+
+     label31:
+        goto label26;
+
+     label32:
+        r24 = new java.io.BufferedInputStream;
+        $r8 = r24;
+        $r21 = interfaceinvoke $r9.<org.e.b.c: java.io.InputStream f()>();
+        specialinvoke r24.<java.io.BufferedInputStream: void <init>(java.io.InputStream,int)>($r21, $i3);
+        goto label22;
+
+     label33:
+        $r18 := @caughtexception;
+        $r5 = null;
+        $z2 = 0;
+        $z1 = 0;
+        goto label21;
+
+     label34:
+        $r20 = null;
+        goto label26;
+
+     label35:
+        $i4 = $i3;
+        goto label11;
+
+        catch java.io.IOException from label8 to label9 with label33;
+        catch java.io.IOException from label10 to label13 with label20;
+        catch java.lang.NumberFormatException from label14 to label15 with label18;
+        catch java.io.IOException from label14 to label15 with label20;
+        catch java.io.IOException from label16 to label20 with label20;
+        catch java.io.IOException from label25 to label26 with label20;
+        catch java.io.IOException from label30 to label31 with label20;
+    }
+
+    public org.e.b.c a()
+    {
+        org.e.b.b $r0;
+        org.e.b.d $r1;
+        java.net.Proxy $r2;
+        java.lang.String $r3;
+        int $i0;
+
+        $r0 := @this: org.e.b.b;
+        $r1 = new org.e.b.d;
+        $r2 = $r0.<org.e.b.b: java.net.Proxy a>;
+        $r3 = $r0.<org.e.b.b: java.lang.String b>;
+        $i0 = $r0.<org.e.b.b: int c>;
+        specialinvoke $r1.<org.e.b.d: void <init>(java.net.Proxy,java.lang.String,int)>($r2, $r3, $i0);
+        return $r1;
+    }
+}

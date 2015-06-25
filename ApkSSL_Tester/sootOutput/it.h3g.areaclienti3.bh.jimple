@@ -1,0 +1,100 @@
+class it.h3g.areaclienti3.bh extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.PagerActivity a;
+
+    void <init>(it.h3g.areaclienti3.PagerActivity)
+    {
+        it.h3g.areaclienti3.bh $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.bh;
+        $r1 := @parameter0: it.h3g.areaclienti3.PagerActivity;
+        $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.bh $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.PagerActivity $r2;
+        java.lang.String $r3, $r5;
+        java.util.ArrayList $r4;
+        int $i0;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.d.ag $r7;
+        boolean $z0;
+        android.content.Intent $r8;
+        android.net.Uri $r9;
+        it.h3g.areaclienti3.bm $r10;
+        java.lang.Object[] $r11;
+        it.h3g.areaclienti3.fragments.x $r12;
+        android.os.Bundle $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.bh;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.PagerActivity: void m()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", "Click su news menu destro, numero");
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.PagerActivity: java.util.ArrayList p(it.h3g.areaclienti3.PagerActivity)>($r2);
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+        $r6 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r7 = (it.h3g.areaclienti3.d.ag) $r6;
+        $r5 = virtualinvoke $r7.<it.h3g.areaclienti3.d.ag: java.lang.String a()>();
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("banner");
+        if $z0 == 0 goto label1;
+
+        $r5 = virtualinvoke $r7.<it.h3g.areaclienti3.d.ag: java.lang.String u()>();
+        if $r5 == null goto label0;
+
+        $r8 = new android.content.Intent;
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.d.ag: java.lang.String u()>();
+        $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        specialinvoke $r8.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r9);
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.PagerActivity: void startActivity(android.content.Intent)>($r8);
+        $r10 = new it.h3g.areaclienti3.bm;
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        specialinvoke $r10.<it.h3g.areaclienti3.bm: void <init>(it.h3g.areaclienti3.PagerActivity,it.h3g.areaclienti3.bm)>($r2, null);
+        $r11 = newarray (java.lang.Object)[1];
+        $r5 = virtualinvoke $r7.<it.h3g.areaclienti3.d.ag: java.lang.String b()>();
+        $r11[0] = $r5;
+        virtualinvoke $r10.<it.h3g.areaclienti3.bm: android.os.AsyncTask execute(java.lang.Object[])>($r11);
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void o(it.h3g.areaclienti3.PagerActivity)>($r2);
+
+     label0:
+        return;
+
+     label1:
+        $r12 = new it.h3g.areaclienti3.fragments.x;
+        specialinvoke $r12.<it.h3g.areaclienti3.fragments.x: void <init>()>();
+        $r13 = new android.os.Bundle;
+        specialinvoke $r13.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r13.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("newsPollsDetail", $r7);
+        virtualinvoke $r12.<it.h3g.areaclienti3.fragments.a: void setArguments(android.os.Bundle)>($r13);
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void a(it.h3g.areaclienti3.PagerActivity,android.support.v4.app.Fragment)>($r2, $r12);
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void o(it.h3g.areaclienti3.PagerActivity)>($r2);
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.d.ag: boolean c()>();
+        if $z0 != 0 goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        $i0 = staticinvoke <it.h3g.areaclienti3.PagerActivity: int q(it.h3g.areaclienti3.PagerActivity)>($r2);
+        if $i0 <= 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", "click su news non lette - decremento il badge");
+        $r13 = new android.os.Bundle;
+        specialinvoke $r13.<android.os.Bundle: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        $i0 = staticinvoke <it.h3g.areaclienti3.PagerActivity: int q(it.h3g.areaclienti3.PagerActivity)>($r2);
+        $i0 = $i0 + -1;
+        virtualinvoke $r13.<android.os.Bundle: void putInt(java.lang.String,int)>("result", $i0);
+        $r2 = $r0.<it.h3g.areaclienti3.bh: it.h3g.areaclienti3.PagerActivity a>;
+        staticinvoke <it.h3g.areaclienti3.PagerActivity: void b(it.h3g.areaclienti3.PagerActivity,android.os.Bundle)>($r2, $r13);
+        goto label0;
+    }
+}

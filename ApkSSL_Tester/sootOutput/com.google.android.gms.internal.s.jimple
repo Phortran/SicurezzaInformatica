@@ -1,0 +1,186 @@
+public final class com.google.android.gms.internal.s extends java.lang.Object
+{
+    private final com.google.android.gms.internal.bu a;
+    private final com.google.android.gms.internal.aw b;
+    private final android.content.Context c;
+    private final java.lang.Object d;
+    private final com.google.android.gms.internal.y e;
+    private boolean f;
+    private com.google.android.gms.internal.af g;
+
+    public void <init>(android.content.Context, com.google.android.gms.internal.bu, com.google.android.gms.internal.aw, com.google.android.gms.internal.y)
+    {
+        com.google.android.gms.internal.s $r0;
+        android.content.Context $r1;
+        com.google.android.gms.internal.bu $r2;
+        com.google.android.gms.internal.aw $r3;
+        com.google.android.gms.internal.y $r4;
+        java.lang.Object $r5;
+
+        $r0 := @this: com.google.android.gms.internal.s;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.google.android.gms.internal.bu;
+        $r3 := @parameter2: com.google.android.gms.internal.aw;
+        $r4 := @parameter3: com.google.android.gms.internal.y;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r5 = new java.lang.Object;
+        specialinvoke $r5.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.s: java.lang.Object d> = $r5;
+        $r0.<com.google.android.gms.internal.s: boolean f> = 0;
+        $r0.<com.google.android.gms.internal.s: android.content.Context c> = $r1;
+        $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.bu a> = $r2;
+        $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.aw b> = $r3;
+        $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.y e> = $r4;
+        return;
+    }
+
+    public com.google.android.gms.internal.ah a(long, long)
+    {
+        com.google.android.gms.internal.s $r0;
+        long $l0, $l1;
+        java.lang.String $r1;
+        java.lang.Object $r2;
+        com.google.android.gms.internal.aw $r3;
+        com.google.android.gms.internal.y $r4;
+        com.google.android.gms.internal.bu $r5;
+        java.util.Iterator $r6, $r7;
+        java.util.List $r8;
+        boolean $z0;
+        com.google.android.gms.internal.w $r9;
+        java.lang.StringBuilder $r10;
+        com.google.android.gms.internal.ah $r11, $r16;
+        com.google.android.gms.internal.af $r12;
+        android.content.Context $r13;
+        com.google.android.gms.internal.v $r14;
+        com.google.android.gms.internal.x $r15;
+        int $i3;
+        java.lang.Throwable $r17;
+        com.google.android.gms.internal.ax $r18;
+        android.os.Handler $r19;
+        com.google.android.gms.internal.u $r20;
+
+        $r0 := @this: com.google.android.gms.internal.s;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        staticinvoke <com.google.android.gms.internal.dc: void a(java.lang.String)>("Starting mediation.");
+        $r4 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.y e>;
+        $r8 = $r4.<com.google.android.gms.internal.y: java.util.List a>;
+        $r6 = interfaceinvoke $r8.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label9;
+
+        $r2 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (com.google.android.gms.internal.w) $r2;
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Trying mediation network: ");
+        $r1 = $r9.<com.google.android.gms.internal.w: java.lang.String a>;
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void c(java.lang.String)>($r1);
+        $r8 = $r9.<com.google.android.gms.internal.w: java.util.List b>;
+        $r7 = interfaceinvoke $r8.<java.util.List: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label0;
+
+        $r2 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r1 = (java.lang.String) $r2;
+        $r2 = $r0.<com.google.android.gms.internal.s: java.lang.Object d>;
+        entermonitor $r2;
+
+     label2:
+        $z0 = $r0.<com.google.android.gms.internal.s: boolean f>;
+        if $z0 == 0 goto label3;
+
+        $r11 = new com.google.android.gms.internal.ah;
+        specialinvoke $r11.<com.google.android.gms.internal.ah: void <init>(int)>(-1);
+        exitmonitor $r2;
+        return $r11;
+
+     label3:
+        $r12 = new com.google.android.gms.internal.af;
+        $r13 = $r0.<com.google.android.gms.internal.s: android.content.Context c>;
+        $r3 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.aw b>;
+        $r4 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.y e>;
+        $r5 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.bu a>;
+        $r14 = $r5.<com.google.android.gms.internal.bu: com.google.android.gms.internal.v d>;
+        $r5 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.bu a>;
+        $r15 = $r5.<com.google.android.gms.internal.bu: com.google.android.gms.internal.x e>;
+        specialinvoke $r12.<com.google.android.gms.internal.af: void <init>(android.content.Context,java.lang.String,com.google.android.gms.internal.aw,com.google.android.gms.internal.y,com.google.android.gms.internal.w,com.google.android.gms.internal.v,com.google.android.gms.internal.x)>($r13, $r1, $r3, $r4, $r9, $r14, $r15);
+        $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.af g> = $r12;
+        exitmonitor $r2;
+
+     label4:
+        $r12 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.af g>;
+        $r16 = virtualinvoke $r12.<com.google.android.gms.internal.af: com.google.android.gms.internal.ah a(long,long)>($l0, $l1);
+        $i3 = $r16.<com.google.android.gms.internal.ah: int a>;
+        if $i3 != 0 goto label8;
+
+        staticinvoke <com.google.android.gms.internal.dc: void a(java.lang.String)>("Adapter succeeded.");
+        return $r16;
+
+     label5:
+        $r17 := @caughtexception;
+
+     label6:
+        exitmonitor $r2;
+
+     label7:
+        throw $r17;
+
+     label8:
+        $r18 = $r16.<com.google.android.gms.internal.ah: com.google.android.gms.internal.ax c>;
+        if $r18 == null goto label1;
+
+        $r19 = <com.google.android.gms.internal.db: android.os.Handler a>;
+        $r20 = new com.google.android.gms.internal.u;
+        specialinvoke $r20.<com.google.android.gms.internal.u: void <init>(com.google.android.gms.internal.s,com.google.android.gms.internal.ah)>($r0, $r16);
+        virtualinvoke $r19.<android.os.Handler: boolean post(java.lang.Runnable)>($r20);
+        goto label1;
+
+     label9:
+        $r11 = new com.google.android.gms.internal.ah;
+        specialinvoke $r11.<com.google.android.gms.internal.ah: void <init>(int)>(1);
+        return $r11;
+
+        catch java.lang.Throwable from label2 to label4 with label5;
+        catch java.lang.Throwable from label6 to label7 with label5;
+    }
+
+    public void a()
+    {
+        com.google.android.gms.internal.s $r0;
+        java.lang.Object $r1;
+        com.google.android.gms.internal.af $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: com.google.android.gms.internal.s;
+        $r1 = $r0.<com.google.android.gms.internal.s: java.lang.Object d>;
+        entermonitor $r1;
+
+     label0:
+        $r0.<com.google.android.gms.internal.s: boolean f> = 1;
+        $r2 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.af g>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<com.google.android.gms.internal.s: com.google.android.gms.internal.af g>;
+        virtualinvoke $r2.<com.google.android.gms.internal.af: void a()>();
+
+     label1:
+        exitmonitor $r1;
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        exitmonitor $r1;
+
+     label3:
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label3 with label2;
+    }
+}

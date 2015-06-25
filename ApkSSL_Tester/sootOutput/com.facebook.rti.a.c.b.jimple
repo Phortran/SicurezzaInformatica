@@ -1,0 +1,40 @@
+final class com.facebook.rti.a.c.b extends java.lang.Object implements java.util.concurrent.ThreadFactory
+{
+    private final java.util.concurrent.atomic.AtomicInteger a;
+
+    void <init>()
+    {
+        com.facebook.rti.a.c.b $r0;
+        java.util.concurrent.atomic.AtomicInteger $r1;
+
+        $r0 := @this: com.facebook.rti.a.c.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new java.util.concurrent.atomic.AtomicInteger;
+        specialinvoke $r1.<java.util.concurrent.atomic.AtomicInteger: void <init>(int)>(1);
+        $r0.<com.facebook.rti.a.c.b: java.util.concurrent.atomic.AtomicInteger a> = $r1;
+        return;
+    }
+
+    public final java.lang.Thread newThread(java.lang.Runnable)
+    {
+        com.facebook.rti.a.c.b $r0;
+        java.lang.Runnable $r1;
+        com.facebook.rti.a.c.c $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        int $i0;
+        java.util.concurrent.atomic.AtomicInteger $r5;
+
+        $r0 := @this: com.facebook.rti.a.c.b;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = new com.facebook.rti.a.c.c;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("IgExecutor #");
+        $r5 = $r0.<com.facebook.rti.a.c.b: java.util.concurrent.atomic.AtomicInteger a>;
+        $i0 = virtualinvoke $r5.<java.util.concurrent.atomic.AtomicInteger: int getAndIncrement()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<com.facebook.rti.a.c.c: void <init>(java.lang.Runnable,java.lang.String)>($r1, $r4);
+        return $r2;
+    }
+}

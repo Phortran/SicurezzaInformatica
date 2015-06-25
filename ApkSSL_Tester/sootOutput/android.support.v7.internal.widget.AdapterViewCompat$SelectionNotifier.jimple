@@ -1,0 +1,57 @@
+class android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier extends java.lang.Object implements java.lang.Runnable
+{
+    final android.support.v7.internal.widget.AdapterViewCompat this$0;
+
+    private void <init>(android.support.v7.internal.widget.AdapterViewCompat)
+    {
+        android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier $r0;
+        android.support.v7.internal.widget.AdapterViewCompat $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier;
+        $r1 := @parameter0: android.support.v7.internal.widget.AdapterViewCompat;
+        $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: android.support.v7.internal.widget.AdapterViewCompat this$0> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    void <init>(android.support.v7.internal.widget.AdapterViewCompat, android.support.v7.internal.widget.AdapterViewCompat$1)
+    {
+        android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier $r0;
+        android.support.v7.internal.widget.AdapterViewCompat $r1;
+        android.support.v7.internal.widget.AdapterViewCompat$1 $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier;
+        $r1 := @parameter0: android.support.v7.internal.widget.AdapterViewCompat;
+        $r2 := @parameter1: android.support.v7.internal.widget.AdapterViewCompat$1;
+        specialinvoke $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: void <init>(android.support.v7.internal.widget.AdapterViewCompat)>($r1);
+        return;
+    }
+
+    public void run()
+    {
+        android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier $r0;
+        android.support.v7.internal.widget.AdapterViewCompat $r1;
+        android.widget.Adapter $r2;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier;
+        $r1 = $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: android.support.v7.internal.widget.AdapterViewCompat this$0>;
+        $z0 = $r1.<android.support.v7.internal.widget.AdapterViewCompat: boolean mDataChanged>;
+        if $z0 == 0 goto label1;
+
+        $r1 = $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: android.support.v7.internal.widget.AdapterViewCompat this$0>;
+        $r2 = virtualinvoke $r1.<android.support.v7.internal.widget.AdapterViewCompat: android.widget.Adapter getAdapter()>();
+        if $r2 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: android.support.v7.internal.widget.AdapterViewCompat this$0>;
+        virtualinvoke $r1.<android.support.v7.internal.widget.AdapterViewCompat: boolean post(java.lang.Runnable)>($r0);
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<android.support.v7.internal.widget.AdapterViewCompat$SelectionNotifier: android.support.v7.internal.widget.AdapterViewCompat this$0>;
+        staticinvoke <android.support.v7.internal.widget.AdapterViewCompat: void access$200(android.support.v7.internal.widget.AdapterViewCompat)>($r1);
+        goto label0;
+    }
+}

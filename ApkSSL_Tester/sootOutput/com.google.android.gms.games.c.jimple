@@ -1,0 +1,117 @@
+final class com.google.android.gms.games.c extends com.google.android.gms.games.j
+{
+
+    void <init>()
+    {
+        com.google.android.gms.games.c $r0;
+
+        $r0 := @this: com.google.android.gms.games.c;
+        specialinvoke $r0.<com.google.android.gms.games.j: void <init>()>();
+        return;
+    }
+
+    public com.google.android.gms.games.GameEntity a(android.os.Parcel)
+    {
+        com.google.android.gms.games.c $r0;
+        android.os.Parcel $r1;
+        java.lang.Integer $r2;
+        java.lang.String $r3, $r4, $r5, $r6, $r7, $r8, $r12;
+        android.net.Uri $r9, $r10, $r11;
+        boolean $z0, $z1;
+        int $i1, $i2, $i3;
+        java.lang.Class $r13;
+        com.google.android.gms.games.GameEntity $r14;
+
+        $r0 := @this: com.google.android.gms.games.c;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = staticinvoke <com.google.android.gms.games.GameEntity: java.lang.Integer s()>();
+        $z1 = staticinvoke <com.google.android.gms.games.GameEntity: boolean a(java.lang.Integer)>($r2);
+        if $z1 != 0 goto label0;
+
+        $r13 = class "com/google/android/gms/games/GameEntity";
+        $r12 = virtualinvoke $r13.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $z1 = staticinvoke <com.google.android.gms.games.GameEntity: boolean a(java.lang.String)>($r12);
+        if $z1 == 0 goto label1;
+
+     label0:
+        $r14 = specialinvoke $r0.<com.google.android.gms.games.j: com.google.android.gms.games.GameEntity a(android.os.Parcel)>($r1);
+        return $r14;
+
+     label1:
+        $r3 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r5 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r6 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r7 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r8 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r12 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        if $r12 != null goto label7;
+
+        $r9 = null;
+
+     label2:
+        $r12 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        if $r12 != null goto label8;
+
+        $r10 = null;
+
+     label3:
+        $r12 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        if $r12 != null goto label9;
+
+        $r11 = null;
+
+     label4:
+        $i3 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i3 <= 0 goto label10;
+
+        $z0 = 1;
+
+     label5:
+        $i3 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i3 <= 0 goto label11;
+
+        $z1 = 1;
+
+     label6:
+        $r12 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i2 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i3 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r14 = new com.google.android.gms.games.GameEntity;
+        specialinvoke $r14.<com.google.android.gms.games.GameEntity: void <init>(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.net.Uri,android.net.Uri,android.net.Uri,boolean,boolean,java.lang.String,int,int,int)>(1, $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r10, $r11, $z0, $z1, $r12, $i1, $i2, $i3);
+        return $r14;
+
+     label7:
+        $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r12);
+        goto label2;
+
+     label8:
+        $r10 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r12);
+        goto label3;
+
+     label9:
+        $r11 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r12);
+        goto label4;
+
+     label10:
+        $z0 = 0;
+        goto label5;
+
+     label11:
+        $z1 = 0;
+        goto label6;
+    }
+
+    public java.lang.Object createFromParcel(android.os.Parcel)
+    {
+        com.google.android.gms.games.c $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.games.GameEntity $r2;
+
+        $r0 := @this: com.google.android.gms.games.c;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.games.c: com.google.android.gms.games.GameEntity a(android.os.Parcel)>($r1);
+        return $r2;
+    }
+}

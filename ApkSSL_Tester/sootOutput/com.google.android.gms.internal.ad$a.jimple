@@ -1,0 +1,61 @@
+public abstract class com.google.android.gms.internal.ad$a extends android.os.Binder implements com.google.android.gms.internal.ad
+{
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.ad$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        com.google.android.gms.dynamic.b $r3;
+        com.google.android.gms.internal.x $r4;
+        java.lang.String $r5;
+        com.google.android.gms.internal.aw $r6;
+        boolean $z0;
+        android.os.IBinder $r7;
+        com.google.android.gms.internal.jk $r8;
+
+        $r0 := @this: com.google.android.gms.internal.ad$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.ads.internal.client.IAdManagerCreator");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.ads.internal.client.IAdManagerCreator");
+        $r7 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r3 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r7);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label4;
+
+        $r8 = <com.google.android.gms.internal.x: com.google.android.gms.internal.jk a>;
+        $r4 = virtualinvoke $r8.<com.google.android.gms.internal.jk: com.google.android.gms.internal.x a(android.os.Parcel)>($r1);
+
+     label3:
+        $r5 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r7 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r6 = staticinvoke <com.google.android.gms.internal.aw$a: com.google.android.gms.internal.aw a(android.os.IBinder)>($r7);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r7 = virtualinvoke $r0.<com.google.android.gms.internal.ad$a: android.os.IBinder a(com.google.android.gms.dynamic.b,com.google.android.gms.internal.x,java.lang.String,com.google.android.gms.internal.aw,int)>($r3, $r4, $r5, $r6, $i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r7);
+        return 1;
+
+     label4:
+        $r4 = null;
+        goto label3;
+    }
+}

@@ -1,0 +1,116 @@
+public final class com.b.a.a.a.f extends java.lang.Object
+{
+    private final com.b.a.a.a.c a;
+    private long b;
+    private long c;
+    private long d;
+    private long e;
+    private long f;
+
+    public void <init>(com.b.a.a.a.c)
+    {
+        com.b.a.a.a.f $r0;
+        com.b.a.a.a.c $r1;
+
+        $r0 := @this: com.b.a.a.a.f;
+        $r1 := @parameter0: com.b.a.a.a.c;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.b.a.a.a.f: long f> = 0L;
+        $r0.<com.b.a.a.a.f: long e> = -1L;
+        $r0.<com.b.a.a.a.f: long b> = -1L;
+        $r0.<com.b.a.a.a.f: long c> = -1L;
+        $r0.<com.b.a.a.a.f: long d> = 0L;
+        $r0.<com.b.a.a.a.f: com.b.a.a.a.c a> = $r1;
+        return;
+    }
+
+    private boolean a(long, long)
+    {
+        com.b.a.a.a.f $r0;
+        long $l0, $l1;
+        java.lang.StringBuffer $r2;
+        byte $b3;
+        com.b.a.a.a.c $r3;
+
+        $r0 := @this: com.b.a.a.a.f;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $b3 = $l0 cmp 10000L;
+        if $b3 < 0 goto label0;
+
+        $b3 = $l1 cmp 5L;
+        if $b3 >= 0 goto label1;
+
+     label0:
+        $b3 = $l0 cmp 102400L;
+        if $b3 < 0 goto label2;
+
+        $b3 = $l1 cmp 0L;
+        if $b3 <= 0 goto label2;
+
+     label1:
+        $r3 = $r0.<com.b.a.a.a.f: com.b.a.a.a.c a>;
+        virtualinvoke $r3.<com.b.a.a.a.c: void a(long,long)>($l0, $l1);
+        $r2 = new java.lang.StringBuffer;
+        specialinvoke $r2.<java.lang.StringBuffer: void <init>(java.lang.String)>("connectionclass/bytes ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(long)>($l0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("; timeInMs: ");
+        virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(long)>($l1);
+        return 1;
+
+     label2:
+        return 0;
+    }
+
+    public final void a(long)
+    {
+        com.b.a.a.a.f $r0;
+        long $l0, $l1, $l2;
+        byte $b3;
+        boolean $z0;
+
+        $r0 := @this: com.b.a.a.a.f;
+        $l0 := @parameter0: long;
+        $l1 = $r0.<com.b.a.a.a.f: long f>;
+        $b3 = $l1 cmp 0L;
+        if $b3 != 0 goto label0;
+
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<com.b.a.a.a.f: long e> = $l2;
+        $l2 = $r0.<com.b.a.a.a.f: long e>;
+        $r0.<com.b.a.a.a.f: long c> = $l2;
+        $l2 = $r0.<com.b.a.a.a.f: long c>;
+        $r0.<com.b.a.a.a.f: long b> = $l2;
+
+     label0:
+        $l2 = $r0.<com.b.a.a.a.f: long f>;
+        $l2 = $l2 + $l0;
+        $r0.<com.b.a.a.a.f: long f> = $l2;
+        $l2 = $r0.<com.b.a.a.a.f: long f>;
+        $l1 = $r0.<com.b.a.a.a.f: long d>;
+        $l2 = $l2 - $l1;
+        $b3 = $l2 cmp 10000L;
+        if $b3 < 0 goto label1;
+
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<com.b.a.a.a.f: long b> = $l2;
+
+     label1:
+        $l2 = $r0.<com.b.a.a.a.f: long f>;
+        $l1 = $r0.<com.b.a.a.a.f: long d>;
+        $l1 = $l2 - $l1;
+        $l0 = $r0.<com.b.a.a.a.f: long b>;
+        $l2 = $r0.<com.b.a.a.a.f: long c>;
+        $l2 = $l0 - $l2;
+        $z0 = specialinvoke $r0.<com.b.a.a.a.f: boolean a(long,long)>($l1, $l2);
+        if $z0 == 0 goto label2;
+
+        $l2 = $r0.<com.b.a.a.a.f: long f>;
+        $r0.<com.b.a.a.a.f: long d> = $l2;
+        $l2 = $r0.<com.b.a.a.a.f: long b>;
+        $r0.<com.b.a.a.a.f: long c> = $l2;
+
+     label2:
+        return;
+    }
+}

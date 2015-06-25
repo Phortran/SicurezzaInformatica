@@ -1,0 +1,99 @@
+class org.acra.util.HttpRequest$SocketTimeOutRetryHandler extends java.lang.Object implements org.apache.http.client.HttpRequestRetryHandler
+{
+    private final org.apache.http.params.HttpParams httpParams;
+    private final int maxNrRetries;
+
+    private void <init>(org.apache.http.params.HttpParams, int)
+    {
+        org.acra.util.HttpRequest$SocketTimeOutRetryHandler $r0;
+        org.apache.http.params.HttpParams $r1;
+        int $i0;
+
+        $r0 := @this: org.acra.util.HttpRequest$SocketTimeOutRetryHandler;
+        $r1 := @parameter0: org.apache.http.params.HttpParams;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: org.apache.http.params.HttpParams httpParams> = $r1;
+        $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: int maxNrRetries> = $i0;
+        return;
+    }
+
+    void <init>(org.apache.http.params.HttpParams, int, org.acra.util.HttpRequest$1)
+    {
+        org.acra.util.HttpRequest$SocketTimeOutRetryHandler $r0;
+        org.apache.http.params.HttpParams $r1;
+        int $i0;
+        org.acra.util.HttpRequest$1 $r2;
+
+        $r0 := @this: org.acra.util.HttpRequest$SocketTimeOutRetryHandler;
+        $r1 := @parameter0: org.apache.http.params.HttpParams;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: org.acra.util.HttpRequest$1;
+        specialinvoke $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: void <init>(org.apache.http.params.HttpParams,int)>($r1, $i0);
+        return;
+    }
+
+    public boolean retryRequest(java.io.IOException, int, org.apache.http.protocol.HttpContext)
+    {
+        org.acra.util.HttpRequest$SocketTimeOutRetryHandler $r0;
+        java.io.IOException $r1;
+        int $i0, $i1;
+        org.apache.http.protocol.HttpContext $r2;
+        boolean $z0;
+        org.apache.http.params.HttpParams $r3;
+        java.lang.String $r4, $r6;
+        java.lang.StringBuilder $r5;
+        org.acra.log.ACRALog $r7;
+
+        $r0 := @this: org.acra.util.HttpRequest$SocketTimeOutRetryHandler;
+        $r1 := @parameter0: java.io.IOException;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: org.apache.http.protocol.HttpContext;
+        $z0 = $r1 instanceof java.net.SocketTimeoutException;
+        if $z0 == 0 goto label3;
+
+        $i1 = $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: int maxNrRetries>;
+        if $i0 > $i1 goto label2;
+
+        $r3 = $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: org.apache.http.params.HttpParams httpParams>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: org.apache.http.params.HttpParams httpParams>;
+        $i1 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSoTimeout(org.apache.http.params.HttpParams)>($r3);
+        $i1 = $i1 * 2;
+        $r3 = $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: org.apache.http.params.HttpParams httpParams>;
+        staticinvoke <org.apache.http.params.HttpConnectionParams: void setSoTimeout(org.apache.http.params.HttpParams,int)>($r3, $i1);
+        $r7 = <org.acra.ACRA: org.acra.log.ACRALog log>;
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SocketTimeOut - increasing time out to ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" millis and trying again");
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r7.<org.acra.log.ACRALog: int d(java.lang.String,java.lang.String)>($r4, $r6);
+
+     label0:
+        return 1;
+
+     label1:
+        $r7 = <org.acra.ACRA: org.acra.log.ACRALog log>;
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        interfaceinvoke $r7.<org.acra.log.ACRALog: int d(java.lang.String,java.lang.String)>($r6, "SocketTimeOut - no HttpParams, cannot increase time out. Trying again with current settings");
+        goto label0;
+
+     label2:
+        $r7 = <org.acra.ACRA: org.acra.log.ACRALog log>;
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SocketTimeOut but exceeded max number of retries : ");
+        $i1 = $r0.<org.acra.util.HttpRequest$SocketTimeOutRetryHandler: int maxNrRetries>;
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r7.<org.acra.log.ACRALog: int d(java.lang.String,java.lang.String)>($r6, $r4);
+
+     label3:
+        return 0;
+    }
+}

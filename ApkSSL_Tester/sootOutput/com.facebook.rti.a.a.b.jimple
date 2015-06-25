@@ -1,0 +1,147 @@
+public class com.facebook.rti.a.a.b extends java.lang.Object
+{
+    private static final java.lang.String a;
+    private final java.lang.String b;
+    private final long c;
+    private final java.lang.String d;
+    private final java.util.Map e;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/a/a/b";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.rti.a.a.b: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>(java.lang.String, java.lang.String)
+    {
+        com.facebook.rti.a.a.b $r0;
+        java.lang.String $r1, $r2;
+        java.util.HashMap $r3;
+        long $l0;
+
+        $r0 := @this: com.facebook.rti.a.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.rti.a.a.b: java.util.Map e> = $r3;
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<com.facebook.rti.a.a.b: long c> = $l0;
+        $r0.<com.facebook.rti.a.a.b: java.lang.String b> = $r1;
+        $r0.<com.facebook.rti.a.a.b: java.lang.String d> = $r2;
+        return;
+    }
+
+    public final com.facebook.rti.a.a.b a(java.lang.String)
+    {
+        com.facebook.rti.a.a.b $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.a.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $r0 = virtualinvoke $r0.<com.facebook.rti.a.a.b: com.facebook.rti.a.a.b a(java.lang.String,java.lang.String)>("pk", $r1);
+        return $r0;
+    }
+
+    public final com.facebook.rti.a.a.b a(java.lang.String, java.lang.String)
+    {
+        com.facebook.rti.a.a.b $r0;
+        java.lang.String $r1, $r2;
+        java.util.Map $r3;
+
+        $r0 := @this: com.facebook.rti.a.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<com.facebook.rti.a.a.b: java.util.Map e>;
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r2);
+        return $r0;
+    }
+
+    public final org.json.JSONObject a()
+    {
+        com.facebook.rti.a.a.b $r0;
+        java.lang.String $r1, $r2;
+        org.json.JSONObject $r3, $r4;
+        long $l0;
+        java.util.Map $r5;
+        boolean $z0;
+        java.util.Set $r6;
+        java.util.Iterator $r7;
+        java.lang.Object $r8;
+        java.util.Map$Entry $r9;
+        org.json.JSONException $r10;
+        java.lang.Object[] $r11;
+
+        $r0 := @this: com.facebook.rti.a.a.b;
+        $r3 = new org.json.JSONObject;
+        specialinvoke $r3.<org.json.JSONObject: void <init>()>();
+        $r2 = $r0.<com.facebook.rti.a.a.b: java.lang.String b>;
+
+     label0:
+        virtualinvoke $r3.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("name", $r2);
+        $l0 = $r0.<com.facebook.rti.a.a.b: long c>;
+        $r2 = staticinvoke <com.facebook.rti.a.a.j: java.lang.String a(long)>($l0);
+        virtualinvoke $r3.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("time", $r2);
+        $r1 = $r0.<com.facebook.rti.a.a.b: java.lang.String d>;
+        virtualinvoke $r3.<org.json.JSONObject: org.json.JSONObject putOpt(java.lang.String,java.lang.Object)>("module", $r1);
+        $r5 = $r0.<com.facebook.rti.a.a.b: java.util.Map e>;
+        $z0 = interfaceinvoke $r5.<java.util.Map: boolean isEmpty()>();
+        if $z0 != 0 goto label4;
+
+        $r4 = new org.json.JSONObject;
+        specialinvoke $r4.<org.json.JSONObject: void <init>()>();
+        $r5 = $r0.<com.facebook.rti.a.a.b: java.util.Map e>;
+        $r6 = interfaceinvoke $r5.<java.util.Map: java.util.Set entrySet()>();
+        $r7 = interfaceinvoke $r6.<java.util.Set: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label5;
+
+        $r8 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.util.Map$Entry) $r8;
+        $r8 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r2 = (java.lang.String) $r8;
+        $r8 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        virtualinvoke $r4.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>($r2, $r8);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r10 := @caughtexception;
+        $r2 = <com.facebook.rti.a.a.b: java.lang.String a>;
+        $r11 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r2, $r10, "Failed to serialize", $r11);
+
+     label4:
+        return $r3;
+
+     label5:
+        virtualinvoke $r3.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("extra", $r4);
+
+     label6:
+        return $r3;
+
+        catch org.json.JSONException from label0 to label2 with label3;
+        catch org.json.JSONException from label5 to label6 with label3;
+    }
+
+    public java.lang.String toString()
+    {
+        com.facebook.rti.a.a.b $r0;
+        org.json.JSONObject $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.facebook.rti.a.a.b;
+        $r1 = virtualinvoke $r0.<com.facebook.rti.a.a.b: org.json.JSONObject a()>();
+        $r2 = virtualinvoke $r1.<org.json.JSONObject: java.lang.String toString()>();
+        return $r2;
+    }
+}

@@ -1,0 +1,30 @@
+final class com.facebook.lite.photo.l extends java.lang.Object implements java.util.concurrent.ThreadFactory
+{
+    final com.facebook.lite.photo.j a;
+
+    void <init>(com.facebook.lite.photo.j)
+    {
+        com.facebook.lite.photo.l $r0;
+        com.facebook.lite.photo.j $r1;
+
+        $r0 := @this: com.facebook.lite.photo.l;
+        $r1 := @parameter0: com.facebook.lite.photo.j;
+        $r0.<com.facebook.lite.photo.l: com.facebook.lite.photo.j a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final java.lang.Thread newThread(java.lang.Runnable)
+    {
+        com.facebook.lite.photo.l $r0;
+        java.lang.Runnable $r1;
+        java.lang.Thread $r2;
+
+        $r0 := @this: com.facebook.lite.photo.l;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = new java.lang.Thread;
+        specialinvoke $r2.<java.lang.Thread: void <init>(java.lang.Runnable)>($r1);
+        virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(5);
+        return $r2;
+    }
+}

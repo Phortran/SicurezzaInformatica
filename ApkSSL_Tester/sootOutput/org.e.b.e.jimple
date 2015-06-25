@@ -1,0 +1,90 @@
+public abstract class org.e.b.e extends java.lang.Object
+{
+    protected java.net.Proxy a;
+    protected java.lang.String b;
+    protected int c;
+    public boolean d;
+    public java.lang.String e;
+    public java.lang.String f;
+    private java.lang.String g;
+    private int h;
+
+    public void <init>(java.lang.String, int)
+    {
+        org.e.b.e $r0;
+        java.lang.String $r1;
+        int $i0;
+
+        $r0 := @this: org.e.b.e;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.e.b.e: int c> = 20000;
+        $r0.<org.e.b.e: java.lang.String g> = "";
+        $r0.<org.e.b.e: int h> = 262144;
+        $r0.<org.e.b.e: java.lang.String b> = $r1;
+        $r0.<org.e.b.e: int c> = $i0;
+        return;
+    }
+
+    public void a(java.lang.String)
+    {
+        org.e.b.e $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: org.e.b.e;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<org.e.b.e: java.lang.String g> = $r1;
+        return;
+    }
+
+    protected void a(org.e.b, java.io.InputStream)
+    {
+        org.e.b.e $r0;
+        org.e.b $r1;
+        java.io.InputStream $r2;
+        org.f.a.a $r3;
+
+        $r0 := @this: org.e.b.e;
+        $r1 := @parameter0: org.e.b;
+        $r2 := @parameter1: java.io.InputStream;
+        $r3 = new org.f.a.a;
+        specialinvoke $r3.<org.f.a.a: void <init>()>();
+        interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: void setFeature(java.lang.String,boolean)>("http://xmlpull.org/v1/doc/features.html#process-namespaces", 1);
+        interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r2, null);
+        virtualinvoke $r1.<org.e.b: void a(org.xmlpull.v1.XmlPullParser)>($r3);
+        virtualinvoke $r2.<java.io.InputStream: void close()>();
+        return;
+    }
+
+    protected byte[] a(org.e.b, java.lang.String)
+    {
+        org.e.b.e $r0;
+        org.e.b $r1;
+        java.lang.String $r2, $r5;
+        java.io.ByteArrayOutputStream $r3;
+        int $i0;
+        byte[] $r4;
+        org.f.a.b $r6;
+
+        $r0 := @this: org.e.b.e;
+        $r1 := @parameter0: org.e.b;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new java.io.ByteArrayOutputStream;
+        $i0 = $r0.<org.e.b.e: int h>;
+        specialinvoke $r3.<java.io.ByteArrayOutputStream: void <init>(int)>($i0);
+        $r5 = $r0.<org.e.b.e: java.lang.String g>;
+        $r4 = virtualinvoke $r5.<java.lang.String: byte[] getBytes()>();
+        virtualinvoke $r3.<java.io.ByteArrayOutputStream: void write(byte[])>($r4);
+        $r6 = new org.f.a.b;
+        specialinvoke $r6.<org.f.a.b: void <init>()>();
+        interfaceinvoke $r6.<org.xmlpull.v1.XmlSerializer: void setOutput(java.io.OutputStream,java.lang.String)>($r3, $r2);
+        virtualinvoke $r1.<org.e.b: void a(org.xmlpull.v1.XmlSerializer)>($r6);
+        interfaceinvoke $r6.<org.xmlpull.v1.XmlSerializer: void flush()>();
+        virtualinvoke $r3.<java.io.ByteArrayOutputStream: void write(int)>(13);
+        virtualinvoke $r3.<java.io.ByteArrayOutputStream: void write(int)>(10);
+        virtualinvoke $r3.<java.io.ByteArrayOutputStream: void flush()>();
+        $r4 = virtualinvoke $r3.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return $r4;
+    }
+}

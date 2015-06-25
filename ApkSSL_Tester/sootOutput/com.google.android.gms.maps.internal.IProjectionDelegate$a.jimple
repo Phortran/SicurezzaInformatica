@@ -1,0 +1,131 @@
+public abstract class com.google.android.gms.maps.internal.IProjectionDelegate$a extends android.os.Binder implements com.google.android.gms.maps.internal.IProjectionDelegate
+{
+
+    public static com.google.android.gms.maps.internal.IProjectionDelegate a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.maps.internal.IProjectionDelegate $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.maps.internal.IProjectionDelegate$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.maps.internal.IProjectionDelegate");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.maps.internal.IProjectionDelegate;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.maps.internal.IProjectionDelegate) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.maps.internal.IProjectionDelegate$a$a;
+        specialinvoke r4.<com.google.android.gms.maps.internal.IProjectionDelegate$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.internal.IProjectionDelegate$a $r0;
+        int $i0, $i1, $i2;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r3;
+        boolean $z0;
+        com.google.android.gms.dynamic.b $r5;
+        com.google.android.gms.maps.model.LatLng $r6;
+        com.google.android.gms.maps.model.h $r7;
+        java.lang.Object $r8;
+        com.google.android.gms.maps.model.VisibleRegion $r9;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IProjectionDelegate$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $r3 = null;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label5;
+            case 3: goto label9;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.maps.internal.IProjectionDelegate");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IProjectionDelegate");
+        $r3 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r3);
+        $r6 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IProjectionDelegate$a: com.google.android.gms.maps.model.LatLng a(com.google.android.gms.dynamic.b)>($r5);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r6 == null goto label4;
+
+        $i2 = (int) 1;
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($i2);
+        $i2 = (int) 1;
+        virtualinvoke $r6.<com.google.android.gms.maps.model.LatLng: void writeToParcel(android.os.Parcel,int)>($r2, $i2);
+
+     label3:
+        return 1;
+
+     label4:
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>(0);
+        goto label3;
+
+     label5:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IProjectionDelegate");
+        $i2 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i2 == 0 goto label8;
+
+        $r7 = <com.google.android.gms.maps.model.LatLng: com.google.android.gms.maps.model.h a>;
+        $r8 = virtualinvoke $r7.<com.google.android.gms.maps.model.h: com.google.android.gms.maps.model.LatLng a(android.os.Parcel)>($r1);
+
+     label6:
+        $r6 = (com.google.android.gms.maps.model.LatLng) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IProjectionDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLng)>($r6);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label7;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label7:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label8:
+        $r8 = null;
+        goto label6;
+
+     label9:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IProjectionDelegate");
+        $r9 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IProjectionDelegate$a: com.google.android.gms.maps.model.VisibleRegion a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r9 == null goto label11;
+
+        $i2 = (int) 1;
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($i2);
+        $i2 = (int) 1;
+        virtualinvoke $r9.<com.google.android.gms.maps.model.VisibleRegion: void writeToParcel(android.os.Parcel,int)>($r2, $i2);
+
+     label10:
+        return 1;
+
+     label11:
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>(0);
+        goto label10;
+    }
+}

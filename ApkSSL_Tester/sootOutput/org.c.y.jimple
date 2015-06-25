@@ -1,0 +1,1809 @@
+public class org.c.y extends java.lang.Object
+{
+    private java.io.BufferedReader a;
+    private char[] b;
+    private transient int c;
+    private transient int d;
+    private transient int e;
+    private transient int f;
+    private transient java.lang.StringBuffer g;
+    private transient boolean h;
+    private transient org.c.o i;
+    private transient org.c.ai j;
+    private transient java.util.List k;
+    private transient java.util.Set l;
+    private boolean m;
+    private boolean n;
+    private boolean o;
+    private org.c.q p;
+    private org.c.g q;
+    private org.c.h r;
+    private org.c.f s;
+
+    public void <init>(org.c.q, java.io.Reader, org.c.f)
+    {
+        org.c.y $r0;
+        org.c.q $r1;
+        java.io.Reader $r2;
+        org.c.f $r3;
+        int $i0;
+        org.c.g $r4;
+        char[] $r5;
+        java.lang.StringBuffer $r6;
+        java.util.ArrayList $r7;
+        java.util.HashSet $r8;
+        java.io.BufferedReader $r9;
+        org.c.h $r10;
+
+        $r0 := @this: org.c.y;
+        $r1 := @parameter0: org.c.q;
+        $r2 := @parameter1: java.io.Reader;
+        $r3 := @parameter2: org.c.f;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r5 = newarray (char)[1024];
+        $r0.<org.c.y: char[] b> = $r5;
+        $r0.<org.c.y: int d> = -1;
+        $i0 = (int) 1;
+        $r0.<org.c.y: int e> = $i0;
+        $i0 = (int) 1;
+        $r0.<org.c.y: int f> = $i0;
+        $r6 = new java.lang.StringBuffer;
+        specialinvoke $r6.<java.lang.StringBuffer: void <init>(int)>(512);
+        $r0.<org.c.y: java.lang.StringBuffer g> = $r6;
+        $r7 = new java.util.ArrayList;
+        specialinvoke $r7.<java.util.ArrayList: void <init>()>();
+        $r0.<org.c.y: java.util.List k> = $r7;
+        $r8 = new java.util.HashSet;
+        specialinvoke $r8.<java.util.HashSet: void <init>()>();
+        $r0.<org.c.y: java.util.Set l> = $r8;
+        $r0.<org.c.y: boolean m> = 1;
+        $r9 = new java.io.BufferedReader;
+        specialinvoke $r9.<java.io.BufferedReader: void <init>(java.io.Reader)>($r2);
+        $r0.<org.c.y: java.io.BufferedReader a> = $r9;
+        $r0.<org.c.y: org.c.q p> = $r1;
+        $r4 = virtualinvoke $r1.<org.c.q: org.c.g a()>();
+        $r0.<org.c.y: org.c.g q> = $r4;
+        $r10 = virtualinvoke $r1.<org.c.q: org.c.h c()>();
+        $r0.<org.c.y: org.c.h r> = $r10;
+        $r0.<org.c.y: org.c.f s> = $r3;
+        return;
+    }
+
+    private void a(int)
+    {
+        org.c.y $r0;
+        int $i0, $i1, $i3, $i6, $i7, $i8;
+        char[] $r1, $r3;
+        java.io.BufferedReader $r2;
+        char $c9;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        $i3 = 0;
+        $i1 = $r0.<org.c.y: int d>;
+        if $i1 != -1 goto label7;
+
+        $i1 = $r0.<org.c.y: int c>;
+        $i1 = $i1 + $i0;
+        if $i1 < 1024 goto label7;
+
+        $i1 = $r0.<org.c.y: int c>;
+        $i0 = 1024 - $i1;
+        $r3 = $r0.<org.c.y: char[] b>;
+        $i1 = $r0.<org.c.y: int c>;
+        $r1 = $r0.<org.c.y: char[] b>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, $i1, $r1, 0, $i0);
+        $r0.<org.c.y: int c> = 0;
+        $i6 = 0;
+        $i7 = 1024 - $i0;
+        $i8 = $i0;
+
+     label0:
+        $r2 = $r0.<org.c.y: java.io.BufferedReader a>;
+        $r1 = $r0.<org.c.y: char[] b>;
+        $i1 = virtualinvoke $r2.<java.io.BufferedReader: int read(char[],int,int)>($r1, $i8, $i7);
+        if $i1 < 0 goto label1;
+
+        $i6 = $i6 + $i1;
+        $i8 = $i8 + $i1;
+        $i7 = $i7 - $i1;
+
+     label1:
+        if $i1 < 0 goto label2;
+
+        if $i7 > 0 goto label0;
+
+     label2:
+        if $i7 <= 0 goto label3;
+
+        $i8 = $i6 + $i0;
+        $r0.<org.c.y: int d> = $i8;
+
+     label3:
+        $i8 = $r0.<org.c.y: int d>;
+        if $i8 < 0 goto label6;
+
+        $i8 = $r0.<org.c.y: int d>;
+
+     label4:
+        if $i3 >= $i8 goto label7;
+
+        $r3 = $r0.<org.c.y: char[] b>;
+        $c9 = $r3[$i3];
+        if $c9 < 1 goto label5;
+
+        if $c9 > 32 goto label5;
+
+        if $c9 == 10 goto label5;
+
+        if $c9 == 13 goto label5;
+
+        $r3 = $r0.<org.c.y: char[] b>;
+        $r3[$i3] = 32;
+
+     label5:
+        $i3 = $i3 + 1;
+        goto label3;
+
+     label6:
+        $i8 = 1024;
+        goto label4;
+
+     label7:
+        return;
+    }
+
+    private void a(org.c.b)
+    {
+        org.c.y $r0;
+        org.c.b $r1;
+        int $i0;
+        java.util.List $r2, $r3, $r4;
+        org.c.q $r5;
+        java.util.ListIterator $r6;
+        org.c.f $r7;
+
+        $r0 := @this: org.c.y;
+        $r1 := @parameter0: org.c.b;
+        $i0 = $r0.<org.c.y: int e>;
+        interfaceinvoke $r1.<org.c.b: void a(int)>($i0);
+        $i0 = $r0.<org.c.y: int f>;
+        interfaceinvoke $r1.<org.c.b: void b(int)>($i0);
+        $r4 = $r0.<org.c.y: java.util.List k>;
+        interfaceinvoke $r4.<java.util.List: boolean add(java.lang.Object)>($r1);
+        $r5 = $r0.<org.c.y: org.c.q p>;
+        $r2 = $r0.<org.c.y: java.util.List k>;
+        $r3 = $r0.<org.c.y: java.util.List k>;
+        $r4 = $r0.<org.c.y: java.util.List k>;
+        $i0 = interfaceinvoke $r4.<java.util.List: int size()>();
+        $i0 = $i0 + -1;
+        $r6 = interfaceinvoke $r3.<java.util.List: java.util.ListIterator listIterator(int)>($i0);
+        $r7 = $r0.<org.c.y: org.c.f s>;
+        virtualinvoke $r5.<org.c.q: void a(java.util.List,java.util.ListIterator,org.c.f)>($r2, $r6, $r7);
+        return;
+    }
+
+    private boolean a(char)
+    {
+        org.c.y $r0;
+        char $c0;
+        int $i1;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+        $c0 := @parameter0: char;
+        $i1 = $r0.<org.c.y: int c>;
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(int,char)>($i1, $c0);
+        return $z0;
+    }
+
+    private boolean a(int, char)
+    {
+        org.c.y $r0;
+        int $i0, $i2;
+        char $c1, $c3;
+        char[] $r1;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        $c1 := @parameter1: char;
+        $i2 = $r0.<org.c.y: int d>;
+        if $i2 < 0 goto label1;
+
+        $i2 = $r0.<org.c.y: int d>;
+        if $i0 < $i2 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $c1 = staticinvoke <java.lang.Character: char toLowerCase(char)>($c1);
+        $r1 = $r0.<org.c.y: char[] b>;
+        $c3 = $r1[$i0];
+        $c3 = staticinvoke <java.lang.Character: char toLowerCase(char)>($c3);
+        if $c1 != $c3 goto label0;
+
+        return 1;
+    }
+
+    private boolean a(java.lang.String)
+    {
+        org.c.y $r0;
+        java.lang.String $r1;
+        int $i1, $i2, $i3;
+        char[] $r2;
+        char $c4, $c5;
+
+        $r0 := @this: org.c.y;
+        $r1 := @parameter0: java.lang.String;
+        $i2 = virtualinvoke $r1.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void a(int)>($i2);
+        $i1 = $r0.<org.c.y: int d>;
+        if $i1 < 0 goto label1;
+
+        $i1 = $r0.<org.c.y: int c>;
+        $i3 = $i1 + $i2;
+        $i1 = $r0.<org.c.y: int d>;
+        if $i3 <= $i1 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $i3 = 0;
+
+     label2:
+        if $i3 >= $i2 goto label3;
+
+        $c4 = virtualinvoke $r1.<java.lang.String: char charAt(int)>($i3);
+        $c4 = staticinvoke <java.lang.Character: char toLowerCase(char)>($c4);
+        $r2 = $r0.<org.c.y: char[] b>;
+        $i1 = $r0.<org.c.y: int c>;
+        $i1 = $i1 + $i3;
+        $c5 = $r2[$i1];
+        $c5 = staticinvoke <java.lang.Character: char toLowerCase(char)>($c5);
+        if $c4 != $c5 goto label0;
+
+        $i3 = $i3 + 1;
+        goto label2;
+
+     label3:
+        return 1;
+    }
+
+    private void b(char)
+    {
+        org.c.y $r0;
+        char $c0;
+        java.lang.StringBuffer $r1;
+
+        $r0 := @this: org.c.y;
+        $c0 := @parameter0: char;
+        specialinvoke $r0.<org.c.y: void c(char)>($c0);
+        $r1 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        virtualinvoke $r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c0);
+        return;
+    }
+
+    private void b(int)
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<org.c.y: int c>;
+        $i1 = $i1 + $i0;
+        $r0.<org.c.y: int c> = $i1;
+        $i1 = $i0 + -1;
+        specialinvoke $r0.<org.c.y: void a(int)>($i1);
+        return;
+    }
+
+    private boolean b(java.lang.String)
+    {
+        org.c.y $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = "html";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r1);
+        if $z0 != 0 goto label0;
+
+        $r2 = "head";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r1);
+        if $z0 != 0 goto label0;
+
+        $r2 = "body";
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r1);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    private void c(char)
+    {
+        org.c.y $r0;
+        char $c0;
+        int $i2;
+
+        $r0 := @this: org.c.y;
+        $c0 := @parameter0: char;
+        if $c0 != 10 goto label1;
+
+        $i2 = $r0.<org.c.y: int e>;
+        $i2 = $i2 + 1;
+        $r0.<org.c.y: int e> = $i2;
+        $r0.<org.c.y: int f> = 1;
+
+     label0:
+        return;
+
+     label1:
+        $i2 = $r0.<org.c.y: int f>;
+        $i2 = $i2 + 1;
+        $r0.<org.c.y: int f> = $i2;
+        goto label0;
+    }
+
+    private boolean c(int)
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+        boolean $z0;
+        char[] $r1;
+        char $c2;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<org.c.y: int d>;
+        if $i1 < 0 goto label0;
+
+        $i1 = $r0.<org.c.y: int d>;
+        if $i0 < $i1 goto label0;
+
+        return 0;
+
+     label0:
+        $r1 = $r0.<org.c.y: char[] b>;
+        $c2 = $r1[$i0];
+        $z0 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>($c2);
+        return $z0;
+    }
+
+    private void d(char)
+    {
+        org.c.y $r0;
+        char $c0, $c2;
+        boolean $z0;
+        int $i1;
+        char[] $r1;
+
+        $r0 := @this: org.c.y;
+        $c0 := @parameter0: char;
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: void e()>();
+        $r1 = $r0.<org.c.y: char[] b>;
+        $i1 = $r0.<org.c.y: int c>;
+        $c2 = $r1[$i1];
+        specialinvoke $r0.<org.c.y: void c(char)>($c2);
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>($c0);
+        if $z0 == 0 goto label0;
+
+     label1:
+        return;
+    }
+
+    private boolean d(int)
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+        boolean $z0;
+        char[] $r1;
+        char $c2;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<org.c.y: int d>;
+        if $i1 < 0 goto label0;
+
+        $i1 = $r0.<org.c.y: int d>;
+        if $i0 < $i1 goto label0;
+
+        return 0;
+
+     label0:
+        $r1 = $r0.<org.c.y: char[] b>;
+        $c2 = $r1[$i0];
+        $z0 = staticinvoke <java.lang.Character: boolean isUnicodeIdentifierStart(char)>($c2);
+        return $z0;
+    }
+
+    private void e()
+    {
+        org.c.y $r0;
+
+        $r0 := @this: org.c.y;
+        specialinvoke $r0.<org.c.y: void b(int)>(1);
+        return;
+    }
+
+    private void e(int)
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+        boolean $z0;
+        char[] $r1;
+        char $c2;
+
+        $r0 := @this: org.c.y;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<org.c.y: void a(int)>($i0);
+        $i1 = $r0.<org.c.y: int c>;
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label1;
+
+        if $i0 <= 0 goto label1;
+
+        $r1 = $r0.<org.c.y: char[] b>;
+        $c2 = $r1[$i1];
+        specialinvoke $r0.<org.c.y: void b(char)>($c2);
+        $i1 = $i1 + 1;
+        $i0 = $i0 + -1;
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    private boolean f()
+    {
+        org.c.y $r0;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+        $i0 = $r0.<org.c.y: int c>;
+        $z0 = specialinvoke $r0.<org.c.y: boolean c(int)>($i0);
+        return $z0;
+    }
+
+    private boolean g()
+    {
+        org.c.y $r0;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+        $i0 = $r0.<org.c.y: int c>;
+        $z0 = specialinvoke $r0.<org.c.y: boolean d(int)>($i0);
+        return $z0;
+    }
+
+    private boolean h()
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+        boolean $z0;
+        char[] $r1;
+        char $c2;
+
+        $r0 := @this: org.c.y;
+        $i0 = $r0.<org.c.y: int d>;
+        if $i0 < 0 goto label1;
+
+        $i1 = $r0.<org.c.y: int c>;
+        $i0 = $r0.<org.c.y: int d>;
+        if $i1 < $i0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r1 = $r0.<org.c.y: char[] b>;
+        $i1 = $r0.<org.c.y: int c>;
+        $c2 = $r1[$i1];
+        $z0 = staticinvoke <java.lang.Character: boolean isUnicodeIdentifierStart(char)>($c2);
+        if $z0 != 0 goto label2;
+
+        $z0 = staticinvoke <java.lang.Character: boolean isDigit(char)>($c2);
+        if $z0 != 0 goto label2;
+
+        $z0 = staticinvoke <org.c.ak: boolean a(char)>($c2);
+        if $z0 == 0 goto label0;
+
+     label2:
+        return 1;
+    }
+
+    private boolean i()
+    {
+        org.c.y $r0;
+        int $i0, $i1;
+
+        $r0 := @this: org.c.y;
+        $i0 = $r0.<org.c.y: int d>;
+        if $i0 < 0 goto label0;
+
+        $i1 = $r0.<org.c.y: int c>;
+        $i0 = $r0.<org.c.y: int d>;
+        if $i1 < $i0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    private void j()
+    {
+        org.c.y $r0;
+        boolean $z0;
+        int $i0;
+        char[] $r1;
+        char $c1;
+
+        $r0 := @this: org.c.y;
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label0;
+
+        $r1 = $r0.<org.c.y: char[] b>;
+        $i0 = $r0.<org.c.y: int c>;
+        $c1 = $r1[$i0];
+        specialinvoke $r0.<org.c.y: void b(char)>($c1);
+
+     label0:
+        return;
+    }
+
+    private void k()
+    {
+        org.c.y $r0;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean f()>();
+        if $z0 == 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    private boolean l()
+    {
+        org.c.y $r0;
+        boolean $z0;
+        java.lang.StringBuffer $r1, $r4;
+        int $i0, i1;
+        org.c.k $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: org.c.y;
+        $z0 = 0;
+        $r1 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i0 = virtualinvoke $r1.<java.lang.StringBuffer: int length()>();
+        if $i0 <= 0 goto label0;
+
+        $r2 = new org.c.k;
+        $r1 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r3 = virtualinvoke $r1.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke $r2.<org.c.k: void <init>(java.lang.String)>($r3);
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r2);
+        $r1 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r4 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i0 = virtualinvoke $r4.<java.lang.StringBuffer: int length()>();
+        i1 = (int) 0;
+        virtualinvoke $r1.<java.lang.StringBuffer: java.lang.StringBuffer delete(int,int)>(i1, $i0);
+        $z0 = 1;
+
+     label0:
+        return $z0;
+    }
+
+    private void m()
+    {
+        org.c.y $r0;
+        boolean $z0, $z1;
+        org.c.h $r1;
+        org.c.q $r2;
+        org.c.g $r3;
+        java.util.Map $r4;
+        java.lang.String $r5, $r6;
+        org.c.z $r7;
+        org.c.af $r8;
+        org.c.ah $r9;
+        org.c.ai $r10;
+        org.c.p $r11;
+
+        $r0 := @this: org.c.y;
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r5 = specialinvoke $r0.<org.c.y: java.lang.String o()>();
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        $r6 = virtualinvoke $r1.<org.c.h: java.lang.String c(java.lang.String)>($r5);
+        if $r6 == null goto label4;
+
+        $r2 = $r0.<org.c.y: org.c.q p>;
+        $r7 = virtualinvoke $r2.<org.c.q: org.c.z b()>();
+        $r8 = interfaceinvoke $r7.<org.c.z: org.c.af a(java.lang.String)>($r6);
+        if $r8 != null goto label2;
+
+        $r3 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r3.<org.c.g: boolean b()>();
+        if $z0 != 0 goto label2;
+
+        $r3 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r3.<org.c.g: boolean c()>();
+        if $z0 == 0 goto label2;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean b(java.lang.String)>($r6);
+        if $z0 != 0 goto label2;
+
+        $r3 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r3.<org.c.g: boolean k()>();
+        if $z0 == 0 goto label3;
+
+     label2:
+        if $r8 == null goto label4;
+
+        $z0 = virtualinvoke $r8.<org.c.af: boolean e()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r3.<org.c.g: boolean d()>();
+        if $z0 != 0 goto label4;
+
+        $r3 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r3.<org.c.g: boolean e()>();
+        if $z0 == 0 goto label4;
+
+     label3:
+        specialinvoke $r0.<org.c.y: boolean r()>();
+        goto label0;
+
+     label4:
+        $r9 = new org.c.ah;
+        specialinvoke $r9.<org.c.ah: void <init>(java.lang.String)>($r6);
+        $r0.<org.c.y: org.c.ai j> = $r9;
+        $z0 = $r0.<org.c.y: boolean m>;
+        if $z0 == 0 goto label10;
+
+        specialinvoke $r0.<org.c.y: void k()>();
+        specialinvoke $r0.<org.c.y: void p()>();
+        if $r6 == null goto label6;
+
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        if $r1 == null goto label5;
+
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        $r4 = virtualinvoke $r9.<org.c.ah: java.util.Map h()>();
+        $r4 = virtualinvoke $r1.<org.c.h: java.util.Map a(java.lang.String,java.util.Map)>($r5, $r4);
+        virtualinvoke $r9.<org.c.ah: void a(java.util.Map)>($r4);
+
+     label5:
+        $r10 = $r0.<org.c.y: org.c.ai j>;
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r10);
+
+     label6:
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 == 0 goto label9;
+
+        specialinvoke $r0.<org.c.y: void e()>();
+        $r5 = "script";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 == 0 goto label7;
+
+        $r0.<org.c.y: boolean n> = 1;
+
+     label7:
+        $r5 = "style";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 == 0 goto label8;
+
+        $r0.<org.c.y: boolean o> = 1;
+
+     label8:
+        $r0.<org.c.y: org.c.ai j> = null;
+        goto label0;
+
+     label9:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/>");
+        if $z1 == 0 goto label8;
+
+        specialinvoke $r0.<org.c.y: void b(int)>(2);
+        $r11 = new org.c.p;
+        specialinvoke $r11.<org.c.p: void <init>(java.lang.String)>($r6);
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r11);
+        goto label8;
+
+     label10:
+        specialinvoke $r0.<org.c.y: boolean l()>();
+        goto label0;
+    }
+
+    private void n()
+    {
+        org.c.y $r0;
+        org.c.h $r1;
+        org.c.g $r2;
+        boolean $z1;
+        int $i1;
+        java.lang.String $r3, $r10;
+        org.c.aj $r4;
+        org.c.q $r5;
+        org.c.z $r6;
+        org.c.af $r7;
+        org.c.p $r8;
+        org.c.ai $r9;
+
+        $r0 := @this: org.c.y;
+        specialinvoke $r0.<org.c.y: void e(int)>(2);
+        specialinvoke $r0.<org.c.y: void b(int)>(2);
+        $i1 = $r0.<org.c.y: int f>;
+        $i1 = $i1 + 2;
+        $r0.<org.c.y: int f> = $i1;
+        $z1 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z1 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = specialinvoke $r0.<org.c.y: java.lang.String o()>();
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        if $r1 == null goto label2;
+
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        $z1 = virtualinvoke $r1.<org.c.h: boolean a(java.lang.String)>($r3);
+        if $z1 == 0 goto label2;
+
+        $r1 = $r0.<org.c.y: org.c.h r>;
+        $r4 = virtualinvoke $r1.<org.c.h: org.c.aj b(java.lang.String)>($r3);
+        if $r4 == null goto label2;
+
+        $r3 = virtualinvoke $r4.<org.c.aj: java.lang.String b()>();
+
+     label2:
+        if $r3 == null goto label5;
+
+        $r5 = $r0.<org.c.y: org.c.q p>;
+        $r6 = virtualinvoke $r5.<org.c.q: org.c.z b()>();
+        $r7 = interfaceinvoke $r6.<org.c.z: org.c.af a(java.lang.String)>($r3);
+        if $r7 != null goto label3;
+
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r2.<org.c.g: boolean b()>();
+        if $z1 != 0 goto label3;
+
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r2.<org.c.g: boolean c()>();
+        if $z1 == 0 goto label3;
+
+        $z1 = specialinvoke $r0.<org.c.y: boolean b(java.lang.String)>($r3);
+        if $z1 != 0 goto label3;
+
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r2.<org.c.g: boolean k()>();
+        if $z1 == 0 goto label4;
+
+     label3:
+        if $r7 == null goto label5;
+
+        $z1 = virtualinvoke $r7.<org.c.af: boolean e()>();
+        if $z1 == 0 goto label5;
+
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r2.<org.c.g: boolean d()>();
+        if $z1 != 0 goto label5;
+
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r2.<org.c.g: boolean e()>();
+        if $z1 == 0 goto label5;
+
+     label4:
+        specialinvoke $r0.<org.c.y: boolean r()>();
+        goto label0;
+
+     label5:
+        $r8 = new org.c.p;
+        specialinvoke $r8.<org.c.p: void <init>(java.lang.String)>($r3);
+        $r0.<org.c.y: org.c.ai j> = $r8;
+        $z1 = $r0.<org.c.y: boolean m>;
+        if $z1 == 0 goto label11;
+
+        specialinvoke $r0.<org.c.y: void k()>();
+        specialinvoke $r0.<org.c.y: void p()>();
+        if $r3 == null goto label6;
+
+        $r9 = $r0.<org.c.y: org.c.ai j>;
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r9);
+
+     label6:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z1 == 0 goto label7;
+
+        specialinvoke $r0.<org.c.y: void e()>();
+
+     label7:
+        $r10 = "script";
+        $z1 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z1 == 0 goto label8;
+
+        $r0.<org.c.y: boolean n> = 0;
+
+     label8:
+        $r10 = "style";
+        $z1 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z1 == 0 goto label9;
+
+        $r0.<org.c.y: boolean o> = 0;
+
+     label9:
+        if $r3 == null goto label10;
+
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("html");
+        if $z1 == 0 goto label10;
+
+        specialinvoke $r0.<org.c.y: void k()>();
+
+     label10:
+        $r0.<org.c.y: org.c.ai j> = null;
+        goto label0;
+
+     label11:
+        specialinvoke $r0.<org.c.y: boolean l()>();
+        goto label0;
+    }
+
+    private java.lang.String o()
+    {
+        org.c.y $r0;
+        java.lang.String $r1, $r4, $r7, $r8;
+        boolean $z0, $z1;
+        int $i0, $i1, i3;
+        java.lang.StringBuffer $r2;
+        char[] $r3;
+        char $c2;
+        org.c.g $r5;
+        java.lang.StringBuilder $r6;
+        java.util.Set $r9;
+
+        $r0 := @this: org.c.y;
+        $r1 = null;
+        $r0.<org.c.y: boolean m> = 1;
+        $z0 = specialinvoke $r0.<org.c.y: boolean g()>();
+        if $z0 != 0 goto label1;
+
+        $r0.<org.c.y: boolean m> = 0;
+
+     label0:
+        return $r1;
+
+     label1:
+        $r2 = new java.lang.StringBuffer;
+        specialinvoke $r2.<java.lang.StringBuffer: void <init>()>();
+
+     label2:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label3;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean h()>();
+        if $z0 == 0 goto label3;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        $r3 = $r0.<org.c.y: char[] b>;
+        $i0 = $r0.<org.c.y: int c>;
+        $c2 = $r3[$i0];
+        virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c2);
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label2;
+
+     label3:
+        $i0 = virtualinvoke $r2.<java.lang.StringBuffer: int length()>();
+        if $i0 <= 0 goto label4;
+
+        $i0 = virtualinvoke $r2.<java.lang.StringBuffer: int length()>();
+        $i0 = $i0 + -1;
+        $c2 = virtualinvoke $r2.<java.lang.StringBuffer: char charAt(int)>($i0);
+        $z0 = staticinvoke <org.c.ak: boolean a(char)>($c2);
+        if $z0 == 0 goto label4;
+
+        $i0 = virtualinvoke $r2.<java.lang.StringBuffer: int length()>();
+        $i0 = $i0 + -1;
+        virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer deleteCharAt(int)>($i0);
+        goto label3;
+
+     label4:
+        $i0 = virtualinvoke $r2.<java.lang.StringBuffer: int length()>();
+        if $i0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.String toString()>();
+        $i0 = virtualinvoke $r1.<java.lang.String: int indexOf(int)>(58);
+        if $i0 < 0 goto label0;
+
+        i3 = (int) 0;
+        $r4 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int,int)>(i3, $i0);
+        $i0 = $i0 + 1;
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int)>($i0);
+        $i1 = virtualinvoke $r1.<java.lang.String: int indexOf(int)>(58);
+        if $i1 < 0 goto label5;
+
+        i3 = (int) 0;
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int,int)>(i3, $i1);
+
+     label5:
+        $r5 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r5.<org.c.g: boolean k()>();
+        if $z1 == 0 goto label0;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r1 = $r7;
+        $r8 = "xmlns";
+        $z1 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r4);
+        if $z1 != 0 goto label0;
+
+        $r9 = $r0.<org.c.y: java.util.Set l>;
+        $r8 = virtualinvoke $r4.<java.lang.String: java.lang.String toLowerCase()>();
+        interfaceinvoke $r9.<java.util.Set: boolean add(java.lang.Object)>($r8);
+        return $r7;
+    }
+
+    private void p()
+    {
+        org.c.y $r0;
+        boolean $z0;
+        java.lang.String $r1, $r2, $r5;
+        org.c.ai $r3;
+        org.c.g $r4;
+
+        $r0 := @this: org.c.y;
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label7;
+
+        $z0 = $r0.<org.c.y: boolean m>;
+        if $z0 == 0 goto label7;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label7;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/>");
+        if $z0 != 0 goto label7;
+
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r1 = specialinvoke $r0.<org.c.y: java.lang.String o()>();
+        $z0 = $r0.<org.c.y: boolean m>;
+        if $z0 != 0 goto label2;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/>");
+        if $z0 != 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+
+     label1:
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label0;
+
+        $r0.<org.c.y: boolean m> = 1;
+        goto label0;
+
+     label2:
+        specialinvoke $r0.<org.c.y: void k()>();
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(61);
+        if $z0 == 0 goto label4;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        $r2 = specialinvoke $r0.<org.c.y: java.lang.String q()>();
+
+     label3:
+        $z0 = $r0.<org.c.y: boolean m>;
+        if $z0 == 0 goto label0;
+
+        $r3 = $r0.<org.c.y: org.c.ai j>;
+        virtualinvoke $r3.<org.c.ai: void a(java.lang.String,java.lang.String)>($r1, $r2);
+        goto label0;
+
+     label4:
+        $r2 = "empty";
+        $r4 = $r0.<org.c.y: org.c.g q>;
+        $r5 = virtualinvoke $r4.<org.c.g: java.lang.String q()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label5;
+
+        $r2 = "";
+        goto label3;
+
+     label5:
+        $r5 = "true";
+        $r4 = $r0.<org.c.y: org.c.g q>;
+        $r2 = virtualinvoke $r4.<org.c.g: java.lang.String q()>();
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label6;
+
+        $r2 = "true";
+        goto label3;
+
+     label6:
+        $r2 = $r1;
+        goto label3;
+
+     label7:
+        return;
+    }
+
+    private java.lang.String q()
+    {
+        org.c.y $r0;
+        boolean $z0, $z1, $z2, $z3, $z4;
+        java.lang.StringBuffer $r1;
+        org.c.g $r2;
+        int $i0;
+        java.lang.String $r3;
+        char[] $r4;
+        char $c5;
+
+        $r0 := @this: org.c.y;
+        $z1 = 0;
+        specialinvoke $r0.<org.c.y: void k()>();
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/>");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return "";
+
+     label1:
+        $r1 = new java.lang.StringBuffer;
+        specialinvoke $r1.<java.lang.StringBuffer: void <init>()>();
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(39);
+        if $z0 == 0 goto label9;
+
+        $z2 = 1;
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+
+     label2:
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z3 = virtualinvoke $r2.<org.c.g: boolean h()>();
+        $r2 = $r0.<org.c.y: org.c.g q>;
+        $z4 = virtualinvoke $r2.<org.c.g: boolean i()>();
+
+     label3:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label10;
+
+        if $z2 == 0 goto label5;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(39);
+        if $z0 != 0 goto label5;
+
+        if $z4 != 0 goto label4;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label5;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label5;
+
+     label4:
+        if $z3 != 0 goto label8;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean f()>();
+        if $z0 == 0 goto label8;
+
+     label5:
+        if $z1 == 0 goto label7;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(34);
+        if $z0 != 0 goto label7;
+
+        if $z4 != 0 goto label6;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label7;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label7;
+
+     label6:
+        if $z3 != 0 goto label8;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean f()>();
+        if $z0 == 0 goto label8;
+
+     label7:
+        if $z2 != 0 goto label10;
+
+        if $z1 != 0 goto label10;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean f()>();
+        if $z0 != 0 goto label10;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z0 != 0 goto label10;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(char)>(60);
+        if $z0 != 0 goto label10;
+
+     label8:
+        $r4 = $r0.<org.c.y: char[] b>;
+        $i0 = $r0.<org.c.y: int c>;
+        $c5 = $r4[$i0];
+        virtualinvoke $r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c5);
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label3;
+
+     label9:
+        $z4 = specialinvoke $r0.<org.c.y: boolean a(char)>(34);
+        if $z4 == 0 goto label13;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        $z1 = 1;
+        $z2 = 0;
+        goto label2;
+
+     label10:
+        $z4 = specialinvoke $r0.<org.c.y: boolean a(char)>(39);
+        if $z4 == 0 goto label12;
+
+        if $z2 == 0 goto label12;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+
+     label11:
+        $r3 = virtualinvoke $r1.<java.lang.StringBuffer: java.lang.String toString()>();
+        return $r3;
+
+     label12:
+        $z4 = specialinvoke $r0.<org.c.y: boolean a(char)>(34);
+        if $z4 == 0 goto label11;
+
+        if $z1 == 0 goto label11;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label11;
+
+     label13:
+        $z2 = 0;
+        goto label2;
+    }
+
+    private boolean r()
+    {
+        org.c.y $r0;
+        boolean $z0;
+
+        $r0 := @this: org.c.y;
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*<![CDATA[*/");
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<![CDATA[");
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//<![CDATA[");
+        if $z0 == 0 goto label2;
+
+     label1:
+        $z0 = specialinvoke $r0.<org.c.y: boolean l()>();
+        return $z0;
+
+     label2:
+        $z0 = specialinvoke $r0.<org.c.y: boolean s()>();
+        if $z0 == 0 goto label0;
+
+        goto label1;
+    }
+
+    private boolean s()
+    {
+        org.c.y $r0;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: org.c.y;
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("</");
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<!");
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<?");
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<");
+        if $z0 == 0 goto label1;
+
+        $i0 = $r0.<org.c.y: int c>;
+        $i0 = $i0 + 1;
+        $z0 = specialinvoke $r0.<org.c.y: boolean d(int)>($i0);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    private void t()
+    {
+        org.c.y $r0;
+        java.lang.String $r1, $r6, $r7;
+        java.lang.StringBuilder $r3;
+        boolean $z0;
+        java.lang.StringBuffer $r4, $r9;
+        int $i3, $i5;
+        org.c.g $r5;
+        char $c4;
+        org.c.j $r8;
+
+        $r0 := @this: org.c.y;
+        specialinvoke $r0.<org.c.y: void b(int)>(4);
+
+     label0:
+        $z0 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("-->");
+        if $z0 != 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label0;
+
+     label1:
+        $z0 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("-->");
+        if $z0 == 0 goto label2;
+
+        specialinvoke $r0.<org.c.y: void b(int)>(3);
+
+     label2:
+        $r4 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i3 = virtualinvoke $r4.<java.lang.StringBuffer: int length()>();
+        if $i3 <= 0 goto label6;
+
+        $r5 = $r0.<org.c.y: org.c.g q>;
+        $z0 = virtualinvoke $r5.<org.c.g: boolean f()>();
+        if $z0 != 0 goto label5;
+
+        $r5 = $r0.<org.c.y: org.c.g q>;
+        $r1 = virtualinvoke $r5.<org.c.g: java.lang.String m()>();
+        $r4 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r6 = virtualinvoke $r4.<java.lang.StringBuffer: java.lang.String toString()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r7 = virtualinvoke $r6.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("--", $r7);
+        $i3 = virtualinvoke $r7.<java.lang.String: int length()>();
+        if $i3 <= 0 goto label3;
+
+        $c4 = virtualinvoke $r7.<java.lang.String: char charAt(int)>(0);
+        if $c4 != 45 goto label3;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String substring(int)>(1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label3:
+        $i3 = virtualinvoke $r7.<java.lang.String: int length()>();
+        if $i3 <= 0 goto label4;
+
+        $i5 = $i3 + -1;
+        $c4 = virtualinvoke $r7.<java.lang.String: char charAt(int)>($i5);
+        if $c4 != 45 goto label4;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $i5 = $i3 + -1;
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String substring(int,int)>(0, $i5);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label4:
+        $r8 = new org.c.j;
+        specialinvoke $r8.<org.c.j: void <init>(java.lang.String)>($r7);
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r8);
+
+     label5:
+        $r4 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r9 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i5 = virtualinvoke $r9.<java.lang.StringBuffer: int length()>();
+        virtualinvoke $r4.<java.lang.StringBuffer: java.lang.StringBuffer delete(int,int)>(0, $i5);
+
+     label6:
+        return;
+    }
+
+    private void u()
+    {
+        org.c.y $r0;
+        boolean $z0, $z1;
+        org.c.g $r1;
+        java.lang.String $r2;
+        int $i0, $i1;
+        java.lang.StringBuffer $r3, $r6;
+        org.c.k $r4;
+        org.c.e $r5;
+
+        $r0 := @this: org.c.y;
+        $z0 = 0;
+        $z1 = $r0.<org.c.y: boolean n>;
+        if $z1 != 0 goto label1;
+
+        $z1 = $r0.<org.c.y: boolean o>;
+        if $z1 != 0 goto label1;
+
+        $r1 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r1.<org.c.g: boolean n()>();
+        if $z1 != 0 goto label1;
+
+        specialinvoke $r0.<org.c.y: boolean r()>();
+
+     label0:
+        return;
+
+     label1:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*<![CDATA[*/");
+        if $z1 == 0 goto label4;
+
+        $r2 = "/*<![CDATA[*/";
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i0);
+
+     label2:
+        $r3 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i0 = virtualinvoke $r3.<java.lang.StringBuffer: int length()>();
+
+     label3:
+        $z1 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z1 != 0 goto label6;
+
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*]]>*/");
+        if $z1 != 0 goto label6;
+
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("]]>");
+        if $z1 != 0 goto label6;
+
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//]]>");
+        if $z1 != 0 goto label6;
+
+        specialinvoke $r0.<org.c.y: void j()>();
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label3;
+
+     label4:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//<![CDATA[");
+        if $z1 == 0 goto label5;
+
+        $z0 = 1;
+        $r2 = "//<![CDATA[";
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i0);
+        goto label2;
+
+     label5:
+        $r2 = "<![CDATA[";
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i0);
+        goto label2;
+
+     label6:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*]]>*/");
+        if $z1 == 0 goto label11;
+
+        $r2 = "/*]]>*/";
+        $i1 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i1);
+
+     label7:
+        $r3 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i1 = virtualinvoke $r3.<java.lang.StringBuffer: int length()>();
+        if $i1 <= 0 goto label10;
+
+        $z1 = $r0.<org.c.y: boolean n>;
+        if $z1 != 0 goto label8;
+
+        $z1 = $r0.<org.c.y: boolean o>;
+        if $z1 != 0 goto label8;
+
+        $r1 = $r0.<org.c.y: org.c.g q>;
+        $z1 = virtualinvoke $r1.<org.c.g: boolean n()>();
+        if $z1 != 0 goto label10;
+
+     label8:
+        if $z0 == 0 goto label9;
+
+        $r4 = new org.c.k;
+        specialinvoke $r4.<org.c.k: void <init>(java.lang.String)>("//");
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r4);
+
+     label9:
+        $r3 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r2 = virtualinvoke $r3.<java.lang.StringBuffer: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int)>($i0);
+        $r5 = new org.c.e;
+        specialinvoke $r5.<org.c.e: void <init>(java.lang.String)>($r2);
+        specialinvoke $r0.<org.c.y: void a(org.c.b)>($r5);
+
+     label10:
+        $r3 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r6 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i1 = virtualinvoke $r6.<java.lang.StringBuffer: int length()>();
+        virtualinvoke $r3.<java.lang.StringBuffer: java.lang.StringBuffer delete(int,int)>($i0, $i1);
+        goto label0;
+
+     label11:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//]]>");
+        if $z1 == 0 goto label12;
+
+        $r2 = "//]]>";
+        $i1 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i1);
+        goto label7;
+
+     label12:
+        $z1 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("]]>");
+        if $z1 == 0 goto label7;
+
+        $r2 = "]]>";
+        $i1 = virtualinvoke $r2.<java.lang.String: int length()>();
+        specialinvoke $r0.<org.c.y: void b(int)>($i1);
+        goto label7;
+    }
+
+    private void v()
+    {
+        org.c.y $r0;
+        java.lang.String $r1, $r2, $r3, $r4, $r5;
+        int $i2;
+        org.c.o $r6;
+
+        $r0 := @this: org.c.y;
+        specialinvoke $r0.<org.c.y: void b(int)>(9);
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r1 = specialinvoke $r0.<org.c.y: java.lang.String o()>();
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r2 = specialinvoke $r0.<org.c.y: java.lang.String o()>();
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r3 = specialinvoke $r0.<org.c.y: java.lang.String q()>();
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r4 = specialinvoke $r0.<org.c.y: java.lang.String q()>();
+        specialinvoke $r0.<org.c.y: void k()>();
+        $r5 = specialinvoke $r0.<org.c.y: java.lang.String q()>();
+        specialinvoke $r0.<org.c.y: void d(char)>(60);
+        if $r5 == null goto label0;
+
+        $i2 = virtualinvoke $r5.<java.lang.String: int length()>();
+        if $i2 != 0 goto label2;
+
+     label0:
+        $r6 = new org.c.o;
+        specialinvoke $r6.<org.c.o: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>($r1, $r2, $r3, $r4);
+        $r0.<org.c.y: org.c.o i> = $r6;
+
+     label1:
+        return;
+
+     label2:
+        $r6 = new org.c.o;
+        specialinvoke $r6.<org.c.o: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>($r1, $r2, $r3, $r4, $r5);
+        $r0.<org.c.y: org.c.o i> = $r6;
+        goto label1;
+    }
+
+    java.util.List a()
+    {
+        org.c.y $r0;
+        java.util.List $r1;
+
+        $r0 := @this: org.c.y;
+        $r1 = $r0.<org.c.y: java.util.List k>;
+        return $r1;
+    }
+
+    java.util.Set b()
+    {
+        org.c.y $r0;
+        java.util.Set $r1;
+
+        $r0 := @this: org.c.y;
+        $r1 = $r0.<org.c.y: java.util.Set l>;
+        return $r1;
+    }
+
+    void c()
+    {
+        org.c.y $r0;
+        java.util.List $r1, $r6;
+        boolean $z0, $z3;
+        java.lang.StringBuffer $r2, $r4;
+        java.util.Set $r3;
+        int $i2, i3;
+        java.lang.String $r5;
+        java.lang.Object $r7;
+        org.c.b $r8;
+        org.c.g $r9;
+        java.io.BufferedReader $r10;
+
+        $r0 := @this: org.c.y;
+        $r0.<org.c.y: org.c.ai j> = null;
+        $r1 = $r0.<org.c.y: java.util.List k>;
+        interfaceinvoke $r1.<java.util.List: void clear()>();
+        $r0.<org.c.y: boolean m> = 1;
+        $r0.<org.c.y: boolean n> = 0;
+        $r0.<org.c.y: boolean h> = 0;
+        $r3 = $r0.<org.c.y: java.util.Set l>;
+        interfaceinvoke $r3.<java.util.Set: void clear()>();
+        $r0.<org.c.y: int c> = 1024;
+        $i2 = (int) 0;
+        specialinvoke $r0.<org.c.y: void a(int)>($i2);
+        $z0 = 1;
+
+     label0:
+        $z3 = specialinvoke $r0.<org.c.y: boolean i()>();
+        if $z3 != 0 goto label18;
+
+        $r4 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $r2 = $r0.<org.c.y: java.lang.StringBuffer g>;
+        $i2 = virtualinvoke $r2.<java.lang.StringBuffer: int length()>();
+        i3 = (int) 0;
+        virtualinvoke $r4.<java.lang.StringBuffer: java.lang.StringBuffer delete(int,int)>(i3, $i2);
+        $r0.<org.c.y: org.c.ai j> = null;
+        $r0.<org.c.y: boolean m> = 1;
+        specialinvoke $r0.<org.c.y: void a(int)>(10);
+        $z3 = $r0.<org.c.y: boolean n>;
+        if $z3 == 0 goto label7;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("</script");
+        if $z3 == 0 goto label3;
+
+        $i2 = $r0.<org.c.y: int c>;
+        $i2 = $i2 + 8;
+        $z3 = specialinvoke $r0.<org.c.y: boolean c(int)>($i2);
+        if $z3 != 0 goto label1;
+
+        $i2 = $r0.<org.c.y: int c>;
+        $i2 = $i2 + 8;
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(int,char)>($i2, 62);
+        if $z3 == 0 goto label3;
+
+     label1:
+        specialinvoke $r0.<org.c.y: void n()>();
+        $z3 = $z0;
+
+     label2:
+        $z0 = $r0.<org.c.y: boolean n>;
+        if $z0 != 0 goto label19;
+
+        $z0 = 1;
+        goto label0;
+
+     label3:
+        if $z0 == 0 goto label4;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<!--");
+        if $z3 == 0 goto label4;
+
+        specialinvoke $r0.<org.c.y: void t()>();
+        $z3 = $z0;
+        goto label2;
+
+     label4:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*<![CDATA[*/");
+        if $z3 != 0 goto label5;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<![CDATA[");
+        if $z3 != 0 goto label5;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//<![CDATA[");
+        if $z3 == 0 goto label6;
+
+     label5:
+        specialinvoke $r0.<org.c.y: void u()>();
+        $z3 = $z0;
+        goto label2;
+
+     label6:
+        $z3 = specialinvoke $r0.<org.c.y: boolean r()>();
+        if $z0 == 0 goto label20;
+
+        if $z3 == 0 goto label20;
+
+        $r1 = $r0.<org.c.y: java.util.List k>;
+        $r6 = $r0.<org.c.y: java.util.List k>;
+        $i2 = interfaceinvoke $r6.<java.util.List: int size()>();
+        $i2 = $i2 + -1;
+        $r7 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i2);
+        $r8 = (org.c.b) $r7;
+        if $r8 == null goto label20;
+
+        $r5 = virtualinvoke $r8.<java.lang.Object: java.lang.String toString()>();
+        if $r5 == null goto label20;
+
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String trim()>();
+        $i2 = virtualinvoke $r5.<java.lang.String: int length()>();
+        if $i2 <= 0 goto label20;
+
+        $z3 = 0;
+        goto label2;
+
+     label7:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<!doctype");
+        if $z3 == 0 goto label9;
+
+        $z3 = $r0.<org.c.y: boolean h>;
+        if $z3 != 0 goto label8;
+
+        specialinvoke $r0.<org.c.y: void v()>();
+        $r0.<org.c.y: boolean h> = 1;
+        goto label0;
+
+     label8:
+        specialinvoke $r0.<org.c.y: void d(char)>(60);
+        goto label0;
+
+     label9:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("</");
+        if $z3 == 0 goto label10;
+
+        $i2 = $r0.<org.c.y: int c>;
+        $i2 = $i2 + 2;
+        $z3 = specialinvoke $r0.<org.c.y: boolean d(int)>($i2);
+        if $z3 == 0 goto label10;
+
+        $r0.<org.c.y: boolean h> = 1;
+        specialinvoke $r0.<org.c.y: void n()>();
+        goto label0;
+
+     label10:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("/*<![CDATA[*/");
+        if $z3 != 0 goto label11;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<![CDATA[");
+        if $z3 != 0 goto label11;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("//<![CDATA[");
+        if $z3 == 0 goto label12;
+
+     label11:
+        specialinvoke $r0.<org.c.y: void u()>();
+        goto label0;
+
+     label12:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<!--");
+        if $z3 == 0 goto label13;
+
+        specialinvoke $r0.<org.c.y: void t()>();
+        goto label0;
+
+     label13:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<");
+        if $z3 == 0 goto label14;
+
+        $i2 = $r0.<org.c.y: int c>;
+        $i2 = $i2 + 1;
+        $z3 = specialinvoke $r0.<org.c.y: boolean d(int)>($i2);
+        if $z3 == 0 goto label14;
+
+        $r0.<org.c.y: boolean h> = 1;
+        specialinvoke $r0.<org.c.y: void m()>();
+        goto label0;
+
+     label14:
+        $r9 = $r0.<org.c.y: org.c.g q>;
+        $z3 = virtualinvoke $r9.<org.c.g: boolean j()>();
+        if $z3 == 0 goto label16;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<!");
+        if $z3 != 0 goto label15;
+
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<?");
+        if $z3 == 0 goto label16;
+
+     label15:
+        specialinvoke $r0.<org.c.y: void d(char)>(60);
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(char)>(62);
+        if $z3 == 0 goto label0;
+
+        specialinvoke $r0.<org.c.y: void e()>();
+        goto label0;
+
+     label16:
+        $z3 = specialinvoke $r0.<org.c.y: boolean a(java.lang.String)>("<?xml");
+        if $z3 == 0 goto label17;
+
+        specialinvoke $r0.<org.c.y: void d(char)>(60);
+        goto label0;
+
+     label17:
+        specialinvoke $r0.<org.c.y: boolean r()>();
+        goto label0;
+
+     label18:
+        $r10 = $r0.<org.c.y: java.io.BufferedReader a>;
+        virtualinvoke $r10.<java.io.BufferedReader: void close()>();
+        return;
+
+     label19:
+        $z0 = $z3;
+        goto label0;
+
+     label20:
+        $z3 = $z0;
+        goto label2;
+    }
+
+    public org.c.o d()
+    {
+        org.c.y $r0;
+        org.c.o $r1;
+
+        $r0 := @this: org.c.y;
+        $r1 = $r0.<org.c.y: org.c.o i>;
+        return $r1;
+    }
+}

@@ -1,0 +1,98 @@
+public class it.h3g.areaclienti3.nwmonitoring.ax extends java.lang.Object
+{
+    private static it.h3g.areaclienti3.nwmonitoring.ba a;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a> = null;
+        return;
+    }
+
+    public static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(android.content.Context,int,java.lang.Class)>($r0, 1, class "it/h3g/areaclienti3/nwmonitoring/BootReceiver");
+        return;
+    }
+
+    public static void b(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(android.content.Context,int,java.lang.Class)>($r0, 2, class "it/h3g/areaclienti3/nwmonitoring/BootReceiver");
+        return;
+    }
+
+    public static void c(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(android.content.Context,int,java.lang.Class)>($r0, 1, class "it/h3g/areaclienti3/nwmonitoring/NetworkReceiver");
+        return;
+    }
+
+    public static void d(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(android.content.Context,int,java.lang.Class)>($r0, 2, class "it/h3g/areaclienti3/nwmonitoring/NetworkReceiver");
+        return;
+    }
+
+    public static void e(android.content.Context)
+    {
+        android.content.Context $r0;
+        it.h3g.areaclienti3.nwmonitoring.ba $r1;
+        android.content.IntentFilter $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a>;
+        if $r1 != null goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SCREENOFF_REG", "Registra SCREEN-OFF");
+        $r1 = new it.h3g.areaclienti3.nwmonitoring.ba;
+        specialinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.ba: void <init>()>();
+        <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a> = $r1;
+        $r1 = <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a>;
+        $r4 = new android.content.IntentFilter;
+        specialinvoke $r4.<android.content.IntentFilter: void <init>(java.lang.String)>("android.intent.action.SCREEN_OFF");
+        virtualinvoke $r0.<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r4);
+
+     label0:
+        return;
+    }
+
+    public static void f(android.content.Context)
+    {
+        android.content.Context $r0;
+        it.h3g.areaclienti3.nwmonitoring.ba $r1;
+        java.lang.IllegalArgumentException $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a>;
+        if $r1 == null goto label2;
+
+     label0:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SCREENOFF_REG", "Deregistra SCREEN-OFF");
+        $r1 = <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a>;
+        virtualinvoke $r0.<android.content.Context: void unregisterReceiver(android.content.BroadcastReceiver)>($r1);
+
+     label1:
+        <it.h3g.areaclienti3.nwmonitoring.ax: it.h3g.areaclienti3.nwmonitoring.ba a> = null;
+
+     label2:
+        return;
+
+     label3:
+        $r4 := @caughtexception;
+        virtualinvoke $r4.<java.lang.IllegalArgumentException: void printStackTrace()>();
+        goto label2;
+
+        catch java.lang.IllegalArgumentException from label0 to label1 with label3;
+    }
+}

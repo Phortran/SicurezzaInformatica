@@ -1,0 +1,254 @@
+class com.a.a.bc extends java.lang.Object
+{
+    final android.os.HandlerThread a;
+    final com.a.a.k b;
+    final android.os.Handler c;
+    long d;
+    long e;
+    long f;
+    long g;
+    long h;
+    long i;
+    long j;
+    long k;
+    int l;
+    int m;
+    int n;
+
+    void <init>(com.a.a.k)
+    {
+        com.a.a.bc $r0;
+        com.a.a.k $r1;
+        android.os.HandlerThread $r2;
+        android.os.Looper $r4;
+        com.a.a.bd $r5;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 := @parameter0: com.a.a.k;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.a.a.bc: com.a.a.k b> = $r1;
+        $r2 = new android.os.HandlerThread;
+        specialinvoke $r2.<android.os.HandlerThread: void <init>(java.lang.String,int)>("Picasso-Stats", 10);
+        $r0.<com.a.a.bc: android.os.HandlerThread a> = $r2;
+        $r2 = $r0.<com.a.a.bc: android.os.HandlerThread a>;
+        virtualinvoke $r2.<android.os.HandlerThread: void start()>();
+        $r5 = new com.a.a.bd;
+        $r2 = $r0.<com.a.a.bc: android.os.HandlerThread a>;
+        $r4 = virtualinvoke $r2.<android.os.HandlerThread: android.os.Looper getLooper()>();
+        specialinvoke $r5.<com.a.a.bd: void <init>(android.os.Looper,com.a.a.bc)>($r4, $r0);
+        $r0.<com.a.a.bc: android.os.Handler c> = $r5;
+        return;
+    }
+
+    private static long a(int, long)
+    {
+        int $i0;
+        long $l1, $l2;
+
+        $i0 := @parameter0: int;
+        $l1 := @parameter1: long;
+        $l2 = (long) $i0;
+        $l2 = $l1 / $l2;
+        return $l2;
+    }
+
+    private void a(android.graphics.Bitmap, int)
+    {
+        com.a.a.bc $r0;
+        android.graphics.Bitmap $r1;
+        int $i0, $i1;
+        android.os.Handler $r2, $r3;
+        android.os.Message $r4;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        $i0 := @parameter1: int;
+        $i1 = staticinvoke <com.a.a.bj: int a(android.graphics.Bitmap)>($r1);
+        $r2 = $r0.<com.a.a.bc: android.os.Handler c>;
+        $r3 = $r0.<com.a.a.bc: android.os.Handler c>;
+        $r4 = virtualinvoke $r3.<android.os.Handler: android.os.Message obtainMessage(int,int,int)>($i0, $i1, 0);
+        virtualinvoke $r2.<android.os.Handler: boolean sendMessage(android.os.Message)>($r4);
+        return;
+    }
+
+    void a()
+    {
+        com.a.a.bc $r0;
+        android.os.Handler $r1;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 = $r0.<com.a.a.bc: android.os.Handler c>;
+        virtualinvoke $r1.<android.os.Handler: boolean sendEmptyMessage(int)>(0);
+        return;
+    }
+
+    void a(long)
+    {
+        com.a.a.bc $r0;
+        long $l0;
+        android.os.Handler $r1, $r2;
+        java.lang.Long $r3;
+        android.os.Message $r4;
+
+        $r0 := @this: com.a.a.bc;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.a.a.bc: android.os.Handler c>;
+        $r2 = $r0.<com.a.a.bc: android.os.Handler c>;
+        $r3 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r4 = virtualinvoke $r2.<android.os.Handler: android.os.Message obtainMessage(int,java.lang.Object)>(4, $r3);
+        virtualinvoke $r1.<android.os.Handler: boolean sendMessage(android.os.Message)>($r4);
+        return;
+    }
+
+    void a(android.graphics.Bitmap)
+    {
+        com.a.a.bc $r0;
+        android.graphics.Bitmap $r1;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        specialinvoke $r0.<com.a.a.bc: void a(android.graphics.Bitmap,int)>($r1, 2);
+        return;
+    }
+
+    void a(java.lang.Long)
+    {
+        com.a.a.bc $r0;
+        java.lang.Long $r1;
+        int $i0;
+        long $l1, $l2;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 := @parameter0: java.lang.Long;
+        $i0 = $r0.<com.a.a.bc: int l>;
+        $i0 = $i0 + 1;
+        $r0.<com.a.a.bc: int l> = $i0;
+        $l2 = $r0.<com.a.a.bc: long f>;
+        $l1 = virtualinvoke $r1.<java.lang.Long: long longValue()>();
+        $l2 = $l2 + $l1;
+        $r0.<com.a.a.bc: long f> = $l2;
+        $i0 = $r0.<com.a.a.bc: int l>;
+        $l1 = $r0.<com.a.a.bc: long f>;
+        $l2 = staticinvoke <com.a.a.bc: long a(int,long)>($i0, $l1);
+        $r0.<com.a.a.bc: long i> = $l2;
+        return;
+    }
+
+    void b()
+    {
+        com.a.a.bc $r0;
+        android.os.Handler $r1;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 = $r0.<com.a.a.bc: android.os.Handler c>;
+        virtualinvoke $r1.<android.os.Handler: boolean sendEmptyMessage(int)>(1);
+        return;
+    }
+
+    void b(long)
+    {
+        com.a.a.bc $r0;
+        long $l0, $l2;
+        int $i1;
+
+        $r0 := @this: com.a.a.bc;
+        $l0 := @parameter0: long;
+        $i1 = $r0.<com.a.a.bc: int m>;
+        $i1 = $i1 + 1;
+        $r0.<com.a.a.bc: int m> = $i1;
+        $l2 = $r0.<com.a.a.bc: long g>;
+        $l2 = $l2 + $l0;
+        $r0.<com.a.a.bc: long g> = $l2;
+        $i1 = $r0.<com.a.a.bc: int m>;
+        $l0 = $r0.<com.a.a.bc: long g>;
+        $l2 = staticinvoke <com.a.a.bc: long a(int,long)>($i1, $l0);
+        $r0.<com.a.a.bc: long j> = $l2;
+        return;
+    }
+
+    void b(android.graphics.Bitmap)
+    {
+        com.a.a.bc $r0;
+        android.graphics.Bitmap $r1;
+
+        $r0 := @this: com.a.a.bc;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        specialinvoke $r0.<com.a.a.bc: void a(android.graphics.Bitmap,int)>($r1, 3);
+        return;
+    }
+
+    void c()
+    {
+        com.a.a.bc $r0;
+        long $l0, $l1;
+
+        $r0 := @this: com.a.a.bc;
+        $l0 = $r0.<com.a.a.bc: long d>;
+        $l1 = $l0 + 1L;
+        $r0.<com.a.a.bc: long d> = $l1;
+        return;
+    }
+
+    void c(long)
+    {
+        com.a.a.bc $r0;
+        long $l0, $l2;
+        int $i1;
+
+        $r0 := @this: com.a.a.bc;
+        $l0 := @parameter0: long;
+        $i1 = $r0.<com.a.a.bc: int n>;
+        $i1 = $i1 + 1;
+        $r0.<com.a.a.bc: int n> = $i1;
+        $l2 = $r0.<com.a.a.bc: long h>;
+        $l2 = $l2 + $l0;
+        $r0.<com.a.a.bc: long h> = $l2;
+        $i1 = $r0.<com.a.a.bc: int m>;
+        $l0 = $r0.<com.a.a.bc: long h>;
+        $l2 = staticinvoke <com.a.a.bc: long a(int,long)>($i1, $l0);
+        $r0.<com.a.a.bc: long k> = $l2;
+        return;
+    }
+
+    void d()
+    {
+        com.a.a.bc $r0;
+        long $l0, $l1;
+
+        $r0 := @this: com.a.a.bc;
+        $l0 = $r0.<com.a.a.bc: long e>;
+        $l1 = $l0 + 1L;
+        $r0.<com.a.a.bc: long e> = $l1;
+        return;
+    }
+
+    com.a.a.bf e()
+    {
+        com.a.a.bc $r0;
+        com.a.a.bf $r2;
+        com.a.a.k $r3;
+        long $l0, $l1, $l2, $l3, $l4, $l5, $l6, $l7, $l11;
+        int $i8, $i9, $i10, $i12, $i13;
+
+        $r0 := @this: com.a.a.bc;
+        $r2 = new com.a.a.bf;
+        $r3 = $r0.<com.a.a.bc: com.a.a.k b>;
+        $i12 = interfaceinvoke $r3.<com.a.a.k: int b()>();
+        $r3 = $r0.<com.a.a.bc: com.a.a.k b>;
+        $i13 = interfaceinvoke $r3.<com.a.a.k: int a()>();
+        $l0 = $r0.<com.a.a.bc: long d>;
+        $l1 = $r0.<com.a.a.bc: long e>;
+        $l2 = $r0.<com.a.a.bc: long f>;
+        $l3 = $r0.<com.a.a.bc: long g>;
+        $l4 = $r0.<com.a.a.bc: long h>;
+        $l5 = $r0.<com.a.a.bc: long i>;
+        $l6 = $r0.<com.a.a.bc: long j>;
+        $l7 = $r0.<com.a.a.bc: long k>;
+        $i8 = $r0.<com.a.a.bc: int l>;
+        $i9 = $r0.<com.a.a.bc: int m>;
+        $i10 = $r0.<com.a.a.bc: int n>;
+        $l11 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        specialinvoke $r2.<com.a.a.bf: void <init>(int,int,long,long,long,long,long,long,long,long,int,int,int,long)>($i12, $i13, $l0, $l1, $l2, $l3, $l4, $l5, $l6, $l7, $i8, $i9, $i10, $l11);
+        return $r2;
+    }
+}

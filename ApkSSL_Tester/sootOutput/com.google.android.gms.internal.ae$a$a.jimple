@@ -1,0 +1,62 @@
+class com.google.android.gms.internal.ae$a$a extends java.lang.Object implements com.google.android.gms.internal.ae
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.internal.ae$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ae$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.ae$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a(java.lang.String, java.lang.String)
+    {
+        com.google.android.gms.internal.ae$a$a $r0;
+        java.lang.String $r1, $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.ae$a$a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.ads.internal.client.IAppEventListener");
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        $r6 = $r0.<com.google.android.gms.internal.ae$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+
+     label1:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.ae$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ae$a$a;
+        $r1 = $r0.<com.google.android.gms.internal.ae$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+}

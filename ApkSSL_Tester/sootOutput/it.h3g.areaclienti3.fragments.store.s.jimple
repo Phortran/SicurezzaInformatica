@@ -1,0 +1,92 @@
+class it.h3g.areaclienti3.fragments.store.s extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.store.k a;
+
+    void <init>(it.h3g.areaclienti3.fragments.store.k)
+    {
+        it.h3g.areaclienti3.fragments.store.s $r0;
+        it.h3g.areaclienti3.fragments.store.k $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.s;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.store.k;
+        $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static it.h3g.areaclienti3.fragments.store.k a(it.h3g.areaclienti3.fragments.store.s)
+    {
+        it.h3g.areaclienti3.fragments.store.s $r0;
+        it.h3g.areaclienti3.fragments.store.k $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.s;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a>;
+        return $r1;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.store.s $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.store.k $r2;
+        int $i1, $i2;
+        java.lang.String $r3, $r7;
+        java.lang.String[] $r4;
+        java.util.Iterator $r5;
+        java.util.ArrayList $r6;
+        boolean $z0;
+        java.lang.StringBuilder $r8;
+        it.h3g.areaclienti3.fragments.store.t $r9;
+        it.h3g.areaclienti3.fragments.c $r10;
+        java.lang.Object $r11;
+        android.os.Bundle $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.s;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a>;
+        $r6 = $r2.<it.h3g.areaclienti3.fragments.store.k: java.util.ArrayList l>;
+        $i1 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        $r4 = newarray (java.lang.String)[$i1];
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a>;
+        $r6 = $r2.<it.h3g.areaclienti3.fragments.store.k: java.util.ArrayList l>;
+        $r5 = virtualinvoke $r6.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $i2 = 0;
+        $i1 = 0;
+
+     label0:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Element selected = ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r3 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("StoreFragment", $r3);
+        $r9 = new it.h3g.areaclienti3.fragments.store.t;
+        specialinvoke $r9.<it.h3g.areaclienti3.fragments.store.t: void <init>(it.h3g.areaclienti3.fragments.store.s)>($r0);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.fragments.store.k: it.h3g.areaclienti3.fragments.c b(it.h3g.areaclienti3.fragments.store.k)>($r2);
+        interfaceinvoke $r10.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String[],android.widget.AdapterView$OnItemClickListener)>(null, $r4, $r9);
+        return;
+
+     label1:
+        $r11 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (android.os.Bundle) $r11;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.s: it.h3g.areaclienti3.fragments.store.k a>;
+        $r7 = $r2.<it.h3g.areaclienti3.fragments.store.k: java.lang.String i>;
+        $r3 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("code");
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label2;
+
+        $i2 = $i1;
+
+     label2:
+        $z0 = virtualinvoke $r12.<android.os.Bundle: boolean containsKey(java.lang.String)>("name");
+        if $z0 == 0 goto label0;
+
+        $r7 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("name");
+        $r4[$i1] = $r7;
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+}

@@ -1,0 +1,84 @@
+public final class com.google.android.gms.internal.ir extends com.google.android.gms.common.data.e implements com.google.android.gms.d.a.a.b
+{
+    private com.google.android.gms.internal.fs c;
+
+    public void <init>(com.google.android.gms.common.data.d, int)
+    {
+        com.google.android.gms.internal.ir $r0;
+        com.google.android.gms.common.data.d $r1;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.ir;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<com.google.android.gms.common.data.e: void <init>(com.google.android.gms.common.data.d,int)>($r1, $i0);
+        return;
+    }
+
+    private com.google.android.gms.internal.fs b()
+    {
+        com.google.android.gms.internal.ir $r0;
+        com.google.android.gms.internal.fs $r1;
+        android.os.Parcel $r2;
+        int $i1;
+        byte[] $r3;
+        com.google.android.gms.internal.iq $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.ir;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.google.android.gms.internal.ir: com.google.android.gms.internal.fs c>;
+        if $r1 != null goto label1;
+
+        $r3 = virtualinvoke $r0.<com.google.android.gms.internal.ir: byte[] e(java.lang.String)>("momentImpl");
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $i1 = lengthof $r3;
+        virtualinvoke $r2.<android.os.Parcel: void unmarshall(byte[],int,int)>($r3, 0, $i1);
+        virtualinvoke $r2.<android.os.Parcel: void setDataPosition(int)>(0);
+        $r5 = <com.google.android.gms.internal.fs: com.google.android.gms.internal.iq a>;
+        $r1 = virtualinvoke $r5.<com.google.android.gms.internal.iq: com.google.android.gms.internal.fs a(android.os.Parcel)>($r2);
+        $r0.<com.google.android.gms.internal.ir: com.google.android.gms.internal.fs c> = $r1;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+
+     label1:
+        exitmonitor $r0;
+
+     label2:
+        $r1 = $r0.<com.google.android.gms.internal.ir: com.google.android.gms.internal.fs c>;
+        return $r1;
+
+     label3:
+        $r6 := @caughtexception;
+
+     label4:
+        exitmonitor $r0;
+
+     label5:
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+
+    public com.google.android.gms.internal.fs a()
+    {
+        com.google.android.gms.internal.ir $r0;
+        com.google.android.gms.internal.fs $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ir;
+        $r1 = specialinvoke $r0.<com.google.android.gms.internal.ir: com.google.android.gms.internal.fs b()>();
+        return $r1;
+    }
+
+    public java.lang.Object h()
+    {
+        com.google.android.gms.internal.ir $r0;
+        com.google.android.gms.internal.fs $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ir;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.internal.ir: com.google.android.gms.internal.fs a()>();
+        return $r1;
+    }
+}

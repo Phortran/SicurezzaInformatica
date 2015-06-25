@@ -1,0 +1,87 @@
+class android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener extends android.support.v7.widget.ListPopupWindow$ForwardingListener
+{
+    final android.support.v7.internal.view.menu.ActionMenuItemView this$0;
+
+    public void <init>(android.support.v7.internal.view.menu.ActionMenuItemView)
+    {
+        android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener $r0;
+        android.support.v7.internal.view.menu.ActionMenuItemView $r1;
+
+        $r0 := @this: android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener;
+        $r1 := @parameter0: android.support.v7.internal.view.menu.ActionMenuItemView;
+        $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0> = $r1;
+        specialinvoke $r0.<android.support.v7.widget.ListPopupWindow$ForwardingListener: void <init>(android.view.View)>($r1);
+        return;
+    }
+
+    public android.support.v7.widget.ListPopupWindow getPopup()
+    {
+        android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener $r0;
+        android.support.v7.internal.view.menu.ActionMenuItemView $r1;
+        android.support.v7.internal.view.menu.ActionMenuItemView$PopupCallback $r2;
+        android.support.v7.widget.ListPopupWindow $r3;
+
+        $r0 := @this: android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener;
+        $r1 = $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0>;
+        $r2 = staticinvoke <android.support.v7.internal.view.menu.ActionMenuItemView: android.support.v7.internal.view.menu.ActionMenuItemView$PopupCallback access$000(android.support.v7.internal.view.menu.ActionMenuItemView)>($r1);
+        if $r2 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0>;
+        $r2 = staticinvoke <android.support.v7.internal.view.menu.ActionMenuItemView: android.support.v7.internal.view.menu.ActionMenuItemView$PopupCallback access$000(android.support.v7.internal.view.menu.ActionMenuItemView)>($r1);
+        $r3 = virtualinvoke $r2.<android.support.v7.internal.view.menu.ActionMenuItemView$PopupCallback: android.support.v7.widget.ListPopupWindow getPopup()>();
+        return $r3;
+
+     label0:
+        return null;
+    }
+
+    protected boolean onForwardingStarted()
+    {
+        android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener $r0;
+        android.support.v7.widget.ListPopupWindow $r1;
+        boolean $z0, $z1;
+        android.support.v7.internal.view.menu.ActionMenuItemView $r2;
+        android.support.v7.internal.view.menu.MenuBuilder$ItemInvoker $r3;
+        android.support.v7.internal.view.menu.MenuItemImpl $r4;
+
+        $r0 := @this: android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener;
+        $z0 = 0;
+        $r2 = $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0>;
+        $r3 = staticinvoke <android.support.v7.internal.view.menu.ActionMenuItemView: android.support.v7.internal.view.menu.MenuBuilder$ItemInvoker access$100(android.support.v7.internal.view.menu.ActionMenuItemView)>($r2);
+        if $r3 == null goto label0;
+
+        $r2 = $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0>;
+        $r3 = staticinvoke <android.support.v7.internal.view.menu.ActionMenuItemView: android.support.v7.internal.view.menu.MenuBuilder$ItemInvoker access$100(android.support.v7.internal.view.menu.ActionMenuItemView)>($r2);
+        $r2 = $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.internal.view.menu.ActionMenuItemView this$0>;
+        $r4 = staticinvoke <android.support.v7.internal.view.menu.ActionMenuItemView: android.support.v7.internal.view.menu.MenuItemImpl access$200(android.support.v7.internal.view.menu.ActionMenuItemView)>($r2);
+        $z1 = interfaceinvoke $r3.<android.support.v7.internal.view.menu.MenuBuilder$ItemInvoker: boolean invokeItem(android.support.v7.internal.view.menu.MenuItemImpl)>($r4);
+        if $z1 == 0 goto label0;
+
+        $r1 = virtualinvoke $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.widget.ListPopupWindow getPopup()>();
+        if $r1 == null goto label0;
+
+        $z1 = virtualinvoke $r1.<android.support.v7.widget.ListPopupWindow: boolean isShowing()>();
+        if $z1 == 0 goto label0;
+
+        $z0 = 1;
+
+     label0:
+        return $z0;
+    }
+
+    protected boolean onForwardingStopped()
+    {
+        android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener $r0;
+        android.support.v7.widget.ListPopupWindow $r1;
+
+        $r0 := @this: android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener;
+        $r1 = virtualinvoke $r0.<android.support.v7.internal.view.menu.ActionMenuItemView$ActionMenuItemForwardingListener: android.support.v7.widget.ListPopupWindow getPopup()>();
+        if $r1 == null goto label0;
+
+        virtualinvoke $r1.<android.support.v7.widget.ListPopupWindow: void dismiss()>();
+        return 1;
+
+     label0:
+        return 0;
+    }
+}

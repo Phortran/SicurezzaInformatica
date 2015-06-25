@@ -1,0 +1,222 @@
+final class com.google.c.b.d extends java.lang.Object implements java.io.Serializable, java.lang.reflect.ParameterizedType
+{
+    private final java.lang.reflect.Type a;
+    private final java.lang.reflect.Type b;
+    private final java.lang.reflect.Type[] c;
+
+    public transient void <init>(java.lang.reflect.Type, java.lang.reflect.Type, java.lang.reflect.Type[])
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type $r1, $r2, $r5;
+        java.lang.reflect.Type[] $r3, $r8;
+        boolean $z0;
+        java.lang.Class $r4, $r6;
+        int $i0, $i1, $i2;
+        java.lang.Object $r7;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 := @parameter0: java.lang.reflect.Type;
+        $r2 := @parameter1: java.lang.reflect.Type;
+        $r3 := @parameter2: java.lang.reflect.Type[];
+        $i1 = 1;
+        $i0 = 0;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $z0 = $r2 instanceof java.lang.Class;
+        if $z0 == 0 goto label3;
+
+        $r6 = (java.lang.Class) $r2;
+        if $r1 != null goto label0;
+
+        $r4 = virtualinvoke $r6.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if $r4 != null goto label6;
+
+     label0:
+        $i2 = 1;
+
+     label1:
+        $z0 = (boolean) $i2;
+        staticinvoke <com.google.c.b.a: void a(boolean)>($z0);
+        if $r1 == null goto label2;
+
+        $r6 = virtualinvoke $r6.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if $r6 == null goto label7;
+
+     label2:
+        $z0 = (boolean) $i1;
+        staticinvoke <com.google.c.b.a: void a(boolean)>($z0);
+
+     label3:
+        if $r1 != null goto label8;
+
+        $r5 = null;
+
+     label4:
+        $r0.<com.google.c.b.d: java.lang.reflect.Type a> = $r5;
+        $r5 = staticinvoke <com.google.c.b.b: java.lang.reflect.Type d(java.lang.reflect.Type)>($r2);
+        $r0.<com.google.c.b.d: java.lang.reflect.Type b> = $r5;
+        $r7 = virtualinvoke $r3.<java.lang.Object: java.lang.Object clone()>();
+        $r3 = (java.lang.reflect.Type[]) $r7;
+        $r0.<com.google.c.b.d: java.lang.reflect.Type[] c> = $r3;
+
+     label5:
+        $r3 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $i2 = lengthof $r3;
+        if $i0 >= $i2 goto label9;
+
+        $r3 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r5 = $r3[$i0];
+        staticinvoke <com.google.c.b.a: java.lang.Object a(java.lang.Object)>($r5);
+        $r3 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r5 = $r3[$i0];
+        staticinvoke <com.google.c.b.b: void h(java.lang.reflect.Type)>($r5);
+        $r3 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r8 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r5 = $r8[$i0];
+        $r5 = staticinvoke <com.google.c.b.b: java.lang.reflect.Type d(java.lang.reflect.Type)>($r5);
+        $r3[$i0] = $r5;
+        $i0 = $i0 + 1;
+        goto label5;
+
+     label6:
+        $i2 = 0;
+        goto label1;
+
+     label7:
+        $i1 = 0;
+        goto label2;
+
+     label8:
+        $r5 = staticinvoke <com.google.c.b.b: java.lang.reflect.Type d(java.lang.reflect.Type)>($r1);
+        goto label4;
+
+     label9:
+        return;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.c.b.d $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        java.lang.reflect.ParameterizedType $r2;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = $r1 instanceof java.lang.reflect.ParameterizedType;
+        if $z0 == 0 goto label0;
+
+        $r2 = (java.lang.reflect.ParameterizedType) $r1;
+        $z0 = staticinvoke <com.google.c.b.b: boolean a(java.lang.reflect.Type,java.lang.reflect.Type)>($r0, $r2);
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public java.lang.reflect.Type[] getActualTypeArguments()
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type[] $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r2 = virtualinvoke $r1.<java.lang.Object: java.lang.Object clone()>();
+        $r1 = (java.lang.reflect.Type[]) $r2;
+        return $r1;
+    }
+
+    public java.lang.reflect.Type getOwnerType()
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type $r1;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type a>;
+        return $r1;
+    }
+
+    public java.lang.reflect.Type getRawType()
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type $r1;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type b>;
+        return $r1;
+    }
+
+    public int hashCode()
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type[] $r1;
+        java.lang.reflect.Type $r2;
+        int $i0, $i1;
+
+        $r0 := @this: com.google.c.b.d;
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $i0 = staticinvoke <java.util.Arrays: int hashCode(java.lang.Object[])>($r1);
+        $r2 = $r0.<com.google.c.b.d: java.lang.reflect.Type b>;
+        $i1 = virtualinvoke $r2.<java.lang.Object: int hashCode()>();
+        $i1 = $i0 ^ $i1;
+        $r2 = $r0.<com.google.c.b.d: java.lang.reflect.Type a>;
+        $i0 = staticinvoke <com.google.c.b.b: int a(java.lang.Object)>($r2);
+        $i1 = $i1 ^ $i0;
+        return $i1;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.c.b.d $r0;
+        java.lang.reflect.Type[] $r1;
+        java.lang.StringBuilder $r2, $r5;
+        java.lang.String $r3;
+        int $i1, $i2;
+        java.lang.reflect.Type $r4;
+
+        $r0 := @this: com.google.c.b.d;
+        $r2 = new java.lang.StringBuilder;
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $i1 = lengthof $r1;
+        $i1 = $i1 + 1;
+        $i1 = $i1 * 30;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(int)>($i1);
+        $r4 = $r0.<com.google.c.b.d: java.lang.reflect.Type b>;
+        $r3 = staticinvoke <com.google.c.b.b: java.lang.String f(java.lang.reflect.Type)>($r4);
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $i1 = lengthof $r1;
+        if $i1 != 0 goto label0;
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+
+     label0:
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<");
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r4 = $r1[0];
+        $r3 = staticinvoke <com.google.c.b.b: java.lang.String f(java.lang.reflect.Type)>($r4);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $i1 = 1;
+
+     label1:
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $i2 = lengthof $r1;
+        if $i1 >= $i2 goto label2;
+
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+        $r1 = $r0.<com.google.c.b.d: java.lang.reflect.Type[] c>;
+        $r4 = $r1[$i1];
+        $r3 = staticinvoke <com.google.c.b.b: java.lang.String f(java.lang.reflect.Type)>($r4);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label2:
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(">");
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+}

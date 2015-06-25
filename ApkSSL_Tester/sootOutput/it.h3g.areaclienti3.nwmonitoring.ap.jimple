@@ -1,0 +1,330 @@
+public class it.h3g.areaclienti3.nwmonitoring.ap extends java.lang.Object
+{
+    private static boolean a;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.nwmonitoring.ap: boolean a> = 1;
+        return;
+    }
+
+    public static int a(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0;
+        android.content.pm.PackageManager $r1;
+        java.lang.String $r2;
+        android.content.pm.PackageInfo $r3;
+        java.lang.Exception $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = -1;
+
+     label0:
+        $r1 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r2 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r3 = virtualinvoke $r1.<android.content.pm.PackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)>($r2, 0);
+        $i0 = $r3.<android.content.pm.PackageInfo: int versionCode>;
+
+     label1:
+        return $i0;
+
+     label2:
+        $r4 := @caughtexception;
+        virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>();
+        return $i0;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public static java.lang.String a()
+    {
+        java.util.Calendar $r0;
+        java.text.SimpleDateFormat $r1;
+        java.lang.String $r2;
+        java.util.Locale $r3;
+        java.util.TimeZone $r4;
+        java.util.Date $r5;
+
+        $r0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r1 = new java.text.SimpleDateFormat;
+        $r3 = <java.util.Locale: java.util.Locale ENGLISH>;
+        specialinvoke $r1.<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>("EEE, dd MMM yyyy HH:mm:ss z", $r3);
+        $r4 = staticinvoke <java.util.TimeZone: java.util.TimeZone getTimeZone(java.lang.String)>("GMT");
+        virtualinvoke $r1.<java.text.SimpleDateFormat: void setTimeZone(java.util.TimeZone)>($r4);
+        $r5 = virtualinvoke $r0.<java.util.Calendar: java.util.Date getTime()>();
+        $r2 = virtualinvoke $r1.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r5);
+        return $r2;
+    }
+
+    public static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r3;
+        java.lang.StringBuilder $r2;
+        byte[] $r4;
+        javax.crypto.Mac $r5;
+        javax.crypto.spec.SecretKeySpec $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("lsjdlpAsjkdfnAfkdsrnAsdfnTdsfnd\n\n");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n\n");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r1.<java.lang.String: void <init>(java.lang.String)>($r3);
+        $r0 = new java.lang.String;
+
+     label0:
+        $r4 = virtualinvoke $r1.<java.lang.String: byte[] getBytes(java.lang.String)>("ASCII");
+        specialinvoke $r0.<java.lang.String: void <init>(byte[])>($r4);
+        $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>("hmacSHA256");
+        $r6 = new javax.crypto.spec.SecretKeySpec;
+        $r3 = "ofofkfokfodkfodfjdofjoAAA";
+        $r4 = virtualinvoke $r3.<java.lang.String: byte[] getBytes()>();
+        specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, "hmacSHA256");
+        virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r6);
+        $r4 = virtualinvoke $r0.<java.lang.String: byte[] getBytes()>();
+        $r4 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r4);
+        $r3 = staticinvoke <android.util.Base64: java.lang.String encodeToString(byte[],int)>($r4, 2);
+        $r3 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r3, "UTF-8");
+
+     label1:
+        return $r3;
+
+     label2:
+        $r7 := @caughtexception;
+        return "";
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public static java.lang.String a(java.util.ArrayList)
+    {
+        java.util.ArrayList $r0;
+        int $i0;
+        com.google.c.j $r1;
+        it.h3g.model.ConsentData[] $r3;
+        java.lang.Object[] $r4;
+        java.lang.String $r5;
+
+        $r0 := @parameter0: java.util.ArrayList;
+        $r1 = new com.google.c.j;
+        specialinvoke $r1.<com.google.c.j: void <init>()>();
+        $i0 = virtualinvoke $r0.<java.util.ArrayList: int size()>();
+        $r3 = newarray (it.h3g.model.ConsentData)[$i0];
+        $r4 = virtualinvoke $r0.<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])>($r3);
+        $r3 = (it.h3g.model.ConsentData[]) $r4;
+        $r5 = virtualinvoke $r1.<com.google.c.j: java.lang.String a(java.lang.Object,java.lang.reflect.Type)>($r3, class "[Lit/h3g/model/ConsentData;");
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-JSON_CONSENTS", $r5);
+        return $r5;
+    }
+
+    public static java.lang.String a(java.util.List, long, long, long)
+    {
+        java.util.List $r0;
+        long $l0, $l1, $l2;
+        boolean $z0;
+        it.h3g.model.ReportData $r1;
+        java.util.ArrayList $r2;
+        java.util.Iterator $r3;
+        com.google.c.j $r4;
+        java.lang.String $r6;
+        java.lang.Object $r9;
+        it.h3g.areaclienti3.nwmonitoring.k $r10;
+        it.h3g.model.NetworkData $r11;
+
+        $r0 := @parameter0: java.util.List;
+        $l0 := @parameter1: long;
+        $l1 := @parameter2: long;
+        $l2 := @parameter3: long;
+        $r1 = new it.h3g.model.ReportData;
+        specialinvoke $r1.<it.h3g.model.ReportData: void <init>()>();
+        virtualinvoke $r1.<it.h3g.model.ReportData: void setImei(long)>($l1);
+        virtualinvoke $r1.<it.h3g.model.ReportData: void setImsi(long)>($l2);
+        virtualinvoke $r1.<it.h3g.model.ReportData: void setMsisdn(long)>($l0);
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r3 = interfaceinvoke $r0.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r1.<it.h3g.model.ReportData: void setDataValues(java.util.ArrayList)>($r2);
+        $r4 = new com.google.c.j;
+        specialinvoke $r4.<com.google.c.j: void <init>()>();
+        $r6 = virtualinvoke $r4.<com.google.c.j: java.lang.String a(java.lang.Object,java.lang.reflect.Type)>($r1, class "it/h3g/model/ReportData");
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-JSON_DATA", $r6);
+        return $r6;
+
+     label1:
+        $r9 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r10 = (it.h3g.areaclienti3.nwmonitoring.k) $r9;
+        $r11 = virtualinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.k: it.h3g.model.NetworkData b()>();
+        virtualinvoke $r2.<java.util.ArrayList: boolean add(java.lang.Object)>($r11);
+        goto label0;
+    }
+
+    public static void a(android.content.Context, int, java.lang.Class)
+    {
+        android.content.Context $r0;
+        int $i0;
+        java.lang.Class $r1;
+        android.content.ComponentName $r2;
+        android.content.pm.PackageManager $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        $r1 := @parameter2: java.lang.Class;
+        $r2 = new android.content.ComponentName;
+        specialinvoke $r2.<android.content.ComponentName: void <init>(android.content.Context,java.lang.Class)>($r0, $r1);
+        $r3 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        virtualinvoke $r3.<android.content.pm.PackageManager: void setComponentEnabledSetting(android.content.ComponentName,int,int)>($r2, $i0, 1);
+        return;
+    }
+
+    public static void a(it.h3g.areaclienti3.nwmonitoring.k, android.content.Context)
+    {
+        it.h3g.areaclienti3.nwmonitoring.k $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.nwmonitoring.as $r3;
+        it.h3g.areaclienti3.nwmonitoring.bf $r4;
+        java.io.File $r5, $r7;
+        java.lang.String $r6;
+        long $l0, $l2;
+        java.lang.StringBuilder $r8;
+        float $f0;
+        boolean $z0;
+        int $i1;
+        java.io.FileOutputStream $r9;
+        java.io.OutputStreamWriter $r10;
+        byte $b3;
+        java.io.IOException $r11;
+        java.io.FileNotFoundException $r12;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.nwmonitoring.k;
+        $r1 := @parameter1: android.content.Context;
+        $r3 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r1);
+        $r4 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r1);
+        $r5 = new java.io.File;
+        $r6 = <android.os.Environment: java.lang.String DIRECTORY_DOWNLOADS>;
+        $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStoragePublicDirectory(java.lang.String)>($r6);
+        specialinvoke $r5.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, "areaClienti3_nw.csv");
+        $r8 = new java.lang.StringBuilder;
+
+     label0:
+        $r6 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: java.lang.String e(android.content.Context)>($r1);
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6);
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $l0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: long getTimestamp()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r6 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String c()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r6 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: java.lang.String getEvent()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: java.lang.String getNetworkState()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $f0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: float getLatitude()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $f0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: float getLongitude()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $f0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: float getPositionAccuracy()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: boolean getGps()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getMobileOperator()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getLac()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getCellId()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getgCell()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getSignalStrength()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: boolean getFlightMode()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: boolean isDataEnabled()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: boolean isWifiConnected()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getBatteryLevel()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getCallState()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: int getClientVersion()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.k: java.lang.String getExtra()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";\n");
+        $r6 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-CSV_DATA", $r6);
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.bf: boolean y()>();
+        if $z0 == 0 goto label2;
+
+        $r9 = new java.io.FileOutputStream;
+        specialinvoke $r9.<java.io.FileOutputStream: void <init>(java.io.File,boolean)>($r5, 1);
+        $r10 = new java.io.OutputStreamWriter;
+        specialinvoke $r10.<java.io.OutputStreamWriter: void <init>(java.io.OutputStream)>($r9);
+        $l2 = virtualinvoke $r5.<java.io.File: long length()>();
+        $b3 = $l2 cmp 0L;
+        if $b3 != 0 goto label1;
+
+        virtualinvoke $r10.<java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)>("msisdn_consent,timestamp,imei,imsi,event,networkState,latitude,longitude,positionAccuracy,Gps,mobileOperator,lac,cellId,gcell,signalStrength,flightMode,dataState,wifiConnected,batteryLevel,callState,clientVersion,extra;\n");
+
+     label1:
+        virtualinvoke $r10.<java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)>($r6);
+        virtualinvoke $r10.<java.io.OutputStreamWriter: void close()>();
+        virtualinvoke $r9.<java.io.FileOutputStream: void close()>();
+
+     label2:
+        return;
+
+     label3:
+        $r11 := @caughtexception;
+        goto label2;
+
+     label4:
+        $r12 := @caughtexception;
+        goto label2;
+
+        catch java.io.FileNotFoundException from label0 to label2 with label4;
+        catch java.io.IOException from label0 to label2 with label3;
+    }
+
+    public static void a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        return;
+    }
+}

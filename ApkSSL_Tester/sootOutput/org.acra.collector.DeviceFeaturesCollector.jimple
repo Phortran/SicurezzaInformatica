@@ -1,0 +1,100 @@
+final class org.acra.collector.DeviceFeaturesCollector extends java.lang.Object
+{
+
+    void <init>()
+    {
+        org.acra.collector.DeviceFeaturesCollector $r0;
+
+        $r0 := @this: org.acra.collector.DeviceFeaturesCollector;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String getFeatures(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0, $i3;
+        java.lang.StringBuilder $r1, $r14;
+        java.lang.Class $r2;
+        java.lang.String $r3, $r12;
+        android.content.pm.PackageManager $r4;
+        java.lang.Class[] $r5;
+        java.lang.reflect.Method $r6;
+        java.lang.Object[] $r7, $r11;
+        java.lang.Object $r8, $r10;
+        java.lang.reflect.Field $r9;
+        java.lang.Throwable $r13;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <org.acra.collector.Compatibility: int getAPILevel()>();
+        if $i0 >= 5 goto label0;
+
+        return "Data available only with API Level >= 5";
+
+     label0:
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+
+     label1:
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r2 = class "android/content/pm/PackageManager";
+        $r5 = (java.lang.Class[]) null;
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getSystemAvailableFeatures", $r5);
+        $r7 = newarray (java.lang.Object)[0];
+        $r8 = virtualinvoke $r6.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r4, $r7);
+        $r7 = (java.lang.Object[]) $r8;
+        $r7 = (java.lang.Object[]) $r7;
+        $i0 = lengthof $r7;
+        $i3 = 0;
+
+     label2:
+        if $i3 >= $i0 goto label7;
+
+        $r8 = $r7[$i3];
+        $r2 = virtualinvoke $r8.<java.lang.Object: java.lang.Class getClass()>();
+        $r9 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>("name");
+        $r10 = virtualinvoke $r9.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r8);
+        $r3 = (java.lang.String) $r10;
+        if $r3 == null goto label4;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+
+     label3:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $i3 = $i3 + 1;
+        goto label2;
+
+     label4:
+        $r2 = virtualinvoke $r8.<java.lang.Object: java.lang.Class getClass()>();
+        $r5 = (java.lang.Class[]) null;
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getGlEsVersion", $r5);
+        $r11 = newarray (java.lang.Object)[0];
+        $r10 = virtualinvoke $r6.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r8, $r11);
+        $r3 = (java.lang.String) $r10;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("glEsVersion = ");
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+
+     label5:
+        goto label3;
+
+     label6:
+        $r13 := @caughtexception;
+        $r12 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Couldn\'t retrieve DeviceFeatures for ");
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r12, $r3, $r13);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not retrieve data: ");
+        $r12 = virtualinvoke $r13.<java.lang.Throwable: java.lang.String getMessage()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+
+     label7:
+        $r12 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r12;
+
+        catch java.lang.Throwable from label1 to label5 with label6;
+    }
+}

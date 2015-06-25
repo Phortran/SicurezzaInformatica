@@ -1,0 +1,42 @@
+final class com.facebook.rti.b.a.c.u extends android.content.BroadcastReceiver
+{
+    final com.facebook.rti.b.a.c.t a;
+
+    void <init>(com.facebook.rti.b.a.c.t)
+    {
+        com.facebook.rti.b.a.c.u $r0;
+        com.facebook.rti.b.a.c.t $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.u;
+        $r1 := @parameter0: com.facebook.rti.b.a.c.t;
+        $r0.<com.facebook.rti.b.a.c.u: com.facebook.rti.b.a.c.t a> = $r1;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.rti.b.a.c.u $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        com.facebook.rti.b.a.c.t $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.c.u;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $r4 = <com.facebook.rti.b.a.c.t: java.lang.String a>;
+        $z0 = staticinvoke <com.facebook.rti.a.d.a.b: boolean a(java.lang.Object,java.lang.Object)>($r3, $r4);
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r5 = $r0.<com.facebook.rti.b.a.c.u: com.facebook.rti.b.a.c.t a>;
+        staticinvoke <com.facebook.rti.b.a.c.t: void a(com.facebook.rti.b.a.c.t)>($r5);
+        goto label0;
+    }
+}

@@ -1,0 +1,190 @@
+public class it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment extends com.google.android.gms.maps.SupportMapFragment
+{
+    private int a;
+    private android.view.View b;
+    private boolean c;
+    private boolean d;
+    private boolean e;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r0;
+        boolean $z1, $z2;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        $z1 = 0;
+        specialinvoke $r0.<com.google.android.gms.maps.SupportMapFragment: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: int a> = -1;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 16 goto label2;
+
+        $z2 = 1;
+
+     label0:
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean c> = $z2;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 17 goto label1;
+
+        $z1 = 1;
+
+     label1:
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean d> = $z1;
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean e> = 1;
+        return;
+
+     label2:
+        $z2 = 0;
+        goto label0;
+    }
+
+    private android.view.View a(android.view.ViewGroup)
+    {
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r0;
+        android.view.ViewGroup $r1, $r4;
+        android.view.View $r2, $r3;
+        int $i1, $i2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        $r1 := @parameter0: android.view.ViewGroup;
+        $i2 = virtualinvoke $r1.<android.view.ViewGroup: int getChildCount()>();
+        $i1 = 0;
+
+     label0:
+        if $i1 < $i2 goto label2;
+
+        $r2 = null;
+
+     label1:
+        return $r2;
+
+     label2:
+        $r2 = virtualinvoke $r1.<android.view.ViewGroup: android.view.View getChildAt(int)>($i1);
+        $z0 = $r2 instanceof android.view.ViewGroup;
+        if $z0 == 0 goto label3;
+
+        $r4 = (android.view.ViewGroup) $r2;
+        $r3 = specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View a(android.view.ViewGroup)>($r4);
+        if $r3 == null goto label3;
+
+        return $r3;
+
+     label3:
+        $z0 = $r2 instanceof android.view.SurfaceView;
+        if $z0 != 0 goto label1;
+
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean c>;
+        if $z0 == 0 goto label4;
+
+        $z0 = $r2 instanceof android.view.TextureView;
+        if $z0 != 0 goto label1;
+
+     label4:
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+
+    static boolean a(it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment)
+    {
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean e>;
+        return $z0;
+    }
+
+    private int c()
+    {
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r0;
+        boolean $z0;
+        android.support.v4.app.h $r2;
+        int $i0;
+        java.lang.Object $r3;
+        android.view.WindowManager $r4;
+        android.view.Display $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean d>;
+        if $z0 == 0 goto label1;
+
+        $i0 = 1;
+
+     label0:
+        return $i0;
+
+     label1:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.support.v4.app.h getActivity()>();
+        $r3 = virtualinvoke $r2.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+        $r4 = (android.view.WindowManager) $r3;
+        $r5 = interfaceinvoke $r4.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+        $i0 = virtualinvoke $r5.<android.view.Display: int getPixelFormat()>();
+        $z0 = staticinvoke <android.graphics.PixelFormat: boolean formatHasAlpha(int)>($i0);
+        if $z0 != 0 goto label0;
+
+        return 4;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r4;
+        android.view.SurfaceHolder $r5;
+        int $i1;
+        it.h3g.areaclienti3.fragments.store.g $r6;
+        boolean $z0;
+        android.view.TextureView $r7;
+        android.view.SurfaceView $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = specialinvoke $r0.<com.google.android.gms.maps.SupportMapFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>($r1, $r2, $r3);
+        $r2 = (android.view.ViewGroup) $r4;
+        virtualinvoke $r2.<android.view.ViewGroup: void setBackgroundColor(int)>(0);
+        $r4 = specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View a(android.view.ViewGroup)>($r2);
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b> = $r4;
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b>;
+        if $r4 != null goto label0;
+
+        return $r2;
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b>;
+        virtualinvoke $r4.<android.view.View: void setBackgroundColor(int)>(0);
+        $r6 = new it.h3g.areaclienti3.fragments.store.g;
+        specialinvoke $r6.<it.h3g.areaclienti3.fragments.store.g: void <init>(it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment)>($r0);
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean c>;
+        if $z0 == 0 goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b>;
+        $z0 = $r4 instanceof android.view.TextureView;
+        if $z0 == 0 goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b>;
+        $r7 = (android.view.TextureView) $r4;
+        virtualinvoke $r7.<android.view.TextureView: void setOnTouchListener(android.view.View$OnTouchListener)>($r6);
+        return $r2;
+
+     label1:
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: android.view.View b>;
+        $r8 = (android.view.SurfaceView) $r4;
+        $r5 = virtualinvoke $r8.<android.view.SurfaceView: android.view.SurfaceHolder getHolder()>();
+        $i1 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: int a>;
+        if $i1 != -1 goto label2;
+
+        $i1 = specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: int c()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: int a> = $i1;
+
+     label2:
+        $i1 = $r0.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: int a>;
+        interfaceinvoke $r5.<android.view.SurfaceHolder: void setFormat(int)>($i1);
+        virtualinvoke $r8.<android.view.SurfaceView: void setOnTouchListener(android.view.View$OnTouchListener)>($r6);
+        return $r2;
+    }
+}

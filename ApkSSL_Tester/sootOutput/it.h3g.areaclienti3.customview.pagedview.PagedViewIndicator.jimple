@@ -1,0 +1,562 @@
+public class it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator extends android.view.View implements android.view.animation.Animation$AnimationListener, it.h3g.areaclienti3.customview.pagedview.d
+{
+    android.view.animation.Animation a;
+    protected int b;
+    protected int c;
+    protected int d;
+    private it.h3g.areaclienti3.customview.pagedview.PagedView e;
+    private int f;
+    private int g;
+    private int h;
+    private int i;
+    private android.graphics.Paint j;
+    private android.graphics.drawable.Drawable k;
+    private android.graphics.drawable.Drawable l;
+    private android.graphics.drawable.Drawable m;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void <init>(android.content.Context,android.util.AttributeSet)>($r1, null);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int[] $r3;
+        int $i0;
+        android.content.res.TypedArray $r4;
+        android.graphics.drawable.Drawable $r5;
+        android.graphics.Paint $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        specialinvoke $r0.<android.view.View: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int g> = -1;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int h> = -1;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int i> = -1;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b> = -1;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c> = -1;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d> = 0;
+        $r3 = <it.h3g.areaclienti3.R$styleable: int[] PagedViewIndicator>;
+        $r4 = virtualinvoke $r1.<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet,int[])>($r2, $r3);
+        $i0 = virtualinvoke $r4.<android.content.res.TypedArray: int getDimensionPixelSize(int,int)>(0, -1);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b> = $i0;
+        $i0 = virtualinvoke $r4.<android.content.res.TypedArray: int getDimensionPixelSize(int,int)>(1, -1);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c> = $i0;
+        $i0 = virtualinvoke $r4.<android.content.res.TypedArray: int getDimensionPixelOffset(int,int)>(2, 0);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d> = $i0;
+        $r5 = virtualinvoke $r4.<android.content.res.TypedArray: android.graphics.drawable.Drawable getDrawable(int)>(3);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k> = $r5;
+        $r5 = virtualinvoke $r4.<android.content.res.TypedArray: android.graphics.drawable.Drawable getDrawable(int)>(4);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable l> = $r5;
+        $r5 = virtualinvoke $r4.<android.content.res.TypedArray: android.graphics.drawable.Drawable getDrawable(int)>(5);
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable m> = $r5;
+        $i0 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        if $i0 != -1 goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        if $r5 == null goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        $i0 = virtualinvoke $r5.<android.graphics.drawable.Drawable: int getIntrinsicWidth()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b> = $i0;
+
+     label0:
+        $i0 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c>;
+        if $i0 != -1 goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        if $r5 == null goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        $i0 = virtualinvoke $r5.<android.graphics.drawable.Drawable: int getIntrinsicHeight()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c> = $i0;
+
+     label1:
+        virtualinvoke $r4.<android.content.res.TypedArray: void recycle()>();
+        $r6 = new android.graphics.Paint;
+        specialinvoke $r6.<android.graphics.Paint: void <init>()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.Paint j> = $r6;
+        return;
+    }
+
+    private int c(int, int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i6;
+        float $f0, $f1;
+        byte $b5;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int getWidth()>();
+        $i1 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $i1 = $i1 * $i2;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i4 = $i2 + -1;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $i4 = $i4 * $i2;
+        $i4 = $i1 + $i4;
+        $f1 = (float) $i3;
+        $f0 = (float) $i4;
+        $f0 = $f1 / $f0;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $i1 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $b5 = $f0 cmpg 1.0F;
+        if $b5 >= 0 goto label0;
+
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $f1 = (float) $i4;
+        $f1 = $f1 * $f0;
+        $i2 = (int) $f1;
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $f1 = (float) $i4;
+        $f1 = $f1 * $f0;
+        $i1 = (int) $f1;
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i4 = $i4 * $i2;
+        $i6 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i6 = $i6 + -1;
+        $i6 = $i6 * $i1;
+        $i4 = $i4 + $i6;
+
+     label0:
+        $i6 = $i3 - $i4;
+        $i6 = $i6 / 2;
+        $i6 = $i0 - $i6;
+        $i4 = $i1 + $i2;
+        $i6 = $i6 / $i4;
+        return $i6;
+    }
+
+    public void a(int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        int $i0;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $i0 := @parameter0: int;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f> = $i0;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i0 = virtualinvoke $r1.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getCurrentPage()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int g> = $i0;
+
+     label0:
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void invalidate()>();
+        return;
+    }
+
+    public void a(int, int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        int $i0, $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int g> = $i1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void invalidate()>();
+        return;
+    }
+
+    public void b(int, int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        int $i0, $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int g> = $i0;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int h> = $i1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void invalidate()>();
+        return;
+    }
+
+    public void onAnimationEnd(android.view.animation.Animation)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.view.animation.Animation $r1, $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.view.animation.Animation;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.view.animation.Animation a>;
+        if $r2 != $r1 goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void setVisibility(int)>(4);
+
+     label0:
+        return;
+    }
+
+    public void onAnimationRepeat(android.view.animation.Animation)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.view.animation.Animation $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.view.animation.Animation;
+        return;
+    }
+
+    public void onAnimationStart(android.view.animation.Animation)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.view.animation.Animation $r1, $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.view.animation.Animation;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.view.animation.Animation a>;
+        if $r2 != $r1 goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void setVisibility(int)>(0);
+
+     label0:
+        return;
+    }
+
+    protected void onDraw(android.graphics.Canvas)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.graphics.Canvas $r1;
+        int $i0, $i2, $i3, $i4, $i5, $i6, $i7, $i8, $i9, $i10, $i11;
+        byte $b1;
+        float $f0, $f1, $f2, $f3;
+        android.graphics.drawable.Drawable $r2;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r3, $r4;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.graphics.Canvas;
+        specialinvoke $r0.<android.view.View: void onDraw(android.graphics.Canvas)>($r1);
+        $i0 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        if $i0 <= 1 goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable l>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable m>;
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $i3 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int getWidth()>();
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $i4 = $i4 * $i2;
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i2 = $i2 + -1;
+        $i0 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $i2 = $i2 * $i0;
+        $i5 = $i4 + $i2;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int getHeight()>();
+        $i2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c>;
+        $f1 = (float) $i3;
+        $f0 = (float) $i5;
+        $f0 = $f1 / $f0;
+        $i6 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $i7 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $b1 = $f0 cmpg 1.0F;
+        if $b1 >= 0 goto label2;
+
+        $i7 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b>;
+        $f1 = (float) $i7;
+        $f1 = $f1 * $f0;
+        $i6 = (int) $f1;
+        $i7 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int d>;
+        $f1 = (float) $i7;
+        $f1 = $f1 * $f0;
+        $i7 = (int) $f1;
+        $i5 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i5 = $i5 * $i6;
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        $i4 = $i4 + -1;
+        $i4 = $i4 * $i7;
+        $i5 = $i5 + $i4;
+
+     label2:
+        $i4 = $i3 - $i5;
+        $i8 = $i4 / 2;
+        $i4 = $i0 - $i2;
+        $i2 = $i4 / 2;
+        $i9 = $i8 + $i6;
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c>;
+        $i0 = $i2 + $i4;
+        $i10 = 0;
+        $i11 = $i8;
+
+     label3:
+        $i4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        if $i10 < $i4 goto label7;
+
+        $i10 = $i7 + $i6;
+        $i11 = $i11 - $i10;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getCurrentPage()>();
+        $i10 = virtualinvoke $r3.<it.h3g.areaclienti3.customview.pagedview.PagedView: int j(int)>($i10);
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i9 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getHorizontalSpacing()>();
+        $i10 = $i10 + $i9;
+        $f1 = (float) $i10;
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r3.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getCurrentPage()>();
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int k(int)>($i10);
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i9 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getVerticalSpacing()>();
+        $i10 = $i10 + $i9;
+        $f0 = (float) $i10;
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: boolean getIsHorizontal()>();
+        if $z0 == 0 goto label8;
+
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getScrollX()>();
+        $f3 = (float) $i10;
+
+     label4:
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: boolean getIsHorizontal()>();
+        if $z0 == 0 goto label9;
+
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getScrollX()>();
+        $f3 = (float) $i10;
+        $f2 = $f1 / 2.0F;
+        $f3 = $f3 + $f2;
+        $f3 = $f3 / $f1;
+        $i10 = (int) $f3;
+
+     label5:
+        $i9 = $i3 - $i5;
+        $i9 = $i9 / 2;
+        $i7 = $i7 + $i6;
+        $i10 = $i7 * $i10;
+        $i10 = $i10 + $i9;
+        if $i10 >= $i8 goto label10;
+
+     label6:
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable l>;
+        $i11 = $i6 + $i8;
+        $i10 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c>;
+        $i10 = $i10 + $i2;
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void setBounds(int,int,int,int)>($i8, $i2, $i11, $i10);
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable l>;
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void draw(android.graphics.Canvas)>($r1);
+        goto label0;
+
+     label7:
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k>;
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void setBounds(int,int,int,int)>($i11, $i2, $i9, $i0);
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void draw(android.graphics.Canvas)>($r1);
+        $i9 = $i7 + $i6;
+        $i11 = $i11 + $i9;
+        $i9 = $i11 + $i6;
+        $i10 = $i10 + 1;
+        goto label3;
+
+     label8:
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getScrollY()>();
+        $f3 = (float) $i10;
+        goto label4;
+
+     label9:
+        $r4 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $i10 = virtualinvoke $r4.<it.h3g.areaclienti3.customview.pagedview.PagedView: int getScrollY()>();
+        $f3 = (float) $i10;
+        $f2 = $f0 / 2.0F;
+        $f3 = $f3 + $f2;
+        $f3 = $f3 / $f0;
+        $i10 = (int) $f3;
+        goto label5;
+
+     label10:
+        if $i10 <= $i11 goto label11;
+
+        $i8 = $i11;
+        goto label6;
+
+     label11:
+        $i8 = $i10;
+        goto label6;
+    }
+
+    protected void onLayout(boolean, int, int, int, int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        boolean $z0;
+        int $i0, $i1, $i2, $i3;
+        android.graphics.Paint $r1;
+        double $d1;
+        float $f0;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $z0 := @parameter0: boolean;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $i3 := @parameter4: int;
+        specialinvoke $r0.<android.view.View: void onLayout(boolean,int,int,int,int)>($z0, $i0, $i1, $i2, $i3);
+        $r1 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.Paint j>;
+        $i3 = $i3 - $i1;
+        $d1 = (double) $i3;
+        $d1 = 0.7 * $d1;
+        $f0 = (float) $d1;
+        virtualinvoke $r1.<android.graphics.Paint: void setTextSize(float)>($f0);
+        return;
+    }
+
+    protected void onMeasure(int, int)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        staticinvoke <android.view.View$MeasureSpec: int getMode(int)>($i0);
+        $i2 = staticinvoke <android.view.View$MeasureSpec: int getSize(int)>($i0);
+        $i3 = staticinvoke <android.view.View$MeasureSpec: int getMode(int)>($i1);
+        staticinvoke <android.view.View$MeasureSpec: int getSize(int)>($i1);
+        $i4 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int getPaddingTop()>();
+        $i5 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int getPaddingBottom()>();
+        if $i3 == 0 goto label0;
+
+        if $i3 != -2147483648 goto label2;
+
+     label0:
+        $i6 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c>;
+        $i6 = $i6 + $i5;
+        $i6 = $i6 + $i4;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void setMeasuredDimension(int,int)>($i2, $i6);
+
+     label1:
+        return;
+
+     label2:
+        specialinvoke $r0.<android.view.View: void onMeasure(int,int)>($i0, $i1);
+        goto label1;
+    }
+
+    public boolean onTouchEvent(android.view.MotionEvent)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.view.MotionEvent $r1;
+        float $f0;
+        int $i0, $i1;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $i0 = (int) $f0;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        $i1 = (int) $f0;
+        $i1 = specialinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c(int,int)>($i0, $i1);
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        if $r2 == null goto label0;
+
+        if $i1 < 0 goto label0;
+
+        $i0 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int f>;
+        if $i1 >= $i0 goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.customview.pagedview.PagedView: void e(int)>($i1);
+
+     label0:
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        lookupswitch($i0)
+        {
+            case 0: goto label2;
+            case 1: goto label3;
+            case 2: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void invalidate()>();
+        return 1;
+
+     label2:
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int i> = $i1;
+        goto label1;
+
+     label3:
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int i> = -1;
+        goto label1;
+    }
+
+    public void setIndicatorActive(android.graphics.drawable.Drawable)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable l> = $r1;
+        return;
+    }
+
+    public void setIndicatorNormal(android.graphics.drawable.Drawable)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.graphics.drawable.Drawable $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable k> = $r1;
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getIntrinsicHeight()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int c> = $i0;
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getIntrinsicWidth()>();
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: int b> = $i0;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void requestLayout()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: void invalidate()>();
+        return;
+    }
+
+    public void setIndicatorPressed(android.graphics.drawable.Drawable)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: android.graphics.drawable.Drawable m> = $r1;
+        return;
+    }
+
+    public void setPagedView(it.h3g.areaclienti3.customview.pagedview.PagedView)
+    {
+        it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator $r0;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.pagedview.PagedView;
+        $r0.<it.h3g.areaclienti3.customview.pagedview.PagedViewIndicator: it.h3g.areaclienti3.customview.pagedview.PagedView e> = $r1;
+        return;
+    }
+}

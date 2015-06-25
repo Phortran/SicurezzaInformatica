@@ -1,0 +1,45 @@
+class com.google.android.gms.internal.u extends java.lang.Object implements java.lang.Runnable
+{
+    final com.google.android.gms.internal.ah a;
+    final com.google.android.gms.internal.s b;
+
+    void <init>(com.google.android.gms.internal.s, com.google.android.gms.internal.ah)
+    {
+        com.google.android.gms.internal.u $r0;
+        com.google.android.gms.internal.s $r1;
+        com.google.android.gms.internal.ah $r2;
+
+        $r0 := @this: com.google.android.gms.internal.u;
+        $r1 := @parameter0: com.google.android.gms.internal.s;
+        $r2 := @parameter1: com.google.android.gms.internal.ah;
+        $r0.<com.google.android.gms.internal.u: com.google.android.gms.internal.s b> = $r1;
+        $r0.<com.google.android.gms.internal.u: com.google.android.gms.internal.ah a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.google.android.gms.internal.u $r0;
+        com.google.android.gms.internal.ah $r1;
+        com.google.android.gms.internal.ax $r3;
+        android.os.RemoteException $r4;
+
+        $r0 := @this: com.google.android.gms.internal.u;
+        $r1 = $r0.<com.google.android.gms.internal.u: com.google.android.gms.internal.ah a>;
+        $r3 = $r1.<com.google.android.gms.internal.ah: com.google.android.gms.internal.ax c>;
+
+     label0:
+        interfaceinvoke $r3.<com.google.android.gms.internal.ax: void c()>();
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        staticinvoke <com.google.android.gms.internal.dc: void b(java.lang.String,java.lang.Throwable)>("Could not destroy mediation adapter.", $r4);
+        goto label1;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+}

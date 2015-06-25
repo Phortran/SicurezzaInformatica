@@ -1,0 +1,83 @@
+public final class com.facebook.rti.b.a.f.a.b.d extends java.lang.Object
+{
+    private static java.lang.reflect.Field a;
+    private static boolean b;
+
+    static void <clinit>()
+    {
+        java.lang.reflect.Field $r1;
+        java.lang.Class $r2;
+        java.lang.Throwable $r3;
+
+        <com.facebook.rti.b.a.f.a.b.d: boolean b> = 0;
+
+     label0:
+        $r2 = class "java/net/Socket";
+        $r1 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("impl");
+        <com.facebook.rti.b.a.f.a.b.d: java.lang.reflect.Field a> = $r1;
+        staticinvoke <com.facebook.rti.a.d.a.d: java.lang.Object a(java.lang.Object)>($r1);
+        $r1 = <com.facebook.rti.b.a.f.a.b.d: java.lang.reflect.Field a>;
+        virtualinvoke $r1.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        <com.facebook.rti.b.a.f.a.b.d: boolean b> = 1;
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.b.a.f.a.b.d $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void a(java.net.Socket, byte[], java.lang.String, int)
+    {
+        java.net.Socket $r0;
+        byte[] $r1;
+        java.lang.String $r2;
+        int $i0;
+        java.lang.reflect.Field $r3;
+        com.facebook.rti.b.a.f.a.b.a $r4;
+        java.lang.IllegalAccessException $r5;
+        com.facebook.rti.b.a.f.a.d $r6;
+
+        $r0 := @parameter0: java.net.Socket;
+        $r1 := @parameter1: byte[];
+        $r2 := @parameter2: java.lang.String;
+        $i0 := @parameter3: int;
+        $r3 = <com.facebook.rti.b.a.f.a.b.d: java.lang.reflect.Field a>;
+        $r4 = new com.facebook.rti.b.a.f.a.b.a;
+
+     label0:
+        specialinvoke $r4.<com.facebook.rti.b.a.f.a.b.a: void <init>(byte[],java.lang.String,int)>($r1, $r2, $i0);
+        virtualinvoke $r3.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>($r0, $r4);
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        $r6 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r6.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r5);
+        throw $r6;
+
+        catch java.lang.IllegalAccessException from label0 to label1 with label2;
+    }
+
+    public static boolean a()
+    {
+        boolean $z0;
+
+        $z0 = <com.facebook.rti.b.a.f.a.b.d: boolean b>;
+        return $z0;
+    }
+}

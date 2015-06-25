@@ -1,0 +1,241 @@
+public class it.h3g.areaclienti3.customview.a extends android.widget.RelativeLayout
+{
+    private android.widget.RelativeLayout a;
+    private android.widget.TextView b;
+    private android.view.LayoutInflater c;
+    private android.content.Context d;
+    private it.h3g.areaclienti3.customview.pagedview.PagedView e;
+    private java.util.List f;
+    private android.widget.Button g;
+    private android.widget.ImageView h;
+    private final it.h3g.areaclienti3.customview.pagedview.d i;
+
+    public void <init>(android.content.Context, java.lang.String, it.h3g.areaclienti3.d.e)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        it.h3g.areaclienti3.d.e $r3;
+        java.util.Vector $r4;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.customview.b $r6;
+        android.view.LayoutInflater $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: it.h3g.areaclienti3.d.e;
+        specialinvoke $r0.<android.widget.RelativeLayout: void <init>(android.content.Context)>($r1);
+        $r4 = new java.util.Vector;
+        specialinvoke $r4.<java.util.Vector: void <init>()>();
+        $r0.<it.h3g.areaclienti3.customview.a: java.util.List f> = $r4;
+        $r6 = new it.h3g.areaclienti3.customview.b;
+        specialinvoke $r6.<it.h3g.areaclienti3.customview.b: void <init>(it.h3g.areaclienti3.customview.a)>($r0);
+        $r0.<it.h3g.areaclienti3.customview.a: it.h3g.areaclienti3.customview.pagedview.d i> = $r6;
+        $r0.<it.h3g.areaclienti3.customview.a: android.content.Context d> = $r1;
+        $r5 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r8 = (android.view.LayoutInflater) $r5;
+        $r0.<it.h3g.areaclienti3.customview.a: android.view.LayoutInflater c> = $r8;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.a: void a(java.lang.String,it.h3g.areaclienti3.d.e)>($r2, $r3);
+        return;
+    }
+
+    static java.util.List a(it.h3g.areaclienti3.customview.a)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        java.util.List $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.customview.a;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.a: java.util.List f>;
+        return $r1;
+    }
+
+    static void a(it.h3g.areaclienti3.customview.a, java.lang.String)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.customview.a;
+        $r1 := @parameter1: java.lang.String;
+        specialinvoke $r0.<it.h3g.areaclienti3.customview.a: void a(java.lang.String)>($r1);
+        return;
+    }
+
+    private void a(java.lang.String)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        java.lang.String $r1;
+        android.app.AlertDialog$Builder $r2;
+        android.content.Context $r3;
+        int $i0, i1, i2, i3;
+        android.app.AlertDialog $r5;
+        android.view.LayoutInflater $r6;
+        android.view.View $r7;
+        android.widget.LinearLayout $r8;
+        android.webkit.WebView $r9;
+        android.widget.ImageView $r11;
+        it.h3g.areaclienti3.customview.d $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new android.app.AlertDialog$Builder;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.a: android.content.Context d>;
+        specialinvoke $r2.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r3);
+        virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setCancelable(boolean)>(1);
+        $r5 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        virtualinvoke $r5.<android.app.AlertDialog: void setCanceledOnTouchOutside(boolean)>(0);
+        $r6 = $r0.<it.h3g.areaclienti3.customview.a: android.view.LayoutInflater c>;
+        $r7 = virtualinvoke $r6.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903051, null);
+        $r8 = (android.widget.LinearLayout) $r7;
+        $r7 = virtualinvoke $r8.<android.view.View: android.view.View findViewById(int)>(2131165241);
+        $r9 = (android.webkit.WebView) $r7;
+        virtualinvoke $r9.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        $i0 = (int) 0;
+        virtualinvoke $r9.<android.webkit.WebView: void setBackgroundColor(int)>($i0);
+        virtualinvoke $r9.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>($r1, "text/html", "utf-8");
+        $r7 = virtualinvoke $r8.<android.view.View: android.view.View findViewById(int)>(2131165211);
+        $r11 = (android.widget.ImageView) $r7;
+        $r12 = new it.h3g.areaclienti3.customview.d;
+        specialinvoke $r12.<it.h3g.areaclienti3.customview.d: void <init>(it.h3g.areaclienti3.customview.a,android.app.AlertDialog)>($r0, $r5);
+        virtualinvoke $r11.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r12);
+        $i0 = (int) 0;
+        i1 = (int) 0;
+        i2 = (int) 0;
+        i3 = (int) 0;
+        virtualinvoke $r5.<android.app.AlertDialog: void setView(android.view.View,int,int,int,int)>($r8, $i0, i1, i2, i3);
+        virtualinvoke $r5.<android.app.AlertDialog: void show()>();
+        return;
+    }
+
+    protected void a(java.lang.String, it.h3g.areaclienti3.d.e)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        java.lang.String $r1, $r5, $r17;
+        it.h3g.areaclienti3.d.e $r2;
+        java.lang.StringBuilder $r4;
+        java.util.Iterator $r6;
+        android.content.Context $r7;
+        java.lang.Object $r8;
+        android.view.LayoutInflater $r9;
+        android.view.View $r10;
+        android.widget.RelativeLayout $r11;
+        android.widget.TextView $r12;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r13;
+        android.widget.Button $r14;
+        it.h3g.areaclienti3.customview.pagedview.d $r15;
+        android.widget.ImageView $r16;
+        boolean $z0;
+        it.h3g.areaclienti3.customview.c $r18;
+        java.util.ArrayList $r19;
+        java.util.List $r20;
+        it.h3g.areaclienti3.d.f $r21;
+        it.h3g.areaclienti3.customview.ProgressWheelAutoThreshold $r22;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: it.h3g.areaclienti3.d.e;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("create Threshold view for ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Custom Threasholds", $r5);
+        $r7 = $r0.<it.h3g.areaclienti3.customview.a: android.content.Context d>;
+        $r8 = virtualinvoke $r7.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r9 = (android.view.LayoutInflater) $r8;
+        $r10 = virtualinvoke $r9.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903083, $r0);
+        $r11 = (android.widget.RelativeLayout) $r10;
+        $r0.<it.h3g.areaclienti3.customview.a: android.widget.RelativeLayout a> = $r11;
+        $r11 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.RelativeLayout a>;
+        $r10 = virtualinvoke $r11.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165425);
+        $r12 = (android.widget.TextView) $r10;
+        $r0.<it.h3g.areaclienti3.customview.a: android.widget.TextView b> = $r12;
+        $r11 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.RelativeLayout a>;
+        $r10 = virtualinvoke $r11.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165427);
+        $r13 = (it.h3g.areaclienti3.customview.pagedview.PagedView) $r10;
+        $r0.<it.h3g.areaclienti3.customview.a: it.h3g.areaclienti3.customview.pagedview.PagedView e> = $r13;
+        $r11 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.RelativeLayout a>;
+        $r10 = virtualinvoke $r11.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165429);
+        $r14 = (android.widget.Button) $r10;
+        $r0.<it.h3g.areaclienti3.customview.a: android.widget.Button g> = $r14;
+        $r13 = $r0.<it.h3g.areaclienti3.customview.a: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        $r15 = $r0.<it.h3g.areaclienti3.customview.a: it.h3g.areaclienti3.customview.pagedview.d i>;
+        virtualinvoke $r13.<it.h3g.areaclienti3.customview.pagedview.PagedView: void setPagedViewListener(it.h3g.areaclienti3.customview.pagedview.d)>($r15);
+        $r11 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.RelativeLayout a>;
+        $r10 = virtualinvoke $r11.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165428);
+        $r16 = (android.widget.ImageView) $r10;
+        $r0.<it.h3g.areaclienti3.customview.a: android.widget.ImageView h> = $r16;
+        $r17 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("thresholdDescriptions", "extraThreshold", "label");
+        $z0 = virtualinvoke $r17.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("");
+        if $z0 == 0 goto label2;
+
+        $r17 = virtualinvoke $r2.<it.h3g.areaclienti3.d.e: java.lang.String c()>();
+
+     label0:
+        $r16 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.ImageView h>;
+        $r18 = new it.h3g.areaclienti3.customview.c;
+        specialinvoke $r18.<it.h3g.areaclienti3.customview.c: void <init>(it.h3g.areaclienti3.customview.a,java.lang.String)>($r0, $r17);
+        virtualinvoke $r16.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r18);
+        $r19 = virtualinvoke $r2.<it.h3g.areaclienti3.d.e: java.util.ArrayList a()>();
+        $r6 = virtualinvoke $r19.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label3;
+
+        $r20 = $r0.<it.h3g.areaclienti3.customview.a: java.util.List f>;
+        $r8 = interfaceinvoke $r20.<java.util.List: java.lang.Object get(int)>(0);
+        $r21 = (it.h3g.areaclienti3.d.f) $r8;
+        $r17 = virtualinvoke $r21.<it.h3g.areaclienti3.d.f: java.lang.String a()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.a: void setDetailAutoText(java.lang.String)>($r17);
+        $r12 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.TextView b>;
+        virtualinvoke $r12.<android.widget.TextView: void setText(java.lang.CharSequence)>($r1);
+        return;
+
+     label2:
+        $r17 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("thresholdDescriptions", "extraThreshold", "label");
+        goto label0;
+
+     label3:
+        $r8 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r21 = (it.h3g.areaclienti3.d.f) $r8;
+        $r9 = $r0.<it.h3g.areaclienti3.customview.a: android.view.LayoutInflater c>;
+        $r10 = virtualinvoke $r9.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903055, null);
+        $r11 = (android.widget.RelativeLayout) $r10;
+        $r10 = virtualinvoke $r11.<android.view.View: android.view.View findViewById(int)>(2131165253);
+        $r22 = (it.h3g.areaclienti3.customview.ProgressWheelAutoThreshold) $r10;
+        virtualinvoke $r22.<it.h3g.areaclienti3.customview.ProgressWheelAutoThreshold: void setThresholdPerc(int)>(100);
+        $r17 = virtualinvoke $r21.<it.h3g.areaclienti3.d.f: java.lang.String f()>();
+        virtualinvoke $r22.<it.h3g.areaclienti3.customview.ProgressWheelAutoThreshold: void setText(java.lang.String)>($r17);
+        virtualinvoke $r11.<android.view.View: void invalidate()>();
+        $r13 = $r0.<it.h3g.areaclienti3.customview.a: it.h3g.areaclienti3.customview.pagedview.PagedView e>;
+        virtualinvoke $r13.<it.h3g.areaclienti3.customview.pagedview.PagedView: void addView(android.view.View)>($r11);
+        $r20 = $r0.<it.h3g.areaclienti3.customview.a: java.util.List f>;
+        interfaceinvoke $r20.<java.util.List: boolean add(java.lang.Object)>($r21);
+        goto label1;
+    }
+
+    public android.widget.Button getDetailButton()
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        android.widget.Button $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.Button g>;
+        return $r1;
+    }
+
+    public void setDetailAutoText(java.lang.String)
+    {
+        it.h3g.areaclienti3.customview.a $r0;
+        java.lang.String $r1;
+        android.widget.Button $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.a: android.widget.Button g>;
+        virtualinvoke $r2.<android.widget.Button: void setText(java.lang.CharSequence)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.a: void requestLayout()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.a: void invalidate()>();
+        return;
+    }
+}

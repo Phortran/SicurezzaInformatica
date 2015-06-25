@@ -1,0 +1,101 @@
+public abstract class com.google.android.gms.internal.bs extends com.google.android.gms.internal.cm
+{
+    private final com.google.android.gms.internal.bu a;
+    private final com.google.android.gms.internal.br b;
+
+    public void <init>(com.google.android.gms.internal.bu, com.google.android.gms.internal.br)
+    {
+        com.google.android.gms.internal.bs $r0;
+        com.google.android.gms.internal.bu $r1;
+        com.google.android.gms.internal.br $r2;
+
+        $r0 := @this: com.google.android.gms.internal.bs;
+        $r1 := @parameter0: com.google.android.gms.internal.bu;
+        $r2 := @parameter1: com.google.android.gms.internal.br;
+        specialinvoke $r0.<com.google.android.gms.internal.cm: void <init>()>();
+        $r0.<com.google.android.gms.internal.bs: com.google.android.gms.internal.bu a> = $r1;
+        $r0.<com.google.android.gms.internal.bs: com.google.android.gms.internal.br b> = $r2;
+        return;
+    }
+
+    private static com.google.android.gms.internal.bw a(com.google.android.gms.internal.by, com.google.android.gms.internal.bu)
+    {
+        com.google.android.gms.internal.by $r0;
+        com.google.android.gms.internal.bu $r1;
+        com.google.android.gms.internal.bw $r3;
+        android.os.RemoteException $r4;
+
+        $r0 := @parameter0: com.google.android.gms.internal.by;
+        $r1 := @parameter1: com.google.android.gms.internal.bu;
+
+     label0:
+        $r3 = interfaceinvoke $r0.<com.google.android.gms.internal.by: com.google.android.gms.internal.bw a(com.google.android.gms.internal.bu)>($r1);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        staticinvoke <com.google.android.gms.internal.dc: void b(java.lang.String,java.lang.Throwable)>("Could not fetch ad response from ad request service.", $r4);
+        return null;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public final void a()
+    {
+        com.google.android.gms.internal.bs $r0;
+        com.google.android.gms.internal.by $r1;
+        com.google.android.gms.internal.bw $r2;
+        com.google.android.gms.internal.br $r3;
+        com.google.android.gms.internal.bu $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.internal.bs;
+
+     label0:
+        $r1 = virtualinvoke $r0.<com.google.android.gms.internal.bs: com.google.android.gms.internal.by d()>();
+        if $r1 != null goto label2;
+
+        $r2 = new com.google.android.gms.internal.bw;
+        specialinvoke $r2.<com.google.android.gms.internal.bw: void <init>(int)>(0);
+
+     label1:
+        virtualinvoke $r0.<com.google.android.gms.internal.bs: void c()>();
+        $r3 = $r0.<com.google.android.gms.internal.bs: com.google.android.gms.internal.br b>;
+        interfaceinvoke $r3.<com.google.android.gms.internal.br: void a(com.google.android.gms.internal.bw)>($r2);
+        return;
+
+     label2:
+        $r4 = $r0.<com.google.android.gms.internal.bs: com.google.android.gms.internal.bu a>;
+        $r2 = staticinvoke <com.google.android.gms.internal.bs: com.google.android.gms.internal.bw a(com.google.android.gms.internal.by,com.google.android.gms.internal.bu)>($r1, $r4);
+        if $r2 != null goto label1;
+
+        $r2 = new com.google.android.gms.internal.bw;
+        specialinvoke $r2.<com.google.android.gms.internal.bw: void <init>(int)>(0);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r5 := @caughtexception;
+        virtualinvoke $r0.<com.google.android.gms.internal.bs: void c()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+        catch java.lang.Throwable from label2 to label3 with label4;
+    }
+
+    public final void b()
+    {
+        com.google.android.gms.internal.bs $r0;
+
+        $r0 := @this: com.google.android.gms.internal.bs;
+        virtualinvoke $r0.<com.google.android.gms.internal.bs: void c()>();
+        return;
+    }
+
+    public abstract void c();
+
+    public abstract com.google.android.gms.internal.by d();
+}

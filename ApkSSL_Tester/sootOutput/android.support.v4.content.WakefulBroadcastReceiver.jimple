@@ -1,0 +1,143 @@
+public abstract class android.support.v4.content.WakefulBroadcastReceiver extends android.content.BroadcastReceiver
+{
+    private static final java.lang.String EXTRA_WAKE_LOCK_ID;
+    private static final android.util.SparseArray mActiveWakeLocks;
+    private static int mNextId;
+
+    static void <clinit>()
+    {
+        android.util.SparseArray $r0;
+
+        $r0 = new android.util.SparseArray;
+        specialinvoke $r0.<android.util.SparseArray: void <init>()>();
+        <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks> = $r0;
+        <android.support.v4.content.WakefulBroadcastReceiver: int mNextId> = 1;
+        return;
+    }
+
+    public void <init>()
+    {
+        android.support.v4.content.WakefulBroadcastReceiver $r0;
+
+        $r0 := @this: android.support.v4.content.WakefulBroadcastReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public static boolean completeWakefulIntent(android.content.Intent)
+    {
+        android.content.Intent $r0;
+        int $i0;
+        java.lang.Object $r1;
+        java.lang.String $r2;
+        java.lang.StringBuilder $r3;
+        android.util.SparseArray $r4, $r5;
+        android.os.PowerManager$WakeLock $r6;
+        java.lang.Throwable $r8;
+
+        $r0 := @parameter0: android.content.Intent;
+        $i0 = virtualinvoke $r0.<android.content.Intent: int getIntExtra(java.lang.String,int)>("android.support.content.wakelockid", 0);
+        if $i0 != 0 goto label0;
+
+        return 0;
+
+     label0:
+        $r4 = <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks>;
+        entermonitor $r4;
+
+     label1:
+        $r5 = <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks>;
+        $r1 = virtualinvoke $r5.<android.util.SparseArray: java.lang.Object get(int)>($i0);
+        $r6 = (android.os.PowerManager$WakeLock) $r1;
+        if $r6 == null goto label2;
+
+        virtualinvoke $r6.<android.os.PowerManager$WakeLock: void release()>();
+        $r5 = <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks>;
+        virtualinvoke $r5.<android.util.SparseArray: void remove(int)>($i0);
+        exitmonitor $r4;
+        return 1;
+
+     label2:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No active wake lock id #");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("WakefulBroadcastReceiver", $r2);
+        exitmonitor $r4;
+        return 1;
+
+     label3:
+        $r8 := @caughtexception;
+        exitmonitor $r4;
+
+     label4:
+        throw $r8;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+    }
+
+    public static android.content.ComponentName startWakefulService(android.content.Context, android.content.Intent)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        int $i0, $i1;
+        java.lang.Object $r3;
+        android.os.PowerManager$WakeLock $r4;
+        android.util.SparseArray $r5, $r10;
+        java.lang.StringBuilder $r6;
+        java.lang.String $r7;
+        android.content.ComponentName $r8;
+        android.os.PowerManager $r9;
+        java.lang.Throwable $r11;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.content.Intent;
+        $r5 = <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks>;
+        entermonitor $r5;
+
+     label0:
+        $i0 = <android.support.v4.content.WakefulBroadcastReceiver: int mNextId>;
+        $i1 = <android.support.v4.content.WakefulBroadcastReceiver: int mNextId>;
+        $i1 = $i1 + 1;
+        <android.support.v4.content.WakefulBroadcastReceiver: int mNextId> = $i1;
+        $i1 = <android.support.v4.content.WakefulBroadcastReceiver: int mNextId>;
+        if $i1 > 0 goto label1;
+
+        <android.support.v4.content.WakefulBroadcastReceiver: int mNextId> = 1;
+
+     label1:
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)>("android.support.content.wakelockid", $i0);
+        $r8 = virtualinvoke $r0.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r1);
+        if $r8 != null goto label2;
+
+        exitmonitor $r5;
+        return null;
+
+     label2:
+        $r3 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("power");
+        $r9 = (android.os.PowerManager) $r3;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("wake:");
+        $r7 = virtualinvoke $r8.<android.content.ComponentName: java.lang.String flattenToShortString()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r4 = virtualinvoke $r9.<android.os.PowerManager: android.os.PowerManager$WakeLock newWakeLock(int,java.lang.String)>(1, $r7);
+        virtualinvoke $r4.<android.os.PowerManager$WakeLock: void setReferenceCounted(boolean)>(0);
+        virtualinvoke $r4.<android.os.PowerManager$WakeLock: void acquire(long)>(60000L);
+        $r10 = <android.support.v4.content.WakefulBroadcastReceiver: android.util.SparseArray mActiveWakeLocks>;
+        virtualinvoke $r10.<android.util.SparseArray: void put(int,java.lang.Object)>($i0, $r4);
+        exitmonitor $r5;
+        return $r8;
+
+     label3:
+        $r11 := @caughtexception;
+        exitmonitor $r5;
+
+     label4:
+        throw $r11;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+    }
+}

@@ -1,0 +1,28 @@
+public final class com.facebook.a.b extends com.facebook.a.a.a
+{
+
+    public void <init>(android.app.Application)
+    {
+        com.facebook.a.b $r0;
+        android.app.Application $r1;
+
+        $r0 := @this: com.facebook.a.b;
+        $r1 := @parameter0: android.app.Application;
+        specialinvoke $r0.<com.facebook.a.a.a: void <init>(android.content.Context)>($r1);
+        return;
+    }
+
+    public static android.net.Uri a(java.lang.String)
+    {
+        java.lang.String $r0;
+        android.net.Uri $r2;
+        android.net.Uri$Builder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("https://www.facebook.com/mobile/generic_android_crash_logs/");
+        $r3 = virtualinvoke $r2.<android.net.Uri: android.net.Uri$Builder buildUpon()>();
+        $r3 = virtualinvoke $r3.<android.net.Uri$Builder: android.net.Uri$Builder appendPath(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r3.<android.net.Uri$Builder: android.net.Uri build()>();
+        return $r2;
+    }
+}

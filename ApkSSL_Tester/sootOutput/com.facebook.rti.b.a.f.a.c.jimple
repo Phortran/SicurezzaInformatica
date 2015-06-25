@@ -1,0 +1,77 @@
+public final class com.facebook.rti.b.a.f.a.c extends b.a.a.a.a.a.e
+{
+    private static java.lang.reflect.Method b;
+    private static boolean c;
+    private static java.lang.reflect.Method d;
+    private static boolean e;
+    private java.net.Socket a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r1, $r3;
+        java.lang.reflect.Method $r2;
+        java.lang.Class[] $r4;
+        java.lang.Throwable $r5;
+
+        <com.facebook.rti.b.a.f.a.c: boolean c> = 0;
+        <com.facebook.rti.b.a.f.a.c: boolean e> = 0;
+
+     label0:
+        $r3 = class "java/net/Socket";
+        $r4 = newarray (java.lang.Class)[1];
+        $r1 = <java.lang.Integer: java.lang.Class TYPE>;
+        $r4[0] = $r1;
+        $r2 = virtualinvoke $r3.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setSoSndTimeout", $r4);
+        <com.facebook.rti.b.a.f.a.c: java.lang.reflect.Method b> = $r2;
+        virtualinvoke $r2.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        <com.facebook.rti.b.a.f.a.c: boolean c> = 1;
+        $r3 = class "java/net/Socket";
+        $r4 = newarray (java.lang.Class)[0];
+        $r2 = virtualinvoke $r3.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("getSoSNDTimeout", $r4);
+        <com.facebook.rti.b.a.f.a.c: java.lang.reflect.Method d> = $r2;
+        virtualinvoke $r2.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+        <com.facebook.rti.b.a.f.a.c: boolean e> = 1;
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    protected void <init>(java.net.Socket)
+    {
+        com.facebook.rti.b.a.f.a.c $r0;
+        java.net.Socket $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.c;
+        $r1 := @parameter0: java.net.Socket;
+        specialinvoke $r0.<b.a.a.a.a.a.e: void <init>()>();
+        $r0.<com.facebook.rti.b.a.f.a.c: java.net.Socket a> = $r1;
+        return;
+    }
+
+    public final boolean isConnected()
+    {
+        com.facebook.rti.b.a.f.a.c $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.c;
+        return 1;
+    }
+
+    public final void setSoTimeout(int)
+    {
+        com.facebook.rti.b.a.f.a.c $r0;
+        int $i0;
+        java.net.Socket $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.c;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<com.facebook.rti.b.a.f.a.c: java.net.Socket a>;
+        virtualinvoke $r1.<java.net.Socket: void setSoTimeout(int)>($i0);
+        return;
+    }
+}

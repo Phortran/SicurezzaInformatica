@@ -1,0 +1,105 @@
+final class com.google.c.b.a.aj extends com.google.c.ae
+{
+
+    void <init>()
+    {
+        com.google.c.b.a.aj $r0;
+
+        $r0 := @this: com.google.c.b.a.aj;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.net.URI a(com.google.c.d.a)
+    {
+        com.google.c.b.a.aj $r0;
+        com.google.c.d.a $r1;
+        java.net.URI $r2;
+        com.google.c.d.c $r3, $r4;
+        java.lang.String $r5, $r6;
+        boolean $z0;
+        java.net.URISyntaxException $r7;
+        com.google.c.u $r8;
+
+        $r0 := @this: com.google.c.b.a.aj;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r3 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r4 = <com.google.c.d.c: com.google.c.d.c i>;
+        if $r3 != $r4 goto label1;
+
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+
+     label0:
+        return null;
+
+     label1:
+        $r5 = virtualinvoke $r1.<com.google.c.d.a: java.lang.String h()>();
+        $r6 = "null";
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 != 0 goto label0;
+
+        $r2 = new java.net.URI;
+        specialinvoke $r2.<java.net.URI: void <init>(java.lang.String)>($r5);
+
+     label2:
+        return $r2;
+
+     label3:
+        $r7 := @caughtexception;
+        $r8 = new com.google.c.u;
+        specialinvoke $r8.<com.google.c.u: void <init>(java.lang.Throwable)>($r7);
+        throw $r8;
+
+        catch java.net.URISyntaxException from label1 to label2 with label3;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.b.a.aj $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.net.URI $r3;
+
+        $r0 := @this: com.google.c.b.a.aj;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.net.URI) $r2;
+        virtualinvoke $r0.<com.google.c.b.a.aj: void a(com.google.c.d.d,java.net.URI)>($r1, $r3);
+        return;
+    }
+
+    public void a(com.google.c.d.d, java.net.URI)
+    {
+        com.google.c.b.a.aj $r0;
+        com.google.c.d.d $r1;
+        java.net.URI $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: com.google.c.b.a.aj;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.net.URI;
+        if $r2 != null goto label1;
+
+        $r3 = null;
+
+     label0:
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d b(java.lang.String)>($r3);
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r2.<java.net.URI: java.lang.String toASCIIString()>();
+        goto label0;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.b.a.aj $r0;
+        com.google.c.d.a $r1;
+        java.net.URI $r2;
+
+        $r0 := @this: com.google.c.b.a.aj;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.b.a.aj: java.net.URI a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

@@ -1,0 +1,302 @@
+public class android.support.v7.widget.AppCompatRatingBar extends android.widget.RatingBar
+{
+    private static final int[] TINT_ATTRS;
+    private android.graphics.Bitmap mSampleTile;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        $r0 = newarray (int)[2];
+        $r0[0] = 16843067;
+        $r0[1] = 16843068;
+        <android.support.v7.widget.AppCompatRatingBar: int[] TINT_ATTRS> = $r0;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: void <init>(android.content.Context,android.util.AttributeSet)>($r1, null);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $i0 = <android.support.v7.appcompat.R$attr: int ratingBarStyle>;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, $i0);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet, int)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0, i1;
+        android.support.v7.internal.widget.TintTypedArray $r3;
+        android.graphics.drawable.Drawable $r4;
+        boolean $z0;
+        int[] $r5;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<android.widget.RatingBar: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, $i0);
+        $z0 = <android.support.v7.internal.widget.TintManager: boolean SHOULD_BE_USED>;
+        if $z0 == 0 goto label2;
+
+        $r1 = virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.content.Context getContext()>();
+        $r5 = <android.support.v7.widget.AppCompatRatingBar: int[] TINT_ATTRS>;
+        i1 = (int) 0;
+        $r3 = staticinvoke <android.support.v7.internal.widget.TintTypedArray: android.support.v7.internal.widget.TintTypedArray obtainStyledAttributes(android.content.Context,android.util.AttributeSet,int[],int,int)>($r1, $r2, $r5, $i0, i1);
+        i1 = (int) 0;
+        $r4 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: android.graphics.drawable.Drawable getDrawableIfKnown(int)>(i1);
+        if $r4 == null goto label0;
+
+        $r4 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.Drawable tileifyIndeterminate(android.graphics.drawable.Drawable)>($r4);
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: void setIndeterminateDrawable(android.graphics.drawable.Drawable)>($r4);
+
+     label0:
+        $r4 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: android.graphics.drawable.Drawable getDrawableIfKnown(int)>(1);
+        if $r4 == null goto label1;
+
+        $r4 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.Drawable tileify(android.graphics.drawable.Drawable,boolean)>($r4, 0);
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: void setProgressDrawable(android.graphics.drawable.Drawable)>($r4);
+
+     label1:
+        virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: void recycle()>();
+
+     label2:
+        return;
+    }
+
+    private android.graphics.drawable.shapes.Shape getDrawableShape()
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        float[] $r1;
+        android.graphics.drawable.shapes.RoundRectShape $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 = newarray (float)[8];
+        $r1[0] = 5.0F;
+        $r1[1] = 5.0F;
+        $r1[2] = 5.0F;
+        $r1[3] = 5.0F;
+        $r1[4] = 5.0F;
+        $r1[5] = 5.0F;
+        $r1[6] = 5.0F;
+        $r1[7] = 5.0F;
+        $r2 = new android.graphics.drawable.shapes.RoundRectShape;
+        specialinvoke $r2.<android.graphics.drawable.shapes.RoundRectShape: void <init>(float[],android.graphics.RectF,float[])>($r1, null, null);
+        return $r2;
+    }
+
+    private android.graphics.drawable.Drawable tileify(android.graphics.drawable.Drawable, boolean)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        android.graphics.drawable.Drawable $r1, $r3, $r7;
+        boolean $z0, $z1;
+        int $i0, $i1, $i2, $i3;
+        android.graphics.drawable.Drawable[] $r4;
+        android.graphics.Bitmap $r5, $r10;
+        android.support.v4.graphics.drawable.DrawableWrapper $r6;
+        android.graphics.drawable.LayerDrawable $r8, r16;
+        android.graphics.drawable.BitmapDrawable $r9;
+        android.graphics.drawable.shapes.Shape $r11;
+        android.graphics.Shader$TileMode $r12, $r13;
+        android.graphics.Paint $r14;
+        android.graphics.drawable.ShapeDrawable r17;
+        android.graphics.BitmapShader r18;
+        android.graphics.drawable.ClipDrawable r19;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        $z0 := @parameter1: boolean;
+        $z1 = $r1 instanceof android.support.v4.graphics.drawable.DrawableWrapper;
+        if $z1 == 0 goto label2;
+
+        $r6 = (android.support.v4.graphics.drawable.DrawableWrapper) $r1;
+        $r3 = interfaceinvoke $r6.<android.support.v4.graphics.drawable.DrawableWrapper: android.graphics.drawable.Drawable getWrappedDrawable()>();
+        if $r3 == null goto label0;
+
+        $r3 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.Drawable tileify(android.graphics.drawable.Drawable,boolean)>($r3, $z0);
+        $r6 = (android.support.v4.graphics.drawable.DrawableWrapper) $r1;
+        interfaceinvoke $r6.<android.support.v4.graphics.drawable.DrawableWrapper: void setWrappedDrawable(android.graphics.drawable.Drawable)>($r3);
+
+     label0:
+        $r3 = $r1;
+
+     label1:
+        return $r3;
+
+     label2:
+        $z1 = $r1 instanceof android.graphics.drawable.LayerDrawable;
+        if $z1 == 0 goto label9;
+
+        $r8 = (android.graphics.drawable.LayerDrawable) $r1;
+        $i0 = virtualinvoke $r8.<android.graphics.drawable.LayerDrawable: int getNumberOfLayers()>();
+        $r4 = newarray (android.graphics.drawable.Drawable)[$i0];
+        $i1 = 0;
+
+     label3:
+        if $i1 >= $i0 goto label7;
+
+        $i2 = virtualinvoke $r8.<android.graphics.drawable.LayerDrawable: int getId(int)>($i1);
+        $r3 = virtualinvoke $r8.<android.graphics.drawable.LayerDrawable: android.graphics.drawable.Drawable getDrawable(int)>($i1);
+        if $i2 == 16908301 goto label4;
+
+        if $i2 != 16908303 goto label6;
+
+     label4:
+        $z1 = 1;
+
+     label5:
+        $r7 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.Drawable tileify(android.graphics.drawable.Drawable,boolean)>($r3, $z1);
+        $r4[$i1] = $r7;
+        $i1 = $i1 + 1;
+        goto label3;
+
+     label6:
+        $z1 = 0;
+        goto label5;
+
+     label7:
+        r16 = new android.graphics.drawable.LayerDrawable;
+        $r3 = r16;
+        specialinvoke r16.<android.graphics.drawable.LayerDrawable: void <init>(android.graphics.drawable.Drawable[])>($r4);
+        $i3 = 0;
+
+     label8:
+        if $i3 >= $i0 goto label1;
+
+        $i2 = virtualinvoke $r8.<android.graphics.drawable.LayerDrawable: int getId(int)>($i3);
+        r16 = (android.graphics.drawable.LayerDrawable) $r3;
+        virtualinvoke r16.<android.graphics.drawable.LayerDrawable: void setId(int,int)>($i3, $i2);
+        $i3 = $i3 + 1;
+        goto label8;
+
+     label9:
+        $z1 = $r1 instanceof android.graphics.drawable.BitmapDrawable;
+        if $z1 == 0 goto label0;
+
+        $r9 = (android.graphics.drawable.BitmapDrawable) $r1;
+        $r5 = virtualinvoke $r9.<android.graphics.drawable.BitmapDrawable: android.graphics.Bitmap getBitmap()>();
+        $r10 = $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.Bitmap mSampleTile>;
+        if $r10 != null goto label10;
+
+        $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.Bitmap mSampleTile> = $r5;
+
+     label10:
+        r17 = new android.graphics.drawable.ShapeDrawable;
+        $r3 = r17;
+        $r11 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.shapes.Shape getDrawableShape()>();
+        specialinvoke r17.<android.graphics.drawable.ShapeDrawable: void <init>(android.graphics.drawable.shapes.Shape)>($r11);
+        r18 = new android.graphics.BitmapShader;
+        $r12 = <android.graphics.Shader$TileMode: android.graphics.Shader$TileMode REPEAT>;
+        $r13 = <android.graphics.Shader$TileMode: android.graphics.Shader$TileMode CLAMP>;
+        specialinvoke r18.<android.graphics.BitmapShader: void <init>(android.graphics.Bitmap,android.graphics.Shader$TileMode,android.graphics.Shader$TileMode)>($r5, $r12, $r13);
+        r17 = (android.graphics.drawable.ShapeDrawable) r17;
+        $r14 = virtualinvoke r17.<android.graphics.drawable.ShapeDrawable: android.graphics.Paint getPaint()>();
+        virtualinvoke $r14.<android.graphics.Paint: android.graphics.Shader setShader(android.graphics.Shader)>(r18);
+        if $z0 == 0 goto label11;
+
+        r19 = new android.graphics.drawable.ClipDrawable;
+        $i2 = (int) 1;
+        specialinvoke r19.<android.graphics.drawable.ClipDrawable: void <init>(android.graphics.drawable.Drawable,int,int)>($r3, 3, $i2);
+        $r3 = r19;
+
+     label11:
+        return $r3;
+    }
+
+    private android.graphics.drawable.Drawable tileifyIndeterminate(android.graphics.drawable.Drawable)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        android.graphics.drawable.Drawable $r1;
+        int $i0, $i1, $i3;
+        android.graphics.drawable.AnimationDrawable $r2, $r3;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        $z0 = $r1 instanceof android.graphics.drawable.AnimationDrawable;
+        if $z0 == 0 goto label2;
+
+        $r3 = (android.graphics.drawable.AnimationDrawable) $r1;
+        $i0 = virtualinvoke $r3.<android.graphics.drawable.AnimationDrawable: int getNumberOfFrames()>();
+        $r2 = new android.graphics.drawable.AnimationDrawable;
+        specialinvoke $r2.<android.graphics.drawable.AnimationDrawable: void <init>()>();
+        $z0 = virtualinvoke $r3.<android.graphics.drawable.AnimationDrawable: boolean isOneShot()>();
+        virtualinvoke $r2.<android.graphics.drawable.AnimationDrawable: void setOneShot(boolean)>($z0);
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i0 goto label1;
+
+        $r1 = virtualinvoke $r3.<android.graphics.drawable.AnimationDrawable: android.graphics.drawable.Drawable getFrame(int)>($i1);
+        $r1 = specialinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.drawable.Drawable tileify(android.graphics.drawable.Drawable,boolean)>($r1, 1);
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: boolean setLevel(int)>(10000);
+        $i3 = virtualinvoke $r3.<android.graphics.drawable.AnimationDrawable: int getDuration(int)>($i1);
+        virtualinvoke $r2.<android.graphics.drawable.AnimationDrawable: void addFrame(android.graphics.drawable.Drawable,int)>($r1, $i3);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label1:
+        virtualinvoke $r2.<android.graphics.drawable.AnimationDrawable: boolean setLevel(int)>(10000);
+        $r1 = $r2;
+
+     label2:
+        return $r1;
+    }
+
+    protected void onMeasure(int, int)
+    {
+        android.support.v7.widget.AppCompatRatingBar $r0;
+        int $i0, $i1, $i2;
+        android.graphics.Bitmap $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatRatingBar;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        entermonitor $r0;
+
+     label0:
+        specialinvoke $r0.<android.widget.RatingBar: void onMeasure(int,int)>($i0, $i1);
+        $r1 = $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.Bitmap mSampleTile>;
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<android.support.v7.widget.AppCompatRatingBar: android.graphics.Bitmap mSampleTile>;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: int getNumStars()>();
+        $i1 = $i2 * $i1;
+        $i2 = staticinvoke <android.support.v4.view.ViewCompat: int resolveSizeAndState(int,int,int)>($i1, $i0, 0);
+        $i1 = virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: int getMeasuredHeight()>();
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatRatingBar: void setMeasuredDimension(int,int)>($i2, $i1);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

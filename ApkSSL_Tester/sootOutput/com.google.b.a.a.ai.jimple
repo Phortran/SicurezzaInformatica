@@ -1,0 +1,108 @@
+class com.google.b.a.a.ai extends java.lang.Object implements java.lang.Runnable
+{
+    final java.util.Map a;
+    final com.google.b.a.a.ah b;
+
+    void <init>(com.google.b.a.a.ah, java.util.Map)
+    {
+        com.google.b.a.a.ai $r0;
+        com.google.b.a.a.ah $r1;
+        java.util.Map $r2;
+
+        $r0 := @this: com.google.b.a.a.ai;
+        $r1 := @parameter0: com.google.b.a.a.ah;
+        $r2 := @parameter1: java.util.Map;
+        $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b> = $r1;
+        $r0.<com.google.b.a.a.ai: java.util.Map a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.google.b.a.a.ai $r0;
+        java.util.Map $r1, $r11;
+        com.google.b.a.a.ah $r3;
+        java.lang.Object $r4;
+        java.lang.CharSequence $r5;
+        boolean $z0;
+        java.lang.String $r6;
+        android.content.Context $r7;
+        com.google.b.a.a.an $r8;
+        com.google.b.a.a.al $r9;
+        com.google.b.a.a.at $r10;
+        com.google.b.a.a.bd $r12;
+        java.lang.Long $r13;
+        long $l0;
+        java.util.List $r14;
+
+        $r0 := @this: com.google.b.a.a.ai;
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&cid");
+        $r5 = (java.lang.CharSequence) $r4;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r5);
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r6 = staticinvoke <com.google.b.a.a.ah: java.lang.String a(com.google.b.a.a.ah)>($r3);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("&cid", $r6);
+
+     label0:
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r7 = staticinvoke <com.google.b.a.a.ah: android.content.Context b(com.google.b.a.a.ah)>($r3);
+        $r8 = staticinvoke <com.google.b.a.a.an: com.google.b.a.a.an a(android.content.Context)>($r7);
+        $z0 = virtualinvoke $r8.<com.google.b.a.a.an: boolean c()>();
+        if $z0 != 0 goto label1;
+
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $z0 = staticinvoke <com.google.b.a.a.ah: boolean a(com.google.b.a.a.ah,java.util.Map)>($r3, $r1);
+        if $z0 == 0 goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r6 = staticinvoke <com.google.b.a.a.ah: java.lang.String c(com.google.b.a.a.ah)>($r3);
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r6);
+        if $z0 != 0 goto label3;
+
+        $r9 = staticinvoke <com.google.b.a.a.al: com.google.b.a.a.al a()>();
+        virtualinvoke $r9.<com.google.b.a.a.al: void a(boolean)>(1);
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r10 = new com.google.b.a.a.at;
+        specialinvoke $r10.<com.google.b.a.a.at: void <init>()>();
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r6 = staticinvoke <com.google.b.a.a.ah: java.lang.String c(com.google.b.a.a.ah)>($r3);
+        $r10 = virtualinvoke $r10.<com.google.b.a.a.at: com.google.b.a.a.at a(java.lang.String)>($r6);
+        $r11 = virtualinvoke $r10.<com.google.b.a.a.at: java.util.Map a()>();
+        interfaceinvoke $r1.<java.util.Map: void putAll(java.util.Map)>($r11);
+        $r9 = staticinvoke <com.google.b.a.a.al: com.google.b.a.a.al a()>();
+        virtualinvoke $r9.<com.google.b.a.a.al: void a(boolean)>(0);
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        staticinvoke <com.google.b.a.a.ah: java.lang.String a(com.google.b.a.a.ah,java.lang.String)>($r3, null);
+
+     label3:
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r11 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        staticinvoke <com.google.b.a.a.ah: void b(com.google.b.a.a.ah,java.util.Map)>($r3, $r11);
+        $r11 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r11 = staticinvoke <com.google.b.a.a.ap: java.util.Map a(java.util.Map)>($r11);
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r12 = staticinvoke <com.google.b.a.a.ah: com.google.b.a.a.bd e(com.google.b.a.a.ah)>($r3);
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&ht");
+        $r6 = (java.lang.String) $r4;
+        $r13 = staticinvoke <java.lang.Long: java.lang.Long valueOf(java.lang.String)>($r6);
+        $l0 = virtualinvoke $r13.<java.lang.Long: long longValue()>();
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r1 = $r0.<com.google.b.a.a.ai: java.util.Map a>;
+        $r6 = staticinvoke <com.google.b.a.a.ah: java.lang.String c(com.google.b.a.a.ah,java.util.Map)>($r3, $r1);
+        $r3 = $r0.<com.google.b.a.a.ai: com.google.b.a.a.ah b>;
+        $r14 = staticinvoke <com.google.b.a.a.ah: java.util.List d(com.google.b.a.a.ah)>($r3);
+        interfaceinvoke $r12.<com.google.b.a.a.bd: void a(java.util.Map,long,java.lang.String,java.util.List)>($r11, $l0, $r6, $r14);
+        goto label1;
+    }
+}

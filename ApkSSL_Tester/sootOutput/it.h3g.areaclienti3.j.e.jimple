@@ -1,0 +1,144 @@
+public final class it.h3g.areaclienti3.j.e extends java.lang.Object
+{
+    public static android.os.Bundle a;
+    public static java.util.Date b;
+    public static final java.lang.String c;
+    public static final java.lang.String d;
+    public static final java.lang.Integer[] e;
+
+    static void <clinit>()
+    {
+        android.os.Bundle $r0;
+        java.lang.String $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.Integer[] $r3;
+        java.lang.Integer $r4;
+
+        $r0 = new android.os.Bundle;
+        specialinvoke $r0.<android.os.Bundle: void <init>()>();
+        <it.h3g.areaclienti3.j.e: android.os.Bundle a> = $r0;
+        <it.h3g.areaclienti3.j.e: java.util.Date b> = null;
+        $r1 = <android.os.Build: java.lang.String MODEL>;
+        <it.h3g.areaclienti3.j.e: java.lang.String c> = $r1;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Android OS ");
+        $r1 = <android.os.Build$VERSION: java.lang.String RELEASE>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        <it.h3g.areaclienti3.j.e: java.lang.String d> = $r1;
+        $r3 = newarray (java.lang.Integer)[11];
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099749);
+        $r3[0] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099750);
+        $r3[1] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099751);
+        $r3[2] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099752);
+        $r3[3] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099753);
+        $r3[4] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099754);
+        $r3[5] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099755);
+        $r3[6] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099756);
+        $r3[7] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099757);
+        $r3[8] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099758);
+        $r3[9] = $r4;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2131099759);
+        $r3[10] = $r4;
+        <it.h3g.areaclienti3.j.e: java.lang.Integer[] e> = $r3;
+        return;
+    }
+
+    public static java.lang.String a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = "";
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("loginAction");
+        if $z0 == 0 goto label1;
+
+        $r2 = "https://areaclienti.tre.it//selfcare/login";
+
+     label0:
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label10;
+
+        return $r0;
+
+     label1:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingZonesAction");
+        if $z0 == 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("consumer");
+        if $z0 == 0 goto label2;
+
+        $r2 = "http://www.tre.it/tariffe/estero/quando-sei-all-estero";
+        goto label0;
+
+     label2:
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("business");
+        if $z0 == 0 goto label0;
+
+        $r2 = "http://www.tre.it/business/tariffe/estero/quando-sei-all-estero";
+        goto label0;
+
+     label3:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingCountriesForZoneAction");
+        if $z0 == 0 goto label4;
+
+        $r2 = "http://www.tre.it/res/js/roaming/valori-menu-paesi/{ZONE_ID}.js?&random=0&_loadscript=1";
+        goto label0;
+
+     label4:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingPageUrlForCountriesAction");
+        if $z0 == 0 goto label5;
+
+        $r2 = "http://www.tre.it/res/js/roaming/paese_pagina.js";
+        goto label0;
+
+     label5:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingInfoAction");
+        if $z0 == 0 goto label7;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("business");
+        if $z0 == 0 goto label6;
+
+        $r2 = "http://www.tre.it/business/tariffe/estero/quando-sei-all-estero/";
+        goto label0;
+
+     label6:
+        $r2 = "http://www.tre.it/tariffe/estero/quando-sei-all-estero/";
+        goto label0;
+
+     label7:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingPricesDetailsAction");
+        if $z0 == 0 goto label9;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("business");
+        if $z0 == 0 goto label8;
+
+        $r2 = "http://www.tre.it/business/tariffe/estero/quando-sei-all-estero/dettagli-tariffe";
+        goto label0;
+
+     label8:
+        $r2 = "http://www.tre.it/tariffe/estero/quando-sei-all-estero/dettagli-tariffe";
+        goto label0;
+
+     label9:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("getRoamingFlagAction");
+        if $z0 == 0 goto label0;
+
+        $r2 = "http://ac3dwl.tre.it/estero/android/{RES_CODE}/{COUNTRY_ID}.png";
+        goto label0;
+
+     label10:
+        return $r2;
+    }
+}

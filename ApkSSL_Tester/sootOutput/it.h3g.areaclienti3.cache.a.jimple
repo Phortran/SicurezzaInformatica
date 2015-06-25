@@ -1,0 +1,493 @@
+public class it.h3g.areaclienti3.cache.a extends java.lang.Object
+{
+    protected android.content.Context a;
+    protected java.util.HashMap b;
+    private it.h3g.areaclienti3.e.a.a c;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        android.content.Context $r1;
+        java.util.HashMap $r2;
+        it.h3g.areaclienti3.e.a.b $r3;
+        it.h3g.areaclienti3.e.a.a $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b> = $r2;
+        $r0.<it.h3g.areaclienti3.cache.a: android.content.Context a> = $r1;
+        $r4 = new it.h3g.areaclienti3.e.a.a;
+        $r3 = staticinvoke <it.h3g.areaclienti3.e.a.b: it.h3g.areaclienti3.e.a.b a(android.content.Context)>($r1);
+        specialinvoke $r4.<it.h3g.areaclienti3.e.a.a: void <init>(it.h3g.areaclienti3.e.a.b)>($r3);
+        $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c> = $r4;
+        return;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        it.h3g.areaclienti3.e.a.a $r1;
+        it.h3g.areaclienti3.j.d $r2;
+        android.content.Context $r3;
+        boolean $z0;
+        java.lang.Void[] $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.e.a.a: void a()>();
+        $r1 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.e.a.a: boolean c()>();
+        $r2 = new it.h3g.areaclienti3.j.d;
+        $r3 = $r0.<it.h3g.areaclienti3.cache.a: android.content.Context a>;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.d: void <init>(android.content.Context)>($r3);
+        $r4 = newarray (java.lang.Void)[0];
+        virtualinvoke $r2.<it.h3g.areaclienti3.j.d: android.os.AsyncTask execute(java.lang.Object[])>($r4);
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ActionsCache", "Cache clear All: SUCCESS");
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("ActionsCache", "Cache clear All: NOT SUCCESS");
+        goto label0;
+    }
+
+    public boolean a(java.lang.String)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1, $r4, $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.e.a.a $r2;
+        android.database.Cursor $r3;
+        java.lang.StringBuilder $r5;
+        int $i0;
+        java.lang.Exception $r7, $r8, $r10, $r11;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: void a()>();
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: android.database.Cursor b(java.lang.String)>($r1);
+
+     label1:
+        interfaceinvoke $r3.<android.database.Cursor: boolean moveToFirst()>();
+        $i0 = interfaceinvoke $r3.<android.database.Cursor: int getCount()>();
+
+     label2:
+        if $i0 != 0 goto label8;
+
+        $z0 = 0;
+
+     label3:
+        $r5 = new java.lang.StringBuilder;
+
+     label4:
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Cache exist: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ActionsCache", $r6);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Cache exist: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ActionsCache", $r4);
+
+     label5:
+        if $r3 == null goto label7;
+
+     label6:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label7:
+        if $i0 != 0 goto label21;
+
+        return 0;
+
+     label8:
+        $z0 = 1;
+        goto label3;
+
+     label9:
+        $r7 := @caughtexception;
+        $r3 = null;
+        $i0 = (int) 0;
+
+     label10:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: cache exists", $r7);
+
+     label11:
+        if $r3 == null goto label7;
+
+     label12:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label13:
+        goto label7;
+
+     label14:
+        $r8 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r8);
+        goto label7;
+
+     label15:
+        $r9 := @caughtexception;
+        $r3 = null;
+
+     label16:
+        if $r3 == null goto label18;
+
+     label17:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label18:
+        throw $r9;
+
+     label19:
+        $r10 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r10);
+        goto label18;
+
+     label20:
+        $r11 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r11);
+        goto label7;
+
+     label21:
+        return 1;
+
+     label22:
+        $r9 := @caughtexception;
+        goto label16;
+
+     label23:
+        $r7 := @caughtexception;
+        $i0 = (int) 0;
+        goto label10;
+
+     label24:
+        $r7 := @caughtexception;
+        goto label10;
+
+        catch java.lang.Exception from label0 to label1 with label9;
+        catch java.lang.Throwable from label0 to label1 with label15;
+        catch java.lang.Exception from label1 to label2 with label23;
+        catch java.lang.Throwable from label1 to label2 with label22;
+        catch java.lang.Exception from label4 to label5 with label24;
+        catch java.lang.Throwable from label3 to label5 with label22;
+        catch java.lang.Exception from label6 to label7 with label20;
+        catch java.lang.Throwable from label10 to label11 with label22;
+        catch java.lang.Exception from label12 to label13 with label14;
+        catch java.lang.Exception from label17 to label18 with label19;
+    }
+
+    public boolean a(java.lang.String, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1, $r4;
+        android.os.Bundle $r2;
+        java.util.Date $r3;
+        long $l0;
+        it.h3g.areaclienti3.cache.b $r5;
+        it.h3g.areaclienti3.e.a.a $r7;
+        it.h3g.areaclienti3.cache.c $r8;
+        java.lang.Exception $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: android.os.Bundle;
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date k()>();
+        $l0 = virtualinvoke $r3.<java.util.Date: long getTime()>();
+        virtualinvoke $r2.<android.os.Bundle: void putLong(java.lang.String,long)>("time", $l0);
+        $r5 = new it.h3g.areaclienti3.cache.b;
+        specialinvoke $r5.<it.h3g.areaclienti3.cache.b: void <init>(android.os.Bundle)>($r2);
+
+     label0:
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void d(java.lang.String)>("CREATE JSON FROM BUNDLE");
+        $r4 = virtualinvoke $r5.<it.h3g.areaclienti3.cache.b: java.lang.String b()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void e(java.lang.String)>("END CREATE JSON FROM BUNDLE");
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void d(java.lang.String)>("SAVING BUNDLE");
+        $r7 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.e.a.a: void a()>();
+
+     label2:
+        $r7 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.e.a.a: boolean a(java.lang.String,java.lang.String)>($r1, $r4);
+
+     label3:
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void e(java.lang.String)>("SAVING BUNDLE");
+        return 1;
+
+     label4:
+        $r8 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("ActionsCache", "InvalidDataException saving cache");
+        return 0;
+
+     label5:
+        $r9 := @caughtexception;
+        return 0;
+
+        catch it.h3g.areaclienti3.cache.c from label0 to label1 with label4;
+        catch java.lang.Exception from label2 to label3 with label5;
+    }
+
+    public android.os.Bundle b(java.lang.String)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1, $r6, $r7;
+        it.h3g.areaclienti3.e.a.a $r2;
+        android.database.Cursor $r3;
+        java.lang.StringBuilder $r5;
+        boolean $z0;
+        it.h3g.areaclienti3.cache.b $r8;
+        java.util.Date $r9;
+        android.os.Bundle $r10;
+        java.lang.Exception $r11, $r12, $r13, $r15, $r16, $r17;
+        java.lang.Throwable $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: void a()>();
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: android.database.Cursor b(java.lang.String)>($r1);
+
+     label1:
+        $z0 = interfaceinvoke $r3.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label21;
+
+        $r7 = interfaceinvoke $r3.<android.database.Cursor: java.lang.String getString(int)>(0);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("CREATE Bundle for key \'");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'with content = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("ActionsCache", $r6);
+        $r8 = new it.h3g.areaclienti3.cache.b;
+        specialinvoke $r8.<it.h3g.areaclienti3.cache.b: void <init>(java.lang.String)>($r7);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Start creating = ");
+        $r9 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date k()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ActionsCache", $r6);
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void d(java.lang.String)>("START CREATING_BUNDLE");
+        $r10 = virtualinvoke $r8.<it.h3g.areaclienti3.cache.b: android.os.Bundle a()>();
+
+     label2:
+        virtualinvoke $r10.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("fromCache", 1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.cache.a: void e(java.lang.String)>("END CREATING_BUNDLE");
+
+     label3:
+        if $r3 == null goto label5;
+
+     label4:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label5:
+        return $r10;
+
+     label6:
+        $r11 := @caughtexception;
+        $r3 = null;
+        $r12 = $r11;
+        $r10 = null;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "Error Get Cache", $r12);
+
+     label8:
+        if $r3 == null goto label5;
+
+     label9:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label10:
+        return $r10;
+
+     label11:
+        $r13 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r13);
+        return $r10;
+
+     label12:
+        $r14 := @caughtexception;
+        $r3 = null;
+
+     label13:
+        if $r3 == null goto label15;
+
+     label14:
+        interfaceinvoke $r3.<android.database.Cursor: void close()>();
+
+     label15:
+        throw $r14;
+
+     label16:
+        $r15 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r15);
+        goto label15;
+
+     label17:
+        $r16 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: closing cursor", $r16);
+        return $r10;
+
+     label18:
+        $r14 := @caughtexception;
+        goto label13;
+
+     label19:
+        $r17 := @caughtexception;
+        $r10 = null;
+        $r12 = $r17;
+        goto label7;
+
+     label20:
+        $r12 := @caughtexception;
+        goto label7;
+
+     label21:
+        $r10 = null;
+        goto label3;
+
+        catch java.lang.Exception from label0 to label1 with label6;
+        catch java.lang.Throwable from label0 to label1 with label12;
+        catch java.lang.Exception from label1 to label2 with label19;
+        catch java.lang.Throwable from label1 to label2 with label18;
+        catch java.lang.Exception from label2 to label3 with label20;
+        catch java.lang.Throwable from label2 to label3 with label18;
+        catch java.lang.Exception from label4 to label5 with label17;
+        catch java.lang.Throwable from label7 to label8 with label18;
+        catch java.lang.Exception from label9 to label10 with label11;
+        catch java.lang.Exception from label14 to label15 with label16;
+    }
+
+    public void b()
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        it.h3g.areaclienti3.e.a.a $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.e.a.a: void b()>();
+        return;
+    }
+
+    public void c(java.lang.String)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.e.a.a $r2;
+        java.lang.Exception $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: void a()>();
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: it.h3g.areaclienti3.e.a.a c>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.e.a.a: boolean a(java.lang.String)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("ActionsCache", "ERROR: remove element from cache", $r4);
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    protected void d(java.lang.String)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1;
+        java.util.HashMap $r2;
+        java.util.Date $r3;
+        boolean $z0;
+        long $l0;
+        java.lang.Long $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b>;
+        $z0 = virtualinvoke $r2.<java.util.HashMap: boolean containsKey(java.lang.Object)>($r1);
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b>;
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object remove(java.lang.Object)>($r1);
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date k()>();
+        $l0 = virtualinvoke $r3.<java.util.Date: long getTime()>();
+        $r4 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r4);
+        return;
+    }
+
+    protected void e(java.lang.String)
+    {
+        it.h3g.areaclienti3.cache.a $r0;
+        java.lang.String $r1, $r4;
+        java.util.HashMap $r2;
+        long $l0, $l1;
+        java.util.concurrent.TimeUnit $r5;
+        boolean $z0;
+        java.util.Date $r6;
+        java.lang.Object $r7;
+        java.lang.Long $r8;
+        java.lang.StringBuilder $r9;
+        java.lang.Object[] $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.cache.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b>;
+        $z0 = virtualinvoke $r2.<java.util.HashMap: boolean containsKey(java.lang.Object)>($r1);
+        if $z0 == 0 goto label0;
+
+        $r6 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date k()>();
+        $l0 = virtualinvoke $r6.<java.util.Date: long getTime()>();
+        $r2 = $r0.<it.h3g.areaclienti3.cache.a: java.util.HashMap b>;
+        $r7 = virtualinvoke $r2.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r1);
+        $r8 = (java.lang.Long) $r7;
+        $l1 = virtualinvoke $r8.<java.lang.Long: long longValue()>();
+        $l1 = $l0 - $l1;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Time for \'");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' = ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" => ");
+        $r10 = newarray (java.lang.Object)[1];
+        $r5 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+        $l1 = virtualinvoke $r5.<java.util.concurrent.TimeUnit: long toSeconds(long)>($l1);
+        $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r10[0] = $r8;
+        $r4 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%d sec", $r10);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ActionsCache", $r4);
+
+     label0:
+        return;
+    }
+}

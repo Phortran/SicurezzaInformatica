@@ -1,0 +1,621 @@
+public class it.h3g.areaclienti3.fragments.store.MapDialogActivity extends it.h3g.areaclienti3.BaseActivity implements android.location.LocationListener, com.google.android.gms.common.c, com.google.android.gms.common.d
+{
+    private android.location.Location D;
+    private com.google.android.gms.location.d E;
+    private com.google.android.gms.maps.GoogleMap F;
+    private android.widget.Button G;
+    private android.widget.Button H;
+    private android.widget.TextView I;
+    private java.lang.String J;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J> = "";
+        return;
+    }
+
+    static java.lang.String a(it.h3g.areaclienti3.fragments.store.MapDialogActivity)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J>;
+        return $r1;
+    }
+
+    private void b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.String $r2, $r3;
+        android.widget.TextView $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("mLocality");
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("mLocality");
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J> = $r2;
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J>;
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J>;
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label2;
+
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.TextView I>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J>;
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r3);
+
+     label1:
+        return;
+
+     label2:
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void r()>();
+        goto label1;
+    }
+
+    static void b(it.h3g.areaclienti3.fragments.store.MapDialogActivity)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void i()>();
+        return;
+    }
+
+    private void q()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        com.google.android.gms.maps.GoogleMap $r1;
+        int $i0;
+        android.support.v4.app.n $r2;
+        android.support.v4.app.Fragment $r3;
+        com.google.android.gms.maps.SupportMapFragment $r4;
+        com.google.android.gms.maps.v $r5;
+        com.google.android.gms.maps.model.LatLng $r6;
+        com.google.android.gms.maps.model.CameraPosition $r7;
+        com.google.android.gms.maps.a $r8;
+        it.h3g.areaclienti3.fragments.store.c $r9;
+        java.lang.String[] $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        if $r1 != null goto label0;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.support.v4.app.n e()>();
+        $r3 = virtualinvoke $r2.<android.support.v4.app.n: android.support.v4.app.Fragment a(int)>(2131165885);
+        $r4 = (com.google.android.gms.maps.SupportMapFragment) $r3;
+        $r1 = virtualinvoke $r4.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.GoogleMap b()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F> = $r1;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void b()>();
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        $r5 = virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: com.google.android.gms.maps.v c()>();
+        virtualinvoke $r5.<com.google.android.gms.maps.v: void a(boolean)>(0);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void a(int)>(1);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        $r6 = new com.google.android.gms.maps.model.LatLng;
+        specialinvoke $r6.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>(41.9, 12.5);
+        $r7 = staticinvoke <com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.CameraPosition a(com.google.android.gms.maps.model.LatLng,float)>($r6, 5.0F);
+        $r8 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.a a(com.google.android.gms.maps.model.CameraPosition)>($r7);
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void a(com.google.android.gms.maps.a)>($r8);
+        $r9 = new it.h3g.areaclienti3.fragments.store.c;
+        specialinvoke $r9.<it.h3g.areaclienti3.fragments.store.c: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        $i0 = (int) 0;
+        $r10 = newarray (java.lang.String)[$i0];
+        virtualinvoke $r9.<it.h3g.areaclienti3.fragments.store.c: android.os.AsyncTask execute(java.lang.Object[])>($r10);
+
+     label0:
+        return;
+    }
+
+    private void r()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.widget.TextView $r1;
+        int $i0;
+        android.content.res.Resources $r3;
+        android.widget.Button $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.TextView I>;
+        virtualinvoke $r1.<android.widget.TextView: void setText(java.lang.CharSequence)>("Errore");
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G>;
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G>;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.content.res.Resources getResources()>();
+        $i0 = virtualinvoke $r3.<android.content.res.Resources: int getColor(int)>(2131099675);
+        virtualinvoke $r4.<android.widget.Button: void setBackgroundColor(int)>($i0);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G>;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.content.res.Resources getResources()>();
+        $i0 = virtualinvoke $r3.<android.content.res.Resources: int getColor(int)>(2131099768);
+        virtualinvoke $r4.<android.widget.Button: void setTextColor(int)>($i0);
+        return;
+    }
+
+    public void a(android.location.Location)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.location.Location $r1;
+        java.lang.String $r3;
+        double $d0, $d1;
+        com.google.android.gms.maps.model.MarkerOptions $r4;
+        com.google.android.gms.maps.model.LatLng $r5;
+        com.google.android.gms.maps.a $r6;
+        com.google.android.gms.maps.GoogleMap $r7;
+        com.google.android.gms.maps.model.a $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.location.Location;
+        if $r1 != null goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("MapDialogActivity", "Location is Null");
+
+     label0:
+        return;
+
+     label1:
+        $d1 = virtualinvoke $r1.<android.location.Location: double getLatitude()>();
+        $d0 = virtualinvoke $r1.<android.location.Location: double getLongitude()>();
+        $r5 = new com.google.android.gms.maps.model.LatLng;
+        specialinvoke $r5.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>($d1, $d0);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void a(com.google.android.gms.maps.model.LatLng)>($r5);
+        $r6 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.a a(com.google.android.gms.maps.model.LatLng,float)>($r5, 8.0F);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        $r4 = new com.google.android.gms.maps.model.MarkerOptions;
+        specialinvoke $r4.<com.google.android.gms.maps.model.MarkerOptions: void <init>()>();
+        $r4 = virtualinvoke $r4.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(com.google.android.gms.maps.model.LatLng)>($r5);
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J>;
+        $r4 = virtualinvoke $r4.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(java.lang.String)>($r3);
+        $r8 = staticinvoke <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.a a(int)>(2130837836);
+        $r4 = virtualinvoke $r4.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(com.google.android.gms.maps.model.a)>($r8);
+        virtualinvoke $r7.<com.google.android.gms.maps.GoogleMap: com.google.android.gms.maps.model.i a(com.google.android.gms.maps.model.MarkerOptions)>($r4);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.maps.GoogleMap F>;
+        virtualinvoke $r7.<com.google.android.gms.maps.GoogleMap: void b(com.google.android.gms.maps.a)>($r6);
+        goto label0;
+    }
+
+    public void a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3, $r8;
+        it.h3g.areaclienti3.fragments.store.e $r4;
+        it.h3g.areaclienti3.fragments.store.f $r5;
+        android.location.Location $r6;
+        com.google.android.gms.location.d $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onConnected");
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.location.d E>;
+        $r6 = virtualinvoke $r7.<com.google.android.gms.location.d: android.location.Location a()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D> = $r6;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        if $r6 != null goto label0;
+
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location p()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D> = $r6;
+
+     label0:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        if $r6 != null goto label2;
+
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131231258);
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131230853);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131231349);
+        $r4 = new it.h3g.areaclienti3.fragments.store.e;
+        specialinvoke $r4.<it.h3g.areaclienti3.fragments.store.e: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        $r5 = new it.h3g.areaclienti3.fragments.store.f;
+        specialinvoke $r5.<it.h3g.areaclienti3.fragments.store.f: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void a(java.lang.String,java.lang.String,java.lang.String,android.view.View$OnClickListener,android.view.View$OnClickListener)>($r8, $r3, $r2, $r4, $r5);
+
+     label1:
+        return;
+
+     label2:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void a(android.location.Location)>($r6);
+        goto label1;
+    }
+
+    public void a(android.os.Message)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.os.Message $r1;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        java.lang.Object $r5;
+        android.os.Bundle $r6;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        lookupswitch($i0)
+        {
+            case 1: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        return;
+
+     label1:
+        $r5 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r6 = (android.os.Bundle) $r5;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action \'");
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' finished!");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", $r4);
+        $r4 = virtualinvoke $r6.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("getCityNameUsingGoogleMap");
+        if $z0 == 0 goto label2;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void b(android.os.Bundle)>($r6);
+        goto label0;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "Action finished but no callback executed");
+        goto label0;
+    }
+
+    public void a(com.google.android.gms.common.a)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        com.google.android.gms.common.a $r1;
+        java.lang.String $r2, $r6;
+        it.h3g.areaclienti3.fragments.store.d $r4;
+        android.location.Location $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: com.google.android.gms.common.a;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onConnectionFailed");
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location p()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D> = $r5;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        if $r5 != null goto label0;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131231706);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131231106);
+        $r4 = new it.h3g.areaclienti3.fragments.store.d;
+        specialinvoke $r4.<it.h3g.areaclienti3.fragments.store.d: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void a(java.lang.String,java.lang.String,java.lang.String,android.view.View$OnClickListener)>("3_STORE_E_COPERTURA", $r2, $r6, $r4);
+
+     label0:
+        return;
+    }
+
+    public void a(com.google.android.gms.maps.model.LatLng)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        com.google.android.gms.maps.model.LatLng $r1;
+        java.util.Locale $r2;
+        java.lang.String $r3, $r10;
+        double $d0, $d1;
+        java.util.List $r4;
+        android.location.Geocoder $r5;
+        java.lang.Object $r6;
+        android.location.Address $r7;
+        java.io.IOException $r8;
+        java.lang.StringBuilder $r9;
+        android.os.Bundle $r11;
+        it.h3g.areaclienti3.remoteservice.IService $r12;
+        android.os.RemoteException $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: com.google.android.gms.maps.model.LatLng;
+        if $r1 != null goto label1;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void b(android.os.Bundle)>(null);
+
+     label0:
+        return;
+
+     label1:
+        $r5 = new android.location.Geocoder;
+        $r2 = new java.util.Locale;
+
+     label2:
+        specialinvoke $r2.<java.util.Locale: void <init>(java.lang.String)>("it");
+        specialinvoke $r5.<android.location.Geocoder: void <init>(android.content.Context,java.util.Locale)>($r0, $r2);
+        $d1 = $r1.<com.google.android.gms.maps.model.LatLng: double b>;
+        $d0 = $r1.<com.google.android.gms.maps.model.LatLng: double c>;
+        $r4 = virtualinvoke $r5.<android.location.Geocoder: java.util.List getFromLocation(double,double,int)>($d1, $d0, 1);
+        $r6 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>(0);
+        $r7 = (android.location.Address) $r6;
+        $r3 = virtualinvoke $r7.<android.location.Address: java.lang.String getLocality()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String J> = $r3;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void b(android.os.Bundle)>(null);
+
+     label3:
+        goto label0;
+
+     label4:
+        $r8 := @caughtexception;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while retrieving location name: ");
+        $r10 = virtualinvoke $r8.<java.io.IOException: java.lang.String getMessage()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("MapDialogActivity", $r10);
+        $r11 = new android.os.Bundle;
+
+     label5:
+        specialinvoke $r11.<android.os.Bundle: void <init>()>();
+        $d1 = $r1.<com.google.android.gms.maps.model.LatLng: double b>;
+        virtualinvoke $r11.<android.os.Bundle: void putDouble(java.lang.String,double)>("latitude", $d1);
+        $d1 = $r1.<com.google.android.gms.maps.model.LatLng: double c>;
+        virtualinvoke $r11.<android.os.Bundle: void putDouble(java.lang.String,double)>("longitude", $d1);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r12.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("getCityNameUsingGoogleMap", $r11);
+
+     label6:
+        goto label0;
+
+     label7:
+        $r13 := @caughtexception;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error GET_LOCATION_NAME: ");
+        $r3 = virtualinvoke $r13.<android.os.RemoteException: java.lang.String getMessage()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("MapDialogActivity", $r3);
+        goto label0;
+
+        catch java.io.IOException from label2 to label3 with label4;
+        catch android.os.RemoteException from label5 to label6 with label7;
+    }
+
+    public void a_()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onDisconnected");
+        return;
+    }
+
+    protected void o()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.content.Context $r1;
+        int $i1;
+        com.google.android.gms.location.d $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.content.Context getApplicationContext()>();
+        $i1 = staticinvoke <com.google.android.gms.common.f: int a(android.content.Context)>($r1);
+        if $i1 != 0 goto label1;
+
+        $r2 = new com.google.android.gms.location.d;
+        specialinvoke $r2.<com.google.android.gms.location.d: void <init>(android.content.Context,com.google.android.gms.common.c,com.google.android.gms.common.d)>($r0, $r0, $r0);
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.location.d E> = $r2;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.location.d E>;
+        virtualinvoke $r2.<com.google.android.gms.location.d: void b()>();
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <com.google.android.gms.common.f: android.app.Dialog a(int,android.app.Activity,int)>($i1, $r0, 1);
+        goto label0;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.os.Bundle $r1;
+        android.view.View $r2;
+        android.widget.TextView $r3;
+        java.lang.String $r4;
+        android.widget.Button $r5;
+        it.h3g.areaclienti3.fragments.store.a $r6;
+        it.h3g.areaclienti3.fragments.store.b $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onCreate(android.os.Bundle)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void setContentView(int)>(2130903153);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.view.View findViewById(int)>(2131165887);
+        $r3 = (android.widget.TextView) $r2;
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.TextView I> = $r3;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.TextView I>;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.String getString(int)>(2131231267);
+        virtualinvoke $r3.<android.widget.TextView: void setText(java.lang.CharSequence)>($r4);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.view.View findViewById(int)>(2131165889);
+        $r5 = (android.widget.Button) $r2;
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G> = $r5;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G>;
+        virtualinvoke $r5.<android.widget.Button: void setEnabled(boolean)>(1);
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button G>;
+        $r6 = new it.h3g.areaclienti3.fragments.store.a;
+        specialinvoke $r6.<it.h3g.areaclienti3.fragments.store.a: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        virtualinvoke $r5.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r6);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.view.View findViewById(int)>(2131165888);
+        $r5 = (android.widget.Button) $r2;
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button H> = $r5;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.widget.Button H>;
+        $r7 = new it.h3g.areaclienti3.fragments.store.b;
+        specialinvoke $r7.<it.h3g.areaclienti3.fragments.store.b: void <init>(it.h3g.areaclienti3.fragments.store.MapDialogActivity)>($r0);
+        virtualinvoke $r5.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r7);
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void q()>();
+        return;
+    }
+
+    public void onDestroy()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        com.google.android.gms.location.d $r1;
+        android.view.View $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.location.d E>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: com.google.android.gms.location.d E>;
+        virtualinvoke $r1.<com.google.android.gms.location.d: void c()>();
+
+     label0:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.view.View findViewById(int)>(2131165884);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void unbindDrawables(android.view.View)>($r2);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void finish()>();
+        staticinvoke <java.lang.System: void gc()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onDestroy()>();
+        return;
+    }
+
+    public void onLocationChanged(android.location.Location)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        android.location.Location $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: android.location.Location;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onLocationChanged");
+        return;
+    }
+
+    protected void onPause()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onPause()>();
+        staticinvoke <java.lang.System: void gc()>();
+        return;
+    }
+
+    public void onProviderDisabled(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: java.lang.String;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onProviderDisabled");
+        return;
+    }
+
+    public void onProviderEnabled(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: java.lang.String;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onProviderEnabled");
+        return;
+    }
+
+    protected void onResume()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onResume()>();
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: void q()>();
+        return;
+    }
+
+    public void onStatusChanged(java.lang.String, int, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        java.lang.String $r1;
+        int $i0;
+        android.os.Bundle $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MapDialogActivity", "onStatusChanged");
+        return;
+    }
+
+    protected android.location.Location p()
+    {
+        it.h3g.areaclienti3.fragments.store.MapDialogActivity $r0;
+        boolean $z0, $z1;
+        java.lang.Object $r3;
+        android.location.LocationManager $r4;
+        android.location.Location $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.MapDialogActivity;
+
+     label0:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: java.lang.Object getSystemService(java.lang.String)>("location");
+        $r4 = (android.location.LocationManager) $r3;
+        $z0 = virtualinvoke $r4.<android.location.LocationManager: boolean isProviderEnabled(java.lang.String)>("gps");
+        $z1 = virtualinvoke $r4.<android.location.LocationManager: boolean isProviderEnabled(java.lang.String)>("network");
+        if $z0 != 0 goto label2;
+
+        if $z1 != 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("MapDialogActivity", "No network provider is enabled");
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        return $r6;
+
+     label2:
+        if $z1 == 0 goto label4;
+
+     label3:
+        virtualinvoke $r4.<android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location.LocationListener)>("network", 60000L, 10.0F, $r0);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("MapDialogActivity", "Network Enabled");
+        if $r4 == null goto label4;
+
+        $r6 = virtualinvoke $r4.<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)>("network");
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D> = $r6;
+
+     label4:
+        if $z0 == 0 goto label1;
+
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D>;
+        if $r6 != null goto label1;
+
+        virtualinvoke $r4.<android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location.LocationListener)>("gps", 60000L, 10.0F, $r0);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("MapDialogActivity", "GPS Enabled");
+        if $r4 == null goto label1;
+
+        $r6 = virtualinvoke $r4.<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)>("gps");
+        $r0.<it.h3g.areaclienti3.fragments.store.MapDialogActivity: android.location.Location D> = $r6;
+
+     label5:
+        goto label1;
+
+     label6:
+        $r7 := @caughtexception;
+        virtualinvoke $r7.<java.lang.Exception: void printStackTrace()>();
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label6;
+        catch java.lang.Exception from label3 to label5 with label6;
+    }
+}

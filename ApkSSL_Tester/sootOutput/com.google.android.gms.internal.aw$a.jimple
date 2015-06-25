@@ -1,0 +1,98 @@
+public abstract class com.google.android.gms.internal.aw$a extends android.os.Binder implements com.google.android.gms.internal.aw
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.aw$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.aw$a;
+        specialinvoke $r0.<android.os.Binder: void <init>()>();
+        virtualinvoke $r0.<com.google.android.gms.internal.aw$a: void attachInterface(android.os.IInterface,java.lang.String)>($r0, "com.google.android.gms.ads.internal.mediation.client.IAdapterCreator");
+        return;
+    }
+
+    public static com.google.android.gms.internal.aw a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.internal.aw $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.internal.aw$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.ads.internal.mediation.client.IAdapterCreator");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.internal.aw;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.internal.aw) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.internal.aw$a$a;
+        specialinvoke r4.<com.google.android.gms.internal.aw$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.aw$a $r0;
+
+        $r0 := @this: com.google.android.gms.internal.aw$a;
+        return $r0;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.aw$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        boolean $z0;
+        java.lang.String $r3;
+        com.google.android.gms.internal.ax $r4;
+        android.os.IBinder $r5;
+
+        $r0 := @this: com.google.android.gms.internal.aw$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.ads.internal.mediation.client.IAdapterCreator");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.ads.internal.mediation.client.IAdapterCreator");
+        $r3 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r4 = virtualinvoke $r0.<com.google.android.gms.internal.aw$a: com.google.android.gms.internal.ax a(java.lang.String)>($r3);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r4 == null goto label4;
+
+        $r5 = interfaceinvoke $r4.<com.google.android.gms.internal.ax: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r5);
+        return 1;
+
+     label4:
+        $r5 = null;
+        goto label3;
+    }
+}

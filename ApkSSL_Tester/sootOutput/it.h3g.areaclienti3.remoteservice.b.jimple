@@ -1,0 +1,184 @@
+class it.h3g.areaclienti3.remoteservice.b extends android.os.Handler
+{
+    final it.h3g.areaclienti3.remoteservice.ScrapingService a;
+
+    void <init>(it.h3g.areaclienti3.remoteservice.ScrapingService)
+    {
+        it.h3g.areaclienti3.remoteservice.b $r0;
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b;
+        $r1 := @parameter0: it.h3g.areaclienti3.remoteservice.ScrapingService;
+        $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a> = $r1;
+        specialinvoke $r0.<android.os.Handler: void <init>()>();
+        return;
+    }
+
+    public void handleMessage(android.os.Message)
+    {
+        it.h3g.areaclienti3.remoteservice.b $r0;
+        android.os.Message $r1;
+        int $i0, $i2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4, $r6;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.remoteservice.ScrapingService $r7;
+        java.util.concurrent.ConcurrentHashMap $r8, $r9;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.a $r10;
+        java.lang.Throwable $r11, $r14;
+        android.os.Bundle $r12;
+        android.os.RemoteCallbackList $r13;
+        android.os.IInterface $r15;
+        it.h3g.areaclienti3.remoteservice.IServiceCallback $r16;
+        android.os.RemoteException $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        lookupswitch($i0)
+        {
+            case 1: goto label9;
+            case 2: goto label2;
+            default: goto label0;
+        };
+
+     label0:
+        specialinvoke $r0.<android.os.Handler: void handleMessage(android.os.Message)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $r5 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r6 = (java.lang.String) $r5;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Service handler Cancel action: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Service", $r4);
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        entermonitor $r8;
+        if $r6 == null goto label4;
+
+     label3:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        $z0 = virtualinvoke $r9.<java.util.concurrent.ConcurrentHashMap: boolean containsKey(java.lang.Object)>($r6);
+        if $z0 == 0 goto label4;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        $r5 = virtualinvoke $r9.<java.util.concurrent.ConcurrentHashMap: java.lang.Object get(java.lang.Object)>($r6);
+        $r10 = (it.h3g.areaclienti3.remoteservice.a) $r5;
+        if $r10 == null goto label7;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Service", "Found the thread, so cancel it");
+        virtualinvoke $r10.<it.h3g.areaclienti3.remoteservice.a: void b()>();
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        virtualinvoke $r9.<java.util.concurrent.ConcurrentHashMap: java.lang.Object remove(java.lang.Object)>($r6);
+        virtualinvoke $r10.<java.lang.Thread: void interrupt()>();
+
+     label4:
+        exitmonitor $r8;
+        goto label1;
+
+     label5:
+        $r11 := @caughtexception;
+        exitmonitor $r8;
+
+     label6:
+        throw $r11;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", "Thread not found..");
+
+     label8:
+        goto label4;
+
+     label9:
+        $r5 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r12 = (android.os.Bundle) $r5;
+        if $r12 == null goto label20;
+
+        $z0 = virtualinvoke $r12.<android.os.Bundle: boolean containsKey(java.lang.String)>("action");
+        if $z0 == 0 goto label20;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action finished = ");
+        $r4 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Service", $r4);
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r9 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        entermonitor $r9;
+
+     label10:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.remoteservice.ScrapingService: java.util.concurrent.ConcurrentHashMap a(it.h3g.areaclienti3.remoteservice.ScrapingService)>($r7);
+        $r6 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        virtualinvoke $r8.<java.util.concurrent.ConcurrentHashMap: java.lang.Object remove(java.lang.Object)>($r6);
+        exitmonitor $r9;
+
+     label11:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r13 = $r7.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.RemoteCallbackList a>;
+        $i0 = virtualinvoke $r13.<android.os.RemoteCallbackList: int beginBroadcast()>();
+        $i2 = 0;
+
+     label12:
+        if $i2 < $i0 goto label16;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r13 = $r7.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.RemoteCallbackList a>;
+        virtualinvoke $r13.<android.os.RemoteCallbackList: void finishBroadcast()>();
+        goto label1;
+
+     label13:
+        $r14 := @caughtexception;
+
+     label14:
+        exitmonitor $r9;
+
+     label15:
+        throw $r14;
+
+     label16:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.b: it.h3g.areaclienti3.remoteservice.ScrapingService a>;
+        $r13 = $r7.<it.h3g.areaclienti3.remoteservice.ScrapingService: android.os.RemoteCallbackList a>;
+
+     label17:
+        $r15 = virtualinvoke $r13.<android.os.RemoteCallbackList: android.os.IInterface getBroadcastItem(int)>($i2);
+        $r16 = (it.h3g.areaclienti3.remoteservice.IServiceCallback) $r15;
+        interfaceinvoke $r16.<it.h3g.areaclienti3.remoteservice.IServiceCallback: void a(android.os.Bundle)>($r12);
+        goto label18;
+
+     label18:
+        $i2 = $i2 + 1;
+        goto label12;
+
+     label19:
+        $r17 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Error during broadcast notification");
+        goto label18;
+
+     label20:
+        if $r12 != null goto label21;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Data message is null!");
+        goto label1;
+
+     label21:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Service", "Action in data message is null");
+        goto label1;
+
+        catch java.lang.Throwable from label3 to label6 with label5;
+        catch java.lang.Throwable from label7 to label8 with label5;
+        catch java.lang.Throwable from label10 to label11 with label13;
+        catch java.lang.Throwable from label14 to label15 with label13;
+        catch android.os.RemoteException from label17 to label18 with label19;
+    }
+}

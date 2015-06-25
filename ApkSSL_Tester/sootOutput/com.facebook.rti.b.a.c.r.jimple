@@ -1,0 +1,76 @@
+public final class com.facebook.rti.b.a.c.r extends java.util.concurrent.AbstractExecutorService
+{
+    com.facebook.rti.a.c.d a;
+
+    public void <init>()
+    {
+        com.facebook.rti.b.a.c.r $r0;
+        com.facebook.rti.a.c.e $r1;
+        com.facebook.rti.a.c.d $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        specialinvoke $r0.<java.util.concurrent.AbstractExecutorService: void <init>()>();
+        $r1 = staticinvoke <com.facebook.rti.a.c.e: com.facebook.rti.a.c.e a()>();
+        $r1 = virtualinvoke $r1.<com.facebook.rti.a.c.e: com.facebook.rti.a.c.e a(java.lang.String)>("MqttService");
+        $r3 = virtualinvoke $r1.<com.facebook.rti.a.c.e: com.facebook.rti.a.c.d b()>();
+        $r0.<com.facebook.rti.b.a.c.r: com.facebook.rti.a.c.d a> = $r3;
+        return;
+    }
+
+    public final boolean awaitTermination(long, java.util.concurrent.TimeUnit)
+    {
+        com.facebook.rti.b.a.c.r $r0;
+        long $l0;
+        java.util.concurrent.TimeUnit $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        $l0 := @parameter0: long;
+        $r1 := @parameter1: java.util.concurrent.TimeUnit;
+        return 0;
+    }
+
+    public final void execute(java.lang.Runnable)
+    {
+        com.facebook.rti.b.a.c.r $r0;
+        java.lang.Runnable $r1;
+        com.facebook.rti.a.c.d $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = $r0.<com.facebook.rti.b.a.c.r: com.facebook.rti.a.c.d a>;
+        virtualinvoke $r2.<com.facebook.rti.a.c.d: void execute(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final boolean isShutdown()
+    {
+        com.facebook.rti.b.a.c.r $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        return 0;
+    }
+
+    public final boolean isTerminated()
+    {
+        com.facebook.rti.b.a.c.r $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        return 0;
+    }
+
+    public final void shutdown()
+    {
+        com.facebook.rti.b.a.c.r $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        return;
+    }
+
+    public final java.util.List shutdownNow()
+    {
+        com.facebook.rti.b.a.c.r $r0;
+
+        $r0 := @this: com.facebook.rti.b.a.c.r;
+        return null;
+    }
+}

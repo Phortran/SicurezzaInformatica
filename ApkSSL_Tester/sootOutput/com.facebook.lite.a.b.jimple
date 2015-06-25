@@ -1,0 +1,405 @@
+public class com.facebook.lite.a.b extends java.lang.Object implements com.b.a.a.j.e
+{
+    private static final java.lang.String a;
+    private static com.facebook.lite.a.b b;
+    private int c;
+    private final java.lang.String d;
+    private int e;
+    private int f;
+    private com.a.a.a g;
+    private final com.b.a.a.e.b h;
+    private final com.facebook.lite.a.d i;
+    private final java.util.concurrent.PriorityBlockingQueue j;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/a/b";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.a.b: java.lang.String a> = $r1;
+        return;
+    }
+
+    private void <init>(java.lang.String, com.b.a.a.e.b)
+    {
+        com.facebook.lite.a.b $r0;
+        java.lang.String $r1;
+        com.b.a.a.e.b $r2;
+        java.util.concurrent.PriorityBlockingQueue $r3;
+        java.util.concurrent.TimeUnit $r4;
+        com.facebook.lite.a.f $r5;
+        com.facebook.lite.a.d $r6;
+        com.facebook.lite.a.c $r7;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: com.b.a.a.e.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = new java.util.concurrent.PriorityBlockingQueue;
+        specialinvoke $r3.<java.util.concurrent.PriorityBlockingQueue: void <init>()>();
+        $r0.<com.facebook.lite.a.b: java.util.concurrent.PriorityBlockingQueue j> = $r3;
+        $r0.<com.facebook.lite.a.b: com.b.a.a.e.b h> = $r2;
+        $r0.<com.facebook.lite.a.b: java.lang.String d> = $r1;
+        $r6 = new com.facebook.lite.a.d;
+        $r4 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+        $r3 = $r0.<com.facebook.lite.a.b: java.util.concurrent.PriorityBlockingQueue j>;
+        $r5 = new com.facebook.lite.a.f;
+        specialinvoke $r5.<com.facebook.lite.a.f: void <init>(com.facebook.lite.a.b)>($r0);
+        specialinvoke $r6.<com.facebook.lite.a.d: void <init>(com.facebook.lite.a.b,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory)>($r0, $r4, $r3, $r5);
+        $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i> = $r6;
+        $r6 = $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i>;
+        $r7 = new com.facebook.lite.a.c;
+        specialinvoke $r7.<com.facebook.lite.a.c: void <init>(com.facebook.lite.a.b,java.lang.String)>($r0, $r1);
+        virtualinvoke $r6.<com.facebook.lite.a.d: void execute(java.lang.Runnable)>($r7);
+        return;
+    }
+
+    static int a(com.facebook.lite.a.b, int)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $i0 := @parameter1: int;
+        $r0.<com.facebook.lite.a.b: int c> = $i0;
+        return $i0;
+    }
+
+    static com.a.a.a a(com.facebook.lite.a.b, com.a.a.a)
+    {
+        com.facebook.lite.a.b $r0;
+        com.a.a.a $r1;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $r1 := @parameter1: com.a.a.a;
+        $r0.<com.facebook.lite.a.b: com.a.a.a g> = $r1;
+        return $r1;
+    }
+
+    static com.b.a.a.e.b a(com.facebook.lite.a.b)
+    {
+        com.facebook.lite.a.b $r0;
+        com.b.a.a.e.b $r1;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $r1 = $r0.<com.facebook.lite.a.b: com.b.a.a.e.b h>;
+        return $r1;
+    }
+
+    public static com.facebook.lite.a.b a(java.lang.String, com.b.a.a.e.b)
+    {
+        java.lang.String $r0;
+        com.b.a.a.e.b $r1;
+        com.facebook.lite.a.b $r2;
+        java.lang.Throwable $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: com.b.a.a.e.b;
+        $r2 = <com.facebook.lite.a.b: com.facebook.lite.a.b b>;
+        if $r2 != null goto label2;
+
+        if $r0 == null goto label2;
+
+        entermonitor class "com/facebook/lite/a/b";
+
+     label0:
+        $r2 = <com.facebook.lite.a.b: com.facebook.lite.a.b b>;
+        if $r2 != null goto label1;
+
+        $r2 = new com.facebook.lite.a.b;
+        specialinvoke $r2.<com.facebook.lite.a.b: void <init>(java.lang.String,com.b.a.a.e.b)>($r0, $r1);
+        <com.facebook.lite.a.b: com.facebook.lite.a.b b> = $r2;
+
+     label1:
+        exitmonitor class "com/facebook/lite/a/b";
+
+     label2:
+        $r2 = <com.facebook.lite.a.b: com.facebook.lite.a.b b>;
+        return $r2;
+
+     label3:
+        $r4 := @caughtexception;
+
+     label4:
+        exitmonitor class "com/facebook/lite/a/b";
+
+     label5:
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+
+    static int b(com.facebook.lite.a.b)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0, $i1;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $i0 = $r0.<com.facebook.lite.a.b: int e>;
+        $i1 = $i0 + 1;
+        $r0.<com.facebook.lite.a.b: int e> = $i1;
+        return $i0;
+    }
+
+    static int c(com.facebook.lite.a.b)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $i0 = $r0.<com.facebook.lite.a.b: int c>;
+        return $i0;
+    }
+
+    static java.lang.String c()
+    {
+        java.lang.String $r0;
+
+        $r0 = <com.facebook.lite.a.b: java.lang.String a>;
+        return $r0;
+    }
+
+    static int d(com.facebook.lite.a.b)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $i0 = $r0.<com.facebook.lite.a.b: int e>;
+        return $i0;
+    }
+
+    static com.a.a.a e(com.facebook.lite.a.b)
+    {
+        com.facebook.lite.a.b $r0;
+        com.a.a.a $r1;
+
+        $r0 := @parameter0: com.facebook.lite.a.b;
+        $r1 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        return $r1;
+    }
+
+    public final void a()
+    {
+        com.facebook.lite.a.b $r0;
+        com.facebook.lite.a.d $r1;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $r1 = $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i>;
+        virtualinvoke $r1.<com.facebook.lite.a.d: void b()>();
+        return;
+    }
+
+    public final void a(int, byte[])
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0;
+        byte[] $r1;
+        com.a.a.a $r2;
+        com.facebook.lite.a.g $r3;
+        long $l1;
+        com.facebook.lite.a.d $r4;
+        com.facebook.lite.a.e $r5;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: byte[];
+        $r2 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r0.<com.facebook.lite.a.b: void f(int)>(-1);
+        $r4 = $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i>;
+        $r5 = new com.facebook.lite.a.e;
+        $r3 = <com.facebook.lite.a.g: com.facebook.lite.a.g b>;
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        specialinvoke $r5.<com.facebook.lite.a.e: void <init>(com.facebook.lite.a.b,int,com.facebook.lite.a.g,long,byte[])>($r0, $i0, $r3, $l1, $r1);
+        virtualinvoke $r4.<com.facebook.lite.a.d: void execute(java.lang.Runnable)>($r5);
+        goto label0;
+    }
+
+    public final void a(android.content.Context)
+    {
+        com.facebook.lite.a.b $r0;
+        android.content.Context $r1;
+        int $i0, $i1;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $r1 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <com.facebook.lite.b.e: int h(android.content.Context)>($r1);
+        $i1 = $r0.<com.facebook.lite.a.b: int f>;
+        $i1 = $i0 + $i1;
+        staticinvoke <com.facebook.lite.b.e: void e(android.content.Context,int)>($r1, $i1);
+        $r0.<com.facebook.lite.a.b: int f> = 0;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int f(android.content.Context)>($r1);
+        $i0 = $r0.<com.facebook.lite.a.b: int e>;
+        $i1 = $i1 + $i0;
+        staticinvoke <com.facebook.lite.b.e: void d(android.content.Context,int)>($r1, $i1);
+        $r0.<com.facebook.lite.a.b: int e> = 0;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int e(android.content.Context)>($r1);
+        $i0 = $r0.<com.facebook.lite.a.b: int c>;
+        $i1 = $i1 + $i0;
+        staticinvoke <com.facebook.lite.b.e: void c(android.content.Context,int)>($r1, $i1);
+        $r0.<com.facebook.lite.a.b: int c> = 0;
+        return;
+    }
+
+    public final boolean a(int, int, boolean)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0, $i1, $i2;
+        boolean $z0, $z1;
+        java.lang.String $r1, $r13;
+        com.facebook.lite.a.g $r2;
+        long $l3;
+        com.a.a.f $r3;
+        java.util.concurrent.PriorityBlockingQueue $r4;
+        com.facebook.lite.a.d $r5;
+        com.a.a.a $r6;
+        com.facebook.lite.a.e $r7;
+        java.lang.Throwable $r9;
+        java.io.IOException $r10;
+        com.b.a.a.e.b $r11;
+        java.lang.StringBuilder $r12;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $z0 := @parameter2: boolean;
+        $i2 = $r0.<com.facebook.lite.a.b: int f>;
+        $i2 = $i2 + 1;
+        $r0.<com.facebook.lite.a.b: int f> = $i2;
+        $r6 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        if $r6 != null goto label0;
+
+        return 0;
+
+     label0:
+        $z1 = staticinvoke <com.facebook.lite.b.f: boolean a()>();
+        if $z1 != 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r6 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+
+     label2:
+        $r1 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r3 = virtualinvoke $r6.<com.a.a.a: com.a.a.f b(java.lang.String)>($r1);
+
+     label3:
+        if $r3 == null goto label8;
+
+        $r4 = $r0.<com.facebook.lite.a.b: java.util.concurrent.PriorityBlockingQueue j>;
+        entermonitor $r4;
+
+     label4:
+        $r5 = $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i>;
+        $r7 = new com.facebook.lite.a.e;
+        $r2 = <com.facebook.lite.a.g: com.facebook.lite.a.g a>;
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        specialinvoke $r7.<com.facebook.lite.a.e: void <init>(com.facebook.lite.a.b,int,com.facebook.lite.a.g,long,byte[],com.a.a.f,int,boolean)>($r0, $i0, $r2, $l3, null, $r3, $i1, $z0);
+        virtualinvoke $r5.<com.facebook.lite.a.d: void execute(java.lang.Runnable)>($r7);
+        exitmonitor $r4;
+        return 1;
+
+     label5:
+        $r9 := @caughtexception;
+        exitmonitor $r4;
+
+     label6:
+        throw $r9;
+
+     label7:
+        $r10 := @caughtexception;
+        $r11 = $r0.<com.facebook.lite.a.b: com.b.a.a.e.b h>;
+        interfaceinvoke $r11.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(162, null, $r10);
+        $r1 = <com.facebook.lite.a.b: java.lang.String a>;
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("diskcache/can\'t get snapshot:");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r1, $r13);
+
+     label8:
+        return 0;
+
+        catch java.io.IOException from label2 to label3 with label7;
+        catch java.lang.Throwable from label4 to label6 with label5;
+        catch java.io.IOException from label6 to label7 with label7;
+    }
+
+    public final void b()
+    {
+        com.facebook.lite.a.b $r0;
+        com.facebook.lite.a.d $r1;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $r1 = $r0.<com.facebook.lite.a.b: com.facebook.lite.a.d i>;
+        virtualinvoke $r1.<com.facebook.lite.a.d: void a()>();
+        return;
+    }
+
+    public final boolean c(int)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0, i1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $i0 := @parameter0: int;
+        i1 = (int) 0;
+        $z0 = virtualinvoke $r0.<com.facebook.lite.a.b: boolean a(int,int,boolean)>($i0, i1, 0);
+        return $z0;
+    }
+
+    public final void f(int)
+    {
+        com.facebook.lite.a.b $r0;
+        int $i0;
+        byte $b1;
+        long $l2, $l3;
+        com.a.a.a $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.facebook.lite.a.b;
+        $i0 := @parameter0: int;
+        if $i0 == -1 goto label1;
+
+        $r1 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        $l2 = (long) $i0;
+        virtualinvoke $r1.<com.a.a.a: void a(long)>($l2);
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.a.b: java.lang.String d>;
+        $l2 = staticinvoke <com.facebook.lite.b.f: long a(java.lang.String)>($r2);
+        $b1 = $l2 cmp 1L;
+        if $b1 >= 0 goto label3;
+
+        $r1 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        $l3 = virtualinvoke $r1.<com.a.a.a: long b()>();
+
+     label2:
+        $r1 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        $l2 = virtualinvoke $r1.<com.a.a.a: long a()>();
+        $b1 = $l3 cmp $l2;
+        if $b1 == 0 goto label0;
+
+        $r1 = $r0.<com.facebook.lite.a.b: com.a.a.a g>;
+        virtualinvoke $r1.<com.a.a.a: void a(long)>($l3);
+        goto label0;
+
+     label3:
+        $l3 = 10485760L;
+        goto label2;
+    }
+}

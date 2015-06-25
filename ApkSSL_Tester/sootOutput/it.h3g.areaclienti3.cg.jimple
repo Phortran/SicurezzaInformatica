@@ -1,0 +1,127 @@
+class it.h3g.areaclienti3.cg extends android.os.AsyncTask
+{
+    final it.h3g.areaclienti3.SplashScreenActivity a;
+
+    private void <init>(it.h3g.areaclienti3.SplashScreenActivity)
+    {
+        it.h3g.areaclienti3.cg $r0;
+        it.h3g.areaclienti3.SplashScreenActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: it.h3g.areaclienti3.SplashScreenActivity;
+        $r0.<it.h3g.areaclienti3.cg: it.h3g.areaclienti3.SplashScreenActivity a> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    void <init>(it.h3g.areaclienti3.SplashScreenActivity, it.h3g.areaclienti3.cg)
+    {
+        it.h3g.areaclienti3.cg $r0, $r2;
+        it.h3g.areaclienti3.SplashScreenActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: it.h3g.areaclienti3.SplashScreenActivity;
+        $r2 := @parameter1: it.h3g.areaclienti3.cg;
+        specialinvoke $r0.<it.h3g.areaclienti3.cg: void <init>(it.h3g.areaclienti3.SplashScreenActivity)>($r1);
+        return;
+    }
+
+    protected transient java.lang.Void a(java.lang.Void[])
+    {
+        it.h3g.areaclienti3.cg $r0;
+        java.lang.Void[] $r1;
+        it.h3g.areaclienti3.SplashScreenActivity $r2;
+        int $i0, $i1;
+        java.util.concurrent.TimeUnit $r3;
+        java.util.concurrent.SynchronousQueue $r4;
+        java.util.ArrayList $r5;
+        java.util.concurrent.ThreadPoolExecutor $r6;
+        java.util.Iterator $r7;
+        boolean $z0;
+        java.lang.Object $r8;
+        it.h3g.areaclienti3.ch $r9;
+        java.lang.Exception $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: java.lang.Void[];
+        $r4 = new java.util.concurrent.SynchronousQueue;
+
+     label0:
+        specialinvoke $r4.<java.util.concurrent.SynchronousQueue: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.cg: it.h3g.areaclienti3.SplashScreenActivity a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: java.util.ArrayList d(it.h3g.areaclienti3.SplashScreenActivity)>($r2);
+        $r6 = new java.util.concurrent.ThreadPoolExecutor;
+        $i0 = interfaceinvoke $r5.<java.util.List: int size()>();
+        $i1 = interfaceinvoke $r5.<java.util.List: int size()>();
+        $i1 = $i1 + 1;
+        $r3 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+        specialinvoke $r6.<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue)>($i0, $i1, 0L, $r3, $r4);
+        $r7 = interfaceinvoke $r5.<java.util.List: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label3;
+
+        interfaceinvoke $r6.<java.util.concurrent.ExecutorService: void shutdown()>();
+        $r3 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+        interfaceinvoke $r6.<java.util.concurrent.ExecutorService: boolean awaitTermination(long,java.util.concurrent.TimeUnit)>(20L, $r3);
+
+     label2:
+        return null;
+
+     label3:
+        $r8 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (it.h3g.areaclienti3.ch) $r8;
+        interfaceinvoke $r6.<java.util.concurrent.ExecutorService: void execute(java.lang.Runnable)>($r9);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r10 := @caughtexception;
+        virtualinvoke $r10.<java.lang.Exception: void printStackTrace()>();
+        goto label2;
+
+        catch java.lang.Exception from label0 to label4 with label5;
+    }
+
+    protected void a(java.lang.Void)
+    {
+        it.h3g.areaclienti3.cg $r0;
+        java.lang.Void $r1;
+        it.h3g.areaclienti3.SplashScreenActivity $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: java.lang.Void;
+        $r2 = $r0.<it.h3g.areaclienti3.cg: it.h3g.areaclienti3.SplashScreenActivity a>;
+        staticinvoke <it.h3g.areaclienti3.SplashScreenActivity: void c(it.h3g.areaclienti3.SplashScreenActivity)>($r2);
+        return;
+    }
+
+    protected transient java.lang.Object doInBackground(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.cg $r0;
+        java.lang.Object[] $r1;
+        java.lang.Void $r2;
+        java.lang.Void[] $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: java.lang.Object[];
+        $r3 = (java.lang.Void[]) $r1;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.cg: java.lang.Void a(java.lang.Void[])>($r3);
+        return $r2;
+    }
+
+    protected void onPostExecute(java.lang.Object)
+    {
+        it.h3g.areaclienti3.cg $r0;
+        java.lang.Object $r1;
+        java.lang.Void $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.cg;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (java.lang.Void) $r1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.cg: void a(java.lang.Void)>($r2);
+        return;
+    }
+}

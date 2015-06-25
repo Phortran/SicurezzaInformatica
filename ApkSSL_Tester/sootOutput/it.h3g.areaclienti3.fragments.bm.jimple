@@ -1,0 +1,168 @@
+public class it.h3g.areaclienti3.fragments.bm extends it.h3g.areaclienti3.fragments.a
+{
+    private it.h3g.areaclienti3.customview.TouchyWebView a;
+    private android.widget.ProgressBar b;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        return;
+    }
+
+    static android.widget.ProgressBar a(it.h3g.areaclienti3.fragments.bm)
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+        android.widget.ProgressBar $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.bm;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bm: android.widget.ProgressBar b>;
+        return $r1;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        return 2131231013;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        return 0;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        return -1;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        int $i0, i1;
+        java.lang.String $r5;
+        android.view.View $r6, $r7;
+        android.widget.ProgressBar $r8;
+        it.h3g.areaclienti3.customview.TouchyWebView $r9;
+        android.webkit.WebSettings $r10;
+        it.h3g.areaclienti3.fragments.bn $r11;
+        it.h3g.areaclienti3.fragments.bo $r12;
+        it.h3g.areaclienti3.fragments.bp $r13;
+        android.content.Context $r14;
+        java.lang.Object $r15;
+        android.net.ConnectivityManager $r16;
+        android.net.NetworkInfo $r17;
+        android.net.NetworkInfo$State $r18, $r21;
+        java.lang.StringBuilder $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903195, $r2, 0);
+        $r7 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165253);
+        $r8 = (android.widget.ProgressBar) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.bm: android.widget.ProgressBar b> = $r8;
+        $r7 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165199);
+        $r9 = (it.h3g.areaclienti3.customview.TouchyWebView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a> = $r9;
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r10.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r10.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r10.<android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)>(1);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r10.<android.webkit.WebSettings: void setUseWideViewPort(boolean)>(1);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: boolean requestFocus(int)>(130);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r11 = new it.h3g.areaclienti3.fragments.bn;
+        specialinvoke $r11.<it.h3g.areaclienti3.fragments.bn: void <init>(it.h3g.areaclienti3.fragments.bm)>($r0);
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: void setWebViewClient(android.webkit.WebViewClient)>($r11);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r12 = new it.h3g.areaclienti3.fragments.bo;
+        specialinvoke $r12.<it.h3g.areaclienti3.fragments.bo: void <init>(it.h3g.areaclienti3.fragments.bm)>($r0);
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r12);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        $r13 = new it.h3g.areaclienti3.fragments.bp;
+        specialinvoke $r13.<it.h3g.areaclienti3.fragments.bp: void <init>(it.h3g.areaclienti3.fragments.bm)>($r0);
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: void setOnTouchListener(android.view.View$OnTouchListener)>($r13);
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.bm: android.content.Context mContext>;
+        $r15 = virtualinvoke $r14.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r16 = (android.net.ConnectivityManager) $r15;
+        $i0 = (int) 0;
+        $r17 = virtualinvoke $r16.<android.net.ConnectivityManager: android.net.NetworkInfo getNetworkInfo(int)>($i0);
+        $r18 = virtualinvoke $r17.<android.net.NetworkInfo: android.net.NetworkInfo$State getState()>();
+        $r20 = new java.lang.StringBuilder;
+        specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>("TYPE_MOBILE network state: ");
+        $r20 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r18);
+        $r5 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("RechargeWebViewFragment", $r5);
+        $r21 = <android.net.NetworkInfo$State: android.net.NetworkInfo$State CONNECTED>;
+        $i0 = virtualinvoke $r18.<android.net.NetworkInfo$State: int compareTo(java.lang.Enum)>($r21);
+        i1 = (int) 1;
+        if i1 == $i0 goto label0;
+
+        $r21 = <android.net.NetworkInfo$State: android.net.NetworkInfo$State CONNECTING>;
+        $i0 = virtualinvoke $r18.<android.net.NetworkInfo$State: int compareTo(java.lang.Enum)>($r21);
+        i1 = (int) 1;
+        if i1 != $i0 goto label1;
+
+     label0:
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: void loadUrl(java.lang.String)>("http://www.tre.it/assistenza/res/ext/redirect/redirect3g.html");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RechargeWebViewFragment", "Loading URL umts = http://www.tre.it/assistenza/res/ext/redirect/redirect3g.html");
+        return $r6;
+
+     label1:
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.bm: it.h3g.areaclienti3.customview.TouchyWebView a>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.customview.TouchyWebView: void loadUrl(java.lang.String)>("http://www.tre.it/assistenza/res/ext/redirect/redirectWifi.html");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("RechargeWebViewFragment", "Loading URL wifi = http://www.tre.it/assistenza/res/ext/redirect/redirectWifi.html");
+        return $r6;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDestroyView()>();
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.bm $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bm;
+        return;
+    }
+}

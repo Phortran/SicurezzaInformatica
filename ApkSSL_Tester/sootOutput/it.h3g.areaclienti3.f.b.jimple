@@ -1,0 +1,143 @@
+public class it.h3g.areaclienti3.f.b extends android.support.v4.c.f
+{
+    static final int a;
+    static final int b;
+    private static it.h3g.areaclienti3.f.b c;
+    private static java.util.ArrayList d;
+
+    static void <clinit>()
+    {
+        java.lang.Runtime $r0;
+        long $l1;
+        int $i2;
+
+        $r0 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+        $l1 = virtualinvoke $r0.<java.lang.Runtime: long maxMemory()>();
+        $l1 = $l1 / 1024L;
+        $i2 = (int) $l1;
+        <it.h3g.areaclienti3.f.b: int a> = $i2;
+        $i2 = <it.h3g.areaclienti3.f.b: int a>;
+        $i2 = $i2 / 8;
+        <it.h3g.areaclienti3.f.b: int b> = $i2;
+        return;
+    }
+
+    private void <init>()
+    {
+        it.h3g.areaclienti3.f.b $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.f.b;
+        $i0 = <it.h3g.areaclienti3.f.b: int b>;
+        specialinvoke $r0.<android.support.v4.c.f: void <init>(int)>($i0);
+        return;
+    }
+
+    public static it.h3g.areaclienti3.f.b c()
+    {
+        it.h3g.areaclienti3.f.b $r0;
+        java.util.ArrayList $r2;
+        java.lang.Throwable $r3;
+
+        entermonitor class "it/h3g/areaclienti3/f/b";
+
+     label0:
+        $r0 = <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c>;
+        if $r0 != null goto label1;
+
+        $r0 = new it.h3g.areaclienti3.f.b;
+        specialinvoke $r0.<it.h3g.areaclienti3.f.b: void <init>()>();
+        <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c> = $r0;
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        <it.h3g.areaclienti3.f.b: java.util.ArrayList d> = $r2;
+
+     label1:
+        $r0 = <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c>;
+
+     label2:
+        exitmonitor class "it/h3g/areaclienti3/f/b";
+        return $r0;
+
+     label3:
+        $r3 := @caughtexception;
+        exitmonitor class "it/h3g/areaclienti3/f/b";
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public android.graphics.Bitmap a(java.lang.String)
+    {
+        it.h3g.areaclienti3.f.b $r0, $r2;
+        java.lang.String $r1;
+        java.lang.Object $r3;
+        android.graphics.Bitmap $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.f.b;
+        $r1 := @parameter0: java.lang.String;
+        entermonitor $r0;
+
+     label0:
+        $r2 = <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.f.b: java.lang.Object a(java.lang.Object)>($r1);
+        $r4 = (android.graphics.Bitmap) $r3;
+
+     label1:
+        exitmonitor $r0;
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void a(java.lang.String, android.graphics.Bitmap)
+    {
+        it.h3g.areaclienti3.f.b $r0, $r3;
+        java.lang.String $r1;
+        android.graphics.Bitmap $r2;
+        java.util.ArrayList $r5;
+        java.lang.Exception $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.f.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: android.graphics.Bitmap;
+        entermonitor $r0;
+
+     label0:
+        $r3 = <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c>;
+
+     label1:
+        virtualinvoke $r3.<it.h3g.areaclienti3.f.b: java.lang.Object a(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $r5 = <it.h3g.areaclienti3.f.b: java.util.ArrayList d>;
+        virtualinvoke $r5.<java.util.ArrayList: boolean add(java.lang.Object)>($r1);
+
+     label2:
+        exitmonitor $r0;
+        return;
+
+     label3:
+        $r6 := @caughtexception;
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("MemoryCache", "Exception put cache", $r6);
+
+     label5:
+        goto label2;
+
+     label6:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+        throw $r7;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label0 to label2 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+}

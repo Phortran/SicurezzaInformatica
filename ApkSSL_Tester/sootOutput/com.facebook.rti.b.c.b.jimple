@@ -1,0 +1,451 @@
+public class com.facebook.rti.b.c.b extends java.lang.Object
+{
+    public static final java.lang.String a;
+    private static final java.util.List b;
+    private final com.facebook.rti.b.c.a c;
+    private final android.app.AlarmManager d;
+    private final com.facebook.rti.a.g.b e;
+    private final int f;
+    private final android.app.PendingIntent g;
+    private volatile java.lang.Runnable h;
+    private boolean i;
+    private boolean j;
+    private long k;
+    private long l;
+
+    static void <clinit>()
+    {
+        java.lang.StringBuilder $r0;
+        java.lang.Class $r1;
+        java.lang.String $r2;
+        com.facebook.rti.b.c.c $r3;
+        java.util.List $r4;
+
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "com/facebook/rti/b/c/b";
+        $r2 = virtualinvoke $r1.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".ACTION_INEXACT_ALARM.");
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        <com.facebook.rti.b.c.b: java.lang.String a> = $r2;
+        $r3 = new com.facebook.rti.b.c.c;
+        specialinvoke $r3.<com.facebook.rti.b.c.c: void <init>()>();
+        $r4 = staticinvoke <java.util.Collections: java.util.List unmodifiableList(java.util.List)>($r3);
+        <com.facebook.rti.b.c.b: java.util.List b> = $r4;
+        return;
+    }
+
+    public void <init>(android.content.Context, com.facebook.rti.b.c.a, com.facebook.rti.a.g.b, android.app.AlarmManager)
+    {
+        com.facebook.rti.b.c.b $r0;
+        android.content.Context $r1;
+        com.facebook.rti.b.c.a $r2;
+        com.facebook.rti.a.g.b $r3;
+        android.app.AlarmManager $r4;
+        int $i0;
+        android.content.IntentFilter $r5;
+        java.lang.String $r6;
+        com.facebook.rti.b.c.d $r7;
+        android.content.Intent $r8;
+        android.app.PendingIntent $r9;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.facebook.rti.b.c.a;
+        $r3 := @parameter2: com.facebook.rti.a.g.b;
+        $r4 := @parameter3: android.app.AlarmManager;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.c.b: com.facebook.rti.b.c.a c> = $r2;
+        $r0.<com.facebook.rti.b.c.b: android.app.AlarmManager d> = $r4;
+        $r0.<com.facebook.rti.b.c.b: com.facebook.rti.a.g.b e> = $r3;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        $r0.<com.facebook.rti.b.c.b: int f> = $i0;
+        $r7 = new com.facebook.rti.b.c.d;
+        specialinvoke $r7.<com.facebook.rti.b.c.d: void <init>(com.facebook.rti.b.c.b)>($r0);
+        $r5 = new android.content.IntentFilter;
+        $r6 = <com.facebook.rti.b.c.b: java.lang.String a>;
+        specialinvoke $r5.<android.content.IntentFilter: void <init>(java.lang.String)>($r6);
+        virtualinvoke $r1.<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r7, $r5);
+        $r8 = new android.content.Intent;
+        $r6 = <com.facebook.rti.b.c.b: java.lang.String a>;
+        specialinvoke $r8.<android.content.Intent: void <init>(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r1.<android.content.Context: java.lang.String getPackageName()>();
+        virtualinvoke $r8.<android.content.Intent: android.content.Intent setPackage(java.lang.String)>($r6);
+        $r9 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getBroadcast(android.content.Context,int,android.content.Intent,int)>($r1, 0, $r8, 0);
+        $r0.<com.facebook.rti.b.c.b: android.app.PendingIntent g> = $r9;
+        return;
+    }
+
+    private void a(long)
+    {
+        com.facebook.rti.b.c.b $r0;
+        long $l0;
+        boolean $z0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $l0 := @parameter0: long;
+        entermonitor $r0;
+
+     label0:
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean i>;
+        if $z0 != 0 goto label2;
+
+        $r0.<com.facebook.rti.b.c.b: long k> = $l0;
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void e()>();
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r0.<com.facebook.rti.b.c.b: long k> = $l0;
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void f()>();
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void d()>();
+
+     label3:
+        goto label1;
+
+     label4:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+        catch java.lang.Throwable from label2 to label3 with label4;
+    }
+
+    static void a(com.facebook.rti.b.c.b)
+    {
+        com.facebook.rti.b.c.b $r0;
+
+        $r0 := @parameter0: com.facebook.rti.b.c.b;
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void g()>();
+        return;
+    }
+
+    private static long b(long)
+    {
+        long $l0, $l3;
+        byte $b1;
+        java.util.Iterator $r0;
+        boolean $z0;
+        java.util.List $r1;
+        java.lang.Object $r2;
+        java.lang.Long $r3;
+
+        $l0 := @parameter0: long;
+        $b1 = $l0 cmp 900000L;
+        if $b1 < 0 goto label2;
+
+        $z0 = 1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r1 = <com.facebook.rti.b.c.b: java.util.List b>;
+        $r0 = interfaceinvoke $r1.<java.util.List: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r0.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label3;
+
+        $r2 = interfaceinvoke $r0.<java.util.Iterator: java.lang.Object next()>();
+        $r3 = (java.lang.Long) $r2;
+        $l3 = virtualinvoke $r3.<java.lang.Long: long longValue()>();
+        $b1 = $l0 cmp $l3;
+        if $b1 < 0 goto label1;
+
+        return $l3;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+
+     label3:
+        return 900000L;
+    }
+
+    private void d()
+    {
+        com.facebook.rti.b.c.b $r0;
+        com.facebook.rti.a.g.b $r1;
+        long $l1, $l2, $l4;
+        java.lang.Long $r2;
+        byte $b5;
+        int $i6, $i7;
+        android.app.AlarmManager $r3;
+        android.app.PendingIntent $r4;
+        java.lang.Object[] $r7;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $r0.<com.facebook.rti.b.c.b: boolean i> = 1;
+        $r1 = $r0.<com.facebook.rti.b.c.b: com.facebook.rti.a.g.b e>;
+        $l1 = interfaceinvoke $r1.<com.facebook.rti.a.g.b: long a()>();
+        $l2 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $l2 = $l2 + $l1;
+        $r0.<com.facebook.rti.b.c.b: long l> = $l2;
+        $l2 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $b5 = $l2 cmp 900000L;
+        if $b5 < 0 goto label3;
+
+        $l4 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $l4 = staticinvoke <com.facebook.rti.b.c.b: long b(long)>($l4);
+        $r0.<com.facebook.rti.b.c.b: long k> = $l4;
+
+     label0:
+        $i6 = $r0.<com.facebook.rti.b.c.b: int f>;
+        if $i6 < 19 goto label2;
+
+        $l4 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $b5 = $l4 cmp 900000L;
+        if $b5 >= 0 goto label2;
+
+        $r0.<com.facebook.rti.b.c.b: boolean j> = 0;
+        $r3 = $r0.<com.facebook.rti.b.c.b: android.app.AlarmManager d>;
+        $r4 = $r0.<com.facebook.rti.b.c.b: android.app.PendingIntent g>;
+        virtualinvoke $r3.<android.app.AlarmManager: void setExact(int,long,android.app.PendingIntent)>(2, $l1, $r4);
+
+     label1:
+        $i7 = (int) 1;
+        $r7 = newarray (java.lang.Object)[$i7];
+        $l4 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $l4 = $l4 / 1000L;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4);
+        $i7 = (int) 0;
+        $r7[$i7] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("KeepaliveManager", "Scheduling repeating keepalive with %s seconds", $r7);
+        return;
+
+     label2:
+        $r0.<com.facebook.rti.b.c.b: boolean j> = 1;
+        $r3 = $r0.<com.facebook.rti.b.c.b: android.app.AlarmManager d>;
+        $l4 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $r4 = $r0.<com.facebook.rti.b.c.b: android.app.PendingIntent g>;
+        virtualinvoke $r3.<android.app.AlarmManager: void setInexactRepeating(int,long,long,android.app.PendingIntent)>(2, $l1, $l4, $r4);
+        goto label1;
+
+     label3:
+        $l1 = $r0.<com.facebook.rti.b.c.b: long l>;
+        goto label0;
+    }
+
+    private void e()
+    {
+        com.facebook.rti.b.c.b $r0;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean i>;
+        if $z0 != 0 goto label0;
+
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void d()>();
+
+     label0:
+        return;
+    }
+
+    private void f()
+    {
+        com.facebook.rti.b.c.b $r0;
+        boolean $z0;
+        java.lang.Object[] $r3;
+        android.app.AlarmManager $r4;
+        android.app.PendingIntent $r5;
+        int i0;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean i>;
+        if $z0 == 0 goto label0;
+
+        $r0.<com.facebook.rti.b.c.b: boolean i> = 0;
+        i0 = (int) 0;
+        $r3 = newarray (java.lang.Object)[i0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("KeepaliveManager", "Stopping the alarm.", $r3);
+        $r4 = $r0.<com.facebook.rti.b.c.b: android.app.AlarmManager d>;
+        $r5 = $r0.<com.facebook.rti.b.c.b: android.app.PendingIntent g>;
+        virtualinvoke $r4.<android.app.AlarmManager: void cancel(android.app.PendingIntent)>($r5);
+
+     label0:
+        return;
+    }
+
+    private void g()
+    {
+        com.facebook.rti.b.c.b $r0;
+        com.facebook.rti.a.g.b $r1;
+        long $l1, $l2;
+        android.app.PendingIntent $r2;
+        boolean $z0;
+        android.app.AlarmManager $r3;
+        java.lang.Runnable $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.c.b: com.facebook.rti.a.g.b e>;
+        $l2 = interfaceinvoke $r1.<com.facebook.rti.a.g.b: long a()>();
+        $l1 = $r0.<com.facebook.rti.b.c.b: long k>;
+        $l2 = $l2 + $l1;
+        $r0.<com.facebook.rti.b.c.b: long l> = $l2;
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean i>;
+        if $z0 == 0 goto label1;
+
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean j>;
+        if $z0 != 0 goto label1;
+
+        $r3 = $r0.<com.facebook.rti.b.c.b: android.app.AlarmManager d>;
+        $l2 = $r0.<com.facebook.rti.b.c.b: long l>;
+        $r2 = $r0.<com.facebook.rti.b.c.b: android.app.PendingIntent g>;
+        virtualinvoke $r3.<android.app.AlarmManager: void setExact(int,long,android.app.PendingIntent)>(2, $l2, $r2);
+
+     label1:
+        exitmonitor $r0;
+
+     label2:
+        $r4 = $r0.<com.facebook.rti.b.c.b: java.lang.Runnable h>;
+        interfaceinvoke $r4.<java.lang.Runnable: void run()>();
+        return;
+
+     label3:
+        $r5 := @caughtexception;
+
+     label4:
+        exitmonitor $r0;
+
+     label5:
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+
+    public final void a()
+    {
+        com.facebook.rti.b.c.b $r0;
+        boolean $z0;
+        long $l1, $l2;
+        com.facebook.rti.a.g.b $r2;
+        java.lang.Object[] $r4;
+        java.lang.Long $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        entermonitor $r0;
+
+     label0:
+        $z0 = $r0.<com.facebook.rti.b.c.b: boolean i>;
+        if $z0 != 0 goto label2;
+
+        virtualinvoke $r0.<com.facebook.rti.b.c.b: void b()>();
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 = newarray (java.lang.Object)[1];
+        $l1 = $r0.<com.facebook.rti.b.c.b: long l>;
+        $r2 = $r0.<com.facebook.rti.b.c.b: com.facebook.rti.a.g.b e>;
+        $l2 = interfaceinvoke $r2.<com.facebook.rti.a.g.b: long a()>();
+        $l2 = $l1 - $l2;
+        $l2 = $l2 / 1000L;
+        $r5 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        $r4[0] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("KeepaliveManager", "Alarm has already been scheduled. Expected to fire in %d seconds", $r4);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+        catch java.lang.Throwable from label2 to label3 with label4;
+    }
+
+    public final void a(java.lang.Runnable)
+    {
+        com.facebook.rti.b.c.b $r0;
+        java.lang.Runnable $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        $r1 := @parameter0: java.lang.Runnable;
+        entermonitor $r0;
+
+     label0:
+        $r0.<com.facebook.rti.b.c.b: java.lang.Runnable h> = $r1;
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final void b()
+    {
+        com.facebook.rti.b.c.b $r0;
+        com.facebook.rti.b.c.a $r1;
+        java.lang.Integer $r2;
+        int $i0;
+        long $l1;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.c.b: com.facebook.rti.b.c.a c>;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.c.a: java.lang.Integer a()>();
+        $i0 = virtualinvoke $r2.<java.lang.Integer: int intValue()>();
+        $i0 = $i0 * 1000;
+        $l1 = (long) $i0;
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void a(long)>($l1);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        exitmonitor $r0;
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final void c()
+    {
+        com.facebook.rti.b.c.b $r0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.b;
+        entermonitor $r0;
+
+     label0:
+        specialinvoke $r0.<com.facebook.rti.b.c.b: void f()>();
+        $r0.<com.facebook.rti.b.c.b: long k> = 900000L;
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

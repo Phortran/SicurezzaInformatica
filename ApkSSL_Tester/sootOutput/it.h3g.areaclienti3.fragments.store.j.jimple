@@ -1,0 +1,59 @@
+class it.h3g.areaclienti3.fragments.store.j extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.store.i a;
+
+    void <init>(it.h3g.areaclienti3.fragments.store.i)
+    {
+        it.h3g.areaclienti3.fragments.store.j $r0;
+        it.h3g.areaclienti3.fragments.store.i $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.j;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.store.i;
+        $r0.<it.h3g.areaclienti3.fragments.store.j: it.h3g.areaclienti3.fragments.store.i a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.store.j $r0;
+        android.view.View $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3;
+        android.widget.TextView $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.fragments.store.i $r6;
+        java.lang.CharSequence $r7;
+        android.net.Uri $r8;
+        android.content.ActivityNotFoundException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.j;
+        $r1 := @parameter0: android.view.View;
+        $r2 = new android.content.Intent;
+
+     label0:
+        specialinvoke $r2.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.CALL");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("tel:");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.j: it.h3g.areaclienti3.fragments.store.i a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.fragments.store.i: android.widget.TextView a(it.h3g.areaclienti3.fragments.store.i)>($r6);
+        $r7 = virtualinvoke $r4.<android.widget.TextView: java.lang.CharSequence getText()>();
+        $r3 = interfaceinvoke $r7.<java.lang.CharSequence: java.lang.String toString()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r8);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.j: it.h3g.areaclienti3.fragments.store.i a>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.fragments.store.i: void startActivity(android.content.Intent)>($r2);
+
+     label1:
+        return;
+
+     label2:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("Calling a Phone Number", "Call failed", $r9);
+        goto label1;
+
+        catch android.content.ActivityNotFoundException from label0 to label1 with label2;
+    }
+}

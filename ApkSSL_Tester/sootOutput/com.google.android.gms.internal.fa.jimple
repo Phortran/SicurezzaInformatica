@@ -1,0 +1,476 @@
+public class com.google.android.gms.internal.fa extends java.lang.Object implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
+{
+    public static final com.google.android.gms.internal.ih a;
+    private final int b;
+    private final java.lang.String c;
+    private final long d;
+    private final short e;
+    private final double f;
+    private final double g;
+    private final float h;
+    private final int i;
+    private final int j;
+    private final int k;
+
+    static void <clinit>()
+    {
+        com.google.android.gms.internal.ih $r0;
+
+        $r0 = new com.google.android.gms.internal.ih;
+        specialinvoke $r0.<com.google.android.gms.internal.ih: void <init>()>();
+        <com.google.android.gms.internal.fa: com.google.android.gms.internal.ih a> = $r0;
+        return;
+    }
+
+    public void <init>(int, java.lang.String, int, short, double, double, float, long, int, int)
+    {
+        com.google.android.gms.internal.fa $r0;
+        int $i0, $i1, $i4, $i5;
+        java.lang.String $r1;
+        short $s2;
+        double $d0, $d1;
+        float $f0;
+        long $l3;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.String;
+        $i1 := @parameter2: int;
+        $s2 := @parameter3: short;
+        $d0 := @parameter4: double;
+        $d1 := @parameter5: double;
+        $f0 := @parameter6: float;
+        $l3 := @parameter7: long;
+        $i4 := @parameter8: int;
+        $i5 := @parameter9: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        staticinvoke <com.google.android.gms.internal.fa: void a(java.lang.String)>($r1);
+        staticinvoke <com.google.android.gms.internal.fa: void a(float)>($f0);
+        staticinvoke <com.google.android.gms.internal.fa: void a(double,double)>($d0, $d1);
+        $i1 = staticinvoke <com.google.android.gms.internal.fa: int a(int)>($i1);
+        $r0.<com.google.android.gms.internal.fa: int b> = $i0;
+        $r0.<com.google.android.gms.internal.fa: short e> = $s2;
+        $r0.<com.google.android.gms.internal.fa: java.lang.String c> = $r1;
+        $r0.<com.google.android.gms.internal.fa: double f> = $d0;
+        $r0.<com.google.android.gms.internal.fa: double g> = $d1;
+        $r0.<com.google.android.gms.internal.fa: float h> = $f0;
+        $r0.<com.google.android.gms.internal.fa: long d> = $l3;
+        $r0.<com.google.android.gms.internal.fa: int i> = $i1;
+        $r0.<com.google.android.gms.internal.fa: int j> = $i4;
+        $r0.<com.google.android.gms.internal.fa: int k> = $i5;
+        return;
+    }
+
+    private static int a(int)
+    {
+        int $i0, $i1;
+        java.lang.StringBuilder $r0;
+        java.lang.String $r1;
+        java.lang.IllegalArgumentException $r2;
+
+        $i0 := @parameter0: int;
+        $i1 = $i0 & 7;
+        if $i1 != 0 goto label0;
+
+        $r2 = new java.lang.IllegalArgumentException;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No supported transition specified: ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r1 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label0:
+        return $i1;
+    }
+
+    private static void a(double, double)
+    {
+        double $d0, $d1;
+        java.lang.StringBuilder $r0;
+        java.lang.String $r1;
+        byte $b0;
+        java.lang.IllegalArgumentException $r2;
+
+        $d0 := @parameter0: double;
+        $d1 := @parameter1: double;
+        $b0 = $d0 cmpl 90.0;
+        if $b0 > 0 goto label0;
+
+        $b0 = $d0 cmpg -90.0;
+        if $b0 >= 0 goto label1;
+
+     label0:
+        $r2 = new java.lang.IllegalArgumentException;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("invalid latitude: ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0);
+        $r1 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label1:
+        $b0 = $d1 cmpl 180.0;
+        if $b0 > 0 goto label2;
+
+        $b0 = $d1 cmpg -180.0;
+        if $b0 >= 0 goto label3;
+
+     label2:
+        $r2 = new java.lang.IllegalArgumentException;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("invalid longitude: ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d1);
+        $r1 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label3:
+        return;
+    }
+
+    private static void a(float)
+    {
+        float $f0;
+        java.lang.StringBuilder $r0;
+        java.lang.String $r1;
+        byte $b0;
+        java.lang.IllegalArgumentException $r2;
+
+        $f0 := @parameter0: float;
+        $b0 = $f0 cmpg 0.0F;
+        if $b0 > 0 goto label0;
+
+        $r2 = new java.lang.IllegalArgumentException;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("invalid radius: ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r1 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label0:
+        return;
+    }
+
+    private static void a(java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        int $i0;
+        java.lang.IllegalArgumentException $r2;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label0;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 <= 100 goto label1;
+
+     label0:
+        $r2 = new java.lang.IllegalArgumentException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("requestId is null or too long: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r1);
+        throw $r2;
+
+     label1:
+        return;
+    }
+
+    private static java.lang.String b(int)
+    {
+        int $i0;
+
+        $i0 := @parameter0: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        return null;
+
+     label1:
+        return "CIRCLE";
+    }
+
+    public int a()
+    {
+        com.google.android.gms.internal.fa $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $i0 = $r0.<com.google.android.gms.internal.fa: int b>;
+        return $i0;
+    }
+
+    public short b()
+    {
+        com.google.android.gms.internal.fa $r0;
+        short $s0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $s0 = $r0.<com.google.android.gms.internal.fa: short e>;
+        return $s0;
+    }
+
+    public double c()
+    {
+        com.google.android.gms.internal.fa $r0;
+        double $d0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double f>;
+        return $d0;
+    }
+
+    public double d()
+    {
+        com.google.android.gms.internal.fa $r0;
+        double $d0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double g>;
+        return $d0;
+    }
+
+    public int describeContents()
+    {
+        com.google.android.gms.internal.fa $r0;
+        com.google.android.gms.internal.ih $r1;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $r1 = <com.google.android.gms.internal.fa: com.google.android.gms.internal.ih a>;
+        return 0;
+    }
+
+    public float e()
+    {
+        com.google.android.gms.internal.fa $r0;
+        float $f0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $f0 = $r0.<com.google.android.gms.internal.fa: float h>;
+        return $f0;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.android.gms.internal.fa $r0, $r2;
+        java.lang.Object $r1;
+        boolean $z1;
+        float $f0, $f1;
+        double $d0, $d1;
+        byte $b0;
+        short $s1, $s2;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $r1 := @parameter0: java.lang.Object;
+        if $r0 != $r1 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        if $r1 != null goto label2;
+
+        return 0;
+
+     label2:
+        $z1 = $r1 instanceof com.google.android.gms.internal.fa;
+        if $z1 != 0 goto label3;
+
+        return 0;
+
+     label3:
+        $r2 = (com.google.android.gms.internal.fa) $r1;
+        $f1 = $r0.<com.google.android.gms.internal.fa: float h>;
+        $f0 = $r2.<com.google.android.gms.internal.fa: float h>;
+        $b0 = $f1 cmpl $f0;
+        if $b0 == 0 goto label4;
+
+        return 0;
+
+     label4:
+        $d1 = $r0.<com.google.android.gms.internal.fa: double f>;
+        $d0 = $r2.<com.google.android.gms.internal.fa: double f>;
+        $b0 = $d1 cmpl $d0;
+        if $b0 == 0 goto label5;
+
+        return 0;
+
+     label5:
+        $d1 = $r0.<com.google.android.gms.internal.fa: double g>;
+        $d0 = $r2.<com.google.android.gms.internal.fa: double g>;
+        $b0 = $d1 cmpl $d0;
+        if $b0 == 0 goto label6;
+
+        return 0;
+
+     label6:
+        $s1 = $r0.<com.google.android.gms.internal.fa: short e>;
+        $s2 = $r2.<com.google.android.gms.internal.fa: short e>;
+        if $s1 == $s2 goto label0;
+
+        return 0;
+    }
+
+    public java.lang.String f()
+    {
+        com.google.android.gms.internal.fa $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $r1 = $r0.<com.google.android.gms.internal.fa: java.lang.String c>;
+        return $r1;
+    }
+
+    public long g()
+    {
+        com.google.android.gms.internal.fa $r0;
+        long $l0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $l0 = $r0.<com.google.android.gms.internal.fa: long d>;
+        return $l0;
+    }
+
+    public int h()
+    {
+        com.google.android.gms.internal.fa $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $i0 = $r0.<com.google.android.gms.internal.fa: int i>;
+        return $i0;
+    }
+
+    public int hashCode()
+    {
+        com.google.android.gms.internal.fa $r0;
+        double $d0;
+        long $l0, $l2;
+        int $i3, $i4;
+        float $f0;
+        short $s5;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double f>;
+        $l2 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>($d0);
+        $l0 = $l2 >>> 32;
+        $l2 = $l2 ^ $l0;
+        $i3 = (int) $l2;
+        $i3 = $i3 + 31;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double g>;
+        $l2 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>($d0);
+        $i3 = $i3 * 31;
+        $l0 = $l2 >>> 32;
+        $l2 = $l2 ^ $l0;
+        $i4 = (int) $l2;
+        $i4 = $i3 + $i4;
+        $i4 = $i4 * 31;
+        $f0 = $r0.<com.google.android.gms.internal.fa: float h>;
+        $i3 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        $i4 = $i4 + $i3;
+        $i4 = $i4 * 31;
+        $s5 = $r0.<com.google.android.gms.internal.fa: short e>;
+        $i4 = $i4 + $s5;
+        $i4 = $i4 * 31;
+        $i3 = $r0.<com.google.android.gms.internal.fa: int i>;
+        $i4 = $i4 + $i3;
+        return $i4;
+    }
+
+    public int i()
+    {
+        com.google.android.gms.internal.fa $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $i0 = $r0.<com.google.android.gms.internal.fa: int j>;
+        return $i0;
+    }
+
+    public int j()
+    {
+        com.google.android.gms.internal.fa $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $i0 = $r0.<com.google.android.gms.internal.fa: int k>;
+        return $i0;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.internal.fa $r0;
+        java.util.Locale $r1;
+        short $s1;
+        java.lang.String $r3;
+        java.lang.Object[] $r4;
+        int $i2;
+        java.lang.Integer $r5;
+        double $d0;
+        java.lang.Double $r6;
+        float $f0;
+        java.lang.Float $r7;
+        long $l3;
+        java.lang.Long $r8;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $r1 = <java.util.Locale: java.util.Locale US>;
+        $r4 = newarray (java.lang.Object)[9];
+        $s1 = $r0.<com.google.android.gms.internal.fa: short e>;
+        $r3 = staticinvoke <com.google.android.gms.internal.fa: java.lang.String b(int)>($s1);
+        $r4[0] = $r3;
+        $r3 = $r0.<com.google.android.gms.internal.fa: java.lang.String c>;
+        $r4[1] = $r3;
+        $i2 = $r0.<com.google.android.gms.internal.fa: int i>;
+        $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r4[2] = $r5;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double f>;
+        $r6 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        $r4[3] = $r6;
+        $d0 = $r0.<com.google.android.gms.internal.fa: double g>;
+        $r6 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        $r4[4] = $r6;
+        $f0 = $r0.<com.google.android.gms.internal.fa: float h>;
+        $r7 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r4[5] = $r7;
+        $i2 = $r0.<com.google.android.gms.internal.fa: int j>;
+        $i2 = $i2 / 1000;
+        $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r4[6] = $r5;
+        $i2 = $r0.<com.google.android.gms.internal.fa: int k>;
+        $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r4[7] = $r5;
+        $l3 = $r0.<com.google.android.gms.internal.fa: long d>;
+        $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3);
+        $r4[8] = $r8;
+        $r3 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r1, "Geofence[%s id:%s transitions:%d %.6f, %.6f %.0fm, resp=%ds, dwell=%dms, @%d]", $r4);
+        return $r3;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.fa $r0;
+        android.os.Parcel $r1;
+        int $i0;
+        com.google.android.gms.internal.ih $r2;
+
+        $r0 := @this: com.google.android.gms.internal.fa;
+        $r1 := @parameter0: android.os.Parcel;
+        $i0 := @parameter1: int;
+        $r2 = <com.google.android.gms.internal.fa: com.google.android.gms.internal.ih a>;
+        staticinvoke <com.google.android.gms.internal.ih: void a(com.google.android.gms.internal.fa,android.os.Parcel,int)>($r0, $r1, $i0);
+        return;
+    }
+}

@@ -1,0 +1,100 @@
+final class com.google.c.b.a.ab extends com.google.c.ae
+{
+
+    void <init>()
+    {
+        com.google.c.b.a.ab $r0;
+
+        $r0 := @this: com.google.c.b.a.ab;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.lang.Number a(com.google.c.d.a)
+    {
+        com.google.c.b.a.ab $r0;
+        com.google.c.d.a $r1;
+        com.google.c.d.c $r2;
+        int[] $r3;
+        int $i0;
+        java.lang.String $r4;
+        com.google.c.aa $r5;
+        java.lang.StringBuilder $r6;
+        com.google.c.b.v $r7;
+
+        $r0 := @this: com.google.c.b.a.ab;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r3 = <com.google.c.b.a.ay: int[] a>;
+        $i0 = virtualinvoke $r2.<com.google.c.d.c: int ordinal()>();
+        $i0 = $r3[$i0];
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label0;
+            case 3: goto label0;
+            case 4: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $r5 = new com.google.c.aa;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Expecting number, got: ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<com.google.c.aa: void <init>(java.lang.String)>($r4);
+        throw $r5;
+
+     label1:
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+        return null;
+
+     label2:
+        $r7 = new com.google.c.b.v;
+        $r4 = virtualinvoke $r1.<com.google.c.d.a: java.lang.String h()>();
+        specialinvoke $r7.<com.google.c.b.v: void <init>(java.lang.String)>($r4);
+        return $r7;
+    }
+
+    public void a(com.google.c.d.d, java.lang.Number)
+    {
+        com.google.c.b.a.ab $r0;
+        com.google.c.d.d $r1;
+        java.lang.Number $r2;
+
+        $r0 := @this: com.google.c.b.a.ab;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Number;
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d a(java.lang.Number)>($r2);
+        return;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.b.a.ab $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.lang.Number $r3;
+
+        $r0 := @this: com.google.c.b.a.ab;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.lang.Number) $r2;
+        virtualinvoke $r0.<com.google.c.b.a.ab: void a(com.google.c.d.d,java.lang.Number)>($r1, $r3);
+        return;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.b.a.ab $r0;
+        com.google.c.d.a $r1;
+        java.lang.Number $r2;
+
+        $r0 := @this: com.google.c.b.a.ab;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.b.a.ab: java.lang.Number a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

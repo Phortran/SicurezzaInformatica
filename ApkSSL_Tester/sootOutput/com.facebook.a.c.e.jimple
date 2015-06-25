@@ -1,0 +1,96 @@
+public final class com.facebook.a.c.e extends java.lang.Object
+{
+
+    private static java.lang.String a(java.util.Map)
+    {
+        java.util.Map $r0;
+        java.util.Set $r1;
+        java.lang.StringBuilder $r2, $r8;
+        java.util.Iterator $r3;
+        java.lang.Object $r4, $r6;
+        boolean $z0;
+        int $i0;
+        java.lang.String $r7;
+
+        $r0 := @parameter0: java.util.Map;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r1 = interfaceinvoke $r0.<java.util.Map: java.util.Set keySet()>();
+        $r3 = interfaceinvoke $r1.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label3;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $i0 = virtualinvoke $r2.<java.lang.StringBuilder: int length()>();
+        if $i0 == 0 goto label1;
+
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(38);
+
+     label1:
+        $r6 = interfaceinvoke $r0.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+        if $r6 != null goto label2;
+
+        $r6 = "";
+
+     label2:
+        $r7 = virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>();
+        $r7 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r7, "UTF-8");
+        $r8 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r7 = virtualinvoke $r6.<java.lang.Object: java.lang.String toString()>();
+        $r7 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r7, "UTF-8");
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        goto label0;
+
+     label3:
+        $r7 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r7;
+    }
+
+    public static void a(java.util.Map, java.net.URL, java.lang.String)
+    {
+        java.util.Map $r0;
+        java.net.URL $r1;
+        java.lang.String $r2, $r3;
+        com.facebook.a.c.j $r4;
+        com.facebook.a.c.d $r5;
+        com.facebook.a.c.a $r6;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 := @parameter1: java.net.URL;
+        $r2 := @parameter2: java.lang.String;
+        if $r2 != "application/json" goto label1;
+
+        $r3 = staticinvoke <com.facebook.a.c.e: java.lang.String b(java.util.Map)>($r0);
+
+     label0:
+        staticinvoke <com.facebook.a.a: com.facebook.a.a.b a()>();
+        $r4 = new com.facebook.a.c.j;
+        specialinvoke $r4.<com.facebook.a.c.j: void <init>()>();
+        $r5 = new com.facebook.a.c.d;
+        specialinvoke $r5.<com.facebook.a.c.d: void <init>(com.facebook.a.c.c)>($r4);
+        $r6 = new com.facebook.a.c.a;
+        specialinvoke $r6.<com.facebook.a.c.a: void <init>()>();
+        virtualinvoke $r5.<com.facebook.a.c.d: void a(java.net.URL,java.lang.String,com.facebook.a.c.a,java.lang.String)>($r1, $r3, $r6, $r2);
+        return;
+
+     label1:
+        $r3 = staticinvoke <com.facebook.a.c.e: java.lang.String a(java.util.Map)>($r0);
+        goto label0;
+    }
+
+    private static java.lang.String b(java.util.Map)
+    {
+        java.util.Map $r0;
+        org.json.JSONObject $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 = new org.json.JSONObject;
+        specialinvoke $r1.<org.json.JSONObject: void <init>(java.util.Map)>($r0);
+        $r2 = virtualinvoke $r1.<org.json.JSONObject: java.lang.String toString()>();
+        return $r2;
+    }
+}

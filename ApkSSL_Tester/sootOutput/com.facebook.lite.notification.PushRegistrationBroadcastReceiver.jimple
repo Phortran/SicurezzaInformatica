@@ -1,0 +1,61 @@
+public class com.facebook.lite.notification.PushRegistrationBroadcastReceiver extends android.content.BroadcastReceiver
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/notification/PushRegistrationBroadcastReceiver";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.notification.PushRegistrationBroadcastReceiver: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.notification.PushRegistrationBroadcastReceiver $r0;
+
+        $r0 := @this: com.facebook.lite.notification.PushRegistrationBroadcastReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    static java.lang.String a()
+    {
+        java.lang.String $r0;
+
+        $r0 = <com.facebook.lite.notification.PushRegistrationBroadcastReceiver: java.lang.String a>;
+        return $r0;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.lite.notification.PushRegistrationBroadcastReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3;
+        android.os.Handler $r5;
+        com.facebook.lite.notification.a $r6;
+
+        $r0 := @this: com.facebook.lite.notification.PushRegistrationBroadcastReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        if $r1 != null goto label1;
+
+        $r3 = <com.facebook.lite.notification.PushRegistrationBroadcastReceiver: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r3, "push/fail to register GCM push token. context null.");
+
+     label0:
+        return;
+
+     label1:
+        $r5 = new android.os.Handler;
+        specialinvoke $r5.<android.os.Handler: void <init>()>();
+        $r6 = new com.facebook.lite.notification.a;
+        specialinvoke $r6.<com.facebook.lite.notification.a: void <init>(com.facebook.lite.notification.PushRegistrationBroadcastReceiver,android.content.Context)>($r0, $r1);
+        virtualinvoke $r5.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r6, 5000L);
+        goto label0;
+    }
+}

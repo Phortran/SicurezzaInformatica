@@ -1,0 +1,113 @@
+public final class com.facebook.rti.b.a.f.a.a.e extends java.lang.Object implements com.facebook.rti.b.a.f.a.a.f
+{
+    private final com.facebook.rti.b.a.f.a.b.d a;
+    private final java.net.Socket b;
+    private final byte[] c;
+    private final java.lang.String d;
+    private final int e;
+    private boolean f;
+    private boolean g;
+
+    public void <init>(com.facebook.rti.b.a.f.a.b.d)
+    {
+        com.facebook.rti.b.a.f.a.a.e $r0;
+        com.facebook.rti.b.a.f.a.b.d $r1;
+        java.net.Socket $r2;
+        byte[] $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a.e;
+        $r1 := @parameter0: com.facebook.rti.b.a.f.a.b.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.net.Socket;
+        specialinvoke $r2.<java.net.Socket: void <init>()>();
+        $r0.<com.facebook.rti.b.a.f.a.a.e: java.net.Socket b> = $r2;
+        $r3 = newarray (byte)[4];
+        $r0.<com.facebook.rti.b.a.f.a.a.e: byte[] c> = $r3;
+        $r0.<com.facebook.rti.b.a.f.a.a.e: java.lang.String d> = "dummy_host";
+        $r0.<com.facebook.rti.b.a.f.a.a.e: int e> = 443;
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean f> = 0;
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean g> = 0;
+        $r0.<com.facebook.rti.b.a.f.a.a.e: com.facebook.rti.b.a.f.a.b.d a> = $r1;
+        return;
+    }
+
+    public final boolean a()
+    {
+        com.facebook.rti.b.a.f.a.a.e $r0;
+        boolean $z0, $z3;
+        java.net.Socket $r2;
+        byte[] $r3;
+        java.lang.Throwable $r4, $r6;
+        com.facebook.rti.b.a.f.a.d $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.a.e;
+        entermonitor $r0;
+
+     label0:
+        $z0 = staticinvoke <com.facebook.rti.b.a.f.a.b.d: boolean a()>();
+        if $z0 == 0 goto label1;
+
+        $z3 = $r0.<com.facebook.rti.b.a.f.a.a.e: boolean f>;
+        if $z3 == 0 goto label5;
+
+     label1:
+        if $z0 == 0 goto label4;
+
+        $z3 = $r0.<com.facebook.rti.b.a.f.a.a.e: boolean g>;
+
+     label2:
+        if $z3 == 0 goto label4;
+
+        $z0 = 1;
+
+     label3:
+        exitmonitor $r0;
+        return $z0;
+
+     label4:
+        $z0 = 0;
+        goto label3;
+
+     label5:
+        $r2 = $r0.<com.facebook.rti.b.a.f.a.a.e: java.net.Socket b>;
+        $r3 = $r0.<com.facebook.rti.b.a.f.a.a.e: byte[] c>;
+
+     label6:
+        staticinvoke <com.facebook.rti.b.a.f.a.b.d: void a(java.net.Socket,byte[],java.lang.String,int)>($r2, $r3, "dummy_host", 443);
+
+     label7:
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean g> = 1;
+
+     label8:
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean f> = 1;
+
+     label9:
+        goto label3;
+
+     label10:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+     label11:
+        $r5 := @caughtexception;
+
+     label12:
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean f> = 1;
+        $z0 = 0;
+        goto label3;
+
+     label13:
+        $r6 := @caughtexception;
+        $r0.<com.facebook.rti.b.a.f.a.a.e: boolean f> = 1;
+
+     label14:
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label10;
+        catch com.facebook.rti.b.a.f.a.d from label6 to label7 with label11;
+        catch java.lang.Throwable from label5 to label8 with label13;
+        catch java.lang.Throwable from label8 to label9 with label10;
+        catch java.lang.Throwable from label12 to label14 with label10;
+    }
+}

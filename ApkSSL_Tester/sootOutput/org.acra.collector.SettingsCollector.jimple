@@ -1,0 +1,316 @@
+final class org.acra.collector.SettingsCollector extends java.lang.Object
+{
+
+    void <init>()
+    {
+        org.acra.collector.SettingsCollector $r0;
+
+        $r0 := @this: org.acra.collector.SettingsCollector;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String collectGlobalSettings(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i1, $i3;
+        java.lang.reflect.Field[] $r1;
+        java.lang.String $r2, $r14;
+        java.lang.Object[] $r4;
+        android.content.ContentResolver $r5;
+        java.lang.StringBuilder $r6, $r12;
+        java.lang.Class $r7;
+        java.lang.Class[] $r8;
+        java.lang.reflect.Method $r9;
+        java.lang.reflect.Field $r10;
+        boolean $z0;
+        java.lang.Object $r11;
+        java.lang.IllegalArgumentException $r13;
+        java.lang.IllegalAccessException $r15;
+        java.lang.ClassNotFoundException $r16;
+        java.lang.SecurityException $r17;
+        java.lang.NoSuchMethodException $r18;
+        java.lang.reflect.InvocationTargetException $r19;
+
+        $r0 := @parameter0: android.content.Context;
+        $i1 = staticinvoke <org.acra.collector.Compatibility: int getAPILevel()>();
+        if $i1 >= 17 goto label0;
+
+        return "";
+
+     label0:
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+
+     label1:
+        $r7 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.provider.Settings$Global");
+        $r1 = virtualinvoke $r7.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $r8 = newarray (java.lang.Class)[2];
+        $r8[0] = class "android/content/ContentResolver";
+        $r8[1] = class "java/lang/String";
+        $r9 = virtualinvoke $r7.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getString", $r8);
+        $i1 = lengthof $r1;
+        $i3 = 0;
+
+     label2:
+        if $i3 >= $i1 goto label5;
+
+        $r10 = $r1[$i3];
+        $z0 = virtualinvoke $r10.<java.lang.reflect.Field: boolean isAnnotationPresent(java.lang.Class)>(class "java/lang/Deprecated");
+        if $z0 != 0 goto label3;
+
+        $r7 = virtualinvoke $r10.<java.lang.reflect.Field: java.lang.Class getType()>();
+        if $r7 != class "java/lang/String" goto label3;
+
+        $z0 = staticinvoke <org.acra.collector.SettingsCollector: boolean isAuthorized(java.lang.reflect.Field)>($r10);
+        if $z0 == 0 goto label3;
+
+        $r4 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r4[0] = $r5;
+        $r11 = virtualinvoke $r10.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(null);
+        $r2 = (java.lang.String) $r11;
+        $r4[1] = $r2;
+        $r11 = virtualinvoke $r9.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r4);
+        if $r11 == null goto label3;
+
+        $r2 = virtualinvoke $r10.<java.lang.reflect.Field: java.lang.String getName()>();
+        $r12 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
+        virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label3:
+        $i3 = $i3 + 1;
+        goto label2;
+
+     label4:
+        $r13 := @caughtexception;
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "Error : ", $r13);
+
+     label5:
+        $r14 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r14;
+
+     label6:
+        $r15 := @caughtexception;
+        $r14 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r14, "Error : ", $r15);
+        goto label5;
+
+     label7:
+        $r16 := @caughtexception;
+        $r14 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r14, "Error : ", $r16);
+        goto label5;
+
+     label8:
+        $r17 := @caughtexception;
+        $r14 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r14, "Error : ", $r17);
+        goto label5;
+
+     label9:
+        $r18 := @caughtexception;
+        $r14 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r14, "Error : ", $r18);
+        goto label5;
+
+     label10:
+        $r19 := @caughtexception;
+        $r14 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r14, "Error : ", $r19);
+        goto label5;
+
+        catch java.lang.IllegalArgumentException from label1 to label3 with label4;
+        catch java.lang.IllegalAccessException from label1 to label3 with label6;
+        catch java.lang.ClassNotFoundException from label1 to label3 with label7;
+        catch java.lang.SecurityException from label1 to label3 with label8;
+        catch java.lang.NoSuchMethodException from label1 to label3 with label9;
+        catch java.lang.reflect.InvocationTargetException from label1 to label3 with label10;
+    }
+
+    public static java.lang.String collectSecureSettings(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.Class $r1, $r5;
+        int $i0, $i1;
+        java.lang.StringBuilder $r2, $r10;
+        java.lang.reflect.Field[] $r3;
+        java.lang.reflect.Field $r4;
+        boolean $z0;
+        android.content.ContentResolver $r6;
+        java.lang.Object $r7;
+        java.lang.String $r8, $r9;
+        java.lang.IllegalArgumentException $r11;
+        java.lang.IllegalAccessException $r12;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "android/provider/Settings$Secure";
+        $r3 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $i1 = lengthof $r3;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label5;
+
+        $r4 = $r3[$i0];
+        $z0 = virtualinvoke $r4.<java.lang.reflect.Field: boolean isAnnotationPresent(java.lang.Class)>(class "java/lang/Deprecated");
+        if $z0 != 0 goto label2;
+
+        $r5 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.Class getType()>();
+        if $r5 != class "java/lang/String" goto label2;
+
+        $z0 = staticinvoke <org.acra.collector.SettingsCollector: boolean isAuthorized(java.lang.reflect.Field)>($r4);
+        if $z0 == 0 goto label2;
+
+     label1:
+        $r6 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r7 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(null);
+        $r8 = (java.lang.String) $r7;
+        $r8 = staticinvoke <android.provider.Settings$Secure: java.lang.String getString(android.content.ContentResolver,java.lang.String)>($r6, $r8);
+        if $r8 == null goto label2;
+
+        $r9 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.String getName()>();
+        $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label2:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        $r11 := @caughtexception;
+        $r9 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, "Error : ", $r11);
+        goto label2;
+
+     label4:
+        $r12 := @caughtexception;
+        $r9 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, "Error : ", $r12);
+        goto label2;
+
+     label5:
+        $r9 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r9;
+
+        catch java.lang.IllegalArgumentException from label1 to label2 with label3;
+        catch java.lang.IllegalAccessException from label1 to label2 with label4;
+    }
+
+    public static java.lang.String collectSystemSettings(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.Class $r1, $r5;
+        int $i0, $i1;
+        java.lang.StringBuilder $r2, $r10;
+        java.lang.reflect.Field[] $r3;
+        java.lang.reflect.Field $r4;
+        boolean $z0;
+        android.content.ContentResolver $r6;
+        java.lang.Object $r7;
+        java.lang.String $r8, $r9;
+        java.lang.IllegalArgumentException $r11;
+        java.lang.IllegalAccessException $r12;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "android/provider/Settings$System";
+        $r3 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $i1 = lengthof $r3;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label5;
+
+        $r4 = $r3[$i0];
+        $z0 = virtualinvoke $r4.<java.lang.reflect.Field: boolean isAnnotationPresent(java.lang.Class)>(class "java/lang/Deprecated");
+        if $z0 != 0 goto label2;
+
+        $r5 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.Class getType()>();
+        if $r5 != class "java/lang/String" goto label2;
+
+     label1:
+        $r6 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r7 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(null);
+        $r8 = (java.lang.String) $r7;
+        $r8 = staticinvoke <android.provider.Settings$System: java.lang.String getString(android.content.ContentResolver,java.lang.String)>($r6, $r8);
+        if $r8 == null goto label2;
+
+        $r9 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.String getName()>();
+        $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label2:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        $r11 := @caughtexception;
+        $r9 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, "Error : ", $r11);
+        goto label2;
+
+     label4:
+        $r12 := @caughtexception;
+        $r9 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r9, "Error : ", $r12);
+        goto label2;
+
+     label5:
+        $r9 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r9;
+
+        catch java.lang.IllegalArgumentException from label1 to label2 with label3;
+        catch java.lang.IllegalAccessException from label1 to label2 with label4;
+    }
+
+    private static boolean isAuthorized(java.lang.reflect.Field)
+    {
+        java.lang.reflect.Field $r0;
+        java.lang.String $r1, $r2;
+        int $i1, $i2;
+        boolean $z0;
+        org.acra.ACRAConfiguration $r3;
+        java.lang.String[] $r4;
+
+        $r0 := @parameter0: java.lang.reflect.Field;
+        if $r0 == null goto label0;
+
+        $r1 = virtualinvoke $r0.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean startsWith(java.lang.String)>("WIFI_AP");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r3 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r4 = virtualinvoke $r3.<org.acra.ACRAConfiguration: java.lang.String[] excludeMatchingSettingsKeys()>();
+        $i1 = lengthof $r4;
+        $i2 = 0;
+
+     label2:
+        if $i2 >= $i1 goto label3;
+
+        $r2 = $r4[$i2];
+        $r1 = virtualinvoke $r0.<java.lang.reflect.Field: java.lang.String getName()>();
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean matches(java.lang.String)>($r2);
+        if $z0 != 0 goto label0;
+
+        $i2 = $i2 + 1;
+        goto label2;
+
+     label3:
+        return 1;
+    }
+}

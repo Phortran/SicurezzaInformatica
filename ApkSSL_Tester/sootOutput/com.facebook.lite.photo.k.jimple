@@ -1,0 +1,74 @@
+final class com.facebook.lite.photo.k extends com.facebook.lite.a.i
+{
+    final com.facebook.lite.photo.j a;
+
+    void <init>(com.facebook.lite.photo.j, int)
+    {
+        com.facebook.lite.photo.k $r0;
+        com.facebook.lite.photo.j $r1;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.photo.k;
+        $r1 := @parameter0: com.facebook.lite.photo.j;
+        $i0 := @parameter1: int;
+        $r0.<com.facebook.lite.photo.k: com.facebook.lite.photo.j a> = $r1;
+        specialinvoke $r0.<com.facebook.lite.a.i: void <init>(int)>($i0);
+        return;
+    }
+
+    private static int a(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i2;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 12 goto label0;
+
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getByteCount()>();
+        return $i0;
+
+     label0:
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getRowBytes()>();
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i0 = $i0 * $i2;
+        return $i0;
+    }
+
+    private static void b(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        virtualinvoke $r0.<android.graphics.Bitmap: void recycle()>();
+        staticinvoke <com.facebook.lite.photo.j: java.lang.String a()>();
+        return;
+    }
+
+    protected final void c(java.lang.Object)
+    {
+        com.facebook.lite.photo.k $r0;
+        java.lang.Object $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.k;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        staticinvoke <com.facebook.lite.photo.k: void b(android.graphics.Bitmap)>($r2);
+        return;
+    }
+
+    protected final int d(java.lang.Object)
+    {
+        com.facebook.lite.photo.k $r0;
+        java.lang.Object $r1;
+        int $i0;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.k;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        $i0 = staticinvoke <com.facebook.lite.photo.k: int a(android.graphics.Bitmap)>($r2);
+        return $i0;
+    }
+}

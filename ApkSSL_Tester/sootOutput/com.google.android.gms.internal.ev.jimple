@@ -1,0 +1,159 @@
+public abstract class com.google.android.gms.internal.ev extends java.lang.Object
+{
+    private java.lang.Object a;
+    final com.google.android.gms.internal.de b;
+    private boolean c;
+
+    public void <init>(com.google.android.gms.internal.de, java.lang.Object)
+    {
+        com.google.android.gms.internal.ev $r0;
+        com.google.android.gms.internal.de $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: com.google.android.gms.internal.ev;
+        $r1 := @parameter0: com.google.android.gms.internal.de;
+        $r2 := @parameter1: java.lang.Object;
+        $r0.<com.google.android.gms.internal.ev: com.google.android.gms.internal.de b> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.ev: java.lang.Object a> = $r2;
+        $r0.<com.google.android.gms.internal.ev: boolean c> = 0;
+        return;
+    }
+
+    protected abstract void a();
+
+    protected abstract void a(java.lang.Object);
+
+    public void b()
+    {
+        com.google.android.gms.internal.ev $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        java.lang.Throwable $r5, $r7;
+        java.lang.RuntimeException $r6;
+
+        $r0 := @this: com.google.android.gms.internal.ev;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.google.android.gms.internal.ev: java.lang.Object a>;
+        $z0 = $r0.<com.google.android.gms.internal.ev: boolean c>;
+        if $z0 == 0 goto label1;
+
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Callback proxy ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" being reused. This is not safe.");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("GmsClient", $r3);
+
+     label1:
+        exitmonitor $r0;
+
+     label2:
+        if $r1 == null goto label11;
+
+     label3:
+        virtualinvoke $r0.<com.google.android.gms.internal.ev: void a(java.lang.Object)>($r1);
+
+     label4:
+        entermonitor $r0;
+
+     label5:
+        $r0.<com.google.android.gms.internal.ev: boolean c> = 1;
+        exitmonitor $r0;
+
+     label6:
+        virtualinvoke $r0.<com.google.android.gms.internal.ev: void c()>();
+        return;
+
+     label7:
+        $r5 := @caughtexception;
+
+     label8:
+        exitmonitor $r0;
+
+     label9:
+        throw $r5;
+
+     label10:
+        $r6 := @caughtexception;
+        virtualinvoke $r0.<com.google.android.gms.internal.ev: void a()>();
+        throw $r6;
+
+     label11:
+        virtualinvoke $r0.<com.google.android.gms.internal.ev: void a()>();
+        goto label4;
+
+     label12:
+        $r7 := @caughtexception;
+
+     label13:
+        exitmonitor $r0;
+
+     label14:
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label2 with label7;
+        catch java.lang.RuntimeException from label3 to label4 with label10;
+        catch java.lang.Throwable from label5 to label6 with label12;
+        catch java.lang.Throwable from label8 to label9 with label7;
+        catch java.lang.Throwable from label13 to label14 with label12;
+    }
+
+    public void c()
+    {
+        com.google.android.gms.internal.ev $r0;
+        com.google.android.gms.internal.de $r1;
+        java.util.ArrayList $r2, $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.google.android.gms.internal.ev;
+        virtualinvoke $r0.<com.google.android.gms.internal.ev: void d()>();
+        $r1 = $r0.<com.google.android.gms.internal.ev: com.google.android.gms.internal.de b>;
+        $r2 = staticinvoke <com.google.android.gms.internal.de: java.util.ArrayList c(com.google.android.gms.internal.de)>($r1);
+        entermonitor $r2;
+
+     label0:
+        $r1 = $r0.<com.google.android.gms.internal.ev: com.google.android.gms.internal.de b>;
+        $r3 = staticinvoke <com.google.android.gms.internal.de: java.util.ArrayList c(com.google.android.gms.internal.de)>($r1);
+        virtualinvoke $r3.<java.util.ArrayList: boolean remove(java.lang.Object)>($r0);
+        exitmonitor $r2;
+        return;
+
+     label1:
+        $r4 := @caughtexception;
+        exitmonitor $r2;
+
+     label2:
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label2 with label1;
+    }
+
+    public void d()
+    {
+        com.google.android.gms.internal.ev $r0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.google.android.gms.internal.ev;
+        entermonitor $r0;
+
+     label0:
+        $r0.<com.google.android.gms.internal.ev: java.lang.Object a> = null;
+        exitmonitor $r0;
+        return;
+
+     label1:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+
+     label2:
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label2 with label1;
+    }
+}

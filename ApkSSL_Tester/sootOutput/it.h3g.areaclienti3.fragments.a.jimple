@@ -1,0 +1,816 @@
+public abstract class it.h3g.areaclienti3.fragments.a extends android.support.v4.app.Fragment
+{
+    private static final java.lang.String TAG;
+    private android.support.v4.app.n fm;
+    private android.widget.FrameLayout frameLayout;
+    protected it.h3g.areaclienti3.fragments.b mCache;
+    protected android.content.Context mContext;
+    protected java.lang.String mDataFragment;
+    protected it.h3g.areaclienti3.fragments.c mDialog;
+    public it.h3g.areaclienti3.fragments.d mService;
+    protected it.h3g.areaclienti3.customview.TimestampCustom mTimeStamp;
+    protected it.h3g.areaclienti3.fragments.e mUtilityInteface;
+    protected it.h3g.areaclienti3.j.m mUtils;
+    protected it.h3g.areaclienti3.j.p mUtilsService;
+    protected it.h3g.areaclienti3.j.l myPreferences;
+    private it.h3g.areaclienti3.customview.ViewPagerCustom pagerCustom;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.TimestampCustom mTimeStamp> = null;
+        $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment> = null;
+        return;
+    }
+
+    public void collapseAnimation(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.j.c $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.view.View;
+        $r2 = new it.h3g.areaclienti3.j.c;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.c: void <init>(android.view.View,boolean)>($r1, 0);
+        virtualinvoke $r1.<android.view.View: void startAnimation(android.view.animation.Animation)>($r2);
+        return;
+    }
+
+    public void expandAnimation(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.j.c $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.view.View;
+        $r2 = new it.h3g.areaclienti3.j.c;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.c: void <init>(android.view.View,boolean)>($r1, 1);
+        virtualinvoke $r1.<android.view.View: void startAnimation(android.view.animation.Animation)>($r2);
+        return;
+    }
+
+    public void finishFragment()
+    {
+        it.h3g.areaclienti3.fragments.a $r0, $r7;
+        android.view.View $r1;
+        android.content.Context $r2;
+        android.content.res.Resources $r3;
+        android.os.IBinder $r4;
+        android.support.v4.app.n $r5;
+        int $i0;
+        android.support.v4.app.Fragment $r6;
+        android.support.v4.app.y $r8;
+        java.lang.String $r9, $r10;
+        it.h3g.areaclienti3.fragments.e $r11;
+        java.lang.Exception $r12, $r13;
+        android.widget.FrameLayout $r14;
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.view.View getView()>();
+        if $r1 == null goto label0;
+
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.view.View getView()>();
+        $r4 = virtualinvoke $r1.<android.view.View: android.os.IBinder getWindowToken()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: android.content.Context mContext>;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.os.IBinder,android.content.Context)>($r4, $r2);
+
+     label0:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $i0 = virtualinvoke $r5.<android.support.v4.app.n: int d()>();
+        if $i0 <= 0 goto label9;
+
+     label1:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        virtualinvoke $r5.<android.support.v4.app.n: boolean b()>();
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        virtualinvoke $r5.<android.support.v4.app.n: boolean c()>();
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $i0 = virtualinvoke $r5.<android.support.v4.app.n: int d()>();
+        if $i0 <= 0 goto label8;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $r6 = virtualinvoke $r5.<android.support.v4.app.n: android.support.v4.app.Fragment a(int)>(2131165251);
+        $r7 = (it.h3g.areaclienti3.fragments.a) $r6;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $r8 = virtualinvoke $r5.<android.support.v4.app.n: android.support.v4.app.y a()>();
+        virtualinvoke $r8.<android.support.v4.app.y: android.support.v4.app.y c(android.support.v4.app.Fragment)>($r7);
+        virtualinvoke $r8.<android.support.v4.app.y: int a()>();
+
+     label3:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.content.res.Resources getResources()>();
+        $i0 = virtualinvoke $r7.<it.h3g.areaclienti3.fragments.a: int getNameMenuResId()>();
+        $r10 = virtualinvoke $r3.<android.content.res.Resources: java.lang.String getString(int)>($i0);
+
+     label4:
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.e mUtilityInteface>;
+        interfaceinvoke $r11.<it.h3g.areaclienti3.fragments.e: void e(java.lang.String)>($r10);
+
+     label5:
+        return;
+
+     label6:
+        $r12 := @caughtexception;
+        $r9 = virtualinvoke $r12.<java.lang.Exception: java.lang.String getMessage()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Base Fragment", $r9);
+        goto label2;
+
+     label7:
+        $r13 := @caughtexception;
+        virtualinvoke $r13.<java.lang.Exception: void printStackTrace()>();
+        $r10 = "";
+        goto label4;
+
+     label8:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $i0 = virtualinvoke $r5.<android.support.v4.app.n: int d()>();
+        if $i0 != 0 goto label5;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        if $r14 == null goto label5;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        $i0 = virtualinvoke $r14.<android.widget.FrameLayout: int getVisibility()>();
+        if $i0 != 0 goto label5;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        virtualinvoke $r14.<android.widget.FrameLayout: void setVisibility(int)>(8);
+        $r15 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.ViewPagerCustom pagerCustom>;
+        virtualinvoke $r15.<it.h3g.areaclienti3.customview.ViewPagerCustom: void setVisibility(int)>(0);
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.e mUtilityInteface>;
+        interfaceinvoke $r11.<it.h3g.areaclienti3.fragments.e: void s()>();
+        goto label5;
+
+     label9:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", "error while finish fragment in a empty stack");
+        goto label5;
+
+        catch java.lang.Exception from label1 to label2 with label6;
+        catch java.lang.Exception from label3 to label4 with label7;
+    }
+
+    protected void finishFragment(int)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        int $i0, $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $i0 := @parameter0: int;
+        $i1 = 0;
+
+     label0:
+        if $i1 < $i0 goto label1;
+
+        return;
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: void finishFragment()>();
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+
+    public void getBannerPiccolo(int)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        int $i0;
+        android.view.View $r2;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r4;
+        android.os.Bundle $r5;
+        it.h3g.areaclienti3.fragments.d $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $i0 := @parameter0: int;
+        if $i0 == -1 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", "Start CALL_BANNER_PICCOLO_ACTION");
+
+     label0:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.view.View getView()>();
+        $r2 = virtualinvoke $r2.<android.view.View: android.view.View findViewById(int)>(2131165203);
+        $r4 = (it.h3g.areaclienti3.customview.banner.BannerSwipe) $r2;
+        virtualinvoke $r4.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void setVisibility(int)>(8);
+        virtualinvoke $r4.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void a()>();
+
+     label1:
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r5.<android.os.Bundle: void putInt(java.lang.String,int)>("sectionId", $i0);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r6.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle)>("callBannerPiccoloAction", $r5);
+
+     label2:
+        return;
+
+     label3:
+        $r7 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public abstract int getNameMenuResId();
+
+    public abstract int getResourceIcon();
+
+    public android.os.Bundle getSavedInstance()
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        it.h3g.areaclienti3.cache.b $r1;
+        java.lang.String $r2;
+        android.os.Bundle $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 = new it.h3g.areaclienti3.cache.b;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment>;
+        specialinvoke $r1.<it.h3g.areaclienti3.cache.b: void <init>(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.cache.b: android.os.Bundle a()>();
+        return $r3;
+    }
+
+    public abstract int getSectionId();
+
+    public boolean handleSavedInstance()
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.os.Bundle $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment>;
+        if $r1 == null goto label0;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.os.Bundle getSavedInstance()>();
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: boolean isAdded()>();
+        if $z0 == 0 goto label0;
+
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r2);
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: void handlerFragment(android.os.Bundle)>($r2);
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public abstract void handlerFragment(android.os.Bundle);
+
+    public boolean hasSaveInstanceState()
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment>;
+        if $r1 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public void init(android.content.Context)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.m $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+        it.h3g.areaclienti3.j.l $r6;
+        it.h3g.areaclienti3.j.p $r7;
+        it.h3g.areaclienti3.fragments.d $r8;
+        it.h3g.areaclienti3.fragments.c $r9;
+        it.h3g.areaclienti3.fragments.b $r10;
+        it.h3g.areaclienti3.fragments.e $r11;
+        java.lang.ClassCastException $r12, $r14, $r15, $r16;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.content.Context;
+        $r3 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r3.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.j.m mUtils> = $r3;
+        $r7 = new it.h3g.areaclienti3.j.p;
+        specialinvoke $r7.<it.h3g.areaclienti3.j.p: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.j.p mUtilsService> = $r7;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.j.l myPreferences>;
+        if $r6 != null goto label0;
+
+        $r6 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.j.l myPreferences> = $r6;
+
+     label0:
+        $r8 = (it.h3g.areaclienti3.fragments.d) $r1;
+
+     label1:
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.d mService> = $r8;
+
+     label2:
+        $r9 = (it.h3g.areaclienti3.fragments.c) $r1;
+
+     label3:
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.c mDialog> = $r9;
+
+     label4:
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.b mCache>;
+        if $r10 != null goto label7;
+
+     label5:
+        $r10 = (it.h3g.areaclienti3.fragments.b) $r1;
+
+     label6:
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.b mCache> = $r10;
+
+     label7:
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.e mUtilityInteface>;
+        if $r11 != null goto label10;
+
+     label8:
+        $r11 = (it.h3g.areaclienti3.fragments.e) $r1;
+
+     label9:
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.e mUtilityInteface> = $r11;
+
+     label10:
+        return;
+
+     label11:
+        $r12 := @caughtexception;
+        $r4 = new java.lang.StringBuilder;
+        $r5 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" must implement OnStartActionListener");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", $r5);
+        goto label2;
+
+     label12:
+        $r14 := @caughtexception;
+        $r4 = new java.lang.StringBuilder;
+        $r5 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" must implement OnShowDialogListener");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", $r5);
+        goto label4;
+
+     label13:
+        $r15 := @caughtexception;
+        $r4 = new java.lang.StringBuilder;
+        $r5 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" must implement OnCacheListener");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", $r5);
+        goto label7;
+
+     label14:
+        $r16 := @caughtexception;
+        $r4 = new java.lang.StringBuilder;
+        $r5 = virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>();
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" must implement OnCacheListener");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", $r5);
+        goto label10;
+
+        catch java.lang.ClassCastException from label0 to label1 with label11;
+        catch java.lang.ClassCastException from label2 to label3 with label12;
+        catch java.lang.ClassCastException from label5 to label6 with label13;
+        catch java.lang.ClassCastException from label8 to label9 with label14;
+    }
+
+    public void onActivityCreated(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        android.support.v4.app.h $r2;
+        android.support.v4.app.n $r3;
+        android.view.View $r4;
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r5;
+        android.widget.FrameLayout $r6;
+        java.lang.String $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.h getActivity()>();
+        $r3 = virtualinvoke $r2.<android.support.v4.app.h: android.support.v4.app.n e()>();
+        $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm> = $r3;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.h getActivity()>();
+        $r4 = virtualinvoke $r2.<android.support.v4.app.h: android.view.View findViewById(int)>(2131165252);
+        $r5 = (it.h3g.areaclienti3.customview.ViewPagerCustom) $r4;
+        $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.ViewPagerCustom pagerCustom> = $r5;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.h getActivity()>();
+        $r4 = virtualinvoke $r2.<android.support.v4.app.h: android.view.View findViewById(int)>(2131165251);
+        $r6 = (android.widget.FrameLayout) $r4;
+        $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout> = $r6;
+        if $r1 == null goto label0;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("mData");
+        $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment> = $r7;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: boolean handleSavedInstance()>();
+
+     label0:
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onActivityCreated(android.os.Bundle)>($r1);
+        return;
+    }
+
+    public void onAttach(android.app.Activity)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.app.Activity $r1;
+        it.h3g.areaclienti3.j.k $r2;
+        android.content.res.Resources $r3;
+        int $i0;
+        java.lang.String $r4, $r5;
+        it.h3g.areaclienti3.fragments.e $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.app.Activity;
+        $r0.<it.h3g.areaclienti3.fragments.a: android.content.Context mContext> = $r1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: void init(android.content.Context)>($r1);
+        $r2 = new it.h3g.areaclienti3.j.k;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r1);
+        virtualinvoke $r2.<it.h3g.areaclienti3.j.k: void f()>();
+        staticinvoke <it.h3g.areaclienti3.c.a: void a(android.app.Activity)>($r1);
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onAttach(android.app.Activity)>($r1);
+        $r4 = "";
+
+     label0:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.content.res.Resources getResources()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: int getNameMenuResId()>();
+        $r5 = virtualinvoke $r3.<android.content.res.Resources: java.lang.String getString(int)>($i0);
+
+     label1:
+        $r4 = $r5;
+
+     label2:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.fragments.e mUtilityInteface>;
+        interfaceinvoke $r6.<it.h3g.areaclienti3.fragments.e: void e(java.lang.String)>($r4);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", "onAttach");
+        return;
+
+     label3:
+        $r7 := @caughtexception;
+        virtualinvoke $r7.<java.lang.Exception: void printStackTrace()>();
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public void onBannerPiccoloResults(android.os.Bundle, android.view.View, int)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        android.view.View $r2;
+        int $i0, $i1;
+        java.util.ArrayList $r5;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r6;
+        boolean $z0;
+        java.io.Serializable $r7;
+        it.h3g.areaclienti3.d.j $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 := @parameter1: android.view.View;
+        $i0 := @parameter2: int;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", "onBannerPiccoloResults");
+        $r2 = virtualinvoke $r2.<android.view.View: android.view.View findViewById(int)>(2131165203);
+        $r6 = (it.h3g.areaclienti3.customview.banner.BannerSwipe) $r2;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void a()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void b()>();
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("result");
+        $r8 = (it.h3g.areaclienti3.d.j) $r7;
+        $r5 = virtualinvoke $r8.<it.h3g.areaclienti3.d.j: java.util.ArrayList c()>();
+        $i1 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        if $i1 <= 0 goto label0;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void a(it.h3g.areaclienti3.d.j,int)>($r8, $i0);
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void setVisibility(int)>(0);
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void a()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.banner.BannerSwipe: void setVisibility(int)>(8);
+        goto label0;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        java.lang.Exception $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onCreate(android.os.Bundle)>($r1);
+
+     label0:
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: void setRetainInstance(boolean)>(1);
+
+     label1:
+        return;
+
+     label2:
+        $r2 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = specialinvoke $r0.<android.support.v4.app.Fragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>($r1, $r2, $r3);
+        return $r4;
+    }
+
+    public void onPause()
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onPause()>();
+        return;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r4;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        java.lang.Exception $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment>;
+        if $r2 == null goto label3;
+
+        $r4 = "";
+
+     label0:
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: int getNameMenuResId()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String getString(int)>($i0);
+
+     label1:
+        $r4 = $r2;
+
+     label2:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("onSaveInstanceState bundle of ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Base Fragment", $r4);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment>;
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mData", $r4);
+
+     label3:
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onSaveInstanceState(android.os.Bundle)>($r1);
+        return;
+
+     label4:
+        $r6 := @caughtexception;
+        virtualinvoke $r6.<java.lang.Exception: void printStackTrace()>();
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label4;
+    }
+
+    public void openNewFragment(android.support.v4.app.Fragment)
+    {
+        it.h3g.areaclienti3.fragments.a $r0, $r9;
+        android.support.v4.app.Fragment $r1, $r2;
+        android.view.View $r3;
+        android.content.Context $r4;
+        android.support.v4.app.y $r5;
+        java.lang.String $r6, $r13, $r15;
+        android.os.IBinder $r7;
+        android.support.v4.app.n $r8;
+        android.support.v4.app.h $r10;
+        int $i1;
+        android.widget.FrameLayout $r11;
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r12;
+        java.lang.StringBuilder $r14;
+        java.lang.Exception $r16, $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.support.v4.app.Fragment;
+
+     label0:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.view.View getView()>();
+        $r7 = virtualinvoke $r3.<android.view.View: android.os.IBinder getWindowToken()>();
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.a: android.content.Context mContext>;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.os.IBinder,android.content.Context)>($r7, $r4);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $r5 = virtualinvoke $r8.<android.support.v4.app.n: android.support.v4.app.y a()>();
+        $r9 = (it.h3g.areaclienti3.fragments.a) $r1;
+        $r10 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.h getActivity()>();
+        staticinvoke <it.h3g.areaclienti3.c.a: void a(it.h3g.areaclienti3.fragments.a,android.content.Context)>($r9, $r10);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $r2 = virtualinvoke $r8.<android.support.v4.app.n: android.support.v4.app.Fragment a(int)>(2131165251);
+        $r9 = (it.h3g.areaclienti3.fragments.a) $r2;
+        virtualinvoke $r5.<android.support.v4.app.y: android.support.v4.app.y a(int,android.support.v4.app.Fragment)>(2131165251, $r1);
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        if $r11 == null goto label1;
+
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        $i1 = virtualinvoke $r11.<android.widget.FrameLayout: int getVisibility()>();
+        if $i1 != 8 goto label1;
+
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.a: android.widget.FrameLayout frameLayout>;
+        virtualinvoke $r11.<android.widget.FrameLayout: void setVisibility(int)>(0);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.ViewPagerCustom pagerCustom>;
+        virtualinvoke $r12.<it.h3g.areaclienti3.customview.ViewPagerCustom: void setVisibility(int)>(8);
+
+     label1:
+        if $r9 == null goto label6;
+
+        virtualinvoke $r5.<android.support.v4.app.y: android.support.v4.app.y b(android.support.v4.app.Fragment)>($r9);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("Fragment Manager - BackStackEntryCount: ");
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $i1 = virtualinvoke $r8.<android.support.v4.app.n: int d()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r6 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", $r6);
+
+     label2:
+        $i1 = virtualinvoke $r9.<it.h3g.areaclienti3.fragments.a: int getNameMenuResId()>();
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String getString(int)>($i1);
+
+     label3:
+        $r13 = $r6;
+
+     label4:
+        $r14 = new java.lang.StringBuilder;
+
+     label5:
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>(java.lang.String)>("Current Fragment: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
+        $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", $r15);
+
+     label6:
+        virtualinvoke $r5.<android.support.v4.app.y: android.support.v4.app.y a(java.lang.String)>(null);
+        virtualinvoke $r5.<android.support.v4.app.y: int a()>();
+
+     label7:
+        return;
+
+     label8:
+        $r16 := @caughtexception;
+        virtualinvoke $r16.<java.lang.Exception: void printStackTrace()>();
+
+     label9:
+        $r13 = "";
+        goto label4;
+
+     label10:
+        $r17 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("Base Fragment", "Exception openNewFragment", $r17);
+        goto label7;
+
+        catch java.lang.Exception from label0 to label2 with label10;
+        catch java.lang.Exception from label2 to label3 with label8;
+        catch java.lang.Exception from label5 to label9 with label10;
+    }
+
+    public void openNewFragmentWithMap(android.support.v4.app.Fragment, android.support.v4.app.Fragment)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.support.v4.app.Fragment $r1, $r2;
+        android.support.v4.app.n $r3;
+        android.support.v4.app.y $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.support.v4.app.Fragment;
+        $r2 := @parameter1: android.support.v4.app.Fragment;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.n fm>;
+        $r4 = virtualinvoke $r3.<android.support.v4.app.n: android.support.v4.app.y a()>();
+        $r4 = virtualinvoke $r4.<android.support.v4.app.y: android.support.v4.app.y a(android.support.v4.app.Fragment)>($r2);
+        virtualinvoke $r4.<android.support.v4.app.y: int a()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: void openNewFragment(android.support.v4.app.Fragment)>($r1);
+        return;
+    }
+
+    public void setSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.cache.b $r2;
+        java.lang.String $r3, $r5;
+        it.h3g.areaclienti3.cache.c $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.cache.b;
+        specialinvoke $r2.<it.h3g.areaclienti3.cache.b: void <init>(android.os.Bundle)>($r1);
+
+     label0:
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.cache.b: java.lang.String b()>();
+
+     label1:
+        $r0.<it.h3g.areaclienti3.fragments.a: java.lang.String mDataFragment> = $r3;
+
+     label2:
+        return;
+
+     label3:
+        $r4 := @caughtexception;
+        $r5 = virtualinvoke $r4.<it.h3g.areaclienti3.cache.c: java.lang.String getMessage()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Base Fragment", $r5);
+        goto label2;
+
+        catch it.h3g.areaclienti3.cache.c from label0 to label1 with label3;
+    }
+
+    public void setUserVisibleHint(boolean)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        boolean $z0;
+        android.support.v4.app.h $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $z0 := @parameter0: boolean;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void setUserVisibleHint(boolean)>($z0);
+        if $z0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.a: android.support.v4.app.h getActivity()>();
+        staticinvoke <it.h3g.areaclienti3.c.a: void a(it.h3g.areaclienti3.fragments.a,android.content.Context)>($r0, $r1);
+
+     label0:
+        return;
+    }
+
+    public void showLastTimestamp(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.a $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.customview.TimestampCustom $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.j.m $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.a;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.TimestampCustom mTimeStamp>;
+        if $r2 == null goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.j.m mUtils>;
+        if $r5 == null goto label0;
+
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label1;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("showLastTimestamp -  action: ");
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Base Fragment", $r4);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.TimestampCustom mTimeStamp>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.customview.TimestampCustom: void a(android.os.Bundle)>($r1);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Base Fragment", "error while show Timestamp");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.a: it.h3g.areaclienti3.customview.TimestampCustom mTimeStamp>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.customview.TimestampCustom: void a()>();
+        goto label0;
+    }
+
+    public abstract void startAction();
+}

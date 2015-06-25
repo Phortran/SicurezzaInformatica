@@ -1,0 +1,2302 @@
+public final class b.b.a extends java.lang.Object
+{
+    private static final b.b.a a;
+    private static final b.b.a b;
+    private int[] c;
+    private long d;
+    private int e;
+    private int f;
+    private int g;
+
+    static void <clinit>()
+    {
+        b.b.a $r0;
+        int[] $r1;
+        byte[] $r2;
+
+        $r0 = new b.b.a;
+        $r1 = newarray (int)[0];
+        specialinvoke $r0.<b.b.a: void <init>(int,int[])>(0, $r1);
+        <b.b.a: b.b.a a> = $r0;
+        $r0 = new b.b.a;
+        $r2 = newarray (byte)[1];
+        $r2[0] = 1;
+        specialinvoke $r0.<b.b.a: void <init>(byte[])>($r2);
+        <b.b.a: b.b.a b> = $r0;
+        $r0 = <b.b.a: b.b.a a>;
+        $r0.<b.b.a: int f> = 0;
+        $r0 = <b.b.a: b.b.a a>;
+        $r0.<b.b.a: int e> = 0;
+        $r0 = <b.b.a: b.b.a b>;
+        $r0.<b.b.a: int f> = 1;
+        $r0 = <b.b.a: b.b.a b>;
+        $r0.<b.b.a: int e> = 1;
+        return;
+    }
+
+    private void <init>()
+    {
+        b.b.a $r0;
+
+        $r0 := @this: b.b.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<b.b.a: long d> = -1L;
+        $r0.<b.b.a: int e> = -1;
+        $r0.<b.b.a: int f> = -1;
+        return;
+    }
+
+    private void <init>(int, int[])
+    {
+        b.b.a $r0;
+        int $i0, $i4;
+        int[] $r1, $r2;
+
+        $r0 := @this: b.b.a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: int[];
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<b.b.a: long d> = -1L;
+        $r0.<b.b.a: int e> = -1;
+        $r0.<b.b.a: int f> = -1;
+        $i4 = lengthof $r1;
+        if $i4 <= 0 goto label4;
+
+        $r0.<b.b.a: int g> = $i0;
+        $i4 = 0;
+
+     label0:
+        $i0 = lengthof $r1;
+        if $i4 >= $i0 goto label1;
+
+        $i0 = $r1[$i4];
+        if $i0 != 0 goto label1;
+
+        $i4 = $i4 + 1;
+        goto label0;
+
+     label1:
+        if $i4 != 0 goto label3;
+
+        $r0.<b.b.a: int[] c> = $r1;
+
+     label2:
+        return;
+
+     label3:
+        $i0 = lengthof $r1;
+        $i0 = $i0 - $i4;
+        $r2 = newarray (int)[$i0];
+        $i0 = lengthof $r2;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r1, $i4, $r2, 0, $i0);
+        $r0.<b.b.a: int[] c> = $r2;
+        $i4 = lengthof $r2;
+        if $i4 != 0 goto label2;
+
+        $r0.<b.b.a: int g> = 0;
+        goto label2;
+
+     label4:
+        $r0.<b.b.a: int[] c> = $r1;
+        $r0.<b.b.a: int g> = 0;
+        goto label2;
+    }
+
+    public void <init>(byte[])
+    {
+        b.b.a $r0;
+        byte[] $r1;
+        int[] $r2;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: byte[];
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<b.b.a: long d> = -1L;
+        $r0.<b.b.a: int e> = -1;
+        $r0.<b.b.a: int f> = -1;
+        $r2 = staticinvoke <b.b.a: int[] a(byte[])>($r1);
+        $r0.<b.b.a: int[] c> = $r2;
+        $r0.<b.b.a: int g> = 1;
+        return;
+    }
+
+    private static int a(int)
+    {
+        int $i0;
+
+        $i0 := @parameter0: int;
+        if $i0 >= 32768 goto label16;
+
+        if $i0 >= 128 goto label8;
+
+        if $i0 >= 8 goto label4;
+
+        if $i0 >= 2 goto label2;
+
+        if $i0 > 0 goto label1;
+
+        if $i0 >= 0 goto label0;
+
+        return 32;
+
+     label0:
+        return 0;
+
+     label1:
+        return 1;
+
+     label2:
+        if $i0 >= 4 goto label3;
+
+        return 2;
+
+     label3:
+        return 3;
+
+     label4:
+        if $i0 >= 32 goto label6;
+
+        if $i0 >= 16 goto label5;
+
+        return 4;
+
+     label5:
+        return 5;
+
+     label6:
+        if $i0 >= 64 goto label7;
+
+        return 6;
+
+     label7:
+        return 7;
+
+     label8:
+        if $i0 >= 2048 goto label12;
+
+        if $i0 >= 512 goto label10;
+
+        if $i0 >= 256 goto label9;
+
+        return 8;
+
+     label9:
+        return 9;
+
+     label10:
+        if $i0 >= 1024 goto label11;
+
+        return 10;
+
+     label11:
+        return 11;
+
+     label12:
+        if $i0 >= 8192 goto label14;
+
+        if $i0 >= 4096 goto label13;
+
+        return 12;
+
+     label13:
+        return 13;
+
+     label14:
+        if $i0 >= 16384 goto label15;
+
+        return 14;
+
+     label15:
+        return 15;
+
+     label16:
+        if $i0 >= 8388608 goto label24;
+
+        if $i0 >= 524288 goto label20;
+
+        if $i0 >= 131072 goto label18;
+
+        if $i0 >= 65536 goto label17;
+
+        return 16;
+
+     label17:
+        return 17;
+
+     label18:
+        if $i0 >= 262144 goto label19;
+
+        return 18;
+
+     label19:
+        return 19;
+
+     label20:
+        if $i0 >= 2097152 goto label22;
+
+        if $i0 >= 1048576 goto label21;
+
+        return 20;
+
+     label21:
+        return 21;
+
+     label22:
+        if $i0 >= 4194304 goto label23;
+
+        return 22;
+
+     label23:
+        return 23;
+
+     label24:
+        if $i0 >= 134217728 goto label28;
+
+        if $i0 >= 33554432 goto label26;
+
+        if $i0 >= 16777216 goto label25;
+
+        return 24;
+
+     label25:
+        return 25;
+
+     label26:
+        if $i0 >= 67108864 goto label27;
+
+        return 26;
+
+     label27:
+        return 27;
+
+     label28:
+        if $i0 >= 536870912 goto label30;
+
+        if $i0 >= 268435456 goto label29;
+
+        return 28;
+
+     label29:
+        return 29;
+
+     label30:
+        if $i0 >= 1073741824 goto label31;
+
+        return 30;
+
+     label31:
+        return 31;
+    }
+
+    private static int a(int, int[], int, int[])
+    {
+        int $i0, $i1, $i2, $i3, $i6, $i7;
+        int[] $r0, $r1;
+
+        $i0 := @parameter0: int;
+        $r0 := @parameter1: int[];
+        $i1 := @parameter2: int;
+        $r1 := @parameter3: int[];
+        $i2 = lengthof $r0;
+        $i3 = lengthof $r1;
+        $i3 = $i2 - $i3;
+        $i2 = $i0 - $i1;
+        $i3 = $i3 - $i2;
+        if $i3 == 0 goto label2;
+
+        if $i3 >= 0 goto label0;
+
+        return -1;
+
+     label0:
+        return 1;
+
+     label1:
+        $i1 = $i1 + 1;
+        $i0 = $i0 + 1;
+
+     label2:
+        $i3 = lengthof $r0;
+        if $i0 >= $i3 goto label4;
+
+        $i3 = $r0[$i0];
+        $i2 = $r1[$i1];
+        if $i3 == $i2 goto label1;
+
+        $i7 = $i3 ^ -2147483648;
+        $i6 = $i2 ^ -2147483648;
+        if $i7 >= $i6 goto label3;
+
+        return -1;
+
+     label3:
+        return 1;
+
+     label4:
+        return 0;
+    }
+
+    private static long a(long)
+    {
+        long $l0, $l2, $l4, $l5;
+        byte $b1;
+        java.lang.ArithmeticException $r0;
+        long[] $r1;
+
+        $l0 := @parameter0: long;
+        $b1 = 4294967296L cmp 0L;
+        if $b1 >= 0 goto label0;
+
+        $r0 = new java.lang.ArithmeticException;
+        specialinvoke $r0.<java.lang.ArithmeticException: void <init>()>();
+        throw $r0;
+
+     label0:
+        $r1 = newarray (long)[2];
+        $l0 = staticinvoke <b.b.a: long a(long,long[])>($l0, $r1);
+        $b1 = $l0 cmp 1L;
+        if $b1 == 0 goto label1;
+
+        $r0 = new java.lang.ArithmeticException;
+        specialinvoke $r0.<java.lang.ArithmeticException: void <init>()>();
+        throw $r0;
+
+     label1:
+        $l2 = $r1[0];
+        $b1 = $l2 cmp 0L;
+        if $b1 >= 0 goto label2;
+
+        $l4 = $r1[0];
+        $l5 = $l4 + 4294967296L;
+        $r1[0] = $l5;
+
+     label2:
+        $l5 = $r1[0];
+        return $l5;
+    }
+
+    private static long a(long, long[])
+    {
+        long $l0, $l1, $l2, $l3, $l4, $l5, $l7;
+        long[] $r0;
+        byte $b6;
+
+        $l0 := @parameter0: long;
+        $r0 := @parameter1: long[];
+        $l1 = 4294967296L;
+        $l3 = 1L;
+        $l4 = 0L;
+        $l5 = $l0;
+
+     label0:
+        $b6 = $l1 cmp 0L;
+        if $b6 <= 0 goto label1;
+
+        $l7 = $l5 / $l1;
+        $l2 = $l4 * $l7;
+        $l2 = $l3 - $l2;
+        $l7 = $l7 * $l1;
+        $l3 = $l5 - $l7;
+        $l5 = $l1;
+        $l1 = $l3;
+        $l3 = $l4;
+        $l4 = $l2;
+        goto label0;
+
+     label1:
+        $r0[0] = $l3;
+        $l7 = $l3 * $l0;
+        $l7 = $l5 - $l7;
+        $l7 = $l7 / 4294967296L;
+        $r0[1] = $l7;
+        return $l5;
+    }
+
+    private b.b.a a(b.b.a)
+    {
+        b.b.a $r0, $r1, $r3, $r4;
+        int $i0, $i1;
+        java.lang.ArithmeticException $r2;
+        boolean $z0;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 == 1 goto label0;
+
+        $r2 = new java.lang.ArithmeticException;
+        specialinvoke $r2.<java.lang.ArithmeticException: void <init>()>();
+        throw $r2;
+
+     label0:
+        $r3 = new b.b.a;
+        specialinvoke $r3.<b.b.a: void <init>()>();
+        $r4 = staticinvoke <b.b.a: b.b.a a(b.b.a,b.b.a,b.b.a)>($r0, $r1, $r3);
+        $r0 = <b.b.a: b.b.a b>;
+        $z0 = specialinvoke $r4.<b.b.a: boolean e(b.b.a)>($r0);
+        if $z0 != 0 goto label1;
+
+        $r2 = new java.lang.ArithmeticException;
+        specialinvoke $r2.<java.lang.ArithmeticException: void <init>()>();
+        throw $r2;
+
+     label1:
+        $r4 = <b.b.a: b.b.a a>;
+        $i1 = specialinvoke $r3.<b.b.a: int c(b.b.a)>($r4);
+        if $i1 >= 0 goto label2;
+
+        $r3 = specialinvoke $r3.<b.b.a: b.b.a b(b.b.a)>($r1);
+
+     label2:
+        return $r3;
+    }
+
+    private static b.b.a a(b.b.a, b.b.a, b.b.a)
+    {
+        b.b.a $r0, $r1, $r2, $r3, $r4, $r6;
+        int $i0;
+        b.b.a[] $r5;
+        int[] $r7;
+
+        $r0 := @parameter0: b.b.a;
+        $r1 := @parameter1: b.b.a;
+        $r2 := @parameter2: b.b.a;
+        $r4 = <b.b.a: b.b.a b>;
+        $r3 = <b.b.a: b.b.a a>;
+
+     label0:
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 <= 0 goto label1;
+
+        $r5 = specialinvoke $r0.<b.b.a: b.b.a[] d(b.b.a)>($r1);
+        $r0 = $r5[0];
+        $r0 = specialinvoke $r3.<b.b.a: b.b.a g(b.b.a)>($r0);
+        $r6 = specialinvoke $r4.<b.b.a: b.b.a i(b.b.a)>($r0);
+        $r0 = $r1;
+        $r1 = $r5[1];
+        $r4 = $r3;
+        $r3 = $r6;
+        goto label0;
+
+     label1:
+        $i0 = $r4.<b.b.a: int g>;
+        $r2.<b.b.a: int g> = $i0;
+        $r7 = $r4.<b.b.a: int[] c>;
+        $r2.<b.b.a: int[] c> = $r7;
+        return $r0;
+    }
+
+    private b.b.a a(int[])
+    {
+        b.b.a $r0, $r4;
+        int[] $r1, $r2, $r3;
+        int $i0, $i3, $i4;
+        byte $b5;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: int[];
+        $i0 = 2147483647;
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i4 = lengthof $r2;
+        $i3 = lengthof $r1;
+        if $i4 >= $i3 goto label4;
+
+        $r3 = $r0.<b.b.a: int[] c>;
+
+     label0:
+        $i4 = lengthof $r1;
+        $i3 = lengthof $r3;
+        if $i4 != $i3 goto label1;
+
+        $i4 = $r3[0];
+        $i0 = 2147483647 - $i4;
+
+     label1:
+        $i4 = $r1[0];
+        $i4 = $i4 ^ -2147483648;
+        if $i4 < $i0 goto label5;
+
+        $b5 = 1;
+
+     label2:
+        if $b5 == 0 goto label6;
+
+        $b5 = 1;
+
+     label3:
+        $i4 = lengthof $r1;
+        $i4 = $i4 + $b5;
+        $r2 = newarray (int)[$i4];
+        $i4 = lengthof $r1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r1, 0, $r2, $b5, $i4);
+        $r3 = staticinvoke <b.b.a: int[] a(int[],int[])>($r2, $r3);
+        $r4 = new b.b.a;
+        $i4 = $r0.<b.b.a: int g>;
+        specialinvoke $r4.<b.b.a: void <init>(int,int[])>($i4, $r3);
+        return $r4;
+
+     label4:
+        $r3 = $r1;
+        $r1 = $r0.<b.b.a: int[] c>;
+        goto label0;
+
+     label5:
+        $b5 = 0;
+        goto label2;
+
+     label6:
+        $b5 = 0;
+        goto label3;
+    }
+
+    private static void a(int, int[])
+    {
+        int $i0, $i1, $i2, $i3, $i4;
+        int[] $r0;
+
+        $i0 := @parameter0: int;
+        $r0 := @parameter1: int[];
+        $i1 = lengthof $r0;
+        $i1 = $i1 + -1;
+        $i2 = $r0[$i1];
+
+     label0:
+        if $i1 <= $i0 goto label1;
+
+        $i3 = $i1 + -1;
+        $i3 = $r0[$i3];
+        $i4 = $i2 >>> 1;
+        $i2 = $i3 << 31;
+        $i4 = $i4 | $i2;
+        $r0[$i1] = $i4;
+        $i1 = $i1 + -1;
+        $i2 = $i3;
+        goto label0;
+
+     label1:
+        $i4 = $r0[$i0];
+        $i4 = $i4 >>> 1;
+        $r0[$i0] = $i4;
+        return;
+    }
+
+    private static void a(int, int[], int)
+    {
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6;
+        int[] $r0;
+
+        $i0 := @parameter0: int;
+        $r0 := @parameter1: int[];
+        $i1 := @parameter2: int;
+        $i2 = $i1 >>> 5;
+        $i3 = $i2 + $i0;
+        $i4 = $i1 & 31;
+        $i5 = lengthof $r0;
+        $i2 = $i5 + -1;
+        if $i3 == $i0 goto label3;
+
+        $i1 = $i3 - $i0;
+        $i6 = $i2;
+
+     label0:
+        if $i6 < $i3 goto label1;
+
+        $i5 = $i6 - $i1;
+        $i5 = $r0[$i5];
+        $r0[$i6] = $i5;
+        $i6 = $i6 + -1;
+        goto label0;
+
+     label1:
+        $i6 = $i3 + -1;
+
+     label2:
+        if $i6 < $i0 goto label3;
+
+        $r0[$i6] = 0;
+        $i6 = $i6 + -1;
+        goto label2;
+
+     label3:
+        if $i4 == 0 goto label6;
+
+        $i6 = 32 - $i4;
+        $i5 = $r0[$i2];
+
+     label4:
+        $i1 = $i3 + 1;
+        if $i2 < $i1 goto label5;
+
+        $i1 = $i2 + -1;
+        $i1 = $r0[$i1];
+        $i0 = $i5 >>> $i4;
+        $i5 = $i1 << $i6;
+        $i5 = $i0 | $i5;
+        $r0[$i2] = $i5;
+        $i2 = $i2 + -1;
+        $i5 = $i1;
+        goto label4;
+
+     label5:
+        $i6 = $r0[$i3];
+        $i6 = $i6 >>> $i4;
+        $r0[$i3] = $i6;
+
+     label6:
+        return;
+    }
+
+    private static void a(int[], int[], int[], int[], long)
+    {
+        int[] $r0, $r1, $r2, $r3;
+        long $l0, $l3, $l5, $l8, $l9, $l10, $l11, $l12, $l14;
+        int $i1, $i2, $i4, $i6, $i13, $i15;
+
+        $r0 := @parameter0: int[];
+        $r1 := @parameter1: int[];
+        $r2 := @parameter2: int[];
+        $r3 := @parameter3: int[];
+        $l0 := @parameter4: long;
+        $i4 = lengthof $r3;
+        $i2 = $i4 + -1;
+        $i1 = $r2[$i2];
+        $l3 = (long) $i1;
+        $l3 = 4294967295L & $l3;
+        $i6 = 0;
+
+     label0:
+        if $i6 > $i4 goto label1;
+
+        $r0[$i6] = 0;
+        $i6 = $i6 + 1;
+        goto label0;
+
+     label1:
+        $i1 = $i4;
+
+     label2:
+        if $i1 <= 0 goto label5;
+
+        $i6 = $i1 + -1;
+        $i6 = $r1[$i6];
+        $l8 = (long) $i6;
+        $l8 = 4294967295L & $l8;
+        $i6 = $r0[$i4];
+        $l9 = (long) $i6;
+        $l9 = $l9 & 4294967295L;
+        $l10 = $l8 * $l3;
+        $l10 = $l10 & 4294967295L;
+        $l10 = $l9 + $l10;
+        $l10 = $l10 & 4294967295L;
+        $l10 = $l10 * $l0;
+        $l10 = 4294967295L & $l10;
+        $l9 = $l8 * $l3;
+        $i6 = $r3[$i2];
+        $l11 = (long) $i6;
+        $l11 = $l11 & 4294967295L;
+        $l11 = $l11 * $l10;
+        $i6 = $r0[$i4];
+        $l12 = (long) $i6;
+        $l12 = $l12 & 4294967295L;
+        $l5 = 4294967295L & $l9;
+        $l12 = $l12 + $l5;
+        $l5 = 4294967295L & $l11;
+        $l12 = $l12 + $l5;
+        $l9 = $l9 >>> 32;
+        $l11 = $l11 >>> 32;
+        $l11 = $l9 + $l11;
+        $l12 = $l12 >>> 32;
+        $l12 = $l11 + $l12;
+        $i13 = $i2;
+
+     label3:
+        if $i13 <= 0 goto label4;
+
+        $i6 = $i13 + -1;
+        $i6 = $r2[$i6];
+        $l11 = (long) $i6;
+        $l11 = $l11 & 4294967295L;
+        $l11 = $l11 * $l8;
+        $i6 = $i13 + -1;
+        $i6 = $r3[$i6];
+        $l9 = (long) $i6;
+        $l9 = $l9 & 4294967295L;
+        $l9 = $l9 * $l10;
+        $i6 = $r0[$i13];
+        $l14 = (long) $i6;
+        $l14 = $l14 & 4294967295L;
+        $l5 = 4294967295L & $l11;
+        $l14 = $l14 + $l5;
+        $l5 = 4294967295L & $l9;
+        $l14 = $l14 + $l5;
+        $l5 = 4294967295L & $l12;
+        $l14 = $l14 + $l5;
+        $l12 = $l12 >>> 32;
+        $l11 = $l11 >>> 32;
+        $l12 = $l12 + $l11;
+        $l11 = $l9 >>> 32;
+        $l12 = $l12 + $l11;
+        $l11 = $l14 >>> 32;
+        $l12 = $l12 + $l11;
+        $i15 = $i13 + 1;
+        $i6 = (int) $l14;
+        $r0[$i15] = $i6;
+        $i13 = $i13 + -1;
+        goto label3;
+
+     label4:
+        $i15 = $r0[0];
+        $l14 = (long) $i15;
+        $l14 = $l14 & 4294967295L;
+        $l14 = $l12 + $l14;
+        $i15 = (int) $l14;
+        $r0[1] = $i15;
+        $l14 = $l14 >>> 32;
+        $i15 = (int) $l14;
+        $r0[0] = $i15;
+        $i1 = $i1 + -1;
+        goto label2;
+
+     label5:
+        $i15 = staticinvoke <b.b.a: int b(int,int[],int,int[])>(0, $r0, 0, $r3);
+        if $i15 < 0 goto label6;
+
+        staticinvoke <b.b.a: int[] a(int[],int,int[])>($r0, 0, $r3);
+
+     label6:
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r0, 1, $r1, 0, $i4);
+        return;
+    }
+
+    private static int[] a(byte[])
+    {
+        byte[] $r0;
+        int $i0, $i2, $i5, $i6, $i7;
+        int[] $r1;
+        byte $b4;
+        short $s8;
+
+        $r0 := @parameter0: byte[];
+        $i0 = 0;
+
+     label0:
+        $i2 = lengthof $r0;
+        if $i0 >= $i2 goto label1;
+
+        $b4 = $r0[$i0];
+        if $b4 != 0 goto label1;
+
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $i2 = lengthof $r0;
+        if $i0 < $i2 goto label2;
+
+        $r1 = newarray (int)[0];
+        return $r1;
+
+     label2:
+        $i2 = lengthof $r0;
+        $i2 = $i2 - $i0;
+        $i2 = $i2 + 3;
+        $i2 = $i2 / 4;
+        $i5 = lengthof $r0;
+        $i5 = $i5 - $i0;
+        $i5 = $i5 % 4;
+        if $i5 != 0 goto label3;
+
+        $i5 = 4;
+
+     label3:
+        $r1 = newarray (int)[$i2];
+        $i2 = $i0;
+        $i6 = 0;
+        $i7 = 0;
+
+     label4:
+        $i0 = lengthof $r0;
+        if $i2 >= $i0 goto label6;
+
+        $i7 = $i7 << 8;
+        $b4 = $r0[$i2];
+        $s8 = $b4 & 255;
+        $i7 = $i7 | $s8;
+        $i5 = $i5 + -1;
+        if $i5 > 0 goto label5;
+
+        $r1[$i6] = $i7;
+        $i6 = $i6 + 1;
+        $i7 = 0;
+        $i5 = 4;
+
+     label5:
+        $i2 = $i2 + 1;
+        goto label4;
+
+     label6:
+        return $r1;
+    }
+
+    private static int[] a(int[], int)
+    {
+        int[] $r0, $r1;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6, $i7, $i8;
+
+        $r0 := @parameter0: int[];
+        $i0 := @parameter1: int;
+        $i2 = 0;
+        $i1 = $i0 >>> 5;
+        $i3 = $i0 & 31;
+        $i4 = lengthof $r0;
+        if $i3 != 0 goto label0;
+
+        $i6 = $i1 + $i4;
+        $r1 = newarray (int)[$i6];
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r0, 0, $r1, 0, $i4);
+        return $r1;
+
+     label0:
+        $i5 = 32 - $i3;
+        $i6 = $r0[0];
+        $i0 = $i6 >>> $i5;
+        if $i0 == 0 goto label3;
+
+        $i6 = $i1 + $i4;
+        $i6 = $i6 + 1;
+        $r1 = newarray (int)[$i6];
+        $i6 = 1;
+        $r1[0] = $i0;
+
+     label1:
+        $i1 = $i6;
+        $i6 = $r0[0];
+
+     label2:
+        $i0 = $i4 + -1;
+        if $i2 >= $i0 goto label4;
+
+        $i0 = $i2 + 1;
+        $i7 = $r0[$i0];
+        $i8 = $i6 << $i3;
+        $i6 = $i7 >>> $i5;
+        $i8 = $i8 | $i6;
+        $r1[$i1] = $i8;
+        $i2 = $i2 + 1;
+        $i6 = $i7;
+        $i1 = $i1 + 1;
+        goto label2;
+
+     label3:
+        $i8 = $i1 + $i4;
+        $r1 = newarray (int)[$i8];
+        $i6 = 0;
+        goto label1;
+
+     label4:
+        $i8 = $i4 + -1;
+        $i8 = $r0[$i8];
+        $i8 = $i8 << $i3;
+        $r1[$i1] = $i8;
+        return $r1;
+    }
+
+    private static int[] a(int[], int, int[])
+    {
+        int[] $r0, $r1;
+        int $i0, $i1, $i2, $i3, $i4;
+        long $l5, $l7;
+
+        $r0 := @parameter0: int[];
+        $i0 := @parameter1: int;
+        $r1 := @parameter2: int[];
+        $i3 = lengthof $r0;
+        $i2 = lengthof $r1;
+        $i1 = 0;
+
+     label0:
+        $i3 = $i3 + -1;
+        $i4 = $r0[$i3];
+        $l5 = (long) $i4;
+        $l7 = $l5 & 4294967295L;
+        $i2 = $i2 + -1;
+        $i4 = $r1[$i2];
+        $l5 = (long) $i4;
+        $l5 = $l5 & 4294967295L;
+        $l7 = $l7 - $l5;
+        $l5 = (long) $i1;
+        $l7 = $l7 + $l5;
+        $i4 = (int) $l7;
+        $r0[$i3] = $i4;
+        $l7 = $l7 >> 63;
+        $i1 = (int) $l7;
+        if $i2 > $i0 goto label0;
+
+        if $i1 == 0 goto label2;
+
+     label1:
+        $i3 = $i3 + -1;
+        $i4 = $r0[$i3];
+        $i4 = $i4 + -1;
+        $r0[$i3] = $i4;
+        if $i4 == -1 goto label1;
+
+     label2:
+        return $r0;
+    }
+
+    private static int[] a(int[], int[])
+    {
+        int[] $r0, $r1;
+        int $i0, $i1, $i5, $i7;
+        long $l2, $l3, $l4, $l6;
+        byte $b8;
+
+        $r0 := @parameter0: int[];
+        $r1 := @parameter1: int[];
+        $i0 = lengthof $r0;
+        $i1 = $i0 + -1;
+        $i0 = lengthof $r1;
+        $l4 = 0L;
+        $i5 = $i1;
+        $i0 = $i0 + -1;
+
+     label0:
+        if $i0 < 0 goto label1;
+
+        $i1 = $r0[$i5];
+        $l3 = (long) $i1;
+        $l6 = 4294967295L & $l3;
+        $i1 = $r1[$i0];
+        $l2 = (long) $i1;
+        $l3 = $l2 & 4294967295L;
+        $l6 = $l6 + $l3;
+        $l6 = $l4 + $l6;
+        $i1 = (int) $l6;
+        $r0[$i5] = $i1;
+        $l4 = $l6 >>> 32;
+        $i5 = $i5 + -1;
+        $i0 = $i0 + -1;
+        goto label0;
+
+     label1:
+        if $i5 < 0 goto label2;
+
+        $b8 = $l4 cmp 0L;
+        if $b8 == 0 goto label2;
+
+        $i7 = $r0[$i5];
+        $l6 = (long) $i7;
+        $l6 = $l6 & 4294967295L;
+        $l6 = $l4 + $l6;
+        $i1 = (int) $l6;
+        $r0[$i5] = $i1;
+        $l4 = $l6 >>> 32;
+        $i5 = $i5 + -1;
+        goto label1;
+
+     label2:
+        return $r0;
+    }
+
+    private static int[] a(int[], int[], int[])
+    {
+        int[] $r0, $r1, $r2;
+        int $i0, $i1, $i2, $i7, $i9;
+        long $l3, $l4, $l5, $l6, $l8;
+
+        $r0 := @parameter0: int[];
+        $r1 := @parameter1: int[];
+        $r2 := @parameter2: int[];
+        $i1 = lengthof $r2;
+        if $i1 > 0 goto label1;
+
+     label0:
+        return $r0;
+
+     label1:
+        $i0 = lengthof $r0;
+        $i2 = lengthof $r1;
+        $i0 = $i0 - $i2;
+
+     label2:
+        $i1 = $i1 + -1;
+        $i2 = $r2[$i1];
+        $l5 = (long) $i2;
+        $l3 = $l5 & 4294967295L;
+        $l6 = 0L;
+        $i2 = lengthof $r1;
+        $i7 = $i2 + -1;
+
+     label3:
+        if $i7 < 0 goto label4;
+
+        $i2 = $r1[$i7];
+        $l4 = (long) $i2;
+        $l5 = $l4 & 4294967295L;
+        $l4 = $l5 * $l3;
+        $i2 = $i0 + $i7;
+        $i2 = $r0[$i2];
+        $l8 = (long) $i2;
+        $l8 = $l8 & 4294967295L;
+        $l8 = $l4 + $l8;
+        $l8 = $l6 + $l8;
+        $i2 = $i0 + $i7;
+        $i9 = (int) $l8;
+        $r0[$i2] = $i9;
+        $l6 = $l8 >>> 32;
+        $i7 = $i7 + -1;
+        goto label3;
+
+     label4:
+        $i0 = $i0 + -1;
+        if $i1 > 0 goto label5;
+
+        if $i0 < 0 goto label0;
+
+        $i9 = (int) $l6;
+        $r0[$i0] = $i9;
+        return $r0;
+
+     label5:
+        $i9 = (int) $l6;
+        $r0[$i0] = $i9;
+        goto label2;
+    }
+
+    private int b(int, int[])
+    {
+        b.b.a $r0;
+        int $i0, $i1, $i2, $i4;
+        int[] $r1;
+        boolean $z0;
+
+        $r0 := @this: b.b.a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: int[];
+        $i2 = 1;
+        $i1 = lengthof $r1;
+        if $i1 != 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $i1 = lengthof $r1;
+        if $i0 == $i1 goto label2;
+
+        $i1 = $r1[$i0];
+        if $i1 != 0 goto label2;
+
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label2:
+        $i1 = lengthof $r1;
+        if $i0 == $i1 goto label0;
+
+        $i1 = lengthof $r1;
+        $i1 = $i1 - $i0;
+        $i1 = $i1 + -1;
+        $i4 = $i1 * 32;
+        $i1 = $r1[$i0];
+        $i1 = staticinvoke <b.b.a: int a(int)>($i1);
+        $i1 = $i4 + $i1;
+        $i4 = $r0.<b.b.a: int g>;
+        if $i4 >= 0 goto label10;
+
+        $i4 = $r1[$i0];
+        $z0 = staticinvoke <b.b.a: boolean b(int)>($i4);
+        $i4 = $i0 + 1;
+
+     label3:
+        $i0 = lengthof $r1;
+        if $i4 >= $i0 goto label6;
+
+        if $z0 == 0 goto label6;
+
+        $i0 = $r1[$i4];
+        if $i0 != 0 goto label5;
+
+        $z0 = (boolean) 1;
+
+     label4:
+        $i4 = $i4 + 1;
+        goto label3;
+
+     label5:
+        $z0 = (boolean) 0;
+        goto label4;
+
+     label6:
+        if $z0 == 0 goto label9;
+
+     label7:
+        $i4 = $i1 - $i2;
+
+     label8:
+        return $i4;
+
+     label9:
+        $i2 = 0;
+        goto label7;
+
+     label10:
+        $i4 = $i1;
+        goto label8;
+    }
+
+    private static int b(int, int[], int, int[])
+    {
+        int $i0, $i1, $i2;
+        int[] $r0, $r1;
+
+        $i0 := @parameter0: int;
+        $r0 := @parameter1: int[];
+        $i1 := @parameter2: int;
+        $r1 := @parameter3: int[];
+
+     label0:
+        $i2 = lengthof $r0;
+        if $i0 == $i2 goto label1;
+
+        $i2 = $r0[$i0];
+        if $i2 != 0 goto label1;
+
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $i2 = lengthof $r1;
+        if $i1 == $i2 goto label2;
+
+        $i2 = $r1[$i1];
+        if $i2 != 0 goto label2;
+
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label2:
+        $i2 = staticinvoke <b.b.a: int a(int,int[],int,int[])>($i0, $r0, $i1, $r1);
+        return $i2;
+    }
+
+    private b.b.a b(b.b.a)
+    {
+        b.b.a $r0, $r1;
+        int $i0;
+        int[] $r2;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 == 0 goto label0;
+
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i0 = lengthof $r2;
+        if $i0 != 0 goto label2;
+
+     label0:
+        $r1 = $r0;
+
+     label1:
+        return $r1;
+
+     label2:
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 == 0 goto label1;
+
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r2;
+        if $i0 == 0 goto label1;
+
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 >= 0 goto label3;
+
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 <= 0 goto label4;
+
+        $r1 = specialinvoke $r1.<b.b.a: b.b.a d()>();
+        $r1 = specialinvoke $r0.<b.b.a: b.b.a i(b.b.a)>($r1);
+        return $r1;
+
+     label3:
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 >= 0 goto label4;
+
+        $r0 = specialinvoke $r0.<b.b.a: b.b.a d()>();
+        $r1 = specialinvoke $r1.<b.b.a: b.b.a i(b.b.a)>($r0);
+        return $r1;
+
+     label4:
+        $r2 = $r1.<b.b.a: int[] c>;
+        $r1 = specialinvoke $r0.<b.b.a: b.b.a a(int[])>($r2);
+        return $r1;
+    }
+
+    private static void b(int[])
+    {
+        int[] $r0;
+        int $i0, $i2;
+
+        $r0 := @parameter0: int[];
+        $i0 = 0;
+
+     label0:
+        $i2 = lengthof $r0;
+        if $i0 == $i2 goto label1;
+
+        $r0[$i0] = 0;
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    private static boolean b(int)
+    {
+        int $i0, $i1, $i2, $i3, i4;
+
+        $i0 := @parameter0: int;
+        $i2 = (int) 0;
+        $i1 = (int) 0;
+
+     label0:
+        if $i2 >= 31 goto label2;
+
+        $i3 = (int) 1;
+        if $i1 > $i3 goto label2;
+
+        $i3 = $i0 & 1;
+        i4 = (int) 1;
+        if $i3 != i4 goto label1;
+
+        $i1 = $i1 + 1;
+
+     label1:
+        $i0 = $i0 >> 1;
+        $i2 = $i2 + 1;
+        goto label0;
+
+     label2:
+        i4 = (int) 1;
+        if $i1 != i4 goto label3;
+
+        return 1;
+
+     label3:
+        return 0;
+    }
+
+    private int[] b(int[], int[])
+    {
+        b.b.a $r0, $r3;
+        int[] $r1, $r2, $r4, $r5, $r6;
+        int $i0, $i3, $i4, $i5, $i6;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: int[];
+        $r2 := @parameter1: int[];
+        $i0 = staticinvoke <b.b.a: int b(int,int[],int,int[])>(0, $r1, 0, $r2);
+        if $i0 <= 0 goto label10;
+
+        $i3 = specialinvoke $r0.<b.b.a: int b(int,int[])>(0, $r1);
+        $i0 = specialinvoke $r0.<b.b.a: int b(int,int[])>(0, $r2);
+        $i3 = $i3 - $i0;
+        if $i3 <= 1 goto label2;
+
+        $i0 = $i3 + -1;
+        $r5 = staticinvoke <b.b.a: int[] a(int[],int)>($r2, $i0);
+        $r3 = <b.b.a: b.b.a b>;
+        $r4 = $r3.<b.b.a: int[] c>;
+        $i0 = $i3 + -1;
+        $r4 = staticinvoke <b.b.a: int[] a(int[],int)>($r4, $i0);
+        $i0 = $i3 % 32;
+        if $i0 != 0 goto label13;
+
+        $i3 = $i3 / 32;
+        $i3 = $i3 + 1;
+        $r6 = newarray (int)[$i3];
+        $i3 = lengthof $r6;
+        $i3 = $i3 + -1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r4, 0, $r6, 1, $i3);
+        $r6[0] = 0;
+
+     label0:
+        $i3 = lengthof $r6;
+        $r4 = newarray (int)[$i3];
+        staticinvoke <b.b.a: int[] a(int[],int,int[])>($r1, 0, $r5);
+        $i3 = lengthof $r6;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r6, 0, $r4, 0, $i3);
+        $i3 = 0;
+        $i4 = 0;
+        $i5 = 0;
+
+     label1:
+        $i0 = staticinvoke <b.b.a: int b(int,int[],int,int[])>($i5, $r1, $i4, $r5);
+        if $i0 < 0 goto label3;
+
+        staticinvoke <b.b.a: int[] a(int[],int,int[])>($r1, $i4, $r5);
+        staticinvoke <b.b.a: int[] a(int[],int[])>($r6, $r4);
+        goto label1;
+
+     label2:
+        $i5 = lengthof $r1;
+        $r5 = newarray (int)[$i5];
+        $r6 = newarray (int)[1];
+        $i5 = lengthof $r5;
+        $i4 = lengthof $r2;
+        $i5 = $i5 - $i4;
+        $i4 = lengthof $r2;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r2, 0, $r5, $i5, $i4);
+        $r6[0] = 1;
+        goto label0;
+
+     label3:
+        $i0 = staticinvoke <b.b.a: int b(int,int[],int,int[])>($i5, $r1, 0, $r2);
+        if $i0 <= 0 goto label8;
+
+        $i0 = $r1[$i5];
+        if $i0 != 0 goto label4;
+
+        $i5 = $i5 + 1;
+
+     label4:
+        $i6 = specialinvoke $r0.<b.b.a: int b(int,int[])>($i4, $r5);
+        $i0 = specialinvoke $r0.<b.b.a: int b(int,int[])>($i5, $r1);
+        $i6 = $i6 - $i0;
+        if $i6 != 0 goto label7;
+
+        staticinvoke <b.b.a: void a(int,int[])>($i4, $r5);
+        staticinvoke <b.b.a: void a(int,int[])>($i3, $r4);
+
+     label5:
+        $i6 = $r5[$i4];
+        if $i6 != 0 goto label6;
+
+        $i4 = $i4 + 1;
+
+     label6:
+        $i6 = $r4[$i3];
+        if $i6 != 0 goto label1;
+
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label7:
+        staticinvoke <b.b.a: void a(int,int[],int)>($i4, $r5, $i6);
+        staticinvoke <b.b.a: void a(int,int[],int)>($i3, $r4, $i6);
+        goto label5;
+
+     label8:
+        if $i0 != 0 goto label11;
+
+        $r3 = <b.b.a: b.b.a b>;
+        $r5 = $r3.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: int[] a(int[],int[])>($r6, $r5);
+
+     label9:
+        $i6 = lengthof $r1;
+        if $i5 == $i6 goto label11;
+
+        $r1[$i5] = 0;
+        $i5 = $i5 + 1;
+        goto label9;
+
+     label10:
+        if $i0 != 0 goto label12;
+
+        $r6 = newarray (int)[1];
+        $r6[0] = 1;
+
+     label11:
+        return $r6;
+
+     label12:
+        $r6 = newarray (int)[1];
+        $r6[0] = 0;
+        return $r6;
+
+     label13:
+        $r6 = $r4;
+        goto label0;
+    }
+
+    private int c(b.b.a)
+    {
+        b.b.a $r0, $r1;
+        int $i0, $i1, $i2;
+        int[] $r2, $r3;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = 0;
+        $i1 = $r0.<b.b.a: int g>;
+        $i2 = $r1.<b.b.a: int g>;
+        if $i1 >= $i2 goto label1;
+
+        $i0 = -1;
+
+     label0:
+        return $i0;
+
+     label1:
+        $i2 = $r0.<b.b.a: int g>;
+        $i1 = $r1.<b.b.a: int g>;
+        if $i2 <= $i1 goto label2;
+
+        return 1;
+
+     label2:
+        $i2 = $r0.<b.b.a: int g>;
+        if $i2 == 0 goto label0;
+
+        $i1 = $r0.<b.b.a: int g>;
+        $r3 = $r0.<b.b.a: int[] c>;
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i2 = staticinvoke <b.b.a: int b(int,int[],int,int[])>(0, $r3, 0, $r2);
+        $i0 = $i2 * $i1;
+        return $i0;
+    }
+
+    private long c()
+    {
+        b.b.a $r0;
+        long $l0, $l1;
+        int[] $r1, $r2;
+        byte $b2;
+        int $i3;
+
+        $r0 := @this: b.b.a;
+        $l0 = -1L;
+        $l1 = $r0.<b.b.a: long d>;
+        $b2 = $l1 cmp -1L;
+        if $b2 == 0 goto label1;
+
+        $l0 = $r0.<b.b.a: long d>;
+
+     label0:
+        return $l0;
+
+     label1:
+        $r2 = $r0.<b.b.a: int[] c>;
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i3 = lengthof $r1;
+        $i3 = $i3 + -1;
+        $i3 = $r2[$i3];
+        $i3 = $i3 & 1;
+        if $i3 == 0 goto label0;
+
+        $r2 = $r0.<b.b.a: int[] c>;
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i3 = lengthof $r1;
+        $i3 = $i3 + -1;
+        $i3 = $r2[$i3];
+        $i3 = $i3 ^ -1;
+        $i3 = $i3 | 1;
+        $l1 = (long) $i3;
+        $l1 = $l1 & 4294967295L;
+        $l1 = staticinvoke <b.b.a: long a(long)>($l1);
+        $r0.<b.b.a: long d> = $l1;
+        $l0 = $r0.<b.b.a: long d>;
+        return $l0;
+    }
+
+    private b.b.a c(int)
+    {
+        b.b.a $r0, $r1;
+        int $i0, $i1;
+        int[] $r2;
+        java.lang.RuntimeException $r3;
+
+        $r0 := @this: b.b.a;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<b.b.a: int g>;
+        if $i1 == 0 goto label0;
+
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        if $i1 != 0 goto label2;
+
+     label0:
+        $r0 = <b.b.a: b.b.a a>;
+
+     label1:
+        return $r0;
+
+     label2:
+        if $i0 == 0 goto label1;
+
+        if $i0 >= 0 goto label3;
+
+        $r3 = new java.lang.RuntimeException;
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>()>();
+        throw $r3;
+
+     label3:
+        $r1 = new b.b.a;
+        $i1 = $r0.<b.b.a: int g>;
+        $r2 = $r0.<b.b.a: int[] c>;
+        $r2 = staticinvoke <b.b.a: int[] a(int[],int)>($r2, $i0);
+        specialinvoke $r1.<b.b.a: void <init>(int,int[])>($i1, $r2);
+        $i1 = $r0.<b.b.a: int f>;
+        if $i1 == -1 goto label5;
+
+        $i1 = $r0.<b.b.a: int g>;
+        if $i1 <= 0 goto label7;
+
+        $i1 = $r0.<b.b.a: int f>;
+
+     label4:
+        $r1.<b.b.a: int f> = $i1;
+
+     label5:
+        $i1 = $r0.<b.b.a: int e>;
+        if $i1 == -1 goto label6;
+
+        $i1 = $r0.<b.b.a: int e>;
+        $i1 = $i1 + $i0;
+        $r1.<b.b.a: int e> = $i1;
+
+     label6:
+        return $r1;
+
+     label7:
+        $i1 = $r0.<b.b.a: int f>;
+        $i1 = $i1 + $i0;
+        goto label4;
+    }
+
+    private int[] c(int[], int[])
+    {
+        b.b.a $r0;
+        int[] $r1, $r2, $r3;
+        int $i0, $i2, $i3, $i5, $i6, $i7;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: int[];
+        $r2 := @parameter1: int[];
+        $i0 = 0;
+
+     label0:
+        $i2 = lengthof $r1;
+        if $i0 >= $i2 goto label1;
+
+        $i3 = $r1[$i0];
+        if $i3 != 0 goto label1;
+
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $i5 = 0;
+
+     label2:
+        $i2 = lengthof $r2;
+        if $i5 >= $i2 goto label3;
+
+        $i3 = $r2[$i5];
+        if $i3 != 0 goto label3;
+
+        $i5 = $i5 + 1;
+        goto label2;
+
+     label3:
+        $i3 = staticinvoke <b.b.a: int a(int,int[],int,int[])>($i0, $r1, $i5, $r2);
+        if $i3 <= 0 goto label17;
+
+        $i6 = specialinvoke $r0.<b.b.a: int b(int,int[])>($i5, $r2);
+        $i2 = specialinvoke $r0.<b.b.a: int b(int,int[])>($i0, $r1);
+        $i3 = $i2 - $i6;
+        if $i3 <= 0 goto label8;
+
+        $i6 = $i6 + $i3;
+        $r3 = staticinvoke <b.b.a: int[] a(int[],int)>($r2, $i3);
+        $i3 = 0;
+
+     label4:
+        if $i6 < $i2 goto label5;
+
+        $i7 = staticinvoke <b.b.a: int a(int,int[],int,int[])>($i0, $r1, $i3, $r3);
+        if $i7 < 0 goto label16;
+
+     label5:
+        staticinvoke <b.b.a: int[] a(int[],int,int[])>($r1, $i3, $r3);
+
+     label6:
+        $i7 = $r1[$i0];
+        if $i7 != 0 goto label9;
+
+        $i0 = $i0 + 1;
+        $i7 = lengthof $r1;
+        if $i0 != $i7 goto label6;
+
+     label7:
+        return $r1;
+
+     label8:
+        $i7 = lengthof $r2;
+        $i7 = $i7 - $i5;
+        $r3 = newarray (int)[$i7];
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r2, $i5, $r3, 0, $i7);
+        $i3 = 0;
+        goto label4;
+
+     label9:
+        $i7 = staticinvoke <b.b.a: int a(int,int[],int,int[])>($i0, $r1, $i5, $r2);
+        if $i7 <= 0 goto label13;
+
+        $i7 = lengthof $r1;
+        $i7 = $i7 - $i0;
+        $i7 = $i7 + -1;
+        $i7 = $i7 * 32;
+        $i2 = $r1[$i0];
+        $i2 = staticinvoke <b.b.a: int a(int)>($i2);
+        $i2 = $i7 + $i2;
+        $i7 = $i0;
+
+     label10:
+        $i0 = $i6 - $i2;
+        if $i0 >= 2 goto label12;
+
+        staticinvoke <b.b.a: void a(int,int[])>($i3, $r3);
+        $i6 = $i6 + -1;
+
+     label11:
+        $i0 = $r3[$i3];
+        if $i0 != 0 goto label15;
+
+        $i3 = $i3 + 1;
+        goto label11;
+
+     label12:
+        staticinvoke <b.b.a: void a(int,int[],int)>($i3, $r3, $i0);
+        $i6 = $i6 - $i0;
+        goto label11;
+
+     label13:
+        if $i7 != 0 goto label7;
+
+     label14:
+        $i7 = lengthof $r1;
+        if $i0 >= $i7 goto label7;
+
+        $r1[$i0] = 0;
+        $i0 = $i0 + 1;
+        goto label14;
+
+     label15:
+        $i0 = $i7;
+        goto label4;
+
+     label16:
+        $i7 = $i0;
+        goto label10;
+
+     label17:
+        $i7 = $i3;
+        goto label13;
+    }
+
+    private b.b.a d()
+    {
+        b.b.a $r0, $r2;
+        int $i0;
+        int[] $r1;
+
+        $r0 := @this: b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 != 0 goto label0;
+
+        return $r0;
+
+     label0:
+        $r2 = new b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        $i0 = neg $i0;
+        $r1 = $r0.<b.b.a: int[] c>;
+        specialinvoke $r2.<b.b.a: void <init>(int,int[])>($i0, $r1);
+        return $r2;
+    }
+
+    private b.b.a[] d(b.b.a)
+    {
+        b.b.a $r0, $r1, $r5;
+        int $i0, $i1;
+        int[] $r2, $r6;
+        java.lang.ArithmeticException $r3;
+        b.b.a[] $r4;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 != 0 goto label0;
+
+        $r3 = new java.lang.ArithmeticException;
+        specialinvoke $r3.<java.lang.ArithmeticException: void <init>()>();
+        throw $r3;
+
+     label0:
+        $r4 = newarray (b.b.a)[2];
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 != 0 goto label1;
+
+        $r1 = <b.b.a: b.b.a a>;
+        $r4[1] = $r1;
+        $r4[0] = $r1;
+        return $r4;
+
+     label1:
+        $r5 = <b.b.a: b.b.a b>;
+        $i1 = specialinvoke $r1.<b.b.a: int c(b.b.a)>($r5);
+        if $i1 != 0 goto label2;
+
+        $r4[0] = $r0;
+        $r5 = <b.b.a: b.b.a a>;
+        $r4[1] = $r5;
+        return $r4;
+
+     label2:
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        $r6 = newarray (int)[$i1];
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r6;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r2, 0, $r6, 0, $i0);
+        $r2 = $r1.<b.b.a: int[] c>;
+        $r2 = specialinvoke $r0.<b.b.a: int[] b(int[],int[])>($r6, $r2);
+        $r5 = new b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        $i1 = $r1.<b.b.a: int g>;
+        $i1 = $i0 * $i1;
+        specialinvoke $r5.<b.b.a: void <init>(int,int[])>($i1, $r2);
+        $r4[0] = $r5;
+        $r5 = new b.b.a;
+        $i1 = $r0.<b.b.a: int g>;
+        specialinvoke $r5.<b.b.a: void <init>(int,int[])>($i1, $r6);
+        $r4[1] = $r5;
+        return $r4;
+    }
+
+    private boolean e(b.b.a)
+    {
+        b.b.a $r0, $r1;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        int[] $r2;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $z0 = 0;
+        if $r1 != $r0 goto label1;
+
+        $z0 = 1;
+
+     label0:
+        return $z0;
+
+     label1:
+        if $r1 == null goto label0;
+
+        $i0 = $r1.<b.b.a: int g>;
+        $i1 = $r0.<b.b.a: int g>;
+        if $i0 != $i1 goto label0;
+
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r2;
+        if $i1 != $i0 goto label0;
+
+        $i1 = (int) 0;
+
+     label2:
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r2;
+        if $i1 >= $i0 goto label3;
+
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i0 = $r2[$i1];
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i2 = $r2[$i1];
+        if $i0 != $i2 goto label0;
+
+        $i1 = $i1 + 1;
+        goto label2;
+
+     label3:
+        return 1;
+    }
+
+    private b.b.a f(b.b.a)
+    {
+        b.b.a $r0, $r1, $r3;
+        int $i0;
+        java.lang.ArithmeticException $r2;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 > 0 goto label0;
+
+        $r2 = new java.lang.ArithmeticException;
+        specialinvoke $r2.<java.lang.ArithmeticException: void <init>()>();
+        throw $r2;
+
+     label0:
+        $r0 = specialinvoke $r0.<b.b.a: b.b.a h(b.b.a)>($r1);
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 < 0 goto label1;
+
+        return $r0;
+
+     label1:
+        $r3 = specialinvoke $r0.<b.b.a: b.b.a b(b.b.a)>($r1);
+        return $r3;
+    }
+
+    private b.b.a g(b.b.a)
+    {
+        b.b.a $r0, $r1, $r3;
+        int $i0, $i1;
+        int[] $r2, $r4, $r5;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 == 0 goto label0;
+
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 != 0 goto label1;
+
+     label0:
+        $r3 = <b.b.a: b.b.a a>;
+        return $r3;
+
+     label1:
+        $i1 = virtualinvoke $r0.<b.b.a: int a()>();
+        $i0 = virtualinvoke $r1.<b.b.a: int a()>();
+        $i1 = $i1 + $i0;
+        $i1 = $i1 / 32;
+        $i1 = $i1 + 1;
+        $r4 = newarray (int)[$i1];
+        $r5 = $r0.<b.b.a: int[] c>;
+        $r2 = $r1.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: int[] a(int[],int[],int[])>($r4, $r5, $r2);
+        $r3 = new b.b.a;
+        $i1 = $r0.<b.b.a: int g>;
+        $i0 = $r1.<b.b.a: int g>;
+        $i1 = $i1 * $i0;
+        specialinvoke $r3.<b.b.a: void <init>(int,int[])>($i1, $r4);
+        return $r3;
+    }
+
+    private b.b.a h(b.b.a)
+    {
+        b.b.a $r0, $r1;
+        int $i0;
+        int[] $r2, $r4;
+        java.lang.ArithmeticException $r3;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 != 0 goto label0;
+
+        $r3 = new java.lang.ArithmeticException;
+        specialinvoke $r3.<java.lang.ArithmeticException: void <init>()>();
+        throw $r3;
+
+     label0:
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 != 0 goto label2;
+
+        $r0 = <b.b.a: b.b.a a>;
+
+     label1:
+        return $r0;
+
+     label2:
+        $r4 = $r0.<b.b.a: int[] c>;
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i0 = staticinvoke <b.b.a: int b(int,int[],int,int[])>(0, $r4, 0, $r2);
+        if $i0 < 0 goto label1;
+
+        $r4 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r4;
+        $r4 = newarray (int)[$i0];
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i0 = lengthof $r4;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r2, 0, $r4, 0, $i0);
+        $r2 = $r1.<b.b.a: int[] c>;
+        $r4 = specialinvoke $r0.<b.b.a: int[] c(int[],int[])>($r4, $r2);
+        $r1 = new b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        specialinvoke $r1.<b.b.a: void <init>(int,int[])>($i0, $r4);
+        return $r1;
+    }
+
+    private b.b.a i(b.b.a)
+    {
+        b.b.a $r0, $r1, $r4;
+        int $i0, $i1;
+        int[] $r2, $r3;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i0 == 0 goto label0;
+
+        $r2 = $r1.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        if $i1 != 0 goto label1;
+
+     label0:
+        return $r0;
+
+     label1:
+        $i1 = $r0.<b.b.a: int g>;
+        if $i1 == 0 goto label2;
+
+        $r2 = $r0.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        if $i1 != 0 goto label3;
+
+     label2:
+        $r1 = specialinvoke $r1.<b.b.a: b.b.a d()>();
+        return $r1;
+
+     label3:
+        $i1 = $r0.<b.b.a: int g>;
+        $i0 = $r1.<b.b.a: int g>;
+        if $i1 == $i0 goto label4;
+
+        $r1 = specialinvoke $r1.<b.b.a: b.b.a d()>();
+        $r1 = specialinvoke $r0.<b.b.a: b.b.a b(b.b.a)>($r1);
+        return $r1;
+
+     label4:
+        $r2 = $r0.<b.b.a: int[] c>;
+        $r3 = $r1.<b.b.a: int[] c>;
+        $i0 = staticinvoke <b.b.a: int b(int,int[],int,int[])>(0, $r2, 0, $r3);
+        if $i0 != 0 goto label5;
+
+        $r0 = <b.b.a: b.b.a a>;
+        return $r0;
+
+     label5:
+        if $i0 >= 0 goto label7;
+
+        $r4 = $r0;
+
+     label6:
+        $r3 = $r1.<b.b.a: int[] c>;
+        $i1 = lengthof $r3;
+        $r2 = newarray (int)[$i1];
+        $r3 = $r1.<b.b.a: int[] c>;
+        $i1 = lengthof $r2;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, 0, $r2, 0, $i1);
+        $r1 = new b.b.a;
+        $i1 = $r0.<b.b.a: int g>;
+        $i1 = $i0 * $i1;
+        $r3 = $r4.<b.b.a: int[] c>;
+        $r3 = staticinvoke <b.b.a: int[] a(int[],int,int[])>($r2, 0, $r3);
+        specialinvoke $r1.<b.b.a: void <init>(int,int[])>($i1, $r3);
+        return $r1;
+
+     label7:
+        $r4 = $r1;
+        $r1 = $r0;
+        goto label6;
+    }
+
+    public final int a()
+    {
+        b.b.a $r0;
+        int $i0;
+        int[] $r1;
+
+        $r0 := @this: b.b.a;
+        $i0 = $r0.<b.b.a: int e>;
+        if $i0 != -1 goto label0;
+
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 != 0 goto label1;
+
+        $r0.<b.b.a: int e> = 0;
+
+     label0:
+        $i0 = $r0.<b.b.a: int e>;
+        return $i0;
+
+     label1:
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i0 = specialinvoke $r0.<b.b.a: int b(int,int[])>(0, $r1);
+        $r0.<b.b.a: int e> = $i0;
+        goto label0;
+    }
+
+    public final int a(java.lang.Object)
+    {
+        b.b.a $r0, $r2;
+        java.lang.Object $r1;
+        int $i0;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (b.b.a) $r1;
+        $i0 = specialinvoke $r0.<b.b.a: int c(b.b.a)>($r2);
+        return $i0;
+    }
+
+    public final b.b.a a(b.b.a, b.b.a)
+    {
+        b.b.a $r0, $r1, $r2, $r6;
+        int $i0, $i3, $i5, $i6;
+        int[] $r3, $r4, $r7, $r8, $r9;
+        long $l1;
+        boolean $z0;
+        java.lang.ArithmeticException $r5;
+
+        $r0 := @this: b.b.a;
+        $r1 := @parameter0: b.b.a;
+        $r2 := @parameter1: b.b.a;
+        $i0 = $r2.<b.b.a: int g>;
+        if $i0 > 0 goto label0;
+
+        $r5 = new java.lang.ArithmeticException;
+        specialinvoke $r5.<java.lang.ArithmeticException: void <init>()>();
+        throw $r5;
+
+     label0:
+        $r4 = $r2.<b.b.a: int[] c>;
+        $r3 = $r2.<b.b.a: int[] c>;
+        $i3 = lengthof $r3;
+        $i3 = $i3 + -1;
+        $i3 = $r4[$i3];
+        $i3 = $i3 & 1;
+        if $i3 == 1 goto label1;
+
+        $r5 = new java.lang.ArithmeticException;
+        specialinvoke $r5.<java.lang.ArithmeticException: void <init>()>();
+        throw $r5;
+
+     label1:
+        $r6 = <b.b.a: b.b.a b>;
+        $z0 = specialinvoke $r2.<b.b.a: boolean e(b.b.a)>($r6);
+        if $z0 == 0 goto label3;
+
+        $r6 = <b.b.a: b.b.a a>;
+
+     label2:
+        return $r6;
+
+     label3:
+        $i3 = $r1.<b.b.a: int g>;
+        if $i3 != 0 goto label4;
+
+        $r6 = <b.b.a: b.b.a b>;
+        return $r6;
+
+     label4:
+        $i3 = $r0.<b.b.a: int g>;
+        if $i3 != 0 goto label5;
+
+        $r6 = <b.b.a: b.b.a a>;
+        return $r6;
+
+     label5:
+        $l1 = specialinvoke $r2.<b.b.a: long c()>();
+        $r4 = $r2.<b.b.a: int[] c>;
+        $i3 = lengthof $r4;
+        $i3 = $i3 * 32;
+        $r6 = specialinvoke $r0.<b.b.a: b.b.a c(int)>($i3);
+        $r6 = specialinvoke $r6.<b.b.a: b.b.a f(b.b.a)>($r2);
+        $r3 = $r6.<b.b.a: int[] c>;
+        $i3 = lengthof $r3;
+        $r4 = $r2.<b.b.a: int[] c>;
+        $i0 = lengthof $r4;
+        if $i3 <= $i0 goto label6;
+
+        $r5 = new java.lang.ArithmeticException;
+        specialinvoke $r5.<java.lang.ArithmeticException: void <init>()>();
+        throw $r5;
+
+     label6:
+        $r4 = $r2.<b.b.a: int[] c>;
+        $i3 = lengthof $r4;
+        $i3 = $i3 + 1;
+        $r7 = newarray (int)[$i3];
+        $i3 = lengthof $r3;
+        $r4 = $r2.<b.b.a: int[] c>;
+        $i0 = lengthof $r4;
+        if $i3 >= $i0 goto label17;
+
+        $r4 = $r2.<b.b.a: int[] c>;
+        $i3 = lengthof $r4;
+        $r4 = newarray (int)[$i3];
+        $i3 = lengthof $r4;
+        $i0 = lengthof $r3;
+        $i3 = $i3 - $i0;
+        $i0 = lengthof $r3;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, 0, $r4, $i3, $i0);
+
+     label7:
+        $r3 = $r2.<b.b.a: int[] c>;
+        $i3 = lengthof $r3;
+        $r3 = newarray (int)[$i3];
+        $i0 = 0;
+
+     label8:
+        $r8 = $r1.<b.b.a: int[] c>;
+        $i3 = lengthof $r8;
+        if $i0 >= $i3 goto label15;
+
+        $r8 = $r1.<b.b.a: int[] c>;
+        $i3 = $r8[$i0];
+        if $i0 != 0 goto label16;
+
+        $i5 = 0;
+
+     label9:
+        if $i3 <= 0 goto label10;
+
+        $i5 = $i5 + 1;
+        $i3 = $i3 << 1;
+        goto label9;
+
+     label10:
+        $i6 = lengthof $r4;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r4, 0, $r3, 0, $i6);
+        $i5 = $i5 + 1;
+        $i3 = $i3 << 1;
+
+     label11:
+        if $i3 == 0 goto label13;
+
+        $r8 = $r2.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: void a(int[],int[],int[],int[],long)>($r7, $r3, $r3, $r8, $l1);
+        $i5 = $i5 + 1;
+        if $i3 >= 0 goto label12;
+
+        $r9 = $r2.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: void a(int[],int[],int[],int[],long)>($r7, $r3, $r4, $r9, $l1);
+
+     label12:
+        $i3 = $i3 << 1;
+        goto label11;
+
+     label13:
+        if $i5 >= 32 goto label14;
+
+        $r9 = $r2.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: void a(int[],int[],int[],int[],long)>($r7, $r3, $r3, $r9, $l1);
+        $i5 = $i5 + 1;
+        goto label13;
+
+     label14:
+        $i0 = $i0 + 1;
+        goto label8;
+
+     label15:
+        staticinvoke <b.b.a: void b(int[])>($r4);
+        $i6 = lengthof $r4;
+        $i6 = $i6 + -1;
+        $r4[$i6] = 1;
+        $r9 = $r2.<b.b.a: int[] c>;
+        staticinvoke <b.b.a: void a(int[],int[],int[],int[],long)>($r7, $r3, $r4, $r9, $l1);
+        $r6 = new b.b.a;
+        specialinvoke $r6.<b.b.a: void <init>(int,int[])>(1, $r3);
+        $i6 = $r1.<b.b.a: int g>;
+        if $i6 > 0 goto label2;
+
+        $r6 = specialinvoke $r6.<b.b.a: b.b.a a(b.b.a)>($r2);
+        return $r6;
+
+     label16:
+        $i5 = 0;
+        goto label11;
+
+     label17:
+        $r4 = $r3;
+        goto label7;
+    }
+
+    public final byte[] b()
+    {
+        b.b.a $r0;
+        int $i0, $i3, $i4, $i5;
+        int[] $r1;
+        byte $b1, $b2;
+        byte[] $r2;
+        java.lang.RuntimeException $r3;
+
+        $r0 := @this: b.b.a;
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 != 0 goto label0;
+
+        $r2 = newarray (byte)[1];
+        return $r2;
+
+     label0:
+        $i0 = $r0.<b.b.a: int g>;
+        if $i0 >= 0 goto label1;
+
+        $r3 = new java.lang.RuntimeException;
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $i0 = virtualinvoke $r0.<b.b.a: int a()>();
+        $i0 = $i0 / 8;
+        $i0 = $i0 + 1;
+        $r2 = newarray (byte)[$i0];
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i3 = lengthof $r1;
+        $i0 = lengthof $r2;
+
+     label2:
+        if $i3 <= 1 goto label3;
+
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i3 = $i3 + -1;
+        $i4 = $r1[$i3];
+        $i0 = $i0 + -1;
+        $b1 = (byte) $i4;
+        $r2[$i0] = $b1;
+        $i0 = $i0 + -1;
+        $i5 = $i4 >>> 8;
+        $b1 = (byte) $i5;
+        $r2[$i0] = $b1;
+        $i5 = $i0 + -1;
+        $i0 = $i4 >>> 16;
+        $b1 = (byte) $i0;
+        $r2[$i5] = $b1;
+        $i0 = $i5 + -1;
+        $i5 = $i4 >>> 24;
+        $b1 = (byte) $i5;
+        $r2[$i0] = $b1;
+        goto label2;
+
+     label3:
+        $r1 = $r0.<b.b.a: int[] c>;
+        $i5 = $r1[0];
+
+     label4:
+        $i4 = $i5 & -256;
+        if $i4 == 0 goto label5;
+
+        $i0 = $i0 + -1;
+        $b2 = (byte) $i5;
+        $r2[$i0] = $b2;
+        $i5 = $i5 >>> 8;
+        goto label4;
+
+     label5:
+        $i4 = $i0 + -1;
+        $b2 = (byte) $i5;
+        $r2[$i4] = $b2;
+        return $r2;
+    }
+}

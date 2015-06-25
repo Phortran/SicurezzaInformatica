@@ -1,0 +1,88 @@
+class com.a.a.z extends com.a.a.p
+{
+
+    void <init>(android.content.Context)
+    {
+        com.a.a.z $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.a.a.z;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<com.a.a.p: void <init>(android.content.Context)>($r1);
+        return;
+    }
+
+    static int a(android.net.Uri)
+    {
+        android.net.Uri $r0;
+        android.media.ExifInterface $r1;
+        java.lang.String $r2;
+        int $i1;
+
+        $r0 := @parameter0: android.net.Uri;
+        $r1 = new android.media.ExifInterface;
+        $r2 = virtualinvoke $r0.<android.net.Uri: java.lang.String getPath()>();
+        specialinvoke $r1.<android.media.ExifInterface: void <init>(java.lang.String)>($r2);
+        $i1 = virtualinvoke $r1.<android.media.ExifInterface: int getAttributeInt(java.lang.String,int)>("Orientation", 1);
+        lookupswitch($i1)
+        {
+            case 3: goto label2;
+            case 4: goto label0;
+            case 5: goto label0;
+            case 6: goto label1;
+            case 7: goto label0;
+            case 8: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        return 0;
+
+     label1:
+        return 90;
+
+     label2:
+        return 180;
+
+     label3:
+        return 270;
+    }
+
+    public boolean a(com.a.a.au)
+    {
+        com.a.a.z $r0;
+        com.a.a.au $r1;
+        java.lang.String $r2, $r4;
+        android.net.Uri $r3;
+        boolean $z0;
+
+        $r0 := @this: com.a.a.z;
+        $r1 := @parameter0: com.a.a.au;
+        $r2 = "file";
+        $r3 = $r1.<com.a.a.au: android.net.Uri d>;
+        $r4 = virtualinvoke $r3.<android.net.Uri: java.lang.String getScheme()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        return $z0;
+    }
+
+    public com.a.a.ba b(com.a.a.au)
+    {
+        com.a.a.z $r0;
+        com.a.a.au $r1;
+        com.a.a.ba $r2;
+        android.graphics.Bitmap $r3;
+        com.a.a.an $r4;
+        android.net.Uri $r5;
+        int $i0;
+
+        $r0 := @this: com.a.a.z;
+        $r1 := @parameter0: com.a.a.au;
+        $r2 = new com.a.a.ba;
+        $r3 = virtualinvoke $r0.<com.a.a.z: android.graphics.Bitmap c(com.a.a.au)>($r1);
+        $r4 = <com.a.a.an: com.a.a.an b>;
+        $r5 = $r1.<com.a.a.au: android.net.Uri d>;
+        $i0 = staticinvoke <com.a.a.z: int a(android.net.Uri)>($r5);
+        specialinvoke $r2.<com.a.a.ba: void <init>(android.graphics.Bitmap,com.a.a.an,int)>($r3, $r4, $i0);
+        return $r2;
+    }
+}

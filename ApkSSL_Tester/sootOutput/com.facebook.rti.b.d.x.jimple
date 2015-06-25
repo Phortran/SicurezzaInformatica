@@ -1,0 +1,61 @@
+final class com.facebook.rti.b.d.x extends java.lang.Object
+{
+    static final int[] a;
+
+    static void <clinit>()
+    {
+        com.facebook.rti.b.d.a[] $r0;
+        com.facebook.rti.b.d.a $r1;
+        int $i1;
+        int[] $r2;
+        java.lang.NoSuchFieldError $r3, $r4, $r5;
+
+        $r0 = staticinvoke <com.facebook.rti.b.d.a: com.facebook.rti.b.d.a[] values()>();
+        $i1 = lengthof $r0;
+        $r2 = newarray (int)[$i1];
+        <com.facebook.rti.b.d.x: int[] a> = $r2;
+
+     label0:
+        $r2 = <com.facebook.rti.b.d.x: int[] a>;
+        $r1 = <com.facebook.rti.b.d.a: com.facebook.rti.b.d.a b>;
+        $i1 = virtualinvoke $r1.<com.facebook.rti.b.d.a: int ordinal()>();
+
+     label1:
+        $r2[$i1] = 1;
+
+     label2:
+        $r2 = <com.facebook.rti.b.d.x: int[] a>;
+        $r1 = <com.facebook.rti.b.d.a: com.facebook.rti.b.d.a a>;
+        $i1 = virtualinvoke $r1.<com.facebook.rti.b.d.a: int ordinal()>();
+
+     label3:
+        $r2[$i1] = 2;
+
+     label4:
+        $r2 = <com.facebook.rti.b.d.x: int[] a>;
+        $r1 = <com.facebook.rti.b.d.a: com.facebook.rti.b.d.a c>;
+        $i1 = virtualinvoke $r1.<com.facebook.rti.b.d.a: int ordinal()>();
+
+     label5:
+        $r2[$i1] = 3;
+
+     label6:
+        return;
+
+     label7:
+        $r3 := @caughtexception;
+        goto label6;
+
+     label8:
+        $r4 := @caughtexception;
+        goto label4;
+
+     label9:
+        $r5 := @caughtexception;
+        goto label2;
+
+        catch java.lang.NoSuchFieldError from label0 to label1 with label9;
+        catch java.lang.NoSuchFieldError from label2 to label3 with label8;
+        catch java.lang.NoSuchFieldError from label4 to label5 with label7;
+    }
+}

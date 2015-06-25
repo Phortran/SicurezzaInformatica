@@ -1,0 +1,68 @@
+public final class com.facebook.a.c.d extends java.lang.Object
+{
+    private com.facebook.a.c.c a;
+
+    public void <init>(com.facebook.a.c.c)
+    {
+        com.facebook.a.c.d $r0;
+        com.facebook.a.c.c $r1;
+
+        $r0 := @this: com.facebook.a.c.d;
+        $r1 := @parameter0: com.facebook.a.c.c;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.a.c.d: com.facebook.a.c.c a> = $r1;
+        return;
+    }
+
+    public final void a(java.net.URL, java.lang.String, com.facebook.a.c.a, java.lang.String)
+    {
+        com.facebook.a.c.d $r0;
+        java.net.URL $r1;
+        java.lang.String $r2, $r4;
+        com.facebook.a.c.a $r3;
+        com.facebook.a.c.c $r5;
+        java.net.HttpURLConnection $r6;
+        java.util.zip.GZIPOutputStream $r9;
+        java.io.OutputStream $r10;
+        byte[] $r11;
+        int $i0;
+        java.io.InputStream $r12;
+        java.lang.Throwable $r13;
+
+        $r0 := @this: com.facebook.a.c.d;
+        $r1 := @parameter0: java.net.URL;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: com.facebook.a.c.a;
+        $r4 := @parameter3: java.lang.String;
+        $r5 = $r0.<com.facebook.a.c.d: com.facebook.a.c.c a>;
+        $r6 = interfaceinvoke $r5.<com.facebook.a.c.c: java.net.HttpURLConnection a(java.net.URL)>($r1);
+        virtualinvoke $r6.<java.net.HttpURLConnection: void setRequestMethod(java.lang.String)>("POST");
+        virtualinvoke $r6.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("User-Agent", "Android");
+        virtualinvoke $r6.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("Content-Type", $r4);
+        virtualinvoke $r6.<java.net.HttpURLConnection: void setRequestProperty(java.lang.String,java.lang.String)>("Content-Encoding", "gzip");
+        virtualinvoke $r6.<java.net.HttpURLConnection: void setDoOutput(boolean)>(1);
+
+     label0:
+        $r9 = new java.util.zip.GZIPOutputStream;
+        $r10 = virtualinvoke $r6.<java.net.HttpURLConnection: java.io.OutputStream getOutputStream()>();
+        specialinvoke $r9.<java.util.zip.GZIPOutputStream: void <init>(java.io.OutputStream)>($r10);
+        $r11 = virtualinvoke $r2.<java.lang.String: byte[] getBytes()>();
+        virtualinvoke $r9.<java.util.zip.GZIPOutputStream: void write(byte[])>($r11);
+        virtualinvoke $r9.<java.util.zip.GZIPOutputStream: void close()>();
+        $i0 = virtualinvoke $r6.<java.net.HttpURLConnection: int getResponseCode()>();
+        virtualinvoke $r3.<com.facebook.a.c.a: void a(int)>($i0);
+        $r12 = virtualinvoke $r6.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>();
+        virtualinvoke $r12.<java.io.InputStream: void close()>();
+
+     label1:
+        virtualinvoke $r6.<java.net.HttpURLConnection: void disconnect()>();
+        return;
+
+     label2:
+        $r13 := @caughtexception;
+        virtualinvoke $r6.<java.net.HttpURLConnection: void disconnect()>();
+        throw $r13;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

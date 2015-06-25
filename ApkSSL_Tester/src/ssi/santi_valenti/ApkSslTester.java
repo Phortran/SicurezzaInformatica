@@ -9,16 +9,9 @@ import manifestParser.AndroidManifestParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
-
-
-
-//FIXME switchare tra i due
 import dua.Forensics;
-//import reachability.Forensics;
-
 import security.Detective;
+import soot.G;
 import soot.Pack;
 import soot.PackManager;
 import soot.Scene;
@@ -30,6 +23,7 @@ import soot.options.Options;
 public class ApkSslTester {
 	private static final Logger log = LoggerFactory.getLogger(ApkSslTester.class);
 	private static String androidJarPath = null;
+	private static boolean analysisSucceded, configured = false;
 
 
 	public static void setAndroidPath(String androidJarPath) {
@@ -60,8 +54,7 @@ public class ApkSslTester {
 					endAnalysisTime;
 
 
-			sootConfig(path, mainClass);
-			//Scene.v().loadNecessaryClasses();
+			sootConfig(path, mainClass, deepAnalysis);
 
 			endLoadTime = System.currentTimeMillis();
 
@@ -74,7 +67,6 @@ public class ApkSslTester {
 
 			endAnalysisTime = System.currentTimeMillis();
 
-			//FIXME dbg
 			log.info("Main activity: " + mainClass);
 
 			ar.vulnerabilities = detective.report();
@@ -86,9 +78,23 @@ public class ApkSslTester {
 
 					Forensics.setEntryPoint(mainClass);
 
-					soot.Main.main(new String[0]);
+					analysisSucceded = true;
+					try {
+						soot.Main.main(new String[0]);
+					} catch (OutOfMemoryError oome) {
+						ar.info = "The analyser has run out of memory during"
+								+ "the reachability analysis, wich has not been"
+								+ "concluded as well; the vulnerability"
+								+ "analysis has succeded, though. You could"
+								+ "ask the administrator to allocate more memory"
+								+ "to the Java VM with the -Xmx switch.";
+						analysisSucceded = false;
+					}
 
-					detective.testReachability();
+					if (analysisSucceded)
+						detective.testReachability();
+
+
 					endReachTime = System.currentTimeMillis();
 				}
 			} else {
@@ -112,54 +118,89 @@ public class ApkSslTester {
 
 	}
 
-	private static void sootConfig(String path, String className) {
-
+	private static void sootConfig(String path, String className, boolean deepAnalysis) {
+		if (configured) {
+			G.reset();
+			if (deepAnalysis)
+				Forensics.reset();
+		}
+		
 		Options sootOptions = Options.v();
+		Scene sootScene = Scene.v();
+
+		sootOptions.set_process_dir(Arrays.asList(path));
+
+
+		log.info("configuring soot...");
 
 		sootOptions.set_src_prec(Options.src_prec_apk);
-		sootOptions.set_process_dir(Arrays.asList(path));
+
 		sootOptions.set_output_format(Options.output_format_jimple);
 		sootOptions.set_force_android_jar(androidJarPath);
 
-
-
-		//FIXME vediamo se funziona con o senza phantom references
 		sootOptions.set_allow_phantom_refs(true);
 		sootOptions.set_whole_program(true);
 		sootOptions.set_unfriendly_mode(true);
 
-		Pack wjpp = PackManager.v().getPack("wjtp");
-		wjpp.add(new Transform("wjtp.mt", new Forensics()));
 
-		Scene.v().loadBasicClasses();
-		Scene.v().loadNecessaryClasses();
-		SootClass c = findMainClass(className);
-		//SootClass c = Scene.v().forceResolve(className, SootClass.BODIES);
-		//FIXME dbg
-		log.info(c.toString());
-		c.setApplicationClass();
-		Scene.v().loadNecessaryClasses();
-		Scene.v().loadBasicClasses();
-		//SootMethod m = c.getMethods().get(0);
-		//FIXME dbg
-		//log.info(m.toString());
-		sootOptions.set_main_class(className);
-		List<SootMethod> entryPoints = new ArrayList<SootMethod>();
-		if (c.declaresMethod("void onCreate(android.os.Bundle)"))
-			entryPoints.add(c.getMethod("void onCreate(android.os.Bundle)"));
-		Scene.v().setEntryPoints(entryPoints);
 
+		if (deepAnalysis) {
+			Pack wjpp = PackManager.v().getPack("wjtp");
+			wjpp.add(new Transform("wjtp.mt", new Forensics()));
+
+			sootScene.loadNecessaryClasses();
+			List<SootClass> mainClasses = findMainClasses(className);
+
+			for (SootClass c : mainClasses)
+				c.setApplicationClass();
+
+			sootScene.loadNecessaryClasses();
+			sootOptions.set_main_class(className);
+			List<SootMethod> entryPoints = new ArrayList<SootMethod>();
+
+			for (SootClass c : mainClasses)
+				if (c.declaresMethod("void onCreate(android.os.Bundle)"))
+					entryPoints.add(c.getMethod("void onCreate(android.os.Bundle)"));
+
+			sootScene.setEntryPoints(entryPoints);
+		} else {
+			sootScene.loadNecessaryClasses();
+		}
+
+		configured = true;
 	}
 
-	private static SootClass findMainClass(String className) {
-		if (className.startsWith(".") || !className.contains(".")) {
+	private static ArrayList<SootClass> findMainClasses(String className) {
+		ArrayList<SootClass> res = new ArrayList<SootClass>();
+
+		if (className == null) {
+			log.info("Panic Mode: no main activity found in manifest!");
+
+			for (SootClass c : Scene.v().getApplicationClasses()) {
+				if (c.declaresMethod("void onCreate(android.os.Bundle)")) {
+					log.info("Found Class: " + c);
+					res.add(c);
+				}
+			}
+
+			if (res.isEmpty()) {
+				log.info("Cannot find entry points for this application, aborting...");
+				return null;
+			}
+			else
+				return res;
+
+		} else if (className.startsWith(".") || !className.contains(".")) {
+
 			for (SootClass c : Scene.v().getApplicationClasses())
 				if (c.getName().endsWith(className)) {
 					log.info("Main Class: " + c);
-					return c;
+					res.add(c);
+					return res;
 				}
 		} else {
-			return Scene.v().forceResolve(className, SootClass.BODIES);
+			res.add(Scene.v().forceResolve(className, SootClass.BODIES));
+			return res;
 		}
 		return null;
 	}

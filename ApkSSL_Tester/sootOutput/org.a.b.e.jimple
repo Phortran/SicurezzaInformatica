@@ -1,0 +1,285 @@
+public class org.a.b.e extends java.lang.Object implements java.io.Serializable
+{
+    private java.lang.String a;
+    private final org.a.e.a b;
+    private double c;
+    private double d;
+    private double e;
+    private double f;
+    private final int g;
+    private java.util.List h;
+    private final org.a.e.a i;
+
+    public double a(int)
+    {
+        org.a.b.e $r0;
+        int $i0;
+        org.a.e.a $r1;
+        java.lang.Object $r2;
+        java.lang.Double $r3;
+        double $d0;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: org.a.b.e;
+        $i0 := @parameter0: int;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $r2 = virtualinvoke $r1.<org.a.e.a: java.lang.Object b(int)>($i0);
+        $r3 = (java.lang.Double) $r2;
+        $d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>();
+
+     label1:
+        exitmonitor $r0;
+        return $d0;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public int a()
+    {
+        org.a.b.e $r0;
+        int $i0;
+
+        $r0 := @this: org.a.b.e;
+        $i0 = $r0.<org.a.b.e: int g>;
+        return $i0;
+    }
+
+    public int a(double)
+    {
+        org.a.b.e $r0;
+        double $d0;
+        org.a.e.a $r1;
+        java.lang.Double $r2;
+        int $i0;
+
+        $r0 := @this: org.a.b.e;
+        $d0 := @parameter0: double;
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $r2 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        $i0 = virtualinvoke $r1.<org.a.e.a: int a(java.lang.Object)>($r2);
+        return $i0;
+    }
+
+    public java.util.SortedMap a(double, double, boolean)
+    {
+        org.a.b.e $r0;
+        double $d0, $d1, $d2;
+        boolean $z0;
+        org.a.e.a $r1;
+        java.lang.Double $r2, $r7;
+        java.util.SortedMap $r3;
+        java.lang.Object $r4;
+        java.util.Set $r5;
+        java.util.Iterator $r6;
+        java.lang.Throwable $r8;
+
+        $r0 := @this: org.a.b.e;
+        $d0 := @parameter0: double;
+        $d1 := @parameter1: double;
+        $z0 := @parameter2: boolean;
+        entermonitor $r0;
+        if $z0 == 0 goto label2;
+
+     label0:
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $r2 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        $r3 = virtualinvoke $r1.<org.a.e.a: java.util.SortedMap headMap(java.lang.Object)>($r2);
+        $z0 = interfaceinvoke $r3.<java.util.SortedMap: boolean isEmpty()>();
+        if $z0 != 0 goto label1;
+
+        $r4 = interfaceinvoke $r3.<java.util.SortedMap: java.lang.Object lastKey()>();
+        $r2 = (java.lang.Double) $r4;
+        $d0 = virtualinvoke $r2.<java.lang.Double: double doubleValue()>();
+
+     label1:
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $r2 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d1);
+        $r3 = virtualinvoke $r1.<org.a.e.a: java.util.SortedMap tailMap(java.lang.Object)>($r2);
+        $z0 = interfaceinvoke $r3.<java.util.SortedMap: boolean isEmpty()>();
+        if $z0 != 0 goto label2;
+
+        $r5 = interfaceinvoke $r3.<java.util.SortedMap: java.util.Set keySet()>();
+        $r6 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+        $r4 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r2 = (java.lang.Double) $r4;
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r2 = (java.lang.Double) $r4;
+        $d1 = virtualinvoke $r2.<java.lang.Double: double doubleValue()>();
+
+     label2:
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $r2 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        $r7 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d1);
+        $r3 = virtualinvoke $r1.<org.a.e.a: java.util.SortedMap subMap(java.lang.Object,java.lang.Object)>($r2, $r7);
+
+     label3:
+        exitmonitor $r0;
+        return $r3;
+
+     label4:
+        $d2 = virtualinvoke $r2.<java.lang.Double: double doubleValue()>();
+
+     label5:
+        $d1 = $d1 + $d2;
+        goto label2;
+
+     label6:
+        $r8 := @caughtexception;
+        exitmonitor $r0;
+        throw $r8;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    public double b(int)
+    {
+        org.a.b.e $r0;
+        int $i0;
+        org.a.e.a $r1;
+        java.lang.Object $r2;
+        java.lang.Double $r3;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.a.b.e: org.a.e.a i>;
+        $r2 = virtualinvoke $r1.<org.a.e.a: java.lang.Object a(int)>($i0);
+        $r3 = (java.lang.Double) $r2;
+        $d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>();
+        return $d0;
+    }
+
+    public java.lang.String b()
+    {
+        org.a.b.e $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: org.a.b.e;
+        $r1 = $r0.<org.a.b.e: java.lang.String a>;
+        return $r1;
+    }
+
+    public double c(int)
+    {
+        org.a.b.e $r0;
+        int $i0;
+        org.a.e.a $r1;
+        java.lang.Object $r2;
+        java.lang.Double $r3;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.a.b.e: org.a.e.a i>;
+        $r2 = virtualinvoke $r1.<org.a.e.a: java.lang.Object b(int)>($i0);
+        $r3 = (java.lang.Double) $r2;
+        $d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>();
+        return $d0;
+    }
+
+    public int c()
+    {
+        org.a.b.e $r0;
+        java.util.List $r1;
+        int $i0;
+
+        $r0 := @this: org.a.b.e;
+        $r1 = $r0.<org.a.b.e: java.util.List h>;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+        return $i0;
+    }
+
+    public int d()
+    {
+        org.a.b.e $r0;
+        org.a.e.a $r1;
+        int $i0;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: org.a.b.e;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.b.e: org.a.e.a b>;
+        $i0 = virtualinvoke $r1.<org.a.e.a: int size()>();
+
+     label1:
+        exitmonitor $r0;
+        return $i0;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public java.lang.String d(int)
+    {
+        org.a.b.e $r0;
+        int $i0;
+        java.util.List $r1;
+        java.lang.Object $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: org.a.b.e;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.a.b.e: java.util.List h>;
+        $r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i0);
+        $r3 = (java.lang.String) $r2;
+        return $r3;
+    }
+
+    public double e()
+    {
+        org.a.b.e $r0;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $d0 = $r0.<org.a.b.e: double c>;
+        return $d0;
+    }
+
+    public double f()
+    {
+        org.a.b.e $r0;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $d0 = $r0.<org.a.b.e: double e>;
+        return $d0;
+    }
+
+    public double g()
+    {
+        org.a.b.e $r0;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $d0 = $r0.<org.a.b.e: double d>;
+        return $d0;
+    }
+
+    public double h()
+    {
+        org.a.b.e $r0;
+        double $d0;
+
+        $r0 := @this: org.a.b.e;
+        $d0 = $r0.<org.a.b.e: double f>;
+        return $d0;
+    }
+}

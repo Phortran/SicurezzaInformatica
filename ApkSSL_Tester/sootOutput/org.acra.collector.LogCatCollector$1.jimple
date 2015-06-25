@@ -1,0 +1,48 @@
+final class org.acra.collector.LogCatCollector$1 extends java.lang.Object implements java.lang.Runnable
+{
+    final java.lang.Process val$process;
+
+    void <init>(java.lang.Process)
+    {
+        org.acra.collector.LogCatCollector$1 $r0;
+        java.lang.Process $r1;
+
+        $r0 := @this: org.acra.collector.LogCatCollector$1;
+        $r1 := @parameter0: java.lang.Process;
+        $r0.<org.acra.collector.LogCatCollector$1: java.lang.Process val$process> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        org.acra.collector.LogCatCollector$1 $r0;
+        java.lang.Process $r1;
+        int $i1;
+        java.io.InputStream $r2;
+        byte[] $r3;
+        java.io.IOException $r4;
+
+        $r0 := @this: org.acra.collector.LogCatCollector$1;
+        $r1 = $r0.<org.acra.collector.LogCatCollector$1: java.lang.Process val$process>;
+
+     label0:
+        $r2 = virtualinvoke $r1.<java.lang.Process: java.io.InputStream getErrorStream()>();
+        $r3 = newarray (byte)[8192];
+
+     label1:
+        $i1 = virtualinvoke $r2.<java.io.InputStream: int read(byte[])>($r3);
+
+     label2:
+        if $i1 >= 0 goto label1;
+
+     label3:
+        return;
+
+     label4:
+        $r4 := @caughtexception;
+        goto label3;
+
+        catch java.io.IOException from label0 to label2 with label4;
+    }
+}

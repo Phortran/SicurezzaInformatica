@@ -1,0 +1,74 @@
+class org.acra.collector.MediaCodecListCollector$1 extends java.lang.Object
+{
+    static final int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType;
+
+    static void <clinit>()
+    {
+        org.acra.collector.MediaCodecListCollector$CodecType[] $r0;
+        org.acra.collector.MediaCodecListCollector$CodecType $r1;
+        int $i1;
+        int[] $r2;
+        java.lang.NoSuchFieldError $r3, $r4, $r5, $r6;
+
+        $r0 = staticinvoke <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType[] values()>();
+        $i1 = lengthof $r0;
+        $r2 = newarray (int)[$i1];
+        <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType> = $r2;
+
+     label0:
+        $r2 = <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType>;
+        $r1 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType AVC>;
+        $i1 = virtualinvoke $r1.<org.acra.collector.MediaCodecListCollector$CodecType: int ordinal()>();
+
+     label1:
+        $r2[$i1] = 1;
+
+     label2:
+        $r2 = <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType>;
+        $r1 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType H263>;
+        $i1 = virtualinvoke $r1.<org.acra.collector.MediaCodecListCollector$CodecType: int ordinal()>();
+
+     label3:
+        $r2[$i1] = 2;
+
+     label4:
+        $r2 = <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType>;
+        $r1 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType MPEG4>;
+        $i1 = virtualinvoke $r1.<org.acra.collector.MediaCodecListCollector$CodecType: int ordinal()>();
+
+     label5:
+        $r2[$i1] = 3;
+
+     label6:
+        $r2 = <org.acra.collector.MediaCodecListCollector$1: int[] $SwitchMap$org$acra$collector$MediaCodecListCollector$CodecType>;
+        $r1 = <org.acra.collector.MediaCodecListCollector$CodecType: org.acra.collector.MediaCodecListCollector$CodecType AAC>;
+        $i1 = virtualinvoke $r1.<org.acra.collector.MediaCodecListCollector$CodecType: int ordinal()>();
+
+     label7:
+        $r2[$i1] = 4;
+
+     label8:
+        return;
+
+     label9:
+        $r3 := @caughtexception;
+        goto label8;
+
+     label10:
+        $r4 := @caughtexception;
+        goto label6;
+
+     label11:
+        $r5 := @caughtexception;
+        goto label4;
+
+     label12:
+        $r6 := @caughtexception;
+        goto label2;
+
+        catch java.lang.NoSuchFieldError from label0 to label1 with label12;
+        catch java.lang.NoSuchFieldError from label2 to label3 with label11;
+        catch java.lang.NoSuchFieldError from label4 to label5 with label10;
+        catch java.lang.NoSuchFieldError from label6 to label7 with label9;
+    }
+}

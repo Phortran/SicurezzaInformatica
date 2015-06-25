@@ -1,0 +1,115 @@
+public class it.h3g.areaclienti3.ussdservices.ad extends android.widget.BaseAdapter
+{
+    private java.util.List a;
+    private android.content.Context b;
+
+    public void <init>(android.content.Context, java.util.List)
+    {
+        it.h3g.areaclienti3.ussdservices.ad $r0;
+        android.content.Context $r1;
+        java.util.List $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.ad;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.List;
+        specialinvoke $r0.<android.widget.BaseAdapter: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.ad: java.util.List a> = $r2;
+        $r0.<it.h3g.areaclienti3.ussdservices.ad: android.content.Context b> = $r1;
+        return;
+    }
+
+    public int getCount()
+    {
+        it.h3g.areaclienti3.ussdservices.ad $r0;
+        java.util.List $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.ad;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.ad: java.util.List a>;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+        return $i0;
+    }
+
+    public java.lang.Object getItem(int)
+    {
+        it.h3g.areaclienti3.ussdservices.ad $r0;
+        int $i0;
+        java.util.List $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.ad;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.ad: java.util.List a>;
+        $r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i0);
+        return $r2;
+    }
+
+    public long getItemId(int)
+    {
+        it.h3g.areaclienti3.ussdservices.ad $r0;
+        int $i0;
+        long $l1;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.ad;
+        $i0 := @parameter0: int;
+        $l1 = (long) $i0;
+        return $l1;
+    }
+
+    public android.view.View getView(int, android.view.View, android.view.ViewGroup)
+    {
+        it.h3g.areaclienti3.ussdservices.ad $r0;
+        int $i0;
+        android.view.View $r1, $r8;
+        android.view.ViewGroup $r2;
+        android.content.Context $r3;
+        android.widget.TextView $r4;
+        java.lang.String $r5;
+        android.view.LayoutInflater $r6;
+        it.h3g.areaclienti3.ussdservices.ae $r7;
+        android.widget.ImageView $r9;
+        java.lang.Object $r10;
+        it.h3g.areaclienti3.ussdservices.ac $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.ad;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.View;
+        $r2 := @parameter2: android.view.ViewGroup;
+        $r3 = $r0.<it.h3g.areaclienti3.ussdservices.ad: android.content.Context b>;
+        $r6 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r3);
+        if $r1 != null goto label1;
+
+        $r1 = virtualinvoke $r6.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903183, $r2, 0);
+        $r7 = new it.h3g.areaclienti3.ussdservices.ae;
+        specialinvoke $r7.<it.h3g.areaclienti3.ussdservices.ae: void <init>()>();
+        $r8 = virtualinvoke $r1.<android.view.View: android.view.View findViewById(int)>(2131165986);
+        $r4 = (android.widget.TextView) $r8;
+        $r7.<it.h3g.areaclienti3.ussdservices.ae: android.widget.TextView a> = $r4;
+        $r8 = virtualinvoke $r1.<android.view.View: android.view.View findViewById(int)>(2131165988);
+        $r4 = (android.widget.TextView) $r8;
+        $r7.<it.h3g.areaclienti3.ussdservices.ae: android.widget.TextView b> = $r4;
+        $r8 = virtualinvoke $r1.<android.view.View: android.view.View findViewById(int)>(2131165987);
+        $r9 = (android.widget.ImageView) $r8;
+        $r7.<it.h3g.areaclienti3.ussdservices.ae: android.widget.ImageView c> = $r9;
+        virtualinvoke $r1.<android.view.View: void setTag(java.lang.Object)>($r7);
+
+     label0:
+        virtualinvoke $r1.<android.view.View: void setClickable(boolean)>(1);
+        $r10 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.ad: java.lang.Object getItem(int)>($i0);
+        $r11 = (it.h3g.areaclienti3.ussdservices.ac) $r10;
+        $r4 = $r7.<it.h3g.areaclienti3.ussdservices.ae: android.widget.TextView a>;
+        $r5 = interfaceinvoke $r11.<it.h3g.areaclienti3.ussdservices.ac: java.lang.String a()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        $r4 = $r7.<it.h3g.areaclienti3.ussdservices.ae: android.widget.TextView b>;
+        $r5 = interfaceinvoke $r11.<it.h3g.areaclienti3.ussdservices.ac: java.lang.String b()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        virtualinvoke $r1.<android.view.View: void setClickable(boolean)>(0);
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837883);
+        return $r1;
+
+     label1:
+        $r10 = virtualinvoke $r1.<android.view.View: java.lang.Object getTag()>();
+        $r7 = (it.h3g.areaclienti3.ussdservices.ae) $r10;
+        goto label0;
+    }
+}

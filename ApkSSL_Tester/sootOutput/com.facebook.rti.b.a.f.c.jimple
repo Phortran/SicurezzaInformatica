@@ -1,0 +1,104 @@
+public abstract class com.facebook.rti.b.a.f.c extends java.lang.Object
+{
+    private final java.util.concurrent.ExecutorService a;
+
+    public void <init>(java.util.concurrent.ExecutorService)
+    {
+        com.facebook.rti.b.a.f.c $r0;
+        java.util.concurrent.ExecutorService $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.c;
+        $r1 := @parameter0: java.util.concurrent.ExecutorService;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.a.f.c: java.util.concurrent.ExecutorService a> = $r1;
+        return;
+    }
+
+    public static java.net.Socket a()
+    {
+        java.net.Socket $r0;
+
+        $r0 = new java.net.Socket;
+        specialinvoke $r0.<java.net.Socket: void <init>()>();
+        return $r0;
+    }
+
+    public abstract java.net.Socket a(java.net.Socket, java.lang.String, int);
+
+    public final java.net.Socket a(java.net.Socket, java.lang.String, int, long)
+    {
+        com.facebook.rti.b.a.f.c $r0;
+        java.net.Socket $r1;
+        java.lang.String $r2;
+        int $i0;
+        long $l1;
+        java.lang.StringBuilder $r3;
+        java.util.concurrent.Future $r4;
+        byte $b3;
+        java.io.IOException $r5;
+        java.util.concurrent.ExecutorService $r6;
+        com.facebook.rti.b.a.f.d $r7;
+        java.util.concurrent.TimeUnit $r8;
+        java.lang.Object $r9;
+        java.lang.InterruptedException $r10;
+        java.util.concurrent.ExecutionException $r11;
+        java.util.concurrent.TimeoutException $r12;
+        java.net.SocketTimeoutException $r13;
+
+        $r0 := @this: com.facebook.rti.b.a.f.c;
+        $r1 := @parameter0: java.net.Socket;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $l1 := @parameter3: long;
+        $b3 = $l1 cmp 0L;
+        if $b3 > 0 goto label0;
+
+        $r5 = new java.io.IOException;
+        specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>("non-positive timeout value");
+        throw $r5;
+
+     label0:
+        $r6 = $r0.<com.facebook.rti.b.a.f.c: java.util.concurrent.ExecutorService a>;
+        $r7 = new com.facebook.rti.b.a.f.d;
+        specialinvoke $r7.<com.facebook.rti.b.a.f.d: void <init>(com.facebook.rti.b.a.f.c,java.net.Socket,java.lang.String,int)>($r0, $r1, $r2, $i0);
+        $r4 = interfaceinvoke $r6.<java.util.concurrent.ExecutorService: java.util.concurrent.Future submit(java.util.concurrent.Callable)>($r7);
+        $r8 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+
+     label1:
+        $r9 = interfaceinvoke $r4.<java.util.concurrent.Future: java.lang.Object get(long,java.util.concurrent.TimeUnit)>($l1, $r8);
+
+     label2:
+        $r1 = (java.net.Socket) $r9;
+        return $r1;
+
+     label3:
+        $r10 := @caughtexception;
+        $r5 = new java.io.IOException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("handshakeAndVerifySocket failed because of ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>($r2);
+        throw $r5;
+
+     label4:
+        $r11 := @caughtexception;
+        $r5 = new java.io.IOException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("handshakeAndVerifySocket failed because of ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>($r2);
+        throw $r5;
+
+     label5:
+        $r12 := @caughtexception;
+        $r13 = new java.net.SocketTimeoutException;
+        specialinvoke $r13.<java.net.SocketTimeoutException: void <init>(java.lang.String)>("handshakeAndVerifySocket timeout");
+        throw $r13;
+
+        catch java.lang.InterruptedException from label1 to label2 with label3;
+        catch java.util.concurrent.ExecutionException from label1 to label2 with label4;
+        catch java.util.concurrent.TimeoutException from label1 to label2 with label5;
+    }
+}

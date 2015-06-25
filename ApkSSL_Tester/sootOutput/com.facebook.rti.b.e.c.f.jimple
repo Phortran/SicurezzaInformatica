@@ -1,0 +1,1104 @@
+public final class com.facebook.rti.b.e.c.f extends java.lang.Object
+{
+    private final boolean a;
+    private final com.facebook.rti.b.e.c.j b;
+    private java.io.DataOutputStream c;
+
+    public void <init>(boolean, com.facebook.rti.b.e.c.j)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        boolean $z0;
+        com.facebook.rti.b.e.c.j $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $z0 := @parameter0: boolean;
+        $r1 := @parameter1: com.facebook.rti.b.e.c.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.e.c.f: boolean a> = $z0;
+        $r0.<com.facebook.rti.b.e.c.f: com.facebook.rti.b.e.c.j b> = $r1;
+        return;
+    }
+
+    private int a(com.facebook.rti.b.e.b.a)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.a $r1;
+        boolean $z0;
+        int $i0, $i2;
+        com.facebook.rti.b.e.b.c $r2;
+        byte $b1;
+        com.facebook.rti.b.e.b.b $r3;
+        java.lang.String $r4;
+        byte[] $r5;
+        java.io.DataOutputStream $r6;
+        com.facebook.rti.b.e.b.h $r7;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.a;
+        $z0 = 1;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.c a()>();
+        $b1 = $r2.<com.facebook.rti.b.e.b.c: byte a>;
+        if $b1 != 0 goto label2;
+
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.b b()>();
+        if $r3 == null goto label1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void b(boolean)>($z0);
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.b b()>();
+        $r4 = virtualinvoke $r3.<com.facebook.rti.b.e.b.b: java.lang.String toString()>();
+        $r5 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r4);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r7 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.h f()>();
+        $i0 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r7);
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($i0);
+        $i0 = lengthof $r5;
+        $i0 = $i0 + 4;
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i0);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i2 = (int) 0;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($i2);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.c a()>();
+        $b1 = $r2.<com.facebook.rti.b.e.b.c: byte a>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($b1);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r5;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void write(byte[])>($r5);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void flush()>();
+        $i0 = lengthof $r5;
+        $i0 = $i0 + 5;
+        $i2 = lengthof $r5;
+        $i2 = $i2 + 4;
+        $i2 = staticinvoke <com.facebook.rti.b.e.c.f: int b(int)>($i2);
+        $i2 = $i2 + $i0;
+        return $i2;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+
+     label2:
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.b b()>();
+        if $r3 != null goto label4;
+
+     label3:
+        staticinvoke <com.facebook.rti.a.d.a.d: void b(boolean)>($z0);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r7 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.h f()>();
+        $i2 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r7);
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($i2);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>(2);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i2 = (int) 0;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($i2);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.c a()>();
+        $b1 = $r2.<com.facebook.rti.b.e.b.c: byte a>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void writeByte(int)>($b1);
+        $r6 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r6.<java.io.DataOutputStream: void flush()>();
+        return 2;
+
+     label4:
+        $z0 = 0;
+        goto label3;
+    }
+
+    private int a(com.facebook.rti.b.e.b.d)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.d $r1;
+        java.lang.String $r2;
+        int $i0, $i2;
+        boolean $z0;
+        com.facebook.rti.b.e.b.e $r3;
+        com.facebook.rti.b.e.b.h $r4;
+        com.facebook.rti.b.e.b.g $r5;
+        byte[] $r6, $r7, $r8, $r9, $r10;
+        java.io.DataOutputStream $r11;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.d;
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.e.b.d: com.facebook.rti.b.e.b.h f()>();
+        $r5 = virtualinvoke $r1.<com.facebook.rti.b.e.b.d: com.facebook.rti.b.e.b.g a()>();
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.d: com.facebook.rti.b.e.b.e b()>();
+        $r2 = $r3.<com.facebook.rti.b.e.b.e: java.lang.String a>;
+        $r6 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+        $i0 = lengthof $r6;
+        $i0 = $i0 + 2;
+        $i0 = $i0 + 0;
+        $r2 = $r3.<com.facebook.rti.b.e.b.e: java.lang.String b>;
+        if $r2 == null goto label10;
+
+        $r7 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+
+     label0:
+        $r2 = $r3.<com.facebook.rti.b.e.b.e: java.lang.String c>;
+        if $r2 == null goto label11;
+
+        $r8 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+
+     label1:
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean d>;
+        if $z0 == 0 goto label2;
+
+        $i2 = lengthof $r7;
+        $i2 = $i2 + 2;
+        $i2 = $i0 + $i2;
+        $i0 = lengthof $r8;
+        $i0 = $i0 + 2;
+        $i0 = $i2 + $i0;
+
+     label2:
+        $r2 = $r3.<com.facebook.rti.b.e.b.e: java.lang.String d>;
+        if $r2 == null goto label12;
+
+        $r9 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+
+     label3:
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean b>;
+        if $z0 == 0 goto label4;
+
+        $i2 = lengthof $r9;
+        $i2 = $i2 + 2;
+        $i0 = $i0 + $i2;
+
+     label4:
+        $r2 = $r3.<com.facebook.rti.b.e.b.e: java.lang.String e>;
+        if $r2 == null goto label13;
+
+        $r10 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+
+     label5:
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean c>;
+        if $z0 == 0 goto label6;
+
+        $i2 = lengthof $r10;
+        $i2 = $i2 + 2;
+        $i0 = $i0 + $i2;
+
+     label6:
+        $i2 = $i0 + 12;
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r4);
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>($i0);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i2);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(6);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(77);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(81);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(73);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(115);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(100);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>(112);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = $r5.<com.facebook.rti.b.e.b.g: int a>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.g)>($r5);
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = $r5.<com.facebook.rti.b.e.b.g: int h>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r6;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r6;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r6, 0, $i0);
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean d>;
+        if $z0 == 0 goto label7;
+
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r7;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r7;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r7, 0, $i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r8;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r8;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r8, 0, $i0);
+
+     label7:
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean b>;
+        if $z0 == 0 goto label8;
+
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r9;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r9;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r9, 0, $i0);
+
+     label8:
+        $z0 = $r5.<com.facebook.rti.b.e.b.g: boolean c>;
+        if $z0 == 0 goto label9;
+
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r10;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r10;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r10, 0, $i0);
+
+     label9:
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void flush()>();
+        return $i2;
+
+     label10:
+        $r7 = newarray (byte)[0];
+        goto label0;
+
+     label11:
+        $r8 = newarray (byte)[0];
+        goto label1;
+
+     label12:
+        $r9 = newarray (byte)[0];
+        goto label3;
+
+     label13:
+        $r10 = newarray (byte)[0];
+        goto label5;
+    }
+
+    private static int a(com.facebook.rti.b.e.b.g)
+    {
+        com.facebook.rti.b.e.b.g $r0;
+        short $s0;
+        boolean $z0;
+        int $i1;
+
+        $r0 := @parameter0: com.facebook.rti.b.e.b.g;
+        $s0 = 0;
+        $z0 = $r0.<com.facebook.rti.b.e.b.g: boolean b>;
+        if $z0 == 0 goto label0;
+
+        $s0 = 128;
+
+     label0:
+        $z0 = $r0.<com.facebook.rti.b.e.b.g: boolean c>;
+        if $z0 == 0 goto label1;
+
+        $s0 = $s0 | 64;
+
+     label1:
+        $z0 = $r0.<com.facebook.rti.b.e.b.g: boolean e>;
+        if $z0 == 0 goto label2;
+
+        $s0 = $s0 | 32;
+
+     label2:
+        $i1 = $r0.<com.facebook.rti.b.e.b.g: int f>;
+        $i1 = $i1 & 3;
+        $i1 = $i1 << 3;
+        $i1 = $s0 | $i1;
+        $z0 = $r0.<com.facebook.rti.b.e.b.g: boolean d>;
+        if $z0 == 0 goto label3;
+
+        $i1 = $i1 | 4;
+
+     label3:
+        $z0 = $r0.<com.facebook.rti.b.e.b.g: boolean g>;
+        if $z0 == 0 goto label4;
+
+        $i1 = $i1 | 2;
+
+     label4:
+        return $i1;
+    }
+
+    private static int a(com.facebook.rti.b.e.b.h)
+    {
+        com.facebook.rti.b.e.b.h $r0;
+        com.facebook.rti.b.e.b.j $r1;
+        boolean $z0;
+        int $i0, $i1;
+
+        $r0 := @parameter0: com.facebook.rti.b.e.b.h;
+        $r1 = $r0.<com.facebook.rti.b.e.b.h: com.facebook.rti.b.e.b.j a>;
+        $i0 = $r1.<com.facebook.rti.b.e.b.j: int o>;
+        $i0 = $i0 << 4;
+        $i0 = $i0 | 0;
+        $z0 = $r0.<com.facebook.rti.b.e.b.h: boolean b>;
+        if $z0 == 0 goto label0;
+
+        $i0 = $i0 | 8;
+
+     label0:
+        $i1 = $r0.<com.facebook.rti.b.e.b.h: int c>;
+        $i1 = $i1 << 1;
+        $i1 = $i0 | $i1;
+        $z0 = $r0.<com.facebook.rti.b.e.b.h: boolean d>;
+        if $z0 == 0 goto label1;
+
+        $i1 = $i1 | 1;
+
+     label1:
+        return $i1;
+    }
+
+    private int a(com.facebook.rti.b.e.b.o)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.o $r1;
+        com.facebook.rti.b.e.b.h $r2;
+        com.facebook.rti.b.e.b.i $r3;
+        java.io.DataOutputStream $r4;
+        int $i1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.o;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.o: com.facebook.rti.b.e.b.h f()>();
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.o: com.facebook.rti.b.e.b.i a()>();
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r2);
+        virtualinvoke $r4.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>(2);
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = $r3.<com.facebook.rti.b.e.b.i: int a>;
+        virtualinvoke $r4.<java.io.DataOutputStream: void writeShort(int)>($i1);
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r4.<java.io.DataOutputStream: void flush()>();
+        return 2;
+    }
+
+    private int a(com.facebook.rti.b.e.b.p)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.p $r1;
+        boolean $z0;
+        java.lang.String $r2;
+        com.facebook.rti.b.e.b.h $r3;
+        com.facebook.rti.b.e.b.q $r4;
+        byte[] $r5, $r6;
+        int $i1, $i2;
+        byte $b3;
+        java.io.DataOutputStream $r7;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.p;
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.p: com.facebook.rti.b.e.b.h f()>();
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.e.b.p: com.facebook.rti.b.e.b.q a()>();
+        $z0 = $r0.<com.facebook.rti.b.e.c.f: boolean a>;
+        if $z0 == 0 goto label3;
+
+        $r5 = virtualinvoke $r1.<com.facebook.rti.b.e.b.p: byte[] b()>();
+        $r6 = staticinvoke <com.facebook.rti.b.e.c.j: byte[] a(byte[])>($r5);
+
+     label0:
+        $r2 = $r4.<com.facebook.rti.b.e.b.q: java.lang.String a>;
+        $r5 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r2);
+        $i1 = lengthof $r5;
+        $i1 = $i1 + 2;
+        $i2 = $r3.<com.facebook.rti.b.e.b.h: int c>;
+        if $i2 <= 0 goto label4;
+
+        $b3 = 2;
+
+     label1:
+        $i2 = $b3 + $i1;
+        $i1 = lengthof $r6;
+        $i2 = $i2 + $i1;
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r3);
+        virtualinvoke $r7.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i2);
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = lengthof $r5;
+        virtualinvoke $r7.<java.io.DataOutputStream: void writeShort(int)>($i1);
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = lengthof $r5;
+        virtualinvoke $r7.<java.io.DataOutputStream: void write(byte[],int,int)>($r5, 0, $i1);
+        $i1 = $r3.<com.facebook.rti.b.e.b.h: int c>;
+        if $i1 <= 0 goto label2;
+
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = $r4.<com.facebook.rti.b.e.b.q: int b>;
+        virtualinvoke $r7.<java.io.DataOutputStream: void writeShort(int)>($i1);
+
+     label2:
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = lengthof $r6;
+        virtualinvoke $r7.<java.io.DataOutputStream: void write(byte[],int,int)>($r6, 0, $i1);
+        $r7 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r7.<java.io.DataOutputStream: void flush()>();
+        return $i2;
+
+     label3:
+        $r6 = virtualinvoke $r1.<com.facebook.rti.b.e.b.p: byte[] b()>();
+        goto label0;
+
+     label4:
+        $b3 = 0;
+        goto label1;
+    }
+
+    private int a(com.facebook.rti.b.e.b.r)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.r $r1;
+        com.facebook.rti.b.e.b.s $r2;
+        int $i0, $i1;
+        com.facebook.rti.b.e.b.h $r3;
+        java.io.DataOutputStream $r4;
+        java.util.List $r5;
+        com.facebook.rti.b.e.b.i $r6;
+        java.util.Iterator $r7;
+        boolean $z0;
+        java.lang.Object $r8;
+        java.lang.Integer $r9;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.r;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.r: com.facebook.rti.b.e.b.s b()>();
+        $r5 = $r2.<com.facebook.rti.b.e.b.s: java.util.List a>;
+        $i0 = interfaceinvoke $r5.<java.util.List: int size()>();
+        $i0 = $i0 + 2;
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.r: com.facebook.rti.b.e.b.h f()>();
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r3);
+        virtualinvoke $r4.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i0);
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r6 = virtualinvoke $r1.<com.facebook.rti.b.e.b.r: com.facebook.rti.b.e.b.i a()>();
+        $i1 = $r6.<com.facebook.rti.b.e.b.i: int a>;
+        virtualinvoke $r4.<java.io.DataOutputStream: void writeShort(int)>($i1);
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.r: com.facebook.rti.b.e.b.s b()>();
+        $r5 = $r2.<com.facebook.rti.b.e.b.s: java.util.List a>;
+        $r7 = interfaceinvoke $r5.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r8 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.lang.Integer) $r8;
+        $i1 = virtualinvoke $r9.<java.lang.Integer: int intValue()>();
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r4.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        goto label0;
+
+     label1:
+        $r4 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r4.<java.io.DataOutputStream: void flush()>();
+        return $i0;
+    }
+
+    private int a(com.facebook.rti.b.e.b.t)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.t $r1;
+        java.util.List $r2;
+        int $i0, $i2;
+        com.facebook.rti.b.e.b.h $r3;
+        com.facebook.rti.b.e.b.i $r4;
+        com.facebook.rti.b.e.b.u $r5;
+        java.util.Iterator $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+        com.facebook.rti.b.e.b.v $r8;
+        java.lang.String $r9;
+        byte[] $r10;
+        java.io.DataOutputStream $r11;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.t;
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.t: com.facebook.rti.b.e.b.h f()>();
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.e.b.t: com.facebook.rti.b.e.b.i a()>();
+        $r5 = virtualinvoke $r1.<com.facebook.rti.b.e.b.t: com.facebook.rti.b.e.b.u b()>();
+        $r2 = $r5.<com.facebook.rti.b.e.b.u: java.util.List a>;
+        $r6 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+        $i0 = 0;
+
+     label0:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (com.facebook.rti.b.e.b.v) $r7;
+        $r9 = $r8.<com.facebook.rti.b.e.b.v: java.lang.String a>;
+        $r10 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r9);
+        $i2 = lengthof $r10;
+        $i2 = $i2 + 2;
+        $i2 = $i2 + $i0;
+        $i0 = $i2 + 1;
+        goto label0;
+
+     label1:
+        $i2 = $i0 + 2;
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r3);
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeByte(int)>($i0);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i2);
+        $i0 = $r4.<com.facebook.rti.b.e.b.i: int a>;
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r2 = $r5.<com.facebook.rti.b.e.b.u: java.util.List a>;
+        $r6 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label3;
+
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (com.facebook.rti.b.e.b.v) $r7;
+        $r9 = $r8.<com.facebook.rti.b.e.b.v: java.lang.String a>;
+        $r10 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r9);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r10;
+        virtualinvoke $r11.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r10;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(byte[],int,int)>($r10, 0, $i0);
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = $r8.<com.facebook.rti.b.e.b.v: int b>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void write(int)>($i0);
+        goto label2;
+
+     label3:
+        $r11 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r11.<java.io.DataOutputStream: void flush()>();
+        return $i2;
+    }
+
+    private int a(com.facebook.rti.b.e.b.w)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.w $r1;
+        java.io.DataOutputStream $r2;
+        com.facebook.rti.b.e.b.h $r3;
+        int $i1;
+        com.facebook.rti.b.e.b.i $r4;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.w;
+        $r2 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.w: com.facebook.rti.b.e.b.h f()>();
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r3);
+        virtualinvoke $r2.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>(2);
+        $r2 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.e.b.w: com.facebook.rti.b.e.b.i a()>();
+        $i1 = $r4.<com.facebook.rti.b.e.b.i: int a>;
+        virtualinvoke $r2.<java.io.DataOutputStream: void writeShort(int)>($i1);
+        $r2 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r2.<java.io.DataOutputStream: void flush()>();
+        return 2;
+    }
+
+    private int a(com.facebook.rti.b.e.b.x)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.x $r1;
+        java.util.List $r2;
+        int $i0, $i2;
+        com.facebook.rti.b.e.b.h $r3;
+        com.facebook.rti.b.e.b.i $r4;
+        com.facebook.rti.b.e.b.y $r5;
+        java.util.Iterator $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+        java.lang.String $r8;
+        byte[] $r9;
+        java.io.DataOutputStream $r10;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.x;
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.x: com.facebook.rti.b.e.b.h f()>();
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.e.b.x: com.facebook.rti.b.e.b.i a()>();
+        $r5 = virtualinvoke $r1.<com.facebook.rti.b.e.b.x: com.facebook.rti.b.e.b.y b()>();
+        $r2 = $r5.<com.facebook.rti.b.e.b.y: java.util.List a>;
+        $r6 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+        $i0 = 0;
+
+     label0:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (java.lang.String) $r7;
+        $r9 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r8);
+        $i2 = lengthof $r9;
+        $i2 = $i2 + 2;
+        $i0 = $i2 + $i0;
+        goto label0;
+
+     label1:
+        $i2 = $i0 + 2;
+        $r10 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r3);
+        virtualinvoke $r10.<java.io.DataOutputStream: void writeByte(int)>($i0);
+        specialinvoke $r0.<com.facebook.rti.b.e.c.f: void a(int)>($i2);
+        $i0 = $r4.<com.facebook.rti.b.e.b.i: int a>;
+        $r10 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r10.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r2 = $r5.<com.facebook.rti.b.e.b.y: java.util.List a>;
+        $r6 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label3;
+
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (java.lang.String) $r7;
+        $r9 = staticinvoke <com.facebook.rti.b.e.c.f: byte[] a(java.lang.String)>($r8);
+        $r10 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r9;
+        virtualinvoke $r10.<java.io.DataOutputStream: void writeShort(int)>($i0);
+        $r10 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i0 = lengthof $r9;
+        virtualinvoke $r10.<java.io.DataOutputStream: void write(byte[],int,int)>($r9, 0, $i0);
+        goto label2;
+
+     label3:
+        $r10 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r10.<java.io.DataOutputStream: void flush()>();
+        return $i2;
+    }
+
+    private void a(int)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        int $i0, $i1;
+        java.io.DataOutputStream $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $i0 := @parameter0: int;
+
+     label0:
+        $i1 = $i0 % 128;
+        $i0 = $i0 / 128;
+        if $i0 <= 0 goto label1;
+
+        $i1 = $i1 | 128;
+
+     label1:
+        $r1 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r1.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        if $i0 > 0 goto label0;
+
+        return;
+    }
+
+    private static byte[] a(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.RuntimeException $r2;
+        byte[] $r3;
+        java.io.UnsupportedEncodingException $r4;
+
+        $r0 := @parameter0: java.lang.String;
+
+     label0:
+        $r3 = virtualinvoke $r0.<java.lang.String: byte[] getBytes(java.lang.String)>("utf-8");
+
+     label1:
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        $r2 = new java.lang.RuntimeException;
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r4);
+        throw $r2;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label2;
+    }
+
+    private static int b(int)
+    {
+        int $i0, $i1;
+
+        $i0 := @parameter0: int;
+        $i1 = 0;
+
+     label0:
+        $i0 = $i0 / 128;
+        $i1 = $i1 + 1;
+        if $i0 > 0 goto label0;
+
+        return $i1;
+    }
+
+    private int b(com.facebook.rti.b.e.b.m)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.m $r1;
+        com.facebook.rti.b.e.b.h $r2;
+        java.io.DataOutputStream $r3;
+        int $i1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.m;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.h f()>();
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r2);
+        virtualinvoke $r3.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r3.<java.io.DataOutputStream: void writeByte(int)>(0);
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r3.<java.io.DataOutputStream: void flush()>();
+        return 0;
+    }
+
+    private int c(com.facebook.rti.b.e.b.m)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.m $r1;
+        com.facebook.rti.b.e.b.h $r2;
+        java.io.DataOutputStream $r3;
+        int $i1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.m;
+        $r2 = virtualinvoke $r1.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.h f()>();
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        $i1 = staticinvoke <com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.h)>($r2);
+        virtualinvoke $r3.<java.io.DataOutputStream: void writeByte(int)>($i1);
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r3.<java.io.DataOutputStream: void writeByte(int)>(0);
+        $r3 = $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c>;
+        virtualinvoke $r3.<java.io.DataOutputStream: void flush()>();
+        return 0;
+    }
+
+    public final void a(com.facebook.rti.b.e.b.m)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        com.facebook.rti.b.e.b.m $r1;
+        int $i0, $i1;
+        com.facebook.rti.b.e.b.j $r3;
+        int[] $r4;
+        java.lang.String $r5, $r6, $r14;
+        java.lang.IllegalArgumentException $r7;
+        java.lang.StringBuilder $r8;
+        java.lang.Object[] $r9;
+        com.facebook.rti.b.e.b.h $r10;
+        boolean $z0;
+        java.lang.AssertionError $r11;
+        java.lang.Throwable $r12;
+        com.facebook.rti.b.e.b.a $r13;
+        com.facebook.rti.b.e.b.c $r15;
+        byte $b3;
+        java.lang.Byte $r16;
+        com.facebook.rti.b.e.b.t $r17;
+        com.facebook.rti.b.e.b.u $r18;
+        java.util.List $r19;
+        com.facebook.rti.b.e.b.r $r20;
+        com.facebook.rti.b.e.b.i $r21;
+        java.lang.Integer $r22;
+        com.facebook.rti.b.e.b.x $r23;
+        com.facebook.rti.b.e.b.y $r24;
+        com.facebook.rti.b.e.b.w $r25;
+        com.facebook.rti.b.e.b.p $r26;
+        com.facebook.rti.b.e.b.q $r27;
+        com.facebook.rti.b.e.b.o $r28;
+        com.facebook.rti.b.e.b.d $r29;
+        com.facebook.rti.b.e.b.g $r30;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.m;
+        $i0 = 0;
+        entermonitor $r0;
+
+     label0:
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.j e()>();
+        $r4 = <com.facebook.rti.b.e.c.g: int[] a>;
+        $i1 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: int ordinal()>();
+        $i1 = $r4[$i1];
+        lookupswitch($i1)
+        {
+            case 1: goto label4;
+            case 2: goto label7;
+            case 3: goto label9;
+            case 4: goto label11;
+            case 5: goto label13;
+            case 6: goto label15;
+            case 7: goto label17;
+            case 8: goto label19;
+            case 9: goto label20;
+            case 10: goto label21;
+            default: goto label1;
+        };
+
+     label1:
+        $r7 = new java.lang.IllegalArgumentException;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unknown message type: ");
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.j e()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r5);
+        $r9 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MessageEncoder", $r7, "MQTT Packet unexpected send: %s", $r9);
+
+     label2:
+        $r10 = virtualinvoke $r1.<com.facebook.rti.b.e.b.m: com.facebook.rti.b.e.b.h f()>();
+        $r10.<com.facebook.rti.b.e.b.h: int e> = $i0;
+
+     label3:
+        exitmonitor $r0;
+        return;
+
+     label4:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.a;
+        if $z0 != 0 goto label6;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r6 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r6);
+        throw $r11;
+
+     label5:
+        $r12 := @caughtexception;
+        exitmonitor $r0;
+        throw $r12;
+
+     label6:
+        $r13 = (com.facebook.rti.b.e.b.a) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r14 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r14;
+        $r15 = virtualinvoke $r13.<com.facebook.rti.b.e.b.a: com.facebook.rti.b.e.b.c a()>();
+        $b3 = $r15.<com.facebook.rti.b.e.b.c: byte a>;
+        $r16 = staticinvoke <java.lang.Byte: java.lang.Byte valueOf(byte)>($b3);
+        $r9[1] = $r16;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s retcode:%d", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.a)>($r13);
+        goto label2;
+
+     label7:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.t;
+        if $z0 != 0 goto label8;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label8:
+        $r17 = (com.facebook.rti.b.e.b.t) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r18 = virtualinvoke $r17.<com.facebook.rti.b.e.b.t: com.facebook.rti.b.e.b.u b()>();
+        $r19 = $r18.<com.facebook.rti.b.e.b.u: java.util.List a>;
+        $r9[1] = $r19;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s topics:%s", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.t)>($r17);
+        goto label2;
+
+     label9:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.r;
+        if $z0 != 0 goto label10;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label10:
+        $r20 = (com.facebook.rti.b.e.b.r) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r21 = virtualinvoke $r20.<com.facebook.rti.b.e.b.r: com.facebook.rti.b.e.b.i a()>();
+        $i1 = $r21.<com.facebook.rti.b.e.b.i: int a>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[1] = $r22;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s id:%d", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.r)>($r20);
+        goto label2;
+
+     label11:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.x;
+        if $z0 != 0 goto label12;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label12:
+        $r23 = (com.facebook.rti.b.e.b.x) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r24 = virtualinvoke $r23.<com.facebook.rti.b.e.b.x: com.facebook.rti.b.e.b.y b()>();
+        $r19 = $r24.<com.facebook.rti.b.e.b.y: java.util.List a>;
+        $r9[1] = $r19;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s topics:%s", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.x)>($r23);
+        goto label2;
+
+     label13:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.w;
+        if $z0 != 0 goto label14;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label14:
+        $r25 = (com.facebook.rti.b.e.b.w) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r21 = virtualinvoke $r25.<com.facebook.rti.b.e.b.w: com.facebook.rti.b.e.b.i a()>();
+        $i1 = $r21.<com.facebook.rti.b.e.b.i: int a>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[1] = $r22;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s id:%d", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.w)>($r25);
+        goto label2;
+
+     label15:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.p;
+        if $z0 != 0 goto label16;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label16:
+        $r26 = (com.facebook.rti.b.e.b.p) $r1;
+        $r9 = newarray (java.lang.Object)[4];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r27 = virtualinvoke $r26.<com.facebook.rti.b.e.b.p: com.facebook.rti.b.e.b.q a()>();
+        $i1 = $r27.<com.facebook.rti.b.e.b.q: int b>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[1] = $r22;
+        $r10 = virtualinvoke $r26.<com.facebook.rti.b.e.b.p: com.facebook.rti.b.e.b.h f()>();
+        $i1 = $r10.<com.facebook.rti.b.e.b.h: int c>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[2] = $r22;
+        $r27 = virtualinvoke $r26.<com.facebook.rti.b.e.b.p: com.facebook.rti.b.e.b.q a()>();
+        $r5 = $r27.<com.facebook.rti.b.e.b.q: java.lang.String a>;
+        $r9[3] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s id:%d qos:%d topic:%s", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.p)>($r26);
+        goto label2;
+
+     label17:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.o;
+        if $z0 != 0 goto label18;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label18:
+        $r28 = (com.facebook.rti.b.e.b.o) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r21 = virtualinvoke $r28.<com.facebook.rti.b.e.b.o: com.facebook.rti.b.e.b.i a()>();
+        $i1 = $r21.<com.facebook.rti.b.e.b.i: int a>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[1] = $r22;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s id:%d", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.o)>($r28);
+        goto label2;
+
+     label19:
+        $r9 = newarray (java.lang.Object)[1];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int b(com.facebook.rti.b.e.b.m)>($r1);
+        goto label2;
+
+     label20:
+        $r9 = newarray (java.lang.Object)[1];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s", $r9);
+        $i0 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int c(com.facebook.rti.b.e.b.m)>($r1);
+        goto label2;
+
+     label21:
+        $z0 = $r1 instanceof com.facebook.rti.b.e.b.d;
+        if $z0 != 0 goto label22;
+
+        $r11 = new java.lang.AssertionError;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Unexpected type: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r14 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r11.<java.lang.AssertionError: void <init>(java.lang.Object)>($r14);
+        throw $r11;
+
+     label22:
+        $r29 = (com.facebook.rti.b.e.b.d) $r1;
+        $r9 = newarray (java.lang.Object)[2];
+        $r5 = virtualinvoke $r3.<com.facebook.rti.b.e.b.j: java.lang.String toString()>();
+        $r9[0] = $r5;
+        $r30 = virtualinvoke $r29.<com.facebook.rti.b.e.b.d: com.facebook.rti.b.e.b.g a()>();
+        $i1 = $r30.<com.facebook.rti.b.e.b.g: int h>;
+        $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r9[1] = $r22;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MessageEncoder", "MQTT Packet sending: %s timeout:%d", $r9);
+        $i1 = specialinvoke $r0.<com.facebook.rti.b.e.c.f: int a(com.facebook.rti.b.e.b.d)>($r29);
+
+     label23:
+        $i0 = $i1;
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label3 with label5;
+        catch java.lang.Throwable from label4 to label5 with label5;
+        catch java.lang.Throwable from label6 to label23 with label5;
+    }
+
+    public final void a(java.io.DataOutputStream)
+    {
+        com.facebook.rti.b.e.c.f $r0;
+        java.io.DataOutputStream $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.c.f;
+        $r1 := @parameter0: java.io.DataOutputStream;
+        $r0.<com.facebook.rti.b.e.c.f: java.io.DataOutputStream c> = $r1;
+        return;
+    }
+}

@@ -1,0 +1,56 @@
+public final class com.facebook.b.b.a extends java.lang.Object implements com.facebook.b.b.d
+{
+    public final java.lang.StringBuilder a;
+
+    public void <init>()
+    {
+        com.facebook.b.b.a $r0;
+        java.lang.StringBuilder $r1;
+
+        $r0 := @this: com.facebook.b.b.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("[");
+        $r0.<com.facebook.b.b.a: java.lang.StringBuilder a> = $r1;
+        return;
+    }
+
+    public final void a(com.facebook.b.b.d)
+    {
+        com.facebook.b.b.a $r0;
+        com.facebook.b.b.d $r1;
+        java.lang.StringBuilder $r2;
+        int $i1;
+
+        $r0 := @this: com.facebook.b.b.a;
+        $r1 := @parameter0: com.facebook.b.b.d;
+        $r2 = $r0.<com.facebook.b.b.a: java.lang.StringBuilder a>;
+        $i1 = virtualinvoke $r2.<java.lang.StringBuilder: int length()>();
+        if $i1 == 1 goto label0;
+
+        $r2 = $r0.<com.facebook.b.b.a: java.lang.StringBuilder a>;
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+
+     label0:
+        $r2 = $r0.<com.facebook.b.b.a: java.lang.StringBuilder a>;
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        return;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.b.b.a $r0;
+        java.lang.StringBuilder $r1, $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: com.facebook.b.b.a;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = $r0.<com.facebook.b.b.a: java.lang.StringBuilder a>;
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+}

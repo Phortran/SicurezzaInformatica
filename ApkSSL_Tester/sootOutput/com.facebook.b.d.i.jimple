@@ -1,0 +1,302 @@
+public class com.facebook.b.d.i extends java.lang.Object
+{
+    private static final java.lang.Class a;
+    private int b;
+    private int c;
+    private int d;
+    private int e;
+
+    static void <clinit>()
+    {
+        <com.facebook.b.d.i: java.lang.Class a> = class "com/facebook/b/d/i";
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.b.d.i $r0;
+
+        $r0 := @this: com.facebook.b.d.i;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.b.d.i: int b> = 0;
+        $r0.<com.facebook.b.d.i: int c> = 2147483647;
+        return;
+    }
+
+    private void a(int)
+    {
+        com.facebook.b.d.i $r0;
+        int $i0, $i1;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<com.facebook.b.d.i: int b>;
+        if $i0 <= $i1 goto label0;
+
+        $r0.<com.facebook.b.d.i: int b> = $i0;
+
+     label0:
+        $i1 = $r0.<com.facebook.b.d.i: int c>;
+        if $i0 >= $i1 goto label1;
+
+        $r0.<com.facebook.b.d.i: int c> = $i0;
+
+     label1:
+        return;
+    }
+
+    private void b(int)
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+        java.io.File $r1;
+        java.lang.String $r2;
+        java.lang.Integer $r3;
+        java.lang.Object[] $r4;
+        boolean $z0;
+        java.io.BufferedReader $r5;
+        java.io.FileReader $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 := @parameter0: int;
+        $r1 = new java.io.File;
+        $r4 = newarray (java.lang.Object)[1];
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r4[0] = $r3;
+        $r2 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>(null, "/sys/devices/system/cpu/cpu%d/cpufreq/cpuinfo_max_freq", $r4);
+        specialinvoke $r1.<java.io.File: void <init>(java.lang.String)>($r2);
+        $z0 = virtualinvoke $r1.<java.io.File: boolean exists()>();
+        if $z0 == 0 goto label2;
+
+        $r5 = new java.io.BufferedReader;
+        $r6 = new java.io.FileReader;
+        specialinvoke $r6.<java.io.FileReader: void <init>(java.io.File)>($r1);
+        specialinvoke $r5.<java.io.BufferedReader: void <init>(java.io.Reader)>($r6);
+
+     label0:
+        $r2 = virtualinvoke $r5.<java.io.BufferedReader: java.lang.String readLine()>();
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r2);
+        specialinvoke $r0.<com.facebook.b.d.i: void a(int)>($i0);
+
+     label1:
+        virtualinvoke $r5.<java.io.BufferedReader: void close()>();
+
+     label2:
+        return;
+
+     label3:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<java.io.BufferedReader: void close()>();
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    private void f()
+    {
+        com.facebook.b.d.i $r0;
+        java.io.FileReader $r1;
+        int $i2, $i3;
+        java.io.File $r2;
+        java.lang.String $r3, $r5;
+        boolean $z0;
+        java.io.BufferedReader $r4;
+        float $f0, $f1;
+        java.lang.Throwable $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: com.facebook.b.d.i;
+
+     label0:
+        specialinvoke $r0.<com.facebook.b.d.i: void b(int)>(0);
+        $i2 = virtualinvoke $r0.<com.facebook.b.d.i: int e()>();
+        if $i2 <= 1 goto label1;
+
+        $i2 = virtualinvoke $r0.<com.facebook.b.d.i: int e()>();
+        $i2 = $i2 + -1;
+        specialinvoke $r0.<com.facebook.b.d.i: void b(int)>($i2);
+
+     label1:
+        $i2 = $r0.<com.facebook.b.d.i: int b>;
+        if $i2 != 0 goto label4;
+
+        $r2 = new java.io.File;
+        specialinvoke $r2.<java.io.File: void <init>(java.lang.String)>("/proc/cpuinfo");
+        $z0 = virtualinvoke $r2.<java.io.File: boolean exists()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = new java.io.BufferedReader;
+        $r1 = new java.io.FileReader;
+        specialinvoke $r1.<java.io.FileReader: void <init>(java.io.File)>($r2);
+        specialinvoke $r4.<java.io.BufferedReader: void <init>(java.io.Reader)>($r1);
+
+     label2:
+        $r3 = virtualinvoke $r4.<java.io.BufferedReader: java.lang.String readLine()>();
+        if $r3 == null goto label3;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean startsWith(java.lang.String)>("cpu MHz");
+        if $z0 == 0 goto label2;
+
+        $i2 = virtualinvoke $r3.<java.lang.String: int lastIndexOf(int)>(58);
+        $i2 = $i2 + 2;
+        $r5 = virtualinvoke $r3.<java.lang.String: java.lang.String substring(int)>($i2);
+        $f0 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>($r5);
+        $f1 = $f0 * 1000.0F;
+        $i2 = (int) $f1;
+        specialinvoke $r0.<com.facebook.b.d.i: void a(int)>($i2);
+
+     label3:
+        virtualinvoke $r4.<java.io.BufferedReader: void close()>();
+
+     label4:
+        $i2 = $r0.<com.facebook.b.d.i: int b>;
+        $i3 = $r0.<com.facebook.b.d.i: int c>;
+        if $i2 > $i3 goto label6;
+
+        $i3 = $r0.<com.facebook.b.d.i: int b>;
+        if $i3 != 0 goto label5;
+
+        $r0.<com.facebook.b.d.i: int b> = -1;
+
+     label5:
+        $r0.<com.facebook.b.d.i: int c> = -1;
+
+     label6:
+        return;
+
+     label7:
+        $r6 := @caughtexception;
+
+     label8:
+        virtualinvoke $r4.<java.io.BufferedReader: void close()>();
+        throw $r6;
+
+     label9:
+        $r7 := @caughtexception;
+        $r0.<com.facebook.b.d.i: int b> = -1;
+        goto label4;
+
+        catch java.lang.Exception from label0 to label2 with label9;
+        catch java.lang.Throwable from label2 to label3 with label7;
+        catch java.lang.Exception from label3 to label4 with label9;
+        catch java.lang.Exception from label8 to label9 with label9;
+    }
+
+    public final int a()
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 > 10 goto label1;
+
+        $i0 = 1;
+
+     label0:
+        return $i0;
+
+     label1:
+        $i0 = virtualinvoke $r0.<com.facebook.b.d.i: int e()>();
+        if $i0 != -1 goto label0;
+
+        $i0 = virtualinvoke $r0.<com.facebook.b.d.i: int d()>();
+        return $i0;
+    }
+
+    public final java.lang.Integer b()
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+        java.lang.Integer $r1;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 = $r0.<com.facebook.b.d.i: int b>;
+        if $i0 != 0 goto label0;
+
+        specialinvoke $r0.<com.facebook.b.d.i: void f()>();
+
+     label0:
+        $i0 = $r0.<com.facebook.b.d.i: int b>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        return $r1;
+    }
+
+    public final java.lang.Integer c()
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+        java.lang.Integer $r1;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 = $r0.<com.facebook.b.d.i: int b>;
+        if $i0 != 0 goto label0;
+
+        specialinvoke $r0.<com.facebook.b.d.i: void f()>();
+
+     label0:
+        $i0 = $r0.<com.facebook.b.d.i: int c>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        return $r1;
+    }
+
+    public final int d()
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+        java.lang.Runtime $r1;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 = $r0.<com.facebook.b.d.i: int e>;
+        if $i0 != 0 goto label0;
+
+        $r1 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+        $i0 = virtualinvoke $r1.<java.lang.Runtime: int availableProcessors()>();
+        $i0 = staticinvoke <java.lang.Math: int max(int,int)>($i0, 1);
+        $r0.<com.facebook.b.d.i: int e> = $i0;
+
+     label0:
+        $i0 = $r0.<com.facebook.b.d.i: int e>;
+        return $i0;
+    }
+
+    public final int e()
+    {
+        com.facebook.b.d.i $r0;
+        int $i0;
+        java.io.File[] $r2;
+        java.io.File $r3;
+        com.facebook.b.d.j $r4;
+        java.lang.Exception $r5;
+
+        $r0 := @this: com.facebook.b.d.i;
+        $i0 = $r0.<com.facebook.b.d.i: int d>;
+        if $i0 != 0 goto label1;
+
+        $r3 = new java.io.File;
+
+     label0:
+        specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>("/sys/devices/system/cpu/");
+        $r4 = new com.facebook.b.d.j;
+        specialinvoke $r4.<com.facebook.b.d.j: void <init>(com.facebook.b.d.i)>($r0);
+        $r2 = virtualinvoke $r3.<java.io.File: java.io.File[] listFiles(java.io.FileFilter)>($r4);
+        $i0 = lengthof $r2;
+        $r0.<com.facebook.b.d.i: int d> = $i0;
+        $i0 = $r0.<com.facebook.b.d.i: int d>;
+        if $i0 != 0 goto label1;
+
+        $r0.<com.facebook.b.d.i: int d> = -1;
+
+     label1:
+        $i0 = $r0.<com.facebook.b.d.i: int d>;
+        return $i0;
+
+     label2:
+        $r5 := @caughtexception;
+        $r0.<com.facebook.b.d.i: int d> = -1;
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+}

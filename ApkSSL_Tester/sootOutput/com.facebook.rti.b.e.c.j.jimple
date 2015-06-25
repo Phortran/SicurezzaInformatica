@@ -1,0 +1,91 @@
+public final class com.facebook.rti.b.e.c.j extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        com.facebook.rti.b.e.c.j $r0;
+
+        $r0 := @this: com.facebook.rti.b.e.c.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static byte[] a(byte[])
+    {
+        byte[] $r0;
+        java.util.zip.Deflater $r1;
+        java.io.ByteArrayOutputStream $r2;
+        boolean $z0;
+        int $i2;
+        java.io.IOException $r4;
+        java.lang.Object[] $r6;
+
+        $r0 := @parameter0: byte[];
+        $r1 = new java.util.zip.Deflater;
+        specialinvoke $r1.<java.util.zip.Deflater: void <init>(int)>(9);
+        virtualinvoke $r1.<java.util.zip.Deflater: void setInput(byte[])>($r0);
+        virtualinvoke $r1.<java.util.zip.Deflater: void finish()>();
+        $i2 = lengthof $r0;
+        $r2 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>(int)>($i2);
+        $r0 = newarray (byte)[$i2];
+
+     label0:
+        $z0 = virtualinvoke $r1.<java.util.zip.Deflater: boolean finished()>();
+        if $z0 != 0 goto label1;
+
+        $i2 = virtualinvoke $r1.<java.util.zip.Deflater: int deflate(byte[])>($r0);
+        virtualinvoke $r2.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r0, 0, $i2);
+        goto label0;
+
+     label1:
+        virtualinvoke $r2.<java.io.ByteArrayOutputStream: void close()>();
+
+     label2:
+        virtualinvoke $r1.<java.util.zip.Deflater: void end()>();
+        $r0 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return $r0;
+
+     label3:
+        $r4 := @caughtexception;
+        $r6 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void c(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MqttPayloadCompressionUtil", $r4, "got io exception closing ByteArrayOutputStream", $r6);
+        goto label2;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+
+    public static byte[] b(byte[])
+    {
+        byte[] $r0;
+        java.util.zip.Inflater $r1;
+        int $i0, $i2;
+        java.io.ByteArrayOutputStream $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: byte[];
+        $r1 = new java.util.zip.Inflater;
+        specialinvoke $r1.<java.util.zip.Inflater: void <init>()>();
+        $i0 = lengthof $r0;
+        virtualinvoke $r1.<java.util.zip.Inflater: void setInput(byte[],int,int)>($r0, 0, $i0);
+        $i0 = lengthof $r0;
+        $i0 = $i0 * 2;
+        $r2 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>(int)>($i0);
+        $r0 = newarray (byte)[$i0];
+
+     label0:
+        $z0 = virtualinvoke $r1.<java.util.zip.Inflater: boolean finished()>();
+        if $z0 != 0 goto label1;
+
+        $i2 = virtualinvoke $r1.<java.util.zip.Inflater: int inflate(byte[],int,int)>($r0, 0, $i0);
+        virtualinvoke $r2.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r0, 0, $i2);
+        goto label0;
+
+     label1:
+        virtualinvoke $r2.<java.io.ByteArrayOutputStream: void close()>();
+        virtualinvoke $r1.<java.util.zip.Inflater: void end()>();
+        $r0 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return $r0;
+    }
+}

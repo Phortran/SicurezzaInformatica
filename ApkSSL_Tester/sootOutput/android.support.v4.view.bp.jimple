@@ -1,0 +1,51 @@
+class android.support.v4.view.bp extends android.database.DataSetObserver
+{
+    final android.support.v4.view.ViewPager a;
+
+    private void <init>(android.support.v4.view.ViewPager)
+    {
+        android.support.v4.view.bp $r0;
+        android.support.v4.view.ViewPager $r1;
+
+        $r0 := @this: android.support.v4.view.bp;
+        $r1 := @parameter0: android.support.v4.view.ViewPager;
+        $r0.<android.support.v4.view.bp: android.support.v4.view.ViewPager a> = $r1;
+        specialinvoke $r0.<android.database.DataSetObserver: void <init>()>();
+        return;
+    }
+
+    void <init>(android.support.v4.view.ViewPager, android.support.v4.view.bf)
+    {
+        android.support.v4.view.bp $r0;
+        android.support.v4.view.ViewPager $r1;
+        android.support.v4.view.bf $r2;
+
+        $r0 := @this: android.support.v4.view.bp;
+        $r1 := @parameter0: android.support.v4.view.ViewPager;
+        $r2 := @parameter1: android.support.v4.view.bf;
+        specialinvoke $r0.<android.support.v4.view.bp: void <init>(android.support.v4.view.ViewPager)>($r1);
+        return;
+    }
+
+    public void onChanged()
+    {
+        android.support.v4.view.bp $r0;
+        android.support.v4.view.ViewPager $r1;
+
+        $r0 := @this: android.support.v4.view.bp;
+        $r1 = $r0.<android.support.v4.view.bp: android.support.v4.view.ViewPager a>;
+        virtualinvoke $r1.<android.support.v4.view.ViewPager: void b()>();
+        return;
+    }
+
+    public void onInvalidated()
+    {
+        android.support.v4.view.bp $r0;
+        android.support.v4.view.ViewPager $r1;
+
+        $r0 := @this: android.support.v4.view.bp;
+        $r1 = $r0.<android.support.v4.view.bp: android.support.v4.view.ViewPager a>;
+        virtualinvoke $r1.<android.support.v4.view.ViewPager: void b()>();
+        return;
+    }
+}

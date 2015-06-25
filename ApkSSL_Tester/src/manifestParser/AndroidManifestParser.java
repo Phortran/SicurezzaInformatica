@@ -94,9 +94,12 @@ public class AndroidManifestParser {
 					continue;
 				
 				intentFilterAction = intentFilter.getChild(ACTIVITY_INTENT_FILTER_ACTION);
-				if(intentFilterAction == null)
+				if (intentFilterAction == null)
 					continue;
 				intentFilterCategory = activity.getChild(ACTIVITY_INTENT_FILTER).getChild(ACTIVITY_INTENT_FILTER_CATEGORY);
+				
+				if (intentFilterCategory == null)
+					continue;
 				
 				iterMain = intentFilterAction.getAttribute(ATTRIBUTE_NAME,
 						intentFilterAction.getNamespace(ATTRIBUTE_NAMESPACE));

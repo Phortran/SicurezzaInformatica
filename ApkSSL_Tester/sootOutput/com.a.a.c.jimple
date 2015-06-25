@@ -1,0 +1,72 @@
+final class com.a.a.c extends java.lang.Object implements java.util.concurrent.Callable
+{
+    final com.a.a.a a;
+
+    void <init>(com.a.a.a)
+    {
+        com.a.a.c $r0;
+        com.a.a.a $r1;
+
+        $r0 := @this: com.a.a.c;
+        $r1 := @parameter0: com.a.a.a;
+        $r0.<com.a.a.c: com.a.a.a a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private java.lang.Void a()
+    {
+        com.a.a.c $r0;
+        com.a.a.a $r1, $r2;
+        java.io.Writer $r3;
+        boolean $z0;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.a.a.c;
+        $r2 = $r0.<com.a.a.c: com.a.a.a a>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = $r0.<com.a.a.c: com.a.a.a a>;
+        $r3 = staticinvoke <com.a.a.a: java.io.Writer a(com.a.a.a)>($r1);
+        if $r3 != null goto label1;
+
+        exitmonitor $r2;
+        return null;
+
+     label1:
+        $r1 = $r0.<com.a.a.c: com.a.a.a a>;
+        staticinvoke <com.a.a.a: void b(com.a.a.a)>($r1);
+        $r1 = $r0.<com.a.a.c: com.a.a.a a>;
+        $z0 = staticinvoke <com.a.a.a: boolean c(com.a.a.a)>($r1);
+        if $z0 == 0 goto label2;
+
+        $r1 = $r0.<com.a.a.c: com.a.a.a a>;
+        staticinvoke <com.a.a.a: void d(com.a.a.a)>($r1);
+        $r1 = $r0.<com.a.a.c: com.a.a.a a>;
+        staticinvoke <com.a.a.a: int e(com.a.a.a)>($r1);
+
+     label2:
+        exitmonitor $r2;
+        return null;
+
+     label3:
+        $r4 := @caughtexception;
+        exitmonitor $r2;
+
+     label4:
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+    }
+
+    public final java.lang.Object call()
+    {
+        com.a.a.c $r0;
+        java.lang.Void $r1;
+
+        $r0 := @this: com.a.a.c;
+        $r1 = specialinvoke $r0.<com.a.a.c: java.lang.Void a()>();
+        return $r1;
+    }
+}

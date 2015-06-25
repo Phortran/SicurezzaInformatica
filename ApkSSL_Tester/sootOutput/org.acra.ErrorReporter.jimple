@@ -1,0 +1,1282 @@
+public class org.acra.ErrorReporter extends java.lang.Object implements java.lang.Thread$UncaughtExceptionHandler
+{
+    private static int mNotificationCounter;
+    private static boolean toastWaitEnded;
+    private java.lang.Thread brokenThread;
+    private final org.acra.collector.CrashReportDataFactory crashReportDataFactory;
+    private boolean enabled;
+    private final org.acra.CrashReportFileNameParser fileNameParser;
+    private transient android.app.Activity lastActivityCreated;
+    private final android.app.Application mContext;
+    private final java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler;
+    private final java.util.List mReportSenders;
+    private final android.content.SharedPreferences prefs;
+    private java.lang.Throwable unhandledThrowable;
+
+    static void <clinit>()
+    {
+        <org.acra.ErrorReporter: boolean toastWaitEnded> = 1;
+        <org.acra.ErrorReporter: int mNotificationCounter> = 0;
+        return;
+    }
+
+    void <init>(android.app.Application, android.content.SharedPreferences, boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        android.app.Application $r1, $r7;
+        android.content.SharedPreferences $r2;
+        boolean $z0;
+        android.text.format.Time $r3;
+        int $i0;
+        java.lang.String $r4;
+        java.util.ArrayList $r5;
+        org.acra.CrashReportFileNameParser $r6;
+        org.acra.ErrorReporter$1 $r8;
+        org.acra.collector.CrashReportDataFactory $r9;
+        java.lang.Thread$UncaughtExceptionHandler $r10;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: android.app.Application;
+        $r2 := @parameter1: android.content.SharedPreferences;
+        $z0 := @parameter2: boolean;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.ErrorReporter: boolean enabled> = 0;
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r0.<org.acra.ErrorReporter: java.util.List mReportSenders> = $r5;
+        $r6 = new org.acra.CrashReportFileNameParser;
+        specialinvoke $r6.<org.acra.CrashReportFileNameParser: void <init>()>();
+        $r0.<org.acra.ErrorReporter: org.acra.CrashReportFileNameParser fileNameParser> = $r6;
+        $r0.<org.acra.ErrorReporter: android.app.Application mContext> = $r1;
+        $r0.<org.acra.ErrorReporter: android.content.SharedPreferences prefs> = $r2;
+        $r0.<org.acra.ErrorReporter: boolean enabled> = $z0;
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r4 = staticinvoke <org.acra.collector.ConfigurationCollector: java.lang.String collectConfiguration(android.content.Context)>($r7);
+        $r3 = new android.text.format.Time;
+        specialinvoke $r3.<android.text.format.Time: void <init>()>();
+        virtualinvoke $r3.<android.text.format.Time: void setToNow()>();
+        $i0 = staticinvoke <org.acra.collector.Compatibility: int getAPILevel()>();
+        if $i0 < 14 goto label0;
+
+        $r8 = new org.acra.ErrorReporter$1;
+        specialinvoke $r8.<org.acra.ErrorReporter$1: void <init>(org.acra.ErrorReporter)>($r0);
+        staticinvoke <org.acra.jraf.android.util.activitylifecyclecallbackscompat.ApplicationHelper: void registerActivityLifecycleCallbacks(android.app.Application,org.acra.jraf.android.util.activitylifecyclecallbackscompat.ActivityLifecycleCallbacksCompat)>($r1, $r8);
+
+     label0:
+        $r9 = new org.acra.collector.CrashReportDataFactory;
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r9.<org.acra.collector.CrashReportDataFactory: void <init>(android.content.Context,android.content.SharedPreferences,android.text.format.Time,java.lang.String)>($r7, $r2, $r3, $r4);
+        $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory> = $r9;
+        $r10 = staticinvoke <java.lang.Thread: java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()>();
+        $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler> = $r10;
+        staticinvoke <java.lang.Thread: void setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)>($r0);
+        virtualinvoke $r0.<org.acra.ErrorReporter: void checkReportsOnApplicationStart()>();
+        return;
+    }
+
+    static android.app.Activity access$002(org.acra.ErrorReporter, android.app.Activity)
+    {
+        org.acra.ErrorReporter $r0;
+        android.app.Activity $r1;
+
+        $r0 := @parameter0: org.acra.ErrorReporter;
+        $r1 := @parameter1: android.app.Activity;
+        $r0.<org.acra.ErrorReporter: android.app.Activity lastActivityCreated> = $r1;
+        return $r1;
+    }
+
+    static android.app.Application access$100(org.acra.ErrorReporter)
+    {
+        org.acra.ErrorReporter $r0;
+        android.app.Application $r1;
+
+        $r0 := @parameter0: org.acra.ErrorReporter;
+        $r1 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        return $r1;
+    }
+
+    static boolean access$200()
+    {
+        boolean $z0;
+
+        $z0 = <org.acra.ErrorReporter: boolean toastWaitEnded>;
+        return $z0;
+    }
+
+    static boolean access$202(boolean)
+    {
+        boolean $z0;
+
+        $z0 := @parameter0: boolean;
+        <org.acra.ErrorReporter: boolean toastWaitEnded> = $z0;
+        return $z0;
+    }
+
+    static void access$300(org.acra.ErrorReporter)
+    {
+        org.acra.ErrorReporter $r0;
+
+        $r0 := @parameter0: org.acra.ErrorReporter;
+        specialinvoke $r0.<org.acra.ErrorReporter: void endApplication()>();
+        return;
+    }
+
+    private boolean containsOnlySilentOrApprovedReports(java.lang.String[])
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String[] $r1;
+        int $i1, $i2;
+        java.lang.String $r2;
+        org.acra.CrashReportFileNameParser $r3;
+        boolean $z0;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String[];
+        $i2 = lengthof $r1;
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i2 goto label2;
+
+        $r2 = $r1[$i1];
+        $r3 = $r0.<org.acra.ErrorReporter: org.acra.CrashReportFileNameParser fileNameParser>;
+        $z0 = virtualinvoke $r3.<org.acra.CrashReportFileNameParser: boolean isApproved(java.lang.String)>($r2);
+        if $z0 != 0 goto label1;
+
+        return 0;
+
+     label1:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label2:
+        return 1;
+    }
+
+    private void deletePendingReports(boolean, boolean, int)
+    {
+        org.acra.ErrorReporter $r0;
+        boolean $z0, $z1, $z2;
+        int $i0, $i1, $i2;
+        org.acra.CrashReportFinder $r1;
+        android.app.Application $r2;
+        org.acra.CrashReportFileNameParser $r3;
+        java.lang.String $r4, $r6, $r8;
+        java.lang.StringBuilder $r5;
+        java.lang.String[] $r7;
+        java.io.File $r9, $r10;
+        org.acra.log.ACRALog $r11;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $z0 := @parameter0: boolean;
+        $z1 := @parameter1: boolean;
+        $i0 := @parameter2: int;
+        $r1 = new org.acra.CrashReportFinder;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r1.<org.acra.CrashReportFinder: void <init>(android.content.Context)>($r2);
+        $r7 = virtualinvoke $r1.<org.acra.CrashReportFinder: java.lang.String[] getCrashReportFiles()>();
+        staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>($r7);
+        if $r7 == null goto label4;
+
+        $i2 = 0;
+
+     label0:
+        $i1 = lengthof $r7;
+        $i1 = $i1 - $i0;
+        if $i2 >= $i1 goto label4;
+
+        $r8 = $r7[$i2];
+        $r3 = $r0.<org.acra.ErrorReporter: org.acra.CrashReportFileNameParser fileNameParser>;
+        $z2 = virtualinvoke $r3.<org.acra.CrashReportFileNameParser: boolean isApproved(java.lang.String)>($r8);
+        if $z2 == 0 goto label1;
+
+        if $z0 != 0 goto label2;
+
+     label1:
+        if $z2 != 0 goto label3;
+
+        if $z1 == 0 goto label3;
+
+     label2:
+        $r9 = new java.io.File;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r10 = virtualinvoke $r2.<android.app.Application: java.io.File getFilesDir()>();
+        specialinvoke $r9.<java.io.File: void <init>(java.io.File,java.lang.String)>($r10, $r8);
+        $r11 = <org.acra.ACRA: org.acra.log.ACRALog log>;
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Deleting file ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r11.<org.acra.log.ACRALog: int d(java.lang.String,java.lang.String)>($r4, $r8);
+        $z2 = virtualinvoke $r9.<java.io.File: boolean delete()>();
+        if $z2 != 0 goto label3;
+
+        $r8 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not delete report : ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r8, $r6);
+
+     label3:
+        $i2 = $i2 + 1;
+        goto label0;
+
+     label4:
+        return;
+    }
+
+    private void endApplication()
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.ACRAConfiguration $r1;
+        org.acra.ReportingInteractionMode $r2, $r4;
+        java.lang.Throwable $r3;
+        boolean $z0;
+        java.lang.Thread$UncaughtExceptionHandler $r5;
+        java.lang.Thread $r6;
+        java.lang.String $r7, $r10;
+        java.lang.StringBuilder $r8;
+        android.app.Application $r9;
+        android.app.Activity $r11;
+        java.lang.Class $r12;
+        int $i0;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r4 = virtualinvoke $r1.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r2 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        if $r4 == $r2 goto label0;
+
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r4 = virtualinvoke $r1.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r2 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode TOAST>;
+        if $r4 != $r2 goto label2;
+
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $z0 = virtualinvoke $r1.<org.acra.ACRAConfiguration: boolean forceCloseDialogAfterToast()>();
+        if $z0 == 0 goto label2;
+
+     label0:
+        $r5 = $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler>;
+        $r6 = $r0.<org.acra.ErrorReporter: java.lang.Thread brokenThread>;
+        $r3 = $r0.<org.acra.ErrorReporter: java.lang.Throwable unhandledThrowable>;
+        interfaceinvoke $r5.<java.lang.Thread$UncaughtExceptionHandler: void uncaughtException(java.lang.Thread,java.lang.Throwable)>($r6, $r3);
+
+     label1:
+        return;
+
+     label2:
+        $r7 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r9 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r10 = virtualinvoke $r9.<android.app.Application: java.lang.String getPackageName()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" fatal error : ");
+        $r3 = $r0.<org.acra.ErrorReporter: java.lang.Throwable unhandledThrowable>;
+        $r10 = virtualinvoke $r3.<java.lang.Throwable: java.lang.String getMessage()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = $r0.<org.acra.ErrorReporter: java.lang.Throwable unhandledThrowable>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r7, $r10, $r3);
+        $r11 = $r0.<org.acra.ErrorReporter: android.app.Activity lastActivityCreated>;
+        if $r11 == null goto label3;
+
+        $r10 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r10, "Finishing the last Activity prior to killing the Process");
+        $r11 = $r0.<org.acra.ErrorReporter: android.app.Activity lastActivityCreated>;
+        virtualinvoke $r11.<android.app.Activity: void finish()>();
+        $r10 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Finished ");
+        $r11 = $r0.<org.acra.ErrorReporter: android.app.Activity lastActivityCreated>;
+        $r12 = virtualinvoke $r11.<java.lang.Object: java.lang.Class getClass()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r12);
+        $r7 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r10, $r7);
+        $r0.<org.acra.ErrorReporter: android.app.Activity lastActivityCreated> = null;
+
+     label3:
+        $i0 = staticinvoke <android.os.Process: int myPid()>();
+        staticinvoke <android.os.Process: void killProcess(int)>($i0);
+        staticinvoke <java.lang.System: void exit(int)>(10);
+        goto label1;
+    }
+
+    public static org.acra.ErrorReporter getInstance()
+    {
+        org.acra.ErrorReporter $r0;
+
+        $r0 = staticinvoke <org.acra.ACRA: org.acra.ErrorReporter getErrorReporter()>();
+        return $r0;
+    }
+
+    private java.lang.String getLatestNonSilentReport(java.lang.String[])
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String[] $r1;
+        int $i0;
+        org.acra.CrashReportFileNameParser $r2;
+        java.lang.String $r3;
+        boolean $z0;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String[];
+        if $r1 == null goto label3;
+
+        $i0 = lengthof $r1;
+        if $i0 <= 0 goto label3;
+
+        $i0 = lengthof $r1;
+        $i0 = $i0 + -1;
+
+     label0:
+        if $i0 < 0 goto label2;
+
+        $r2 = $r0.<org.acra.ErrorReporter: org.acra.CrashReportFileNameParser fileNameParser>;
+        $r3 = $r1[$i0];
+        $z0 = virtualinvoke $r2.<org.acra.CrashReportFileNameParser: boolean isSilent(java.lang.String)>($r3);
+        if $z0 != 0 goto label1;
+
+        $r3 = $r1[$i0];
+        return $r3;
+
+     label1:
+        $i0 = $i0 + -1;
+        goto label0;
+
+     label2:
+        $i0 = lengthof $r1;
+        $i0 = $i0 + -1;
+        $r3 = $r1[$i0];
+        return $r3;
+
+     label3:
+        return null;
+    }
+
+    private java.lang.String getReportFileName(org.acra.collector.CrashReportData)
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.collector.CrashReportData $r1;
+        android.text.format.Time $r2;
+        org.acra.ReportField $r3;
+        java.lang.StringBuilder $r4;
+        long $l0;
+        java.lang.String $r6;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: org.acra.collector.CrashReportData;
+        $r2 = new android.text.format.Time;
+        specialinvoke $r2.<android.text.format.Time: void <init>()>();
+        virtualinvoke $r2.<android.text.format.Time: void setToNow()>();
+        $l0 = virtualinvoke $r2.<android.text.format.Time: long toMillis(boolean)>(0);
+        $r3 = <org.acra.ReportField: org.acra.ReportField IS_SILENT>;
+        $r6 = virtualinvoke $r1.<org.acra.collector.CrashReportData: java.lang.String getProperty(org.acra.ReportField)>($r3);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        if $r6 == null goto label1;
+
+        $r6 = <org.acra.ACRAConstants: java.lang.String SILENT_SUFFIX>;
+
+     label0:
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".stacktrace");
+        $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r6;
+
+     label1:
+        $r6 = "";
+        goto label0;
+    }
+
+    private void handleException(java.lang.Throwable, org.acra.ReportingInteractionMode, boolean, boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Throwable $r1;
+        org.acra.ReportingInteractionMode $r2, $r5, $r16;
+        boolean $z0, $z1, $z3, $z4, $z5;
+        java.lang.Thread $r4;
+        java.lang.String $r6, $r10, $r13;
+        org.acra.ACRAConfiguration $r7;
+        int $i0;
+        org.acra.collector.CrashReportDataFactory $r8;
+        org.acra.collector.CrashReportData $r9;
+        org.acra.SendWorker $r11;
+        android.content.SharedPreferences $r12;
+        java.lang.Exception r17;
+        org.acra.ErrorReporter$2 r18;
+        org.acra.ErrorReporter$3 r19;
+        org.acra.ErrorReporter$4 r20;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 := @parameter1: org.acra.ReportingInteractionMode;
+        $z0 := @parameter2: boolean;
+        $z1 := @parameter3: boolean;
+        $z4 = 1;
+        $z3 = $r0.<org.acra.ErrorReporter: boolean enabled>;
+        if $z3 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        if $r2 != null goto label11;
+
+        $r7 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r2 = virtualinvoke $r7.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $z3 = 0;
+
+     label2:
+        if $r1 != null goto label3;
+
+        r17 = new java.lang.Exception;
+        $r1 = r17;
+        specialinvoke r17.<java.lang.Exception: void <init>(java.lang.String)>("Report requested by developer");
+
+     label3:
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode TOAST>;
+        if $r2 == $r5 goto label4;
+
+        $r7 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = virtualinvoke $r7.<org.acra.ACRAConfiguration: int resToastText()>();
+        if $i0 == 0 goto label12;
+
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode NOTIFICATION>;
+        if $r2 == $r5 goto label4;
+
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode DIALOG>;
+        if $r2 != $r5 goto label12;
+
+     label4:
+        $z5 = 1;
+
+     label5:
+        if $z5 == 0 goto label6;
+
+        r18 = new org.acra.ErrorReporter$2;
+        specialinvoke r18.<org.acra.ErrorReporter$2: void <init>(org.acra.ErrorReporter)>($r0);
+        virtualinvoke r18.<org.acra.ErrorReporter$2: void start()>();
+
+     label6:
+        $r8 = $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory>;
+        $r4 = $r0.<org.acra.ErrorReporter: java.lang.Thread brokenThread>;
+        $r9 = virtualinvoke $r8.<org.acra.collector.CrashReportDataFactory: org.acra.collector.CrashReportData createCrashData(java.lang.Throwable,boolean,java.lang.Thread)>($r1, $z0, $r4);
+        $r10 = specialinvoke $r0.<org.acra.ErrorReporter: java.lang.String getReportFileName(org.acra.collector.CrashReportData)>($r9);
+        specialinvoke $r0.<org.acra.ErrorReporter: void saveCrashReportFile(java.lang.String,org.acra.collector.CrashReportData)>($r10, $r9);
+        $r11 = null;
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        if $r2 == $r5 goto label7;
+
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode TOAST>;
+        if $r2 == $r5 goto label7;
+
+        $r12 = $r0.<org.acra.ErrorReporter: android.content.SharedPreferences prefs>;
+        $z0 = interfaceinvoke $r12.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("acra.alwaysaccept", 0);
+        if $z0 == 0 goto label13;
+
+     label7:
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r6, "About to start ReportSenderWorker from #handleException");
+        $r11 = virtualinvoke $r0.<org.acra.ErrorReporter: org.acra.SendWorker startSendingReports(boolean,boolean)>($z3, 1);
+
+     label8:
+        if $z5 == 0 goto label9;
+
+        <org.acra.ErrorReporter: boolean toastWaitEnded> = 0;
+        r19 = new org.acra.ErrorReporter$3;
+        specialinvoke r19.<org.acra.ErrorReporter$3: void <init>(org.acra.ErrorReporter)>($r0);
+        virtualinvoke r19.<org.acra.ErrorReporter$3: void start()>();
+
+     label9:
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode DIALOG>;
+        if $r2 != $r5 goto label14;
+
+        $r12 = $r0.<org.acra.ErrorReporter: android.content.SharedPreferences prefs>;
+        $z5 = interfaceinvoke $r12.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("acra.alwaysaccept", 0);
+        if $z5 != 0 goto label14;
+
+     label10:
+        r20 = new org.acra.ErrorReporter$4;
+        specialinvoke r20.<org.acra.ErrorReporter$4: void <init>(org.acra.ErrorReporter,org.acra.SendWorker,boolean,java.lang.String,boolean)>($r0, $r11, $z4, $r10, $z1);
+        virtualinvoke r20.<org.acra.ErrorReporter$4: void start()>();
+        goto label0;
+
+     label11:
+        $r5 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        if $r2 != $r5 goto label15;
+
+        $r7 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r5 = virtualinvoke $r7.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r16 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        if $r5 == $r16 goto label15;
+
+        $z3 = 1;
+        goto label2;
+
+     label12:
+        $z5 = 0;
+        goto label5;
+
+     label13:
+        $r16 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode NOTIFICATION>;
+        if $r2 != $r16 goto label8;
+
+        $r13 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r13, "Notification will be created on application start.");
+        goto label8;
+
+     label14:
+        $z4 = 0;
+        goto label10;
+
+     label15:
+        $z3 = 0;
+        goto label2;
+    }
+
+    private void notifySendReport(java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1, $r3, $r12;
+        android.app.Application $r2;
+        int $i0, $i1;
+        android.app.Notification $r5;
+        java.lang.Object $r6;
+        android.app.NotificationManager $r7;
+        org.acra.ACRAConfiguration $r8;
+        java.lang.CharSequence $r9, $r10;
+        long $l2;
+        android.content.Intent $r11;
+        java.lang.StringBuilder $r13;
+        android.app.PendingIntent $r14;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r6 = virtualinvoke $r2.<android.app.Application: java.lang.Object getSystemService(java.lang.String)>("notification");
+        $r7 = (android.app.NotificationManager) $r6;
+        $r8 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = interfaceinvoke $r8.<org.acra.annotation.ReportsCrashes: int resNotifIcon()>();
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $i1 = interfaceinvoke $r8.<org.acra.annotation.ReportsCrashes: int resNotifTickerText()>();
+        $r9 = virtualinvoke $r2.<android.app.Application: java.lang.CharSequence getText(int)>($i1);
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r5 = new android.app.Notification;
+        specialinvoke $r5.<android.app.Notification: void <init>(int,java.lang.CharSequence,long)>($i0, $r9, $l2);
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $i1 = interfaceinvoke $r8.<org.acra.annotation.ReportsCrashes: int resNotifTitle()>();
+        $r9 = virtualinvoke $r2.<android.app.Application: java.lang.CharSequence getText(int)>($i1);
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $i1 = interfaceinvoke $r8.<org.acra.annotation.ReportsCrashes: int resNotifText()>();
+        $r10 = virtualinvoke $r2.<android.app.Application: java.lang.CharSequence getText(int)>($i1);
+        $r11 = new android.content.Intent;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r11.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r2, class "org/acra/CrashReportDialog");
+        $r12 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Creating Notification for ");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r12, $r3);
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("REPORT_FILE_NAME", $r1);
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $i1 = <org.acra.ErrorReporter: int mNotificationCounter>;
+        $i0 = $i1 + 1;
+        <org.acra.ErrorReporter: int mNotificationCounter> = $i0;
+        $r14 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int)>($r2, $i1, $r11, 134217728);
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        virtualinvoke $r5.<android.app.Notification: void setLatestEventInfo(android.content.Context,java.lang.CharSequence,java.lang.CharSequence,android.app.PendingIntent)>($r2, $r9, $r10, $r14);
+        $r11 = new android.content.Intent;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r11.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r2, class "org/acra/CrashReportDialog");
+        virtualinvoke $r11.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("FORCE_CANCEL", 1);
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r14 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int)>($r2, -1, $r11, 0);
+        $r5.<android.app.Notification: android.app.PendingIntent deleteIntent> = $r14;
+        virtualinvoke $r7.<android.app.NotificationManager: void notify(int,android.app.Notification)>(666, $r5);
+        return;
+    }
+
+    private void saveCrashReportFile(java.lang.String, org.acra.collector.CrashReportData)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1, $r3, $r5;
+        org.acra.collector.CrashReportData $r2;
+        java.lang.StringBuilder $r4;
+        org.acra.CrashReportPersister $r6;
+        android.app.Application $r7;
+        java.lang.Exception $r8;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: org.acra.collector.CrashReportData;
+        $r3 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r4 = new java.lang.StringBuilder;
+
+     label0:
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Writing crash report file ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r3, $r5);
+        $r6 = new org.acra.CrashReportPersister;
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r6.<org.acra.CrashReportPersister: void <init>(android.content.Context)>($r7);
+        virtualinvoke $r6.<org.acra.CrashReportPersister: void store(org.acra.collector.CrashReportData,java.lang.String)>($r2, $r1);
+
+     label1:
+        return;
+
+     label2:
+        $r8 := @caughtexception;
+        $r5 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r5, "An error occurred while writing the report file...", $r8);
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public void addCustomData(java.lang.String, java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1, $r2;
+        org.acra.collector.CrashReportDataFactory $r3;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory>;
+        virtualinvoke $r3.<org.acra.collector.CrashReportDataFactory: java.lang.String putCustomData(java.lang.String,java.lang.String)>($r1, $r2);
+        return;
+    }
+
+    public void addReportSender(org.acra.sender.ReportSender)
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.sender.ReportSender $r1;
+        java.util.List $r2;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: org.acra.sender.ReportSender;
+        $r2 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r1);
+        return;
+    }
+
+    public void checkReportsOnApplicationStart()
+    {
+        org.acra.ErrorReporter $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2, $r12;
+        int $i0, i4;
+        android.app.Application $r3;
+        long $l1, $l2;
+        org.acra.util.PackageManagerWrapper $r4;
+        android.content.pm.PackageInfo $r5;
+        byte $b3;
+        boolean $z2;
+        org.acra.ACRAConfiguration $r6;
+        android.content.SharedPreferences$Editor $r7;
+        org.acra.ReportingInteractionMode $r8, $r9;
+        org.acra.CrashReportFinder $r10;
+        java.lang.String[] $r11;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 = $r0.<org.acra.ErrorReporter: android.content.SharedPreferences prefs>;
+        $i0 = (int) 0;
+        $i0 = interfaceinvoke $r1.<android.content.SharedPreferences: int getInt(java.lang.String,int)>("acra.lastVersionNr", $i0);
+        $l2 = (long) $i0;
+        $r4 = new org.acra.util.PackageManagerWrapper;
+        $r3 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r4.<org.acra.util.PackageManagerWrapper: void <init>(android.content.Context)>($r3);
+        $r5 = virtualinvoke $r4.<org.acra.util.PackageManagerWrapper: android.content.pm.PackageInfo getPackageInfo()>();
+        if $r5 == null goto label8;
+
+        $i0 = $r5.<android.content.pm.PackageInfo: int versionCode>;
+        $l1 = (long) $i0;
+        $b3 = $l1 cmp $l2;
+        if $b3 <= 0 goto label8;
+
+        $z2 = 1;
+
+     label0:
+        if $z2 == 0 goto label2;
+
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $z2 = virtualinvoke $r6.<org.acra.ACRAConfiguration: boolean deleteOldUnsentReportsOnApplicationStart()>();
+        if $z2 == 0 goto label1;
+
+        virtualinvoke $r0.<org.acra.ErrorReporter: void deletePendingReports()>();
+
+     label1:
+        $r1 = $r0.<org.acra.ErrorReporter: android.content.SharedPreferences prefs>;
+        $r7 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $i0 = $r5.<android.content.pm.PackageInfo: int versionCode>;
+        interfaceinvoke $r7.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)>("acra.lastVersionNr", $i0);
+        interfaceinvoke $r7.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+     label2:
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r8 = virtualinvoke $r6.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r9 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode NOTIFICATION>;
+        if $r8 == $r9 goto label3;
+
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r9 = virtualinvoke $r6.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode DIALOG>;
+        if $r9 != $r8 goto label4;
+
+     label3:
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $z2 = virtualinvoke $r6.<org.acra.ACRAConfiguration: boolean deleteUnapprovedReportsOnApplicationStart()>();
+        if $z2 == 0 goto label4;
+
+        virtualinvoke $r0.<org.acra.ErrorReporter: void deletePendingNonApprovedReports(boolean)>(1);
+
+     label4:
+        $r10 = new org.acra.CrashReportFinder;
+        $r3 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r10.<org.acra.CrashReportFinder: void <init>(android.content.Context)>($r3);
+        $r11 = virtualinvoke $r10.<org.acra.CrashReportFinder: java.lang.String[] getCrashReportFiles()>();
+        if $r11 == null goto label7;
+
+        $i0 = lengthof $r11;
+        if $i0 <= 0 goto label7;
+
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r9 = virtualinvoke $r6.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r11 = virtualinvoke $r10.<org.acra.CrashReportFinder: java.lang.String[] getCrashReportFiles()>();
+        $z2 = specialinvoke $r0.<org.acra.ErrorReporter: boolean containsOnlySilentOrApprovedReports(java.lang.String[])>($r11);
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        if $r9 == $r8 goto label5;
+
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode TOAST>;
+        if $r9 == $r8 goto label5;
+
+        if $z2 == 0 goto label9;
+
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode NOTIFICATION>;
+        if $r9 == $r8 goto label5;
+
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode DIALOG>;
+        if $r9 != $r8 goto label9;
+
+     label5:
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode TOAST>;
+        if $r9 != $r8 goto label6;
+
+        if $z2 != 0 goto label6;
+
+        $r3 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $i0 = virtualinvoke $r6.<org.acra.ACRAConfiguration: int resToastText()>();
+        i4 = (int) 1;
+        staticinvoke <org.acra.util.ToastSender: void sendToast(android.content.Context,int,int)>($r3, $i0, i4);
+
+     label6:
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>($r2, "About to start ReportSenderWorker from #checkReportOnApplicationStart");
+        virtualinvoke $r0.<org.acra.ErrorReporter: org.acra.SendWorker startSendingReports(boolean,boolean)>(0, 0);
+
+     label7:
+        return;
+
+     label8:
+        $z2 = 0;
+        goto label0;
+
+     label9:
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r9 = virtualinvoke $r6.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode NOTIFICATION>;
+        if $r9 != $r8 goto label10;
+
+        $r12 = specialinvoke $r0.<org.acra.ErrorReporter: java.lang.String getLatestNonSilentReport(java.lang.String[])>($r11);
+        specialinvoke $r0.<org.acra.ErrorReporter: void notifySendReport(java.lang.String)>($r12);
+        goto label7;
+
+     label10:
+        $r6 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r9 = virtualinvoke $r6.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        $r8 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode DIALOG>;
+        if $r9 != $r8 goto label7;
+
+        goto label7;
+    }
+
+    void deletePendingNonApprovedReports(boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $z0 := @parameter0: boolean;
+        if $z0 == 0 goto label1;
+
+        $i0 = (int) 1;
+
+     label0:
+        specialinvoke $r0.<org.acra.ErrorReporter: void deletePendingReports(boolean,boolean,int)>(0, 1, $i0);
+        return;
+
+     label1:
+        $i0 = (int) 0;
+        goto label0;
+    }
+
+    void deletePendingReports()
+    {
+        org.acra.ErrorReporter $r0;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        specialinvoke $r0.<org.acra.ErrorReporter: void deletePendingReports(boolean,boolean,int)>(1, 1, 0);
+        return;
+    }
+
+    public java.lang.String getCustomData(java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1;
+        org.acra.collector.CrashReportDataFactory $r2;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory>;
+        $r1 = virtualinvoke $r2.<org.acra.collector.CrashReportDataFactory: java.lang.String getCustomData(java.lang.String)>($r1);
+        return $r1;
+    }
+
+    public void handleException(java.lang.Throwable)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Throwable $r1;
+        org.acra.ACRAConfiguration $r2;
+        org.acra.ReportingInteractionMode $r3;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r3 = virtualinvoke $r2.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        specialinvoke $r0.<org.acra.ErrorReporter: void handleException(java.lang.Throwable,org.acra.ReportingInteractionMode,boolean,boolean)>($r1, $r3, 0, 0);
+        return;
+    }
+
+    public void handleException(java.lang.Throwable, boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Throwable $r1;
+        boolean $z0;
+        org.acra.ACRAConfiguration $r2;
+        org.acra.ReportingInteractionMode $r3;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Throwable;
+        $z0 := @parameter1: boolean;
+        $r2 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r3 = virtualinvoke $r2.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        specialinvoke $r0.<org.acra.ErrorReporter: void handleException(java.lang.Throwable,org.acra.ReportingInteractionMode,boolean,boolean)>($r1, $r3, 0, $z0);
+        return;
+    }
+
+    public void handleSilentException(java.lang.Throwable)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Throwable $r1;
+        boolean $z0;
+        org.acra.ReportingInteractionMode $r2;
+        java.lang.String $r3, $r4;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Throwable;
+        $z0 = $r0.<org.acra.ErrorReporter: boolean enabled>;
+        if $z0 == 0 goto label1;
+
+        $r2 = <org.acra.ReportingInteractionMode: org.acra.ReportingInteractionMode SILENT>;
+        specialinvoke $r0.<org.acra.ErrorReporter: void handleException(java.lang.Throwable,org.acra.ReportingInteractionMode,boolean,boolean)>($r1, $r2, 1, 0);
+        $r3 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r3, "ACRA sent Silent report.");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r4, "ACRA is disabled. Silent report not sent.");
+        goto label0;
+    }
+
+    void notifyDialog(java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1, $r2, $r4;
+        java.lang.StringBuilder $r3;
+        android.content.Intent $r5;
+        android.app.Application $r6;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Creating Dialog for ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r2, $r4);
+        $r5 = new android.content.Intent;
+        $r6 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        specialinvoke $r5.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r6, class "org/acra/CrashReportDialog");
+        virtualinvoke $r5.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("REPORT_FILE_NAME", $r1);
+        virtualinvoke $r5.<android.content.Intent: android.content.Intent setFlags(int)>(268435456);
+        $r6 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        virtualinvoke $r6.<android.app.Application: void startActivity(android.content.Intent)>($r5);
+        return;
+    }
+
+    public java.lang.String putCustomData(java.lang.String, java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1, $r2;
+        org.acra.collector.CrashReportDataFactory $r3;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory>;
+        $r2 = virtualinvoke $r3.<org.acra.collector.CrashReportDataFactory: java.lang.String putCustomData(java.lang.String,java.lang.String)>($r1, $r2);
+        return $r2;
+    }
+
+    public void removeAllReportSenders()
+    {
+        org.acra.ErrorReporter $r0;
+        java.util.List $r1;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        interfaceinvoke $r1.<java.util.List: void clear()>();
+        return;
+    }
+
+    public java.lang.String removeCustomData(java.lang.String)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.String $r1;
+        org.acra.collector.CrashReportDataFactory $r2;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<org.acra.ErrorReporter: org.acra.collector.CrashReportDataFactory crashReportDataFactory>;
+        $r1 = virtualinvoke $r2.<org.acra.collector.CrashReportDataFactory: java.lang.String removeCustomData(java.lang.String)>($r1);
+        return $r1;
+    }
+
+    public void removeReportSender(org.acra.sender.ReportSender)
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.sender.ReportSender $r1;
+        java.util.List $r2;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: org.acra.sender.ReportSender;
+        $r2 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        interfaceinvoke $r2.<java.util.List: boolean remove(java.lang.Object)>($r1);
+        return;
+    }
+
+    public void removeReportSenders(java.lang.Class)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Class $r1, $r2;
+        java.util.Iterator $r3;
+        boolean $z0;
+        java.util.List $r4;
+        java.lang.Object $r5;
+        org.acra.sender.ReportSender $r6;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Class;
+        $r2 = class "org/acra/sender/ReportSender";
+        $z0 = virtualinvoke $r2.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>($r1);
+        if $z0 == 0 goto label1;
+
+        $r4 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        $r3 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (org.acra.sender.ReportSender) $r5;
+        $z0 = virtualinvoke $r1.<java.lang.Class: boolean isInstance(java.lang.Object)>($r6);
+        if $z0 == 0 goto label0;
+
+        $r4 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        interfaceinvoke $r4.<java.util.List: boolean remove(java.lang.Object)>($r6);
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    public void setDefaultReportSenders()
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.ACRAConfiguration $r1;
+        android.app.Application $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        org.acra.sender.EmailIntentSender $r6;
+        org.acra.util.PackageManagerWrapper $r7;
+        org.acra.sender.HttpSender $r8;
+        org.acra.sender.HttpSender$Method $r9;
+        org.acra.sender.HttpSender$Type $r10;
+        org.acra.sender.GoogleFormSender $r11;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r2 = staticinvoke <org.acra.ACRA: android.app.Application getApplication()>();
+        virtualinvoke $r0.<org.acra.ErrorReporter: void removeAllReportSenders()>();
+        $r3 = "";
+        $r4 = interfaceinvoke $r1.<org.acra.annotation.ReportsCrashes: java.lang.String mailTo()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 != 0 goto label1;
+
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r2.<android.app.Application: java.lang.String getPackageName()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" reports will be sent by email (if accepted by user).");
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r4, $r3);
+        $r6 = new org.acra.sender.EmailIntentSender;
+        specialinvoke $r6.<org.acra.sender.EmailIntentSender: void <init>(android.content.Context)>($r2);
+        virtualinvoke $r0.<org.acra.ErrorReporter: void setReportSender(org.acra.sender.ReportSender)>($r6);
+
+     label0:
+        return;
+
+     label1:
+        $r7 = new org.acra.util.PackageManagerWrapper;
+        specialinvoke $r7.<org.acra.util.PackageManagerWrapper: void <init>(android.content.Context)>($r2);
+        $z0 = virtualinvoke $r7.<org.acra.util.PackageManagerWrapper: boolean hasPermission(java.lang.String)>("android.permission.INTERNET");
+        if $z0 != 0 goto label2;
+
+        $r4 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r2.<android.app.Application: java.lang.String getPackageName()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" should be granted permission ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("android.permission.INTERNET");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" if you want your crash reports to be sent. If you don\'t want to add this permission to your application you can also enable sending reports by email. If this is your will then provide your email address in @ReportsCrashes(mailTo=\"your.account@domain.com\"");
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r4, $r3);
+        goto label0;
+
+     label2:
+        $r4 = interfaceinvoke $r1.<org.acra.annotation.ReportsCrashes: java.lang.String formUri()>();
+        if $r4 == null goto label3;
+
+        $r4 = "";
+        $r3 = interfaceinvoke $r1.<org.acra.annotation.ReportsCrashes: java.lang.String formUri()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label3;
+
+        $r8 = new org.acra.sender.HttpSender;
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r9 = virtualinvoke $r1.<org.acra.ACRAConfiguration: org.acra.sender.HttpSender$Method httpMethod()>();
+        $r1 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r10 = virtualinvoke $r1.<org.acra.ACRAConfiguration: org.acra.sender.HttpSender$Type reportType()>();
+        specialinvoke $r8.<org.acra.sender.HttpSender: void <init>(org.acra.sender.HttpSender$Method,org.acra.sender.HttpSender$Type,java.util.Map)>($r9, $r10, null);
+        virtualinvoke $r0.<org.acra.ErrorReporter: void setReportSender(org.acra.sender.ReportSender)>($r8);
+        goto label0;
+
+     label3:
+        $r4 = interfaceinvoke $r1.<org.acra.annotation.ReportsCrashes: java.lang.String formKey()>();
+        if $r4 == null goto label0;
+
+        $r4 = "";
+        $r3 = interfaceinvoke $r1.<org.acra.annotation.ReportsCrashes: java.lang.String formKey()>();
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String trim()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        $r11 = new org.acra.sender.GoogleFormSender;
+        specialinvoke $r11.<org.acra.sender.GoogleFormSender: void <init>()>();
+        virtualinvoke $r0.<org.acra.ErrorReporter: void addReportSender(org.acra.sender.ReportSender)>($r11);
+        goto label0;
+    }
+
+    public void setEnabled(boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2, $r3;
+        android.app.Application $r4;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $z0 := @parameter0: boolean;
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ACRA is ");
+        if $z0 == 0 goto label1;
+
+        $r3 = "enabled";
+
+     label0:
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" for ");
+        $r4 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r3 = virtualinvoke $r4.<android.app.Application: java.lang.String getPackageName()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, $r3);
+        $r0.<org.acra.ErrorReporter: boolean enabled> = $z0;
+        return;
+
+     label1:
+        $r3 = "disabled";
+        goto label0;
+    }
+
+    public void setReportSender(org.acra.sender.ReportSender)
+    {
+        org.acra.ErrorReporter $r0;
+        org.acra.sender.ReportSender $r1;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: org.acra.sender.ReportSender;
+        virtualinvoke $r0.<org.acra.ErrorReporter: void removeAllReportSenders()>();
+        virtualinvoke $r0.<org.acra.ErrorReporter: void addReportSender(org.acra.sender.ReportSender)>($r1);
+        return;
+    }
+
+    org.acra.SendWorker startSendingReports(boolean, boolean)
+    {
+        org.acra.ErrorReporter $r0;
+        boolean $z0, $z1;
+        org.acra.SendWorker $r1;
+        android.app.Application $r2;
+        java.util.List $r3;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $z0 := @parameter0: boolean;
+        $z1 := @parameter1: boolean;
+        $r1 = new org.acra.SendWorker;
+        $r2 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r3 = $r0.<org.acra.ErrorReporter: java.util.List mReportSenders>;
+        specialinvoke $r1.<org.acra.SendWorker: void <init>(android.content.Context,java.util.List,boolean,boolean)>($r2, $r3, $z0, $z1);
+        virtualinvoke $r1.<org.acra.SendWorker: void start()>();
+        return $r1;
+    }
+
+    public void uncaughtException(java.lang.Thread, java.lang.Throwable)
+    {
+        org.acra.ErrorReporter $r0;
+        java.lang.Thread $r1;
+        java.lang.Throwable $r2, $r8;
+        boolean $z0;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4, $r6;
+        java.lang.Thread$UncaughtExceptionHandler $r5;
+        android.app.Application $r7;
+        java.lang.Class $r9;
+        org.acra.ACRAConfiguration $r10;
+        org.acra.ReportingInteractionMode $r11;
+
+        $r0 := @this: org.acra.ErrorReporter;
+        $r1 := @parameter0: java.lang.Thread;
+        $r2 := @parameter1: java.lang.Throwable;
+
+     label0:
+        $z0 = $r0.<org.acra.ErrorReporter: boolean enabled>;
+        if $z0 != 0 goto label5;
+
+        $r5 = $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler>;
+        if $r5 == null goto label2;
+
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ACRA is disabled for ");
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r4 = virtualinvoke $r7.<android.app.Application: java.lang.String getPackageName()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - forwarding uncaught Exception on to default ExceptionHandler");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r6, $r4);
+        $r5 = $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler>;
+        interfaceinvoke $r5.<java.lang.Thread$UncaughtExceptionHandler: void uncaughtException(java.lang.Thread,java.lang.Throwable)>($r1, $r2);
+
+     label1:
+        return;
+
+     label2:
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ACRA is disabled for ");
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r4 = virtualinvoke $r7.<android.app.Application: java.lang.String getPackageName()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - no default ExceptionHandler");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r6, $r4);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r8 := @caughtexception;
+        $r5 = $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler>;
+        if $r5 == null goto label1;
+
+        $r5 = $r0.<org.acra.ErrorReporter: java.lang.Thread$UncaughtExceptionHandler mDfltExceptionHandler>;
+        interfaceinvoke $r5.<java.lang.Thread$UncaughtExceptionHandler: void uncaughtException(java.lang.Thread,java.lang.Throwable)>($r1, $r2);
+        goto label1;
+
+     label5:
+        $r0.<org.acra.ErrorReporter: java.lang.Thread brokenThread> = $r1;
+        $r0.<org.acra.ErrorReporter: java.lang.Throwable unhandledThrowable> = $r2;
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ACRA caught a ");
+        $r9 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        $r4 = virtualinvoke $r9.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" exception for ");
+        $r7 = $r0.<org.acra.ErrorReporter: android.app.Application mContext>;
+        $r4 = virtualinvoke $r7.<android.app.Application: java.lang.String getPackageName()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". Building report.");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r6, $r4);
+        $r10 = staticinvoke <org.acra.ACRA: org.acra.ACRAConfiguration getConfig()>();
+        $r11 = virtualinvoke $r10.<org.acra.ACRAConfiguration: org.acra.ReportingInteractionMode mode()>();
+        specialinvoke $r0.<org.acra.ErrorReporter: void handleException(java.lang.Throwable,org.acra.ReportingInteractionMode,boolean,boolean)>($r2, $r11, 0, 1);
+
+     label6:
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label3 with label4;
+        catch java.lang.Throwable from label5 to label6 with label4;
+    }
+}

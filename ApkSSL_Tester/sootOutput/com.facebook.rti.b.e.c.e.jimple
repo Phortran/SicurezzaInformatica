@@ -1,0 +1,227 @@
+final class com.facebook.rti.b.e.c.e extends com.facebook.rti.b.e.c.c
+{
+
+    void <init>(com.facebook.rti.b.e.b.h, int)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        com.facebook.rti.b.e.b.h $r1;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: com.facebook.rti.b.e.b.h;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<com.facebook.rti.b.e.c.c: void <init>(com.facebook.rti.b.e.b.h,int)>($r1, $i0);
+        return;
+    }
+
+    static java.lang.Object a(com.facebook.rti.b.e.c.e, java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        java.lang.Object $r2;
+
+        $r0 := @parameter0: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter1: java.io.DataInputStream;
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.e.c.e: java.lang.Object c(java.io.DataInputStream)>($r1);
+        return $r2;
+    }
+
+    private java.lang.Object c(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        int[] $r2;
+        com.facebook.rti.b.e.b.h $r3;
+        int $i0;
+        com.facebook.rti.b.e.b.j $r4;
+        com.facebook.rti.b.e.b.g $r5;
+        com.facebook.rti.b.e.b.c $r6;
+        com.facebook.rti.b.e.b.i $r7;
+        com.facebook.rti.b.e.b.q $r8;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $r2 = <com.facebook.rti.b.e.c.b: int[] a>;
+        $r3 = $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.h a>;
+        $r4 = $r3.<com.facebook.rti.b.e.b.h: com.facebook.rti.b.e.b.j a>;
+        $i0 = virtualinvoke $r4.<com.facebook.rti.b.e.b.j: int ordinal()>();
+        $i0 = $r2[$i0];
+        lookupswitch($i0)
+        {
+            case 1: goto label1;
+            case 2: goto label2;
+            case 3: goto label3;
+            case 4: goto label3;
+            case 5: goto label3;
+            case 6: goto label3;
+            case 7: goto label3;
+            case 8: goto label4;
+            default: goto label0;
+        };
+
+     label0:
+        return null;
+
+     label1:
+        $r5 = specialinvoke $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.g d(java.io.DataInputStream)>($r1);
+        return $r5;
+
+     label2:
+        $r6 = specialinvoke $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.c e(java.io.DataInputStream)>($r1);
+        return $r6;
+
+     label3:
+        $r7 = specialinvoke $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.i f(java.io.DataInputStream)>($r1);
+        return $r7;
+
+     label4:
+        $r8 = specialinvoke $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.q g(java.io.DataInputStream)>($r1);
+        return $r8;
+    }
+
+    private com.facebook.rti.b.e.b.g d(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        java.lang.String $r2, $r3;
+        int $i0, $i3, $i4;
+        boolean $z0, $z2, $z3, $z4, $z5;
+        java.io.IOException $r4;
+        byte $b5;
+        com.facebook.rti.b.e.b.g $r5;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $z0 = 1;
+        $r2 = virtualinvoke $r0.<com.facebook.rti.b.e.c.e: java.lang.String a(java.io.DataInputStream)>($r1);
+        $r3 = "MQIsdp";
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z2 != 0 goto label0;
+
+        virtualinvoke $r1.<java.io.DataInputStream: void close()>();
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>(java.lang.String)>("Invalid input - missing header");
+        throw $r4;
+
+     label0:
+        $b5 = virtualinvoke $r1.<java.io.DataInputStream: byte readByte()>();
+        $i4 = virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        $i3 = $r0.<com.facebook.rti.b.e.c.e: int b>;
+        $i3 = $i3 + -2;
+        $r0.<com.facebook.rti.b.e.c.e: int b> = $i3;
+        $i3 = virtualinvoke $r0.<com.facebook.rti.b.e.c.e: int b(java.io.DataInputStream)>($r1);
+        $r5 = new com.facebook.rti.b.e.b.g;
+        $i0 = $i4 & 128;
+        if $i0 != 128 goto label6;
+
+        $z2 = 1;
+
+     label1:
+        $i0 = $i4 & 64;
+        if $i0 != 64 goto label7;
+
+        $z3 = 1;
+
+     label2:
+        $i0 = $i4 & 4;
+        if $i0 != 4 goto label8;
+
+        $z4 = 1;
+
+     label3:
+        $i0 = $i4 & 32;
+        if $i0 != 32 goto label9;
+
+        $z5 = 1;
+
+     label4:
+        $i0 = $i4 & 24;
+        $i0 = $i0 >> 3;
+        $i4 = $i4 & 2;
+        if $i4 != 2 goto label10;
+
+     label5:
+        specialinvoke $r5.<com.facebook.rti.b.e.b.g: void <init>(int,boolean,boolean,boolean,boolean,int,boolean,int)>($b5, $z2, $z3, $z4, $z5, $i0, $z0, $i3);
+        return $r5;
+
+     label6:
+        $z2 = 0;
+        goto label1;
+
+     label7:
+        $z3 = 0;
+        goto label2;
+
+     label8:
+        $z4 = 0;
+        goto label3;
+
+     label9:
+        $z5 = 0;
+        goto label4;
+
+     label10:
+        $z0 = 0;
+        goto label5;
+    }
+
+    private com.facebook.rti.b.e.b.c e(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        byte $b0;
+        int $i1;
+        com.facebook.rti.b.e.b.c $r2;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        virtualinvoke $r1.<java.io.DataInputStream: int readUnsignedByte()>();
+        $b0 = virtualinvoke $r1.<java.io.DataInputStream: byte readByte()>();
+        $i1 = $r0.<com.facebook.rti.b.e.c.e: int b>;
+        $i1 = $i1 + -2;
+        $r0.<com.facebook.rti.b.e.c.e: int b> = $i1;
+        $r2 = new com.facebook.rti.b.e.b.c;
+        specialinvoke $r2.<com.facebook.rti.b.e.b.c: void <init>(byte)>($b0);
+        return $r2;
+    }
+
+    private com.facebook.rti.b.e.b.i f(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        int $i0;
+        com.facebook.rti.b.e.b.i $r2;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $i0 = virtualinvoke $r0.<com.facebook.rti.b.e.c.e: int b(java.io.DataInputStream)>($r1);
+        $r2 = new com.facebook.rti.b.e.b.i;
+        specialinvoke $r2.<com.facebook.rti.b.e.b.i: void <init>(int)>($i0);
+        return $r2;
+    }
+
+    private com.facebook.rti.b.e.b.q g(java.io.DataInputStream)
+    {
+        com.facebook.rti.b.e.c.e $r0;
+        java.io.DataInputStream $r1;
+        int $i0, $i1;
+        java.lang.String $r2;
+        com.facebook.rti.b.e.b.h $r3;
+        com.facebook.rti.b.e.b.q $r4;
+
+        $r0 := @this: com.facebook.rti.b.e.c.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $r2 = virtualinvoke $r0.<com.facebook.rti.b.e.c.e: java.lang.String a(java.io.DataInputStream)>($r1);
+        $i0 = -1;
+        $r3 = $r0.<com.facebook.rti.b.e.c.e: com.facebook.rti.b.e.b.h a>;
+        $i1 = $r3.<com.facebook.rti.b.e.b.h: int c>;
+        if $i1 <= 0 goto label0;
+
+        $i0 = virtualinvoke $r0.<com.facebook.rti.b.e.c.e: int b(java.io.DataInputStream)>($r1);
+
+     label0:
+        $r4 = new com.facebook.rti.b.e.b.q;
+        specialinvoke $r4.<com.facebook.rti.b.e.b.q: void <init>(java.lang.String,int)>($r2, $i0);
+        return $r4;
+    }
+}

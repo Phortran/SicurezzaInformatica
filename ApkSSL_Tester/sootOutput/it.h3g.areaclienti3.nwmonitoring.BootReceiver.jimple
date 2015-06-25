@@ -1,0 +1,191 @@
+public class it.h3g.areaclienti3.nwmonitoring.BootReceiver extends android.content.BroadcastReceiver
+{
+    static int a;
+    static int b;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.nwmonitoring.BootReceiver: int a> = 0;
+        <it.h3g.areaclienti3.nwmonitoring.BootReceiver: int b> = 1;
+        return;
+    }
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.BootReceiver $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.BootReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.BootReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2, $r7;
+        java.lang.String $r3, $r4, $r11, $r12;
+        it.h3g.areaclienti3.nwmonitoring.bf $r5;
+        it.h3g.areaclienti3.nwmonitoring.as $r6;
+        boolean $z0;
+        long $l0, $l1, $l2, $l3;
+        it.h3g.areaclienti3.nwmonitoring.av $r9;
+        byte $b4;
+        int $i5, $i6;
+        java.lang.StringBuilder $r10;
+        it.h3g.areaclienti3.nwmonitoring.au $r13;
+        java.lang.Void[] $r14;
+        it.h3g.areaclienti3.nwmonitoring.l $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.BootReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-EVENT_BOOT", "OnReceive");
+        $r5 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r1);
+        $r6 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r1);
+        $z0 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: boolean f()>();
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: boolean h()>();
+        if $z0 == 0 goto label2;
+
+     label0:
+        $r9 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r1, "SIM_LOCKED", 1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-EVENT_BOOT", "SIM_LOCKED");
+
+     label1:
+        return;
+
+     label2:
+        $r9 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r1, "SIM_LOCKED", 0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-EVENT_BOOT", "SIM_UNLOCKED");
+        $l1 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: long l()>();
+        $r9 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l0 = virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r1, "SETTINGS_PREV_TIME_SEND", 0L);
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r7 = new android.content.Intent;
+        specialinvoke $r7.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r1, class "it/h3g/areaclienti3/nwmonitoring/SendDataService");
+        $b4 = $l1 cmp 0L;
+        if $b4 != 0 goto label6;
+
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int g()>();
+        $l3 = (long) $i5;
+        $l1 = $l3 + $l2;
+        virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: void a(long)>($l1);
+
+     label3:
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>("Next send: ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);
+        $r3 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_BOOT-SEND-TIMESTAMP", $r3);
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("android.intent.action.BOOT_COMPLETED");
+        if $z0 != 0 goto label4;
+
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.nwmonitoring.StartServices");
+        if $z0 == 0 goto label11;
+
+     label4:
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>("Time GPS: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int h()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - PacketSize: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int i()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timer Lettura dati: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timer invio dati: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int f()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Timeout GPS: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int e()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - Max Pos. Valid Time: ");
+        $i5 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int c()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r3 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-CONFIG", $r3);
+        $i5 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: int a(android.content.Context)>($r1);
+        if $i5 != 1 goto label10;
+
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: java.lang.String b(android.content.Context)>($r1);
+        $r11 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>("IMSI_CONSENT: ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" IMSI_NOW: ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11);
+        $r4 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_IMSI-CHECK", $r4);
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r11);
+        if $z0 == 0 goto label9;
+
+        $z0 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: boolean A()>();
+        if $z0 == 0 goto label8;
+
+        $r13 = new it.h3g.areaclienti3.nwmonitoring.au;
+        specialinvoke $r13.<it.h3g.areaclienti3.nwmonitoring.au: void <init>(android.content.Context)>($r1);
+        $r14 = newarray (java.lang.Void)[0];
+        virtualinvoke $r13.<it.h3g.areaclienti3.nwmonitoring.au: android.os.AsyncTask execute(java.lang.Object[])>($r14);
+
+     label5:
+        $l3 = $l1 - $l2;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void b(android.content.Context,long)>($r1, $l3);
+        goto label1;
+
+     label6:
+        $b4 = $l1 cmp $l2;
+        if $b4 < 0 goto label7;
+
+        $b4 = $l2 cmp $l0;
+        if $b4 >= 0 goto label3;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-EVENT_BOOT", "SEND_FROM_BOOT");
+        $i6 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int g()>();
+        $l3 = (long) $i6;
+        $l1 = $l3 + $l2;
+        virtualinvoke $r7.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.BOOT_SEND_ACTION");
+        virtualinvoke $r1.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r7);
+        goto label3;
+
+     label8:
+        $i6 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        $l3 = (long) $i6;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context,long)>($r1, $l3);
+        goto label5;
+
+     label9:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-BOOT", "CONSENT DENIED FOR THIS IMSI");
+        $z0 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: boolean h()>();
+        if $z0 != 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: void a(int,android.content.Context)>(0, $r1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-BOOT", "CANCELLAZIONE DATI IMSI PRECEDENTE");
+        $r15 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.l: it.h3g.areaclienti3.nwmonitoring.l a(android.content.Context)>($r1);
+        virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.l: boolean a(java.lang.String)>("");
+        goto label1;
+
+     label10:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-BOOT", "CONSENT DENIED");
+        goto label1;
+
+     label11:
+        $r12 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = virtualinvoke $r12.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.nwmonitoring.StopServices");
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void a(android.content.Context)>($r1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.az: void b(android.content.Context)>($r1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-BOOT", "STOP SERVICES");
+        goto label1;
+    }
+}

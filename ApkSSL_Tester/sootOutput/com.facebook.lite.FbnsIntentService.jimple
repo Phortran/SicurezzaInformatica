@@ -1,0 +1,109 @@
+public class com.facebook.lite.FbnsIntentService extends com.facebook.rti.push.a.a
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/FbnsIntentService";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.FbnsIntentService: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        $r1 = <com.facebook.lite.FbnsIntentService: java.lang.String a>;
+        specialinvoke $r0.<com.facebook.rti.push.a.a: void <init>(java.lang.String)>($r1);
+        return;
+    }
+
+    private void b()
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(java.lang.String)>("com.facebook.lite.FBNS_REGISTRATION_COMPLETED");
+        virtualinvoke $r0.<com.facebook.lite.FbnsIntentService: void sendBroadcast(android.content.Intent)>($r1);
+        return;
+    }
+
+    protected final void a()
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        staticinvoke <com.facebook.lite.notification.b: void b(android.content.Context)>($r0);
+        $r1 = <com.facebook.lite.FbnsIntentService: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r1, "push/device unregistered.");
+        return;
+    }
+
+    protected final void a(android.content.Intent)
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        android.content.Intent $r1;
+        java.lang.String $r2, $r3;
+        long $l0;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        $r1 := @parameter0: android.content.Intent;
+        $r2 = <com.facebook.lite.FbnsIntentService: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, "push/received message.");
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        staticinvoke <com.facebook.lite.b.e: void h(android.content.Context,long)>($r0, $l0);
+        $r3 = virtualinvoke $r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("data");
+        staticinvoke <com.facebook.lite.notification.k: void a(android.content.Context,java.lang.String)>($r0, $r3);
+        return;
+    }
+
+    protected final void a(java.lang.String)
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        java.lang.String $r1, $r2, $r4;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = <com.facebook.lite.FbnsIntentService: java.lang.String a>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("push/device registered: token = ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, $r4);
+        $r4 = staticinvoke <com.facebook.lite.deviceid.f: java.lang.String a(android.content.Context)>($r0);
+        staticinvoke <com.facebook.lite.notification.b: boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String)>($r0, $r1, $r4, "FBNS");
+        specialinvoke $r0.<com.facebook.lite.FbnsIntentService: void b()>();
+        return;
+    }
+
+    protected final void b(java.lang.String)
+    {
+        com.facebook.lite.FbnsIntentService $r0;
+        java.lang.String $r1, $r2, $r4;
+        java.lang.StringBuilder $r3;
+        com.b.a.a.b.f $r5;
+
+        $r0 := @this: com.facebook.lite.FbnsIntentService;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = <com.facebook.lite.FbnsIntentService: java.lang.String a>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("push/received error: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, $r4);
+        $r5 = staticinvoke <com.facebook.lite.notification.b: com.b.a.a.b.f a()>();
+        interfaceinvoke $r5.<com.b.a.a.b.f: void a(int,int,java.lang.String)>(0, 0, $r1);
+        specialinvoke $r0.<com.facebook.lite.FbnsIntentService: void b()>();
+        return;
+    }
+}

@@ -1,0 +1,251 @@
+public abstract class com.google.android.gms.maps.internal.IMapFragmentDelegate$a extends android.os.Binder implements com.google.android.gms.maps.internal.IMapFragmentDelegate
+{
+
+    public static com.google.android.gms.maps.internal.IMapFragmentDelegate a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.maps.internal.IMapFragmentDelegate;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.maps.internal.IMapFragmentDelegate) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.maps.internal.IMapFragmentDelegate$a$a;
+        specialinvoke r4.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.internal.IMapFragmentDelegate$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4, $r7;
+        byte $b3;
+        com.google.android.gms.dynamic.b $r5, $r13;
+        boolean $z0;
+        com.google.android.gms.maps.internal.IGoogleMapDelegate $r6;
+        com.google.android.gms.maps.p $r8;
+        com.google.android.gms.maps.GoogleMapOptions $r9;
+        java.lang.Object $r10, $r12;
+        android.os.Parcelable$Creator $r11;
+        android.os.Bundle r14;
+
+        $r0 := @this: com.google.android.gms.maps.internal.IMapFragmentDelegate$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $r4 = null;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label5;
+            case 3: goto label10;
+            case 4: goto label13;
+            case 5: goto label17;
+            case 6: goto label18;
+            case 7: goto label19;
+            case 8: goto label20;
+            case 9: goto label21;
+            case 10: goto label22;
+            case 11: goto label26;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $r6 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: com.google.android.gms.maps.internal.IGoogleMapDelegate a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r6 == null goto label4;
+
+        $r4 = interfaceinvoke $r6.<com.google.android.gms.maps.internal.IGoogleMapDelegate: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r4);
+        return 1;
+
+     label4:
+        $r4 = null;
+        goto label3;
+
+     label5:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $r7 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r7);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label8;
+
+        $r8 = <com.google.android.gms.maps.GoogleMapOptions: com.google.android.gms.maps.p a>;
+        $r10 = virtualinvoke $r8.<com.google.android.gms.maps.p: com.google.android.gms.maps.GoogleMapOptions a(android.os.Parcel)>($r1);
+
+     label6:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label9;
+
+        $r11 = <android.os.Bundle: android.os.Parcelable$Creator CREATOR>;
+        $r12 = interfaceinvoke $r11.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r12 = (android.os.Bundle) $r12;
+
+     label7:
+        $r9 = (com.google.android.gms.maps.GoogleMapOptions) $r10;
+        r14 = (android.os.Bundle) $r12;
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void a(com.google.android.gms.dynamic.b,com.google.android.gms.maps.GoogleMapOptions,android.os.Bundle)>($r5, $r9, r14);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label8:
+        $r10 = null;
+        goto label6;
+
+     label9:
+        $r12 = null;
+        goto label7;
+
+     label10:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label12;
+
+        $r11 = <android.os.Bundle: android.os.Parcelable$Creator CREATOR>;
+        $r12 = interfaceinvoke $r11.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r12 = (android.os.Bundle) $r12;
+
+     label11:
+        r14 = (android.os.Bundle) $r12;
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void a(android.os.Bundle)>(r14);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label12:
+        $r12 = null;
+        goto label11;
+
+     label13:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $r7 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r7);
+        $r7 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r13 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r7);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label16;
+
+        $r11 = <android.os.Bundle: android.os.Parcelable$Creator CREATOR>;
+        $r12 = interfaceinvoke $r11.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r12 = (android.os.Bundle) $r12;
+
+     label14:
+        r14 = (android.os.Bundle) $r12;
+        $r13 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.dynamic.b,com.google.android.gms.dynamic.b,android.os.Bundle)>($r5, $r13, r14);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r13 == null goto label15;
+
+        $r4 = interfaceinvoke $r13.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label15:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r4);
+        return 1;
+
+     label16:
+        $r12 = null;
+        goto label14;
+
+     label17:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void b()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label18:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void c()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label19:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void d()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label20:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void e()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label21:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void f()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label22:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label24;
+
+        $r11 = <android.os.Bundle: android.os.Parcelable$Creator CREATOR>;
+        $r12 = interfaceinvoke $r11.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r12 = (android.os.Bundle) $r12;
+
+     label23:
+        r14 = (android.os.Bundle) $r12;
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: void b(android.os.Bundle)>(r14);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r12 == null goto label25;
+
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>(1);
+        r14 = (android.os.Bundle) $r12;
+        virtualinvoke r14.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r2, 1);
+        return 1;
+
+     label24:
+        $r12 = null;
+        goto label23;
+
+     label25:
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>(0);
+        return 1;
+
+     label26:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IMapFragmentDelegate");
+        $z0 = virtualinvoke $r0.<com.google.android.gms.maps.internal.IMapFragmentDelegate$a: boolean g()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $z0 == 0 goto label28;
+
+        $b3 = 1;
+
+     label27:
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($b3);
+        return 1;
+
+     label28:
+        $b3 = 0;
+        goto label27;
+    }
+}

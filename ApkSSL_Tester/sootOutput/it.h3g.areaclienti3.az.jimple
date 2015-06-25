@@ -1,0 +1,110 @@
+class it.h3g.areaclienti3.az extends it.h3g.areaclienti3.remoteservice.a
+{
+    final it.h3g.areaclienti3.PagerActivity a;
+    private final java.lang.String b;
+    private final android.os.Bundle c;
+
+    void <init>(it.h3g.areaclienti3.PagerActivity, java.lang.String, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.az $r0;
+        it.h3g.areaclienti3.PagerActivity $r1;
+        java.lang.String $r2;
+        android.os.Bundle $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.az;
+        $r1 := @parameter0: it.h3g.areaclienti3.PagerActivity;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: android.os.Bundle;
+        $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a> = $r1;
+        $r0.<it.h3g.areaclienti3.az: java.lang.String b> = $r2;
+        $r0.<it.h3g.areaclienti3.az: android.os.Bundle c> = $r3;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.az $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+        it.h3g.areaclienti3.PagerActivity $r4, $r9;
+        it.h3g.areaclienti3.remoteservice.IService $r5;
+        android.os.Bundle $r6;
+        java.lang.Throwable $r7;
+        java.lang.InterruptedException $r8;
+        android.os.RemoteException $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.az;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("start action: ");
+        $r3 = $r0.<it.h3g.areaclienti3.az: java.lang.String b>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", $r3);
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a>;
+        $r5 = $r4.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r5 == null goto label3;
+
+        $r4 = $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a>;
+        $r5 = $r4.<it.h3g.areaclienti3.PagerActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        $r3 = $r0.<it.h3g.areaclienti3.az: java.lang.String b>;
+        $r6 = $r0.<it.h3g.areaclienti3.az: android.os.Bundle c>;
+
+     label1:
+        interfaceinvoke $r5.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>($r3, $r6);
+
+     label2:
+        return;
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", "Service instance is null... ");
+        entermonitor $r0;
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Pager Activity", "lets go to sleep");
+        virtualinvoke $r0.<java.lang.Object: void wait(long)>(500L);
+
+     label5:
+        exitmonitor $r0;
+        goto label0;
+
+     label6:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+
+     label7:
+        throw $r7;
+
+     label8:
+        $r8 := @caughtexception;
+
+     label9:
+        $r4 = $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a>;
+        $r9 = $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a>;
+        $r3 = virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: java.lang.String getString(int)>(2131231691);
+        $r9 = $r0.<it.h3g.areaclienti3.az: it.h3g.areaclienti3.PagerActivity a>;
+        $r1 = virtualinvoke $r9.<it.h3g.areaclienti3.PagerActivity: java.lang.String getString(int)>(2131231110);
+        virtualinvoke $r4.<it.h3g.areaclienti3.PagerActivity: void a(java.lang.String,java.lang.String,java.lang.String)>(null, $r3, $r1);
+
+     label10:
+        goto label5;
+
+     label11:
+        $r10 := @caughtexception;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error during  action ");
+        $r1 = $r0.<it.h3g.areaclienti3.az: java.lang.String b>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Pager Activity", $r1);
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label11;
+        catch java.lang.InterruptedException from label4 to label5 with label8;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label5 to label7 with label6;
+        catch java.lang.Throwable from label9 to label10 with label6;
+    }
+}

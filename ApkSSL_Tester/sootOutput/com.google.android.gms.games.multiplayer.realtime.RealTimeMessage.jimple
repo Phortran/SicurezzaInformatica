@@ -1,0 +1,100 @@
+public final class com.google.android.gms.games.multiplayer.realtime.RealTimeMessage extends java.lang.Object implements android.os.Parcelable
+{
+    public static final android.os.Parcelable$Creator CREATOR;
+    private final java.lang.String a;
+    private final byte[] b;
+    private final int c;
+
+    static void <clinit>()
+    {
+        com.google.android.gms.games.multiplayer.realtime.a $r0;
+
+        $r0 = new com.google.android.gms.games.multiplayer.realtime.a;
+        specialinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.a: void <init>()>();
+        <com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: android.os.Parcelable$Creator CREATOR> = $r0;
+        return;
+    }
+
+    private void <init>(android.os.Parcel)
+    {
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage $r0;
+        android.os.Parcel $r1;
+        java.lang.String $r2;
+        byte[] $r3;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r3 = virtualinvoke $r1.<android.os.Parcel: byte[] createByteArray()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        specialinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: void <init>(java.lang.String,byte[],int)>($r2, $r3, $i0);
+        return;
+    }
+
+    void <init>(android.os.Parcel, com.google.android.gms.games.multiplayer.realtime.a)
+    {
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.games.multiplayer.realtime.a $r2;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 := @parameter1: com.google.android.gms.games.multiplayer.realtime.a;
+        specialinvoke $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: void <init>(android.os.Parcel)>($r1);
+        return;
+    }
+
+    public void <init>(java.lang.String, byte[], int)
+    {
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage $r0;
+        java.lang.String $r1;
+        byte[] $r2;
+        int $i0;
+        java.lang.Object $r3;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: byte[];
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r1);
+        $r1 = (java.lang.String) $r3;
+        $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: java.lang.String a> = $r1;
+        $r3 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r2);
+        $r2 = (byte[]) $r3;
+        $r3 = virtualinvoke $r2.<java.lang.Object: java.lang.Object clone()>();
+        $r2 = (byte[]) $r3;
+        $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: byte[] b> = $r2;
+        $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: int c> = $i0;
+        return;
+    }
+
+    public int describeContents()
+    {
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage $r0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+        return 0;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        com.google.android.gms.games.multiplayer.realtime.RealTimeMessage $r0;
+        android.os.Parcel $r1;
+        int $i0;
+        java.lang.String $r2;
+        byte[] $r3;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+        $r1 := @parameter0: android.os.Parcel;
+        $i0 := @parameter1: int;
+        $r2 = $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: java.lang.String a>;
+        virtualinvoke $r1.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        $r3 = $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: byte[] b>;
+        virtualinvoke $r1.<android.os.Parcel: void writeByteArray(byte[])>($r3);
+        $i0 = $r0.<com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: int c>;
+        virtualinvoke $r1.<android.os.Parcel: void writeInt(int)>($i0);
+        return;
+    }
+}

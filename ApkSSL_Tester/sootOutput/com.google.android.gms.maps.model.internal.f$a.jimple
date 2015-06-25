@@ -1,0 +1,153 @@
+public abstract class com.google.android.gms.maps.model.internal.f$a extends android.os.Binder implements com.google.android.gms.maps.model.internal.f
+{
+
+    public static com.google.android.gms.maps.model.internal.f a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.maps.model.internal.f $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.maps.model.internal.f$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.maps.model.internal.f;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.maps.model.internal.f) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.maps.model.internal.f$a$a;
+        specialinvoke r4.<com.google.android.gms.maps.model.internal.f$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.model.internal.f$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        boolean $z0, $z1, $z2;
+        java.lang.String $r3;
+        float $f0;
+        android.os.IBinder $r4;
+        com.google.android.gms.maps.model.internal.f $r5;
+
+        $r0 := @this: com.google.android.gms.maps.model.internal.f$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $z0 = 0;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label3;
+            case 3: goto label4;
+            case 4: goto label5;
+            case 5: goto label6;
+            case 6: goto label7;
+            case 7: goto label9;
+            case 8: goto label11;
+            case 9: goto label13;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z1 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z1;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: void a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label3:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: void b()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label4:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $r3 = virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: java.lang.String c()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>($r3);
+        return 1;
+
+     label5:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $f0 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: void a(float)>($f0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label6:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $f0 = virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: float d()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeFloat(float)>($f0);
+        return 1;
+
+     label7:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label8;
+
+        $z0 = 1;
+
+     label8:
+        virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: void a(boolean)>($z0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+
+     label9:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $z2 = virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: boolean e()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $z2 == 0 goto label10;
+
+        $z0 = 1;
+
+     label10:
+        $i1 = (int) $z0;
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($i1);
+        return 1;
+
+     label11:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $r4 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.maps.model.internal.f$a: com.google.android.gms.maps.model.internal.f a(android.os.IBinder)>($r4);
+        $z2 = virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: boolean a(com.google.android.gms.maps.model.internal.f)>($r5);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $z2 == 0 goto label12;
+
+        $z0 = 1;
+
+     label12:
+        $i1 = (int) $z0;
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($i1);
+        return 1;
+
+     label13:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+        $i1 = virtualinvoke $r0.<com.google.android.gms.maps.model.internal.f$a: int f()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeInt(int)>($i1);
+        return 1;
+    }
+}

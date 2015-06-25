@@ -1,0 +1,72 @@
+public class it.h3g.areaclienti3.t extends java.lang.Object implements android.content.DialogInterface$OnCancelListener
+{
+    final it.h3g.areaclienti3.BaseActivity a;
+    private it.h3g.areaclienti3.BaseActivity b;
+    private java.lang.String[] c;
+
+    public void <init>(it.h3g.areaclienti3.BaseActivity, it.h3g.areaclienti3.BaseActivity, java.lang.String[])
+    {
+        it.h3g.areaclienti3.t $r0;
+        it.h3g.areaclienti3.BaseActivity $r1, $r2;
+        java.lang.String[] $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.t;
+        $r1 := @parameter0: it.h3g.areaclienti3.BaseActivity;
+        $r2 := @parameter1: it.h3g.areaclienti3.BaseActivity;
+        $r3 := @parameter2: java.lang.String[];
+        $r0.<it.h3g.areaclienti3.t: it.h3g.areaclienti3.BaseActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.t: it.h3g.areaclienti3.BaseActivity b> = $r2;
+        $r0.<it.h3g.areaclienti3.t: java.lang.String[] c> = $r3;
+        return;
+    }
+
+    public void onCancel(android.content.DialogInterface)
+    {
+        it.h3g.areaclienti3.t $r0;
+        android.content.DialogInterface $r1;
+        it.h3g.areaclienti3.BaseActivity $r2;
+        int $i0, $i1;
+        java.lang.String $r3;
+        it.h3g.areaclienti3.remoteservice.IService $r4;
+        java.lang.String[] $r5;
+        android.os.RemoteException $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.t;
+        $r1 := @parameter0: android.content.DialogInterface;
+        $r2 = $r0.<it.h3g.areaclienti3.t: it.h3g.areaclienti3.BaseActivity b>;
+        $r2.<it.h3g.areaclienti3.BaseActivity: boolean s> = 1;
+        $r2 = $r0.<it.h3g.areaclienti3.t: it.h3g.areaclienti3.BaseActivity b>;
+        $r4 = $r2.<it.h3g.areaclienti3.BaseActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r4 == null goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.t: java.lang.String[] c>;
+        $i0 = lengthof $r5;
+        $i1 = 0;
+
+     label0:
+        if $i1 < $i0 goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $r3 = $r5[$i1];
+        $r2 = $r0.<it.h3g.areaclienti3.t: it.h3g.areaclienti3.BaseActivity b>;
+        $r4 = $r2.<it.h3g.areaclienti3.BaseActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+
+     label3:
+        interfaceinvoke $r4.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String)>($r3);
+
+     label4:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label5:
+        $r6 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BaseActivity", "Remote exception ");
+        goto label1;
+
+        catch android.os.RemoteException from label3 to label4 with label5;
+    }
+}

@@ -1,0 +1,73 @@
+class android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo extends java.lang.Object
+{
+    public java.lang.reflect.Method setHomeActionContentDescription;
+    public java.lang.reflect.Method setHomeAsUpIndicator;
+    public android.widget.ImageView upIndicatorView;
+
+    void <init>(android.app.Activity)
+    {
+        android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo $r0;
+        android.app.Activity $r1;
+        int $i0;
+        android.view.View $r2, $r4;
+        android.view.ViewParent $r3;
+        java.lang.Class $r5, $r7;
+        java.lang.reflect.Method $r8;
+        java.lang.Class[] $r9;
+        java.lang.NoSuchMethodException $r10;
+        android.view.ViewGroup $r11;
+        boolean $z0;
+        android.widget.ImageView $r12;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+        $r1 := @parameter0: android.app.Activity;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r5 = class "android/app/ActionBar";
+        $r9 = newarray (java.lang.Class)[1];
+        $r9[0] = class "android/graphics/drawable/Drawable";
+
+     label0:
+        $r8 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setHomeAsUpIndicator", $r9);
+        $r0.<android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo: java.lang.reflect.Method setHomeAsUpIndicator> = $r8;
+        $r7 = class "android/app/ActionBar";
+        $r9 = newarray (java.lang.Class)[1];
+        $r5 = <java.lang.Integer: java.lang.Class TYPE>;
+        $r9[0] = $r5;
+        $r8 = virtualinvoke $r7.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setHomeActionContentDescription", $r9);
+
+     label1:
+        $r0.<android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo: java.lang.reflect.Method setHomeActionContentDescription> = $r8;
+
+     label2:
+        return;
+
+     label3:
+        $r10 := @caughtexception;
+        $r2 = virtualinvoke $r1.<android.app.Activity: android.view.View findViewById(int)>(16908332);
+        if $r2 == null goto label2;
+
+        $r3 = virtualinvoke $r2.<android.view.View: android.view.ViewParent getParent()>();
+        $r11 = (android.view.ViewGroup) $r3;
+        $i0 = virtualinvoke $r11.<android.view.ViewGroup: int getChildCount()>();
+        if $i0 != 2 goto label2;
+
+        $r2 = virtualinvoke $r11.<android.view.ViewGroup: android.view.View getChildAt(int)>(0);
+        $r4 = virtualinvoke $r11.<android.view.ViewGroup: android.view.View getChildAt(int)>(1);
+        $i0 = virtualinvoke $r2.<android.view.View: int getId()>();
+        if $i0 != 16908332 goto label5;
+
+     label4:
+        $z0 = $r4 instanceof android.widget.ImageView;
+        if $z0 == 0 goto label2;
+
+        $r12 = (android.widget.ImageView) $r4;
+        $r0.<android.support.v4.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo: android.widget.ImageView upIndicatorView> = $r12;
+        goto label2;
+
+     label5:
+        $r4 = $r2;
+        goto label4;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label3;
+    }
+}

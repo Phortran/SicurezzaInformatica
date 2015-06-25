@@ -1,0 +1,47 @@
+public final class com.facebook.rti.push.service.l extends java.lang.Object
+{
+    public static com.facebook.rti.push.service.n a;
+    public static com.facebook.rti.push.service.h b;
+    public static com.facebook.rti.push.service.a c;
+
+    public static void a(com.facebook.rti.push.service.FbnsService)
+    {
+        com.facebook.rti.push.service.FbnsService $r0;
+        com.facebook.rti.push.service.n $r1;
+        com.facebook.rti.a.f.a $r2;
+        com.facebook.rti.b.a.b.a $r4;
+        android.content.SharedPreferences $r5, $r6;
+        com.facebook.rti.a.g.a $r7;
+        com.facebook.rti.push.service.h $r8;
+        android.app.AlarmManager $r9;
+        com.facebook.rti.a.g.b $r10;
+        com.facebook.rti.push.service.a $r11;
+        com.facebook.rti.b.a.d.b $r12;
+        com.facebook.rti.a.a.d $r13;
+
+        $r0 := @parameter0: com.facebook.rti.push.service.FbnsService;
+        staticinvoke <com.facebook.rti.b.d.y: void a(com.facebook.rti.b.d.r)>($r0);
+        $r1 = new com.facebook.rti.push.service.n;
+        $r2 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r5 = virtualinvoke $r2.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r0, "rti.mqtt.registrations");
+        $r2 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r6 = virtualinvoke $r2.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r0, "rti.mqtt.fbns_state");
+        $r7 = <com.facebook.rti.b.d.y: com.facebook.rti.a.g.a j>;
+        $r4 = new com.facebook.rti.b.a.b.a;
+        specialinvoke $r4.<com.facebook.rti.b.a.b.a: void <init>(android.content.Context)>($r0);
+        specialinvoke $r1.<com.facebook.rti.push.service.n: void <init>(android.content.SharedPreferences,android.content.SharedPreferences,com.facebook.rti.a.g.a,com.facebook.rti.b.a.b.a)>($r5, $r6, $r7, $r4);
+        <com.facebook.rti.push.service.l: com.facebook.rti.push.service.n a> = $r1;
+        $r8 = new com.facebook.rti.push.service.h;
+        $r9 = <com.facebook.rti.b.d.y: android.app.AlarmManager u>;
+        $r10 = <com.facebook.rti.b.d.y: com.facebook.rti.a.g.b r>;
+        specialinvoke $r8.<com.facebook.rti.push.service.h: void <init>(android.content.Context,android.app.AlarmManager,com.facebook.rti.a.g.b)>($r0, $r9, $r10);
+        <com.facebook.rti.push.service.l: com.facebook.rti.push.service.h b> = $r8;
+        $r11 = new com.facebook.rti.push.service.a;
+        $r12 = <com.facebook.rti.b.d.y: com.facebook.rti.b.a.d.b a>;
+        $r10 = <com.facebook.rti.b.d.y: com.facebook.rti.a.g.b r>;
+        $r13 = <com.facebook.rti.b.d.y: com.facebook.rti.a.a.d c>;
+        specialinvoke $r11.<com.facebook.rti.push.service.a: void <init>(android.content.Context,com.facebook.rti.b.a.d.b,com.facebook.rti.a.g.b,com.facebook.rti.a.a.d)>($r0, $r12, $r10, $r13);
+        <com.facebook.rti.push.service.l: com.facebook.rti.push.service.a c> = $r11;
+        return;
+    }
+}

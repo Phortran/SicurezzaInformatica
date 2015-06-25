@@ -1,0 +1,165 @@
+final class org.acra.collector.ReflectionCollector extends java.lang.Object
+{
+
+    void <init>()
+    {
+        org.acra.collector.ReflectionCollector $r0;
+
+        $r0 := @this: org.acra.collector.ReflectionCollector;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String collectConstants(java.lang.Class)
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: java.lang.Class;
+        $r1 = staticinvoke <org.acra.collector.ReflectionCollector: java.lang.String collectConstants(java.lang.Class,java.lang.String)>($r0, "");
+        return $r1;
+    }
+
+    public static java.lang.String collectConstants(java.lang.Class, java.lang.String)
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1, $r6;
+        int $i0, $i1, $i2;
+        java.lang.StringBuilder $r2, $r5;
+        java.lang.reflect.Field[] $r3;
+        java.lang.reflect.Field $r4;
+        java.lang.Object $r7;
+        java.lang.IllegalArgumentException $r8;
+        java.lang.IllegalAccessException $r9;
+
+        $r0 := @parameter0: java.lang.Class;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r0.<java.lang.Class: java.lang.reflect.Field[] getFields()>();
+        $i1 = lengthof $r3;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label6;
+
+        $r4 = $r3[$i0];
+        if $r1 == null goto label1;
+
+        $i2 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i2 <= 0 goto label1;
+
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(46);
+
+     label1:
+        $r6 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.String getName()>();
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+
+     label2:
+        $r7 = virtualinvoke $r4.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(null);
+        $r6 = virtualinvoke $r7.<java.lang.Object: java.lang.String toString()>();
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+     label3:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label4:
+        $r8 := @caughtexception;
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("N/A");
+        goto label3;
+
+     label5:
+        $r9 := @caughtexception;
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("N/A");
+        goto label3;
+
+     label6:
+        $r6 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r6;
+
+        catch java.lang.IllegalArgumentException from label2 to label3 with label4;
+        catch java.lang.IllegalAccessException from label2 to label3 with label5;
+    }
+
+    public static java.lang.String collectStaticGettersResults(java.lang.Class)
+    {
+        java.lang.Class $r0;
+        int $i1, $i2, $i3;
+        java.lang.StringBuilder $r1;
+        java.lang.reflect.Method[] $r2;
+        java.lang.reflect.Method $r3;
+        java.lang.Class[] $r5;
+        java.lang.String $r6;
+        boolean $z0;
+        java.lang.Object[] $r7;
+        java.lang.Object $r8;
+        java.lang.reflect.InvocationTargetException $r9;
+        java.lang.IllegalAccessException $r10;
+        java.lang.IllegalArgumentException $r11;
+
+        $r0 := @parameter0: java.lang.Class;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r0.<java.lang.Class: java.lang.reflect.Method[] getMethods()>();
+        $i2 = lengthof $r2;
+        $i1 = 0;
+
+     label0:
+        if $i1 >= $i2 goto label4;
+
+        $r3 = $r2[$i1];
+        $r5 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        $i3 = lengthof $r5;
+        if $i3 != 0 goto label3;
+
+        $r6 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.String getName()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean startsWith(java.lang.String)>("get");
+        if $z0 != 0 goto label1;
+
+        $r6 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.String getName()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean startsWith(java.lang.String)>("is");
+        if $z0 == 0 goto label3;
+
+     label1:
+        $r6 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.String getName()>();
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("getClass");
+        if $z0 != 0 goto label3;
+
+     label2:
+        $r6 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.String getName()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r7 = (java.lang.Object[]) null;
+        $r8 = virtualinvoke $r3.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+
+     label3:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label4:
+        $r6 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r6;
+
+     label5:
+        $r9 := @caughtexception;
+        goto label3;
+
+     label6:
+        $r10 := @caughtexception;
+        goto label3;
+
+     label7:
+        $r11 := @caughtexception;
+        goto label3;
+
+        catch java.lang.IllegalArgumentException from label2 to label3 with label7;
+        catch java.lang.IllegalAccessException from label2 to label3 with label6;
+        catch java.lang.reflect.InvocationTargetException from label2 to label3 with label5;
+    }
+}

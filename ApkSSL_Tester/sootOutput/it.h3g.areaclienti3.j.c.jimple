@@ -1,0 +1,121 @@
+public class it.h3g.areaclienti3.j.c extends android.view.animation.Animation
+{
+    private android.view.View a;
+    private boolean b;
+    private int c;
+    private int d;
+
+    public void <init>(android.view.View, boolean)
+    {
+        it.h3g.areaclienti3.j.c $r0;
+        android.view.View $r1;
+        boolean $z0;
+        android.view.animation.LinearInterpolator $r2;
+        int $i2;
+        android.view.ViewGroup$LayoutParams $r3;
+        long $l4;
+
+        $r0 := @this: it.h3g.areaclienti3.j.c;
+        $r1 := @parameter0: android.view.View;
+        $z0 := @parameter1: boolean;
+        specialinvoke $r0.<android.view.animation.Animation: void <init>()>();
+        $r0.<it.h3g.areaclienti3.j.c: android.view.View a> = $r1;
+        $r0.<it.h3g.areaclienti3.j.c: boolean b> = $z0;
+        $r2 = new android.view.animation.LinearInterpolator;
+        specialinvoke $r2.<android.view.animation.LinearInterpolator: void <init>()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.c: void setInterpolator(android.view.animation.Interpolator)>($r2);
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r1.<android.view.View: void measure(int,int)>(-1, -2);
+        $i2 = virtualinvoke $r1.<android.view.View: int getMeasuredHeight()>();
+        $r0.<it.h3g.areaclienti3.j.c: int d> = $i2;
+        $r3 = virtualinvoke $r1.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r3.<android.view.ViewGroup$LayoutParams: int height> = 0;
+        virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0);
+        $i2 = $r0.<it.h3g.areaclienti3.j.c: int d>;
+        $l4 = (long) $i2;
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.c: void setDuration(long)>($l4);
+
+     label0:
+        return;
+
+     label1:
+        $i2 = virtualinvoke $r1.<android.view.View: int getMeasuredHeight()>();
+        $r0.<it.h3g.areaclienti3.j.c: int c> = $i2;
+        $i2 = $r0.<it.h3g.areaclienti3.j.c: int c>;
+        $l4 = (long) $i2;
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.c: void setDuration(long)>($l4);
+        goto label0;
+    }
+
+    protected void applyTransformation(float, android.view.animation.Transformation)
+    {
+        it.h3g.areaclienti3.j.c $r0;
+        float $f0, $f1;
+        android.view.animation.Transformation $r1;
+        boolean $z0;
+        android.view.ViewGroup$LayoutParams $r2;
+        android.view.View $r3;
+        byte $b0;
+        int $i1, $i2;
+
+        $r0 := @this: it.h3g.areaclienti3.j.c;
+        $f0 := @parameter0: float;
+        $r1 := @parameter1: android.view.animation.Transformation;
+        specialinvoke $r0.<android.view.animation.Animation: void applyTransformation(float,android.view.animation.Transformation)>($f0, $r1);
+        $z0 = $r0.<it.h3g.areaclienti3.j.c: boolean b>;
+        if $z0 == 0 goto label3;
+
+        $r3 = $r0.<it.h3g.areaclienti3.j.c: android.view.View a>;
+        $r2 = virtualinvoke $r3.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $b0 = $f0 cmpl 1.0F;
+        if $b0 != 0 goto label2;
+
+        $i1 = -2;
+
+     label0:
+        $r2.<android.view.ViewGroup$LayoutParams: int height> = $i1;
+        $r3 = $r0.<it.h3g.areaclienti3.j.c: android.view.View a>;
+        virtualinvoke $r3.<android.view.View: void requestLayout()>();
+
+     label1:
+        return;
+
+     label2:
+        $i1 = $r0.<it.h3g.areaclienti3.j.c: int d>;
+        $f1 = (float) $i1;
+        $f1 = $f1 * $f0;
+        $i1 = (int) $f1;
+        goto label0;
+
+     label3:
+        $b0 = $f0 cmpl 1.0F;
+        if $b0 != 0 goto label4;
+
+        $r3 = $r0.<it.h3g.areaclienti3.j.c: android.view.View a>;
+        virtualinvoke $r3.<android.view.View: void setVisibility(int)>(8);
+        goto label1;
+
+     label4:
+        $r3 = $r0.<it.h3g.areaclienti3.j.c: android.view.View a>;
+        $r2 = virtualinvoke $r3.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $i1 = $r0.<it.h3g.areaclienti3.j.c: int c>;
+        $i2 = $r0.<it.h3g.areaclienti3.j.c: int c>;
+        $f1 = (float) $i2;
+        $f1 = $f1 * $f0;
+        $i2 = (int) $f1;
+        $i2 = $i1 - $i2;
+        $r2.<android.view.ViewGroup$LayoutParams: int height> = $i2;
+        $r3 = $r0.<it.h3g.areaclienti3.j.c: android.view.View a>;
+        virtualinvoke $r3.<android.view.View: void requestLayout()>();
+        goto label1;
+    }
+
+    public boolean willChangeBounds()
+    {
+        it.h3g.areaclienti3.j.c $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.c;
+        return 1;
+    }
+}

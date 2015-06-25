@@ -1,0 +1,100 @@
+public final class com.facebook.rti.b.c.a extends java.lang.Object implements a.a.a
+{
+    private int a;
+
+    public void <init>(int)
+    {
+        com.facebook.rti.b.c.a $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.c.a;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.c.a: int a> = $i0;
+        return;
+    }
+
+    public final java.lang.Integer a()
+    {
+        com.facebook.rti.b.c.a $r0;
+        int $i0;
+        java.lang.Integer $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.c.a;
+        entermonitor $r0;
+
+     label0:
+        $i0 = $r0.<com.facebook.rti.b.c.a: int a>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+
+     label1:
+        exitmonitor $r0;
+        return $r1;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final boolean a(int)
+    {
+        com.facebook.rti.b.c.a $r0;
+        int $i0, $i1;
+        boolean $z0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.a;
+        $i0 := @parameter0: int;
+        entermonitor $r0;
+
+     label0:
+        $i1 = $r0.<com.facebook.rti.b.c.a: int a>;
+        if $i1 == $i0 goto label3;
+
+        $r0.<com.facebook.rti.b.c.a: int a> = $i0;
+
+     label1:
+        $z0 = 1;
+
+     label2:
+        exitmonitor $r0;
+        return $z0;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+
+     label4:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+    }
+
+    public final java.lang.Object b()
+    {
+        com.facebook.rti.b.c.a $r0;
+        java.lang.Integer $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.a;
+        $r1 = virtualinvoke $r0.<com.facebook.rti.b.c.a: java.lang.Integer a()>();
+        return $r1;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.rti.b.c.a $r0;
+        int $i0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.a;
+        $i0 = $r0.<com.facebook.rti.b.c.a: int a>;
+        $r1 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        return $r1;
+    }
+}

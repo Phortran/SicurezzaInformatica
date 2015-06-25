@@ -1,0 +1,80 @@
+final class com.facebook.rti.a.a.n extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.a.a.k a;
+    private com.facebook.rti.a.a.b b;
+
+    private void <init>(com.facebook.rti.a.a.k, com.facebook.rti.a.a.b)
+    {
+        com.facebook.rti.a.a.n $r0;
+        com.facebook.rti.a.a.k $r1;
+        com.facebook.rti.a.a.b $r2;
+
+        $r0 := @this: com.facebook.rti.a.a.n;
+        $r1 := @parameter0: com.facebook.rti.a.a.k;
+        $r2 := @parameter1: com.facebook.rti.a.a.b;
+        $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.b b> = $r2;
+        return;
+    }
+
+    void <init>(com.facebook.rti.a.a.k, com.facebook.rti.a.a.b, byte)
+    {
+        com.facebook.rti.a.a.n $r0;
+        com.facebook.rti.a.a.k $r1;
+        com.facebook.rti.a.a.b $r2;
+        byte $b0;
+
+        $r0 := @this: com.facebook.rti.a.a.n;
+        $r1 := @parameter0: com.facebook.rti.a.a.k;
+        $r2 := @parameter1: com.facebook.rti.a.a.b;
+        $b0 := @parameter2: byte;
+        specialinvoke $r0.<com.facebook.rti.a.a.n: void <init>(com.facebook.rti.a.a.k,com.facebook.rti.a.a.b)>($r1, $r2);
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.a.a.n $r0;
+        com.facebook.rti.a.a.k $r1;
+        com.facebook.rti.a.a.b $r2;
+        com.facebook.rti.a.a.f $r3;
+        java.lang.Object[] $r6;
+        android.os.Handler $r7;
+        java.util.List $r8;
+        int $i2;
+
+        $r0 := @this: com.facebook.rti.a.a.n;
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        $r2 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.b b>;
+        staticinvoke <com.facebook.rti.a.a.k: void a(com.facebook.rti.a.a.k,com.facebook.rti.a.a.b)>($r1, $r2);
+        $r6 = newarray (java.lang.Object)[1];
+        $r2 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.b b>;
+        $r6[0] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("DefaultAnalyticsLogger", "New event %s.", $r6);
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        $r3 = staticinvoke <com.facebook.rti.a.a.k: com.facebook.rti.a.a.f d(com.facebook.rti.a.a.k)>($r1);
+        $r2 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.b b>;
+        virtualinvoke $r3.<com.facebook.rti.a.a.f: void a(com.facebook.rti.a.a.b)>($r2);
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        $r7 = staticinvoke <com.facebook.rti.a.a.k: android.os.Handler e(com.facebook.rti.a.a.k)>($r1);
+        virtualinvoke $r7.<android.os.Handler: void removeMessages(int)>(2);
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        $r3 = staticinvoke <com.facebook.rti.a.a.k: com.facebook.rti.a.a.f d(com.facebook.rti.a.a.k)>($r1);
+        $r8 = virtualinvoke $r3.<com.facebook.rti.a.a.f: java.util.List b()>();
+        $i2 = interfaceinvoke $r8.<java.util.List: int size()>();
+        if $i2 < 50 goto label1;
+
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        staticinvoke <com.facebook.rti.a.a.k: void f(com.facebook.rti.a.a.k)>($r1);
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<com.facebook.rti.a.a.n: com.facebook.rti.a.a.k a>;
+        $r7 = staticinvoke <com.facebook.rti.a.a.k: android.os.Handler e(com.facebook.rti.a.a.k)>($r1);
+        virtualinvoke $r7.<android.os.Handler: boolean sendEmptyMessageDelayed(int,long)>(2, 300000L);
+        goto label0;
+    }
+}

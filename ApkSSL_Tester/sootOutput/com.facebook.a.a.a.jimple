@@ -1,0 +1,66 @@
+public class com.facebook.a.a.a extends java.lang.Object implements com.facebook.a.a.b
+{
+    protected android.content.Context a;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.a.a.a $r0;
+        android.content.Context $r1;
+        java.lang.IllegalArgumentException $r2;
+
+        $r0 := @this: com.facebook.a.a.a;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.IllegalArgumentException;
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Application context cannot be null");
+        throw $r2;
+
+     label0:
+        $r0.<com.facebook.a.a.a: android.content.Context a> = $r1;
+        return;
+    }
+
+    public final java.lang.String[] a()
+    {
+        com.facebook.a.a.a $r0;
+        java.lang.String[] $r1;
+
+        $r0 := @this: com.facebook.a.a.a;
+        $r1 = newarray (java.lang.String)[0];
+        return $r1;
+    }
+
+    public final java.lang.String[] b()
+    {
+        com.facebook.a.a.a $r0;
+        java.lang.String[] $r2;
+
+        $r0 := @this: com.facebook.a.a.a;
+        $r2 = newarray (java.lang.String)[4];
+        $r2[0] = "-t";
+        $r2[1] = "200";
+        $r2[2] = "-v";
+        $r2[3] = "time";
+        return $r2;
+    }
+
+    public final java.lang.String c()
+    {
+        com.facebook.a.a.a $r0;
+
+        $r0 := @this: com.facebook.a.a.a;
+        return "application/x-www-form-urlencoded";
+    }
+
+    public final android.content.Context d()
+    {
+        com.facebook.a.a.a $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.a.a.a;
+        $r1 = $r0.<com.facebook.a.a.a: android.content.Context a>;
+        return $r1;
+    }
+}

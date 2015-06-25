@@ -1,0 +1,87 @@
+class it.h3g.areaclienti3.co extends android.webkit.WebViewClient
+{
+    final it.h3g.areaclienti3.WebViewActivity a;
+
+    void <init>(it.h3g.areaclienti3.WebViewActivity)
+    {
+        it.h3g.areaclienti3.co $r0;
+        it.h3g.areaclienti3.WebViewActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.co;
+        $r1 := @parameter0: it.h3g.areaclienti3.WebViewActivity;
+        $r0.<it.h3g.areaclienti3.co: it.h3g.areaclienti3.WebViewActivity a> = $r1;
+        specialinvoke $r0.<android.webkit.WebViewClient: void <init>()>();
+        return;
+    }
+
+    public void onPageFinished(android.webkit.WebView, java.lang.String)
+    {
+        it.h3g.areaclienti3.co $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.co;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        return;
+    }
+
+    public void onReceivedError(android.webkit.WebView, int, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.co $r0;
+        android.webkit.WebView $r1;
+        int $i0;
+        java.lang.String $r2, $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.co;
+        $r1 := @parameter0: android.webkit.WebView;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        return;
+    }
+
+    public boolean shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String)
+    {
+        it.h3g.areaclienti3.co $r0;
+        android.webkit.WebView $r1;
+        java.lang.String $r2, $r3, $r5;
+        java.lang.StringBuilder $r4;
+        int $i0;
+        android.content.Intent $r6;
+        it.h3g.areaclienti3.WebViewActivity $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.co;
+        $r1 := @parameter0: android.webkit.WebView;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL = ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("WebView", $r5);
+        $i0 = virtualinvoke $r2.<java.lang.String: int indexOf(java.lang.String)>("4676_contattaci_ITA_HTML.xsl?subject=");
+        if $i0 >= 0 goto label0;
+
+        $i0 = virtualinvoke $r2.<java.lang.String: int indexOf(java.lang.String)>("6428_contattaciBiz_ITA_HTML.xsl?subject=");
+        if $i0 < 0 goto label1;
+
+     label0:
+        $i0 = virtualinvoke $r2.<java.lang.String: int indexOf(java.lang.String)>("?");
+        $i0 = $i0 + 1;
+        $r5 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int)>($i0);
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String toLowerCase()>();
+        $r3 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("subject=", "");
+        $r6 = new android.content.Intent;
+        specialinvoke $r6.<android.content.Intent: void <init>()>();
+        virtualinvoke $r6.<android.content.Intent: android.content.Intent setClassName(java.lang.String,java.lang.String)>("it.h3g.areaclienti3", "it.h3g.areaclienti3.ContactUsActivity");
+        virtualinvoke $r6.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("showNumberLabel", 1);
+        virtualinvoke $r6.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("subject", $r3);
+        $r7 = $r0.<it.h3g.areaclienti3.co: it.h3g.areaclienti3.WebViewActivity a>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.WebViewActivity: void startActivity(android.content.Intent)>($r6);
+        return 1;
+
+     label1:
+        virtualinvoke $r1.<android.webkit.WebView: void loadUrl(java.lang.String)>($r2);
+        return 1;
+    }
+}

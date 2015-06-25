@@ -1,0 +1,82 @@
+final class com.facebook.lite.g.i extends java.lang.Object implements java.lang.Runnable
+{
+    final boolean a;
+    final boolean b;
+    final com.facebook.lite.g.g c;
+
+    void <init>(com.facebook.lite.g.g, boolean, boolean)
+    {
+        com.facebook.lite.g.i $r0;
+        com.facebook.lite.g.g $r1;
+        boolean $z0, $z1;
+
+        $r0 := @this: com.facebook.lite.g.i;
+        $r1 := @parameter0: com.facebook.lite.g.g;
+        $z0 := @parameter1: boolean;
+        $z1 := @parameter2: boolean;
+        $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c> = $r1;
+        $r0.<com.facebook.lite.g.i: boolean a> = $z0;
+        $r0.<com.facebook.lite.g.i: boolean b> = $z1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.lite.g.i $r0;
+        boolean $z0;
+        com.b.a.a.i $r1;
+        com.facebook.lite.g.g $r3, $r5;
+        int $i1, $i2;
+        com.facebook.lite.net.j $r4;
+
+        $r0 := @this: com.facebook.lite.g.i;
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean c()>();
+        if $z0 != 0 goto label1;
+
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        virtualinvoke $r3.<com.facebook.lite.g.g: void G()>();
+
+     label0:
+        return;
+
+     label1:
+        $z0 = $r0.<com.facebook.lite.g.i: boolean a>;
+        if $z0 == 0 goto label2;
+
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $r3.<com.facebook.lite.g.g: int e> = 0;
+
+     label2:
+        $z0 = $r0.<com.facebook.lite.g.i: boolean b>;
+        if $z0 == 0 goto label3;
+
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        staticinvoke <com.facebook.lite.g.g: int g(com.facebook.lite.g.g)>($r3);
+
+     label3:
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $i1 = $r3.<com.facebook.lite.g.g: int e>;
+        $i2 = <com.facebook.lite.net.i: int b>;
+        if $i1 > $i2 goto label0;
+
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $r4 = $r3.<com.facebook.lite.g.g: com.facebook.lite.net.j g>;
+        if $r4 != null goto label4;
+
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        staticinvoke <com.facebook.lite.g.g: void h(com.facebook.lite.g.g)>($r3);
+        $r3 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $r5 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $r1 = new com.b.a.a.i;
+        specialinvoke $r1.<com.b.a.a.i: void <init>(int,java.lang.String)>(2, "");
+        $r4 = staticinvoke <com.facebook.lite.g.g: com.facebook.lite.net.j a(com.facebook.lite.g.g,com.b.a.a.i)>($r5, $r1);
+        $r3.<com.facebook.lite.g.g: com.facebook.lite.net.j g> = $r4;
+
+     label4:
+        $r5 = $r0.<com.facebook.lite.g.i: com.facebook.lite.g.g c>;
+        $r4 = $r5.<com.facebook.lite.g.g: com.facebook.lite.net.j g>;
+        interfaceinvoke $r4.<com.facebook.lite.net.j: void v()>();
+        goto label0;
+    }
+}

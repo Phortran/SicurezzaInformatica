@@ -1,0 +1,572 @@
+public final class com.facebook.rti.push.service.n extends java.lang.Object
+{
+    private final android.content.SharedPreferences a;
+    private final android.content.SharedPreferences b;
+    private final com.facebook.rti.a.g.a c;
+
+    public void <init>(android.content.SharedPreferences, android.content.SharedPreferences, com.facebook.rti.a.g.a, com.facebook.rti.b.a.b.a)
+    {
+        com.facebook.rti.push.service.n $r0;
+        android.content.SharedPreferences $r1, $r2;
+        com.facebook.rti.a.g.a $r3;
+        com.facebook.rti.b.a.b.a $r4;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: android.content.SharedPreferences;
+        $r2 := @parameter1: android.content.SharedPreferences;
+        $r3 := @parameter2: com.facebook.rti.a.g.a;
+        $r4 := @parameter3: com.facebook.rti.b.a.b.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a> = $r1;
+        $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b> = $r2;
+        $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c> = $r3;
+        specialinvoke $r0.<com.facebook.rti.push.service.n: void a(com.facebook.rti.b.a.b.a)>($r4);
+        return;
+    }
+
+    private void a(com.facebook.rti.b.a.b.a)
+    {
+        com.facebook.rti.push.service.n $r0;
+        com.facebook.rti.b.a.b.a $r1;
+        android.content.SharedPreferences $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        android.content.SharedPreferences$Editor $r5;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: com.facebook.rti.b.a.b.a;
+        $r2 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b>;
+        $r4 = interfaceinvoke $r2.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("mqtt_version", "");
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.a.b.a: java.lang.String b()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r0.<com.facebook.rti.push.service.n: void a()>();
+        $r2 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b>;
+        $r5 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r5 = interfaceinvoke $r5.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("mqtt_version", $r3);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r5);
+
+     label0:
+        return;
+    }
+
+    private boolean a(java.lang.String, com.facebook.rti.push.service.m)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r4;
+        com.facebook.rti.push.service.m $r2;
+        android.content.SharedPreferences $r3;
+        java.lang.Object[] $r5;
+        android.content.SharedPreferences$Editor $r6;
+        org.json.JSONException $r7;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: com.facebook.rti.push.service.m;
+
+     label0:
+        $r4 = virtualinvoke $r2.<com.facebook.rti.push.service.m: java.lang.String a()>();
+
+     label1:
+        $r3 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r6 = interfaceinvoke $r3.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r6 = interfaceinvoke $r6.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>($r1, $r4);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r6);
+        return 1;
+
+     label2:
+        $r7 := @caughtexception;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("RegistrationState", $r7, "RegistrationCacheEntry serialization failed", $r5);
+        return 0;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+
+    private com.facebook.rti.push.service.m d(java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r3;
+        android.content.SharedPreferences $r2;
+        boolean $z0;
+        com.facebook.rti.push.service.m $r4;
+        org.json.JSONException $r5;
+        java.lang.Object[] $r6;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r1, "");
+        $z0 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r3);
+        if $z0 == 0 goto label0;
+
+        return null;
+
+     label0:
+        $r4 = staticinvoke <com.facebook.rti.push.service.m: com.facebook.rti.push.service.m a(java.lang.String)>($r3);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r6 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("RegistrationState", $r5, "Parse failed", $r6);
+        return null;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+
+    private void e()
+    {
+        com.facebook.rti.push.service.n $r0;
+        android.content.SharedPreferences $r1;
+        android.content.SharedPreferences$Editor $r3;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b>;
+        $r3 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r3 = interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor remove(java.lang.String)>("auto_reg_retry");
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r3);
+        return;
+    }
+
+    public final void a()
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r11;
+        java.lang.Object[] $r3;
+        com.facebook.rti.push.service.m $r4;
+        android.content.SharedPreferences$Editor $r5;
+        android.content.SharedPreferences $r6;
+        java.util.Map $r7;
+        java.util.Set $r8;
+        java.util.Iterator $r9;
+        boolean $z0;
+        java.lang.Object $r10;
+        com.facebook.rti.a.g.a $r12;
+        long $l2;
+        java.lang.Long $r13;
+        org.json.JSONException $r14;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "invalidateAllTokenCache", $r3);
+        $r6 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r5 = interfaceinvoke $r6.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r6 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r7 = interfaceinvoke $r6.<android.content.SharedPreferences: java.util.Map getAll()>();
+        $r8 = interfaceinvoke $r7.<java.util.Map: java.util.Set keySet()>();
+        $r9 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label5;
+
+        $r10 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r1 = (java.lang.String) $r10;
+        $r4 = specialinvoke $r0.<com.facebook.rti.push.service.n: com.facebook.rti.push.service.m d(java.lang.String)>($r1);
+        if $r4 != null goto label1;
+
+        $r3 = newarray (java.lang.Object)[1];
+        $r3[0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "invalid value for %s", $r3);
+        goto label0;
+
+     label1:
+        $r4.<com.facebook.rti.push.service.m: java.lang.String c> = "";
+        $r12 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l2 = interfaceinvoke $r12.<com.facebook.rti.a.g.a: long a()>();
+        $r13 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        $r4.<com.facebook.rti.push.service.m: java.lang.Long d> = $r13;
+
+     label2:
+        $r11 = virtualinvoke $r4.<com.facebook.rti.push.service.m: java.lang.String a()>();
+
+     label3:
+        interfaceinvoke $r5.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>($r1, $r11);
+        goto label0;
+
+     label4:
+        $r14 := @caughtexception;
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("RegistrationState", $r14, "RegistrationCacheEntry serialization failed", $r3);
+        goto label0;
+
+     label5:
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r5);
+        return;
+
+        catch org.json.JSONException from label2 to label3 with label4;
+    }
+
+    public final void a(java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1;
+        boolean $z0, $z2;
+        java.lang.Object[] $r4;
+        android.content.SharedPreferences $r5;
+        android.content.SharedPreferences$Editor $r6;
+        int i0;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = 1;
+        i0 = (int) 1;
+        $r4 = newarray (java.lang.Object)[i0];
+        i0 = (int) 0;
+        $r4[i0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "remove app %s", $r4);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r1);
+        if $z2 != 0 goto label2;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r5 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $z2 = interfaceinvoke $r5.<android.content.SharedPreferences: boolean contains(java.lang.String)>($r1);
+        if $z2 == 0 goto label1;
+
+        $r5 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r6 = interfaceinvoke $r5.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r6 = interfaceinvoke $r6.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor remove(java.lang.String)>($r1);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r6);
+
+     label1:
+        return;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+    }
+
+    public final boolean a(java.lang.String, java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0, $z2;
+        int $i0;
+        java.lang.Object[] $r5;
+        com.facebook.rti.push.service.m $r6;
+        com.facebook.rti.a.g.a $r7;
+        long $l1;
+        java.lang.Long $r8;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $z0 = 1;
+        $r5 = newarray (java.lang.Object)[2];
+        $i0 = (int) 0;
+        $r5[$i0] = $r1;
+        $i0 = (int) 1;
+        $r5[$i0] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "add app %s %s", $r5);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r1);
+        if $z2 != 0 goto label2;
+
+        $z2 = 1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z2);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r2);
+        if $z2 != 0 goto label3;
+
+     label1:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r6 = new com.facebook.rti.push.service.m;
+        specialinvoke $r6.<com.facebook.rti.push.service.m: void <init>()>();
+        $r6.<com.facebook.rti.push.service.m: java.lang.String b> = $r1;
+        $r6.<com.facebook.rti.push.service.m: java.lang.String a> = $r2;
+        $r7 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l1 = interfaceinvoke $r7.<com.facebook.rti.a.g.a: long a()>();
+        $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r6.<com.facebook.rti.push.service.m: java.lang.Long d> = $r8;
+        $z2 = specialinvoke $r0.<com.facebook.rti.push.service.n: boolean a(java.lang.String,com.facebook.rti.push.service.m)>($r1, $r6);
+        return $z2;
+
+     label2:
+        $z2 = 0;
+        goto label0;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+    }
+
+    public final java.util.List b()
+    {
+        com.facebook.rti.push.service.n $r0;
+        android.content.SharedPreferences $r1;
+        java.util.LinkedList $r2;
+        java.util.Iterator $r3;
+        java.lang.String $r5;
+        java.lang.Object $r6;
+        java.util.Map $r7;
+        java.util.Set $r8;
+        boolean $z0;
+        java.util.Map$Entry $r9;
+        java.lang.Object[] $r10;
+        com.facebook.rti.push.service.m $r11;
+        org.json.JSONException $r12;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r7 = interfaceinvoke $r1.<android.content.SharedPreferences: java.util.Map getAll()>();
+        $r2 = new java.util.LinkedList;
+        specialinvoke $r2.<java.util.LinkedList: void <init>()>();
+        $r8 = interfaceinvoke $r7.<java.util.Map: java.util.Set entrySet()>();
+        $r3 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r6 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (java.util.Map$Entry) $r6;
+        $r10 = newarray (java.lang.Object)[2];
+
+     label1:
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r10[0] = $r6;
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r10[1] = $r6;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "getRegisteredApps retrieving %s:%s", $r10);
+        $r6 = interfaceinvoke $r9.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r5 = virtualinvoke $r6.<java.lang.Object: java.lang.String toString()>();
+        $r11 = staticinvoke <com.facebook.rti.push.service.m: com.facebook.rti.push.service.m a(java.lang.String)>($r5);
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r11);
+
+     label2:
+        goto label0;
+
+     label3:
+        $r12 := @caughtexception;
+        $r10 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("RegistrationState", $r12, "Parse failed", $r10);
+        goto label0;
+
+     label4:
+        return $r2;
+
+        catch org.json.JSONException from label1 to label2 with label3;
+    }
+
+    public final void b(java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1;
+        boolean $z0, $z2;
+        java.lang.Object[] $r4;
+        com.facebook.rti.push.service.m $r5;
+        com.facebook.rti.a.g.a $r6;
+        long $l0;
+        java.lang.Long $r7;
+        int i1;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = 1;
+        i1 = (int) 1;
+        $r4 = newarray (java.lang.Object)[i1];
+        i1 = (int) 0;
+        $r4[i1] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "invalidateTokenCache %s", $r4);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r1);
+        if $z2 != 0 goto label2;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r5 = specialinvoke $r0.<com.facebook.rti.push.service.n: com.facebook.rti.push.service.m d(java.lang.String)>($r1);
+        if $r5 != null goto label3;
+
+        i1 = (int) 0;
+        $r4 = newarray (java.lang.Object)[i1];
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "Missing entry", $r4);
+
+     label1:
+        return;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+
+     label3:
+        $r5.<com.facebook.rti.push.service.m: java.lang.String c> = "";
+        $r6 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l0 = interfaceinvoke $r6.<com.facebook.rti.a.g.a: long a()>();
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r5.<com.facebook.rti.push.service.m: java.lang.Long d> = $r7;
+        specialinvoke $r0.<com.facebook.rti.push.service.n: boolean a(java.lang.String,com.facebook.rti.push.service.m)>($r1, $r5);
+        goto label1;
+    }
+
+    public final boolean b(java.lang.String, java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0, $z2;
+        int $i0;
+        java.lang.Object[] $r5;
+        com.facebook.rti.push.service.m $r6;
+        com.facebook.rti.a.g.a $r7;
+        long $l1;
+        java.lang.Long $r8;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $z0 = 1;
+        $r5 = newarray (java.lang.Object)[2];
+        $i0 = (int) 0;
+        $r5[$i0] = $r1;
+        $i0 = (int) 1;
+        $r5[$i0] = $r2;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "updateTokenCache %s %s", $r5);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r1);
+        if $z2 != 0 goto label2;
+
+        $z2 = 1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z2);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r2);
+        if $z2 != 0 goto label3;
+
+     label1:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        specialinvoke $r0.<com.facebook.rti.push.service.n: void e()>();
+        $r6 = specialinvoke $r0.<com.facebook.rti.push.service.n: com.facebook.rti.push.service.m d(java.lang.String)>($r1);
+        if $r6 != null goto label4;
+
+        $i0 = (int) 0;
+        $r5 = newarray (java.lang.Object)[$i0];
+        staticinvoke <com.facebook.rti.a.e.a: void f(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "Missing entry", $r5);
+        return 0;
+
+     label2:
+        $z2 = 0;
+        goto label0;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+
+     label4:
+        $r6.<com.facebook.rti.push.service.m: java.lang.String c> = $r2;
+        $r7 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l1 = interfaceinvoke $r7.<com.facebook.rti.a.g.a: long a()>();
+        $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $r6.<com.facebook.rti.push.service.m: java.lang.Long d> = $r8;
+        $z2 = specialinvoke $r0.<com.facebook.rti.push.service.n: boolean a(java.lang.String,com.facebook.rti.push.service.m)>($r1, $r6);
+        return $z2;
+    }
+
+    public final java.lang.String c(java.lang.String)
+    {
+        com.facebook.rti.push.service.n $r0;
+        java.lang.String $r1, $r3;
+        boolean $z0, $z2;
+        java.lang.Object[] $r4;
+        long $l0, $l1, $l2;
+        android.content.SharedPreferences $r5;
+        com.facebook.rti.push.service.m $r6;
+        com.facebook.rti.a.g.a $r7;
+        java.lang.Long $r8;
+        byte $b3;
+        int i4;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = 1;
+        i4 = (int) 1;
+        $r4 = newarray (java.lang.Object)[i4];
+        i4 = (int) 0;
+        $r4[i4] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("RegistrationState", "getValidToken %s", $r4);
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r1);
+        if $z2 != 0 goto label1;
+
+     label0:
+        staticinvoke <com.facebook.rti.a.d.a.d: void a(boolean)>($z0);
+        $r5 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences a>;
+        $r3 = interfaceinvoke $r5.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r1, "");
+        $z2 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r3);
+        if $z2 == 0 goto label2;
+
+        return null;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+
+     label2:
+        $r6 = specialinvoke $r0.<com.facebook.rti.push.service.n: com.facebook.rti.push.service.m d(java.lang.String)>($r1);
+        if $r6 != null goto label3;
+
+        return null;
+
+     label3:
+        $r7 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l2 = interfaceinvoke $r7.<com.facebook.rti.a.g.a: long a()>();
+        $r8 = $r6.<com.facebook.rti.push.service.m: java.lang.Long d>;
+        $l0 = virtualinvoke $r8.<java.lang.Long: long longValue()>();
+        $l1 = $l0 + 86400000L;
+        $b3 = $l1 cmp $l2;
+        if $b3 < 0 goto label4;
+
+        $r8 = $r6.<com.facebook.rti.push.service.m: java.lang.Long d>;
+        $l1 = virtualinvoke $r8.<java.lang.Long: long longValue()>();
+        $b3 = $l1 cmp $l2;
+        if $b3 <= 0 goto label5;
+
+     label4:
+        return null;
+
+     label5:
+        $r3 = $r6.<com.facebook.rti.push.service.m: java.lang.String c>;
+        return $r3;
+    }
+
+    public final boolean c()
+    {
+        com.facebook.rti.push.service.n $r0;
+        android.content.SharedPreferences $r1;
+        long $l0, $l1;
+        com.facebook.rti.a.g.a $r3;
+        byte $b2;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b>;
+        $l0 = interfaceinvoke $r1.<android.content.SharedPreferences: long getLong(java.lang.String,long)>("auto_reg_retry", 0L);
+        $r3 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l1 = interfaceinvoke $r3.<com.facebook.rti.a.g.a: long a()>();
+        $l1 = $l1 - $l0;
+        $b2 = $l1 cmp 86400000L;
+        if $b2 <= 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final void d()
+    {
+        com.facebook.rti.push.service.n $r0;
+        android.content.SharedPreferences $r1;
+        com.facebook.rti.a.g.a $r3;
+        android.content.SharedPreferences$Editor $r4;
+        long $l0;
+
+        $r0 := @this: com.facebook.rti.push.service.n;
+        $r1 = $r0.<com.facebook.rti.push.service.n: android.content.SharedPreferences b>;
+        $r4 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r3 = $r0.<com.facebook.rti.push.service.n: com.facebook.rti.a.g.a c>;
+        $l0 = interfaceinvoke $r3.<com.facebook.rti.a.g.a: long a()>();
+        $r4 = interfaceinvoke $r4.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)>("auto_reg_retry", $l0);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r4);
+        return;
+    }
+}

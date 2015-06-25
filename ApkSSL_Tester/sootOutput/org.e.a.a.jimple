@@ -1,0 +1,246 @@
+public class org.e.a.a extends java.lang.Object implements org.e.a.e
+{
+    protected java.util.Vector a;
+
+    public void <init>()
+    {
+        org.e.a.a $r0;
+        java.util.Vector $r1;
+
+        $r0 := @this: org.e.a.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new java.util.Vector;
+        specialinvoke $r1.<java.util.Vector: void <init>()>();
+        $r0.<org.e.a.a: java.util.Vector a> = $r1;
+        return;
+    }
+
+    private java.lang.Integer c(java.lang.String)
+    {
+        org.e.a.a $r0;
+        java.lang.String $r1, $r5;
+        int $i1, $i2;
+        java.util.Vector $r2;
+        java.lang.Object $r3;
+        org.e.a.b $r4;
+        boolean $z0;
+        java.lang.Integer $r6;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: java.lang.String;
+        $i1 = 0;
+
+     label0:
+        $r2 = $r0.<org.e.a.a: java.util.Vector a>;
+        $i2 = virtualinvoke $r2.<java.util.Vector: int size()>();
+        if $i1 >= $i2 goto label2;
+
+        $r2 = $r0.<org.e.a.a: java.util.Vector a>;
+        $r3 = virtualinvoke $r2.<java.util.Vector: java.lang.Object elementAt(int)>($i1);
+        $r4 = (org.e.a.b) $r3;
+        $r5 = virtualinvoke $r4.<org.e.a.b: java.lang.String b()>();
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label1;
+
+        $r6 = new java.lang.Integer;
+        specialinvoke $r6.<java.lang.Integer: void <init>(int)>($i1);
+        return $r6;
+
+     label1:
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label2:
+        return null;
+    }
+
+    public int a()
+    {
+        org.e.a.a $r0;
+        java.util.Vector $r1;
+        int $i0;
+
+        $r0 := @this: org.e.a.a;
+        $r1 = $r0.<org.e.a.a: java.util.Vector a>;
+        $i0 = virtualinvoke $r1.<java.util.Vector: int size()>();
+        return $i0;
+    }
+
+    public void a(int, org.e.a.b)
+    {
+        org.e.a.a $r0;
+        int $i0;
+        org.e.a.b $r1, $r5;
+        java.util.Vector $r2;
+        java.lang.String $r3;
+        java.lang.Object $r4;
+        org.e.a.i $r6;
+
+        $r0 := @this: org.e.a.a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: org.e.a.b;
+        $r2 = $r0.<org.e.a.a: java.util.Vector a>;
+        $r4 = virtualinvoke $r2.<java.util.Vector: java.lang.Object elementAt(int)>($i0);
+        $r5 = (org.e.a.b) $r4;
+        $r3 = $r5.<org.e.a.b: java.lang.String h>;
+        $r1.<org.e.a.b: java.lang.String h> = $r3;
+        $r3 = $r5.<org.e.a.b: java.lang.String i>;
+        $r1.<org.e.a.b: java.lang.String i> = $r3;
+        $i0 = $r5.<org.e.a.b: int j>;
+        $r1.<org.e.a.b: int j> = $i0;
+        $r4 = $r5.<org.e.a.b: java.lang.Object l>;
+        $r1.<org.e.a.b: java.lang.Object l> = $r4;
+        $r6 = $r5.<org.e.a.b: org.e.a.i n>;
+        $r1.<org.e.a.b: org.e.a.i n> = $r6;
+        $r4 = virtualinvoke $r5.<org.e.a.b: java.lang.Object e()>();
+        $r1.<org.e.a.b: java.lang.Object k> = $r4;
+        return;
+    }
+
+    public void a(java.lang.String, java.lang.Object)
+    {
+        org.e.a.a $r0;
+        java.lang.String $r1;
+        java.lang.Object $r2;
+        java.lang.Class $r3;
+        org.e.a.b $r4;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.Object;
+        $r4 = new org.e.a.b;
+        specialinvoke $r4.<org.e.a.b: void <init>()>();
+        $r4.<org.e.a.b: java.lang.String h> = $r1;
+        if $r2 != null goto label1;
+
+        $r3 = <org.e.a.i: java.lang.Class a>;
+
+     label0:
+        $r4.<org.e.a.b: java.lang.Object l> = $r3;
+        $r4.<org.e.a.b: java.lang.Object k> = $r2;
+        virtualinvoke $r0.<org.e.a.a: void a(org.e.a.b)>($r4);
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+        goto label0;
+    }
+
+    public void a(org.e.a.b)
+    {
+        org.e.a.a $r0;
+        org.e.a.b $r1;
+        java.util.Vector $r2;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: org.e.a.b;
+        $r2 = $r0.<org.e.a.a: java.util.Vector a>;
+        virtualinvoke $r2.<java.util.Vector: void addElement(java.lang.Object)>($r1);
+        return;
+    }
+
+    public boolean a(java.lang.String)
+    {
+        org.e.a.a $r0;
+        java.lang.String $r1;
+        java.lang.Integer $r2;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = specialinvoke $r0.<org.e.a.a: java.lang.Integer c(java.lang.String)>($r1);
+        if $r2 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    protected boolean a(org.e.a.a)
+    {
+        org.e.a.a $r0, $r1;
+        int $i0, $i1;
+        java.lang.Object $r2, $r6;
+        java.lang.String $r3;
+        java.util.Vector $r4;
+        org.e.a.b $r5;
+        boolean $z1;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: org.e.a.a;
+        $i1 = virtualinvoke $r0.<org.e.a.a: int a()>();
+        $i0 = virtualinvoke $r1.<org.e.a.a: int a()>();
+        if $i1 == $i0 goto label0;
+
+        return 0;
+
+     label0:
+        $i0 = (int) 0;
+
+     label1:
+        if $i0 >= $i1 goto label4;
+
+        $r4 = $r0.<org.e.a.a: java.util.Vector a>;
+        $r2 = virtualinvoke $r4.<java.util.Vector: java.lang.Object elementAt(int)>($i0);
+        $r5 = (org.e.a.b) $r2;
+        $r2 = virtualinvoke $r5.<org.e.a.b: java.lang.Object e()>();
+        $r3 = virtualinvoke $r5.<org.e.a.b: java.lang.String b()>();
+        $z1 = virtualinvoke $r1.<org.e.a.a: boolean a(java.lang.String)>($r3);
+        if $z1 != 0 goto label2;
+
+        return 0;
+
+     label2:
+        $r3 = virtualinvoke $r5.<org.e.a.b: java.lang.String b()>();
+        $r6 = virtualinvoke $r1.<org.e.a.a: java.lang.Object b(java.lang.String)>($r3);
+        $z1 = virtualinvoke $r2.<java.lang.Object: boolean equals(java.lang.Object)>($r6);
+        if $z1 != 0 goto label3;
+
+        return 0;
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label4:
+        return 1;
+    }
+
+    public java.lang.Object b(int)
+    {
+        org.e.a.a $r0;
+        int $i0;
+        java.util.Vector $r1;
+        java.lang.Object $r2;
+        org.e.a.b $r3;
+
+        $r0 := @this: org.e.a.a;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.e.a.a: java.util.Vector a>;
+        $r2 = virtualinvoke $r1.<java.util.Vector: java.lang.Object elementAt(int)>($i0);
+        $r3 = (org.e.a.b) $r2;
+        $r2 = virtualinvoke $r3.<org.e.a.b: java.lang.Object e()>();
+        return $r2;
+    }
+
+    public java.lang.Object b(java.lang.String)
+    {
+        org.e.a.a $r0;
+        java.lang.String $r1;
+        java.lang.Integer $r2;
+        int $i0;
+        java.lang.Object $r3;
+
+        $r0 := @this: org.e.a.a;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = specialinvoke $r0.<org.e.a.a: java.lang.Integer c(java.lang.String)>($r1);
+        if $r2 == null goto label0;
+
+        $i0 = virtualinvoke $r2.<java.lang.Integer: int intValue()>();
+        $r3 = virtualinvoke $r0.<org.e.a.a: java.lang.Object b(int)>($i0);
+        return $r3;
+
+     label0:
+        return null;
+    }
+}

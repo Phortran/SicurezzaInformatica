@@ -1,0 +1,46 @@
+class it.h3g.areaclienti3.af extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.LoginActivity a;
+
+    void <init>(it.h3g.areaclienti3.LoginActivity)
+    {
+        it.h3g.areaclienti3.af $r0;
+        it.h3g.areaclienti3.LoginActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.af;
+        $r1 := @parameter0: it.h3g.areaclienti3.LoginActivity;
+        $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.af $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.LoginActivity $r2;
+        boolean $z0;
+        android.content.Intent $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.af;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.LoginActivity: void i()>();
+        $r2 = $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a>;
+        $z0 = staticinvoke <it.h3g.areaclienti3.LoginActivity: boolean a(it.h3g.areaclienti3.LoginActivity)>($r2);
+        if $z0 == 0 goto label0;
+
+        $r5 = new android.content.Intent;
+        specialinvoke $r5.<android.content.Intent: void <init>()>();
+        virtualinvoke $r5.<android.content.Intent: android.content.Intent setClassName(java.lang.String,java.lang.String)>("it.h3g.areaclienti3", "it.h3g.areaclienti3.LoginDialogActivity");
+        $r2 = $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.LoginActivity: void startActivity(android.content.Intent)>($r5);
+        $r2 = $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.LoginActivity: void finish()>();
+        $r2 = $r0.<it.h3g.areaclienti3.af: it.h3g.areaclienti3.LoginActivity a>;
+        staticinvoke <it.h3g.areaclienti3.LoginActivity: void a(it.h3g.areaclienti3.LoginActivity,boolean)>($r2, 0);
+
+     label0:
+        return;
+    }
+}

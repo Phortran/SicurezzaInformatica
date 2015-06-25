@@ -1,0 +1,325 @@
+public final class com.google.android.gms.maps.model.CameraPosition extends java.lang.Object implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
+{
+    public static final com.google.android.gms.maps.model.d a;
+    public final com.google.android.gms.maps.model.LatLng b;
+    public final float c;
+    public final float d;
+    public final float e;
+    private final int f;
+
+    static void <clinit>()
+    {
+        com.google.android.gms.maps.model.d $r0;
+
+        $r0 = new com.google.android.gms.maps.model.d;
+        specialinvoke $r0.<com.google.android.gms.maps.model.d: void <init>()>();
+        <com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.d a> = $r0;
+        return;
+    }
+
+    void <init>(int, com.google.android.gms.maps.model.LatLng, float, float, float)
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        int $i0;
+        com.google.android.gms.maps.model.LatLng $r1;
+        float $f0, $f1, $f2, $f5;
+        byte $b1;
+        boolean $z0;
+        double $d0;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: com.google.android.gms.maps.model.LatLng;
+        $f0 := @parameter2: float;
+        $f1 := @parameter3: float;
+        $f2 := @parameter4: float;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object,java.lang.Object)>($r1, "null camera target");
+        $b1 = 0.0F cmpg $f1;
+        if $b1 > 0 goto label2;
+
+        $b1 = $f1 cmpg 90.0F;
+        if $b1 > 0 goto label2;
+
+        $z0 = 1;
+
+     label0:
+        staticinvoke <com.google.android.gms.internal.fz: void b(boolean,java.lang.Object)>($z0, "Tilt needs to be between 0 and 90 inclusive");
+        $r0.<com.google.android.gms.maps.model.CameraPosition: int f> = $i0;
+        $r0.<com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.LatLng b> = $r1;
+        $r0.<com.google.android.gms.maps.model.CameraPosition: float c> = $f0;
+        $f5 = $f1 + 0.0F;
+        $r0.<com.google.android.gms.maps.model.CameraPosition: float d> = $f5;
+        $d0 = (double) $f2;
+        $b1 = $d0 cmpg 0.0;
+        if $b1 > 0 goto label1;
+
+        $f5 = $f2 % 360.0F;
+        $f2 = $f5 + 360.0F;
+
+     label1:
+        $f5 = $f2 % 360.0F;
+        $r0.<com.google.android.gms.maps.model.CameraPosition: float e> = $f5;
+        return;
+
+     label2:
+        $z0 = 0;
+        goto label0;
+    }
+
+    public void <init>(com.google.android.gms.maps.model.LatLng, float, float, float)
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        com.google.android.gms.maps.model.LatLng $r1;
+        float $f0, $f1, $f2;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $r1 := @parameter0: com.google.android.gms.maps.model.LatLng;
+        $f0 := @parameter1: float;
+        $f1 := @parameter2: float;
+        $f2 := @parameter3: float;
+        specialinvoke $r0.<com.google.android.gms.maps.model.CameraPosition: void <init>(int,com.google.android.gms.maps.model.LatLng,float,float,float)>(1, $r1, $f0, $f1, $f2);
+        return;
+    }
+
+    public static com.google.android.gms.maps.model.CameraPosition a(android.content.Context, android.util.AttributeSet)
+    {
+        android.content.Context $r0;
+        android.util.AttributeSet $r1;
+        int[] $r2;
+        android.content.res.TypedArray $r3;
+        double $d0, $d1;
+        android.content.res.Resources $r4;
+        boolean $z0;
+        float $f1, $f2;
+        com.google.android.gms.maps.model.LatLng $r5;
+        com.google.android.gms.maps.model.c $r6;
+        com.google.android.gms.maps.model.CameraPosition $r7;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.util.AttributeSet;
+        if $r1 != null goto label0;
+
+        return null;
+
+     label0:
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r2 = <com.google.android.gms.R$styleable: int[] MapAttrs>;
+        $r3 = virtualinvoke $r4.<android.content.res.Resources: android.content.res.TypedArray obtainAttributes(android.util.AttributeSet,int[])>($r1, $r2);
+        $z0 = virtualinvoke $r3.<android.content.res.TypedArray: boolean hasValue(int)>(2);
+        if $z0 == 0 goto label7;
+
+        $f1 = virtualinvoke $r3.<android.content.res.TypedArray: float getFloat(int,float)>(2, 0.0F);
+
+     label1:
+        $z0 = virtualinvoke $r3.<android.content.res.TypedArray: boolean hasValue(int)>(3);
+        if $z0 == 0 goto label6;
+
+        $f2 = virtualinvoke $r3.<android.content.res.TypedArray: float getFloat(int,float)>(3, 0.0F);
+
+     label2:
+        $r5 = new com.google.android.gms.maps.model.LatLng;
+        $d1 = (double) $f1;
+        $d0 = (double) $f2;
+        specialinvoke $r5.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>($d1, $d0);
+        $r6 = staticinvoke <com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.c b()>();
+        virtualinvoke $r6.<com.google.android.gms.maps.model.c: com.google.android.gms.maps.model.c a(com.google.android.gms.maps.model.LatLng)>($r5);
+        $z0 = virtualinvoke $r3.<android.content.res.TypedArray: boolean hasValue(int)>(5);
+        if $z0 == 0 goto label3;
+
+        $f2 = virtualinvoke $r3.<android.content.res.TypedArray: float getFloat(int,float)>(5, 0.0F);
+        virtualinvoke $r6.<com.google.android.gms.maps.model.c: com.google.android.gms.maps.model.c a(float)>($f2);
+
+     label3:
+        $z0 = virtualinvoke $r3.<android.content.res.TypedArray: boolean hasValue(int)>(1);
+        if $z0 == 0 goto label4;
+
+        $f2 = virtualinvoke $r3.<android.content.res.TypedArray: float getFloat(int,float)>(1, 0.0F);
+        virtualinvoke $r6.<com.google.android.gms.maps.model.c: com.google.android.gms.maps.model.c c(float)>($f2);
+
+     label4:
+        $z0 = virtualinvoke $r3.<android.content.res.TypedArray: boolean hasValue(int)>(4);
+        if $z0 == 0 goto label5;
+
+        $f2 = virtualinvoke $r3.<android.content.res.TypedArray: float getFloat(int,float)>(4, 0.0F);
+        virtualinvoke $r6.<com.google.android.gms.maps.model.c: com.google.android.gms.maps.model.c b(float)>($f2);
+
+     label5:
+        $r7 = virtualinvoke $r6.<com.google.android.gms.maps.model.c: com.google.android.gms.maps.model.CameraPosition a()>();
+        return $r7;
+
+     label6:
+        $f2 = 0.0F;
+        goto label2;
+
+     label7:
+        $f1 = 0.0F;
+        goto label1;
+    }
+
+    public static final com.google.android.gms.maps.model.CameraPosition a(com.google.android.gms.maps.model.LatLng, float)
+    {
+        com.google.android.gms.maps.model.LatLng $r0;
+        float $f0;
+        com.google.android.gms.maps.model.CameraPosition $r1;
+
+        $r0 := @parameter0: com.google.android.gms.maps.model.LatLng;
+        $f0 := @parameter1: float;
+        $r1 = new com.google.android.gms.maps.model.CameraPosition;
+        specialinvoke $r1.<com.google.android.gms.maps.model.CameraPosition: void <init>(com.google.android.gms.maps.model.LatLng,float,float,float)>($r0, $f0, 0.0F, 0.0F);
+        return $r1;
+    }
+
+    public static com.google.android.gms.maps.model.c b()
+    {
+        com.google.android.gms.maps.model.c $r0;
+
+        $r0 = new com.google.android.gms.maps.model.c;
+        specialinvoke $r0.<com.google.android.gms.maps.model.c: void <init>()>();
+        return $r0;
+    }
+
+    int a()
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $i0 = $r0.<com.google.android.gms.maps.model.CameraPosition: int f>;
+        return $i0;
+    }
+
+    public int describeContents()
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        return 0;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0, $r3;
+        java.lang.Object $r1;
+        boolean $z1;
+        com.google.android.gms.maps.model.LatLng $r2, $r4;
+        float $f0;
+        int $i0, $i1;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $r1 := @parameter0: java.lang.Object;
+        if $r0 != $r1 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        $z1 = $r1 instanceof com.google.android.gms.maps.model.CameraPosition;
+        if $z1 != 0 goto label2;
+
+        return 0;
+
+     label2:
+        $r3 = (com.google.android.gms.maps.model.CameraPosition) $r1;
+        $r4 = $r0.<com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.LatLng b>;
+        $r2 = $r3.<com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.LatLng b>;
+        $z1 = virtualinvoke $r4.<com.google.android.gms.maps.model.LatLng: boolean equals(java.lang.Object)>($r2);
+        if $z1 == 0 goto label3;
+
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float c>;
+        $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        $f0 = $r3.<com.google.android.gms.maps.model.CameraPosition: float c>;
+        $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        if $i0 != $i1 goto label3;
+
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float d>;
+        $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        $f0 = $r3.<com.google.android.gms.maps.model.CameraPosition: float d>;
+        $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        if $i1 != $i0 goto label3;
+
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float e>;
+        $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        $f0 = $r3.<com.google.android.gms.maps.model.CameraPosition: float e>;
+        $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0);
+        if $i1 == $i0 goto label0;
+
+     label3:
+        return 0;
+    }
+
+    public int hashCode()
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        com.google.android.gms.maps.model.LatLng $r1;
+        java.lang.Float $r2;
+        java.lang.Object[] $r3;
+        float $f0;
+        int $i1;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $r3 = newarray (java.lang.Object)[4];
+        $r1 = $r0.<com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.LatLng b>;
+        $r3[0] = $r1;
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float c>;
+        $r2 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r3[1] = $r2;
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float d>;
+        $r2 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r3[2] = $r2;
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float e>;
+        $r2 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r3[3] = $r2;
+        $i1 = staticinvoke <com.google.android.gms.internal.fw: int a(java.lang.Object[])>($r3);
+        return $i1;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        com.google.android.gms.internal.fy $r1;
+        java.lang.String $r2;
+        com.google.android.gms.maps.model.LatLng $r3;
+        float $f0;
+        java.lang.Float $r4;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $r1 = staticinvoke <com.google.android.gms.internal.fw: com.google.android.gms.internal.fy a(java.lang.Object)>($r0);
+        $r3 = $r0.<com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.LatLng b>;
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("target", $r3);
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float c>;
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("zoom", $r4);
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float d>;
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("tilt", $r4);
+        $f0 = $r0.<com.google.android.gms.maps.model.CameraPosition: float e>;
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("bearing", $r4);
+        $r2 = virtualinvoke $r1.<com.google.android.gms.internal.fy: java.lang.String toString()>();
+        return $r2;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        android.os.Parcel $r1;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: com.google.android.gms.maps.model.CameraPosition;
+        $r1 := @parameter0: android.os.Parcel;
+        $i0 := @parameter1: int;
+        $z0 = staticinvoke <com.google.android.gms.maps.internal.r: boolean a()>();
+        if $z0 == 0 goto label1;
+
+        staticinvoke <com.google.android.gms.maps.model.s: void a(com.google.android.gms.maps.model.CameraPosition,android.os.Parcel,int)>($r0, $r1, $i0);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <com.google.android.gms.maps.model.d: void a(com.google.android.gms.maps.model.CameraPosition,android.os.Parcel,int)>($r0, $r1, $i0);
+        goto label0;
+    }
+}

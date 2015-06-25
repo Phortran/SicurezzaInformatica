@@ -1,0 +1,434 @@
+class com.google.android.gms.internal.fh$a$a extends java.lang.Object implements com.google.android.gms.internal.fh
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a(int, android.os.Bundle)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        int $i0;
+        android.os.Bundle $r1;
+        android.os.Parcel $r3, $r4;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Bundle;
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>($i0);
+        if $r1 == null goto label3;
+
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r3, 0);
+
+     label1:
+        $r5 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(7, $r3, $r4, 0);
+        virtualinvoke $r4.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>(0);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+
+    public void a(int, android.os.Bundle, android.os.Bundle)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        int $i0;
+        android.os.Bundle $r1, $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Bundle;
+        $r2 := @parameter2: android.os.Bundle;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i0);
+        if $r1 == null goto label4;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        if $r2 == null goto label7;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label2:
+        $r6 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+     label7:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label8:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    public void a(int, android.os.Bundle, android.os.ParcelFileDescriptor)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        int $i0;
+        android.os.Bundle $r1;
+        android.os.ParcelFileDescriptor $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Bundle;
+        $r2 := @parameter2: android.os.ParcelFileDescriptor;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i0);
+        if $r1 == null goto label4;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        if $r2 == null goto label7;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<android.os.ParcelFileDescriptor: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label2:
+        $r6 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+     label7:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label8:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    public void a(int, android.os.Bundle, com.google.android.gms.internal.ec)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        int $i0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.ec $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Bundle;
+        $r2 := @parameter2: com.google.android.gms.internal.ec;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i0);
+        if $r1 == null goto label4;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<android.os.Bundle: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        if $r2 == null goto label7;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r2.<com.google.android.gms.internal.ec: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label2:
+        $r6 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(5, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label4:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+     label7:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label8:
+        goto label2;
+
+        catch java.lang.Throwable from label0 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    public void a(com.google.android.gms.common.data.d, java.lang.String)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        com.google.android.gms.common.data.d $r1;
+        java.lang.String $r2;
+        android.os.Parcel $r4, $r5;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        if $r1 == null goto label3;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.common.data.d: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        $r6 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(4, $r4, $r5, 0);
+        virtualinvoke $r5.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r7 := @caughtexception;
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+
+    public void a(com.google.android.gms.common.data.d, java.lang.String, java.lang.String)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        com.google.android.gms.common.data.d $r1;
+        java.lang.String $r2, $r3;
+        android.os.Parcel $r5, $r6;
+        android.os.IBinder $r7;
+        java.lang.Throwable $r8;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r5 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r6 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r5.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        if $r1 == null goto label3;
+
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.common.data.d: void writeToParcel(android.os.Parcel,int)>($r5, 0);
+
+     label1:
+        virtualinvoke $r5.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        virtualinvoke $r5.<android.os.Parcel: void writeString(java.lang.String)>($r3);
+        $r7 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r7.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(6, $r5, $r6, 0);
+        virtualinvoke $r6.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        virtualinvoke $r5.<android.os.Parcel: void writeInt(int)>(0);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r8 := @caughtexception;
+        virtualinvoke $r6.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r5.<android.os.Parcel: void recycle()>();
+        throw $r8;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+
+    public void a(java.lang.String)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        java.lang.String $r1;
+        android.os.Parcel $r3, $r4;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r3.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        $r5 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(3, $r3, $r4, 0);
+        virtualinvoke $r4.<android.os.Parcel: void readException()>();
+
+     label1:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+
+    public void b(java.lang.String)
+    {
+        com.google.android.gms.internal.fh$a$a $r0;
+        java.lang.String $r1;
+        android.os.Parcel $r3, $r4;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.internal.fh$a$a;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.plus.internal.IPlusCallbacks");
+        virtualinvoke $r3.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        $r5 = $r0.<com.google.android.gms.internal.fh$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(8, $r3, $r4, 0);
+        virtualinvoke $r4.<android.os.Parcel: void readException()>();
+
+     label1:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

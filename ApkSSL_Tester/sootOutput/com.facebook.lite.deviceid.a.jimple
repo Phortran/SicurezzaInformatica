@@ -1,0 +1,86 @@
+public class com.facebook.lite.deviceid.a extends android.content.BroadcastReceiver
+{
+    private static final java.lang.String a;
+    private volatile com.facebook.lite.deviceid.b b;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/deviceid/a";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getName()>();
+        <com.facebook.lite.deviceid.a: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.deviceid.a $r0;
+
+        $r0 := @this: com.facebook.lite.deviceid.a;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public final void a(com.facebook.lite.deviceid.b)
+    {
+        com.facebook.lite.deviceid.a $r0;
+        com.facebook.lite.deviceid.b $r1;
+
+        $r0 := @this: com.facebook.lite.deviceid.a;
+        $r1 := @parameter0: com.facebook.lite.deviceid.b;
+        $r0.<com.facebook.lite.deviceid.a: com.facebook.lite.deviceid.b b> = $r1;
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.lite.deviceid.a $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3;
+        android.os.Bundle $r5;
+        long $l1;
+        int $i2;
+        com.facebook.lite.deviceid.c $r6;
+        java.lang.StringBuilder $r7;
+        com.facebook.lite.deviceid.b $r8;
+
+        $r0 := @this: com.facebook.lite.deviceid.a;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = <com.facebook.lite.deviceid.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>($r3, "deviceidsync/getting the id response");
+        $r3 = virtualinvoke $r0.<com.facebook.lite.deviceid.a: java.lang.String getResultData()>();
+        $r5 = virtualinvoke $r0.<com.facebook.lite.deviceid.a: android.os.Bundle getResultExtras(boolean)>(1);
+        $l1 = virtualinvoke $r5.<android.os.Bundle: long getLong(java.lang.String)>("device_id_generated_timestamp_ms");
+        $i2 = virtualinvoke $r0.<com.facebook.lite.deviceid.a: int getResultCode()>();
+        if $i2 != -1 goto label2;
+
+        if $r3 == null goto label2;
+
+        $r6 = new com.facebook.lite.deviceid.c;
+        specialinvoke $r6.<com.facebook.lite.deviceid.c: void <init>(java.lang.String,long)>($r3, $l1);
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("deviceidsync/response: ");
+        virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);
+
+     label0:
+        $r8 = $r0.<com.facebook.lite.deviceid.a: com.facebook.lite.deviceid.b b>;
+        if $r8 == null goto label1;
+
+        $r8 = $r0.<com.facebook.lite.deviceid.a: com.facebook.lite.deviceid.b b>;
+        interfaceinvoke $r8.<com.facebook.lite.deviceid.b: void a(com.facebook.lite.deviceid.c)>($r6);
+
+     label1:
+        return;
+
+     label2:
+        $r6 = staticinvoke <com.facebook.lite.deviceid.f: com.facebook.lite.deviceid.c a()>();
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("deviceidsync/generating new id: ");
+        virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);
+        goto label0;
+    }
+}

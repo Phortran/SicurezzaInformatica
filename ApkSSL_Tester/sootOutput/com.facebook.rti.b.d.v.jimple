@@ -1,0 +1,92 @@
+final class com.facebook.rti.b.d.v extends android.content.BroadcastReceiver
+{
+    final com.facebook.rti.b.d.r a;
+
+    void <init>(com.facebook.rti.b.d.r)
+    {
+        com.facebook.rti.b.d.v $r0;
+        com.facebook.rti.b.d.r $r1;
+
+        $r0 := @this: com.facebook.rti.b.d.v;
+        $r1 := @parameter0: com.facebook.rti.b.d.r;
+        $r0.<com.facebook.rti.b.d.v: com.facebook.rti.b.d.r a> = $r1;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.rti.b.d.v $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r4;
+        java.lang.Object[] $r5;
+        boolean $z0;
+        com.facebook.rti.b.d.r $r6;
+        android.os.PowerManager $r7;
+        java.lang.Class $r8;
+        java.lang.Class[] $r9;
+        java.lang.reflect.Method $r10;
+        java.lang.Object $r11;
+        com.facebook.rti.b.a.a.a $r12;
+        java.lang.NoSuchMethodException $r13;
+        java.lang.IllegalAccessException $r14;
+        java.lang.reflect.InvocationTargetException $r15;
+
+        $r0 := @this: com.facebook.rti.b.d.v;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("MqttPushService", "Power Save Mode broadcast has been received", $r5);
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $z0 = staticinvoke <com.facebook.rti.a.d.a.b: boolean a(java.lang.Object,java.lang.Object)>($r4, "android.os.action.POWER_SAVE_MODE_CHANGED");
+        if $z0 == 0 goto label0;
+
+        $r6 = $r0.<com.facebook.rti.b.d.v: com.facebook.rti.b.d.r a>;
+
+     label2:
+        $r7 = staticinvoke <com.facebook.rti.b.d.r: android.os.PowerManager c(com.facebook.rti.b.d.r)>($r6);
+        $r8 = virtualinvoke $r7.<java.lang.Object: java.lang.Class getClass()>();
+        $r9 = newarray (java.lang.Class)[0];
+        $r10 = virtualinvoke $r8.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("isPowerSaveMode", $r9);
+        $r6 = $r0.<com.facebook.rti.b.d.v: com.facebook.rti.b.d.r a>;
+        $r7 = staticinvoke <com.facebook.rti.b.d.r: android.os.PowerManager c(com.facebook.rti.b.d.r)>($r6);
+        $r5 = newarray (java.lang.Object)[0];
+        $r11 = virtualinvoke $r10.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r7, $r5);
+        $r4 = virtualinvoke $r11.<java.lang.Object: java.lang.String toString()>();
+        $r6 = $r0.<com.facebook.rti.b.d.v: com.facebook.rti.b.d.r a>;
+        $r12 = $r6.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.a.a e>;
+        virtualinvoke $r12.<com.facebook.rti.b.a.a.a: void a(java.lang.String)>($r4);
+
+     label3:
+        goto label0;
+
+     label4:
+        $r13 := @caughtexception;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MqttPushService", $r13, "Method not found", $r5);
+        goto label0;
+
+     label5:
+        $r14 := @caughtexception;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MqttPushService", $r14, "Illegal Access", $r5);
+        goto label0;
+
+     label6:
+        $r15 := @caughtexception;
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MqttPushService", $r15, "Invocation Target Exception", $r5);
+        goto label0;
+
+        catch java.lang.NoSuchMethodException from label2 to label3 with label4;
+        catch java.lang.IllegalAccessException from label2 to label3 with label5;
+        catch java.lang.reflect.InvocationTargetException from label2 to label3 with label6;
+    }
+}

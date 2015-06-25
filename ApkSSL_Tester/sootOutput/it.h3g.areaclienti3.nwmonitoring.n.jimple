@@ -1,0 +1,103 @@
+public class it.h3g.areaclienti3.nwmonitoring.n extends java.lang.Object
+{
+    java.lang.String a;
+    java.lang.String b;
+    boolean c;
+    android.content.Context d;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.nwmonitoring.n $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.n;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = <android.os.Build: java.lang.String MODEL>;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.n: java.lang.String a> = $r2;
+        $r2 = <android.os.Build: java.lang.String MANUFACTURER>;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.n: java.lang.String b> = $r2;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.n: android.content.Context d> = $r1;
+        return;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.nwmonitoring.n $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.nwmonitoring.o $r3;
+        android.content.res.AssetManager $r4;
+        java.io.InputStream $r5;
+        javax.xml.parsers.SAXParserFactory $r6;
+        javax.xml.parsers.SAXParser $r7;
+        java.io.IOException $r8;
+        javax.xml.parsers.ParserConfigurationException $r9;
+        org.xml.sax.SAXException $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.n;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.n: android.content.Context d>;
+        $r4 = virtualinvoke $r1.<android.content.Context: android.content.res.AssetManager getAssets()>();
+
+     label0:
+        $r5 = virtualinvoke $r4.<android.content.res.AssetManager: java.io.InputStream open(java.lang.String)>("nwm_problematic_devices.xml");
+        $r6 = staticinvoke <javax.xml.parsers.SAXParserFactory: javax.xml.parsers.SAXParserFactory newInstance()>();
+        $r7 = virtualinvoke $r6.<javax.xml.parsers.SAXParserFactory: javax.xml.parsers.SAXParser newSAXParser()>();
+        $r3 = new it.h3g.areaclienti3.nwmonitoring.o;
+        specialinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.o: void <init>(it.h3g.areaclienti3.nwmonitoring.n)>($r0);
+        virtualinvoke $r7.<javax.xml.parsers.SAXParser: void parse(java.io.InputStream,org.xml.sax.helpers.DefaultHandler)>($r5, $r3);
+
+     label1:
+        return;
+
+     label2:
+        $r8 := @caughtexception;
+        virtualinvoke $r8.<java.io.IOException: void printStackTrace()>();
+        goto label1;
+
+     label3:
+        $r9 := @caughtexception;
+        virtualinvoke $r9.<javax.xml.parsers.ParserConfigurationException: void printStackTrace()>();
+        goto label1;
+
+     label4:
+        $r10 := @caughtexception;
+        virtualinvoke $r10.<org.xml.sax.SAXException: void printStackTrace()>();
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label2;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label1 with label3;
+        catch org.xml.sax.SAXException from label0 to label1 with label4;
+    }
+
+    public boolean b()
+    {
+        it.h3g.areaclienti3.nwmonitoring.n $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.n;
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.n: boolean c>;
+        return $z0;
+    }
+
+    public java.lang.String c()
+    {
+        it.h3g.areaclienti3.nwmonitoring.n $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.content.res.Resources $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.n;
+        $r1 = "";
+        $z0 = $r0.<it.h3g.areaclienti3.nwmonitoring.n: boolean c>;
+        if $z0 == 0 goto label0;
+
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.n: android.content.Context d>;
+        $r2 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources getResources()>();
+        $r1 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131231669);
+
+     label0:
+        return $r1;
+    }
+}

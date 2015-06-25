@@ -1,0 +1,360 @@
+public class com.facebook.rti.b.a.a.b extends java.lang.Object
+{
+    private static final java.lang.String a;
+    private final java.lang.String b;
+    private final android.content.Context c;
+    private final android.app.NotificationManager d;
+    private final android.content.SharedPreferences e;
+    private final java.lang.String f;
+    private android.app.Notification$Builder g;
+    private java.util.Queue h;
+    private java.lang.String i;
+    private int j;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/b/a/a/b";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getCanonicalName()>();
+        <com.facebook.rti.b.a.a.b: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.rti.b.a.a.b $r0;
+        android.content.Context $r1, $r5;
+        java.lang.String $r2;
+        java.lang.Object $r3;
+        int $i1;
+        android.app.NotificationManager $r4;
+        android.content.pm.PackageManager $r6;
+        android.content.pm.ApplicationInfo $r7;
+        java.lang.CharSequence $r8;
+        java.lang.StringBuilder $r9;
+        java.text.SimpleDateFormat $r10;
+        java.util.Date $r11;
+        java.util.LinkedList $r12;
+        android.content.SharedPreferences $r13;
+        java.lang.Throwable $r14;
+
+        $r0 := @this: com.facebook.rti.b.a.a.b;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String i> = "";
+        $r0.<com.facebook.rti.b.a.a.b: int j> = 0;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 >= 11 goto label1;
+
+        $r0.<com.facebook.rti.b.a.a.b: android.content.Context c> = null;
+        $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d> = null;
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String b> = null;
+        $r0.<com.facebook.rti.b.a.a.b: android.content.SharedPreferences e> = null;
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String f> = null;
+
+     label0:
+        return;
+
+     label1:
+        $r0.<com.facebook.rti.b.a.a.b: android.content.Context c> = $r1;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("notification");
+        $r4 = (android.app.NotificationManager) $r3;
+        $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d> = $r4;
+
+     label2:
+        $r5 = $r0.<com.facebook.rti.b.a.a.b: android.content.Context c>;
+        $r6 = virtualinvoke $r5.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r5 = $r0.<com.facebook.rti.b.a.a.b: android.content.Context c>;
+        $r7 = virtualinvoke $r5.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $r8 = virtualinvoke $r6.<android.content.pm.PackageManager: java.lang.CharSequence getApplicationLabel(android.content.pm.ApplicationInfo)>($r7);
+
+     label3:
+        if $r8 != null goto label6;
+
+        $r5 = $r0.<com.facebook.rti.b.a.a.b: android.content.Context c>;
+        $r2 = virtualinvoke $r5.<android.content.Context: java.lang.String getPackageName()>();
+
+     label4:
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String b> = $r2;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Service ");
+        $r10 = new java.text.SimpleDateFormat;
+        specialinvoke $r10.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("M/d h:mm a");
+        $r11 = new java.util.Date;
+        specialinvoke $r11.<java.util.Date: void <init>()>();
+        $r2 = virtualinvoke $r10.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r11);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String f> = $r2;
+        $r12 = new java.util.LinkedList;
+        specialinvoke $r12.<java.util.LinkedList: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.b: java.util.Queue h> = $r12;
+        $r13 = virtualinvoke $r1.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mqtt_debug", 4);
+        $r0.<com.facebook.rti.b.a.a.b: android.content.SharedPreferences e> = $r13;
+        goto label0;
+
+     label5:
+        $r14 := @caughtexception;
+        $r8 = null;
+        goto label3;
+
+     label6:
+        $r2 = interfaceinvoke $r8.<java.lang.CharSequence: java.lang.String toString()>();
+        goto label4;
+
+        catch java.lang.Throwable from label2 to label3 with label5;
+    }
+
+    private android.app.Notification$InboxStyle a()
+    {
+        com.facebook.rti.b.a.a.b $r0;
+        android.app.Notification$InboxStyle $r1, $r4;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        java.util.Queue $r5;
+        java.util.Iterator $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+
+        $r0 := @this: com.facebook.rti.b.a.a.b;
+        $r1 = new android.app.Notification$InboxStyle;
+        specialinvoke $r1.<android.app.Notification$InboxStyle: void <init>()>();
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: java.lang.String b>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" MqttLite");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r1 = virtualinvoke $r1.<android.app.Notification$InboxStyle: android.app.Notification$InboxStyle setBigContentTitle(java.lang.CharSequence)>($r3);
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: java.lang.String f>;
+        $r1 = virtualinvoke $r1.<android.app.Notification$InboxStyle: android.app.Notification$InboxStyle setSummaryText(java.lang.CharSequence)>($r3);
+        $r4 = $r1;
+        $r5 = $r0.<com.facebook.rti.b.a.a.b: java.util.Queue h>;
+        $r6 = interfaceinvoke $r5.<java.util.Queue: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r3 = (java.lang.String) $r7;
+        virtualinvoke $r4.<android.app.Notification$InboxStyle: android.app.Notification$InboxStyle addLine(java.lang.CharSequence)>($r3);
+        goto label0;
+
+     label1:
+        return $r1;
+    }
+
+    private static java.lang.String b()
+    {
+        java.text.SimpleDateFormat $r0;
+        java.lang.String $r1;
+        java.util.Date $r2;
+
+        $r0 = new java.text.SimpleDateFormat;
+        specialinvoke $r0.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("h:mm:ss a");
+        $r2 = new java.util.Date;
+        specialinvoke $r2.<java.util.Date: void <init>()>();
+        $r1 = virtualinvoke $r0.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r2);
+        return $r1;
+    }
+
+    private boolean c()
+    {
+        com.facebook.rti.b.a.a.b $r0;
+        android.content.SharedPreferences $r1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.b.a.a.b;
+        $r1 = $r0.<com.facebook.rti.b.a.a.b: android.content.SharedPreferences e>;
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("is_on", 0);
+        return $z0;
+    }
+
+    public final void a(java.lang.String)
+    {
+        com.facebook.rti.b.a.a.b $r0;
+        java.lang.String $r1, $r5, $r11;
+        int $i0, $i1, $i3, $i4;
+        android.app.Notification$Builder $r2;
+        android.content.Context $r3;
+        boolean $z1;
+        android.app.NotificationManager $r4;
+        android.content.Intent $r6;
+        android.app.PendingIntent $r7;
+        java.lang.StringBuilder $r8;
+        android.app.Notification$InboxStyle $r9;
+        android.app.Notification $r10;
+        java.lang.Object[] $r12;
+
+        $r0 := @this: com.facebook.rti.b.a.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $i3 = 17301608;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 11 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z1 = specialinvoke $r0.<com.facebook.rti.b.a.a.b: boolean c()>();
+        if $z1 != 0 goto label2;
+
+        $r4 = $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d>;
+        $r1 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        virtualinvoke $r4.<android.app.NotificationManager: void cancel(java.lang.String,int)>($r1, 42);
+        goto label0;
+
+     label2:
+        $r0.<com.facebook.rti.b.a.a.b: int j> = 0;
+        $r0.<com.facebook.rti.b.a.a.b: java.lang.String i> = $r1;
+        $i1 = 3000;
+        $r5 = "CONNECTED";
+        $z1 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z1 == 0 goto label5;
+
+        $i3 = 17301611;
+        $i0 = 0;
+
+     label3:
+        $r2 = new android.app.Notification$Builder;
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: android.content.Context c>;
+        specialinvoke $r2.<android.app.Notification$Builder: void <init>(android.content.Context)>($r3);
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setSmallIcon(int)>($i3);
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: android.content.Context c>;
+        $r6 = new android.content.Intent;
+        specialinvoke $r6.<android.content.Intent: void <init>()>();
+        $r7 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int)>($r3, 0, $r6, 0);
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setContentIntent(android.app.PendingIntent)>($r7);
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
+        $r5 = $r0.<com.facebook.rti.b.a.a.b: java.lang.String b>;
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" MqttLite");
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setContentTitle(java.lang.CharSequence)>($r5);
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setContentText(java.lang.CharSequence)>($r1);
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setLights(int,int,int)>($i0, $i1, 100);
+        $r2 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setOngoing(boolean)>(1);
+        $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g> = $r2;
+        $i3 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i3 < 16 goto label4;
+
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $r9 = specialinvoke $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$InboxStyle a()>();
+        virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setStyle(android.app.Notification$Style)>($r9);
+
+     label4:
+        $r4 = $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d>;
+        $r5 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $r10 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification getNotification()>();
+        virtualinvoke $r4.<android.app.NotificationManager: void notify(java.lang.String,int,android.app.Notification)>($r5, 42, $r10);
+        $r5 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        $i4 = (int) 1;
+        $r12 = newarray (java.lang.Object)[$i4];
+        $r12[0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>($r5, "notify %s", $r12);
+        goto label0;
+
+     label5:
+        $r11 = "CONNECTING";
+        $z1 = virtualinvoke $r11.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z1 == 0 goto label6;
+
+        $i3 = 17301607;
+        $i0 = -256;
+        goto label3;
+
+     label6:
+        $r11 = "DISCONNECTED";
+        $z1 = virtualinvoke $r11.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z1 == 0 goto label7;
+
+        $i0 = -65536;
+        $i1 = 2000;
+        goto label3;
+
+     label7:
+        $i0 = 0;
+        goto label3;
+    }
+
+    public final void b(java.lang.String)
+    {
+        com.facebook.rti.b.a.a.b $r0;
+        java.lang.String $r1, $r4;
+        int $i0;
+        android.app.Notification$Builder $r2;
+        boolean $z0;
+        android.app.NotificationManager $r3;
+        java.lang.StringBuilder $r5;
+        java.util.Queue $r6;
+        android.app.Notification$InboxStyle $r7;
+        android.app.Notification $r8;
+        java.lang.Object[] $r10;
+
+        $r0 := @this: com.facebook.rti.b.a.a.b;
+        $r1 := @parameter0: java.lang.String;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 16 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z0 = specialinvoke $r0.<com.facebook.rti.b.a.a.b: boolean c()>();
+        if $z0 != 0 goto label2;
+
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d>;
+        $r1 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        virtualinvoke $r3.<android.app.NotificationManager: void cancel(java.lang.String,int)>($r1, 42);
+        goto label0;
+
+     label2:
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $i0 = $r0.<com.facebook.rti.b.a.a.b: int j>;
+        $i0 = $i0 + 1;
+        $r0.<com.facebook.rti.b.a.a.b: int j> = $i0;
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setContentInfo(java.lang.CharSequence)>($r4);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r4 = staticinvoke <com.facebook.rti.b.a.a.b: java.lang.String b()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r6 = $r0.<com.facebook.rti.b.a.a.b: java.util.Queue h>;
+        interfaceinvoke $r6.<java.util.Queue: boolean add(java.lang.Object)>($r4);
+        $r6 = $r0.<com.facebook.rti.b.a.a.b: java.util.Queue h>;
+        $i0 = interfaceinvoke $r6.<java.util.Queue: int size()>();
+        if $i0 <= 4 goto label3;
+
+        $r6 = $r0.<com.facebook.rti.b.a.a.b: java.util.Queue h>;
+        interfaceinvoke $r6.<java.util.Queue: java.lang.Object poll()>();
+
+     label3:
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $r1 = $r0.<com.facebook.rti.b.a.a.b: java.lang.String i>;
+        virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setContentText(java.lang.CharSequence)>($r1);
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $r7 = specialinvoke $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$InboxStyle a()>();
+        virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification$Builder setStyle(android.app.Notification$Style)>($r7);
+        $r3 = $r0.<com.facebook.rti.b.a.a.b: android.app.NotificationManager d>;
+        $r1 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        $r2 = $r0.<com.facebook.rti.b.a.a.b: android.app.Notification$Builder g>;
+        $r8 = virtualinvoke $r2.<android.app.Notification$Builder: android.app.Notification getNotification()>();
+        virtualinvoke $r3.<android.app.NotificationManager: void notify(java.lang.String,int,android.app.Notification)>($r1, 42, $r8);
+        $r1 = <com.facebook.rti.b.a.a.b: java.lang.String a>;
+        $r10 = newarray (java.lang.Object)[1];
+        $r10[0] = $r4;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>($r1, "notify %s", $r10);
+        goto label0;
+    }
+}

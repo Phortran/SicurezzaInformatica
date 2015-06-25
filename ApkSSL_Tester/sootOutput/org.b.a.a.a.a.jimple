@@ -1,0 +1,345 @@
+public class org.b.a.a.a.a extends java.io.OutputStream
+{
+    private static final byte[] a;
+    private final java.util.List b;
+    private int c;
+    private int d;
+    private byte[] e;
+    private int f;
+
+    static void <clinit>()
+    {
+        byte[] $r0;
+
+        $r0 = newarray (byte)[0];
+        <org.b.a.a.a.a: byte[] a> = $r0;
+        return;
+    }
+
+    public void <init>()
+    {
+        org.b.a.a.a.a $r0;
+
+        $r0 := @this: org.b.a.a.a.a;
+        specialinvoke $r0.<org.b.a.a.a.a: void <init>(int)>(1024);
+        return;
+    }
+
+    public void <init>(int)
+    {
+        org.b.a.a.a.a $r0;
+        int $i0;
+        java.util.ArrayList $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        java.lang.IllegalArgumentException $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: org.b.a.a.a.a;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<java.io.OutputStream: void <init>()>();
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<org.b.a.a.a.a: java.util.List b> = $r1;
+        if $i0 >= 0 goto label0;
+
+        $r4 = new java.lang.IllegalArgumentException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Negative initial size: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r3);
+        throw $r4;
+
+     label0:
+        entermonitor $r0;
+
+     label1:
+        specialinvoke $r0.<org.b.a.a.a.a: void a(int)>($i0);
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+
+     label3:
+        throw $r5;
+
+        catch java.lang.Throwable from label1 to label3 with label2;
+    }
+
+    private void a(int)
+    {
+        org.b.a.a.a.a $r0;
+        int $i0, $i1, $i2;
+        java.util.List $r1;
+        byte[] $r2;
+        java.lang.Object $r3;
+
+        $r0 := @this: org.b.a.a.a.a;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<org.b.a.a.a.a: int c>;
+        $r1 = $r0.<org.b.a.a.a.a: java.util.List b>;
+        $i2 = interfaceinvoke $r1.<java.util.List: int size()>();
+        $i2 = $i2 + -1;
+        if $i1 >= $i2 goto label1;
+
+        $i2 = $r0.<org.b.a.a.a.a: int d>;
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $i1 = lengthof $r2;
+        $i2 = $i2 + $i1;
+        $r0.<org.b.a.a.a.a: int d> = $i2;
+        $i2 = $r0.<org.b.a.a.a.a: int c>;
+        $i2 = $i2 + 1;
+        $r0.<org.b.a.a.a.a: int c> = $i2;
+        $r1 = $r0.<org.b.a.a.a.a: java.util.List b>;
+        $i2 = $r0.<org.b.a.a.a.a: int c>;
+        $r3 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i2);
+        $r2 = (byte[]) $r3;
+        $r0.<org.b.a.a.a.a: byte[] e> = $r2;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        if $r2 != null goto label3;
+
+        $r0.<org.b.a.a.a.a: int d> = 0;
+
+     label2:
+        $i2 = $r0.<org.b.a.a.a.a: int c>;
+        $i2 = $i2 + 1;
+        $r0.<org.b.a.a.a.a: int c> = $i2;
+        $r2 = newarray (byte)[$i0];
+        $r0.<org.b.a.a.a.a: byte[] e> = $r2;
+        $r1 = $r0.<org.b.a.a.a.a: java.util.List b>;
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>($r2);
+        goto label0;
+
+     label3:
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $i2 = lengthof $r2;
+        $i2 = $i2 << 1;
+        $i1 = $r0.<org.b.a.a.a.a: int d>;
+        $i1 = $i0 - $i1;
+        $i0 = staticinvoke <java.lang.Math: int max(int,int)>($i2, $i1);
+        $i2 = $r0.<org.b.a.a.a.a: int d>;
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $i1 = lengthof $r2;
+        $i2 = $i2 + $i1;
+        $r0.<org.b.a.a.a.a: int d> = $i2;
+        goto label2;
+    }
+
+    public byte[] a()
+    {
+        org.b.a.a.a.a $r0;
+        byte[] $r1, $r5;
+        int $i1, $i2, $i3;
+        java.util.List $r2;
+        java.util.Iterator $r3;
+        boolean $z0;
+        java.lang.Object $r4;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: org.b.a.a.a.a;
+        entermonitor $r0;
+
+     label0:
+        $i1 = $r0.<org.b.a.a.a.a: int f>;
+        if $i1 != 0 goto label2;
+
+        $r1 = <org.b.a.a.a.a: byte[] a>;
+
+     label1:
+        exitmonitor $r0;
+        return $r1;
+
+     label2:
+        $r1 = newarray (byte)[$i1];
+        $r2 = $r0.<org.b.a.a.a.a: java.util.List b>;
+        $r3 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+        $i2 = $i1;
+        $i3 = 0;
+
+     label3:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label5;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (byte[]) $r4;
+        $i1 = lengthof $r5;
+        $i1 = staticinvoke <java.lang.Math: int min(int,int)>($i1, $i2);
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r5, 0, $r1, $i3, $i1);
+
+     label4:
+        $i2 = $i2 - $i1;
+        if $i2 != 0 goto label6;
+
+     label5:
+        goto label1;
+
+     label6:
+        $i3 = $i3 + $i1;
+        goto label3;
+
+     label7:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label7;
+        catch java.lang.Throwable from label2 to label4 with label7;
+    }
+
+    public void close()
+    {
+        org.b.a.a.a.a $r0;
+
+        $r0 := @this: org.b.a.a.a.a;
+        return;
+    }
+
+    public java.lang.String toString()
+    {
+        org.b.a.a.a.a $r0;
+        java.lang.String $r1;
+        byte[] $r2;
+
+        $r0 := @this: org.b.a.a.a.a;
+        $r1 = new java.lang.String;
+        $r2 = virtualinvoke $r0.<org.b.a.a.a.a: byte[] a()>();
+        specialinvoke $r1.<java.lang.String: void <init>(byte[])>($r2);
+        return $r1;
+    }
+
+    public void write(int)
+    {
+        org.b.a.a.a.a $r0;
+        int $i0, $i1, $i2;
+        byte $b3;
+        byte[] $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: org.b.a.a.a.a;
+        $i0 := @parameter0: int;
+        entermonitor $r0;
+
+     label0:
+        $i1 = $r0.<org.b.a.a.a.a: int f>;
+        $i2 = $r0.<org.b.a.a.a.a: int d>;
+        $i2 = $i1 - $i2;
+        $r1 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $i1 = lengthof $r1;
+        if $i2 != $i1 goto label1;
+
+        $i2 = $r0.<org.b.a.a.a.a: int f>;
+        $i2 = $i2 + 1;
+        specialinvoke $r0.<org.b.a.a.a.a: void a(int)>($i2);
+        $i2 = 0;
+
+     label1:
+        $r1 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $b3 = (byte) $i0;
+        $r1[$i2] = $b3;
+        $i2 = $r0.<org.b.a.a.a.a: int f>;
+        $i2 = $i2 + 1;
+        $r0.<org.b.a.a.a.a: int f> = $i2;
+
+     label2:
+        exitmonitor $r0;
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public void write(byte[], int, int)
+    {
+        org.b.a.a.a.a $r0;
+        byte[] $r1, $r2;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6;
+        java.lang.IndexOutOfBoundsException $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: org.b.a.a.a.a;
+        $r1 := @parameter0: byte[];
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        if $i0 < 0 goto label0;
+
+        $i2 = lengthof $r1;
+        if $i0 > $i2 goto label0;
+
+        if $i1 < 0 goto label0;
+
+        $i3 = $i0 + $i1;
+        $i2 = lengthof $r1;
+        if $i3 > $i2 goto label0;
+
+        $i3 = $i0 + $i1;
+        if $i3 >= 0 goto label1;
+
+     label0:
+        $r3 = new java.lang.IndexOutOfBoundsException;
+        specialinvoke $r3.<java.lang.IndexOutOfBoundsException: void <init>()>();
+        throw $r3;
+
+     label1:
+        if $i1 != 0 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        entermonitor $r0;
+
+     label4:
+        $i3 = $r0.<org.b.a.a.a.a: int f>;
+        $i2 = $i3 + $i1;
+        $i3 = $r0.<org.b.a.a.a.a: int f>;
+        $i4 = $r0.<org.b.a.a.a.a: int d>;
+        $i4 = $i3 - $i4;
+        $i5 = $i1;
+
+     label5:
+        if $i5 <= 0 goto label6;
+
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        $i3 = lengthof $r2;
+        $i3 = $i3 - $i4;
+        $i6 = staticinvoke <java.lang.Math: int min(int,int)>($i5, $i3);
+        $i3 = $i0 + $i1;
+        $i3 = $i3 - $i5;
+        $r2 = $r0.<org.b.a.a.a.a: byte[] e>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r1, $i3, $r2, $i4, $i6);
+        $i5 = $i5 - $i6;
+        if $i5 <= 0 goto label5;
+
+        specialinvoke $r0.<org.b.a.a.a.a: void a(int)>($i2);
+        $i4 = 0;
+        goto label5;
+
+     label6:
+        $r0.<org.b.a.a.a.a: int f> = $i2;
+        exitmonitor $r0;
+        goto label2;
+
+     label7:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+
+     label8:
+        throw $r4;
+
+        catch java.lang.Throwable from label4 to label8 with label7;
+    }
+}

@@ -1,0 +1,47 @@
+class it.h3g.areaclienti3.nwmonitoring.be extends java.lang.Object implements java.lang.Runnable
+{
+    final it.h3g.areaclienti3.nwmonitoring.bd a;
+    private final java.lang.Runnable b;
+
+    void <init>(it.h3g.areaclienti3.nwmonitoring.bd, java.lang.Runnable)
+    {
+        it.h3g.areaclienti3.nwmonitoring.be $r0;
+        it.h3g.areaclienti3.nwmonitoring.bd $r1;
+        java.lang.Runnable $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.be;
+        $r1 := @parameter0: it.h3g.areaclienti3.nwmonitoring.bd;
+        $r2 := @parameter1: java.lang.Runnable;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.be: it.h3g.areaclienti3.nwmonitoring.bd a> = $r1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.be: java.lang.Runnable b> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.nwmonitoring.be $r0;
+        java.lang.Runnable $r1;
+        it.h3g.areaclienti3.nwmonitoring.bd $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.be;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.be: java.lang.Runnable b>;
+        interfaceinvoke $r1.<java.lang.Runnable: void run()>();
+
+     label1:
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.be: it.h3g.areaclienti3.nwmonitoring.bd a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.bd: void a()>();
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.be: it.h3g.areaclienti3.nwmonitoring.bd a>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.bd: void a()>();
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

@@ -1,0 +1,308 @@
+public class it.h3g.areaclienti3.fragments.bu extends it.h3g.areaclienti3.fragments.a
+{
+    private static final java.lang.String[] e;
+    private android.webkit.WebView a;
+    private android.widget.ProgressBar b;
+    private java.lang.String c;
+    private java.lang.String d;
+
+    static void <clinit>()
+    {
+        java.lang.String[] $r1;
+
+        $r1 = newarray (java.lang.String)[3];
+        $r1[0] = "twitter.com";
+        $r1[1] = "facebook.com";
+        $r1[2] = "social.tre.it";
+        <it.h3g.areaclienti3.fragments.bu: java.lang.String[] e> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String c> = "";
+        $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String d> = "";
+        return;
+    }
+
+    static android.widget.ProgressBar a(it.h3g.areaclienti3.fragments.bu)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.widget.ProgressBar $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.bu;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bu: android.widget.ProgressBar b>;
+        return $r1;
+    }
+
+    static boolean a(it.h3g.areaclienti3.fragments.bu, java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        java.lang.String $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.fragments.bu: boolean b(java.lang.String)>($r1);
+        return $z0;
+    }
+
+    private void b()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        it.h3g.areaclienti3.g.b $r1;
+        android.content.Context $r2;
+        java.lang.String $r3, $r4;
+        android.webkit.WebView $r5;
+        java.util.HashMap $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 = new it.h3g.areaclienti3.g.b;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.bu: android.content.Context mContext>;
+        specialinvoke $r1.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r2);
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.bu: android.content.Context mContext>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String c>;
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String d>;
+        $r4 = virtualinvoke $r1.<it.h3g.areaclienti3.g.b: java.lang.String a(android.content.Context,java.lang.String,java.lang.String)>($r2, $r3, $r4);
+        $r6 = virtualinvoke $r1.<it.h3g.areaclienti3.g.b: java.util.HashMap a()>();
+        virtualinvoke $r5.<android.webkit.WebView: void loadUrl(java.lang.String,java.util.Map)>($r4, $r6);
+        return;
+    }
+
+    private boolean b(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        java.lang.String $r1, $r2;
+        java.lang.String[] $r3;
+        int $i1, $i2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean contains(java.lang.CharSequence)>("social.tre.it/client/news");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r3 = <it.h3g.areaclienti3.fragments.bu: java.lang.String[] e>;
+        $i1 = lengthof $r3;
+        $i2 = 0;
+
+     label2:
+        if $i2 >= $i1 goto label0;
+
+        $r2 = $r3[$i2];
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean contains(java.lang.CharSequence)>($r2);
+        if $z0 == 0 goto label3;
+
+        return 1;
+
+     label3:
+        $i2 = $i2 + 1;
+        goto label2;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.webkit.WebView $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        if $r1 == null goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SocialFragment", "reload WebView");
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.bu: void b()>();
+
+     label0:
+        return;
+    }
+
+    public void a(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        java.lang.String $r1;
+        android.content.Intent $r2;
+        android.net.Uri $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r1);
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r4);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: void startActivity(android.content.Intent)>($r2);
+        return;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        return 2131231023;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        return 2130837855;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        return 22;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r3;
+        boolean $z0;
+        android.view.View $r4;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("callBannerPiccoloAction");
+        if $z0 == 0 goto label0;
+
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: android.view.View getView()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: void onBannerPiccoloResults(android.os.Bundle,android.view.View,int)>($r1, $r4, $i0);
+
+     label0:
+        return;
+    }
+
+    public void onAttach(android.app.Activity)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.app.Activity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: android.app.Activity;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onAttach(android.app.Activity)>($r1);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SocialFragment", "onAttach");
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r5, $r6;
+        android.widget.ProgressBar $r7;
+        android.webkit.WebView $r8;
+        android.webkit.WebSettings $r9;
+        it.h3g.areaclienti3.fragments.bv $r10;
+        it.h3g.areaclienti3.fragments.bw $r11;
+        it.h3g.areaclienti3.fragments.bx $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onCreate(android.os.Bundle)>($r3);
+        $r5 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903158, $r2, 0);
+        $r6 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165253);
+        $r7 = (android.widget.ProgressBar) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.bu: android.widget.ProgressBar b> = $r7;
+        $r6 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165199);
+        $r8 = (android.webkit.WebView) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a> = $r8;
+        if $r3 == null goto label0;
+
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebBackForwardList restoreState(android.os.Bundle)>($r3);
+
+     label0:
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        virtualinvoke $r8.<android.webkit.WebView: boolean requestFocus(int)>(130);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r9 = virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r9.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r9 = virtualinvoke $r8.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+        virtualinvoke $r9.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(0);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r10 = new it.h3g.areaclienti3.fragments.bv;
+        specialinvoke $r10.<it.h3g.areaclienti3.fragments.bv: void <init>(it.h3g.areaclienti3.fragments.bu)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r10);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r11 = new it.h3g.areaclienti3.fragments.bw;
+        specialinvoke $r11.<it.h3g.areaclienti3.fragments.bw: void <init>(it.h3g.areaclienti3.fragments.bu)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r11);
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        $r12 = new it.h3g.areaclienti3.fragments.bx;
+        specialinvoke $r12.<it.h3g.areaclienti3.fragments.bx: void <init>(it.h3g.areaclienti3.fragments.bu)>($r0);
+        virtualinvoke $r8.<android.webkit.WebView: void setOnTouchListener(android.view.View$OnTouchListener)>($r12);
+        return $r5;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDestroyView()>();
+        return;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebView $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.bu: android.webkit.WebView a>;
+        virtualinvoke $r2.<android.webkit.WebView: android.webkit.WebBackForwardList saveState(android.os.Bundle)>($r1);
+
+     label0:
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.bu $r0;
+        it.h3g.areaclienti3.j.l $r1;
+        java.lang.String $r2;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.bu;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bu: it.h3g.areaclienti3.j.l myPreferences>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.j.l: java.lang.String r()>();
+        $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String c> = $r2;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bu: it.h3g.areaclienti3.j.l myPreferences>;
+        $r2 = virtualinvoke $r1.<it.h3g.areaclienti3.j.l: java.lang.String s()>();
+        $r0.<it.h3g.areaclienti3.fragments.bu: java.lang.String d> = $r2;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.bu: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.j.l: boolean t()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.bu: void getBannerPiccolo(int)>($i0);
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.bu: void b()>();
+        return;
+    }
+}

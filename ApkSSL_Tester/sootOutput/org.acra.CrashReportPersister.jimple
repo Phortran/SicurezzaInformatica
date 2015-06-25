@@ -1,0 +1,649 @@
+final class org.acra.CrashReportPersister extends java.lang.Object
+{
+    private static final int CONTINUE;
+    private static final int IGNORE;
+    private static final int KEY_DONE;
+    private static final java.lang.String LINE_SEPARATOR;
+    private static final int NONE;
+    private static final int SLASH;
+    private static final int UNICODE;
+    private final android.content.Context context;
+
+    void <init>(android.content.Context)
+    {
+        org.acra.CrashReportPersister $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<org.acra.CrashReportPersister: android.content.Context context> = $r1;
+        return;
+    }
+
+    private void dumpString(java.lang.StringBuilder, java.lang.String, boolean)
+    {
+        org.acra.CrashReportPersister $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        int $i0, $i4, $i7;
+        char $c3;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: java.lang.StringBuilder;
+        $r2 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        if $z0 != 0 goto label13;
+
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if 0 >= $i0 goto label13;
+
+        $c3 = virtualinvoke $r2.<java.lang.String: char charAt(int)>(0);
+        if $c3 != 32 goto label13;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\ ");
+        $i4 = 1;
+
+     label0:
+        $i0 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i4 >= $i0 goto label12;
+
+        $c3 = virtualinvoke $r2.<java.lang.String: char charAt(int)>($i4);
+        lookupswitch($c3)
+        {
+            case 9: goto label5;
+            case 10: goto label6;
+            case 11: goto label1;
+            case 12: goto label7;
+            case 13: goto label8;
+            default: goto label1;
+        };
+
+     label1:
+        $r3 = "\\#!=:";
+        $i0 = virtualinvoke $r3.<java.lang.String: int indexOf(int)>($c3);
+        if $i0 >= 0 goto label2;
+
+        if $z0 == 0 goto label3;
+
+        if $c3 != 32 goto label3;
+
+     label2:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(92);
+
+     label3:
+        if $c3 < 32 goto label9;
+
+        if $c3 > 126 goto label9;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c3);
+
+     label4:
+        $i4 = $i4 + 1;
+        goto label0;
+
+     label5:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\t");
+        goto label4;
+
+     label6:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\n");
+        goto label4;
+
+     label7:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\f");
+        goto label4;
+
+     label8:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\r");
+        goto label4;
+
+     label9:
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($c3);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\u");
+        $i7 = 0;
+
+     label10:
+        $i0 = virtualinvoke $r3.<java.lang.String: int length()>();
+        $i0 = 4 - $i0;
+        if $i7 >= $i0 goto label11;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("0");
+        $i7 = $i7 + 1;
+        goto label10;
+
+     label11:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        goto label4;
+
+     label12:
+        return;
+
+     label13:
+        $i4 = 0;
+        goto label0;
+    }
+
+    private boolean isEbcdic(java.io.BufferedInputStream)
+    {
+        org.acra.CrashReportPersister $r0;
+        java.io.BufferedInputStream $r1;
+        int $i0;
+        byte $b2;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: java.io.BufferedInputStream;
+
+     label0:
+        $i0 = virtualinvoke $r1.<java.io.BufferedInputStream: int read()>();
+        $b2 = (byte) $i0;
+        if $b2 == -1 goto label1;
+
+        if $b2 == 35 goto label1;
+
+        if $b2 == 10 goto label1;
+
+        if $b2 != 61 goto label2;
+
+     label1:
+        return 0;
+
+     label2:
+        if $b2 != 21 goto label0;
+
+        return 1;
+    }
+
+    private org.acra.collector.CrashReportData load(java.io.Reader)
+    {
+        org.acra.CrashReportPersister $r0;
+        java.io.Reader $r1;
+        int $i0, $i1, $i3, $i4, $i5, $i6;
+        byte $b2, $b7;
+        char[] $r2, $r8;
+        boolean $z0, $z1;
+        org.acra.collector.CrashReportData $r3;
+        java.io.BufferedReader $r4;
+        java.lang.IllegalArgumentException $r5;
+        java.lang.String $r6, $r10;
+        java.lang.Throwable $r7;
+        char $c8, $c9;
+        java.lang.Enum $r11;
+        org.acra.ReportField $r12;
+        java.lang.StringBuilder $r13;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: java.io.Reader;
+        entermonitor $r0;
+
+     label0:
+        $r2 = newarray (char)[40];
+        $i0 = 0;
+        $i1 = -1;
+        $r3 = new org.acra.collector.CrashReportData;
+        specialinvoke $r3.<org.acra.collector.CrashReportData: void <init>()>();
+        $r4 = new java.io.BufferedReader;
+        specialinvoke $r4.<java.io.BufferedReader: void <init>(java.io.Reader,int)>($r1, 8192);
+        $z0 = 1;
+        $i3 = 0;
+        $b2 = 0;
+        $i6 = 0;
+
+     label1:
+        $i5 = virtualinvoke $r4.<java.io.BufferedReader: int read()>();
+        if $i5 != -1 goto label3;
+
+        if $b2 != 2 goto label39;
+
+        if $i6 > 4 goto label39;
+
+        $r5 = new java.lang.IllegalArgumentException;
+        specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("luni.08");
+        throw $r5;
+
+     label2:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+        throw $r7;
+
+     label3:
+        $c8 = (char) $i5;
+
+     label4:
+        $i5 = lengthof $r2;
+        if $i0 != $i5 goto label5;
+
+        $i5 = lengthof $r2;
+        $i5 = $i5 * 2;
+        $r8 = newarray (char)[$i5];
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r2, 0, $r8, 0, $i0);
+        $r2 = $r8;
+
+     label5:
+        if $b2 != 2 goto label47;
+
+        $i5 = staticinvoke <java.lang.Character: int digit(char,int)>($c8, 16);
+        if $i5 < 0 goto label6;
+
+        $i4 = $i3 << 4;
+        $i5 = $i5 + $i4;
+        $i6 = $i6 + 1;
+        if $i6 >= 4 goto label46;
+
+        $i3 = $i5;
+        goto label1;
+
+     label6:
+        if $i6 > 4 goto label7;
+
+        $r5 = new java.lang.IllegalArgumentException;
+        specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("luni.09");
+        throw $r5;
+
+     label7:
+        $i5 = $i3;
+
+     label8:
+        $i4 = $i0 + 1;
+        $c9 = (char) $i5;
+        $r2[$i0] = $c9;
+        if $c8 == 10 goto label9;
+
+        if $c8 == 133 goto label9;
+
+        $i0 = $i4;
+        $i3 = $i5;
+        $b2 = 0;
+        goto label1;
+
+     label9:
+        $i0 = $i4;
+        $b7 = 0;
+
+     label10:
+        if $b7 != 1 goto label22;
+
+        lookupswitch($c8)
+        {
+            case 10: goto label15;
+            case 13: goto label14;
+            case 98: goto label16;
+            case 102: goto label17;
+            case 110: goto label18;
+            case 114: goto label19;
+            case 116: goto label20;
+            case 117: goto label21;
+            case 133: goto label15;
+            default: goto label11;
+        };
+
+     label11:
+        $b7 = 0;
+        $c9 = $c8;
+
+     label12:
+        if $b7 != 4 goto label13;
+
+        $b7 = 0;
+        $i1 = $i0;
+
+     label13:
+        $r2[$i0] = $c9;
+        $i0 = $i0 + 1;
+        $z0 = 0;
+        $i3 = $i5;
+        $b2 = $b7;
+        goto label1;
+
+     label14:
+        $i3 = $i5;
+        $b2 = 3;
+        goto label1;
+
+     label15:
+        $i3 = $i5;
+        $b2 = 5;
+        goto label1;
+
+     label16:
+        $c8 = 8;
+        goto label11;
+
+     label17:
+        $c8 = 12;
+        goto label11;
+
+     label18:
+        $c8 = 10;
+        goto label11;
+
+     label19:
+        $c8 = 13;
+        goto label11;
+
+     label20:
+        $c8 = 9;
+        goto label11;
+
+     label21:
+        $i3 = 0;
+        $b2 = 2;
+        $i6 = 0;
+        goto label1;
+
+     label22:
+        lookupswitch($c8)
+        {
+            case 10: goto label28;
+            case 13: goto label29;
+            case 33: goto label25;
+            case 35: goto label25;
+            case 58: goto label35;
+            case 61: goto label35;
+            case 92: goto label33;
+            case 133: goto label29;
+            default: goto label23;
+        };
+
+     label23:
+        $z1 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>($c8);
+        if $z1 == 0 goto label37;
+
+        if $b7 != 3 goto label24;
+
+        $b7 = 5;
+
+     label24:
+        if $i0 == 0 goto label44;
+
+        if $i0 == $i1 goto label44;
+
+        if $b7 != 5 goto label36;
+
+        $i3 = $i5;
+        $b2 = $b7;
+        goto label1;
+
+     label25:
+        if $z0 == 0 goto label23;
+
+     label26:
+        $i4 = virtualinvoke $r4.<java.io.BufferedReader: int read()>();
+        if $i4 != -1 goto label27;
+
+        $i3 = $i5;
+        $b2 = $b7;
+        goto label1;
+
+     label27:
+        $c9 = (char) $i4;
+        if $c9 == 13 goto label44;
+
+        if $c9 == 10 goto label44;
+
+        if $c9 != 133 goto label26;
+
+        $i3 = $i5;
+        $b2 = $b7;
+        goto label1;
+
+     label28:
+        if $b7 != 3 goto label29;
+
+        $i3 = $i5;
+        $b2 = 5;
+        goto label1;
+
+     label29:
+        if $i0 > 0 goto label30;
+
+        if $i0 != 0 goto label32;
+
+        if $i1 != 0 goto label32;
+
+     label30:
+        if $i1 != -1 goto label31;
+
+        $i1 = $i0;
+
+     label31:
+        $r6 = new java.lang.String;
+        specialinvoke $r6.<java.lang.String: void <init>(char[],int,int)>($r2, 0, $i0);
+        $r10 = virtualinvoke $r6.<java.lang.String: java.lang.String substring(int,int)>(0, $i1);
+        $r11 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/acra/ReportField", $r10);
+        $r10 = virtualinvoke $r6.<java.lang.String: java.lang.String substring(int)>($i1);
+        virtualinvoke $r3.<org.acra.collector.CrashReportData: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r11, $r10);
+
+     label32:
+        $i1 = -1;
+        $i0 = 0;
+        $z0 = 1;
+        $i3 = $i5;
+        $b2 = 0;
+        goto label1;
+
+     label33:
+        if $b7 != 4 goto label45;
+
+        $i4 = $i0;
+
+     label34:
+        $i1 = $i4;
+        $i3 = $i5;
+        $b2 = 1;
+        goto label1;
+
+     label35:
+        if $i1 != -1 goto label23;
+
+        $i1 = $i0;
+        $i3 = $i5;
+        $b2 = 0;
+        goto label1;
+
+     label36:
+        if $i1 != -1 goto label37;
+
+        $i3 = $i5;
+        $b2 = 4;
+        goto label1;
+
+     label37:
+        if $b7 == 5 goto label38;
+
+        if $b7 != 3 goto label43;
+
+     label38:
+        $b7 = 0;
+        $c9 = $c8;
+        goto label12;
+
+     label39:
+        if $i1 != -1 goto label40;
+
+        if $i0 <= 0 goto label40;
+
+        $i1 = $i0;
+
+     label40:
+        if $i1 < 0 goto label42;
+
+        $r10 = new java.lang.String;
+        specialinvoke $r10.<java.lang.String: void <init>(char[],int,int)>($r2, 0, $i0);
+        $r6 = virtualinvoke $r10.<java.lang.String: java.lang.String substring(int,int)>(0, $i1);
+        $r11 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/acra/ReportField", $r6);
+        $r12 = (org.acra.ReportField) $r11;
+        $r10 = virtualinvoke $r10.<java.lang.String: java.lang.String substring(int)>($i1);
+        if $b2 != 1 goto label41;
+
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\u0000");
+        $r10 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label41:
+        virtualinvoke $r3.<org.acra.collector.CrashReportData: java.lang.Object put(java.lang.Enum,java.lang.Object)>($r12, $r10);
+
+     label42:
+        exitmonitor $r0;
+        return $r3;
+
+     label43:
+        $c9 = $c8;
+        goto label12;
+
+     label44:
+        $i3 = $i5;
+        $b2 = $b7;
+        goto label1;
+
+     label45:
+        $i4 = $i1;
+        goto label34;
+
+     label46:
+        goto label8;
+
+     label47:
+        $b7 = $b2;
+        $i5 = $i3;
+        goto label10;
+
+        catch java.lang.Throwable from label0 to label2 with label2;
+        catch java.lang.Throwable from label4 to label42 with label2;
+    }
+
+    public org.acra.collector.CrashReportData load(java.lang.String)
+    {
+        org.acra.CrashReportPersister $r0;
+        java.lang.String $r1, $r4;
+        android.content.Context $r2;
+        java.io.FileInputStream $r3;
+        java.lang.IllegalArgumentException $r5;
+        java.lang.StringBuilder $r6;
+        java.io.BufferedInputStream $r7;
+        boolean $z0;
+        java.io.InputStreamReader $r8;
+        org.acra.collector.CrashReportData $r9;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<org.acra.CrashReportPersister: android.content.Context context>;
+        $r3 = virtualinvoke $r2.<android.content.Context: java.io.FileInputStream openFileInput(java.lang.String)>($r1);
+        if $r3 != null goto label0;
+
+        $r5 = new java.lang.IllegalArgumentException;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid crash report fileName : ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r4);
+        throw $r5;
+
+     label0:
+        $r7 = new java.io.BufferedInputStream;
+        specialinvoke $r7.<java.io.BufferedInputStream: void <init>(java.io.InputStream,int)>($r3, 8192);
+        virtualinvoke $r7.<java.io.BufferedInputStream: void mark(int)>(2147483647);
+        $z0 = specialinvoke $r0.<org.acra.CrashReportPersister: boolean isEbcdic(java.io.BufferedInputStream)>($r7);
+        virtualinvoke $r7.<java.io.BufferedInputStream: void reset()>();
+        if $z0 != 0 goto label2;
+
+        $r8 = new java.io.InputStreamReader;
+        specialinvoke $r8.<java.io.InputStreamReader: void <init>(java.io.InputStream,java.lang.String)>($r7, "ISO8859-1");
+        $r9 = specialinvoke $r0.<org.acra.CrashReportPersister: org.acra.collector.CrashReportData load(java.io.Reader)>($r8);
+
+     label1:
+        virtualinvoke $r3.<java.io.FileInputStream: void close()>();
+        return $r9;
+
+     label2:
+        $r8 = new java.io.InputStreamReader;
+        specialinvoke $r8.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r7);
+        $r9 = specialinvoke $r0.<org.acra.CrashReportPersister: org.acra.collector.CrashReportData load(java.io.Reader)>($r8);
+
+     label3:
+        virtualinvoke $r3.<java.io.FileInputStream: void close()>();
+        return $r9;
+
+     label4:
+        $r10 := @caughtexception;
+        virtualinvoke $r3.<java.io.FileInputStream: void close()>();
+        throw $r10;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+        catch java.lang.Throwable from label2 to label3 with label4;
+    }
+
+    public void store(org.acra.collector.CrashReportData, java.lang.String)
+    {
+        org.acra.CrashReportPersister $r0;
+        org.acra.collector.CrashReportData $r1;
+        java.lang.String $r2;
+        android.content.Context $r3;
+        java.io.FileOutputStream $r4;
+        java.lang.StringBuilder $r5;
+        java.io.OutputStreamWriter $r6;
+        java.util.Iterator $r7;
+        boolean $z0;
+        java.util.Set $r8;
+        java.lang.Object $r9;
+        java.util.Map$Entry $r10;
+        org.acra.ReportField $r11;
+        java.lang.Throwable $r12;
+
+        $r0 := @this: org.acra.CrashReportPersister;
+        $r1 := @parameter0: org.acra.collector.CrashReportData;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<org.acra.CrashReportPersister: android.content.Context context>;
+        $r4 = virtualinvoke $r3.<android.content.Context: java.io.FileOutputStream openFileOutput(java.lang.String,int)>($r2, 0);
+
+     label0:
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(int)>(200);
+        $r6 = new java.io.OutputStreamWriter;
+        specialinvoke $r6.<java.io.OutputStreamWriter: void <init>(java.io.OutputStream,java.lang.String)>($r4, "ISO8859_1");
+        $r8 = virtualinvoke $r1.<org.acra.collector.CrashReportData: java.util.Set entrySet()>();
+        $r7 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r7.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r9 = interfaceinvoke $r7.<java.util.Iterator: java.lang.Object next()>();
+        $r10 = (java.util.Map$Entry) $r9;
+        $r9 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r11 = (org.acra.ReportField) $r9;
+        $r2 = virtualinvoke $r11.<org.acra.ReportField: java.lang.String toString()>();
+        specialinvoke $r0.<org.acra.CrashReportPersister: void dumpString(java.lang.StringBuilder,java.lang.String,boolean)>($r5, $r2, 1);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r9 = interfaceinvoke $r10.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r2 = (java.lang.String) $r9;
+        specialinvoke $r0.<org.acra.CrashReportPersister: void dumpString(java.lang.StringBuilder,java.lang.String,boolean)>($r5, $r2, 0);
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r6.<java.io.OutputStreamWriter: void write(java.lang.String)>($r2);
+        virtualinvoke $r5.<java.lang.StringBuilder: void setLength(int)>(0);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r12 := @caughtexception;
+        virtualinvoke $r4.<java.io.OutputStream: void close()>();
+        throw $r12;
+
+     label4:
+        virtualinvoke $r6.<java.io.OutputStreamWriter: void flush()>();
+
+     label5:
+        virtualinvoke $r4.<java.io.OutputStream: void close()>();
+        return;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+}

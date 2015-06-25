@@ -1,0 +1,244 @@
+class it.h3g.areaclienti3.customview.banner.c extends android.os.AsyncTask
+{
+    final it.h3g.areaclienti3.customview.banner.BannerSwipe a;
+    private android.view.View b;
+    private android.widget.RelativeLayout c;
+    private android.widget.ImageView d;
+    private int e;
+    private android.widget.ImageView f;
+
+    private void <init>(it.h3g.areaclienti3.customview.banner.BannerSwipe)
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.banner.BannerSwipe;
+        $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a> = $r1;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    void <init>(it.h3g.areaclienti3.customview.banner.BannerSwipe, it.h3g.areaclienti3.customview.banner.c)
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0, $r2;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.banner.BannerSwipe;
+        $r2 := @parameter1: it.h3g.areaclienti3.customview.banner.c;
+        specialinvoke $r0.<it.h3g.areaclienti3.customview.banner.c: void <init>(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r1);
+        return;
+    }
+
+    protected transient android.graphics.Bitmap a(java.lang.Integer[])
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        java.lang.Integer[] $r1;
+        it.h3g.areaclienti3.f.b $r2;
+        int $i1;
+        java.lang.Integer $r3;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r4;
+        java.util.ArrayList $r5;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.d.g $r7;
+        java.lang.String $r8;
+        android.graphics.Bitmap $r9;
+        it.h3g.areaclienti3.j.m $r10;
+        java.lang.Exception $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: java.lang.Integer[];
+        $r3 = $r1[0];
+        $i1 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $r0.<it.h3g.areaclienti3.customview.banner.c: int e> = $i1;
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r2 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: it.h3g.areaclienti3.f.b e(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r4);
+        $r4 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r4);
+        $i1 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r6 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r7 = (it.h3g.areaclienti3.d.g) $r6;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.g: java.lang.String b()>();
+        $r9 = virtualinvoke $r2.<it.h3g.areaclienti3.f.b: android.graphics.Bitmap a(java.lang.String)>($r8);
+
+     label1:
+        if $r9 != null goto label2;
+
+        $r4 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r10 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: it.h3g.areaclienti3.j.m f(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r4);
+        $r4 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r4);
+        $i1 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r6 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r7 = (it.h3g.areaclienti3.d.g) $r6;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.g: java.lang.String b()>();
+        $r9 = virtualinvoke $r10.<it.h3g.areaclienti3.j.m: android.graphics.Bitmap n(java.lang.String)>($r8);
+
+     label2:
+        return $r9;
+
+     label3:
+        $r11 := @caughtexception;
+        $r9 = null;
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    protected void a(android.graphics.Bitmap)
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        android.graphics.Bitmap $r1;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r2;
+        int $i0;
+        it.h3g.areaclienti3.f.b $r3;
+        java.util.ArrayList $r4;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.d.g $r6;
+        java.lang.String $r7, $r8;
+        android.widget.RelativeLayout $r9;
+        android.widget.ImageView $r10;
+        java.lang.Integer $r11;
+        android.view.View$OnClickListener $r12;
+        boolean $z0;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r13;
+        android.view.View $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        $i0 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r6 = (it.h3g.areaclienti3.d.g) $r5;
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.d.g: java.lang.String c()>();
+        if $r1 == null goto label3;
+
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: it.h3g.areaclienti3.f.b e(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        $i0 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r6 = (it.h3g.areaclienti3.d.g) $r5;
+        $r8 = virtualinvoke $r6.<it.h3g.areaclienti3.d.g: java.lang.String b()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.f.b: void a(java.lang.String,android.graphics.Bitmap)>($r8, $r1);
+        $r9 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.RelativeLayout c>;
+        virtualinvoke $r9.<android.widget.RelativeLayout: void setVisibility(int)>(8);
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView d>;
+        virtualinvoke $r10.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>($r1);
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView d>;
+        virtualinvoke $r10.<android.widget.ImageView: void setVisibility(int)>(0);
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView d>;
+        $i0 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r11 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r10.<android.widget.ImageView: void setTag(java.lang.Object)>($r11);
+        if $r7 == null goto label0;
+
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView d>;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r12 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: android.view.View$OnClickListener g(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        virtualinvoke $r10.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r12);
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: java.util.ArrayList b(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        $i0 = $r0.<it.h3g.areaclienti3.customview.banner.c: int e>;
+        $r5 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r6 = (it.h3g.areaclienti3.d.g) $r5;
+        $z0 = virtualinvoke $r6.<it.h3g.areaclienti3.d.g: boolean d()>();
+        if $z0 == 0 goto label2;
+
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView f>;
+        virtualinvoke $r10.<android.widget.ImageView: void setVisibility(int)>(0);
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView f>;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r12 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: android.view.View$OnClickListener h(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        virtualinvoke $r10.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r12);
+
+     label1:
+        $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b> = null;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: void i(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        return;
+
+     label2:
+        $r10 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView f>;
+        virtualinvoke $r10.<android.widget.ImageView: void setVisibility(int)>(8);
+        goto label1;
+
+     label3:
+        $r2 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r13 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: it.h3g.areaclienti3.customview.pagedview.PagedView d(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r2);
+        $r14 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b>;
+        virtualinvoke $r13.<it.h3g.areaclienti3.customview.pagedview.PagedView: void removeView(android.view.View)>($r14);
+        goto label1;
+    }
+
+    protected transient java.lang.Object doInBackground(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        java.lang.Object[] $r1;
+        android.graphics.Bitmap $r2;
+        java.lang.Integer[] $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: java.lang.Object[];
+        $r3 = (java.lang.Integer[]) $r1;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.customview.banner.c: android.graphics.Bitmap a(java.lang.Integer[])>($r3);
+        return $r2;
+    }
+
+    protected void onPostExecute(java.lang.Object)
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        java.lang.Object $r1;
+        android.graphics.Bitmap $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (android.graphics.Bitmap) $r1;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.banner.c: void a(android.graphics.Bitmap)>($r2);
+        return;
+    }
+
+    protected void onPreExecute()
+    {
+        it.h3g.areaclienti3.customview.banner.c $r0;
+        it.h3g.areaclienti3.customview.banner.BannerSwipe $r1;
+        android.view.LayoutInflater $r2;
+        android.view.View $r3;
+        android.widget.RelativeLayout $r4;
+        android.widget.ImageView $r5;
+        it.h3g.areaclienti3.customview.pagedview.PagedView $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.banner.c;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r2 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: android.view.LayoutInflater c(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r1);
+        $r3 = virtualinvoke $r2.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903058, null);
+        $r4 = (android.widget.RelativeLayout) $r3;
+        $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b> = $r4;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b>;
+        $r3 = virtualinvoke $r3.<android.view.View: android.view.View findViewById(int)>(2131165269);
+        $r5 = (android.widget.ImageView) $r3;
+        $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView d> = $r5;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b>;
+        $r3 = virtualinvoke $r3.<android.view.View: android.view.View findViewById(int)>(2131165268);
+        $r4 = (android.widget.RelativeLayout) $r3;
+        $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.RelativeLayout c> = $r4;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b>;
+        $r3 = virtualinvoke $r3.<android.view.View: android.view.View findViewById(int)>(2131165270);
+        $r5 = (android.widget.ImageView) $r3;
+        $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.ImageView f> = $r5;
+        $r1 = $r0.<it.h3g.areaclienti3.customview.banner.c: it.h3g.areaclienti3.customview.banner.BannerSwipe a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.customview.banner.BannerSwipe: it.h3g.areaclienti3.customview.pagedview.PagedView d(it.h3g.areaclienti3.customview.banner.BannerSwipe)>($r1);
+        $r3 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.view.View b>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.customview.pagedview.PagedView: void addView(android.view.View)>($r3);
+        $r4 = $r0.<it.h3g.areaclienti3.customview.banner.c: android.widget.RelativeLayout c>;
+        virtualinvoke $r4.<android.widget.RelativeLayout: void setVisibility(int)>(0);
+        return;
+    }
+}

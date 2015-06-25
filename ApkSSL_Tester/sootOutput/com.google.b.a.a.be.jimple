@@ -1,0 +1,494 @@
+class com.google.b.a.a.be extends java.lang.Object implements com.google.b.a.a.o
+{
+    private final java.lang.String a;
+    private final org.apache.http.client.HttpClient b;
+    private final android.content.Context c;
+    private com.google.b.a.a.an d;
+    private java.net.URL e;
+
+    void <init>(org.apache.http.client.HttpClient, android.content.Context)
+    {
+        com.google.b.a.a.be $r0;
+        org.apache.http.client.HttpClient $r1;
+        android.content.Context $r2;
+        com.google.b.a.a.an $r3;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: org.apache.http.client.HttpClient;
+        $r2 := @parameter1: android.content.Context;
+        $r3 = staticinvoke <com.google.b.a.a.an: com.google.b.a.a.an a(android.content.Context)>($r2);
+        specialinvoke $r0.<com.google.b.a.a.be: void <init>(org.apache.http.client.HttpClient,com.google.b.a.a.an,android.content.Context)>($r1, $r3, $r2);
+        return;
+    }
+
+    void <init>(org.apache.http.client.HttpClient, com.google.b.a.a.an, android.content.Context)
+    {
+        com.google.b.a.a.be $r0;
+        org.apache.http.client.HttpClient $r1;
+        com.google.b.a.a.an $r2;
+        android.content.Context $r3;
+        java.lang.String $r6, $r7, $r8, $r9;
+        java.util.Locale $r10;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: org.apache.http.client.HttpClient;
+        $r2 := @parameter1: com.google.b.a.a.an;
+        $r3 := @parameter2: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = virtualinvoke $r3.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.google.b.a.a.be: android.content.Context c> = $r3;
+        $r6 = <android.os.Build$VERSION: java.lang.String RELEASE>;
+        $r10 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>();
+        $r7 = staticinvoke <com.google.b.a.a.bi: java.lang.String a(java.util.Locale)>($r10);
+        $r8 = <android.os.Build: java.lang.String MODEL>;
+        $r9 = <android.os.Build: java.lang.String ID>;
+        $r9 = virtualinvoke $r0.<com.google.b.a.a.be: java.lang.String a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("GoogleAnalytics", "3.0", $r6, $r7, $r8, $r9);
+        $r0.<com.google.b.a.a.be: java.lang.String a> = $r9;
+        $r0.<com.google.b.a.a.be: org.apache.http.client.HttpClient b> = $r1;
+        $r0.<com.google.b.a.a.be: com.google.b.a.a.an d> = $r2;
+        return;
+    }
+
+    private org.apache.http.HttpEntityEnclosingRequest a(java.lang.String, java.lang.String)
+    {
+        com.google.b.a.a.be $r0;
+        java.lang.String $r1, $r2, $r3;
+        boolean $z0;
+        org.apache.http.message.BasicHttpEntityEnclosingRequest $r4;
+        java.lang.StringBuilder $r5;
+        int $i1;
+        org.apache.http.entity.StringEntity $r6;
+        java.io.UnsupportedEncodingException $r7;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r1);
+        if $z0 == 0 goto label0;
+
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Empty hit, discarding.");
+        return null;
+
+     label0:
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("?");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i1 = virtualinvoke $r3.<java.lang.String: int length()>();
+        if $i1 >= 2036 goto label2;
+
+        $r4 = new org.apache.http.message.BasicHttpEntityEnclosingRequest;
+        specialinvoke $r4.<org.apache.http.message.BasicHttpEntityEnclosingRequest: void <init>(java.lang.String,java.lang.String)>("GET", $r3);
+
+     label1:
+        $r2 = $r0.<com.google.b.a.a.be: java.lang.String a>;
+        interfaceinvoke $r4.<org.apache.http.HttpEntityEnclosingRequest: void addHeader(java.lang.String,java.lang.String)>("User-Agent", $r2);
+        return $r4;
+
+     label2:
+        $r4 = new org.apache.http.message.BasicHttpEntityEnclosingRequest;
+        specialinvoke $r4.<org.apache.http.message.BasicHttpEntityEnclosingRequest: void <init>(java.lang.String,java.lang.String)>("POST", $r2);
+        $r6 = new org.apache.http.entity.StringEntity;
+
+     label3:
+        specialinvoke $r6.<org.apache.http.entity.StringEntity: void <init>(java.lang.String)>($r1);
+        interfaceinvoke $r4.<org.apache.http.HttpEntityEnclosingRequest: void setEntity(org.apache.http.HttpEntity)>($r6);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r7 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Encoding error, discarding hit");
+        return null;
+
+        catch java.io.UnsupportedEncodingException from label3 to label4 with label5;
+    }
+
+    private void a(org.apache.http.HttpEntityEnclosingRequest)
+    {
+        com.google.b.a.a.be $r0;
+        org.apache.http.HttpEntityEnclosingRequest $r1;
+        int $i0, $i1;
+        java.lang.StringBuffer $r2, $r6;
+        org.apache.http.Header[] $r3;
+        org.apache.http.Header $r4;
+        java.lang.String $r5;
+        org.apache.http.RequestLine $r7;
+        org.apache.http.HttpEntity $r8;
+        java.io.InputStream $r9;
+        byte[] $r10;
+        java.io.IOException $r11;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: org.apache.http.HttpEntityEnclosingRequest;
+        $r2 = new java.lang.StringBuffer;
+        specialinvoke $r2.<java.lang.StringBuffer: void <init>()>();
+        $r3 = interfaceinvoke $r1.<org.apache.http.HttpEntityEnclosingRequest: org.apache.http.Header[] getAllHeaders()>();
+        $i1 = lengthof $r3;
+        $i0 = 0;
+
+     label0:
+        if $i0 >= $i1 goto label1;
+
+        $r4 = $r3[$i0];
+        $r5 = virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>();
+        $r6 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r5);
+        virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\n");
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $r7 = interfaceinvoke $r1.<org.apache.http.HttpEntityEnclosingRequest: org.apache.http.RequestLine getRequestLine()>();
+        $r5 = virtualinvoke $r7.<java.lang.Object: java.lang.String toString()>();
+        $r6 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r5);
+        virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\n");
+        $r8 = interfaceinvoke $r1.<org.apache.http.HttpEntityEnclosingRequest: org.apache.http.HttpEntity getEntity()>();
+        if $r8 == null goto label3;
+
+     label2:
+        $r8 = interfaceinvoke $r1.<org.apache.http.HttpEntityEnclosingRequest: org.apache.http.HttpEntity getEntity()>();
+        $r9 = interfaceinvoke $r8.<org.apache.http.HttpEntity: java.io.InputStream getContent()>();
+        if $r9 == null goto label3;
+
+        $i1 = virtualinvoke $r9.<java.io.InputStream: int available()>();
+        if $i1 <= 0 goto label3;
+
+        $r10 = newarray (byte)[$i1];
+        virtualinvoke $r9.<java.io.InputStream: int read(byte[])>($r10);
+        virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("POST:\n");
+        $r5 = new java.lang.String;
+        specialinvoke $r5.<java.lang.String: void <init>(byte[])>($r10);
+        $r6 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r5);
+        virtualinvoke $r6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\n");
+
+     label3:
+        $r5 = virtualinvoke $r2.<java.lang.StringBuffer: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r5);
+        return;
+
+     label4:
+        $r11 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>("Error Writing hit to log...");
+        goto label3;
+
+        catch java.io.IOException from label2 to label3 with label4;
+    }
+
+    public int a(java.util.List)
+    {
+        com.google.b.a.a.be $r0;
+        java.util.List $r1;
+        int $i0, $i3, $i4, $i5;
+        byte $b1;
+        java.net.URL $r2;
+        java.lang.String $r3, $r4, $r10;
+        java.lang.Object $r5;
+        com.google.b.a.a.ao $r6;
+        boolean $z0;
+        java.lang.StringBuilder $r7;
+        org.apache.http.HttpHost $r8;
+        org.apache.http.HttpEntityEnclosingRequest $r9;
+        long $l6;
+        com.google.b.a.a.an $r11;
+        android.content.Context $r12;
+        org.apache.http.client.HttpClient $r13;
+        org.apache.http.HttpResponse $r14;
+        org.apache.http.StatusLine $r15;
+        org.apache.http.HttpEntity $r16;
+        org.apache.http.client.ClientProtocolException $r17, $r20;
+        java.io.IOException $r18;
+        java.lang.Class $r19;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: java.util.List;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+        $i4 = staticinvoke <java.lang.Math: int min(int,int)>($i0, 40);
+        $b1 = 1;
+        $i3 = 0;
+        $i0 = 0;
+
+     label0:
+        if $i3 >= $i4 goto label21;
+
+        $r5 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i3);
+        $r6 = (com.google.b.a.a.ao) $r5;
+        $r2 = virtualinvoke $r0.<com.google.b.a.a.be: java.net.URL a(com.google.b.a.a.ao)>($r6);
+        if $r2 != null goto label4;
+
+        $z0 = staticinvoke <com.google.b.a.a.aq: boolean a()>();
+        if $z0 == 0 goto label3;
+
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("No destination: discarding hit: ");
+        $r4 = virtualinvoke $r6.<com.google.b.a.a.ao: java.lang.String a()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r4);
+
+     label1:
+        $i5 = $i0 + 1;
+
+     label2:
+        $i3 = $i3 + 1;
+        $i0 = $i5;
+        goto label0;
+
+     label3:
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("No destination: discarding hit.");
+        goto label1;
+
+     label4:
+        $r8 = new org.apache.http.HttpHost;
+        $r3 = virtualinvoke $r2.<java.net.URL: java.lang.String getHost()>();
+        $i5 = virtualinvoke $r2.<java.net.URL: int getPort()>();
+        $r4 = virtualinvoke $r2.<java.net.URL: java.lang.String getProtocol()>();
+        specialinvoke $r8.<org.apache.http.HttpHost: void <init>(java.lang.String,int,java.lang.String)>($r3, $i5, $r4);
+        $r4 = virtualinvoke $r2.<java.net.URL: java.lang.String getPath()>();
+        $r3 = virtualinvoke $r6.<com.google.b.a.a.ao: java.lang.String a()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 == 0 goto label6;
+
+        $r3 = "";
+
+     label5:
+        $r9 = specialinvoke $r0.<com.google.b.a.a.be: org.apache.http.HttpEntityEnclosingRequest a(java.lang.String,java.lang.String)>($r3, $r4);
+        if $r9 != null goto label7;
+
+        $i5 = $i0 + 1;
+        goto label2;
+
+     label6:
+        $l6 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r3 = staticinvoke <com.google.b.a.a.ap: java.lang.String a(com.google.b.a.a.ao,long)>($r6, $l6);
+        goto label5;
+
+     label7:
+        $r10 = virtualinvoke $r8.<org.apache.http.HttpHost: java.lang.String toHostString()>();
+        interfaceinvoke $r9.<org.apache.http.HttpEntityEnclosingRequest: void addHeader(java.lang.String,java.lang.String)>("Host", $r10);
+        $z0 = staticinvoke <com.google.b.a.a.aq: boolean a()>();
+        if $z0 == 0 goto label8;
+
+        specialinvoke $r0.<com.google.b.a.a.be: void a(org.apache.http.HttpEntityEnclosingRequest)>($r9);
+
+     label8:
+        $i5 = virtualinvoke $r3.<java.lang.String: int length()>();
+        if $i5 <= 8192 goto label10;
+
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Hit too long (> 8192 bytes)--not sent");
+
+     label9:
+        $i5 = $i0 + 1;
+        goto label2;
+
+     label10:
+        $r11 = $r0.<com.google.b.a.a.be: com.google.b.a.a.an d>;
+        $z0 = virtualinvoke $r11.<com.google.b.a.a.an: boolean b()>();
+        if $z0 == 0 goto label11;
+
+        staticinvoke <com.google.b.a.a.aq: void b(java.lang.String)>("Dry run enabled. Hit not actually sent.");
+        goto label9;
+
+     label11:
+        if $b1 == 0 goto label23;
+
+        $r12 = $r0.<com.google.b.a.a.be: android.content.Context c>;
+
+     label12:
+        staticinvoke <com.google.b.a.a.u: void b(android.content.Context)>($r12);
+
+     label13:
+        $b1 = 0;
+
+     label14:
+        $r13 = $r0.<com.google.b.a.a.be: org.apache.http.client.HttpClient b>;
+
+     label15:
+        $r14 = interfaceinvoke $r13.<org.apache.http.client.HttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost,org.apache.http.HttpRequest)>($r8, $r9);
+        $r15 = interfaceinvoke $r14.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>();
+        $i5 = interfaceinvoke $r15.<org.apache.http.StatusLine: int getStatusCode()>();
+        $r16 = interfaceinvoke $r14.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>();
+        if $r16 == null goto label16;
+
+        interfaceinvoke $r16.<org.apache.http.HttpEntity: void consumeContent()>();
+
+     label16:
+        if $i5 == 200 goto label9;
+
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Bad response: ");
+        $r15 = interfaceinvoke $r14.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>();
+        $i5 = interfaceinvoke $r15.<org.apache.http.StatusLine: int getStatusCode()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+        $r10 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r10);
+
+     label17:
+        goto label9;
+
+     label18:
+        $r17 := @caughtexception;
+
+     label19:
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("ClientProtocolException sending hit; discarding hit...");
+        goto label9;
+
+     label20:
+        $r18 := @caughtexception;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Exception sending hit: ");
+        $r19 = virtualinvoke $r18.<java.lang.Object: java.lang.Class getClass()>();
+        $r10 = virtualinvoke $r19.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r10);
+        $r10 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r10);
+        return $i0;
+
+     label21:
+        return $i0;
+
+     label22:
+        $r20 := @caughtexception;
+        goto label19;
+
+     label23:
+        goto label14;
+
+        catch org.apache.http.client.ClientProtocolException from label12 to label13 with label22;
+        catch java.io.IOException from label12 to label13 with label20;
+        catch org.apache.http.client.ClientProtocolException from label15 to label17 with label18;
+        catch java.io.IOException from label15 to label17 with label20;
+    }
+
+    java.lang.String a(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+    {
+        com.google.b.a.a.be $r0;
+        java.lang.String $r1, $r2, $r3, $r4, $r5, $r6, $r7;
+        java.lang.Object[] $r8;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: java.lang.String;
+        $r5 := @parameter4: java.lang.String;
+        $r6 := @parameter5: java.lang.String;
+        $r8 = newarray (java.lang.Object)[6];
+        $r8[0] = $r1;
+        $r8[1] = $r2;
+        $r8[2] = $r3;
+        $r8[3] = $r4;
+        $r8[4] = $r5;
+        $r8[5] = $r6;
+        $r7 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s/%s (Linux; U; Android %s; %s; %s Build/%s)", $r8);
+        return $r7;
+    }
+
+    java.net.URL a(com.google.b.a.a.ao)
+    {
+        com.google.b.a.a.be $r0;
+        com.google.b.a.a.ao $r1;
+        java.net.URL $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        java.net.MalformedURLException $r5;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: com.google.b.a.a.ao;
+        $r2 = $r0.<com.google.b.a.a.be: java.net.URL e>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.google.b.a.a.be: java.net.URL e>;
+        return $r2;
+
+     label0:
+        $r3 = virtualinvoke $r1.<com.google.b.a.a.ao: java.lang.String d()>();
+        $r2 = new java.net.URL;
+        $r4 = "http:";
+
+     label1:
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label5;
+
+        $r4 = "http://www.google-analytics.com/collect";
+
+     label2:
+        specialinvoke $r2.<java.net.URL: void <init>(java.lang.String)>($r4);
+
+     label3:
+        return $r2;
+
+     label4:
+        $r5 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Error trying to parse the hardcoded host url. This really shouldn\'t happen.");
+        return null;
+
+     label5:
+        $r4 = "https://ssl.google-analytics.com/collect";
+        goto label2;
+
+        catch java.net.MalformedURLException from label1 to label3 with label4;
+    }
+
+    public void a(java.lang.String)
+    {
+        com.google.b.a.a.be $r0;
+        java.lang.String $r1;
+        java.net.URL $r2;
+        java.net.MalformedURLException $r3;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new java.net.URL;
+
+     label0:
+        specialinvoke $r2.<java.net.URL: void <init>(java.lang.String)>($r1);
+
+     label1:
+        $r0.<com.google.b.a.a.be: java.net.URL e> = $r2;
+
+     label2:
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+        $r0.<com.google.b.a.a.be: java.net.URL e> = null;
+        goto label2;
+
+        catch java.net.MalformedURLException from label0 to label1 with label3;
+    }
+
+    public boolean a()
+    {
+        com.google.b.a.a.be $r0;
+        android.content.Context $r1;
+        java.lang.Object $r3;
+        android.net.ConnectivityManager $r4;
+        android.net.NetworkInfo $r5;
+        boolean $z0;
+
+        $r0 := @this: com.google.b.a.a.be;
+        $r1 = $r0.<com.google.b.a.a.be: android.content.Context c>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r4 = (android.net.ConnectivityManager) $r3;
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r5 == null goto label0;
+
+        $z0 = virtualinvoke $r5.<android.net.NetworkInfo: boolean isConnected()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>("...no network connectivity");
+        return 0;
+
+     label1:
+        return 1;
+    }
+}

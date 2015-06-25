@@ -1,0 +1,71 @@
+final class com.facebook.rti.b.d.d extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.b.d.b a;
+
+    void <init>(com.facebook.rti.b.d.b)
+    {
+        com.facebook.rti.b.d.d $r0;
+        com.facebook.rti.b.d.b $r1;
+
+        $r0 := @this: com.facebook.rti.b.d.d;
+        $r1 := @parameter0: com.facebook.rti.b.d.b;
+        $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.b.d.d $r0;
+        com.facebook.rti.b.d.r $r3;
+        java.lang.Object[] $r4;
+        com.facebook.rti.b.d.b $r5;
+        boolean $z0;
+        com.facebook.rti.b.f.c $r6;
+        com.facebook.rti.b.a.a.f $r7;
+        com.facebook.rti.b.a.a.g $r8;
+        com.facebook.rti.b.a.a.h $r9;
+
+        $r0 := @this: com.facebook.rti.b.d.d;
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("MqttConnectionManager", "trySendKeepAliveOrDisconnect", $r4);
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $r3 = staticinvoke <com.facebook.rti.b.d.b: com.facebook.rti.b.d.r b(com.facebook.rti.b.d.b)>($r5);
+        $z0 = virtualinvoke $r3.<com.facebook.rti.b.d.r: boolean d()>();
+        if $z0 == 0 goto label2;
+
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $z0 = virtualinvoke $r5.<com.facebook.rti.b.d.b: boolean h()>();
+        if $z0 == 0 goto label1;
+
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        virtualinvoke $r5.<com.facebook.rti.b.d.b: void c()>();
+
+     label0:
+        return;
+
+     label1:
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $z0 = virtualinvoke $r5.<com.facebook.rti.b.d.b: boolean g()>();
+        if $z0 != 0 goto label0;
+
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        virtualinvoke $r5.<com.facebook.rti.b.d.b: void i()>();
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $r6 = staticinvoke <com.facebook.rti.b.d.b: com.facebook.rti.b.f.c c(com.facebook.rti.b.d.b)>($r5);
+        $z0 = virtualinvoke $r6.<com.facebook.rti.b.f.c: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $r7 = staticinvoke <com.facebook.rti.b.d.b: com.facebook.rti.b.a.a.f a(com.facebook.rti.b.d.b)>($r5);
+        $r8 = <com.facebook.rti.b.a.a.g: com.facebook.rti.b.a.a.g j>;
+        virtualinvoke $r7.<com.facebook.rti.b.a.a.f: void a(com.facebook.rti.b.a.a.g)>($r8);
+        goto label0;
+
+     label2:
+        $r5 = $r0.<com.facebook.rti.b.d.d: com.facebook.rti.b.d.b a>;
+        $r9 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h e>;
+        virtualinvoke $r5.<com.facebook.rti.b.d.b: java.util.concurrent.Future a(com.facebook.rti.b.a.a.h)>($r9);
+        goto label0;
+    }
+}

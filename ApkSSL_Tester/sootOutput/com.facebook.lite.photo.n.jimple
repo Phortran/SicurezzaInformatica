@@ -1,0 +1,1229 @@
+public class com.facebook.lite.photo.n extends java.lang.Object
+{
+    private static final java.lang.String a;
+    private static volatile java.lang.Integer b;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/photo/n";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.photo.n: java.lang.String a> = $r1;
+        return;
+    }
+
+    private void <init>()
+    {
+        com.facebook.lite.photo.n $r0;
+
+        $r0 := @this: com.facebook.lite.photo.n;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private static int a(int)
+    {
+        int $i0;
+
+        $i0 := @parameter0: int;
+        if $i0 != 6 goto label0;
+
+        return 90;
+
+     label0:
+        if $i0 != 3 goto label1;
+
+        return 180;
+
+     label1:
+        if $i0 != 8 goto label2;
+
+        return 270;
+
+     label2:
+        return 0;
+    }
+
+    private static int a(android.content.Context, android.graphics.BitmapFactory$Options, int, int)
+    {
+        android.content.Context $r0;
+        android.graphics.BitmapFactory$Options $r1;
+        int $i0, $i1, $i2, $i3, $i4;
+        android.content.res.Resources $r2;
+        android.util.DisplayMetrics $r3;
+        float $f0, $f1;
+        double $d0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.graphics.BitmapFactory$Options;
+        $i0 := @parameter2: int;
+        $i1 := @parameter3: int;
+        $i3 = $r1.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $i4 = $r1.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $i2 = 1;
+        if $i0 <= 0 goto label0;
+
+        if $i1 > 0 goto label1;
+
+     label0:
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $i0 = $r3.<android.util.DisplayMetrics: int widthPixels>;
+        $i1 = $r3.<android.util.DisplayMetrics: int heightPixels>;
+
+     label1:
+        if $i3 > $i1 goto label2;
+
+        if $i4 <= $i0 goto label3;
+
+     label2:
+        $f0 = (float) $i3;
+        $f1 = (float) $i1;
+        $f1 = $f0 / $f1;
+        $d0 = (double) $f1;
+        $d0 = staticinvoke <java.lang.Math: double ceil(double)>($d0);
+        $i2 = (int) $d0;
+        $f1 = (float) $i4;
+        $f0 = (float) $i0;
+        $f1 = $f1 / $f0;
+        $d0 = (double) $f1;
+        $d0 = staticinvoke <java.lang.Math: double ceil(double)>($d0);
+        $i4 = (int) $d0;
+        if $i2 >= $i4 goto label4;
+
+     label3:
+        return $i2;
+
+     label4:
+        return $i4;
+    }
+
+    private static int a(android.hardware.Camera)
+    {
+        android.hardware.Camera $r0;
+        android.hardware.Camera$Parameters $r1;
+        int $i1, $i2, $i3, $i4;
+        java.util.List $r2;
+        java.lang.Object $r3;
+        android.hardware.Camera$Size $r4;
+        long $l5, $l6;
+
+        $r0 := @parameter0: android.hardware.Camera;
+        $r1 = virtualinvoke $r0.<android.hardware.Camera: android.hardware.Camera$Parameters getParameters()>();
+        $r2 = virtualinvoke $r1.<android.hardware.Camera$Parameters: java.util.List getSupportedPictureSizes()>();
+        if $r2 != null goto label0;
+
+        return -1;
+
+     label0:
+        $i3 = 0;
+        $i1 = 0;
+
+     label1:
+        $i2 = interfaceinvoke $r2.<java.util.List: int size()>();
+        if $i3 >= $i2 goto label3;
+
+        $r3 = interfaceinvoke $r2.<java.util.List: java.lang.Object get(int)>($i3);
+        $r4 = (android.hardware.Camera$Size) $r3;
+        $i2 = $r4.<android.hardware.Camera$Size: int height>;
+        $i4 = $r4.<android.hardware.Camera$Size: int width>;
+        $i4 = $i4 * $i2;
+        if $i4 <= $i1 goto label2;
+
+        $i1 = $i4;
+
+     label2:
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label3:
+        $i4 = $i1 * 4;
+        $l5 = (long) $i4;
+        $l6 = $l5 / 1048576L;
+        $i2 = (int) $l6;
+        return $i2;
+    }
+
+    public static android.graphics.Bitmap a(android.content.Context, android.content.ContentResolver, android.net.Uri, int, int)
+    {
+        android.content.Context $r0;
+        android.content.ContentResolver $r1;
+        android.net.Uri $r2;
+        int $i0, $i1;
+        java.io.InputStream $r3;
+        android.graphics.BitmapFactory$Options $r4;
+        android.graphics.Bitmap$Config $r5;
+        android.graphics.Bitmap $r6;
+        java.lang.OutOfMemoryError $r7;
+        java.lang.String $r8;
+        java.lang.Throwable $r10;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.content.ContentResolver;
+        $r2 := @parameter2: android.net.Uri;
+        $i0 := @parameter3: int;
+        $i1 := @parameter4: int;
+        $r3 = staticinvoke <com.facebook.lite.photo.n: java.io.InputStream a(android.content.ContentResolver,android.net.Uri)>($r1, $r2);
+        if $r3 != null goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $r4 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r4.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r5 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
+        $r4.<android.graphics.BitmapFactory$Options: android.graphics.Bitmap$Config inPreferredConfig> = $r5;
+        $r4.<android.graphics.BitmapFactory$Options: boolean inDither> = 1;
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r3, null, $r4);
+        staticinvoke <com.facebook.lite.photo.n: void a(java.io.InputStream)>($r3);
+        $r3 = staticinvoke <com.facebook.lite.photo.n: java.io.InputStream a(android.content.ContentResolver,android.net.Uri)>($r1, $r2);
+        if $r3 == null goto label0;
+
+        $i1 = staticinvoke <com.facebook.lite.photo.n: int a(android.content.Context,android.graphics.BitmapFactory$Options,int,int)>($r0, $r4, $i0, $i1);
+        $r4.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i1;
+        $r4.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 0;
+
+     label2:
+        $r6 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r3, null, $r4);
+
+     label3:
+        staticinvoke <com.facebook.lite.photo.n: void a(java.io.InputStream)>($r3);
+        return $r6;
+
+     label4:
+        $r7 := @caughtexception;
+
+     label5:
+        $r8 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r8, "photo/out of memory while decoding bitmap from input stream.", $r7);
+
+     label6:
+        staticinvoke <com.facebook.lite.photo.n: void a(java.io.InputStream)>($r3);
+        return null;
+
+     label7:
+        $r10 := @caughtexception;
+        staticinvoke <com.facebook.lite.photo.n: void a(java.io.InputStream)>($r3);
+        throw $r10;
+
+        catch java.lang.OutOfMemoryError from label2 to label3 with label4;
+        catch java.lang.Throwable from label2 to label3 with label7;
+        catch java.lang.Throwable from label5 to label6 with label7;
+    }
+
+    public static android.graphics.Bitmap a(android.content.Context, java.lang.String, int, int)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r6;
+        int $i0, $i1;
+        android.graphics.Bitmap$Config $r2;
+        android.graphics.BitmapFactory$Options $r3;
+        android.graphics.Bitmap $r4;
+        java.lang.OutOfMemoryError $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $i1 := @parameter3: int;
+        $r3 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r3.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r3.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r2 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
+        $r3.<android.graphics.BitmapFactory$Options: android.graphics.Bitmap$Config inPreferredConfig> = $r2;
+        $r3.<android.graphics.BitmapFactory$Options: boolean inDither> = 1;
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>($r1, $r3);
+        $i1 = staticinvoke <com.facebook.lite.photo.n: int a(android.content.Context,android.graphics.BitmapFactory$Options,int,int)>($r0, $r3, $i0, $i1);
+        $r3.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i1;
+        $r3.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 0;
+
+     label0:
+        $r4 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>($r1, $r3);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r6 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, "photo/out of memory while decoding bitmap from file.", $r5);
+        return null;
+
+        catch java.lang.OutOfMemoryError from label0 to label1 with label2;
+    }
+
+    public static android.graphics.Bitmap a(android.content.Context, byte[], int, int, int)
+    {
+        android.content.Context $r0;
+        byte[] $r1;
+        int $i0, $i1, $i2, i3;
+        android.graphics.Bitmap$Config $r2;
+        android.graphics.BitmapFactory$Options $r3;
+        android.graphics.Bitmap $r4;
+        java.lang.OutOfMemoryError $r5;
+        java.lang.String $r6;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: byte[];
+        $i0 := @parameter2: int;
+        $i1 := @parameter3: int;
+        $i2 := @parameter4: int;
+        $r3 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r3.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r3.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r2 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
+        $r3.<android.graphics.BitmapFactory$Options: android.graphics.Bitmap$Config inPreferredConfig> = $r2;
+        $r3.<android.graphics.BitmapFactory$Options: boolean inDither> = 1;
+        i3 = (int) 0;
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeByteArray(byte[],int,int,android.graphics.BitmapFactory$Options)>($r1, i3, $i0, $r3);
+        $i2 = staticinvoke <com.facebook.lite.photo.n: int a(android.content.Context,android.graphics.BitmapFactory$Options,int,int)>($r0, $r3, $i1, $i2);
+        $r3.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i2;
+        $r3.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 0;
+
+     label0:
+        $r4 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeByteArray(byte[],int,int,android.graphics.BitmapFactory$Options)>($r1, 0, $i0, $r3);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r6 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, "photo/out of memory while decoding bitmap from byte array.", $r5);
+        return null;
+
+        catch java.lang.OutOfMemoryError from label0 to label1 with label2;
+    }
+
+    public static android.graphics.Bitmap a(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0, $r1;
+        int $i0, $i2, $i3;
+        java.lang.IllegalArgumentException $r2;
+        java.lang.OutOfMemoryError $r3;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i2 = $i0 / 2048;
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i0 = $i0 / 2048;
+        if $i2 > 1 goto label0;
+
+        if $i0 <= 1 goto label8;
+
+     label0:
+        if $i2 <= $i0 goto label5;
+
+     label1:
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i0 = $i0 / $i2;
+        $i3 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i3 = $i3 / $i2;
+
+     label2:
+        $r1 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createScaledBitmap(android.graphics.Bitmap,int,int,boolean)>($r0, $i3, $i0, 0);
+
+     label3:
+        if $r1 == $r0 goto label4;
+
+        virtualinvoke $r0.<android.graphics.Bitmap: void recycle()>();
+
+     label4:
+        return $r1;
+
+     label5:
+        $i2 = $i0;
+        goto label1;
+
+     label6:
+        $r2 := @caughtexception;
+        $r1 = $r0;
+        goto label3;
+
+     label7:
+        $r3 := @caughtexception;
+        $r1 = $r0;
+        goto label3;
+
+     label8:
+        $i2 = 1;
+        goto label1;
+
+        catch java.lang.IllegalArgumentException from label2 to label3 with label6;
+        catch java.lang.OutOfMemoryError from label2 to label3 with label7;
+    }
+
+    public static android.graphics.Bitmap a(android.graphics.Bitmap, int)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i1;
+        android.graphics.Matrix $r1;
+        float $f0;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 := @parameter1: int;
+        if $r0 == null goto label0;
+
+        $i1 = $i0 % 360;
+        if $i1 != 0 goto label1;
+
+     label0:
+        return $r0;
+
+     label1:
+        $r1 = new android.graphics.Matrix;
+        specialinvoke $r1.<android.graphics.Matrix: void <init>()>();
+        $f0 = (float) $i0;
+        virtualinvoke $r1.<android.graphics.Matrix: boolean postRotate(float)>($f0);
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $r0 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r0, 0, 0, $i1, $i0, $r1, 1);
+        return $r0;
+    }
+
+    public static android.graphics.Bitmap a(java.lang.String, android.graphics.Bitmap, com.facebook.b.k, int)
+    {
+        java.lang.String $r0, $r6;
+        android.graphics.Bitmap $r1, $r4;
+        com.facebook.b.k $r2;
+        int $i0, $i1;
+        android.media.ExifInterface $r3;
+        long $l3;
+        java.io.IOException $r5;
+        java.lang.OutOfMemoryError $r7;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: android.graphics.Bitmap;
+        $r2 := @parameter2: com.facebook.b.k;
+        $i0 := @parameter3: int;
+
+     label0:
+        $r3 = new android.media.ExifInterface;
+
+     label1:
+        specialinvoke $r3.<android.media.ExifInterface: void <init>(java.lang.String)>($r0);
+        if $r2 == null goto label2;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("exif_availability", 1);
+
+     label2:
+        $i1 = virtualinvoke $r3.<android.media.ExifInterface: int getAttributeInt(java.lang.String,int)>("Orientation", 1);
+        $i1 = staticinvoke <com.facebook.lite.photo.n: int a(int)>($i1);
+        if $r2 == null goto label3;
+
+        $l3 = (long) $i1;
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("rotation_degrees", $l3);
+
+     label3:
+        $i1 = $i1 + $i0;
+        $r4 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(android.graphics.Bitmap,int)>($r1, $i1);
+        if $r1 == $r4 goto label4;
+
+        virtualinvoke $r1.<android.graphics.Bitmap: void recycle()>();
+
+     label4:
+        if $r2 == null goto label5;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("out_of_memory", 0);
+
+     label5:
+        return $r4;
+
+     label6:
+        $r5 := @caughtexception;
+        if $r2 == null goto label7;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("exif_availability", 0);
+
+     label7:
+        $r0 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r0, "photoUtil/unable to get exif to rotate the photo.", $r5);
+        return $r1;
+
+     label8:
+        $r7 := @caughtexception;
+        if $r2 == null goto label9;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("out_of_memory", 1);
+
+     label9:
+        $r6 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, "photoUtil/out of memory while rotating the photo.", $r7);
+        return $r1;
+
+        catch java.io.IOException from label1 to label5 with label6;
+        catch java.lang.OutOfMemoryError from label0 to label5 with label8;
+    }
+
+    public static android.graphics.Bitmap a(java.lang.String, com.facebook.b.k, android.content.Context, int)
+    {
+        java.lang.String $r0;
+        com.facebook.b.k $r1;
+        android.content.Context $r2;
+        int $i0, $i1, $i2;
+        android.graphics.Bitmap $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: com.facebook.b.k;
+        $r2 := @parameter2: android.content.Context;
+        $i0 := @parameter3: int;
+        $i1 = staticinvoke <com.facebook.lite.b.e: int d(android.content.Context)>($r2);
+        $i2 = staticinvoke <com.facebook.lite.b.e: int b(android.content.Context)>($r2);
+        $r3 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(android.content.Context,java.lang.String,int,int)>($r2, $r0, $i1, $i2);
+        if $r3 != null goto label0;
+
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("decoding_succeeded", 0);
+        return null;
+
+     label0:
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("decoding_succeeded", 1);
+        $r3 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(java.lang.String,android.graphics.Bitmap,com.facebook.b.k,int)>($r0, $r3, $r1, $i0);
+        return $r3;
+    }
+
+    public static android.net.Uri a(boolean)
+    {
+        boolean $z0;
+        java.lang.String $r0;
+        android.net.Uri $r1;
+        java.lang.StringBuilder $r2;
+        java.util.UUID $r3;
+
+        $z0 := @parameter0: boolean;
+        if $z0 == 0 goto label0;
+
+        $r1 = staticinvoke <com.facebook.lite.photo.n: android.net.Uri c()>();
+        return $r1;
+
+     label0:
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("content://com.facebook.lite.media/");
+        $r3 = staticinvoke <com.facebook.lite.b.b: java.util.UUID f()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".jpg");
+        $r0 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r1 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r0);
+        return $r1;
+    }
+
+    private static java.io.InputStream a(android.content.ContentResolver, android.net.Uri)
+    {
+        android.content.ContentResolver $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2;
+        java.io.InputStream $r4;
+        java.io.FileNotFoundException $r5;
+
+        $r0 := @parameter0: android.content.ContentResolver;
+        $r1 := @parameter1: android.net.Uri;
+
+     label0:
+        $r4 = virtualinvoke $r0.<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)>($r1);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r2 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "photo/fail to open photo input stream.", $r5);
+        return null;
+
+        catch java.io.FileNotFoundException from label0 to label1 with label2;
+    }
+
+    public static java.lang.String a(android.content.Context, android.net.Uri)
+    {
+        android.content.Context $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2, $r3, $r5;
+        java.lang.String[] $r4, r10;
+        android.content.ContentResolver $r6;
+        android.database.Cursor $r8;
+        int $i1;
+        boolean $z0;
+        java.lang.Throwable $r9;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.Uri;
+        $r5 = null;
+        if $r1 != null goto label1;
+
+        $r2 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r2, "photo/photo uri null.");
+
+     label0:
+        return $r5;
+
+     label1:
+        $r4 = newarray (java.lang.String)[1];
+        $r4[0] = "_data";
+        $r6 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        r10 = (java.lang.String[]) null;
+        $r8 = virtualinvoke $r6.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r1, $r4, null, r10, null);
+        if $r8 != null goto label4;
+
+     label2:
+        $r3 = virtualinvoke $r1.<android.net.Uri: java.lang.String getPath()>();
+
+     label3:
+        $r5 = $r3;
+        if $r8 == null goto label0;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+        return $r3;
+
+     label4:
+        $i1 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndexOrThrow(java.lang.String)>("_data");
+        if $i1 < 0 goto label5;
+
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToNext()>();
+        if $z0 == 0 goto label5;
+
+        $r5 = interfaceinvoke $r8.<android.database.Cursor: java.lang.String getString(int)>($i1);
+
+     label5:
+        if $r8 == null goto label0;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+        return $r5;
+
+     label6:
+        $r9 := @caughtexception;
+        if $r8 == null goto label7;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label7:
+        throw $r9;
+
+        catch java.lang.Throwable from label2 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    private static java.lang.String a(java.lang.String, long, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        long $l0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $l0 := @parameter1: long;
+        $r1 := @parameter2: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(int)>(256);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+
+    private static void a(android.content.Context, int)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        staticinvoke <com.facebook.lite.b.e: void g(android.content.Context,int)>($r0, $i0);
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        java.lang.String[] $r3, $r6;
+        android.content.ContentResolver $r4;
+        android.net.Uri $r5;
+        android.database.Cursor $r7;
+        int $i3;
+        long $l4;
+        java.lang.Throwable $r8;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = staticinvoke <com.facebook.lite.b.g: boolean a(java.lang.CharSequence)>($r1);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = newarray (java.lang.String)[3];
+        $r3[0] = "_id";
+        $r3[1] = "_data";
+        $r3[2] = "title";
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r5 = <android.provider.MediaStore$Images$Media: android.net.Uri EXTERNAL_CONTENT_URI>;
+        $r6 = newarray (java.lang.String)[1];
+        $r6[0] = $r1;
+        $r7 = virtualinvoke $r4.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r5, $r3, "title = ?", $r6, null);
+        if $r7 != null goto label2;
+
+        if $r7 == null goto label0;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label2:
+        interfaceinvoke $r7.<android.database.Cursor: boolean moveToFirst()>();
+
+     label3:
+        $z0 = interfaceinvoke $r7.<android.database.Cursor: boolean isAfterLast()>();
+        if $z0 != 0 goto label7;
+
+        $i3 = interfaceinvoke $r7.<android.database.Cursor: int getColumnIndex(java.lang.String)>("_id");
+        $i3 = interfaceinvoke $r7.<android.database.Cursor: int getInt(int)>($i3);
+        $r5 = <android.provider.MediaStore$Images$Media: android.net.Uri EXTERNAL_CONTENT_URI>;
+        $l4 = (long) $i3;
+        $r5 = staticinvoke <android.content.ContentUris: android.net.Uri withAppendedId(android.net.Uri,long)>($r5, $l4);
+        $r4 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        virtualinvoke $r4.<android.content.ContentResolver: int delete(android.net.Uri,java.lang.String,java.lang.String[])>($r5, null, null);
+        interfaceinvoke $r7.<android.database.Cursor: boolean moveToNext()>();
+
+     label4:
+        goto label3;
+
+     label5:
+        $r8 := @caughtexception;
+        if $r7 == null goto label6;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+
+     label6:
+        throw $r8;
+
+     label7:
+        if $r7 == null goto label0;
+
+        interfaceinvoke $r7.<android.database.Cursor: void close()>();
+        goto label0;
+
+        catch java.lang.Throwable from label2 to label4 with label5;
+    }
+
+    public static void a(com.b.a.a.h, com.facebook.lite.g.a, com.b.a.a.a.c, android.content.Context)
+    {
+        com.b.a.a.h $r0;
+        com.facebook.lite.g.a $r1;
+        com.b.a.a.a.c $r2;
+        android.content.Context $r3;
+        java.lang.String $r4, $r8;
+        int $i0, $i3;
+        com.facebook.b.k $r5;
+        com.b.a.a.k.h $r6;
+        long $l1;
+        com.b.a.a.h.d $r7;
+        com.b.a.a.a.b $r9;
+        java.lang.Object $r10;
+        com.b.a.a.g $r11;
+        java.lang.StringBuilder $r12;
+
+        $r0 := @parameter0: com.b.a.a.h;
+        $r1 := @parameter1: com.facebook.lite.g.a;
+        $r2 := @parameter2: com.b.a.a.a.c;
+        $r3 := @parameter3: android.content.Context;
+        $r5 = new com.facebook.b.k;
+        specialinvoke $r5.<com.facebook.b.k: void <init>(java.lang.String)>("ema_photo_perf");
+        $i0 = $r0.<com.b.a.a.h: int h>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("width", $l1);
+        $i0 = $r0.<com.b.a.a.h: int a>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("height", $l1);
+        $i0 = $r0.<com.b.a.a.h: int f>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("transparency", $l1);
+        $i0 = $r0.<com.b.a.a.h: int d>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("requestType", $l1);
+        $i0 = $r0.<com.b.a.a.h: int e>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("totalLength", $l1);
+        $i0 = $r0.<com.b.a.a.h: int g>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("userWaitingTime", $l1);
+        $i0 = $r0.<com.b.a.a.h: int c>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("pendingRequestTIme", $l1);
+        $i0 = $r0.<com.b.a.a.h: int b>;
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("imageId", $l1);
+        $r7 = virtualinvoke $r1.<com.facebook.lite.g.a: com.b.a.a.h.d W()>();
+        if $r7 == null goto label0;
+
+        $r7 = virtualinvoke $r1.<com.facebook.lite.g.a: com.b.a.a.h.d W()>();
+        $r8 = interfaceinvoke $r7.<com.b.a.a.h.d: java.lang.String g()>();
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("locale", $r8);
+        $r7 = virtualinvoke $r1.<com.facebook.lite.g.a: com.b.a.a.h.d W()>();
+        $r4 = interfaceinvoke $r7.<com.b.a.a.h.d: java.lang.String d()>();
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("country", $r4);
+
+     label0:
+        if $r2 == null goto label1;
+
+        $r9 = virtualinvoke $r2.<com.b.a.a.a.c: com.b.a.a.a.b a()>();
+        $r4 = virtualinvoke $r9.<com.b.a.a.a.b: java.lang.String toString()>();
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("currentConnectionQuality", $r4);
+        $i0 = virtualinvoke $r2.<com.b.a.a.a.c: int b()>();
+        $l1 = (long) $i0;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("currentConnectionBandwidth", $l1);
+
+     label1:
+        $r6 = virtualinvoke $r0.<com.b.a.a.h: com.b.a.a.k.h a()>();
+        if $r6 == null goto label4;
+
+        $i0 = 0;
+
+     label2:
+        $i3 = virtualinvoke $r6.<com.b.a.a.k.h: int c()>();
+        if $i0 >= $i3 goto label4;
+
+        $r10 = virtualinvoke $r6.<com.b.a.a.k.h: java.lang.Object b(int)>($i0);
+        $r11 = (com.b.a.a.g) $r10;
+        if $r11 == null goto label3;
+
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("lengthPart");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i3 = $r11.<com.b.a.a.g: int a>;
+        $l1 = (long) $i3;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>($r8, $l1);
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("waitingTimePart");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i3 = $r11.<com.b.a.a.g: int e>;
+        $l1 = (long) $i3;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>($r8, $l1);
+        $r12 = new java.lang.StringBuilder;
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("pendingRequestTime");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i3 = $r11.<com.b.a.a.g: int b>;
+        $l1 = (long) $i3;
+        virtualinvoke $r5.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>($r8, $l1);
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label4:
+        virtualinvoke $r5.<com.facebook.b.k: java.lang.String toString()>();
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r5, $r3);
+        return;
+    }
+
+    private static void a(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.IOException $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+
+     label0:
+        virtualinvoke $r0.<java.io.InputStream: void close()>();
+
+     label1:
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        $r2 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "photo/fail to close photo input stream.", $r1);
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+
+    public static boolean a()
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+
+        $r0 = "mounted";
+        $r1 = staticinvoke <android.os.Environment: java.lang.String getExternalStorageState()>();
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        return $z0;
+    }
+
+    public static boolean a(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0;
+        byte $b1;
+        java.io.File $r1;
+        java.lang.String $r2;
+        long $l2, $l3;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 8 goto label1;
+
+        $r2 = <android.os.Environment: java.lang.String DIRECTORY_PICTURES>;
+        $r1 = staticinvoke <android.os.Environment: java.io.File getExternalStoragePublicDirectory(java.lang.String)>($r2);
+
+     label0:
+        $l2 = staticinvoke <com.facebook.lite.b.f: long a(java.io.File)>($r1);
+        $i0 = staticinvoke <com.facebook.lite.photo.n: int d(android.content.Context)>($r0);
+        if $i0 == -1 goto label2;
+
+        $l3 = (long) $i0;
+        $b1 = $l2 cmp $l3;
+        if $b1 >= 0 goto label2;
+
+        return 0;
+
+     label1:
+        $r1 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+        goto label0;
+
+     label2:
+        return 1;
+    }
+
+    public static byte[] a(android.content.Context, int, java.lang.String, com.facebook.b.k, int)
+    {
+        android.content.Context $r0;
+        int $i0, $i1;
+        java.lang.String $r1, $r8;
+        com.facebook.b.k $r2;
+        android.graphics.Bitmap $r3;
+        long $l2;
+        java.io.ByteArrayOutputStream $r4;
+        android.graphics.Bitmap$CompressFormat $r5;
+        byte[] $r6;
+        java.io.IOException $r7;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        $r1 := @parameter2: java.lang.String;
+        $r2 := @parameter3: com.facebook.b.k;
+        $i1 := @parameter4: int;
+        $r3 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(java.lang.String,com.facebook.b.k,android.content.Context,int)>($r1, $r2, $r0, $i1);
+        $l2 = (long) $i0;
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("photo_quality", $l2);
+        $r4 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>();
+        if $r3 != null goto label0;
+
+        return null;
+
+     label0:
+        $r5 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat JPEG>;
+        virtualinvoke $r3.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r5, $i0, $r4);
+        virtualinvoke $r3.<android.graphics.Bitmap: void recycle()>();
+        $r6 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+
+     label1:
+        virtualinvoke $r4.<java.io.ByteArrayOutputStream: void close()>();
+
+     label2:
+        return $r6;
+
+     label3:
+        $r7 := @caughtexception;
+        $r8 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r8, "gallery/unable to close photo byte stream.", $r7);
+        return $r6;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+
+    private static int b()
+    {
+        int $i0, $i1, $i3, $i4;
+        android.hardware.Camera $r0, $r4;
+        java.lang.String $r1, $r2;
+        java.lang.RuntimeException $r3, $r5, $r7;
+        java.lang.Throwable $r6, $r8, $r9;
+
+        $i0 = -1;
+        $r0 = null;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 >= 9 goto label8;
+
+     label0:
+        $r0 = staticinvoke <android.hardware.Camera: android.hardware.Camera open()>();
+        $i1 = staticinvoke <com.facebook.lite.photo.n: int a(android.hardware.Camera)>($r0);
+
+     label1:
+        $i0 = $i1;
+        if $r0 == null goto label2;
+
+        virtualinvoke $r0.<android.hardware.Camera: void release()>();
+
+     label2:
+        return $i0;
+
+     label3:
+        $r5 := @caughtexception;
+
+     label4:
+        $r2 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "photo/camera failed to open.", $r5);
+
+     label5:
+        if $r0 == null goto label2;
+
+        virtualinvoke $r0.<android.hardware.Camera: void release()>();
+        return -1;
+
+     label6:
+        $r6 := @caughtexception;
+        if $r0 == null goto label7;
+
+        virtualinvoke $r0.<android.hardware.Camera: void release()>();
+
+     label7:
+        throw $r6;
+
+     label8:
+        $i1 = staticinvoke <android.hardware.Camera: int getNumberOfCameras()>();
+        $i3 = 0;
+        $i0 = -1;
+
+     label9:
+        if $i3 >= $i1 goto label22;
+
+     label10:
+        $r4 = staticinvoke <android.hardware.Camera: android.hardware.Camera open(int)>($i3);
+
+     label11:
+        $i4 = staticinvoke <com.facebook.lite.photo.n: int a(android.hardware.Camera)>($r4);
+        $i4 = staticinvoke <java.lang.Math: int max(int,int)>($i0, $i4);
+
+     label12:
+        $i0 = $i4;
+        if $r4 == null goto label13;
+
+        virtualinvoke $r4.<android.hardware.Camera: void release()>();
+
+     label13:
+        $i3 = $i3 + 1;
+        $r0 = $r4;
+        goto label9;
+
+     label14:
+        $r7 := @caughtexception;
+
+     label15:
+        $r1 = <com.facebook.lite.photo.n: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, "photo/camera failed to open.", $r7);
+
+     label16:
+        if $r4 == null goto label13;
+
+        virtualinvoke $r4.<android.hardware.Camera: void release()>();
+        goto label13;
+
+     label17:
+        $r8 := @caughtexception;
+        $r0 = $r4;
+        $r9 = $r8;
+
+     label18:
+        if $r0 == null goto label19;
+
+        virtualinvoke $r0.<android.hardware.Camera: void release()>();
+
+     label19:
+        throw $r9;
+
+     label20:
+        $r9 := @caughtexception;
+        goto label18;
+
+     label21:
+        $r3 := @caughtexception;
+        $r4 = $r0;
+        $r7 = $r3;
+        goto label15;
+
+     label22:
+        return $i0;
+
+        catch java.lang.RuntimeException from label0 to label1 with label3;
+        catch java.lang.Throwable from label0 to label1 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.RuntimeException from label10 to label11 with label21;
+        catch java.lang.Throwable from label10 to label11 with label20;
+        catch java.lang.RuntimeException from label11 to label12 with label14;
+        catch java.lang.Throwable from label11 to label12 with label17;
+        catch java.lang.Throwable from label15 to label16 with label17;
+    }
+
+    public static boolean b(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.io.File $r1;
+        int $i0;
+        byte $b1;
+        long $l2, $l3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = virtualinvoke $r0.<android.content.Context: java.io.File getFilesDir()>();
+        $l2 = staticinvoke <com.facebook.lite.b.f: long a(java.io.File)>($r1);
+        $i0 = staticinvoke <com.facebook.lite.photo.n: int d(android.content.Context)>($r0);
+        if $i0 == -1 goto label0;
+
+        $l3 = (long) $i0;
+        $b1 = $l2 cmp $l3;
+        if $b1 >= 0 goto label0;
+
+        return 0;
+
+     label0:
+        return 1;
+    }
+
+    private static android.net.Uri c()
+    {
+        int $i0;
+        java.lang.String $r0, $r4;
+        java.io.File $r1, $r2;
+        long $l2, $l3;
+        boolean $z0;
+        java.util.Random $r3;
+        java.lang.StringBuilder $r5;
+        android.net.Uri $r6;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 8 goto label3;
+
+        $r2 = new java.io.File;
+        $r0 = <android.os.Environment: java.lang.String DIRECTORY_PICTURES>;
+        $r1 = staticinvoke <android.os.Environment: java.io.File getExternalStoragePublicDirectory(java.lang.String)>($r0);
+        specialinvoke $r2.<java.io.File: void <init>(java.io.File,java.lang.String)>($r1, "facebook");
+
+     label0:
+        $z0 = virtualinvoke $r2.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r2.<java.io.File: boolean mkdirs()>();
+
+     label1:
+        $r3 = new java.util.Random;
+        specialinvoke $r3.<java.util.Random: void <init>()>();
+
+     label2:
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l3 = $l3 * 10000L;
+        $i0 = virtualinvoke $r3.<java.util.Random: int nextInt(int)>(9999);
+        $l2 = (long) $i0;
+        $l3 = $l3 + $l2;
+        $r4 = staticinvoke <com.facebook.lite.photo.n: java.lang.String a(java.lang.String,long,java.lang.String)>("FB_IMG", $l3, ".jpg");
+        $r1 = new java.io.File;
+        specialinvoke $r1.<java.io.File: void <init>(java.io.File,java.lang.String)>($r2, $r4);
+        $z0 = virtualinvoke $r1.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label2;
+
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("photo/next file to use for photo: ");
+        $r6 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r1);
+        $r4 = virtualinvoke $r6.<android.net.Uri: java.lang.String getPath()>();
+        virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r6 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r1);
+        return $r6;
+
+     label3:
+        $r2 = new java.io.File;
+        $r1 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+        specialinvoke $r2.<java.io.File: void <init>(java.io.File,java.lang.String)>($r1, "facebook");
+        goto label0;
+    }
+
+    public static boolean c(android.content.Context)
+    {
+        android.content.Context $r0;
+        android.content.pm.PackageManager $r1;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = virtualinvoke $r0.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 7 goto label0;
+
+        $z0 = virtualinvoke $r1.<android.content.pm.PackageManager: boolean hasSystemFeature(java.lang.String)>("android.hardware.camera");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r1.<android.content.pm.PackageManager: boolean hasSystemFeature(java.lang.String)>("android.hardware.camera.front");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    private static int d(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.Integer $r1;
+        int $i0;
+        java.lang.StringBuilder $r3;
+        java.lang.Throwable $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        entermonitor class "com/facebook/lite/photo/n";
+
+     label0:
+        $r1 = <com.facebook.lite.photo.n: java.lang.Integer b>;
+        if $r1 != null goto label1;
+
+        $i0 = staticinvoke <com.facebook.lite.photo.n: int e(android.content.Context)>($r0);
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        <com.facebook.lite.photo.n: java.lang.Integer b> = $r1;
+
+     label1:
+        exitmonitor class "com/facebook/lite/photo/n";
+
+     label2:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("photo/loaded largest supported picture size from shared prefs: ");
+        $r1 = <com.facebook.lite.photo.n: java.lang.Integer b>;
+        virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r1 = <com.facebook.lite.photo.n: java.lang.Integer b>;
+        $i0 = virtualinvoke $r1.<java.lang.Integer: int intValue()>();
+        return $i0;
+
+     label3:
+        $r5 := @caughtexception;
+
+     label4:
+        exitmonitor class "com/facebook/lite/photo/n";
+
+     label5:
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+
+    private static int e(android.content.Context)
+    {
+        android.content.Context $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 = staticinvoke <com.facebook.lite.b.e: int p(android.content.Context)>($r0);
+        if $i0 != -2147483648 goto label0;
+
+        $i0 = staticinvoke <com.facebook.lite.photo.n: int b()>();
+        staticinvoke <com.facebook.lite.photo.n: void a(android.content.Context,int)>($r0, $i0);
+
+     label0:
+        return $i0;
+    }
+}

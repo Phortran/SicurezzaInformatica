@@ -1,0 +1,124 @@
+public class it.h3g.areaclienti3.NetworkChangeReceiver extends android.content.BroadcastReceiver
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.NetworkChangeReceiver $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.NetworkChangeReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    private android.os.Bundle a(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.NetworkChangeReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3, $r8;
+        android.os.Bundle $r4, $r5;
+        boolean $z2;
+        java.lang.Object $r6;
+        android.net.NetworkInfo $r7;
+        int $i0;
+        android.net.ConnectivityManager $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.NetworkChangeReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r4 = virtualinvoke $r2.<android.content.Intent: android.os.Bundle getExtras()>();
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switchWifi", 0);
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switch3G", 0);
+        if $r4 == null goto label0;
+
+        $z2 = virtualinvoke $r4.<android.os.Bundle: boolean containsKey(java.lang.String)>("networkInfo");
+        if $z2 == 0 goto label0;
+
+        $z2 = virtualinvoke $r4.<android.os.Bundle: boolean containsKey(java.lang.String)>("reason");
+        if $z2 == 0 goto label0;
+
+        $r6 = virtualinvoke $r4.<android.os.Bundle: java.lang.Object get(java.lang.String)>("networkInfo");
+        $r7 = (android.net.NetworkInfo) $r6;
+        if $r7 == null goto label1;
+
+        $r6 = virtualinvoke $r4.<android.os.Bundle: java.lang.Object get(java.lang.String)>("networkInfo");
+        $r7 = (android.net.NetworkInfo) $r6;
+        $i0 = virtualinvoke $r7.<android.net.NetworkInfo: int getType()>();
+        if $i0 != 0 goto label1;
+
+        $r3 = virtualinvoke $r4.<android.os.Bundle: java.lang.String getString(java.lang.String)>("reason");
+        if $r3 == null goto label1;
+
+        $r8 = virtualinvoke $r4.<android.os.Bundle: java.lang.String getString(java.lang.String)>("reason");
+        $z2 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("dataEnabled");
+        if $z2 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("NetworkChangeReceiver", "3G ATTIVO");
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switch3G", 1);
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switchWifi", 0);
+
+     label0:
+        return $r5;
+
+     label1:
+        $r6 = virtualinvoke $r4.<android.os.Bundle: java.lang.Object get(java.lang.String)>("networkInfo");
+        $r7 = (android.net.NetworkInfo) $r6;
+        if $r7 == null goto label0;
+
+        $r6 = virtualinvoke $r4.<android.os.Bundle: java.lang.Object get(java.lang.String)>("networkInfo");
+        $r7 = (android.net.NetworkInfo) $r6;
+        $i0 = virtualinvoke $r7.<android.net.NetworkInfo: int getType()>();
+        if $i0 != 0 goto label0;
+
+        $r8 = virtualinvoke $r4.<android.os.Bundle: java.lang.String getString(java.lang.String)>("reason");
+        if $r8 == null goto label0;
+
+        $r8 = virtualinvoke $r4.<android.os.Bundle: java.lang.String getString(java.lang.String)>("reason");
+        $z2 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("dataDisabled");
+        if $z2 == 0 goto label0;
+
+        $r6 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r9 = (android.net.ConnectivityManager) $r6;
+        $r7 = virtualinvoke $r9.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r7 == null goto label0;
+
+        $z2 = virtualinvoke $r7.<android.net.NetworkInfo: boolean isConnectedOrConnecting()>();
+        if $z2 == 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("NetworkChangeReceiver", "WI-FI ATTIVO");
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switchWifi", 1);
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switch3G", 0);
+        return $r5;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.NetworkChangeReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2, $r3;
+        android.os.Bundle $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.NetworkChangeReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = new android.content.Intent;
+        specialinvoke $r3.<android.content.Intent: void <init>()>();
+        virtualinvoke $r3.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("BROADCAST_RECEIVED_ACTION");
+        $r5 = specialinvoke $r0.<it.h3g.areaclienti3.NetworkChangeReceiver: android.os.Bundle a(android.content.Context,android.content.Intent)>($r1, $r2);
+        $z0 = virtualinvoke $r5.<android.os.Bundle: boolean getBoolean(java.lang.String)>("switchWifi");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r5.<android.os.Bundle: boolean getBoolean(java.lang.String)>("switch3G");
+        if $z0 == 0 goto label1;
+
+     label0:
+        virtualinvoke $r3.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Bundle)>("network", $r5);
+        virtualinvoke $r1.<android.content.Context: void sendBroadcast(android.content.Intent)>($r3);
+
+     label1:
+        return;
+    }
+}

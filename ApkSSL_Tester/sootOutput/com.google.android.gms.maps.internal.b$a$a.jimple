@@ -1,0 +1,88 @@
+class com.google.android.gms.maps.internal.b$a$a extends java.lang.Object implements com.google.android.gms.maps.internal.b
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.maps.internal.b$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.b$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.maps.internal.b$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a()
+    {
+        com.google.android.gms.maps.internal.b$a$a $r0;
+        android.os.Parcel $r2, $r3;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.b$a$a;
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r2.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.ICancelableCallback");
+        $r4 = $r0.<com.google.android.gms.maps.internal.b$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r2, $r3, 0);
+        virtualinvoke $r3.<android.os.Parcel: void readException()>();
+
+     label1:
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.maps.internal.b$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.b$a$a;
+        $r1 = $r0.<com.google.android.gms.maps.internal.b$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+
+    public void b()
+    {
+        com.google.android.gms.maps.internal.b$a$a $r0;
+        android.os.Parcel $r2, $r3;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.b$a$a;
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r2.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.ICancelableCallback");
+        $r4 = $r0.<com.google.android.gms.maps.internal.b$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r2, $r3, 0);
+        virtualinvoke $r3.<android.os.Parcel: void readException()>();
+
+     label1:
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

@@ -1,0 +1,61 @@
+final class com.facebook.rti.b.e.i extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.b.e.h a;
+
+    void <init>(com.facebook.rti.b.e.h)
+    {
+        com.facebook.rti.b.e.i $r0;
+        com.facebook.rti.b.e.h $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.i;
+        $r1 := @parameter0: com.facebook.rti.b.e.h;
+        $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.b.e.i $r0;
+        com.facebook.rti.b.e.h $r1;
+        com.facebook.rti.b.e.u $r3;
+        java.lang.Throwable $r4;
+        java.lang.Object[] $r6;
+        boolean $z0;
+        com.facebook.rti.b.a.a.h $r7;
+        com.facebook.rti.b.e.s $r8;
+
+        $r0 := @this: com.facebook.rti.b.e.i;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a>;
+        staticinvoke <com.facebook.rti.b.e.h: void a(com.facebook.rti.b.e.h)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        $r1 = $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a>;
+        $r3 = staticinvoke <com.facebook.rti.b.e.h: com.facebook.rti.b.e.u b(com.facebook.rti.b.e.h)>($r1);
+        if $r3 == null goto label3;
+
+        $r1 = $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a>;
+        staticinvoke <com.facebook.rti.b.e.h: com.facebook.rti.b.e.u b(com.facebook.rti.b.e.h)>($r1);
+
+     label3:
+        $r6 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>("MqttClient", $r4, "Uncaught exception in networkThreadLoop", $r6);
+        $r1 = $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a>;
+        $z0 = virtualinvoke $r1.<com.facebook.rti.b.e.h: boolean f()>();
+        if $z0 != 0 goto label1;
+
+        $r1 = $r0.<com.facebook.rti.b.e.i: com.facebook.rti.b.e.h a>;
+        $r7 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h u>;
+        $r8 = <com.facebook.rti.b.e.s: com.facebook.rti.b.e.s b>;
+        staticinvoke <com.facebook.rti.b.e.h: void a(com.facebook.rti.b.e.h,com.facebook.rti.b.a.a.h,com.facebook.rti.b.e.s,java.lang.Throwable)>($r1, $r7, $r8, $r4);
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

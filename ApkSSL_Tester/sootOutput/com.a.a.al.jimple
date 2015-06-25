@@ -1,0 +1,33 @@
+class com.a.a.al extends java.lang.Object implements java.lang.Runnable
+{
+    final java.lang.Exception a;
+    final com.a.a.ak b;
+
+    void <init>(com.a.a.ak, java.lang.Exception)
+    {
+        com.a.a.al $r0;
+        com.a.a.ak $r1;
+        java.lang.Exception $r2;
+
+        $r0 := @this: com.a.a.al;
+        $r1 := @parameter0: com.a.a.ak;
+        $r2 := @parameter1: java.lang.Exception;
+        $r0.<com.a.a.al: com.a.a.ak b> = $r1;
+        $r0.<com.a.a.al: java.lang.Exception a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.a.a.al $r0;
+        java.lang.RuntimeException $r1;
+        java.lang.Exception $r2;
+
+        $r0 := @this: com.a.a.al;
+        $r1 = new java.lang.RuntimeException;
+        $r2 = $r0.<com.a.a.al: java.lang.Exception a>;
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r2);
+        throw $r1;
+    }
+}

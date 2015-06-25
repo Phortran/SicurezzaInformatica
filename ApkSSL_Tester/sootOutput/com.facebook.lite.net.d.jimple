@@ -1,0 +1,66 @@
+final class com.facebook.lite.net.d extends com.facebook.lite.net.q
+{
+    final com.facebook.lite.net.c a;
+
+    public void <init>(com.facebook.lite.net.c, java.io.OutputStream)
+    {
+        com.facebook.lite.net.d $r0;
+        com.facebook.lite.net.c $r1;
+        java.io.OutputStream $r2;
+
+        $r0 := @this: com.facebook.lite.net.d;
+        $r1 := @parameter0: com.facebook.lite.net.c;
+        $r2 := @parameter1: java.io.OutputStream;
+        $r0.<com.facebook.lite.net.d: com.facebook.lite.net.c a> = $r1;
+        specialinvoke $r0.<com.facebook.lite.net.q: void <init>(com.facebook.lite.net.n,java.io.OutputStream)>($r1, $r2);
+        return;
+    }
+
+    protected final void a(com.b.a.a.k.d)
+    {
+        com.facebook.lite.net.d $r0;
+        com.b.a.a.k.d $r1;
+        com.facebook.lite.net.c $r2;
+        java.lang.Object $r3;
+        byte[] $r4;
+        com.b.a.a.k.b $r5;
+        boolean $z0;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.lite.net.d;
+        $r1 := @parameter0: com.b.a.a.k.d;
+        $r2 = $r0.<com.facebook.lite.net.d: com.facebook.lite.net.c a>;
+        $r3 = $r2.<com.facebook.lite.net.c: java.lang.Object m>;
+        entermonitor $r3;
+
+     label0:
+        $r5 = new com.b.a.a.k.b;
+        $r4 = interfaceinvoke $r1.<com.b.a.a.k.d: byte[] o()>();
+        specialinvoke $r5.<com.b.a.a.k.b: void <init>(byte[])>($r4);
+        exitmonitor $r3;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.net.d: com.facebook.lite.net.c a>;
+        $z0 = staticinvoke <com.facebook.lite.net.c: boolean a(com.facebook.lite.net.c,com.b.a.a.k.d)>($r2, $r5);
+        specialinvoke $r0.<com.facebook.lite.net.q: void a(com.b.a.a.k.d)>($r5);
+        if $z0 == 0 goto label2;
+
+        $r2 = $r0.<com.facebook.lite.net.d: com.facebook.lite.net.c a>;
+        staticinvoke <com.facebook.lite.net.c: boolean a(com.facebook.lite.net.c)>($r2);
+
+     label2:
+        return;
+
+     label3:
+        $r6 := @caughtexception;
+
+     label4:
+        exitmonitor $r3;
+
+     label5:
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+        catch java.lang.Throwable from label4 to label5 with label3;
+    }
+}

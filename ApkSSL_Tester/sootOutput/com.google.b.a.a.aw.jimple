@@ -1,0 +1,1104 @@
+class com.google.b.a.a.aw extends java.lang.Object implements com.google.b.a.a.f
+{
+    private static final java.lang.String a;
+    private final com.google.b.a.a.ay b;
+    private volatile com.google.b.a.a.o c;
+    private final com.google.b.a.a.g d;
+    private final android.content.Context e;
+    private final java.lang.String f;
+    private long g;
+    private com.google.b.a.a.l h;
+
+    static void <clinit>()
+    {
+        java.lang.String $r1;
+        java.lang.Object[] $r2;
+
+        $r2 = newarray (java.lang.Object)[6];
+        $r2[0] = "hits2";
+        $r2[1] = "hit_id";
+        $r2[2] = "hit_time";
+        $r2[3] = "hit_url";
+        $r2[4] = "hit_string";
+        $r2[5] = "hit_app_id";
+        $r1 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("CREATE TABLE IF NOT EXISTS %s ( \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \'%s\' INTEGER NOT NULL, \'%s\' TEXT NOT NULL, \'%s\' TEXT NOT NULL, \'%s\' INTEGER);", $r2);
+        <com.google.b.a.a.aw: java.lang.String a> = $r1;
+        return;
+    }
+
+    void <init>(com.google.b.a.a.g, android.content.Context)
+    {
+        com.google.b.a.a.aw $r0;
+        com.google.b.a.a.g $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: com.google.b.a.a.g;
+        $r2 := @parameter1: android.content.Context;
+        specialinvoke $r0.<com.google.b.a.a.aw: void <init>(com.google.b.a.a.g,android.content.Context,java.lang.String)>($r1, $r2, "google_analytics_v2.db");
+        return;
+    }
+
+    void <init>(com.google.b.a.a.g, android.content.Context, java.lang.String)
+    {
+        com.google.b.a.a.aw $r0;
+        com.google.b.a.a.g $r1;
+        android.content.Context $r2;
+        java.lang.String $r3;
+        com.google.b.a.a.ax $r4;
+        com.google.b.a.a.ay $r5;
+        com.google.b.a.a.be $r6;
+        org.apache.http.impl.client.DefaultHttpClient $r7;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: com.google.b.a.a.g;
+        $r2 := @parameter1: android.content.Context;
+        $r3 := @parameter2: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = virtualinvoke $r2.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.google.b.a.a.aw: android.content.Context e> = $r2;
+        $r0.<com.google.b.a.a.aw: java.lang.String f> = $r3;
+        $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d> = $r1;
+        $r4 = new com.google.b.a.a.ax;
+        specialinvoke $r4.<com.google.b.a.a.ax: void <init>(com.google.b.a.a.aw)>($r0);
+        $r0.<com.google.b.a.a.aw: com.google.b.a.a.l h> = $r4;
+        $r5 = new com.google.b.a.a.ay;
+        $r2 = $r0.<com.google.b.a.a.aw: android.content.Context e>;
+        $r3 = $r0.<com.google.b.a.a.aw: java.lang.String f>;
+        specialinvoke $r5.<com.google.b.a.a.ay: void <init>(com.google.b.a.a.aw,android.content.Context,java.lang.String)>($r0, $r2, $r3);
+        $r0.<com.google.b.a.a.aw: com.google.b.a.a.ay b> = $r5;
+        $r6 = new com.google.b.a.a.be;
+        $r7 = new org.apache.http.impl.client.DefaultHttpClient;
+        specialinvoke $r7.<org.apache.http.impl.client.DefaultHttpClient: void <init>()>();
+        $r2 = $r0.<com.google.b.a.a.aw: android.content.Context e>;
+        specialinvoke $r6.<com.google.b.a.a.be: void <init>(org.apache.http.client.HttpClient,android.content.Context)>($r7, $r2);
+        $r0.<com.google.b.a.a.aw: com.google.b.a.a.o c> = $r6;
+        $r0.<com.google.b.a.a.aw: long g> = 0L;
+        return;
+    }
+
+    private android.database.sqlite.SQLiteDatabase a(java.lang.String)
+    {
+        com.google.b.a.a.aw $r0;
+        java.lang.String $r1;
+        com.google.b.a.a.ay $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        android.database.sqlite.SQLiteException $r4;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.ay b>;
+
+     label0:
+        $r3 = virtualinvoke $r2.<com.google.b.a.a.ay: android.database.sqlite.SQLiteDatabase getWritableDatabase()>();
+
+     label1:
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r1);
+        return null;
+
+        catch android.database.sqlite.SQLiteException from label0 to label1 with label2;
+    }
+
+    static com.google.b.a.a.l a(com.google.b.a.a.aw)
+    {
+        com.google.b.a.a.aw $r0;
+        com.google.b.a.a.l $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.aw;
+        $r1 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.l h>;
+        return $r1;
+    }
+
+    static java.lang.String a(java.util.Map)
+    {
+        java.util.Map $r0;
+        int $i0;
+        java.lang.Object $r1;
+        java.util.ArrayList $r2;
+        java.util.Iterator $r3;
+        java.lang.StringBuilder $r4;
+        java.util.Set $r5;
+        boolean $z0;
+        java.util.Map$Entry $r6;
+        java.lang.String $r7;
+
+        $r0 := @parameter0: java.util.Map;
+        $r2 = new java.util.ArrayList;
+        $i0 = interfaceinvoke $r0.<java.util.Map: int size()>();
+        specialinvoke $r2.<java.util.ArrayList: void <init>(int)>($i0);
+        $r5 = interfaceinvoke $r0.<java.util.Map: java.util.Set entrySet()>();
+        $r3 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r1 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (java.util.Map$Entry) $r1;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r1 = interfaceinvoke $r6.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r7 = (java.lang.String) $r1;
+        $r7 = staticinvoke <com.google.b.a.a.ap: java.lang.String a(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r1 = interfaceinvoke $r6.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r7 = (java.lang.String) $r1;
+        $r7 = staticinvoke <com.google.b.a.a.ap: java.lang.String a(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r7);
+        goto label0;
+
+     label1:
+        $r7 = staticinvoke <android.text.TextUtils: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>("&", $r2);
+        return $r7;
+    }
+
+    private void a(java.util.Map, long, java.lang.String)
+    {
+        com.google.b.a.a.aw $r0;
+        java.util.Map $r1;
+        long $l0, $l1;
+        java.lang.String $r2, $r3, $r6;
+        android.database.sqlite.SQLiteDatabase $r4;
+        android.content.ContentValues $r5;
+        java.lang.Long $r7;
+        boolean $z0;
+        java.lang.Object $r8;
+        int $i2;
+        java.lang.NumberFormatException $r9;
+        com.google.b.a.a.g $r10;
+        android.database.sqlite.SQLiteException $r11;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.util.Map;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.lang.String;
+        $r4 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for putHit");
+        if $r4 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r5 = new android.content.ContentValues;
+        specialinvoke $r5.<android.content.ContentValues: void <init>()>();
+        $r3 = staticinvoke <com.google.b.a.a.aw: java.lang.String a(java.util.Map)>($r1);
+        virtualinvoke $r5.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("hit_string", $r3);
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r5.<android.content.ContentValues: void put(java.lang.String,java.lang.Long)>("hit_time", $r7);
+        $z0 = interfaceinvoke $r1.<java.util.Map: boolean containsKey(java.lang.Object)>("AppUID");
+        if $z0 == 0 goto label10;
+
+     label2:
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("AppUID");
+        $r6 = (java.lang.String) $r8;
+        $l1 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r6);
+
+     label3:
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        virtualinvoke $r5.<android.content.ContentValues: void put(java.lang.String,java.lang.Long)>("hit_app_id", $r7);
+        if $r2 != null goto label4;
+
+        $r2 = "http://www.google-analytics.com/collect";
+
+     label4:
+        $i2 = virtualinvoke $r2.<java.lang.String: int length()>();
+        if $i2 != 0 goto label6;
+
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Empty path: not sending hit");
+        goto label0;
+
+     label5:
+        $r9 := @caughtexception;
+        $l1 = 0L;
+        goto label3;
+
+     label6:
+        virtualinvoke $r5.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("hit_url", $r2);
+
+     label7:
+        virtualinvoke $r4.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("hits2", null, $r5);
+        $r10 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d>;
+        interfaceinvoke $r10.<com.google.b.a.a.g: void a(boolean)>(0);
+
+     label8:
+        goto label0;
+
+     label9:
+        $r11 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Error storing hit");
+        goto label0;
+
+     label10:
+        $l1 = 0L;
+        goto label3;
+
+        catch java.lang.NumberFormatException from label2 to label3 with label5;
+        catch android.database.sqlite.SQLiteException from label7 to label8 with label9;
+    }
+
+    private void a(java.util.Map, java.util.Collection)
+    {
+        com.google.b.a.a.aw $r0;
+        java.util.Map $r1;
+        java.util.Collection $r2;
+        java.lang.String $r3, $r5, $r6;
+        java.util.Iterator $r4;
+        boolean $z0;
+        java.lang.Object $r7;
+        com.google.android.gms.analytics.internal.Command $r8;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.util.Map;
+        $r2 := @parameter1: java.util.Collection;
+        $r3 = "&_v";
+        $r6 = virtualinvoke $r3.<java.lang.String: java.lang.String substring(int)>(1);
+        if $r2 == null goto label1;
+
+        $r4 = interfaceinvoke $r2.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r7 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r8 = (com.google.android.gms.analytics.internal.Command) $r7;
+        $r3 = "appendVersion";
+        $r5 = virtualinvoke $r8.<com.google.android.gms.analytics.internal.Command: java.lang.String a()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r8.<com.google.android.gms.analytics.internal.Command: java.lang.String b()>();
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r5);
+
+     label1:
+        return;
+    }
+
+    static java.lang.String b(com.google.b.a.a.aw)
+    {
+        com.google.b.a.a.aw $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.aw;
+        $r1 = $r0.<com.google.b.a.a.aw: java.lang.String f>;
+        return $r1;
+    }
+
+    static android.content.Context c(com.google.b.a.a.aw)
+    {
+        com.google.b.a.a.aw $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.aw;
+        $r1 = $r0.<com.google.b.a.a.aw: android.content.Context e>;
+        return $r1;
+    }
+
+    static java.lang.String e()
+    {
+        java.lang.String $r0;
+
+        $r0 = <com.google.b.a.a.aw: java.lang.String a>;
+        return $r0;
+    }
+
+    private void f()
+    {
+        com.google.b.a.a.aw $r0;
+        int $i0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        java.util.List $r3;
+        java.lang.String[] $r4;
+        java.lang.Object[] $r5;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $i0 = virtualinvoke $r0.<com.google.b.a.a.aw: int d()>();
+        $i0 = $i0 + -2000;
+        $i0 = $i0 + 1;
+        if $i0 <= 0 goto label0;
+
+        $r3 = virtualinvoke $r0.<com.google.b.a.a.aw: java.util.List a(int)>($i0);
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Store full, deleting ");
+        $i0 = interfaceinvoke $r3.<java.util.List: int size()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" hits to make room.");
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r2);
+        $r4 = newarray (java.lang.String)[0];
+        $r5 = interfaceinvoke $r3.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>($r4);
+        $r4 = (java.lang.String[]) $r5;
+        virtualinvoke $r0.<com.google.b.a.a.aw: void a(java.lang.String[])>($r4);
+
+     label0:
+        return;
+    }
+
+    java.util.List a(int)
+    {
+        com.google.b.a.a.aw $r0;
+        int $i0;
+        java.lang.String $r2, $r4;
+        java.util.ArrayList $r3;
+        android.database.sqlite.SQLiteDatabase $r5;
+        java.lang.String[] $r6;
+        java.lang.Object[] $r7;
+        android.database.Cursor $r8;
+        boolean $z0;
+        long $l2;
+        android.database.sqlite.SQLiteException $r9;
+        java.lang.StringBuilder $r10;
+        java.lang.Throwable $r11;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $i0 := @parameter0: int;
+        $r3 = new java.util.ArrayList;
+        specialinvoke $r3.<java.util.ArrayList: void <init>()>();
+        if $i0 > 0 goto label0;
+
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Invalid maxHits specified. Skipping");
+        return $r3;
+
+     label0:
+        $r5 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for peekHitIds.");
+        if $r5 != null goto label1;
+
+        return $r3;
+
+     label1:
+        $r6 = newarray (java.lang.String)[1];
+        $r6[0] = "hit_id";
+        $r7 = newarray (java.lang.Object)[1];
+        $r7[0] = "hit_id";
+
+     label2:
+        $r4 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s ASC", $r7);
+        $r2 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r8 = virtualinvoke $r5.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("hits2", $r6, null, null, null, null, $r4, $r2);
+
+     label3:
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label6;
+
+     label4:
+        $l2 = interfaceinvoke $r8.<android.database.Cursor: long getLong(int)>(0);
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l2);
+        interfaceinvoke $r3.<java.util.List: boolean add(java.lang.Object)>($r4);
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToNext()>();
+
+     label5:
+        if $z0 != 0 goto label4;
+
+     label6:
+        if $r8 == null goto label7;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label7:
+        return $r3;
+
+     label8:
+        $r9 := @caughtexception;
+        $r8 = null;
+
+     label9:
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error in peekHits fetching hitIds: ");
+        $r4 = virtualinvoke $r9.<android.database.sqlite.SQLiteException: java.lang.String getMessage()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r4);
+
+     label10:
+        if $r8 == null goto label7;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+        goto label7;
+
+     label11:
+        $r11 := @caughtexception;
+        $r8 = null;
+
+     label12:
+        if $r8 == null goto label13;
+
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label13:
+        throw $r11;
+
+     label14:
+        $r11 := @caughtexception;
+        goto label12;
+
+     label15:
+        $r9 := @caughtexception;
+        goto label9;
+
+        catch android.database.sqlite.SQLiteException from label2 to label3 with label8;
+        catch java.lang.Throwable from label1 to label3 with label11;
+        catch android.database.sqlite.SQLiteException from label3 to label5 with label15;
+        catch java.lang.Throwable from label3 to label5 with label14;
+        catch java.lang.Throwable from label9 to label10 with label14;
+    }
+
+    public void a()
+    {
+        com.google.b.a.a.aw $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        com.google.b.a.a.o $r3;
+        java.util.List $r4, $r6;
+        com.google.b.a.a.g $r5;
+        int $i1, $i2;
+        com.google.b.a.a.v $r7;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>("Dispatch running...");
+        $r3 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.o c>;
+        $z0 = interfaceinvoke $r3.<com.google.b.a.a.o: boolean a()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r0.<com.google.b.a.a.aw: java.util.List b(int)>(40);
+        $z0 = interfaceinvoke $r4.<java.util.List: boolean isEmpty()>();
+        if $z0 == 0 goto label2;
+
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>("...nothing to dispatch");
+        $r5 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d>;
+        interfaceinvoke $r5.<com.google.b.a.a.g: void a(boolean)>(1);
+        goto label0;
+
+     label2:
+        $r3 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.o c>;
+        $i1 = interfaceinvoke $r3.<com.google.b.a.a.o: int a(java.util.List)>($r4);
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("sent ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" of ");
+        $i2 = interfaceinvoke $r4.<java.util.List: int size()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" hits");
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r1);
+        $i2 = interfaceinvoke $r4.<java.util.List: int size()>();
+        $i2 = staticinvoke <java.lang.Math: int min(int,int)>($i1, $i2);
+        $r6 = interfaceinvoke $r4.<java.util.List: java.util.List subList(int,int)>(0, $i2);
+        virtualinvoke $r0.<com.google.b.a.a.aw: void a(java.util.Collection)>($r6);
+        $i2 = interfaceinvoke $r4.<java.util.List: int size()>();
+        if $i1 != $i2 goto label0;
+
+        $i2 = virtualinvoke $r0.<com.google.b.a.a.aw: int d()>();
+        if $i2 <= 0 goto label0;
+
+        $r7 = staticinvoke <com.google.b.a.a.v: com.google.b.a.a.v a()>();
+        virtualinvoke $r7.<com.google.b.a.a.v: void c()>();
+        goto label0;
+    }
+
+    public void a(long)
+    {
+        com.google.b.a.a.aw $r0;
+        long $l0;
+        boolean $z0;
+        java.lang.String $r1;
+        java.lang.Long $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        byte $b2;
+        com.google.b.a.a.g $r4;
+        int $i3;
+        java.lang.String[] $r5;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $l0 := @parameter0: long;
+        $z0 = 1;
+        $r3 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for clearHits");
+        if $r3 == null goto label2;
+
+        $b2 = $l0 cmp 0L;
+        if $b2 != 0 goto label3;
+
+        virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("hits2", null, null);
+
+     label0:
+        $r4 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d>;
+        $i3 = virtualinvoke $r0.<com.google.b.a.a.aw: int d()>();
+        if $i3 != 0 goto label4;
+
+     label1:
+        interfaceinvoke $r4.<com.google.b.a.a.g: void a(boolean)>($z0);
+
+     label2:
+        return;
+
+     label3:
+        $i3 = (int) 1;
+        $r5 = newarray (java.lang.String)[$i3];
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        $r1 = virtualinvoke $r2.<java.lang.Long: java.lang.String toString()>();
+        $i3 = (int) 0;
+        $r5[$i3] = $r1;
+        virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("hits2", "hit_app_id = ?", $r5);
+        goto label0;
+
+     label4:
+        $z0 = 0;
+        goto label1;
+    }
+
+    void a(java.util.Collection)
+    {
+        com.google.b.a.a.aw $r0;
+        java.util.Collection $r1;
+        boolean $z0;
+        int $i0, $i1;
+        java.lang.String[] $r2;
+        java.util.Iterator $r3;
+        long $l2;
+        java.lang.String $r4;
+        java.lang.Object $r5;
+        com.google.b.a.a.ao $r6;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.util.Collection;
+        if $r1 == null goto label0;
+
+        $z0 = interfaceinvoke $r1.<java.util.Collection: boolean isEmpty()>();
+        if $z0 == 0 goto label2;
+
+     label0:
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Empty/Null collection passed to deleteHits.");
+
+     label1:
+        return;
+
+     label2:
+        $i1 = interfaceinvoke $r1.<java.util.Collection: int size()>();
+        $r2 = newarray (java.lang.String)[$i1];
+        $r3 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+        $i0 = 0;
+
+     label3:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (com.google.b.a.a.ao) $r5;
+        $l2 = virtualinvoke $r6.<com.google.b.a.a.ao: long b()>();
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l2);
+        $r2[$i0] = $r4;
+        $i0 = $i0 + 1;
+        goto label3;
+
+     label4:
+        virtualinvoke $r0.<com.google.b.a.a.aw: void a(java.lang.String[])>($r2);
+        goto label1;
+    }
+
+    public void a(java.util.Map, long, java.lang.String, java.util.Collection)
+    {
+        com.google.b.a.a.aw $r0;
+        java.util.Map $r1;
+        long $l0;
+        java.lang.String $r2;
+        java.util.Collection $r3;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.util.Map;
+        $l0 := @parameter1: long;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.util.Collection;
+        virtualinvoke $r0.<com.google.b.a.a.aw: int c()>();
+        specialinvoke $r0.<com.google.b.a.a.aw: void f()>();
+        specialinvoke $r0.<com.google.b.a.a.aw: void a(java.util.Map,java.util.Collection)>($r1, $r3);
+        specialinvoke $r0.<com.google.b.a.a.aw: void a(java.util.Map,long,java.lang.String)>($r1, $l0, $r2);
+        return;
+    }
+
+    void a(java.lang.String[])
+    {
+        com.google.b.a.a.aw $r0;
+        java.lang.String[] $r1;
+        boolean $z0;
+        int $i0;
+        java.lang.Object[] $r3;
+        java.lang.String $r5;
+        android.database.sqlite.SQLiteDatabase $r6;
+        java.util.List $r7;
+        com.google.b.a.a.g $r8;
+        android.database.sqlite.SQLiteException $r9;
+        java.lang.StringBuilder $r10;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 := @parameter0: java.lang.String[];
+        $z0 = 1;
+        if $r1 == null goto label0;
+
+        $i0 = lengthof $r1;
+        if $i0 != 0 goto label2;
+
+     label0:
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Empty hitIds passed to deleteHits.");
+
+     label1:
+        return;
+
+     label2:
+        $r6 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for deleteHits.");
+        if $r6 == null goto label1;
+
+        $i0 = (int) 1;
+        $r3 = newarray (java.lang.Object)[$i0];
+        $i0 = lengthof $r1;
+        $r7 = staticinvoke <java.util.Collections: java.util.List nCopies(int,java.lang.Object)>($i0, "?");
+        $r5 = staticinvoke <android.text.TextUtils: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>(",", $r7);
+        $i0 = (int) 0;
+        $r3[$i0] = $r5;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("HIT_ID in (%s)", $r3);
+
+     label3:
+        virtualinvoke $r6.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("hits2", $r5, $r1);
+        $r8 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d>;
+        $i0 = virtualinvoke $r0.<com.google.b.a.a.aw: int d()>();
+        if $i0 != 0 goto label7;
+
+     label4:
+        interfaceinvoke $r8.<com.google.b.a.a.g: void a(boolean)>($z0);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r9 := @caughtexception;
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error deleting hits ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r5 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r5);
+        goto label1;
+
+     label7:
+        $z0 = 0;
+        goto label4;
+
+        catch android.database.sqlite.SQLiteException from label3 to label5 with label6;
+    }
+
+    public com.google.b.a.a.o b()
+    {
+        com.google.b.a.a.aw $r0;
+        com.google.b.a.a.o $r1;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.o c>;
+        return $r1;
+    }
+
+    public java.util.List b(int)
+    {
+        com.google.b.a.a.aw $r0;
+        int $i0, $i5;
+        android.database.Cursor $r1, $r9;
+        java.lang.String $r2, $r3, $r5;
+        java.util.ArrayList $r4, $r10;
+        android.database.sqlite.SQLiteDatabase $r6;
+        java.lang.String[] $r7;
+        java.lang.Object[] $r8;
+        boolean $z0, $z1;
+        com.google.b.a.a.ao $r11;
+        long $l2, $l3;
+        android.database.sqlite.SQLiteCursor $r12;
+        android.database.CursorWindow $r13;
+        java.lang.Object $r14;
+        android.database.sqlite.SQLiteException $r15, $r16, $r20, $r23;
+        java.lang.StringBuilder $r17;
+        java.lang.Throwable $r18, $r22;
+        java.lang.Long $r19;
+        java.util.Iterator $r21;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $i0 := @parameter0: int;
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r6 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for peekHits");
+        if $r6 != null goto label1;
+
+     label0:
+        return $r4;
+
+     label1:
+        $r1 = null;
+
+     label2:
+        $r7 = newarray (java.lang.String)[2];
+        $r7[0] = "hit_id";
+        $r7[1] = "hit_time";
+        $r8 = newarray (java.lang.Object)[1];
+        $r8[0] = "hit_id";
+
+     label3:
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s ASC", $r8);
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r9 = virtualinvoke $r6.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("hits2", $r7, null, null, null, null, $r5, $r3);
+
+     label4:
+        $r10 = new java.util.ArrayList;
+
+     label5:
+        specialinvoke $r10.<java.util.ArrayList: void <init>()>();
+
+     label6:
+        $z0 = interfaceinvoke $r9.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label9;
+
+     label7:
+        $r11 = new com.google.b.a.a.ao;
+        $l2 = interfaceinvoke $r9.<android.database.Cursor: long getLong(int)>(0);
+        $l3 = interfaceinvoke $r9.<android.database.Cursor: long getLong(int)>(1);
+        specialinvoke $r11.<com.google.b.a.a.ao: void <init>(java.lang.String,long,long)>(null, $l2, $l3);
+        interfaceinvoke $r10.<java.util.List: boolean add(java.lang.Object)>($r11);
+        $z0 = interfaceinvoke $r9.<android.database.Cursor: boolean moveToNext()>();
+
+     label8:
+        if $z0 != 0 goto label7;
+
+     label9:
+        if $r9 == null goto label10;
+
+        interfaceinvoke $r9.<android.database.Cursor: void close()>();
+
+     label10:
+        $r7 = newarray (java.lang.String)[3];
+        $r7[0] = "hit_id";
+        $r7[1] = "hit_string";
+        $r7[2] = "hit_url";
+        $r8 = newarray (java.lang.Object)[1];
+        $r8[0] = "hit_id";
+
+     label11:
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s ASC", $r8);
+        $r2 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r1 = virtualinvoke $r6.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("hits2", $r7, null, null, null, null, $r5, $r2);
+
+     label12:
+        $r9 = $r1;
+
+     label13:
+        $z0 = interfaceinvoke $r1.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label17;
+
+        $i0 = 0;
+
+     label14:
+        $r12 = (android.database.sqlite.SQLiteCursor) $r9;
+        $r13 = virtualinvoke $r12.<android.database.sqlite.SQLiteCursor: android.database.CursorWindow getWindow()>();
+        $i5 = virtualinvoke $r13.<android.database.CursorWindow: int getNumRows()>();
+        if $i5 <= 0 goto label25;
+
+        $r14 = interfaceinvoke $r10.<java.util.List: java.lang.Object get(int)>($i0);
+        $r11 = (com.google.b.a.a.ao) $r14;
+        $r5 = interfaceinvoke $r9.<android.database.Cursor: java.lang.String getString(int)>(1);
+        virtualinvoke $r11.<com.google.b.a.a.ao: void a(java.lang.String)>($r5);
+        $r14 = interfaceinvoke $r10.<java.util.List: java.lang.Object get(int)>($i0);
+        $r11 = (com.google.b.a.a.ao) $r14;
+        $r5 = interfaceinvoke $r9.<android.database.Cursor: java.lang.String getString(int)>(2);
+        virtualinvoke $r11.<com.google.b.a.a.ao: void b(java.lang.String)>($r5);
+
+     label15:
+        $i5 = $i0 + 1;
+        $z0 = interfaceinvoke $r9.<android.database.Cursor: boolean moveToNext()>();
+
+     label16:
+        if $z0 != 0 goto label46;
+
+     label17:
+        if $r9 == null goto label18;
+
+        interfaceinvoke $r9.<android.database.Cursor: void close()>();
+
+     label18:
+        return $r10;
+
+     label19:
+        $r15 := @caughtexception;
+        $r16 = $r15;
+        $r9 = null;
+
+     label20:
+        $r17 = new java.lang.StringBuilder;
+        specialinvoke $r17.<java.lang.StringBuilder: void <init>()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error in peekHits fetching hitIds: ");
+        $r5 = virtualinvoke $r16.<android.database.sqlite.SQLiteException: java.lang.String getMessage()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r5);
+
+     label21:
+        if $r9 == null goto label0;
+
+        interfaceinvoke $r9.<android.database.Cursor: void close()>();
+        return $r4;
+
+     label22:
+        $r18 := @caughtexception;
+
+     label23:
+        if $r1 == null goto label24;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+
+     label24:
+        throw $r18;
+
+     label25:
+        $r8 = newarray (java.lang.Object)[1];
+
+     label26:
+        $r14 = interfaceinvoke $r10.<java.util.List: java.lang.Object get(int)>($i0);
+        $r11 = (com.google.b.a.a.ao) $r14;
+        $l3 = virtualinvoke $r11.<com.google.b.a.a.ao: long b()>();
+        $r19 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3);
+        $r8[0] = $r19;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("HitString for hitId %d too large.  Hit will be deleted.", $r8);
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r5);
+
+     label27:
+        goto label15;
+
+     label28:
+        $r20 := @caughtexception;
+
+     label29:
+        $r17 = new java.lang.StringBuilder;
+        specialinvoke $r17.<java.lang.StringBuilder: void <init>()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error in peekHits fetching hitString: ");
+        $r5 = virtualinvoke $r20.<android.database.sqlite.SQLiteException: java.lang.String getMessage()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>($r5);
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $z0 = 0;
+        $r21 = interfaceinvoke $r10.<java.util.List: java.util.Iterator iterator()>();
+
+     label30:
+        $z1 = interfaceinvoke $r21.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label32;
+
+        $r14 = interfaceinvoke $r21.<java.util.Iterator: java.lang.Object next()>();
+        $r11 = (com.google.b.a.a.ao) $r14;
+        $r5 = virtualinvoke $r11.<com.google.b.a.a.ao: java.lang.String a()>();
+        $z1 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r5);
+
+     label31:
+        if $z1 == 0 goto label35;
+
+        if $z0 == 0 goto label34;
+
+     label32:
+        if $r9 == null goto label33;
+
+        interfaceinvoke $r9.<android.database.Cursor: void close()>();
+
+     label33:
+        return $r4;
+
+     label34:
+        $z0 = 1;
+
+     label35:
+        interfaceinvoke $r4.<java.util.List: boolean add(java.lang.Object)>($r11);
+
+     label36:
+        goto label30;
+
+     label37:
+        $r22 := @caughtexception;
+
+     label38:
+        if $r9 == null goto label39;
+
+        interfaceinvoke $r9.<android.database.Cursor: void close()>();
+
+     label39:
+        throw $r22;
+
+     label40:
+        $r22 := @caughtexception;
+        goto label38;
+
+     label41:
+        $r20 := @caughtexception;
+        goto label29;
+
+     label42:
+        $r18 := @caughtexception;
+        $r1 = $r9;
+        goto label23;
+
+     label43:
+        $r18 := @caughtexception;
+        $r1 = $r9;
+        goto label23;
+
+     label44:
+        $r23 := @caughtexception;
+        $r16 = $r23;
+        goto label20;
+
+     label45:
+        $r16 := @caughtexception;
+        $r4 = $r10;
+        goto label20;
+
+     label46:
+        $i0 = $i5;
+        goto label14;
+
+        catch android.database.sqlite.SQLiteException from label3 to label4 with label19;
+        catch java.lang.Throwable from label2 to label4 with label22;
+        catch android.database.sqlite.SQLiteException from label5 to label6 with label44;
+        catch java.lang.Throwable from label4 to label6 with label42;
+        catch android.database.sqlite.SQLiteException from label6 to label8 with label45;
+        catch java.lang.Throwable from label6 to label8 with label42;
+        catch android.database.sqlite.SQLiteException from label11 to label12 with label41;
+        catch java.lang.Throwable from label10 to label12 with label37;
+        catch android.database.sqlite.SQLiteException from label13 to label16 with label28;
+        catch java.lang.Throwable from label13 to label16 with label40;
+        catch java.lang.Throwable from label20 to label21 with label43;
+        catch android.database.sqlite.SQLiteException from label26 to label27 with label28;
+        catch java.lang.Throwable from label25 to label27 with label40;
+        catch java.lang.Throwable from label29 to label31 with label37;
+        catch java.lang.Throwable from label35 to label36 with label37;
+    }
+
+    int c()
+    {
+        com.google.b.a.a.aw $r0;
+        boolean $z0;
+        com.google.b.a.a.l $r1;
+        long $l0, $l1, $l2;
+        java.lang.String[] $r2;
+        byte $b3;
+        android.database.sqlite.SQLiteDatabase $r4;
+        java.lang.String $r6;
+        int $i4, $i5;
+        com.google.b.a.a.g $r7;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $z0 = 1;
+        $r1 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.l h>;
+        $l2 = interfaceinvoke $r1.<com.google.b.a.a.l: long a()>();
+        $l0 = $r0.<com.google.b.a.a.aw: long g>;
+        $l1 = $l0 + 86400000L;
+        $b3 = $l2 cmp $l1;
+        if $b3 > 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r0.<com.google.b.a.a.aw: long g> = $l2;
+        $r4 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for deleteStaleHits.");
+        if $r4 == null goto label0;
+
+        $r1 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.l h>;
+        $l2 = interfaceinvoke $r1.<com.google.b.a.a.l: long a()>();
+        $l2 = $l2 - 2592000000L;
+        $i5 = (int) 1;
+        $r2 = newarray (java.lang.String)[$i5];
+        $r6 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l2);
+        $i5 = (int) 0;
+        $r2[$i5] = $r6;
+        $i4 = virtualinvoke $r4.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("hits2", "HIT_TIME < ?", $r2);
+        $r7 = $r0.<com.google.b.a.a.aw: com.google.b.a.a.g d>;
+        $i5 = virtualinvoke $r0.<com.google.b.a.a.aw: int d()>();
+        if $i5 != 0 goto label3;
+
+     label2:
+        interfaceinvoke $r7.<com.google.b.a.a.g: void a(boolean)>($z0);
+        return $i4;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+    }
+
+    int d()
+    {
+        com.google.b.a.a.aw $r0;
+        int $i0;
+        android.database.Cursor $r1;
+        android.database.sqlite.SQLiteDatabase $r3;
+        boolean $z0;
+        long $l2;
+        android.database.sqlite.SQLiteException $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.b.a.a.aw;
+        $r1 = null;
+        $i0 = 0;
+        $r3 = specialinvoke $r0.<com.google.b.a.a.aw: android.database.sqlite.SQLiteDatabase a(java.lang.String)>("Error opening database for getNumStoredHits.");
+        if $r3 != null goto label1;
+
+     label0:
+        return $i0;
+
+     label1:
+        $r1 = virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT COUNT(*) from hits2", null);
+        $z0 = interfaceinvoke $r1.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label3;
+
+        $l2 = interfaceinvoke $r1.<android.database.Cursor: long getLong(int)>(0);
+
+     label2:
+        $i0 = (int) $l2;
+
+     label3:
+        if $r1 == null goto label0;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+        return $i0;
+
+     label4:
+        $r5 := @caughtexception;
+
+     label5:
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Error getting numStoredHits");
+
+     label6:
+        if $r1 == null goto label0;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+        return 0;
+
+     label7:
+        $r6 := @caughtexception;
+        if $r1 == null goto label8;
+
+        interfaceinvoke $r1.<android.database.Cursor: void close()>();
+
+     label8:
+        throw $r6;
+
+        catch android.database.sqlite.SQLiteException from label1 to label2 with label4;
+        catch java.lang.Throwable from label1 to label2 with label7;
+        catch java.lang.Throwable from label5 to label6 with label7;
+    }
+}

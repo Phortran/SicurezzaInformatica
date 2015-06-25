@@ -1,0 +1,143 @@
+public class it.h3g.areaclienti3.nwmonitoring.SendConsentService extends android.app.IntentService
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendConsentService $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendConsentService;
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>("sendConsentService");
+        return;
+    }
+
+    public void <init>(java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendConsentService $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendConsentService;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<android.app.IntentService: void <init>(java.lang.String)>($r1);
+        return;
+    }
+
+    protected void onHandleIntent(android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.SendConsentService $r0;
+        android.content.Intent $r1;
+        android.content.Context $r4;
+        boolean $z0, $z1;
+        long $l1, $l2, $l4, $l5;
+        java.lang.String $r5, $r9;
+        it.h3g.areaclienti3.nwmonitoring.as $r6;
+        it.h3g.areaclienti3.nwmonitoring.l $r7;
+        it.h3g.areaclienti3.nwmonitoring.bf $r8;
+        java.lang.Exception $r10, $r16;
+        int $i3, $i6;
+        it.h3g.areaclienti3.nwmonitoring.av $r11;
+        it.h3g.model.ConsentData $r12;
+        it.h3g.areaclienti3.nwmonitoring.q $r13;
+        it.h3g.areaclienti3.nwmonitoring.bd $r14;
+        it.h3g.areaclienti3.nwmonitoring.bb $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.SendConsentService;
+        $r1 := @parameter0: android.content.Intent;
+        if $r1 == null goto label8;
+
+        $r5 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r6 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r0);
+        $i3 = virtualinvoke $r1.<android.content.Intent: int getIntExtra(java.lang.String,int)>("CONSENT", -1);
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.l: it.h3g.areaclienti3.nwmonitoring.l a(android.content.Context)>($r0);
+        $r8 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r0);
+        $l1 = 0L;
+        $l4 = -1L;
+        if $i3 == -1 goto label5;
+
+     label0:
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r9 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $l5 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r9);
+
+     label1:
+        if $i3 != 1 goto label9;
+
+        $z0 = 1;
+
+     label2:
+        $r11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r9 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.av: java.lang.String b(android.content.Context,java.lang.String,java.lang.String)>($r0, "LAST_MSISDN_CONSENT", "");
+        if $r9 == null goto label4;
+
+        $z1 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z1 != 0 goto label4;
+
+        $l2 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r9);
+
+     label3:
+        $l4 = $l2;
+
+     label4:
+        $r12 = new it.h3g.model.ConsentData;
+        specialinvoke $r12.<it.h3g.model.ConsentData: void <init>()>();
+        virtualinvoke $r12.<it.h3g.model.ConsentData: void setTimeStamp(long)>($l1);
+        virtualinvoke $r12.<it.h3g.model.ConsentData: void setImsi(long)>($l5);
+        virtualinvoke $r12.<it.h3g.model.ConsentData: void setConsent(boolean)>($z0);
+        virtualinvoke $r12.<it.h3g.model.ConsentData: void setMsisdn(long)>($l4);
+        virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.l: long a(it.h3g.model.ConsentData)>($r12);
+
+     label5:
+        $i6 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: int q()>();
+        if $i6 == 5 goto label6;
+
+        if $i6 != 0 goto label7;
+
+     label6:
+        if $i6 != 5 goto label12;
+
+        $z1 = virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: boolean v()>();
+        if $z1 == 0 goto label12;
+
+     label7:
+        $z1 = virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: boolean w()>();
+        if $z1 != 0 goto label12;
+
+        $r13 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.q: it.h3g.areaclienti3.nwmonitoring.q a()>();
+        $r14 = virtualinvoke $r13.<it.h3g.areaclienti3.nwmonitoring.q: it.h3g.areaclienti3.nwmonitoring.bd a(int)>(1);
+        $r15 = new it.h3g.areaclienti3.nwmonitoring.bb;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.nwmonitoring.SendConsentService: android.content.Context getApplicationContext()>();
+        specialinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.bb: void <init>(android.content.Context,java.lang.String)>($r4, $r5);
+        virtualinvoke $r14.<it.h3g.areaclienti3.nwmonitoring.bd: void execute(java.lang.Runnable)>($r15);
+
+     label8:
+        return;
+
+     label9:
+        $z0 = 0;
+        goto label2;
+
+     label10:
+        $r16 := @caughtexception;
+        $z0 = 0;
+        $l5 = -1L;
+        $r10 = $r16;
+
+     label11:
+        virtualinvoke $r10.<java.lang.Exception: void printStackTrace()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SENDCONSENTS", "Errore di conversione consensi");
+        goto label4;
+
+     label12:
+        $r11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r0, "pendingConsents", 1);
+        goto label8;
+
+     label13:
+        $r10 := @caughtexception;
+        goto label11;
+
+        catch java.lang.Exception from label0 to label1 with label10;
+        catch java.lang.Exception from label2 to label3 with label13;
+    }
+}

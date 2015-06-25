@@ -1,0 +1,488 @@
+public class org.f.b.b extends java.lang.Object
+{
+    protected java.util.Vector f;
+    protected java.lang.StringBuffer g;
+
+    public void <init>()
+    {
+        org.f.b.b $r0;
+
+        $r0 := @this: org.f.b.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public int a(java.lang.String, java.lang.String, int)
+    {
+        org.f.b.b $r0;
+        java.lang.String $r1, $r2, $r4;
+        int $i0, $i1;
+        org.f.b.a $r3;
+        boolean $z0;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        $i1 = virtualinvoke $r0.<org.f.b.b: int e()>();
+
+     label0:
+        if $i0 >= $i1 goto label3;
+
+        $r3 = virtualinvoke $r0.<org.f.b.b: org.f.b.a g(int)>($i0);
+        if $r3 == null goto label2;
+
+        $r4 = virtualinvoke $r3.<org.f.b.a: java.lang.String c()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label2;
+
+        if $r1 == null goto label1;
+
+        $r4 = virtualinvoke $r3.<org.f.b.a: java.lang.String d()>();
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label2;
+
+     label1:
+        return $i0;
+
+     label2:
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label3:
+        return -1;
+    }
+
+    public org.f.b.a a(java.lang.String, java.lang.String)
+    {
+        org.f.b.b $r0;
+        java.lang.String $r1, $r2;
+        org.f.b.a $r3;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = new org.f.b.a;
+        specialinvoke $r3.<org.f.b.a: void <init>()>();
+        if $r1 != null goto label0;
+
+        $r1 = "";
+
+     label0:
+        $r3.<org.f.b.a: java.lang.String a> = $r1;
+        $r3.<org.f.b.a: java.lang.String b> = $r2;
+        return $r3;
+    }
+
+    public void a(int, int, java.lang.Object)
+    {
+        org.f.b.b $r0;
+        int $i0, $i1;
+        java.lang.Object $r1;
+        java.lang.NullPointerException $r2;
+        java.util.Vector $r4;
+        java.lang.StringBuffer $r5;
+        boolean $z0;
+        java.lang.RuntimeException $r6;
+        org.f.b.a $r8;
+        char $c3;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 := @parameter2: java.lang.Object;
+        if $r1 != null goto label0;
+
+        $r2 = new java.lang.NullPointerException;
+        specialinvoke $r2.<java.lang.NullPointerException: void <init>()>();
+        throw $r2;
+
+     label0:
+        $r4 = $r0.<org.f.b.b: java.util.Vector f>;
+        if $r4 != null goto label1;
+
+        $r4 = new java.util.Vector;
+        specialinvoke $r4.<java.util.Vector: void <init>()>();
+        $r0.<org.f.b.b: java.util.Vector f> = $r4;
+        $r5 = new java.lang.StringBuffer;
+        specialinvoke $r5.<java.lang.StringBuffer: void <init>()>();
+        $r0.<org.f.b.b: java.lang.StringBuffer g> = $r5;
+
+     label1:
+        if $i1 != 2 goto label4;
+
+        $z0 = $r1 instanceof org.f.b.a;
+        if $z0 != 0 goto label2;
+
+        $r6 = new java.lang.RuntimeException;
+        specialinvoke $r6.<java.lang.RuntimeException: void <init>(java.lang.String)>("Element obj expected)");
+        throw $r6;
+
+     label2:
+        $r8 = (org.f.b.a) $r1;
+        virtualinvoke $r8.<org.f.b.a: void a(org.f.b.b)>($r0);
+
+     label3:
+        $r4 = $r0.<org.f.b.b: java.util.Vector f>;
+        virtualinvoke $r4.<java.util.Vector: void insertElementAt(java.lang.Object,int)>($r1, $i0);
+        $r5 = $r0.<org.f.b.b: java.lang.StringBuffer g>;
+        $c3 = (char) $i1;
+        virtualinvoke $r5.<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char)>($i0, $c3);
+        return;
+
+     label4:
+        $z0 = $r1 instanceof java.lang.String;
+        if $z0 != 0 goto label3;
+
+        $r6 = new java.lang.RuntimeException;
+        specialinvoke $r6.<java.lang.RuntimeException: void <init>(java.lang.String)>("String expected");
+        throw $r6;
+    }
+
+    public void a(int, java.lang.Object)
+    {
+        org.f.b.b $r0;
+        int $i0, $i1;
+        java.lang.Object $r1;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.Object;
+        $i1 = virtualinvoke $r0.<org.f.b.b: int e()>();
+        virtualinvoke $r0.<org.f.b.b: void a(int,int,java.lang.Object)>($i1, $i0, $r1);
+        return;
+    }
+
+    public void a(org.xmlpull.v1.XmlPullParser)
+    {
+        org.f.b.b $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        boolean $z0;
+        int $i0;
+        java.lang.String $r2, $r3;
+        org.f.b.a $r4;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $z0 = 0;
+
+     label0:
+        $i0 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        lookupswitch($i0)
+        {
+            case 1: goto label6;
+            case 2: goto label5;
+            case 3: goto label6;
+            default: goto label1;
+        };
+
+     label1:
+        $r2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        if $r2 == null goto label7;
+
+        if $i0 != 6 goto label2;
+
+        $i0 = 4;
+
+     label2:
+        $r2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        virtualinvoke $r0.<org.f.b.b: void a(int,java.lang.Object)>($i0, $r2);
+
+     label3:
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: int nextToken()>();
+
+     label4:
+        if $z0 == 0 goto label0;
+
+        return;
+
+     label5:
+        $r2 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getNamespace()>();
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $r4 = virtualinvoke $r0.<org.f.b.b: org.f.b.a a(java.lang.String,java.lang.String)>($r2, $r3);
+        virtualinvoke $r0.<org.f.b.b: void a(int,java.lang.Object)>(2, $r4);
+        virtualinvoke $r4.<org.f.b.a: void a(org.xmlpull.v1.XmlPullParser)>($r1);
+        goto label4;
+
+     label6:
+        $z0 = 1;
+        goto label4;
+
+     label7:
+        if $i0 != 6 goto label3;
+
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        if $r3 == null goto label3;
+
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        virtualinvoke $r0.<org.f.b.b: void a(int,java.lang.Object)>(6, $r3);
+        goto label3;
+    }
+
+    public void a(org.xmlpull.v1.XmlSerializer)
+    {
+        org.f.b.b $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        virtualinvoke $r0.<org.f.b.b: void b(org.xmlpull.v1.XmlSerializer)>($r1);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void flush()>();
+        return;
+    }
+
+    public void b(org.xmlpull.v1.XmlSerializer)
+    {
+        org.f.b.b $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.util.Vector $r2;
+        int $i0, $i1, $i2;
+        java.lang.Object $r3;
+        java.lang.RuntimeException $r4;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6;
+        org.f.b.a $r7;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 = $r0.<org.f.b.b: java.util.Vector f>;
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<org.f.b.b: java.util.Vector f>;
+        $i1 = virtualinvoke $r2.<java.util.Vector: int size()>();
+        $i0 = 0;
+
+     label2:
+        if $i0 >= $i1 goto label0;
+
+        $i2 = virtualinvoke $r0.<org.f.b.b: int i(int)>($i0);
+        $r2 = $r0.<org.f.b.b: java.util.Vector f>;
+        $r3 = virtualinvoke $r2.<java.util.Vector: java.lang.Object elementAt(int)>($i0);
+        lookupswitch($i2)
+        {
+            case 2: goto label4;
+            case 3: goto label3;
+            case 4: goto label6;
+            case 5: goto label8;
+            case 6: goto label10;
+            case 7: goto label7;
+            case 8: goto label11;
+            case 9: goto label9;
+            case 10: goto label12;
+            default: goto label3;
+        };
+
+     label3:
+        $r4 = new java.lang.RuntimeException;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Illegal type: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>($r6);
+        throw $r4;
+
+     label4:
+        $r7 = (org.f.b.a) $r3;
+        virtualinvoke $r7.<org.f.b.a: void a(org.xmlpull.v1.XmlSerializer)>($r1);
+
+     label5:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label6:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer text(java.lang.String)>($r6);
+        goto label5;
+
+     label7:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void ignorableWhitespace(java.lang.String)>($r6);
+        goto label5;
+
+     label8:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void cdsect(java.lang.String)>($r6);
+        goto label5;
+
+     label9:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void comment(java.lang.String)>($r6);
+        goto label5;
+
+     label10:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void entityRef(java.lang.String)>($r6);
+        goto label5;
+
+     label11:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void processingInstruction(java.lang.String)>($r6);
+        goto label5;
+
+     label12:
+        $r6 = (java.lang.String) $r3;
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: void docdecl(java.lang.String)>($r6);
+        goto label5;
+    }
+
+    public org.f.b.a c(java.lang.String, java.lang.String)
+    {
+        org.f.b.b $r0;
+        java.lang.String $r1, $r2, $r4;
+        int $i1, $i3;
+        java.lang.StringBuilder $r3;
+        java.lang.RuntimeException $r5;
+        org.f.b.a $r6;
+
+        $r0 := @this: org.f.b.b;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $i3 = virtualinvoke $r0.<org.f.b.b: int a(java.lang.String,java.lang.String,int)>($r1, $r2, 0);
+        $i1 = $i3 + 1;
+        $i1 = virtualinvoke $r0.<org.f.b.b: int a(java.lang.String,java.lang.String,int)>($r1, $r2, $i1);
+        if $i3 == -1 goto label0;
+
+        if $i1 == -1 goto label3;
+
+     label0:
+        $r5 = new java.lang.RuntimeException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Element {");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        if $i3 != -1 goto label2;
+
+        $r4 = " not found in ";
+
+     label1:
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r5.<java.lang.RuntimeException: void <init>(java.lang.String)>($r4);
+        throw $r5;
+
+     label2:
+        $r4 = " more than once in ";
+        goto label1;
+
+     label3:
+        $r6 = virtualinvoke $r0.<org.f.b.b: org.f.b.a g(int)>($i3);
+        return $r6;
+    }
+
+    public int e()
+    {
+        org.f.b.b $r0;
+        java.util.Vector $r1;
+        int $i0;
+
+        $r0 := @this: org.f.b.b;
+        $r1 = $r0.<org.f.b.b: java.util.Vector f>;
+        if $r1 != null goto label0;
+
+        return 0;
+
+     label0:
+        $r1 = $r0.<org.f.b.b: java.util.Vector f>;
+        $i0 = virtualinvoke $r1.<java.util.Vector: int size()>();
+        return $i0;
+    }
+
+    public java.lang.Object f(int)
+    {
+        org.f.b.b $r0;
+        int $i0;
+        java.util.Vector $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.f.b.b: java.util.Vector f>;
+        $r2 = virtualinvoke $r1.<java.util.Vector: java.lang.Object elementAt(int)>($i0);
+        return $r2;
+    }
+
+    public org.f.b.a g(int)
+    {
+        org.f.b.b $r0;
+        int $i0;
+        java.lang.Object $r1;
+        boolean $z0;
+        org.f.b.a $r2;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<org.f.b.b: java.lang.Object f(int)>($i0);
+        $z0 = $r1 instanceof org.f.b.a;
+        if $z0 == 0 goto label0;
+
+        $r2 = (org.f.b.a) $r1;
+        return $r2;
+
+     label0:
+        return null;
+    }
+
+    public java.lang.String h(int)
+    {
+        org.f.b.b $r0;
+        int $i0;
+        boolean $z0;
+        java.lang.Object $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $z0 = virtualinvoke $r0.<org.f.b.b: boolean j(int)>($i0);
+        if $z0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r0.<org.f.b.b: java.lang.Object f(int)>($i0);
+        $r2 = (java.lang.String) $r1;
+        return $r2;
+
+     label0:
+        return null;
+    }
+
+    public int i(int)
+    {
+        org.f.b.b $r0;
+        int $i0;
+        java.lang.StringBuffer $r1;
+        char $c1;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.f.b.b: java.lang.StringBuffer g>;
+        $c1 = virtualinvoke $r1.<java.lang.StringBuffer: char charAt(int)>($i0);
+        return $c1;
+    }
+
+    public boolean j(int)
+    {
+        org.f.b.b $r0;
+        int $i0;
+
+        $r0 := @this: org.f.b.b;
+        $i0 := @parameter0: int;
+        $i0 = virtualinvoke $r0.<org.f.b.b: int i(int)>($i0);
+        if $i0 == 4 goto label0;
+
+        if $i0 == 7 goto label0;
+
+        if $i0 != 5 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+}

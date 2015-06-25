@@ -1,0 +1,83 @@
+public final class com.facebook.lite.b.d extends java.lang.Object
+{
+
+    public static int a(org.json.JSONObject, java.lang.String, int)
+    {
+        org.json.JSONObject $r0;
+        java.lang.String $r1;
+        int $i0, $i1;
+        org.json.JSONException $r2;
+
+        $r0 := @parameter0: org.json.JSONObject;
+        $r1 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        if $r0 != null goto label0;
+
+        return $i0;
+
+     label0:
+        $i1 = virtualinvoke $r0.<org.json.JSONObject: int getInt(java.lang.String)>($r1);
+
+     label1:
+        return $i1;
+
+     label2:
+        $r2 := @caughtexception;
+        return $i0;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+
+    public static long a(org.json.JSONObject, java.lang.String)
+    {
+        org.json.JSONObject $r0;
+        java.lang.String $r1;
+        org.json.JSONException $r2;
+        long $l0;
+
+        $r0 := @parameter0: org.json.JSONObject;
+        $r1 := @parameter1: java.lang.String;
+        if $r0 != null goto label0;
+
+        return 86400000L;
+
+     label0:
+        $l0 = virtualinvoke $r0.<org.json.JSONObject: long getLong(java.lang.String)>($r1);
+
+     label1:
+        return $l0;
+
+     label2:
+        $r2 := @caughtexception;
+        return 86400000L;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+
+    public static boolean a(org.json.JSONObject, java.lang.String, boolean)
+    {
+        org.json.JSONObject $r0;
+        java.lang.String $r1;
+        boolean $z0, $z1;
+        org.json.JSONException $r2;
+
+        $r0 := @parameter0: org.json.JSONObject;
+        $r1 := @parameter1: java.lang.String;
+        $z0 := @parameter2: boolean;
+        if $r0 != null goto label0;
+
+        return $z0;
+
+     label0:
+        $z1 = virtualinvoke $r0.<org.json.JSONObject: boolean getBoolean(java.lang.String)>($r1);
+
+     label1:
+        return $z1;
+
+     label2:
+        $r2 := @caughtexception;
+        return $z0;
+
+        catch org.json.JSONException from label0 to label1 with label2;
+    }
+}

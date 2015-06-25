@@ -1,0 +1,66 @@
+class it.h3g.areaclienti3.d.bs extends java.lang.Object implements java.util.Comparator
+{
+    final it.h3g.areaclienti3.d.br a;
+
+    void <init>(it.h3g.areaclienti3.d.br)
+    {
+        it.h3g.areaclienti3.d.bs $r0;
+        it.h3g.areaclienti3.d.br $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.d.bs;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.br;
+        $r0.<it.h3g.areaclienti3.d.bs: it.h3g.areaclienti3.d.br a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public int a(it.h3g.areaclienti3.d.s, it.h3g.areaclienti3.d.s)
+    {
+        it.h3g.areaclienti3.d.bs $r0;
+        it.h3g.areaclienti3.d.s $r1, $r2;
+        java.util.Date $r3, $r4;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.d.bs;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.s;
+        $r2 := @parameter1: it.h3g.areaclienti3.d.s;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.d.s: java.util.Date c()>();
+        if $r3 != null goto label1;
+
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.s: java.util.Date c()>();
+        if $r3 != null goto label0;
+
+        return 0;
+
+     label0:
+        return -1;
+
+     label1:
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.s: java.util.Date c()>();
+        if $r3 != null goto label2;
+
+        return 1;
+
+     label2:
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.d.s: java.util.Date c()>();
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.s: java.util.Date c()>();
+        $i0 = virtualinvoke $r4.<java.util.Date: int compareTo(java.util.Date)>($r3);
+        return $i0;
+    }
+
+    public int compare(java.lang.Object, java.lang.Object)
+    {
+        it.h3g.areaclienti3.d.bs $r0;
+        java.lang.Object $r1, $r2;
+        int $i0;
+        it.h3g.areaclienti3.d.s $r3, $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.d.bs;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (it.h3g.areaclienti3.d.s) $r1;
+        $r4 = (it.h3g.areaclienti3.d.s) $r2;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.d.bs: int a(it.h3g.areaclienti3.d.s,it.h3g.areaclienti3.d.s)>($r3, $r4);
+        return $i0;
+    }
+}

@@ -1,0 +1,163 @@
+public final class com.facebook.rti.b.d.n extends java.lang.Object
+{
+    private final android.content.SharedPreferences a;
+    private java.lang.String b;
+    private com.facebook.rti.b.a.b.d c;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.rti.b.d.n $r0;
+        android.content.Context $r1;
+        com.facebook.rti.a.f.a $r2;
+        java.lang.String $r3, $r5, $r8;
+        android.content.SharedPreferences $r4;
+        boolean $z0;
+        java.util.UUID $r6;
+        android.content.SharedPreferences$Editor $r7;
+        com.facebook.rti.b.a.b.d $r9;
+
+        $r0 := @this: com.facebook.rti.b.d.n;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r4 = virtualinvoke $r2.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r1, "rti.mqtt.ids");
+        $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a> = $r4;
+        $r4 = $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a>;
+        $r5 = interfaceinvoke $r4.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("/settings/mqtt/id/mqtt_device_id", "");
+        $r0.<com.facebook.rti.b.d.n: java.lang.String b> = $r5;
+        $r5 = $r0.<com.facebook.rti.b.d.n: java.lang.String b>;
+        $z0 = staticinvoke <com.facebook.rti.a.h.a: boolean a(java.lang.String)>($r5);
+        if $z0 == 0 goto label0;
+
+        $r6 = staticinvoke <java.util.UUID: java.util.UUID randomUUID()>();
+        $r5 = virtualinvoke $r6.<java.util.UUID: java.lang.String toString()>();
+        $r0.<com.facebook.rti.b.d.n: java.lang.String b> = $r5;
+        $r4 = $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a>;
+        $r7 = interfaceinvoke $r4.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r3 = $r0.<com.facebook.rti.b.d.n: java.lang.String b>;
+        $r7 = interfaceinvoke $r7.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("/settings/mqtt/id/mqtt_device_id", $r3);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r7);
+
+     label0:
+        $r4 = $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a>;
+        $r5 = interfaceinvoke $r4.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("/settings/mqtt/id/connection_key", "");
+        $r4 = $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a>;
+        $r8 = interfaceinvoke $r4.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("/settings/mqtt/id/connection_secret", "");
+        $r9 = staticinvoke <com.facebook.rti.b.a.b.d: com.facebook.rti.b.a.b.d a(java.lang.String,java.lang.String)>($r5, $r8);
+        $r0.<com.facebook.rti.b.d.n: com.facebook.rti.b.a.b.d c> = $r9;
+        return;
+    }
+
+    public final java.lang.String a()
+    {
+        com.facebook.rti.b.d.n $r0;
+        java.lang.String $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.d.n;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.d.n: java.lang.String b>;
+
+     label1:
+        exitmonitor $r0;
+        return $r1;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final void a(com.facebook.rti.b.a.b.d)
+    {
+        com.facebook.rti.b.d.n $r0;
+        com.facebook.rti.b.a.b.d $r1, $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        android.content.SharedPreferences $r5;
+        android.content.SharedPreferences$Editor $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.facebook.rti.b.d.n;
+        $r1 := @parameter0: com.facebook.rti.b.a.b.d;
+        entermonitor $r0;
+
+     label0:
+        $r2 = $r0.<com.facebook.rti.b.d.n: com.facebook.rti.b.a.b.d c>;
+        $z0 = virtualinvoke $r2.<com.facebook.rti.b.a.b.d: boolean equals(java.lang.Object)>($r1);
+        if $z0 != 0 goto label1;
+
+        $r5 = $r0.<com.facebook.rti.b.d.n: android.content.SharedPreferences a>;
+        $r6 = interfaceinvoke $r5.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r4 = virtualinvoke $r1.<com.facebook.rti.b.a.b.d: java.lang.String a()>();
+        $r6 = interfaceinvoke $r6.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("/settings/mqtt/id/connection_key", $r4);
+        $r3 = virtualinvoke $r1.<com.facebook.rti.b.a.b.d: java.lang.String b()>();
+        $r6 = interfaceinvoke $r6.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("/settings/mqtt/id/connection_secret", $r3);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r6);
+        $r0.<com.facebook.rti.b.d.n: com.facebook.rti.b.a.b.d c> = $r1;
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final com.facebook.rti.b.a.b.d b()
+    {
+        com.facebook.rti.b.d.n $r0;
+        com.facebook.rti.b.a.b.d $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.d.n;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.d.n: com.facebook.rti.b.a.b.d c>;
+
+     label1:
+        exitmonitor $r0;
+        return $r1;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final void c()
+    {
+        com.facebook.rti.b.d.n $r0;
+        com.facebook.rti.b.a.b.d $r1;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.d.n;
+        entermonitor $r0;
+
+     label0:
+        $r1 = <com.facebook.rti.b.a.b.d: com.facebook.rti.b.a.b.d a>;
+        virtualinvoke $r0.<com.facebook.rti.b.d.n: void a(com.facebook.rti.b.a.b.d)>($r1);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

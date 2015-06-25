@@ -1,0 +1,313 @@
+public final class com.facebook.rti.b.a.f.a.b.a extends java.net.SocketImpl
+{
+    private static java.lang.reflect.Constructor c;
+    private static boolean d;
+    private java.net.InetAddress a;
+    private int b;
+
+    static void <clinit>()
+    {
+        java.lang.reflect.Constructor $r1;
+        java.lang.Class $r2;
+        java.lang.Class[] $r3;
+        java.lang.Throwable $r4;
+
+        <com.facebook.rti.b.a.f.a.b.a: boolean d> = 0;
+
+     label0:
+        $r2 = class "java/net/Inet4Address";
+        $r3 = newarray (java.lang.Class)[2];
+        $r3[0] = class "[B";
+        $r3[1] = class "java/lang/String";
+        $r1 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[])>($r3);
+        <com.facebook.rti.b.a.f.a.b.a: java.lang.reflect.Constructor c> = $r1;
+        virtualinvoke $r1.<java.lang.reflect.Constructor: void setAccessible(boolean)>(1);
+        <com.facebook.rti.b.a.f.a.b.a: boolean d> = 1;
+
+     label1:
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void <init>(byte[], java.lang.String, int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        byte[] $r1;
+        java.lang.String $r2;
+        int $i0;
+        java.lang.reflect.Constructor $r3;
+        java.lang.Object $r4;
+        com.facebook.rti.b.a.f.a.d $r5;
+        java.lang.Object[] $r6;
+        java.net.InetAddress $r7;
+        java.lang.reflect.InvocationTargetException $r8;
+        java.lang.InstantiationException $r9;
+        java.lang.IllegalAccessException $r10;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: byte[];
+        $r2 := @parameter1: java.lang.String;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<java.net.SocketImpl: void <init>()>();
+        $r3 = <com.facebook.rti.b.a.f.a.b.a: java.lang.reflect.Constructor c>;
+        if $r3 != null goto label0;
+
+        $r5 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r5.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.String)>("getDeclaredConstructor failed");
+        throw $r5;
+
+     label0:
+        $r3 = <com.facebook.rti.b.a.f.a.b.a: java.lang.reflect.Constructor c>;
+        $r6 = newarray (java.lang.Object)[2];
+        $r6[0] = $r1;
+        $r6[1] = $r2;
+
+     label1:
+        $r4 = virtualinvoke $r3.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r6);
+
+     label2:
+        $r7 = (java.net.InetAddress) $r4;
+        $r0.<com.facebook.rti.b.a.f.a.b.a: java.net.InetAddress a> = $r7;
+        $r0.<com.facebook.rti.b.a.f.a.b.a: int b> = $i0;
+        return;
+
+     label3:
+        $r8 := @caughtexception;
+        $r5 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r5.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r8);
+        throw $r5;
+
+     label4:
+        $r9 := @caughtexception;
+        $r5 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r5.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r9);
+        throw $r5;
+
+     label5:
+        $r10 := @caughtexception;
+        $r5 = new com.facebook.rti.b.a.f.a.d;
+        specialinvoke $r5.<com.facebook.rti.b.a.f.a.d: void <init>(java.lang.Exception)>($r10);
+        throw $r5;
+
+        catch java.lang.reflect.InvocationTargetException from label1 to label2 with label3;
+        catch java.lang.InstantiationException from label1 to label2 with label4;
+        catch java.lang.IllegalAccessException from label1 to label2 with label5;
+    }
+
+    public static boolean a()
+    {
+        boolean $z0;
+
+        $z0 = <com.facebook.rti.b.a.f.a.b.a: boolean d>;
+        return $z0;
+    }
+
+    protected final void accept(java.net.SocketImpl)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.net.SocketImpl $r1;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: java.net.SocketImpl;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling accept() on FakeSocketImpl");
+        throw $r2;
+    }
+
+    protected final int available()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling available() on FakeSocketImpl");
+        throw $r1;
+    }
+
+    protected final void bind(java.net.InetAddress, int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.net.InetAddress $r1;
+        int $i0;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: java.net.InetAddress;
+        $i0 := @parameter1: int;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling bind(InetAddress, int) on FakeSocketImpl");
+        throw $r2;
+    }
+
+    protected final void close()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling close() on FakeSocketImpl");
+        throw $r1;
+    }
+
+    protected final void connect(java.lang.String, int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.lang.String $r1;
+        int $i0;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling connect(String, int) on FakeSocketImpl");
+        throw $r2;
+    }
+
+    protected final void connect(java.net.InetAddress, int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.net.InetAddress $r1;
+        int $i0;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: java.net.InetAddress;
+        $i0 := @parameter1: int;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling connect(InetAddress, int) on FakeSocketImpl");
+        throw $r2;
+    }
+
+    protected final void connect(java.net.SocketAddress, int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.net.SocketAddress $r1;
+        int $i0;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 := @parameter0: java.net.SocketAddress;
+        $i0 := @parameter1: int;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling connect(SocketAddress, int) on FakeSocketImpl");
+        throw $r2;
+    }
+
+    protected final void create(boolean)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        boolean $z0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $z0 := @parameter0: boolean;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling create() on FakeSocketImpl");
+        throw $r1;
+    }
+
+    public final java.net.InetAddress getInetAddress()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.net.InetAddress $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 = $r0.<com.facebook.rti.b.a.f.a.b.a: java.net.InetAddress a>;
+        return $r1;
+    }
+
+    protected final java.io.InputStream getInputStream()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling getInputStream() on FakeSocketImpl");
+        throw $r1;
+    }
+
+    public final java.lang.Object getOption(int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        int $i0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $i0 := @parameter0: int;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling getOption(int) on FakeSocketImpl");
+        throw $r1;
+    }
+
+    protected final java.io.OutputStream getOutputStream()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling getOutputStream() on FakeSocketImpl");
+        throw $r1;
+    }
+
+    public final int getPort()
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $i0 = $r0.<com.facebook.rti.b.a.f.a.b.a: int b>;
+        return $i0;
+    }
+
+    protected final void listen(int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        int $i0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $i0 := @parameter0: int;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling listen(int) on FakeSocketImpl");
+        throw $r1;
+    }
+
+    protected final void sendUrgentData(int)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        int $i0;
+        java.lang.IllegalStateException $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $i0 := @parameter0: int;
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling sendUrgentData(int) on FakeSocketImpl");
+        throw $r1;
+    }
+
+    public final void setOption(int, java.lang.Object)
+    {
+        com.facebook.rti.b.a.f.a.b.a $r0;
+        int $i0;
+        java.lang.Object $r1;
+        java.lang.IllegalStateException $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.f.a.b.a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: java.lang.Object;
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("calling setOption(int, Object) on FakeSocketImpl");
+        throw $r2;
+    }
+}

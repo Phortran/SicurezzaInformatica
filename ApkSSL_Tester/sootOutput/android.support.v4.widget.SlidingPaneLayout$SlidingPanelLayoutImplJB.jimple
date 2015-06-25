@@ -1,0 +1,96 @@
+class android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB extends android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplBase
+{
+    private java.lang.reflect.Method mGetDisplayList;
+    private java.lang.reflect.Field mRecreateDisplayList;
+
+    void <init>()
+    {
+        android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB $r0;
+        java.lang.NoSuchMethodException $r1;
+        java.lang.Class $r2;
+        java.lang.reflect.Method $r4;
+        java.lang.Class[] $r5;
+        java.lang.reflect.Field $r6;
+        java.lang.NoSuchFieldException $r8;
+
+        $r0 := @this: android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB;
+        specialinvoke $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplBase: void <init>()>();
+        $r2 = class "android/view/View";
+        $r5 = (java.lang.Class[]) null;
+
+     label0:
+        $r4 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("getDisplayList", $r5);
+
+     label1:
+        $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Method mGetDisplayList> = $r4;
+
+     label2:
+        $r2 = class "android/view/View";
+
+     label3:
+        $r6 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("mRecreateDisplayList");
+        $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Field mRecreateDisplayList> = $r6;
+        $r6 = $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Field mRecreateDisplayList>;
+        virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+
+     label4:
+        return;
+
+     label5:
+        $r1 := @caughtexception;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("SlidingPaneLayout", "Couldn\'t fetch getDisplayList method; dimming won\'t work right.", $r1);
+        goto label2;
+
+     label6:
+        $r8 := @caughtexception;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("SlidingPaneLayout", "Couldn\'t fetch mRecreateDisplayList field; dimming will be slow.", $r8);
+        goto label4;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label5;
+        catch java.lang.NoSuchFieldException from label3 to label4 with label6;
+    }
+
+    public void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout, android.view.View)
+    {
+        android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB $r0;
+        android.support.v4.widget.SlidingPaneLayout $r1;
+        android.view.View $r2;
+        java.lang.Exception $r3;
+        java.lang.reflect.Method $r4;
+        java.lang.reflect.Field $r5;
+        java.lang.Object[] $r6;
+
+        $r0 := @this: android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB;
+        $r1 := @parameter0: android.support.v4.widget.SlidingPaneLayout;
+        $r2 := @parameter1: android.view.View;
+        $r4 = $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Method mGetDisplayList>;
+        if $r4 == null goto label4;
+
+        $r5 = $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Field mRecreateDisplayList>;
+        if $r5 == null goto label4;
+
+     label0:
+        $r5 = $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Field mRecreateDisplayList>;
+        virtualinvoke $r5.<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>($r2, 1);
+        $r4 = $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB: java.lang.reflect.Method mGetDisplayList>;
+        $r6 = (java.lang.Object[]) null;
+        virtualinvoke $r4.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r6);
+
+     label1:
+        specialinvoke $r0.<android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplBase: void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout,android.view.View)>($r1, $r2);
+
+     label2:
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("SlidingPaneLayout", "Error refreshing display list state", $r3);
+        goto label1;
+
+     label4:
+        virtualinvoke $r2.<android.view.View: void invalidate()>();
+        goto label2;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+}

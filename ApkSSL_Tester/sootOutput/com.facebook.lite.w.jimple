@@ -1,0 +1,66 @@
+final class com.facebook.lite.w extends java.lang.Object implements android.content.DialogInterface$OnClickListener
+{
+    final android.content.Context a;
+    final com.facebook.lite.MainActivity b;
+
+    void <init>(com.facebook.lite.MainActivity, android.content.Context)
+    {
+        com.facebook.lite.w $r0;
+        com.facebook.lite.MainActivity $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.lite.w;
+        $r1 := @parameter0: com.facebook.lite.MainActivity;
+        $r2 := @parameter1: android.content.Context;
+        $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b> = $r1;
+        $r0.<com.facebook.lite.w: android.content.Context a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void onClick(android.content.DialogInterface, int)
+    {
+        com.facebook.lite.w $r0;
+        android.content.DialogInterface $r1;
+        int $i0;
+        android.content.Intent $r2;
+        android.net.Uri $r4;
+        com.facebook.lite.MainActivity $r5;
+        android.app.AlertDialog $r6;
+        boolean $z0;
+        android.content.Context $r7;
+
+        $r0 := @this: com.facebook.lite.w;
+        $r1 := @parameter0: android.content.DialogInterface;
+        $i0 := @parameter1: int;
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        $r4 = staticinvoke <com.facebook.lite.MainActivity: android.net.Uri j(com.facebook.lite.MainActivity)>($r5);
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setDataAndType(android.net.Uri,java.lang.String)>($r4, "application/vnd.android.package-archive");
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setFlags(int)>(268435456);
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        $r6 = staticinvoke <com.facebook.lite.MainActivity: android.app.AlertDialog k(com.facebook.lite.MainActivity)>($r5);
+        if $r6 == null goto label0;
+
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        $r6 = staticinvoke <com.facebook.lite.MainActivity: android.app.AlertDialog k(com.facebook.lite.MainActivity)>($r5);
+        $z0 = virtualinvoke $r6.<android.app.AlertDialog: boolean isShowing()>();
+        if $z0 == 0 goto label0;
+
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        $r6 = staticinvoke <com.facebook.lite.MainActivity: android.app.AlertDialog k(com.facebook.lite.MainActivity)>($r5);
+        virtualinvoke $r6.<android.app.AlertDialog: void dismiss()>();
+
+     label0:
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        virtualinvoke $r5.<com.facebook.lite.MainActivity: void finish()>();
+        $r7 = $r0.<com.facebook.lite.w: android.content.Context a>;
+        virtualinvoke $r7.<android.content.Context: void startActivity(android.content.Intent)>($r2);
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        staticinvoke <com.facebook.lite.MainActivity: android.net.Uri l(com.facebook.lite.MainActivity)>($r5);
+        $r5 = $r0.<com.facebook.lite.w: com.facebook.lite.MainActivity b>;
+        staticinvoke <com.facebook.lite.MainActivity: android.app.AlertDialog m(com.facebook.lite.MainActivity)>($r5);
+        return;
+    }
+}

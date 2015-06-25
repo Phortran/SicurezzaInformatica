@@ -1,0 +1,109 @@
+public class it.h3g.areaclienti3.BlockVersionViewActivity extends it.h3g.areaclienti3.BaseActivity
+{
+    private android.widget.Button D;
+    private android.webkit.WebView E;
+    private java.lang.String F;
+    private java.lang.String G;
+    private java.lang.String H;
+    private java.lang.String I;
+    private android.view.View$OnClickListener J;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+        it.h3g.areaclienti3.v $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.BlockVersionViewActivity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void <init>()>();
+        $r1 = new it.h3g.areaclienti3.v;
+        specialinvoke $r1.<it.h3g.areaclienti3.v: void <init>(it.h3g.areaclienti3.BlockVersionViewActivity)>($r0);
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.view.View$OnClickListener J> = $r1;
+        return;
+    }
+
+    static java.lang.String a(it.h3g.areaclienti3.BlockVersionViewActivity)
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.BlockVersionViewActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String H>;
+        return $r1;
+    }
+
+    static java.lang.String b(it.h3g.areaclienti3.BlockVersionViewActivity)
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.BlockVersionViewActivity;
+        $r1 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String I>;
+        return $r1;
+    }
+
+    public void a(android.os.Message)
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+        android.os.Message $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.BlockVersionViewActivity;
+        $r1 := @parameter0: android.os.Message;
+        return;
+    }
+
+    public void onBackPressed()
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.BlockVersionViewActivity;
+        virtualinvoke $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: boolean moveTaskToBack(boolean)>(1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: void finish()>();
+        return;
+    }
+
+    protected void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.BlockVersionViewActivity $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r4;
+        android.view.View $r5;
+        android.widget.Button $r6;
+        android.webkit.WebView $r7;
+        android.text.Spanned $r8;
+        android.view.View$OnClickListener $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.BlockVersionViewActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onCreate(android.os.Bundle)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: void setContentView(int)>(2130903180);
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("updateViewText", "extraThreshold", "label");
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String F> = $r4;
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("updateViewButtonText", "extraThreshold", "label");
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String G> = $r4;
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("updateViewMarketUrl", "extraThreshold", "label");
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String H> = $r4;
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("updateViewMarketService", "extraThreshold", "label");
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String I> = $r4;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.view.View findViewById(int)>(2131165975);
+        $r6 = (android.widget.Button) $r5;
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.widget.Button D> = $r6;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.view.View findViewById(int)>(2131165976);
+        $r7 = (android.webkit.WebView) $r5;
+        $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.webkit.WebView E> = $r7;
+        $r6 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.widget.Button D>;
+        $r4 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String G>;
+        $r8 = staticinvoke <android.text.Html: android.text.Spanned fromHtml(java.lang.String)>($r4);
+        virtualinvoke $r6.<android.widget.Button: void setText(java.lang.CharSequence)>($r8);
+        $r6 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.widget.Button D>;
+        virtualinvoke $r6.<android.widget.Button: void setVisibility(int)>(0);
+        $r7 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.webkit.WebView E>;
+        virtualinvoke $r7.<android.webkit.WebView: void setBackgroundColor(int)>(0);
+        $r7 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.webkit.WebView E>;
+        $r4 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: java.lang.String F>;
+        virtualinvoke $r7.<android.webkit.WebView: void loadDataWithBaseURL(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(null, $r4, "text/html", "charset=utf-8", null);
+        $r6 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.widget.Button D>;
+        $r9 = $r0.<it.h3g.areaclienti3.BlockVersionViewActivity: android.view.View$OnClickListener J>;
+        virtualinvoke $r6.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r9);
+        return;
+    }
+}

@@ -1,0 +1,60 @@
+public class com.google.android.gms.internal.et extends java.lang.Object implements android.content.DialogInterface$OnClickListener
+{
+    private final android.app.Activity a;
+    private final android.content.Intent b;
+    private final int c;
+
+    public void <init>(android.app.Activity, android.content.Intent, int)
+    {
+        com.google.android.gms.internal.et $r0;
+        android.app.Activity $r1;
+        android.content.Intent $r2;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.internal.et;
+        $r1 := @parameter0: android.app.Activity;
+        $r2 := @parameter1: android.content.Intent;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.internal.et: android.app.Activity a> = $r1;
+        $r0.<com.google.android.gms.internal.et: android.content.Intent b> = $r2;
+        $r0.<com.google.android.gms.internal.et: int c> = $i0;
+        return;
+    }
+
+    public void onClick(android.content.DialogInterface, int)
+    {
+        com.google.android.gms.internal.et $r0;
+        android.content.DialogInterface $r1;
+        int $i0;
+        android.content.Intent $r2;
+        android.app.Activity $r3;
+        android.content.ActivityNotFoundException $r4;
+
+        $r0 := @this: com.google.android.gms.internal.et;
+        $r1 := @parameter0: android.content.DialogInterface;
+        $i0 := @parameter1: int;
+        $r2 = $r0.<com.google.android.gms.internal.et: android.content.Intent b>;
+        if $r2 == null goto label1;
+
+        $r3 = $r0.<com.google.android.gms.internal.et: android.app.Activity a>;
+        $r2 = $r0.<com.google.android.gms.internal.et: android.content.Intent b>;
+        $i0 = $r0.<com.google.android.gms.internal.et: int c>;
+
+     label0:
+        virtualinvoke $r3.<android.app.Activity: void startActivityForResult(android.content.Intent,int)>($r2, $i0);
+
+     label1:
+        interfaceinvoke $r1.<android.content.DialogInterface: void dismiss()>();
+
+     label2:
+        return;
+
+     label3:
+        $r4 := @caughtexception;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("SettingsRedirect", "Can\'t redirect to app settings for Google Play services");
+        goto label2;
+
+        catch android.content.ActivityNotFoundException from label0 to label2 with label3;
+    }
+}

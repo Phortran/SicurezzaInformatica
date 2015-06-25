@@ -1,0 +1,107 @@
+public class com.google.android.gms.internal.fl extends com.google.android.gms.internal.de implements com.google.android.gms.common.b
+{
+    private com.google.android.gms.d.a.b.a f;
+    private com.google.android.gms.internal.fn g;
+
+    protected com.google.android.gms.internal.fk a(android.os.IBinder)
+    {
+        com.google.android.gms.internal.fl $r0;
+        android.os.IBinder $r1;
+        com.google.android.gms.internal.fk $r2;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        $r1 := @parameter0: android.os.IBinder;
+        $r2 = staticinvoke <com.google.android.gms.internal.fk$a: com.google.android.gms.internal.fk a(android.os.IBinder)>($r1);
+        return $r2;
+    }
+
+    protected java.lang.String a()
+    {
+        com.google.android.gms.internal.fl $r0;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        return "com.google.android.gms.plus.service.START";
+    }
+
+    protected void a(int, android.os.IBinder, android.os.Bundle)
+    {
+        com.google.android.gms.internal.fl $r0;
+        int $i0;
+        android.os.IBinder $r1;
+        android.os.Bundle $r2;
+        boolean $z0;
+        byte[] $r4;
+        com.google.android.gms.internal.fv $r5;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.IBinder;
+        $r2 := @parameter2: android.os.Bundle;
+        if $i0 != 0 goto label0;
+
+        if $r2 == null goto label0;
+
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("loaded_person");
+        if $z0 == 0 goto label0;
+
+        $r4 = virtualinvoke $r2.<android.os.Bundle: byte[] getByteArray(java.lang.String)>("loaded_person");
+        $r5 = staticinvoke <com.google.android.gms.internal.fv: com.google.android.gms.internal.fv a(byte[])>($r4);
+        $r0.<com.google.android.gms.internal.fl: com.google.android.gms.d.a.b.a f> = $r5;
+
+     label0:
+        specialinvoke $r0.<com.google.android.gms.internal.de: void a(int,android.os.IBinder,android.os.Bundle)>($i0, $r1, $r2);
+        return;
+    }
+
+    protected void a(com.google.android.gms.internal.dj, com.google.android.gms.internal.de$d)
+    {
+        com.google.android.gms.internal.fl $r0;
+        com.google.android.gms.internal.dj $r1;
+        com.google.android.gms.internal.de$d $r2;
+        com.google.android.gms.internal.fn $r3;
+        java.lang.String $r4, $r5, $r7;
+        java.lang.String[] $r6;
+        android.os.Bundle $r8;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        $r1 := @parameter0: com.google.android.gms.internal.dj;
+        $r2 := @parameter1: com.google.android.gms.internal.de$d;
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        $r3 = $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fn g>;
+        $r7 = virtualinvoke $r3.<com.google.android.gms.internal.fn: java.lang.String i()>();
+        virtualinvoke $r8.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("client_id", $r7);
+        $r3 = $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fn g>;
+        $r6 = virtualinvoke $r3.<com.google.android.gms.internal.fn: java.lang.String[] d()>();
+        virtualinvoke $r8.<android.os.Bundle: void putStringArray(java.lang.String,java.lang.String[])>("request_visible_actions", $r6);
+        $r3 = $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fn g>;
+        $r4 = virtualinvoke $r3.<com.google.android.gms.internal.fn: java.lang.String g()>();
+        $r3 = $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fn g>;
+        $r5 = virtualinvoke $r3.<com.google.android.gms.internal.fn: java.lang.String f()>();
+        $r6 = virtualinvoke $r0.<com.google.android.gms.internal.fl: java.lang.String[] i()>();
+        $r3 = $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fn g>;
+        $r7 = virtualinvoke $r3.<com.google.android.gms.internal.fn: java.lang.String b()>();
+        interfaceinvoke $r1.<com.google.android.gms.internal.dj: void a(com.google.android.gms.internal.di,int,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,android.os.Bundle)>($r2, 4030500, $r4, $r5, $r6, $r7, $r8);
+        return;
+    }
+
+    protected android.os.IInterface b(android.os.IBinder)
+    {
+        com.google.android.gms.internal.fl $r0;
+        android.os.IBinder $r1;
+        com.google.android.gms.internal.fk $r2;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        $r1 := @parameter0: android.os.IBinder;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.internal.fl: com.google.android.gms.internal.fk a(android.os.IBinder)>($r1);
+        return $r2;
+    }
+
+    protected java.lang.String b()
+    {
+        com.google.android.gms.internal.fl $r0;
+
+        $r0 := @this: com.google.android.gms.internal.fl;
+        return "com.google.android.gms.plus.internal.IPlusService";
+    }
+}

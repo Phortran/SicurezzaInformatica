@@ -1,0 +1,122 @@
+final class com.facebook.a.p extends java.lang.Object
+{
+
+    protected static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        com.facebook.a.a.b $r2;
+        java.util.ArrayList $r3, $r4;
+        int $i0, $i2, $i3;
+        java.io.IOException $r5, $r17;
+        java.lang.String[] $r6;
+        java.util.List $r7;
+        java.lang.Object $r8;
+        com.facebook.a.c.b $r9;
+        java.lang.Runtime $r10;
+        java.lang.Object[] $r11;
+        java.lang.Process $r12;
+        java.io.BufferedReader $r13;
+        java.io.InputStreamReader $r14;
+        java.io.InputStream $r15;
+        java.lang.StringBuilder $r16;
+
+        $r0 := @parameter0: java.lang.String;
+        $r3 = new java.util.ArrayList;
+
+     label0:
+        specialinvoke $r3.<java.util.ArrayList: void <init>()>();
+        virtualinvoke $r3.<java.util.ArrayList: boolean add(java.lang.Object)>("logcat");
+        if $r0 == null goto label1;
+
+        virtualinvoke $r3.<java.util.ArrayList: boolean add(java.lang.Object)>("-b");
+        virtualinvoke $r3.<java.util.ArrayList: boolean add(java.lang.Object)>($r0);
+
+     label1:
+        $i2 = -1;
+        $r4 = new java.util.ArrayList;
+        $r2 = staticinvoke <com.facebook.a.a: com.facebook.a.a.b a()>();
+        $r6 = interfaceinvoke $r2.<com.facebook.a.a.b: java.lang.String[] b()>();
+        $r7 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r6);
+        specialinvoke $r4.<java.util.ArrayList: void <init>(java.util.Collection)>($r7);
+        $i3 = interfaceinvoke $r4.<java.util.List: int indexOf(java.lang.Object)>("-t");
+        if $i3 < 0 goto label2;
+
+        $i0 = interfaceinvoke $r4.<java.util.List: int size()>();
+        if $i3 >= $i0 goto label2;
+
+        $i2 = $i3 + 1;
+        $r8 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>($i2);
+        $r1 = (java.lang.String) $r8;
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+        $i0 = staticinvoke <com.facebook.a.c: int a()>();
+        if $i0 >= 8 goto label2;
+
+        $i0 = $i3 + 1;
+        interfaceinvoke $r4.<java.util.List: java.lang.Object remove(int)>($i0);
+        interfaceinvoke $r4.<java.util.List: java.lang.Object remove(int)>($i3);
+        interfaceinvoke $r4.<java.util.List: boolean add(java.lang.Object)>("-d");
+
+     label2:
+        $r9 = new com.facebook.a.c.b;
+        if $i2 <= 0 goto label10;
+
+     label3:
+        specialinvoke $r9.<com.facebook.a.c.b: void <init>(int)>($i2);
+
+     label4:
+        virtualinvoke $r3.<java.util.ArrayList: boolean addAll(java.util.Collection)>($r4);
+        $r10 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+        $i3 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        $r6 = newarray (java.lang.String)[$i3];
+        $r11 = virtualinvoke $r3.<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])>($r6);
+        $r6 = (java.lang.String[]) $r11;
+        $r12 = virtualinvoke $r10.<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>($r6);
+        $r13 = new java.io.BufferedReader;
+        $r14 = new java.io.InputStreamReader;
+        $r15 = virtualinvoke $r12.<java.lang.Process: java.io.InputStream getInputStream()>();
+        specialinvoke $r14.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r15);
+        specialinvoke $r13.<java.io.BufferedReader: void <init>(java.io.Reader)>($r14);
+        $r1 = <com.facebook.a.a: java.lang.String a>;
+
+     label5:
+        $r1 = virtualinvoke $r13.<java.io.BufferedReader: java.lang.String readLine()>();
+        if $r1 == null goto label11;
+
+        $r16 = new java.lang.StringBuilder;
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>()>();
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r1 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<com.facebook.a.c.b: boolean add(java.lang.Object)>($r1);
+
+     label6:
+        goto label5;
+
+     label7:
+        $r17 := @caughtexception;
+        $r5 = $r17;
+
+     label8:
+        $r1 = <com.facebook.a.a: java.lang.String a>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, "LogCatCollector.collectLogcat could not retrieve data.", $r5);
+
+     label9:
+        $r1 = virtualinvoke $r9.<com.facebook.a.c.b: java.lang.String toString()>();
+        return $r1;
+
+     label10:
+        $i2 = 100;
+        goto label3;
+
+     label11:
+        goto label9;
+
+     label12:
+        $r5 := @caughtexception;
+        $r9 = null;
+        goto label8;
+
+        catch java.io.IOException from label0 to label4 with label12;
+        catch java.io.IOException from label4 to label6 with label7;
+    }
+}

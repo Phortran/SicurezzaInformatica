@@ -1,0 +1,344 @@
+public final class com.facebook.rti.a.b.a extends java.lang.Object
+{
+    private static final java.lang.Object f;
+    private static com.facebook.rti.a.b.a g;
+    private final android.content.Context a;
+    private final java.util.HashMap b;
+    private final java.util.HashMap c;
+    private final java.util.ArrayList d;
+    private final android.os.Handler e;
+
+    static void <clinit>()
+    {
+        java.lang.Object $r0;
+
+        $r0 = new java.lang.Object;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        <com.facebook.rti.a.b.a: java.lang.Object f> = $r0;
+        return;
+    }
+
+    private void <init>(android.content.Context)
+    {
+        com.facebook.rti.a.b.a $r0;
+        android.content.Context $r1;
+        java.util.HashMap $r2;
+        android.os.Looper $r3;
+        java.util.ArrayList $r4;
+        com.facebook.rti.a.b.b $r5;
+
+        $r0 := @this: com.facebook.rti.a.b.a;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.rti.a.b.a: java.util.HashMap b> = $r2;
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $r0.<com.facebook.rti.a.b.a: java.util.HashMap c> = $r2;
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r0.<com.facebook.rti.a.b.a: java.util.ArrayList d> = $r4;
+        $r0.<com.facebook.rti.a.b.a: android.content.Context a> = $r1;
+        $r5 = new com.facebook.rti.a.b.b;
+        $r3 = virtualinvoke $r1.<android.content.Context: android.os.Looper getMainLooper()>();
+        specialinvoke $r5.<com.facebook.rti.a.b.b: void <init>(com.facebook.rti.a.b.a,android.os.Looper)>($r0, $r3);
+        $r0.<com.facebook.rti.a.b.a: android.os.Handler e> = $r5;
+        return;
+    }
+
+    public static com.facebook.rti.a.b.a a(android.content.Context)
+    {
+        android.content.Context $r0;
+        com.facebook.rti.a.b.a $r1;
+        java.lang.Object $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = <com.facebook.rti.a.b.a: java.lang.Object f>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = <com.facebook.rti.a.b.a: com.facebook.rti.a.b.a g>;
+        if $r1 != null goto label1;
+
+        $r1 = new com.facebook.rti.a.b.a;
+        $r0 = virtualinvoke $r0.<android.content.Context: android.content.Context getApplicationContext()>();
+        specialinvoke $r1.<com.facebook.rti.a.b.a: void <init>(android.content.Context)>($r0);
+        <com.facebook.rti.a.b.a: com.facebook.rti.a.b.a g> = $r1;
+
+     label1:
+        $r1 = <com.facebook.rti.a.b.a: com.facebook.rti.a.b.a g>;
+        exitmonitor $r2;
+        return $r1;
+
+     label2:
+        $r3 := @caughtexception;
+        exitmonitor $r2;
+
+     label3:
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label3 with label2;
+    }
+
+    private void a()
+    {
+        com.facebook.rti.a.b.a $r0;
+        java.util.ArrayList $r1;
+        java.util.HashMap $r2;
+        int $i1, $i2, $i3;
+        com.facebook.rti.a.b.c[] $r3;
+        com.facebook.rti.a.b.c $r4;
+        android.content.Context $r5;
+        android.content.Intent $r6;
+        java.lang.Object $r7;
+        com.facebook.rti.a.b.d $r8;
+        android.content.BroadcastReceiver $r9;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: com.facebook.rti.a.b.a;
+
+     label0:
+        $r2 = $r0.<com.facebook.rti.a.b.a: java.util.HashMap b>;
+        entermonitor $r2;
+
+     label1:
+        $r1 = $r0.<com.facebook.rti.a.b.a: java.util.ArrayList d>;
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        if $i1 > 0 goto label2;
+
+        exitmonitor $r2;
+        return;
+
+     label2:
+        $r3 = newarray (com.facebook.rti.a.b.c)[$i1];
+        $r1 = $r0.<com.facebook.rti.a.b.a: java.util.ArrayList d>;
+        virtualinvoke $r1.<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])>($r3);
+        $r1 = $r0.<com.facebook.rti.a.b.a: java.util.ArrayList d>;
+        virtualinvoke $r1.<java.util.ArrayList: void clear()>();
+        exitmonitor $r2;
+
+     label3:
+        $i1 = 0;
+
+     label4:
+        $i2 = lengthof $r3;
+        if $i1 >= $i2 goto label0;
+
+        $r4 = $r3[$i1];
+        $i2 = 0;
+
+     label5:
+        $r1 = $r4.<com.facebook.rti.a.b.c: java.util.ArrayList b>;
+        $i3 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        if $i2 >= $i3 goto label9;
+
+        $r1 = $r4.<com.facebook.rti.a.b.c: java.util.ArrayList b>;
+        $r7 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i2);
+        $r8 = (com.facebook.rti.a.b.d) $r7;
+        $r9 = $r8.<com.facebook.rti.a.b.d: android.content.BroadcastReceiver b>;
+        $r5 = $r0.<com.facebook.rti.a.b.a: android.content.Context a>;
+        $r6 = $r4.<com.facebook.rti.a.b.c: android.content.Intent a>;
+        virtualinvoke $r9.<android.content.BroadcastReceiver: void onReceive(android.content.Context,android.content.Intent)>($r5, $r6);
+        $i2 = $i2 + 1;
+        goto label5;
+
+     label6:
+        $r10 := @caughtexception;
+
+     label7:
+        exitmonitor $r2;
+
+     label8:
+        throw $r10;
+
+     label9:
+        $i1 = $i1 + 1;
+        goto label4;
+
+        catch java.lang.Throwable from label1 to label3 with label6;
+        catch java.lang.Throwable from label7 to label8 with label6;
+    }
+
+    static void a(com.facebook.rti.a.b.a)
+    {
+        com.facebook.rti.a.b.a $r0;
+
+        $r0 := @parameter0: com.facebook.rti.a.b.a;
+        specialinvoke $r0.<com.facebook.rti.a.b.a: void a()>();
+        return;
+    }
+
+    public final boolean a(android.content.Intent)
+    {
+        com.facebook.rti.a.b.a $r0;
+        android.content.Intent $r1;
+        android.content.Context $r3;
+        java.lang.String $r4, $r5, $r6, $r9;
+        android.net.Uri $r7;
+        java.util.Set $r8;
+        java.util.ArrayList $r10, $r12;
+        com.facebook.rti.a.b.d $r11;
+        int $i0, $i2;
+        boolean $z0, $z1;
+        java.util.HashMap $r13, $r16;
+        android.content.ContentResolver $r14;
+        java.lang.StringBuilder $r15;
+        java.lang.Object $r17;
+        android.content.IntentFilter $r18;
+        java.lang.Throwable $r19;
+        com.facebook.rti.a.b.c $r20;
+        android.os.Handler $r21;
+
+        $r0 := @this: com.facebook.rti.a.b.a;
+        $r1 := @parameter0: android.content.Intent;
+        $r13 = $r0.<com.facebook.rti.a.b.a: java.util.HashMap b>;
+        entermonitor $r13;
+
+     label0:
+        $r4 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r3 = $r0.<com.facebook.rti.a.b.a: android.content.Context a>;
+        $r14 = virtualinvoke $r3.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r5 = virtualinvoke $r1.<android.content.Intent: java.lang.String resolveTypeIfNeeded(android.content.ContentResolver)>($r14);
+        $r7 = virtualinvoke $r1.<android.content.Intent: android.net.Uri getData()>();
+        $r6 = virtualinvoke $r1.<android.content.Intent: java.lang.String getScheme()>();
+        $r8 = virtualinvoke $r1.<android.content.Intent: java.util.Set getCategories()>();
+        $i0 = virtualinvoke $r1.<android.content.Intent: int getFlags()>();
+        $i0 = $i0 & 8;
+        if $i0 == 0 goto label7;
+
+        $z0 = 1;
+
+     label1:
+        if $z0 == 0 goto label2;
+
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Resolving type ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" scheme ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" of intent ");
+        virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+     label2:
+        $r16 = $r0.<com.facebook.rti.a.b.a: java.util.HashMap c>;
+        $r9 = virtualinvoke $r1.<android.content.Intent: java.lang.String getAction()>();
+        $r17 = virtualinvoke $r16.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r9);
+        $r10 = (java.util.ArrayList) $r17;
+        if $r10 == null goto label17;
+
+        if $z0 == 0 goto label3;
+
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Action list: ");
+        virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10);
+
+     label3:
+        $r12 = null;
+        $i0 = 0;
+
+     label4:
+        $i2 = virtualinvoke $r10.<java.util.ArrayList: int size()>();
+        if $i0 >= $i2 goto label13;
+
+        $r17 = virtualinvoke $r10.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r11 = (com.facebook.rti.a.b.d) $r17;
+        if $z0 == 0 goto label5;
+
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Matching against filter ");
+        $r18 = $r11.<com.facebook.rti.a.b.d: android.content.IntentFilter a>;
+        virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r18);
+
+     label5:
+        $z1 = $r11.<com.facebook.rti.a.b.d: boolean c>;
+        if $z1 == 0 goto label8;
+
+        if $z0 == 0 goto label20;
+
+     label6:
+        $i0 = $i0 + 1;
+        goto label4;
+
+     label7:
+        $z0 = 0;
+        goto label1;
+
+     label8:
+        $r18 = $r11.<com.facebook.rti.a.b.d: android.content.IntentFilter a>;
+        $i2 = virtualinvoke $r18.<android.content.IntentFilter: int match(java.lang.String,java.lang.String,java.lang.String,android.net.Uri,java.util.Set,java.lang.String)>($r4, $r5, $r6, $r7, $r8, "LocalBroadcastManager");
+        if $i2 < 0 goto label20;
+
+        if $z0 == 0 goto label9;
+
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("  Filter matched!  match=0x");
+        $r9 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i2);
+        virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+
+     label9:
+        if $r12 != null goto label19;
+
+        $r12 = new java.util.ArrayList;
+        specialinvoke $r12.<java.util.ArrayList: void <init>()>();
+
+     label10:
+        virtualinvoke $r12.<java.util.ArrayList: boolean add(java.lang.Object)>($r11);
+        $r11.<com.facebook.rti.a.b.d: boolean c> = 1;
+        goto label6;
+
+     label11:
+        $r19 := @caughtexception;
+        exitmonitor $r13;
+
+     label12:
+        throw $r19;
+
+     label13:
+        if $r12 == null goto label17;
+
+        $i2 = 0;
+
+     label14:
+        $i0 = virtualinvoke $r12.<java.util.ArrayList: int size()>();
+        if $i2 >= $i0 goto label15;
+
+        $r17 = virtualinvoke $r12.<java.util.ArrayList: java.lang.Object get(int)>($i2);
+        $r11 = (com.facebook.rti.a.b.d) $r17;
+        $r11.<com.facebook.rti.a.b.d: boolean c> = 0;
+        $i2 = $i2 + 1;
+        goto label14;
+
+     label15:
+        $r10 = $r0.<com.facebook.rti.a.b.a: java.util.ArrayList d>;
+        $r20 = new com.facebook.rti.a.b.c;
+        specialinvoke $r20.<com.facebook.rti.a.b.c: void <init>(android.content.Intent,java.util.ArrayList)>($r1, $r12);
+        virtualinvoke $r10.<java.util.ArrayList: boolean add(java.lang.Object)>($r20);
+        $r21 = $r0.<com.facebook.rti.a.b.a: android.os.Handler e>;
+        $z1 = virtualinvoke $r21.<android.os.Handler: boolean hasMessages(int)>(1);
+        if $z1 != 0 goto label16;
+
+        $r21 = $r0.<com.facebook.rti.a.b.a: android.os.Handler e>;
+        virtualinvoke $r21.<android.os.Handler: boolean sendEmptyMessage(int)>(1);
+
+     label16:
+        exitmonitor $r13;
+        return 1;
+
+     label17:
+        exitmonitor $r13;
+
+     label18:
+        return 0;
+
+     label19:
+        goto label10;
+
+     label20:
+        goto label6;
+
+        catch java.lang.Throwable from label0 to label12 with label11;
+        catch java.lang.Throwable from label14 to label18 with label11;
+    }
+}

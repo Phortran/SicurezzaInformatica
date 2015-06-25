@@ -1,0 +1,163 @@
+public class org.acra.util.Installation extends java.lang.Object
+{
+    private static final java.lang.String INSTALLATION;
+    private static java.lang.String sID;
+
+    public void <init>()
+    {
+        org.acra.util.Installation $r0;
+
+        $r0 := @this: org.acra.util.Installation;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static java.lang.String id(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r6;
+        java.io.File $r3, $r4;
+        boolean $z0;
+        java.io.IOException $r5;
+        java.lang.StringBuilder $r7;
+        java.lang.RuntimeException $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @parameter0: android.content.Context;
+        entermonitor class "org/acra/util/Installation";
+
+     label0:
+        $r1 = <org.acra.util.Installation: java.lang.String sID>;
+        if $r1 != null goto label4;
+
+        $r4 = new java.io.File;
+        $r3 = virtualinvoke $r0.<android.content.Context: java.io.File getFilesDir()>();
+        specialinvoke $r4.<java.io.File: void <init>(java.io.File,java.lang.String)>($r3, "ACRA-INSTALLATION");
+
+     label1:
+        $z0 = virtualinvoke $r4.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label2;
+
+        staticinvoke <org.acra.util.Installation: void writeInstallationFile(java.io.File)>($r4);
+
+     label2:
+        $r1 = staticinvoke <org.acra.util.Installation: java.lang.String readInstallationFile(java.io.File)>($r4);
+
+     label3:
+        <org.acra.util.Installation: java.lang.String sID> = $r1;
+
+     label4:
+        $r1 = <org.acra.util.Installation: java.lang.String sID>;
+
+     label5:
+        exitmonitor class "org/acra/util/Installation";
+        return $r1;
+
+     label6:
+        $r5 := @caughtexception;
+
+     label7:
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Couldn\'t retrieve InstallationId for ");
+        $r1 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, $r1, $r5);
+        $r1 = "Couldn\'t retrieve InstallationId";
+        goto label5;
+
+     label8:
+        $r8 := @caughtexception;
+        $r6 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Couldn\'t retrieve InstallationId for ");
+        $r1 = virtualinvoke $r0.<android.content.Context: java.lang.String getPackageName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>($r6, $r1, $r8);
+        $r1 = "Couldn\'t retrieve InstallationId";
+
+     label9:
+        goto label5;
+
+     label10:
+        $r9 := @caughtexception;
+        exitmonitor class "org/acra/util/Installation";
+        throw $r9;
+
+        catch java.lang.Throwable from label0 to label1 with label10;
+        catch java.io.IOException from label1 to label3 with label6;
+        catch java.lang.RuntimeException from label1 to label3 with label8;
+        catch java.lang.Throwable from label1 to label4 with label10;
+        catch java.lang.Throwable from label4 to label5 with label10;
+        catch java.lang.Throwable from label7 to label9 with label10;
+    }
+
+    private static java.lang.String readInstallationFile(java.io.File)
+    {
+        java.io.File $r0;
+        java.io.RandomAccessFile $r1;
+        java.lang.String $r2;
+        long $l0;
+        int $i1;
+        byte[] $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @parameter0: java.io.File;
+        $r1 = new java.io.RandomAccessFile;
+        specialinvoke $r1.<java.io.RandomAccessFile: void <init>(java.io.File,java.lang.String)>($r0, "r");
+        $l0 = virtualinvoke $r1.<java.io.RandomAccessFile: long length()>();
+        $i1 = (int) $l0;
+        $r3 = newarray (byte)[$i1];
+
+     label0:
+        virtualinvoke $r1.<java.io.RandomAccessFile: void readFully(byte[])>($r3);
+
+     label1:
+        virtualinvoke $r1.<java.io.RandomAccessFile: void close()>();
+        $r2 = new java.lang.String;
+        specialinvoke $r2.<java.lang.String: void <init>(byte[])>($r3);
+        return $r2;
+
+     label2:
+        $r4 := @caughtexception;
+        virtualinvoke $r1.<java.io.RandomAccessFile: void close()>();
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    private static void writeInstallationFile(java.io.File)
+    {
+        java.io.File $r0;
+        java.util.UUID $r1;
+        java.io.FileOutputStream $r2;
+        java.lang.String $r3;
+        byte[] $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @parameter0: java.io.File;
+        $r2 = new java.io.FileOutputStream;
+        specialinvoke $r2.<java.io.FileOutputStream: void <init>(java.io.File)>($r0);
+
+     label0:
+        $r1 = staticinvoke <java.util.UUID: java.util.UUID randomUUID()>();
+        $r3 = virtualinvoke $r1.<java.util.UUID: java.lang.String toString()>();
+        $r4 = virtualinvoke $r3.<java.lang.String: byte[] getBytes()>();
+        virtualinvoke $r2.<java.io.FileOutputStream: void write(byte[])>($r4);
+
+     label1:
+        virtualinvoke $r2.<java.io.FileOutputStream: void close()>();
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<java.io.FileOutputStream: void close()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

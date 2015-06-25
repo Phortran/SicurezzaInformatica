@@ -6,10 +6,7 @@ import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//FIXME switchare tra i due
-//import reachability.MethodTag;
 import dua.method.MethodTag;
-
 import soot.BooleanType;
 import soot.RefType;
 import soot.Scene;

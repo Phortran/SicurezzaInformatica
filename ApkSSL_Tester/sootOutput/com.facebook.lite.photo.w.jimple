@@ -1,0 +1,62 @@
+final class com.facebook.lite.photo.w extends java.lang.Object implements java.lang.Runnable
+{
+    final java.lang.Object a;
+    final java.lang.Integer b;
+    final android.graphics.Bitmap c;
+    final com.facebook.lite.photo.t d;
+
+    void <init>(com.facebook.lite.photo.t, java.lang.Object, java.lang.Integer, android.graphics.Bitmap)
+    {
+        com.facebook.lite.photo.w $r0;
+        com.facebook.lite.photo.t $r1;
+        java.lang.Object $r2;
+        java.lang.Integer $r3;
+        android.graphics.Bitmap $r4;
+
+        $r0 := @this: com.facebook.lite.photo.w;
+        $r1 := @parameter0: com.facebook.lite.photo.t;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 := @parameter2: java.lang.Integer;
+        $r4 := @parameter3: android.graphics.Bitmap;
+        $r0.<com.facebook.lite.photo.w: com.facebook.lite.photo.t d> = $r1;
+        $r0.<com.facebook.lite.photo.w: java.lang.Object a> = $r2;
+        $r0.<com.facebook.lite.photo.w: java.lang.Integer b> = $r3;
+        $r0.<com.facebook.lite.photo.w: android.graphics.Bitmap c> = $r4;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.lite.photo.w $r0;
+        com.facebook.lite.photo.t $r1;
+        java.lang.Object $r2;
+        android.graphics.Bitmap $r3;
+        java.util.WeakHashMap $r4;
+        java.lang.Integer $r5;
+        com.facebook.lite.photo.x $r6;
+
+        $r0 := @this: com.facebook.lite.photo.w;
+        $r1 = $r0.<com.facebook.lite.photo.w: com.facebook.lite.photo.t d>;
+        $r4 = $r1.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        $r2 = $r0.<com.facebook.lite.photo.w: java.lang.Object a>;
+        $r2 = virtualinvoke $r4.<java.util.WeakHashMap: java.lang.Object get(java.lang.Object)>($r2);
+        $r5 = $r0.<com.facebook.lite.photo.w: java.lang.Integer b>;
+        if $r2 == $r5 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<com.facebook.lite.photo.w: com.facebook.lite.photo.t d>;
+        $r4 = $r1.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        $r2 = $r0.<com.facebook.lite.photo.w: java.lang.Object a>;
+        virtualinvoke $r4.<java.util.WeakHashMap: java.lang.Object remove(java.lang.Object)>($r2);
+        $r1 = $r0.<com.facebook.lite.photo.w: com.facebook.lite.photo.t d>;
+        $r6 = $r1.<com.facebook.lite.photo.t: com.facebook.lite.photo.x c>;
+        $r2 = $r0.<com.facebook.lite.photo.w: java.lang.Object a>;
+        $r3 = $r0.<com.facebook.lite.photo.w: android.graphics.Bitmap c>;
+        interfaceinvoke $r6.<com.facebook.lite.photo.x: void a(java.lang.Object,android.graphics.Bitmap)>($r2, $r3);
+        goto label0;
+    }
+}

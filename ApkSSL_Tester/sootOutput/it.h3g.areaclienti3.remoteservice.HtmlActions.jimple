@@ -1,0 +1,1899 @@
+public class it.h3g.areaclienti3.remoteservice.HtmlActions extends java.lang.Object
+{
+    public static boolean DEBUG_FILE;
+    private static final java.lang.String TAG;
+    private static it.h3g.areaclienti3.remoteservice.HtmlActions instance;
+    protected it.h3g.areaclienti3.d.z freeUnitsOtionMapping;
+    private android.content.Context mAppContext;
+    protected java.lang.String mCharset;
+    private boolean mLogged;
+    private it.h3g.areaclienti3.j.m mUtils;
+    private it.h3g.areaclienti3.j.l myPreferences;
+
+    static void <clinit>()
+    {
+        <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE> = 0;
+        return;
+    }
+
+    private void <init>()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: java.lang.String mCharset> = "utf-8";
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean mLogged> = 0;
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences> = null;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "HTML_ACTION is created");
+        return;
+    }
+
+    private boolean checkSession()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        java.lang.String $r1, $r2;
+        it.h3g.areaclienti3.j.m $r3;
+        java.lang.StringBuilder $r4;
+        java.util.Calendar $r5;
+        java.util.Date $r6, $r8;
+        it.h3g.areaclienti3.j.l $r7;
+        boolean $z2;
+        int $i0;
+        it.h3g.areaclienti3.remoteservice.a.h $r9;
+        android.content.Context $r10;
+        android.os.Bundle $r11, $r14;
+        it.h3g.areaclienti3.cache.a $r12;
+        it.h3g.areaclienti3.remoteservice.b.a $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "check Session start");
+        $r5 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r6 = virtualinvoke $r5.<java.util.Calendar: java.util.Date getTime()>();
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z2 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z2 != 0 goto label3;
+
+        $r8 = <it.h3g.areaclienti3.j.e: java.util.Date b>;
+        if $r8 == null goto label3;
+
+        $r8 = <it.h3g.areaclienti3.j.e: java.util.Date b>;
+        $i0 = staticinvoke <it.h3g.areaclienti3.j.m: int b(java.util.Date,java.util.Date)>($r6, $r8);
+        if $i0 < 20 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("HtmlActions", "REFRESH Session");
+        $r9 = new it.h3g.areaclienti3.remoteservice.a.h;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r9.<it.h3g.areaclienti3.remoteservice.a.h: void <init>(android.content.Context)>($r10);
+        $r11 = new android.os.Bundle;
+        specialinvoke $r11.<android.os.Bundle: void <init>()>();
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $z2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.m: boolean e()>();
+        if $z2 == 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("HtmlActions", "Autologin Start");
+        $r11 = new android.os.Bundle;
+        specialinvoke $r11.<android.os.Bundle: void <init>()>();
+        <it.h3g.areaclienti3.j.e: android.os.Bundle a> = $r11;
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean y()>();
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.Boolean A()>();
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean c(boolean)>(1);
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.j.l: void f(boolean)>(1);
+        $r12 = new it.h3g.areaclienti3.cache.a;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r12.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r10);
+        virtualinvoke $r12.<it.h3g.areaclienti3.cache.a: void a()>();
+        $r13 = staticinvoke <it.h3g.areaclienti3.remoteservice.b.a: it.h3g.areaclienti3.remoteservice.b.a a()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.remoteservice.b.a: void a(java.util.HashMap)>(null);
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLastSessionDate()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "check Session refresh");
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "check Session end");
+        return 1;
+
+     label2:
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $z2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.m: boolean f()>();
+        if $z2 == 0 goto label0;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z2 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean P()>();
+        if $z2 == 0 goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Standard Login Start with: ");
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $r2 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String H()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("HtmlActions", $r2);
+        $r14 = new android.os.Bundle;
+        specialinvoke $r14.<android.os.Bundle: void <init>()>();
+        <it.h3g.areaclienti3.j.e: android.os.Bundle a> = $r14;
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $r1 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String H()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r1);
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $r1 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String I()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("password", $r1);
+        virtualinvoke $r11.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("autoLogin", 0);
+        $r14 = virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.a.h: android.os.Bundle a(android.os.Bundle)>($r11);
+        $z2 = staticinvoke <it.h3g.areaclienti3.j.m: boolean a(android.os.Bundle)>($r14);
+        if $z2 == 0 goto label0;
+
+        return 0;
+
+     label3:
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLastSessionDate()>();
+        goto label1;
+    }
+
+    public static it.h3g.areaclienti3.remoteservice.HtmlActions getInstance()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+
+        $r0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.remoteservice.HtmlActions instance>;
+        if $r0 != null goto label0;
+
+        $r0 = new it.h3g.areaclienti3.remoteservice.HtmlActions;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void <init>()>();
+        <it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.remoteservice.HtmlActions instance> = $r0;
+
+     label0:
+        $r0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.remoteservice.HtmlActions instance>;
+        return $r0;
+    }
+
+    private android.os.Bundle getPlanPriceDetail(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r2;
+        it.h3g.areaclienti3.k.a $r3;
+        java.lang.String $r4;
+        it.h3g.areaclienti3.j.l $r5;
+        android.content.Context $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.d.bf $r7;
+        java.lang.Exception $r8;
+        it.h3g.areaclienti3.j.m $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+
+     label0:
+        $r3 = staticinvoke <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a g()>();
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("plan");
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z0 = virtualinvoke $r5.<it.h3g.areaclienti3.j.l: boolean S()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        virtualinvoke $r3.<it.h3g.areaclienti3.k.a: void a(java.lang.String,boolean,android.content.Context)>($r4, $z0, $r6);
+        $r7 = virtualinvoke $r3.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf b()>();
+        virtualinvoke $r2.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("result", $r7);
+
+     label1:
+        return $r2;
+
+     label2:
+        $r8 := @caughtexception;
+        $r9 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $r2 = virtualinvoke $r9.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r8, $r2);
+        return $r2;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private void setLastSessionDate()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        java.util.Calendar $r1;
+        java.util.Date $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r2 = virtualinvoke $r1.<java.util.Calendar: java.util.Date getTime()>();
+        <it.h3g.areaclienti3.j.e: java.util.Date b> = $r2;
+        return;
+    }
+
+    public android.os.Bundle activateOptionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle addCustomerMsisdnAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.a $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.a;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle bannerFilmAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.b $r2;
+        android.content.Context $r3;
+        java.lang.String $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.b;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.b: void <init>(android.content.Context)>($r3);
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("bannerId");
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String)>("showError");
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.b: android.os.Bundle a(java.lang.String,boolean)>($r5, $z0);
+        return $r1;
+    }
+
+    public android.os.Bundle billingRegistrationStatus(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle callBannerPiccoloAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.b $r2;
+        android.content.Context $r3;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.b;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.b: void <init>(android.content.Context)>($r3);
+        $i0 = virtualinvoke $r1.<android.os.Bundle: int getInt(java.lang.String)>("sectionId");
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.b: android.os.Bundle a(int)>($i0);
+        return $r1;
+    }
+
+    public android.os.Bundle changePasswordAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle g(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle changeTariffPlanAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r3;
+        it.h3g.areaclienti3.remoteservice.b.q.a $r2;
+        android.content.Context $r4;
+        java.lang.String $r5;
+        it.h3g.areaclienti3.remoteservice.b.q.b $r6;
+        java.lang.Object $r7;
+        it.h3g.areaclienti3.remoteservice.b.q.c $r8;
+        java.lang.Boolean $r9;
+        boolean $z0;
+        java.lang.Exception $r10;
+        it.h3g.areaclienti3.j.m $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.q.a;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.a: void <init>(android.content.Context)>($r4);
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.q.b;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.b: void <init>()>();
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("msisdn");
+        virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.b: void a(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("destination");
+        virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.b: void b(java.lang.String)>($r5);
+
+     label0:
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r6);
+        $r8 = (it.h3g.areaclienti3.remoteservice.b.q.c) $r7;
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.q.c: java.lang.Boolean c()>();
+        $z0 = virtualinvoke $r9.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r3.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("result", $z0);
+        return $r3;
+
+     label1:
+        virtualinvoke $r3.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+
+     label2:
+        return $r3;
+
+     label3:
+        $r10 := @caughtexception;
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $r3 = virtualinvoke $r11.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r10, $r3);
+        return $r3;
+
+        catch java.lang.Exception from label0 to label2 with label3;
+    }
+
+    public android.os.Bundle changeUsimAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r2;
+        android.content.Context $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r2.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.content.Context)>($r4);
+        return $r2;
+    }
+
+    public android.os.Bundle checkCompatibilityTariffPlanAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r3;
+        it.h3g.areaclienti3.remoteservice.b.q.d $r2;
+        android.content.Context $r4;
+        java.lang.String $r5;
+        it.h3g.areaclienti3.remoteservice.b.q.e $r6;
+        java.lang.Object $r7;
+        it.h3g.areaclienti3.remoteservice.b.q.f $r8;
+        java.lang.Boolean $r9;
+        boolean $z0;
+        java.util.ArrayList $r10;
+        java.lang.Exception $r11;
+        it.h3g.areaclienti3.j.m $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.q.d;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.d: void <init>(android.content.Context)>($r4);
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.q.e;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.e: void <init>()>();
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("msisdn");
+        virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.e: void a(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("destination");
+        virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.q.e: void b(java.lang.String)>($r5);
+
+     label0:
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.q.d: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r6);
+        $r8 = (it.h3g.areaclienti3.remoteservice.b.q.f) $r7;
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.q.f: java.lang.Boolean a()>();
+        $z0 = virtualinvoke $r9.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r3.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("isCompatible", $z0);
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.q.f: java.lang.Boolean a()>();
+        $z0 = virtualinvoke $r9.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 != 0 goto label3;
+
+        $r10 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.q.f: java.util.ArrayList d()>();
+        virtualinvoke $r3.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("incompatibleProductCodes", $r10);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r11 := @caughtexception;
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $r3 = virtualinvoke $r12.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r11, $r3);
+        return $r3;
+
+     label3:
+        return $r3;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public void checkSessionBackground()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        java.util.Calendar $r3;
+        java.util.Date $r4, $r6;
+        it.h3g.areaclienti3.j.l $r5;
+        boolean $z1;
+        int $i0;
+        it.h3g.areaclienti3.j.m $r7;
+        android.os.Bundle $r8;
+        it.h3g.areaclienti3.cache.a $r9;
+        android.content.Context $r10;
+        it.h3g.areaclienti3.remoteservice.b.a $r11;
+        android.content.Intent $r12;
+        java.lang.Exception $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "check Session start");
+        $r3 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r4 = virtualinvoke $r3.<java.util.Calendar: java.util.Date getTime()>();
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        if $r5 == null goto label2;
+
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z1 = virtualinvoke $r5.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z1 != 0 goto label2;
+
+        $r6 = <it.h3g.areaclienti3.j.e: java.util.Date b>;
+        if $r6 == null goto label2;
+
+        $r6 = <it.h3g.areaclienti3.j.e: java.util.Date b>;
+        $i0 = staticinvoke <it.h3g.areaclienti3.j.m: int b(java.util.Date,java.util.Date)>($r4, $r6);
+        if $i0 < 20 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $z1 = virtualinvoke $r7.<it.h3g.areaclienti3.j.m: boolean e()>();
+        if $z1 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void e(java.lang.String,java.lang.String)>("HtmlActions", "Autologin Start");
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        <it.h3g.areaclienti3.j.e: android.os.Bundle a> = $r8;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.j.l: boolean y()>();
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.j.l: java.lang.Boolean A()>();
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.j.l: boolean c(boolean)>(1);
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.j.l: void f(boolean)>(1);
+        $r9 = new it.h3g.areaclienti3.cache.a;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r9.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r10);
+        virtualinvoke $r9.<it.h3g.areaclienti3.cache.a: void a()>();
+        $r11 = staticinvoke <it.h3g.areaclienti3.remoteservice.b.a: it.h3g.areaclienti3.remoteservice.b.a a()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.a: void a(java.util.HashMap)>(null);
+        $r12 = new android.content.Intent;
+        specialinvoke $r12.<android.content.Intent: void <init>()>();
+        virtualinvoke $r12.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("BROADCAST_RECEIVED_ACTION");
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r12.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Bundle)>("refreshSession", $r8);
+
+     label0:
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        virtualinvoke $r10.<android.content.Context: void sendBroadcast(android.content.Intent)>($r12);
+
+     label1:
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLastSessionDate()>();
+
+     label2:
+        return;
+
+     label3:
+        $r13 := @caughtexception;
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label3;
+    }
+
+    public android.os.Bundle checkUnreadNewsAndPollsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.i $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.i;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: android.os.Bundle a()>();
+        return $r1;
+    }
+
+    public android.os.Bundle confirmOptionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle deactivateOptionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle deactiveAllSmsPremiumAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.q $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.q;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle deactiveSmsPremiumAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.q $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.q;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle disableBillingsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle downloadPdfAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle i(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle downloadPdfDocumentAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.m $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.m;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle extraTresholdAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.v $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.v;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.v: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.v: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle faqHelpAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getAccountListDetails(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getAmcTypeAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle g(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getCitiesAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getCityNameUsingGoogleMap(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle h(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getFaqAnswers(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getInfoAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.f $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.f;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.f: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.f: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getLocationCoordinates(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle g(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getMessageAttachment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle h(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getMessageFromPushAMC(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getMessageListAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.remoteservice.a.d $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r2 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r2;
+    }
+
+    public android.os.Bundle getMyMessageAtAMCUrlAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getMyMessageAtUrlAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getMyNewsAndPollsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        int $i0;
+        it.h3g.areaclienti3.remoteservice.a.i $r4;
+        android.content.Context $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "GET MY NEWS AND POLLS ACTION");
+        $r4 = new it.h3g.areaclienti3.remoteservice.a.i;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.a.i: void <init>(android.content.Context)>($r5);
+        $i0 = virtualinvoke $r1.<android.os.Bundle: int getInt(java.lang.String)>("sectionId");
+        $r1 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.a.i: android.os.Bundle a(int)>($i0);
+        return $r1;
+    }
+
+    public android.os.Bundle getMyNewsAndPollsDetailAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r3;
+        java.lang.Object $r5;
+        it.h3g.areaclienti3.d.ag $r6;
+        java.lang.Exception $r7;
+        it.h3g.areaclienti3.j.m $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+
+     label0:
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.Object get(java.lang.String)>("detail");
+        $r6 = (it.h3g.areaclienti3.d.ag) $r5;
+        virtualinvoke $r3.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("result", $r6);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r7 := @caughtexception;
+        $r8 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $r3 = virtualinvoke $r8.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r7, $r3);
+        return $r3;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public android.os.Bundle getPollNextPageDetailAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.i $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.i;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getProvincesAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getRegionsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getRoamingCountriesForZoneAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.o $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.o;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getRoamingFlag(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.o $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.o;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getRoamingInfoAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.o $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.o;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getRoamingZonesAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.o $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.o;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.o: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getServicesInCityAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getShopsInCityAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getStoreServicesInCityAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle getStoreShopsInCityAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public boolean hasLogged()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $z0 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean mLogged>;
+        return $z0;
+    }
+
+    public android.os.Bundle increaseAMCAction(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+        android.os.Bundle $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle c(java.lang.String)>($r1);
+        return $r4;
+    }
+
+    public android.os.Bundle isA3Action(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.g $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.g;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.g: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.g: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle loadProposition(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.h $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.h;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.h: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.h: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle loginAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.h $r2;
+        android.content.Context $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.h;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.h: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.h: android.os.Bundle a(android.os.Bundle)>($r1);
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label0;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLastSessionDate()>();
+
+     label0:
+        return $r1;
+    }
+
+    public android.os.Bundle logoutAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        return $r1;
+    }
+
+    public android.os.Bundle notificationNewsAndPollsDetails(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.i $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.i;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle notificationNewsAndPoolViewAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.i $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.i;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.i: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle performTopupAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.t $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.t;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.t: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.t: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle pinRecoveryAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle planDetailMyBusinessAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.b.j.c $r2;
+        it.h3g.areaclienti3.j.l $r3;
+        android.content.Context $r4;
+        java.lang.String $r5, $r10;
+        it.h3g.areaclienti3.remoteservice.b.j.a $r6;
+        java.lang.Object $r7;
+        it.h3g.areaclienti3.remoteservice.b.j.d $r8;
+        it.h3g.areaclienti3.d.bf $r9;
+        java.lang.Exception $r11;
+        it.h3g.areaclienti3.j.m $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.j.c;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.j.c: void <init>()>();
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $r5 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.j.c: void a(java.lang.String)>($r5);
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $r5 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String n()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.j.c: void b(java.lang.String)>($r5);
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.j.a;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.j.a: void <init>(android.content.Context)>($r4);
+
+     label0:
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.j.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r2);
+        $r8 = (it.h3g.areaclienti3.remoteservice.b.j.d) $r7;
+        $r9 = new it.h3g.areaclienti3.d.bf;
+        specialinvoke $r9.<it.h3g.areaclienti3.d.bf: void <init>(it.h3g.areaclienti3.remoteservice.b.j.d)>($r8);
+        $r10 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.j.d: java.lang.String d()>();
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("title", $r10);
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("result", $r9);
+
+     label1:
+        return $r1;
+
+     label2:
+        $r11 := @caughtexception;
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils>;
+        $r1 = virtualinvoke $r12.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r11, $r1);
+        return $r1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public android.os.Bundle planPriceDetailAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1, $r6;
+        java.lang.String $r2;
+        it.h3g.areaclienti3.cache.a $r4;
+        android.content.Context $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "PLAN PRICE DETAILS");
+        $r4 = new it.h3g.areaclienti3.cache.a;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r4.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r5);
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("planPriceDetailAction", "");
+        $r6 = virtualinvoke $r4.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r2);
+        if $r6 != null goto label0;
+
+        $r6 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.os.Bundle getPlanPriceDetail(android.os.Bundle)>($r1);
+        if $r6 == null goto label0;
+
+        $z0 = virtualinvoke $r6.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r4.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r2, $r6);
+
+     label0:
+        if $r6 == null goto label1;
+
+        virtualinvoke $r6.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r2);
+
+     label1:
+        return $r6;
+    }
+
+    public android.os.Bundle portabilityAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.l $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.l;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.l: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.l: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle productsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle profileAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.m $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.m;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle pushOptionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.p $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.p;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.p: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.p: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle pushTopUpAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.p $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.p;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.p: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.p: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle registerElectronicInvoice(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle registrationStatusAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle removeCustomerMsisdnAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.a $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.a;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: android.os.Bundle b(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public void resetClient()
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("HtmlActions", "Resetting HTML Client");
+        virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLogged(boolean)>(0);
+        return;
+    }
+
+    public android.os.Bundle resetPasswordFormAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle retrieveBillingAccountDetail(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle retrieveCustomerMsisdnsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.a $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.a;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.a: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle retrieveListInvoices(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle savePersonalDataAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.m $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.m;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.m: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle searchCitiesAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.r $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.r;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle d(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle sendMessageAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.d $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.d;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.d: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle sendSecretAnswerAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle setBillingsEmailAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle h(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle setBillingsPinAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.c $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.c;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle g(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public void setContext(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0, $r5;
+        android.content.Context $r1, $r3;
+        it.h3g.areaclienti3.j.m $r2;
+        it.h3g.areaclienti3.j.l $r4;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.content.Context;
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext> = $r1;
+        $r2 = new it.h3g.areaclienti3.j.m;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r3);
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.m mUtils> = $r2;
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences> = $r4;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.j.l: boolean b()>();
+        if $z0 == 0 goto label0;
+
+        $r5 = <it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.remoteservice.HtmlActions instance>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.j.l myPreferences>;
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.j.l: boolean U()>();
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.HtmlActions: void setLogged(boolean)>($z0);
+
+     label0:
+        return;
+    }
+
+    public void setLogged(boolean)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $z0 := @parameter0: boolean;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("setLogged with: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("HtmlActions", $r3);
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean mLogged> = $z0;
+        return;
+    }
+
+    public android.os.Bundle setPasswordAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle f(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle signupAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.n $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.n;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.n: android.os.Bundle c(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle smsPremiumAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.q $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.q;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.q: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle thresholdsAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.s $r2;
+        android.content.Context $r3;
+        boolean $z0;
+        java.io.Serializable $r6;
+        it.h3g.areaclienti3.d.z $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.s;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.s: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.s: android.os.Bundle a(android.os.Bundle)>($r1);
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("freeUnitsMap");
+        if $z0 == 0 goto label0;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("freeUnitsMap");
+        $r7 = (it.h3g.areaclienti3.d.z) $r6;
+        $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping> = $r7;
+        virtualinvoke $r1.<android.os.Bundle: void remove(java.lang.String)>("freeUnitsMap");
+
+     label0:
+        return $r1;
+    }
+
+    public android.os.Bundle topupsHistoryAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.t $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.t;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.t: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.t: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle traceResultAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle trafficAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.v $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.v;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.v: void <init>(android.content.Context)>($r3);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.v: android.os.Bundle a(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle updateOptionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.remoteservice.a.k $r2;
+        android.content.Context $r3;
+        it.h3g.areaclienti3.d.z $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: boolean checkSession()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.a.k;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: android.content.Context mAppContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.HtmlActions: it.h3g.areaclienti3.d.z freeUnitsOtionMapping>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: void <init>(android.content.Context,it.h3g.areaclienti3.d.z)>($r3, $r4);
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.a.k: android.os.Bundle e(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle updateUsimSelectionAction(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.HtmlActions $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.HtmlActions;
+        $r1 := @parameter0: android.os.Bundle;
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        return $r1;
+    }
+}

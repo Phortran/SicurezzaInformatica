@@ -1,0 +1,982 @@
+public class it.h3g.areaclienti3.remoteservice.a.c extends java.lang.Object
+{
+    private android.content.Context a;
+    private it.h3g.areaclienti3.j.m b;
+    private it.h3g.areaclienti3.j.p c;
+    private it.h3g.areaclienti3.j.l d;
+    private it.h3g.areaclienti3.cache.a e;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.j.m $r3;
+        it.h3g.areaclienti3.j.p $r4;
+        it.h3g.areaclienti3.cache.a $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.p c> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a> = $r1;
+        $r3 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r3.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b> = $r3;
+        $r4 = new it.h3g.areaclienti3.j.p;
+        specialinvoke $r4.<it.h3g.areaclienti3.j.p: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.p c> = $r4;
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d> = $r2;
+        $r5 = new it.h3g.areaclienti3.cache.a;
+        specialinvoke $r5.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e> = $r5;
+        return;
+    }
+
+    private android.os.Bundle a(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.remoteservice.b.b.b $r2;
+        android.os.Bundle $r3, $r9;
+        it.h3g.areaclienti3.remoteservice.b.b.a $r4;
+        android.content.Context $r5;
+        java.lang.Object $r6;
+        java.util.ArrayList $r7;
+        it.h3g.areaclienti3.d.a $r8;
+        java.lang.Exception $r10;
+        it.h3g.areaclienti3.j.m $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.b.b;
+
+     label0:
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.b.b: void <init>()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.b.b: void a(java.lang.String)>($r1);
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.b.a;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.b.a: void <init>(android.content.Context)>($r5);
+        $r6 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.b.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r2);
+        $r7 = (java.util.ArrayList) $r6;
+        $r8 = new it.h3g.areaclienti3.d.a;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.a: void <init>(java.util.ArrayList)>($r7);
+        $r9 = new android.os.Bundle;
+        specialinvoke $r9.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r9.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("billingaccountlist", $r8);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r9);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r10 := @caughtexception;
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r9 = virtualinvoke $r11.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r10, $r3);
+        return $r9;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private android.os.Bundle a(java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1, $r2, $r7;
+        it.h3g.areaclienti3.j.l $r3;
+        android.os.Bundle $r4;
+        it.h3g.areaclienti3.remoteservice.b.e.e $r5;
+        android.content.Context $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.e.d $r8;
+        java.lang.StringBuilder $r9;
+        java.lang.Exception $r10;
+        it.h3g.areaclienti3.j.m $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r7 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r7);
+        if $z0 != 0 goto label3;
+
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r7 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+
+     label0:
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r5 = new it.h3g.areaclienti3.remoteservice.b.e.e;
+        specialinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.e: void <init>()>();
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.e: void b(java.lang.String)>($r2);
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.e: void c(java.lang.String)>($r1);
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.e: void a(java.lang.String)>($r7);
+        $r8 = new it.h3g.areaclienti3.remoteservice.b.e.d;
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.d: void <init>(android.content.Context)>($r6);
+
+     label1:
+        virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.d: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r5);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("result", 1);
+
+     label2:
+        return $r4;
+
+     label3:
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r7 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String e()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label0;
+
+     label4:
+        $r10 := @caughtexception;
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r4 = virtualinvoke $r11.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r10, $r4);
+        return $r4;
+
+        catch java.lang.Exception from label1 to label2 with label4;
+    }
+
+    private android.os.Bundle b(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1, $r3;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.remoteservice.b.e.q $r4;
+        android.content.Context $r5;
+        boolean $z0;
+        android.os.Bundle $r6, $r12;
+        it.h3g.areaclienti3.remoteservice.b.e.r $r7;
+        it.h3g.areaclienti3.remoteservice.b.e.p $r8;
+        java.lang.Object $r9;
+        it.h3g.areaclienti3.d.k $r10;
+        java.lang.StringBuilder $r11;
+        java.lang.Exception $r13;
+        it.h3g.areaclienti3.j.m $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        if $r1 != null goto label5;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 != 0 goto label4;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r1 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+
+     label0:
+        $r3 = "MSISDN";
+
+     label1:
+        $r6 = new android.os.Bundle;
+        specialinvoke $r6.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.e.q;
+
+     label2:
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.q: void <init>()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.q: void a(java.lang.String)>($r1);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.q: void b(java.lang.String)>($r3);
+        $r7 = new it.h3g.areaclienti3.remoteservice.b.e.r;
+        specialinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.r: void <init>()>();
+        $r8 = new it.h3g.areaclienti3.remoteservice.b.e.p;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.p: void <init>(android.content.Context)>($r5);
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.p: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r4);
+        $r7 = (it.h3g.areaclienti3.remoteservice.b.e.r) $r9;
+        $r10 = new it.h3g.areaclienti3.d.k;
+        specialinvoke $r10.<it.h3g.areaclienti3.d.k: void <init>(it.h3g.areaclienti3.remoteservice.b.e.r)>($r7);
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("Account Detail di default");
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.k: java.lang.String a()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.k: java.lang.String d()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.d.k: java.lang.String c()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("BillingAccountAction", $r3);
+        $r12 = new android.os.Bundle;
+        specialinvoke $r12.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r12.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("account", $r10);
+        virtualinvoke $r6.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r12);
+
+     label3:
+        return $r6;
+
+     label4:
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String e()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r1 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label0;
+
+     label5:
+        $r3 = "ACCOUNT";
+        goto label1;
+
+     label6:
+        $r13 := @caughtexception;
+        $r14 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r12 = virtualinvoke $r14.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r13, $r6);
+        return $r12;
+
+        catch java.lang.Exception from label2 to label3 with label6;
+    }
+
+    private boolean b(java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1, $r2, $r5;
+        java.lang.StringBuilder $r4;
+        byte[] $r6;
+        java.io.FileOutputStream $r7;
+        java.io.BufferedOutputStream $r8;
+        java.io.FileNotFoundException $r9;
+        java.io.IOException $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Save FILE in ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("BillingAccountAction", $r5);
+        $r7 = new java.io.FileOutputStream;
+
+     label0:
+        specialinvoke $r7.<java.io.FileOutputStream: void <init>(java.lang.String)>($r2);
+        $r8 = new java.io.BufferedOutputStream;
+        specialinvoke $r8.<java.io.BufferedOutputStream: void <init>(java.io.OutputStream)>($r7);
+        $r6 = staticinvoke <org.d.a.a: byte[] a(java.lang.String)>($r1);
+        virtualinvoke $r8.<java.io.BufferedOutputStream: void write(byte[])>($r6);
+        virtualinvoke $r8.<java.io.BufferedOutputStream: void close()>();
+        virtualinvoke $r7.<java.io.FileOutputStream: void close()>();
+
+     label1:
+        return 1;
+
+     label2:
+        $r9 := @caughtexception;
+        virtualinvoke $r9.<java.io.FileNotFoundException: void printStackTrace()>();
+        return 0;
+
+     label3:
+        $r10 := @caughtexception;
+        virtualinvoke $r10.<java.io.IOException: void printStackTrace()>();
+        return 0;
+
+        catch java.io.FileNotFoundException from label0 to label1 with label2;
+        catch java.io.IOException from label0 to label1 with label3;
+    }
+
+    private android.os.Bundle c(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.remoteservice.b.e.g $r2;
+        android.os.Bundle $r3, $r10;
+        android.content.Context $r4;
+        it.h3g.areaclienti3.d.l $r5;
+        java.util.Vector $r6;
+        it.h3g.areaclienti3.remoteservice.b.e.h $r7;
+        it.h3g.areaclienti3.d.m $r8;
+        java.util.Iterator $r9;
+        boolean $z0;
+        java.lang.Object $r11;
+        it.h3g.areaclienti3.remoteservice.b.e.i $r12;
+        java.lang.Exception $r13;
+        it.h3g.areaclienti3.j.m $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.e.g;
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.e.g: void <init>(android.content.Context)>($r4);
+        $r7 = new it.h3g.areaclienti3.remoteservice.b.e.h;
+        specialinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.h: void <init>()>();
+        virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.h: void a(java.lang.String)>($r1);
+        virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.h: void b(java.lang.String)>("MSISDN");
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.e.g: java.util.Vector a(it.h3g.areaclienti3.remoteservice.b.i)>($r7);
+        $r8 = new it.h3g.areaclienti3.d.m;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.m: void <init>()>();
+        $r9 = virtualinvoke $r6.<java.util.Vector: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r10.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("listInvoices", $r8);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r10);
+        return $r3;
+
+     label2:
+        $r11 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r12 = (it.h3g.areaclienti3.remoteservice.b.e.i) $r11;
+        $r5 = new it.h3g.areaclienti3.d.l;
+        specialinvoke $r5.<it.h3g.areaclienti3.d.l: void <init>(it.h3g.areaclienti3.remoteservice.b.e.i)>($r12);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.m: boolean add(java.lang.Object)>($r5);
+
+     label3:
+        goto label1;
+
+     label4:
+        $r13 := @caughtexception;
+        $r14 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r10 = virtualinvoke $r14.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r13, $r3);
+        return $r10;
+
+        catch java.lang.Exception from label0 to label3 with label4;
+    }
+
+    private android.os.Bundle d(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.remoteservice.b.e.n $r2;
+        android.os.Bundle $r3, $r8;
+        it.h3g.areaclienti3.remoteservice.b.e.m $r4;
+        android.content.Context $r5;
+        java.lang.Object $r6;
+        it.h3g.areaclienti3.remoteservice.b.e.o $r7;
+        boolean $z0;
+        java.lang.Exception $r9;
+        it.h3g.areaclienti3.j.m $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.e.n;
+
+     label0:
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.e.n: void <init>()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.e.n: void a(java.lang.String)>($r1);
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.e.m;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.m: void <init>(android.content.Context)>($r5);
+        $r6 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.m: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r2);
+        $r7 = (it.h3g.areaclienti3.remoteservice.b.e.o) $r6;
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.o: boolean c()>();
+        $r8 = new android.os.Bundle;
+        specialinvoke $r8.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r8.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("hasPendingBillingRegistration", $z0);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r8);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r9 := @caughtexception;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r9, $r3);
+        return $r8;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private android.os.Bundle e(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        java.lang.String $r1, $r7;
+        android.os.Bundle $r2, $r3;
+        it.h3g.areaclienti3.j.l $r4;
+        it.h3g.areaclienti3.remoteservice.b.e.b $r5;
+        android.content.Context $r6;
+        it.h3g.areaclienti3.remoteservice.b.e.a $r8;
+        java.lang.Exception $r9;
+        it.h3g.areaclienti3.j.m $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r7 = virtualinvoke $r4.<it.h3g.areaclienti3.j.l: java.lang.String l()>();
+        $r5 = new it.h3g.areaclienti3.remoteservice.b.e.b;
+        specialinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.b: void <init>()>();
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.b: void a(java.lang.String)>($r1);
+        virtualinvoke $r5.<it.h3g.areaclienti3.remoteservice.b.e.b: void b(java.lang.String)>($r7);
+        $r8 = new it.h3g.areaclienti3.remoteservice.b.e.a;
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.a: void <init>(android.content.Context)>($r6);
+
+     label0:
+        virtualinvoke $r8.<it.h3g.areaclienti3.remoteservice.b.e.a: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r5);
+        virtualinvoke $r2.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r3);
+
+     label1:
+        return $r2;
+
+     label2:
+        $r9 := @caughtexception;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r9, $r2);
+        return $r3;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private android.os.Bundle j(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1, $r3;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.remoteservice.b.e.w $r4;
+        android.content.Context $r5;
+        java.lang.String $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.e.v $r7;
+        java.lang.StringBuilder $r8;
+        java.lang.Exception $r9;
+        it.h3g.areaclienti3.j.m $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r6);
+        if $z0 != 0 goto label3;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+
+     label0:
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.e.w;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.w: void <init>()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.w: void a(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("email");
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.w: void b(java.lang.String)>($r6);
+        $r7 = new it.h3g.areaclienti3.remoteservice.b.e.v;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.v: void <init>(android.content.Context)>($r5);
+
+     label1:
+        virtualinvoke $r7.<it.h3g.areaclienti3.remoteservice.b.e.v: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r4);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("confirmPIN", 1);
+        virtualinvoke $r3.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+
+     label2:
+        return $r3;
+
+     label3:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String e()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label0;
+
+     label4:
+        $r9 := @caughtexception;
+        $r10 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r3 = virtualinvoke $r10.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r9, $r3);
+        return $r3;
+
+        catch java.lang.Exception from label1 to label2 with label4;
+    }
+
+    private android.os.Bundle k(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1, $r14;
+        java.lang.String $r2, $r3, $r8;
+        it.h3g.areaclienti3.remoteservice.b.e.s $r4;
+        android.content.Context $r5;
+        it.h3g.areaclienti3.remoteservice.b.e.u $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.j.l $r7;
+        it.h3g.areaclienti3.remoteservice.b.e.t $r9;
+        it.h3g.areaclienti3.remoteservice.b.d $r10;
+        java.lang.Object $r11;
+        java.io.File $r12;
+        java.lang.StringBuilder $r13;
+        java.lang.Exception $r15;
+        it.h3g.areaclienti3.j.m $r16;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("pbaInvoiceNumber");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("svIndex");
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r2);
+        if $z0 != 0 goto label0;
+
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r1;
+
+     label1:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r8);
+        if $z0 != 0 goto label5;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+
+     label2:
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.e.s;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.s: void <init>(android.content.Context)>($r5);
+        $r9 = new it.h3g.areaclienti3.remoteservice.b.e.t;
+        specialinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.e.t: void <init>()>();
+        $r6 = new it.h3g.areaclienti3.remoteservice.b.e.u;
+        specialinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.e.u: void <init>()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.e.t: void a(java.lang.String)>($r8);
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.e.t: void b(java.lang.String)>($r2);
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.e.t: void c(java.lang.String)>($r3);
+        $r10 = <it.h3g.areaclienti3.remoteservice.b.d: it.h3g.areaclienti3.remoteservice.b.d a>;
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.remoteservice.b.d: java.lang.String toString()>();
+        virtualinvoke $r9.<it.h3g.areaclienti3.remoteservice.b.e.t: void d(java.lang.String)>($r8);
+
+     label3:
+        $r11 = virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.s: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r9);
+        $r6 = (it.h3g.areaclienti3.remoteservice.b.e.u) $r11;
+
+     label4:
+        $r8 = virtualinvoke $r6.<it.h3g.areaclienti3.remoteservice.b.e.u: java.lang.String c()>();
+        $r12 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+        $r3 = virtualinvoke $r12.<java.io.File: java.lang.String toString()>();
+        $r13 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r3);
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".pdf");
+        $r3 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: boolean b(java.lang.String,java.lang.String)>($r8, $r3);
+        if $z0 == 0 goto label7;
+
+        $r14 = new android.os.Bundle;
+        specialinvoke $r14.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r14.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("file", $r3);
+        virtualinvoke $r1.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r14);
+        return $r1;
+
+     label5:
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String e()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r8 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+
+     label6:
+        $r15 := @caughtexception;
+        $r16 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r14 = virtualinvoke $r16.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r15, $r1);
+        return $r14;
+
+     label7:
+        $r14 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r14;
+
+        catch java.lang.Exception from label3 to label4 with label6;
+    }
+
+    public android.os.Bundle a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1, $r10;
+        java.lang.String $r2, $r6, $r7, $r8;
+        it.h3g.areaclienti3.j.l $r3;
+        it.h3g.areaclienti3.remoteservice.b.e.k $r4;
+        java.lang.Object $r5;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.e.j $r11;
+        android.content.Context $r12;
+        it.h3g.areaclienti3.remoteservice.b.e.l $r13;
+        java.lang.Exception $r14;
+        it.h3g.areaclienti3.j.m $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.Object get(java.lang.String)>("user");
+        $r6 = (java.lang.String) $r5;
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.Object get(java.lang.String)>("type");
+        $r7 = (java.lang.String) $r5;
+        $r5 = virtualinvoke $r1.<android.os.Bundle: java.lang.Object get(java.lang.String)>("mail");
+        $r8 = (java.lang.String) $r5;
+        $r3 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r2 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: java.lang.String l()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r2);
+        if $z0 == 0 goto label0;
+
+        $z0 = staticinvoke <android.text.TextUtils: boolean equals(java.lang.CharSequence,java.lang.CharSequence)>("ACCOUNT", $r7);
+        if $z0 == 0 goto label0;
+
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r1;
+
+     label0:
+        $r10 = new android.os.Bundle;
+        specialinvoke $r10.<android.os.Bundle: void <init>()>();
+        $r1 = new android.os.Bundle;
+
+     label1:
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r4 = new it.h3g.areaclienti3.remoteservice.b.e.k;
+        specialinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.k: void <init>()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.k: void a(java.lang.String)>($r6);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.k: void b(java.lang.String)>($r7);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.k: void c(java.lang.String)>($r8);
+        virtualinvoke $r4.<it.h3g.areaclienti3.remoteservice.b.e.k: void d(java.lang.String)>($r2);
+        $r11 = new it.h3g.areaclienti3.remoteservice.b.e.j;
+        $r12 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.content.Context a>;
+        specialinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.e.j: void <init>(android.content.Context)>($r12);
+        $r5 = virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.e.j: java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)>($r4);
+        $r13 = (it.h3g.areaclienti3.remoteservice.b.e.l) $r5;
+        virtualinvoke $r10.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+
+     label2:
+        return $r10;
+
+     label3:
+        $r14 := @caughtexception;
+        $r15 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.m b>;
+        $r10 = virtualinvoke $r15.<it.h3g.areaclienti3.j.m: android.os.Bundle a(java.lang.Exception,android.os.Bundle)>($r14, $r10);
+        return $r10;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+
+    public android.os.Bundle b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        java.lang.String $r3, $r5, $r6;
+        java.lang.StringBuilder $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.cache.a $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String l()>();
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("CLIENTCODE ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("BillingAccountAction", $r5);
+        $r6 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("getAccountListDetails", "");
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get getAccountListDetails URL is null");
+        $r1 = null;
+
+     label0:
+        return $r1;
+
+     label1:
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        $r1 = virtualinvoke $r7.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r6);
+        if $r1 != null goto label2;
+
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle a(java.lang.String)>($r3);
+        if $r1 == null goto label2;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r6, $r1);
+
+     label2:
+        if $r1 == null goto label0;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r6);
+        return $r1;
+    }
+
+    public android.os.Bundle c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1, $r4, $r9, r12;
+        java.lang.String $r2, $r10;
+        java.lang.Object $r3, $r6;
+        boolean $z0;
+        it.h3g.areaclienti3.d.a $r7;
+        it.h3g.areaclienti3.d.k $r8;
+        it.h3g.areaclienti3.cache.a $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = null;
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("billAccNumber");
+        if $z0 == 0 goto label3;
+
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("billAccNumber");
+
+     label0:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("listBillAccount");
+        if $z0 == 0 goto label4;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("listBillAccount");
+
+     label1:
+        $r7 = (it.h3g.areaclienti3.d.a) $r6;
+        if $r7 == null goto label5;
+
+        if $r3 == null goto label5;
+
+        $r10 = (java.lang.String) $r3;
+        $r8 = virtualinvoke $r7.<it.h3g.areaclienti3.d.a: it.h3g.areaclienti3.d.k a(java.lang.String)>($r10);
+        if $r8 == null goto label2;
+
+        $r9 = new android.os.Bundle;
+        $r4 = $r9;
+        specialinvoke $r9.<android.os.Bundle: void <init>()>();
+        r12 = new android.os.Bundle;
+        specialinvoke r12.<android.os.Bundle: void <init>()>();
+        virtualinvoke r12.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("account", $r8);
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String)>("switchDaLista");
+        virtualinvoke r12.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("switchDaLista", $z0);
+        virtualinvoke $r4.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", r12);
+
+     label2:
+        return $r4;
+
+     label3:
+        $r3 = null;
+        goto label0;
+
+     label4:
+        $r6 = null;
+        goto label1;
+
+     label5:
+        $r10 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("retrieveBillingAccountDetail", "");
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label6;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get retrieveBillingAccountDetail URL is null");
+        return null;
+
+     label6:
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        $r4 = virtualinvoke $r11.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r10);
+        if $r4 != null goto label2;
+
+        $r2 = (java.lang.String) $r3;
+        $r9 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle b(java.lang.String)>($r2);
+        $r4 = $r9;
+        if $r9 == null goto label2;
+
+        $z0 = virtualinvoke $r9.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label2;
+
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        virtualinvoke $r11.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r10, $r9);
+        return $r9;
+    }
+
+    public android.os.Bundle d(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.cache.a $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("billingAccountNumber");
+        if $r2 != null goto label1;
+
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+
+     label0:
+        return $r1;
+
+     label1:
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("retrieveListInvoices", "");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get showBillsAction URL is null");
+        return null;
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        $r1 = virtualinvoke $r5.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle c(java.lang.String)>($r2);
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.cache.a e>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label0;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+        return $r1;
+    }
+
+    public android.os.Bundle e(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        java.lang.String $r3;
+        boolean $z0;
+        java.lang.StringBuilder $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 != 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+
+     label0:
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle d(java.lang.String)>($r3);
+        return $r1;
+
+     label1:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("39");
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.a.c: it.h3g.areaclienti3.j.l d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.j.l: java.lang.String e()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label0;
+    }
+
+    public android.os.Bundle f(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.String $r3, $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("accountNumber");
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 == 0 goto label0;
+
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r1;
+
+     label0:
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("disableBillingsAction", "");
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get setBillingsPinAction URL is null");
+        return null;
+
+     label1:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle e(java.lang.String)>($r3);
+        return $r1;
+    }
+
+    public android.os.Bundle g(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.String $r3, $r4, $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("pin");
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("accountNumber");
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z0 != 0 goto label0;
+
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r4);
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: android.os.Bundle j()>();
+        return $r1;
+
+     label1:
+        $r5 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("setBillingsPinAction", "");
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get setBillingsPinAction URL is null");
+        return null;
+
+     label2:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle a(java.lang.String,java.lang.String)>($r3, $r4);
+        return $r1;
+    }
+
+    public android.os.Bundle h(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.e: java.lang.String a(java.lang.String,java.lang.String)>("setBillingsEmailAction", "");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("BillingAccountAction", "Get setBillingsSettingsAction URL is null");
+        return null;
+
+     label0:
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle j(android.os.Bundle)>($r1);
+        return $r1;
+    }
+
+    public android.os.Bundle i(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.c $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.c;
+        $r1 := @parameter0: android.os.Bundle;
+        $r1 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.c: android.os.Bundle k(android.os.Bundle)>($r1);
+        return $r1;
+    }
+}

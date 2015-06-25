@@ -1,0 +1,37 @@
+public final class com.facebook.lite.b.c extends java.lang.Object
+{
+
+    private static java.util.Calendar a(long)
+    {
+        long $l0;
+        java.util.Calendar $r1;
+
+        $l0 := @parameter0: long;
+        $r1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r1.<java.util.Calendar: void setTimeInMillis(long)>($l0);
+        virtualinvoke $r1.<java.util.Calendar: void set(int,int)>(11, 0);
+        virtualinvoke $r1.<java.util.Calendar: void set(int,int)>(12, 0);
+        virtualinvoke $r1.<java.util.Calendar: void set(int,int)>(13, 0);
+        return $r1;
+    }
+
+    public static boolean a(long, long)
+    {
+        long $l0, $l1;
+        java.util.Calendar $r0, $r1;
+        int $i3, $i4;
+
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $r0 = staticinvoke <com.facebook.lite.b.c: java.util.Calendar a(long)>($l0);
+        $r1 = staticinvoke <com.facebook.lite.b.c: java.util.Calendar a(long)>($l1);
+        $i3 = virtualinvoke $r0.<java.util.Calendar: int get(int)>(6);
+        $i4 = virtualinvoke $r1.<java.util.Calendar: int get(int)>(6);
+        if $i3 != $i4 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+}

@@ -1,0 +1,192 @@
+public class it.h3g.areaclienti3.ussdservices.a extends it.h3g.areaclienti3.ussdservices.ab
+{
+    private java.util.List a;
+    private android.widget.ListView b;
+    private android.widget.TextView c;
+    private android.widget.TextView d;
+    private android.widget.EditText e;
+    private android.view.View f;
+    private final java.lang.String g;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.a;
+        specialinvoke $r0.<it.h3g.areaclienti3.ussdservices.ab: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.a: java.lang.String g> = "$phone";
+        return;
+    }
+
+    static android.widget.EditText a(it.h3g.areaclienti3.ussdservices.a)
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.ussdservices.a;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.EditText e>;
+        return $r1;
+    }
+
+    static it.h3g.areaclienti3.fragments.c b(it.h3g.areaclienti3.ussdservices.a)
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+        it.h3g.areaclienti3.fragments.c $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.ussdservices.a;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.a: it.h3g.areaclienti3.fragments.c mDialog>;
+        return $r1;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.a;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        java.lang.String $r4, $r7;
+        it.h3g.areaclienti3.ussdservices.a.a $r5;
+        android.view.View $r6;
+        boolean $z1;
+        android.os.Parcelable $r8;
+        it.h3g.areaclienti3.ussdservices.TopLevelService $r9;
+        android.content.res.Resources $r10;
+        java.io.InputStream $r11;
+        android.content.Context $r12;
+        android.widget.LinearLayout $r13;
+        android.widget.TextView $r14;
+        android.widget.EditText $r15;
+        android.widget.ListView $r16;
+        java.util.List $r17, $r19;
+        java.util.ArrayList $r18;
+        it.h3g.areaclienti3.ussdservices.ad $r20;
+        it.h3g.areaclienti3.ussdservices.b $r21;
+        org.xmlpull.v1.XmlPullParserException $r22, $r24;
+        java.io.IOException $r23, $r25;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.a;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903185, $r2, 0);
+        $r0.<it.h3g.areaclienti3.ussdservices.a: android.view.View f> = $r6;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.a: android.os.Bundle getArguments()>();
+        $r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("Action");
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("it.h3g.areaclienti3.ussdservices.ACTION_ANSWERING_MACHINE_SERVICES");
+        if $z1 == 0 goto label8;
+
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.a: android.os.Bundle getArguments()>();
+        $r8 = virtualinvoke $r3.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("EXTRA_SERVICE");
+        $r9 = (it.h3g.areaclienti3.ussdservices.TopLevelService) $r8;
+        $r10 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.a: android.content.res.Resources getResources()>();
+        $r11 = virtualinvoke $r10.<android.content.res.Resources: java.io.InputStream openRawResource(int)>(2131034112);
+        $r5 = new it.h3g.areaclienti3.ussdservices.a.a;
+        specialinvoke $r5.<it.h3g.areaclienti3.ussdservices.a.a: void <init>(java.io.InputStream)>($r11);
+        $r12 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.content.Context mContext>;
+        $r1 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r12);
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903184, null);
+        $r13 = (android.widget.LinearLayout) $r6;
+        $r6 = virtualinvoke $r13.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165990);
+        $r14 = (android.widget.TextView) $r6;
+        $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.TextView c> = $r14;
+        $r14 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.TextView c>;
+        $r7 = virtualinvoke $r9.<it.h3g.areaclienti3.ussdservices.TopLevelService: java.lang.String a()>();
+        virtualinvoke $r14.<android.widget.TextView: void setText(java.lang.CharSequence)>($r7);
+        $r6 = virtualinvoke $r13.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165991);
+        $r14 = (android.widget.TextView) $r6;
+        $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.TextView d> = $r14;
+        $r14 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.TextView d>;
+        $r7 = virtualinvoke $r9.<it.h3g.areaclienti3.ussdservices.TopLevelService: java.lang.String c()>();
+        virtualinvoke $r14.<android.widget.TextView: void setText(java.lang.CharSequence)>($r7);
+        $r6 = virtualinvoke $r13.<android.widget.LinearLayout: android.view.View findViewById(int)>(2131165994);
+        $r15 = (android.widget.EditText) $r6;
+        $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.EditText e> = $r15;
+        $r6 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.view.View f>;
+        $r6 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165995);
+        $r16 = (android.widget.ListView) $r6;
+        $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.ListView b> = $r16;
+        $r16 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.ListView b>;
+        virtualinvoke $r16.<android.widget.ListView: void setTextFilterEnabled(boolean)>(0);
+        $r16 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.ListView b>;
+        virtualinvoke $r16.<android.widget.ListView: void addHeaderView(android.view.View)>($r13);
+
+     label0:
+        $r17 = virtualinvoke $r5.<it.h3g.areaclienti3.ussdservices.a.a: java.util.List a()>();
+        $r18 = new java.util.ArrayList;
+        specialinvoke $r18.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.a: java.util.List a> = $r18;
+        $r19 = $r0.<it.h3g.areaclienti3.ussdservices.a: java.util.List a>;
+        interfaceinvoke $r19.<java.util.List: boolean addAll(java.util.Collection)>($r17);
+
+     label1:
+        $r16 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.ListView b>;
+        $r20 = new it.h3g.areaclienti3.ussdservices.ad;
+        $r12 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.content.Context mContext>;
+        $r19 = $r0.<it.h3g.areaclienti3.ussdservices.a: java.util.List a>;
+        specialinvoke $r20.<it.h3g.areaclienti3.ussdservices.ad: void <init>(android.content.Context,java.util.List)>($r12, $r19);
+        virtualinvoke $r16.<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>($r20);
+        $r21 = new it.h3g.areaclienti3.ussdservices.b;
+        specialinvoke $r21.<it.h3g.areaclienti3.ussdservices.b: void <init>(it.h3g.areaclienti3.ussdservices.a)>($r0);
+        $r16 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.widget.ListView b>;
+        virtualinvoke $r16.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r21);
+
+     label2:
+        $r19 = virtualinvoke $r5.<it.h3g.areaclienti3.ussdservices.a.a: java.util.List a()>();
+        $r18 = new java.util.ArrayList;
+        specialinvoke $r18.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.a: java.util.List a> = $r18;
+        $r17 = $r0.<it.h3g.areaclienti3.ussdservices.a: java.util.List a>;
+        interfaceinvoke $r17.<java.util.List: boolean addAll(java.util.Collection)>($r19);
+
+     label3:
+        $r6 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.view.View f>;
+        return $r6;
+
+     label4:
+        $r22 := @caughtexception;
+        virtualinvoke $r22.<org.xmlpull.v1.XmlPullParserException: void printStackTrace()>();
+        goto label1;
+
+     label5:
+        $r23 := @caughtexception;
+        virtualinvoke $r23.<java.io.IOException: void printStackTrace()>();
+        goto label1;
+
+     label6:
+        $r24 := @caughtexception;
+        virtualinvoke $r24.<org.xmlpull.v1.XmlPullParserException: void printStackTrace()>();
+        goto label3;
+
+     label7:
+        $r25 := @caughtexception;
+        virtualinvoke $r25.<java.io.IOException: void printStackTrace()>();
+        goto label3;
+
+     label8:
+        $r6 = $r0.<it.h3g.areaclienti3.ussdservices.a: android.view.View f>;
+        return $r6;
+
+        catch org.xmlpull.v1.XmlPullParserException from label0 to label1 with label4;
+        catch java.io.IOException from label0 to label1 with label5;
+        catch org.xmlpull.v1.XmlPullParserException from label2 to label3 with label6;
+        catch java.io.IOException from label2 to label3 with label7;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.ussdservices.a $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.a;
+        return;
+    }
+}

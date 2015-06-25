@@ -1,0 +1,294 @@
+public class org.a.a.c extends org.a.a.g
+{
+    private org.a.a.d e;
+
+    public void <init>(org.a.b.a, org.a.c.b)
+    {
+        org.a.a.c $r0;
+        org.a.b.a $r1;
+        org.a.c.b $r2;
+        org.a.a.d $r3;
+
+        $r0 := @this: org.a.a.c;
+        $r1 := @parameter0: org.a.b.a;
+        $r2 := @parameter1: org.a.c.b;
+        specialinvoke $r0.<org.a.a.g: void <init>(org.a.b.a,org.a.c.b)>($r1, $r2);
+        $r3 = new org.a.a.d;
+        specialinvoke $r3.<org.a.a.d: void <init>()>();
+        $r0.<org.a.a.c: org.a.a.d e> = $r3;
+        return;
+    }
+
+    public org.a.b.c a(org.a.b.b)
+    {
+        org.a.a.c $r0;
+        org.a.b.b $r1;
+        org.a.a.d $r2;
+        org.a.b.c $r3;
+
+        $r0 := @this: org.a.a.c;
+        $r1 := @parameter0: org.a.b.b;
+        $r2 = $r0.<org.a.a.c: org.a.a.d e>;
+        $r3 = virtualinvoke $r2.<org.a.a.d: org.a.b.c c(org.a.b.b)>($r1);
+        return $r3;
+    }
+
+    public void a(android.graphics.Canvas, int, int, int, int, android.graphics.Paint)
+    {
+        org.a.a.c $r0;
+        android.graphics.Canvas $r1;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6, $i7, $i8, $i10, $i11, $i12, $i13, $i14;
+        android.graphics.Paint $r2;
+        org.a.c.b $r4, $r18;
+        float $f0, $f1, $f2, $f3, $f4, $f5, $f6, $f7, $f8;
+        java.lang.String[] $r5;
+        org.a.b.a $r6;
+        org.a.c.c $r8;
+        java.util.ArrayList $r9;
+        boolean $z1, $z2;
+        double $d0, $d1, $d2, $d3;
+        android.graphics.Paint$Style $r10;
+        java.lang.String $r11;
+        org.a.a.d $r13;
+        android.graphics.RectF $r14;
+        android.graphics.RadialGradient $r15;
+        android.graphics.Shader$TileMode $r16;
+        java.text.NumberFormat $r19;
+
+        $r0 := @this: org.a.a.c;
+        $r1 := @parameter0: android.graphics.Canvas;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $i3 := @parameter4: int;
+        $r2 := @parameter5: android.graphics.Paint;
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $z1 = virtualinvoke $r4.<org.a.c.b: boolean t()>();
+        virtualinvoke $r2.<android.graphics.Paint: void setAntiAlias(boolean)>($z1);
+        $r10 = <android.graphics.Paint$Style: android.graphics.Paint$Style FILL>;
+        virtualinvoke $r2.<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>($r10);
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $f5 = virtualinvoke $r4.<org.a.c.b: float h()>();
+        virtualinvoke $r2.<android.graphics.Paint: void setTextSize(float)>($f5);
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i4 = $i3 / 5;
+        $i8 = virtualinvoke $r0.<org.a.a.c: int a(org.a.c.b,int,float)>($r4, $i4, 0.0F);
+        $i4 = $i0 + $i2;
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $i12 = virtualinvoke $r6.<org.a.b.a: int a()>();
+        $r5 = newarray (java.lang.String)[$i12];
+        $i11 = 0;
+        $d0 = 0.0;
+
+     label0:
+        if $i11 >= $i12 goto label1;
+
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $d1 = virtualinvoke $r6.<org.a.b.a: double a(int)>($i11);
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $r11 = virtualinvoke $r6.<org.a.b.a: java.lang.String b(int)>($i11);
+        $r5[$i11] = $r11;
+        $i11 = $i11 + 1;
+        $d0 = $d1 + $d0;
+        goto label0;
+
+     label1:
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $z1 = virtualinvoke $r4.<org.a.c.b: boolean o()>();
+        if $z1 == 0 goto label16;
+
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i11 = virtualinvoke $r0.<org.a.a.c: int a(android.graphics.Canvas,org.a.c.b,java.lang.String[],int,int,int,int,int,int,android.graphics.Paint,boolean)>($r1, $r4, $r5, $i0, $i4, $i1, $i2, $i3, $i8, $r2, 1);
+
+     label2:
+        $i10 = $i1 + $i3;
+        $i10 = $i10 - $i11;
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        virtualinvoke $r0.<org.a.a.c: void a(org.a.c.b,android.graphics.Canvas,int,int,int,int,android.graphics.Paint,boolean,int)>($r4, $r1, $i0, $i1, $i2, $i3, $r2, 0, 0);
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $f2 = virtualinvoke $r4.<org.a.c.b: float G()>();
+        $i8 = $i4 - $i0;
+        $i8 = staticinvoke <java.lang.Math: int abs(int)>($i8);
+        $i7 = $i10 - $i1;
+        $i7 = staticinvoke <java.lang.Math: int abs(int)>($i7);
+        $i8 = staticinvoke <java.lang.Math: int min(int,int)>($i8, $i7);
+        $d1 = (double) $i8;
+        $d2 = $d1 * 0.35;
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $f5 = virtualinvoke $r4.<org.a.c.b: float u()>();
+        $d1 = (double) $f5;
+        $d2 = $d2 * $d1;
+        $i13 = (int) $d2;
+        $i8 = $r0.<org.a.a.c: int c>;
+        if $i8 != 2147483647 goto label3;
+
+        $i8 = $i0 + $i4;
+        $i8 = $i8 / 2;
+        $r0.<org.a.a.c: int c> = $i8;
+
+     label3:
+        $i8 = $r0.<org.a.a.c: int d>;
+        if $i8 != 2147483647 goto label4;
+
+        $i10 = $i10 + $i1;
+        $i10 = $i10 / 2;
+        $r0.<org.a.a.c: int d> = $i10;
+
+     label4:
+        $r13 = $r0.<org.a.a.c: org.a.a.d e>;
+        $i10 = $r0.<org.a.a.c: int c>;
+        $i8 = $r0.<org.a.a.c: int d>;
+        virtualinvoke $r13.<org.a.a.d: void a(int,int,int)>($i13, $i10, $i8);
+        $r13 = $r0.<org.a.a.c: org.a.a.d e>;
+        $z1 = virtualinvoke $r13.<org.a.a.d: boolean a(int)>($i12);
+        if $z1 != 0 goto label12;
+
+        $z2 = 1;
+
+     label5:
+        if $z2 == 0 goto label6;
+
+        $r13 = $r0.<org.a.a.c: org.a.a.d e>;
+        virtualinvoke $r13.<org.a.a.d: void a()>();
+
+     label6:
+        $f5 = (float) $i13;
+        $f1 = $f5 * 0.9F;
+        $f5 = (float) $i13;
+        $f6 = $f5 * 1.1F;
+        $r14 = new android.graphics.RectF;
+        $i10 = $r0.<org.a.a.c: int c>;
+        $i10 = $i10 - $i13;
+        $f5 = (float) $i10;
+        $i10 = $r0.<org.a.a.c: int d>;
+        $i10 = $i10 - $i13;
+        $f4 = (float) $i10;
+        $i10 = $r0.<org.a.a.c: int c>;
+        $i10 = $i10 + $i13;
+        $f3 = (float) $i10;
+        $i10 = $r0.<org.a.a.c: int d>;
+        $i10 = $i10 + $i13;
+        $f0 = (float) $i10;
+        specialinvoke $r14.<android.graphics.RectF: void <init>(float,float,float,float)>($f5, $f4, $f3, $f0);
+        $r9 = new java.util.ArrayList;
+        specialinvoke $r9.<java.util.ArrayList: void <init>()>();
+        $i14 = 0;
+
+     label7:
+        if $i14 >= $i12 goto label15;
+
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $r8 = virtualinvoke $r4.<org.a.c.b: org.a.c.c a(int)>($i14);
+        $z1 = virtualinvoke $r8.<org.a.c.c: boolean h()>();
+        if $z1 == 0 goto label13;
+
+        $r15 = new android.graphics.RadialGradient;
+        $i10 = $r0.<org.a.a.c: int c>;
+        $f5 = (float) $i10;
+        $i10 = $r0.<org.a.a.c: int d>;
+        $f4 = (float) $i10;
+        $i10 = virtualinvoke $r8.<org.a.c.c: int i()>();
+        $i8 = virtualinvoke $r8.<org.a.c.c: int j()>();
+        $r16 = <android.graphics.Shader$TileMode: android.graphics.Shader$TileMode MIRROR>;
+        specialinvoke $r15.<android.graphics.RadialGradient: void <init>(float,float,float,int,int,android.graphics.Shader$TileMode)>($f5, $f4, $f6, $i10, $i8, $r16);
+        virtualinvoke $r2.<android.graphics.Paint: android.graphics.Shader setShader(android.graphics.Shader)>($r15);
+
+     label8:
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $d2 = virtualinvoke $r6.<org.a.b.a: double a(int)>($i14);
+        $f7 = (float) $d2;
+        $d2 = (double) $f7;
+        $d2 = $d2 / $d0;
+        $d2 = $d2 * 360.0;
+        $f8 = (float) $d2;
+        $z1 = virtualinvoke $r8.<org.a.c.c: boolean l()>();
+        if $z1 == 0 goto label14;
+
+        $f4 = $f8 / 2.0F;
+        $f4 = $f4 + $f2;
+        $f5 = 90.0F - $f4;
+        $d2 = (double) $f5;
+        $d2 = staticinvoke <java.lang.Math: double toRadians(double)>($d2);
+        $d1 = (double) $i13;
+        $d3 = $d1 * 0.1;
+        $d1 = staticinvoke <java.lang.Math: double sin(double)>($d2);
+        $d3 = $d3 * $d1;
+        $f0 = (float) $d3;
+        $d3 = (double) $i13;
+        $d3 = $d3 * 0.1;
+        $d2 = staticinvoke <java.lang.Math: double cos(double)>($d2);
+        $d3 = $d2 * $d3;
+        $f5 = (float) $d3;
+        virtualinvoke $r14.<android.graphics.RectF: void offset(float,float)>($f0, $f5);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawArc(android.graphics.RectF,float,float,boolean,android.graphics.Paint)>($r14, $f2, $f8, 1, $r2);
+        $f4 = neg $f0;
+        $f5 = neg $f5;
+        virtualinvoke $r14.<android.graphics.RectF: void offset(float,float)>($f4, $f5);
+
+     label9:
+        $i10 = virtualinvoke $r8.<org.a.c.c: int a()>();
+        virtualinvoke $r2.<android.graphics.Paint: void setColor(int)>($i10);
+        virtualinvoke $r2.<android.graphics.Paint: android.graphics.Shader setShader(android.graphics.Shader)>(null);
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $r11 = virtualinvoke $r6.<org.a.b.a: java.lang.String b(int)>($i14);
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i8 = $r0.<org.a.a.c: int c>;
+        $i7 = $r0.<org.a.a.c: int d>;
+        $r18 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i10 = virtualinvoke $r18.<org.a.c.b: int g()>();
+        virtualinvoke $r0.<org.a.a.c: void a(android.graphics.Canvas,java.lang.String,org.a.c.b,java.util.List,int,int,float,float,float,float,int,int,int,android.graphics.Paint,boolean,boolean)>($r1, $r11, $r4, $r9, $i8, $i7, $f1, $f6, $f2, $f8, $i0, $i4, $i10, $r2, 1, 0);
+        $r18 = $r0.<org.a.a.c: org.a.c.b b>;
+        $z1 = virtualinvoke $r18.<org.a.c.b: boolean H()>();
+        if $z1 == 0 goto label10;
+
+        $r18 = $r0.<org.a.a.c: org.a.c.b b>;
+        $r8 = virtualinvoke $r18.<org.a.c.b: org.a.c.c a(int)>($i14);
+        $r19 = virtualinvoke $r8.<org.a.c.c: java.text.NumberFormat n()>();
+        $r6 = $r0.<org.a.a.c: org.a.b.a a>;
+        $d3 = virtualinvoke $r6.<org.a.b.a: double a(int)>($i14);
+        $r11 = virtualinvoke $r0.<org.a.a.c: java.lang.String a(java.text.NumberFormat,double)>($r19, $d3);
+        $r18 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i6 = $r0.<org.a.a.c: int c>;
+        $i5 = $r0.<org.a.a.c: int d>;
+        $f3 = $f1 / 2.0F;
+        $f0 = $f6 / 2.0F;
+        $r4 = $r0.<org.a.a.c: org.a.c.b b>;
+        $i7 = virtualinvoke $r4.<org.a.c.b: int g()>();
+        virtualinvoke $r0.<org.a.a.c: void a(android.graphics.Canvas,java.lang.String,org.a.c.b,java.util.List,int,int,float,float,float,float,int,int,int,android.graphics.Paint,boolean,boolean)>($r1, $r11, $r18, $r9, $i6, $i5, $f3, $f0, $f2, $f8, $i0, $i4, $i7, $r2, 0, 1);
+
+     label10:
+        if $z2 == 0 goto label11;
+
+        $r13 = $r0.<org.a.a.c: org.a.a.d e>;
+        virtualinvoke $r13.<org.a.a.d: void a(int,float,float,float)>($i14, $f7, $f2, $f8);
+
+     label11:
+        $f2 = $f2 + $f8;
+        $i14 = $i14 + 1;
+        goto label7;
+
+     label12:
+        $z2 = 0;
+        goto label5;
+
+     label13:
+        $i10 = virtualinvoke $r8.<org.a.c.c: int a()>();
+        virtualinvoke $r2.<android.graphics.Paint: void setColor(int)>($i10);
+        goto label8;
+
+     label14:
+        virtualinvoke $r1.<android.graphics.Canvas: void drawArc(android.graphics.RectF,float,float,boolean,android.graphics.Paint)>($r14, $f2, $f8, 1, $r2);
+        goto label9;
+
+     label15:
+        interfaceinvoke $r9.<java.util.List: void clear()>();
+        $r18 = $r0.<org.a.a.c: org.a.c.b b>;
+        virtualinvoke $r0.<org.a.a.c: int a(android.graphics.Canvas,org.a.c.b,java.lang.String[],int,int,int,int,int,int,android.graphics.Paint,boolean)>($r1, $r18, $r5, $i0, $i4, $i1, $i2, $i3, $i11, $r2, 0);
+        virtualinvoke $r0.<org.a.a.c: void a(android.graphics.Canvas,int,int,int,android.graphics.Paint)>($r1, $i0, $i1, $i2, $r2);
+        return;
+
+     label16:
+        $i11 = $i8;
+        goto label2;
+    }
+}

@@ -1,0 +1,73 @@
+class it.h3g.areaclienti3.fragments.e.f extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.e.a a;
+
+    void <init>(it.h3g.areaclienti3.fragments.e.a)
+    {
+        it.h3g.areaclienti3.fragments.e.f $r0;
+        it.h3g.areaclienti3.fragments.e.a $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.f;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.e.a;
+        $r0.<it.h3g.areaclienti3.fragments.e.f: it.h3g.areaclienti3.fragments.e.a a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static it.h3g.areaclienti3.fragments.e.a a(it.h3g.areaclienti3.fragments.e.f)
+    {
+        it.h3g.areaclienti3.fragments.e.f $r0;
+        it.h3g.areaclienti3.fragments.e.a $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.e.f;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.e.f: it.h3g.areaclienti3.fragments.e.a a>;
+        return $r1;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.e.f $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.e.a $r2;
+        java.lang.String[] $r3;
+        java.util.Iterator $r4;
+        java.util.ArrayList $r5;
+        int $i0;
+        boolean $z0;
+        it.h3g.areaclienti3.fragments.e.g $r6;
+        it.h3g.areaclienti3.fragments.c $r7;
+        java.lang.Object $r8;
+        it.h3g.areaclienti3.d.av $r9;
+        java.lang.String $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.e.f;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.e.f: it.h3g.areaclienti3.fragments.e.a a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.fragments.e.a: java.util.ArrayList d(it.h3g.areaclienti3.fragments.e.a)>($r2);
+        $i0 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        $r3 = newarray (java.lang.String)[$i0];
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.e.f: it.h3g.areaclienti3.fragments.e.a a>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.fragments.e.a: java.util.ArrayList d(it.h3g.areaclienti3.fragments.e.a)>($r2);
+        $r4 = virtualinvoke $r5.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $i0 = 0;
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        $r6 = new it.h3g.areaclienti3.fragments.e.g;
+        specialinvoke $r6.<it.h3g.areaclienti3.fragments.e.g: void <init>(it.h3g.areaclienti3.fragments.e.f)>($r0);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.e.f: it.h3g.areaclienti3.fragments.e.a a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.fragments.e.a: it.h3g.areaclienti3.fragments.c c(it.h3g.areaclienti3.fragments.e.a)>($r2);
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String[],android.widget.AdapterView$OnItemClickListener)>(null, $r3, $r6);
+        return;
+
+     label1:
+        $r8 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r9 = (it.h3g.areaclienti3.d.av) $r8;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.d.av: java.lang.String a()>();
+        $r3[$i0] = $r10;
+        $i0 = $i0 + 1;
+        goto label0;
+    }
+}

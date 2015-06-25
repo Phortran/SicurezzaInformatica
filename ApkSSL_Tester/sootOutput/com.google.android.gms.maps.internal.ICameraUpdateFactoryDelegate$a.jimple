@@ -1,0 +1,285 @@
+public abstract class com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a extends android.os.Binder implements com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+{
+
+    public static com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a$a;
+        specialinvoke r4.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a $r0;
+        int $i0, $i1, $i2;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r3;
+        boolean $z0;
+        float $f0, $f1;
+        com.google.android.gms.dynamic.b $r5;
+        com.google.android.gms.maps.model.d $r6;
+        com.google.android.gms.maps.model.CameraPosition $r7;
+        java.lang.Object $r8;
+        com.google.android.gms.maps.model.h $r9;
+        com.google.android.gms.maps.model.LatLng $r10;
+        com.google.android.gms.maps.model.g $r11;
+        com.google.android.gms.maps.model.LatLngBounds $r12;
+
+        $r0 := @this: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        $r3 = null;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 2: goto label4;
+            case 3: goto label6;
+            case 4: goto label8;
+            case 5: goto label10;
+            case 6: goto label12;
+            case 7: goto label14;
+            case 8: goto label18;
+            case 9: goto label22;
+            case 10: goto label26;
+            case 11: goto label30;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label3;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label3:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label4:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b b()>();
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label5;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label5:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label6:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $f1 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $f0 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(float,float)>($f1, $f0);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label7;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label7:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label8:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $f1 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(float)>($f1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label9;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label9:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label10:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $f1 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b b(float)>($f1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label11;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label11:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label12:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $f1 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(float,int,int)>($f1, $i0, $i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label13;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label13:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label14:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label17;
+
+        $r6 = <com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.d a>;
+        $r8 = virtualinvoke $r6.<com.google.android.gms.maps.model.d: com.google.android.gms.maps.model.CameraPosition a(android.os.Parcel)>($r1);
+
+     label15:
+        $r7 = (com.google.android.gms.maps.model.CameraPosition) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.CameraPosition)>($r7);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label16;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label16:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label17:
+        $r8 = null;
+        goto label15;
+
+     label18:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label21;
+
+        $r9 = <com.google.android.gms.maps.model.LatLng: com.google.android.gms.maps.model.h a>;
+        $r8 = virtualinvoke $r9.<com.google.android.gms.maps.model.h: com.google.android.gms.maps.model.LatLng a(android.os.Parcel)>($r1);
+
+     label19:
+        $r10 = (com.google.android.gms.maps.model.LatLng) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLng)>($r10);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label20;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label20:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label21:
+        $r8 = null;
+        goto label19;
+
+     label22:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label25;
+
+        $r9 = <com.google.android.gms.maps.model.LatLng: com.google.android.gms.maps.model.h a>;
+        $r8 = virtualinvoke $r9.<com.google.android.gms.maps.model.h: com.google.android.gms.maps.model.LatLng a(android.os.Parcel)>($r1);
+
+     label23:
+        $f1 = virtualinvoke $r1.<android.os.Parcel: float readFloat()>();
+        $r10 = (com.google.android.gms.maps.model.LatLng) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLng,float)>($r10, $f1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label24;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label24:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label25:
+        $r8 = null;
+        goto label23;
+
+     label26:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label29;
+
+        $r11 = <com.google.android.gms.maps.model.LatLngBounds: com.google.android.gms.maps.model.g a>;
+        $r8 = virtualinvoke $r11.<com.google.android.gms.maps.model.g: com.google.android.gms.maps.model.LatLngBounds a(android.os.Parcel)>($r1);
+
+     label27:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r12 = (com.google.android.gms.maps.model.LatLngBounds) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLngBounds,int)>($r12, $i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label28;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label28:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label29:
+        $r8 = null;
+        goto label27;
+
+     label30:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label33;
+
+        $r11 = <com.google.android.gms.maps.model.LatLngBounds: com.google.android.gms.maps.model.g a>;
+        $r8 = virtualinvoke $r11.<com.google.android.gms.maps.model.g: com.google.android.gms.maps.model.LatLngBounds a(android.os.Parcel)>($r1);
+
+     label31:
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i2 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r12 = (com.google.android.gms.maps.model.LatLngBounds) $r8;
+        $r5 = virtualinvoke $r0.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLngBounds,int,int,int)>($r12, $i0, $i2, $i1);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        if $r5 == null goto label32;
+
+        $r3 = interfaceinvoke $r5.<com.google.android.gms.dynamic.b: android.os.IBinder asBinder()>();
+
+     label32:
+        virtualinvoke $r2.<android.os.Parcel: void writeStrongBinder(android.os.IBinder)>($r3);
+        return 1;
+
+     label33:
+        $r8 = null;
+        goto label31;
+    }
+}

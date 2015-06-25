@@ -1,0 +1,64 @@
+class it.h3g.areaclienti3.j.g extends java.lang.Object implements org.apache.http.client.ResponseHandler
+{
+    final it.h3g.areaclienti3.j.f a;
+
+    void <init>(it.h3g.areaclienti3.j.f)
+    {
+        it.h3g.areaclienti3.j.g $r0;
+        it.h3g.areaclienti3.j.f $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.j.g;
+        $r1 := @parameter0: it.h3g.areaclienti3.j.f;
+        $r0.<it.h3g.areaclienti3.j.g: it.h3g.areaclienti3.j.f a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public java.lang.String a(org.apache.http.HttpResponse)
+    {
+        it.h3g.areaclienti3.j.g $r0;
+        org.apache.http.HttpResponse $r1;
+        org.apache.http.StatusLine $r2;
+        int $i0;
+        org.apache.http.client.HttpResponseException $r3;
+        java.lang.String $r4;
+        org.apache.http.HttpEntity $r5;
+        it.h3g.areaclienti3.j.f $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.j.g;
+        $r1 := @parameter0: org.apache.http.HttpResponse;
+        $r2 = interfaceinvoke $r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>();
+        $i0 = interfaceinvoke $r2.<org.apache.http.StatusLine: int getStatusCode()>();
+        if $i0 < 300 goto label0;
+
+        $r3 = new org.apache.http.client.HttpResponseException;
+        $i0 = interfaceinvoke $r2.<org.apache.http.StatusLine: int getStatusCode()>();
+        $r4 = interfaceinvoke $r2.<org.apache.http.StatusLine: java.lang.String getReasonPhrase()>();
+        specialinvoke $r3.<org.apache.http.client.HttpResponseException: void <init>(int,java.lang.String)>($i0, $r4);
+        throw $r3;
+
+     label0:
+        $r5 = interfaceinvoke $r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>();
+        if $r5 != null goto label1;
+
+        return null;
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.j.g: it.h3g.areaclienti3.j.f a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.f: java.lang.String a(it.h3g.areaclienti3.j.f)>($r6);
+        $r4 = staticinvoke <org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity,java.lang.String)>($r5, $r4);
+        return $r4;
+    }
+
+    public java.lang.Object handleResponse(org.apache.http.HttpResponse)
+    {
+        it.h3g.areaclienti3.j.g $r0;
+        org.apache.http.HttpResponse $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.j.g;
+        $r1 := @parameter0: org.apache.http.HttpResponse;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.j.g: java.lang.String a(org.apache.http.HttpResponse)>($r1);
+        return $r2;
+    }
+}

@@ -1,0 +1,339 @@
+public class org.a.d.c extends org.a.d.a
+{
+    private java.util.List c;
+    private boolean d;
+    private boolean e;
+
+    public void <init>(org.a.a.a)
+    {
+        org.a.d.c $r0;
+        org.a.a.a $r1;
+        java.util.ArrayList $r2;
+
+        $r0 := @this: org.a.d.c;
+        $r1 := @parameter0: org.a.a.a;
+        specialinvoke $r0.<org.a.d.a: void <init>(org.a.a.a)>($r1);
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0.<org.a.d.c: java.util.List c> = $r2;
+        $r0.<org.a.d.c: boolean d> = 0;
+        $r0.<org.a.d.c: boolean e> = 0;
+        return;
+    }
+
+    private double a(double[])
+    {
+        org.a.d.c $r0;
+        double[] $r1;
+        double $d0, $d1, $d2;
+
+        $r0 := @this: org.a.d.c;
+        $r1 := @parameter0: double[];
+        $d0 = $r1[1];
+        $d1 = $r1[0];
+        $d1 = $d0 - $d1;
+        $d1 = staticinvoke <java.lang.Math: double abs(double)>($d1);
+        $d0 = $r1[3];
+        $d2 = $r1[2];
+        $d2 = $d0 - $d2;
+        $d2 = staticinvoke <java.lang.Math: double abs(double)>($d2);
+        $d2 = $d1 / $d2;
+        return $d2;
+    }
+
+    private void a()
+    {
+        org.a.d.c $r0;
+        java.util.List $r1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+        org.a.d.d $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: org.a.d.c;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.d.c: java.util.List c>;
+        $r2 = interfaceinvoke $r1.<java.util.List: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r4 = (org.a.d.d) $r3;
+        interfaceinvoke $r4.<org.a.d.d: void a()>();
+
+     label2:
+        goto label1;
+
+     label3:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+        throw $r5;
+
+     label4:
+        exitmonitor $r0;
+        return;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public void a(float, float, float, float)
+    {
+        org.a.d.c $r0;
+        float $f0, $f1, $f2, $f3, $f5;
+        double[] $r2, $r4, $r5, $r8;
+        org.a.a.a $r3;
+        byte $b0;
+        int $i1, $i2, $i3;
+        boolean $z0, $z1, $z2, $z3, $z4, $z5;
+        double $d0, $d1, $d2, $d3;
+        org.a.c.d $r6;
+        org.a.a.j $r7;
+        org.a.a.g $r9;
+
+        $r0 := @this: org.a.d.c;
+        $f0 := @parameter0: float;
+        $f1 := @parameter1: float;
+        $f2 := @parameter2: float;
+        $f3 := @parameter3: float;
+        $z4 = 1;
+        $z3 = 1;
+        $z2 = 1;
+        $z1 = 1;
+        $r3 = $r0.<org.a.d.c: org.a.a.a a>;
+        $z0 = $r3 instanceof org.a.a.j;
+        if $z0 == 0 goto label26;
+
+        $r6 = $r0.<org.a.d.c: org.a.c.d b>;
+        $i2 = virtualinvoke $r6.<org.a.c.d: int ai()>();
+        $r6 = $r0.<org.a.d.c: org.a.c.d b>;
+        $r4 = virtualinvoke $r6.<org.a.c.d: double[] V()>();
+        if $r4 == null goto label4;
+
+        $i1 = lengthof $r4;
+        if $i1 != 4 goto label4;
+
+        $z0 = 1;
+
+     label0:
+        $r3 = $r0.<org.a.d.c: org.a.a.a a>;
+        $r7 = (org.a.a.j) $r3;
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i2 goto label27;
+
+        $r5 = virtualinvoke $r0.<org.a.d.c: double[] a(int)>($i1);
+        $r2 = virtualinvoke $r7.<org.a.a.j: double[] b(int)>($i1);
+        $z5 = $r0.<org.a.d.c: boolean d>;
+        if $z5 == 0 goto label5;
+
+        $z5 = $r0.<org.a.d.c: boolean e>;
+        if $z5 == 0 goto label5;
+
+        $d0 = $r5[0];
+        $d1 = $r5[1];
+        $b0 = $d0 cmpl $d1;
+        if $b0 != 0 goto label2;
+
+        $d1 = $r2[0];
+        $d0 = $r2[1];
+        $b0 = $d1 cmpl $d0;
+        if $b0 == 0 goto label3;
+
+     label2:
+        $d1 = $r5[2];
+        $d0 = $r5[3];
+        $b0 = $d1 cmpl $d0;
+        if $b0 != 0 goto label5;
+
+        $d1 = $r2[2];
+        $d0 = $r2[3];
+        $b0 = $d1 cmpl $d0;
+        if $b0 != 0 goto label5;
+
+     label3:
+        return;
+
+     label4:
+        $z0 = 0;
+        goto label0;
+
+     label5:
+        virtualinvoke $r0.<org.a.d.c: void a(double[],int)>($r5, $i1);
+        $r2 = virtualinvoke $r7.<org.a.a.j: double[] a(float,float,int)>($f0, $f1, $i1);
+        $r8 = virtualinvoke $r7.<org.a.a.j: double[] a(float,float,int)>($f2, $f3, $i1);
+        $d1 = $r2[0];
+        $d0 = $r8[0];
+        $d1 = $d1 - $d0;
+        $d0 = $r2[1];
+        $d2 = $r8[1];
+        $d2 = $d0 - $d2;
+        $d0 = specialinvoke $r0.<org.a.d.c: double a(double[])>($r5);
+        $r6 = $r0.<org.a.d.c: org.a.c.d b>;
+        $z5 = virtualinvoke $r7.<org.a.a.j: boolean a(org.a.c.b)>($r6);
+        if $z5 == 0 goto label28;
+
+        $d2 = neg $d2;
+        $d1 = $d1 / $d0;
+        $d0 = $d2 * $d0;
+
+     label6:
+        $r6 = $r0.<org.a.d.c: org.a.c.d b>;
+        $z5 = virtualinvoke $r6.<org.a.c.d: boolean P()>();
+        if $z5 == 0 goto label12;
+
+        if $r4 == null goto label10;
+
+        if $z2 == 0 goto label8;
+
+        $d2 = $r4[0];
+        $d3 = $r5[0];
+        $d3 = $d3 + $d0;
+        $b0 = $d2 cmpg $d3;
+        if $b0 > 0 goto label19;
+
+        $z5 = 1;
+
+     label7:
+        $z2 = $z5;
+
+     label8:
+        if $z1 == 0 goto label10;
+
+        $d3 = $r4[1];
+        $d2 = $r5[1];
+        $d2 = $d2 + $d0;
+        $b0 = $d3 cmpl $d2;
+        if $b0 < 0 goto label20;
+
+        $z5 = 1;
+
+     label9:
+        $z1 = $z5;
+
+     label10:
+        if $z0 == 0 goto label11;
+
+        if $z2 == 0 goto label21;
+
+        if $z1 == 0 goto label21;
+
+     label11:
+        $d3 = $r5[0];
+        $d3 = $d3 + $d0;
+        $d2 = $r5[1];
+        $d2 = $d0 + $d2;
+        virtualinvoke $r0.<org.a.d.c: void a(double,double,int)>($d3, $d2, $i1);
+        $r0.<org.a.d.c: boolean d> = 0;
+
+     label12:
+        $r6 = $r0.<org.a.d.c: org.a.c.d b>;
+        $z5 = virtualinvoke $r6.<org.a.c.d: boolean Q()>();
+        if $z5 == 0 goto label25;
+
+        if $r4 == null goto label16;
+
+        if $z3 == 0 goto label14;
+
+        $d3 = $r4[2];
+        $d2 = $r5[2];
+        $d2 = $d2 + $d1;
+        $b0 = $d3 cmpg $d2;
+        if $b0 > 0 goto label22;
+
+        $z5 = 1;
+
+     label13:
+        $z3 = $z5;
+
+     label14:
+        if $z4 == 0 goto label16;
+
+        $d3 = $r4[3];
+        $d2 = $r5[3];
+        $d2 = $d2 + $d1;
+        $b0 = $d3 cmpl $d2;
+        if $b0 < 0 goto label23;
+
+        $z5 = 1;
+
+     label15:
+        $z4 = $z5;
+
+     label16:
+        if $z0 == 0 goto label17;
+
+        if $z3 == 0 goto label24;
+
+        if $z4 == 0 goto label24;
+
+     label17:
+        $d3 = $r5[2];
+        $d3 = $d3 + $d1;
+        $d2 = $r5[3];
+        $d2 = $d2 + $d1;
+        virtualinvoke $r0.<org.a.d.c: void b(double,double,int)>($d3, $d2, $i1);
+        $r0.<org.a.d.c: boolean e> = 0;
+        $z5 = $z3;
+
+     label18:
+        $i1 = $i1 + 1;
+        $z3 = $z5;
+        goto label1;
+
+     label19:
+        $z5 = 0;
+        goto label7;
+
+     label20:
+        $z5 = 0;
+        goto label9;
+
+     label21:
+        $r0.<org.a.d.c: boolean d> = 1;
+        goto label12;
+
+     label22:
+        $z5 = 0;
+        goto label13;
+
+     label23:
+        $z5 = 0;
+        goto label15;
+
+     label24:
+        $r0.<org.a.d.c: boolean e> = 1;
+
+     label25:
+        $z5 = $z3;
+        goto label18;
+
+     label26:
+        $r3 = $r0.<org.a.d.c: org.a.a.a a>;
+        $r9 = (org.a.a.g) $r3;
+        $i3 = virtualinvoke $r9.<org.a.a.g: int b()>();
+        $f5 = $f2 - $f0;
+        $i2 = (int) $f5;
+        $i3 = $i3 + $i2;
+        virtualinvoke $r9.<org.a.a.g: void b(int)>($i3);
+        $i3 = virtualinvoke $r9.<org.a.a.g: int c()>();
+        $f5 = $f3 - $f1;
+        $i2 = (int) $f5;
+        $i3 = $i3 + $i2;
+        virtualinvoke $r9.<org.a.a.g: void c(int)>($i3);
+
+     label27:
+        specialinvoke $r0.<org.a.d.c: void a()>();
+        goto label3;
+
+     label28:
+        $d0 = $d1;
+        $d1 = $d2;
+        goto label6;
+    }
+}

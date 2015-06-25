@@ -1,0 +1,143 @@
+public class it.h3g.areaclienti3.ussdservices.af extends it.h3g.areaclienti3.ussdservices.ab
+{
+    android.view.View a;
+    private java.util.List b;
+    private android.widget.ListView c;
+    private java.util.List d;
+    private int e;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        specialinvoke $r0.<it.h3g.areaclienti3.ussdservices.ab: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.af: int e> = 2130837852;
+        return;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        return 2131231453;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        return 2130837852;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.content.Context $r4;
+        java.util.List $r5;
+        android.view.View $r6;
+        android.content.res.Resources $r7;
+        java.io.InputStream $r8;
+        it.h3g.areaclienti3.ussdservices.a.d $r9;
+        java.util.ArrayList $r10;
+        android.widget.ListView $r11;
+        it.h3g.areaclienti3.ussdservices.ad $r12;
+        it.h3g.areaclienti3.ussdservices.ag $r13;
+        java.lang.Exception $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903191, $r2, 0);
+        $r0.<it.h3g.areaclienti3.ussdservices.af: android.view.View a> = $r6;
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.af: android.content.res.Resources getResources()>();
+        $r8 = virtualinvoke $r7.<android.content.res.Resources: java.io.InputStream openRawResource(int)>(2131034118);
+        $r9 = new it.h3g.areaclienti3.ussdservices.a.d;
+        specialinvoke $r9.<it.h3g.areaclienti3.ussdservices.a.d: void <init>(java.io.InputStream)>($r8);
+
+     label0:
+        $r5 = virtualinvoke $r9.<it.h3g.areaclienti3.ussdservices.a.d: java.util.List a()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.af: java.util.List d> = $r5;
+        $r10 = new java.util.ArrayList;
+        $r5 = $r0.<it.h3g.areaclienti3.ussdservices.af: java.util.List d>;
+        specialinvoke $r10.<java.util.ArrayList: void <init>(java.util.Collection)>($r5);
+        $r0.<it.h3g.areaclienti3.ussdservices.af: java.util.List b> = $r10;
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.view.View a>;
+        $r6 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165995);
+        $r11 = (android.widget.ListView) $r6;
+        $r0.<it.h3g.areaclienti3.ussdservices.af: android.widget.ListView c> = $r11;
+        $r11 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.widget.ListView c>;
+        virtualinvoke $r11.<android.widget.ListView: void setTextFilterEnabled(boolean)>(1);
+        $r11 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.widget.ListView c>;
+        $r12 = new it.h3g.areaclienti3.ussdservices.ad;
+        $r4 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.content.Context mContext>;
+        $r5 = $r0.<it.h3g.areaclienti3.ussdservices.af: java.util.List b>;
+        specialinvoke $r12.<it.h3g.areaclienti3.ussdservices.ad: void <init>(android.content.Context,java.util.List)>($r4, $r5);
+        virtualinvoke $r11.<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>($r12);
+        $r11 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.widget.ListView c>;
+        $r13 = new it.h3g.areaclienti3.ussdservices.ag;
+        specialinvoke $r13.<it.h3g.areaclienti3.ussdservices.ag: void <init>(it.h3g.areaclienti3.ussdservices.af)>($r0);
+        virtualinvoke $r11.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r13);
+        $r6 = $r0.<it.h3g.areaclienti3.ussdservices.af: android.view.View a>;
+        return $r6;
+
+     label2:
+        $r14 := @caughtexception;
+        $r10 = new java.util.ArrayList;
+        specialinvoke $r10.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.af: java.util.List b> = $r10;
+        virtualinvoke $r14.<java.lang.Exception: void printStackTrace()>();
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        specialinvoke $r0.<it.h3g.areaclienti3.ussdservices.ab: void onDestroyView()>();
+        $r0.<it.h3g.areaclienti3.ussdservices.af: android.view.View a> = null;
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.ussdservices.af $r0;
+        it.h3g.areaclienti3.j.l $r1;
+        boolean $z0;
+        it.h3g.areaclienti3.fragments.c $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.ussdservices.af;
+        $r1 = $r0.<it.h3g.areaclienti3.ussdservices.af: it.h3g.areaclienti3.j.l myPreferences>;
+        $z0 = virtualinvoke $r1.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 != 0 goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.ussdservices.af: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.ussdservices.af: java.lang.String getString(int)>(2131231461);
+        interfaceinvoke $r2.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r3, 2);
+
+     label0:
+        return;
+    }
+}

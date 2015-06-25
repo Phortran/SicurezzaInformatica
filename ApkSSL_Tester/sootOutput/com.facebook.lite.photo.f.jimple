@@ -1,0 +1,106 @@
+final class com.facebook.lite.photo.f extends java.lang.Object implements android.view.View$OnTouchListener
+{
+    final com.facebook.lite.photo.h a;
+    final int b;
+    final com.facebook.lite.photo.e c;
+
+    void <init>(com.facebook.lite.photo.e, com.facebook.lite.photo.h, int)
+    {
+        com.facebook.lite.photo.f $r0;
+        com.facebook.lite.photo.e $r1;
+        com.facebook.lite.photo.h $r2;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.photo.f;
+        $r1 := @parameter0: com.facebook.lite.photo.e;
+        $r2 := @parameter1: com.facebook.lite.photo.h;
+        $i0 := @parameter2: int;
+        $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c> = $r1;
+        $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.h a> = $r2;
+        $r0.<com.facebook.lite.photo.f: int b> = $i0;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final boolean onTouch(android.view.View, android.view.MotionEvent)
+    {
+        com.facebook.lite.photo.f $r0;
+        android.view.View $r1;
+        android.view.MotionEvent $r2;
+        boolean $z0;
+        int $i0;
+        com.facebook.lite.photo.e $r3;
+        com.facebook.lite.photo.AlbumGalleryActivity $r4;
+        android.os.Handler $r5;
+        java.lang.Runnable $r6;
+        com.facebook.lite.widget.HorizontalProgressBar $r7;
+        com.facebook.lite.photo.h $r8;
+
+        $r0 := @this: com.facebook.lite.photo.f;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.MotionEvent;
+        $z0 = 1;
+        $i0 = virtualinvoke $r2.<android.view.MotionEvent: int getAction()>();
+        lookupswitch($i0)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            case 2: goto label0;
+            case 3: goto label3;
+            case 4: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        return 1;
+
+     label1:
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r5 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: android.os.Handler d(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r6 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: java.lang.Runnable c(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        virtualinvoke $r5.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r6, 500L);
+        return 1;
+
+     label2:
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r7 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: com.facebook.lite.widget.HorizontalProgressBar b(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        $z0 = virtualinvoke $r7.<com.facebook.lite.widget.HorizontalProgressBar: boolean a()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r8 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.h a>;
+        staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: com.facebook.lite.photo.h a(com.facebook.lite.photo.AlbumGalleryActivity,com.facebook.lite.photo.h)>($r4, $r8);
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $i0 = $r0.<com.facebook.lite.photo.f: int b>;
+        $r8 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.h a>;
+        $z0 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: boolean a(com.facebook.lite.photo.AlbumGalleryActivity,int,com.facebook.lite.photo.h)>($r4, $i0, $r8);
+
+     label3:
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r5 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: android.os.Handler d(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r6 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: java.lang.Runnable c(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        virtualinvoke $r5.<android.os.Handler: void removeCallbacks(java.lang.Runnable)>($r6);
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $r7 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: com.facebook.lite.widget.HorizontalProgressBar b(com.facebook.lite.photo.AlbumGalleryActivity)>($r4);
+        virtualinvoke $r7.<com.facebook.lite.widget.HorizontalProgressBar: void c()>();
+        return $z0;
+
+     label4:
+        $r3 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.e c>;
+        $r4 = $r3.<com.facebook.lite.photo.e: com.facebook.lite.photo.AlbumGalleryActivity a>;
+        $i0 = $r0.<com.facebook.lite.photo.f: int b>;
+        $r8 = $r0.<com.facebook.lite.photo.f: com.facebook.lite.photo.h a>;
+        $z0 = staticinvoke <com.facebook.lite.photo.AlbumGalleryActivity: boolean a(com.facebook.lite.photo.AlbumGalleryActivity,int,com.facebook.lite.photo.h,android.view.View)>($r4, $i0, $r8, $r1);
+        goto label3;
+    }
+}

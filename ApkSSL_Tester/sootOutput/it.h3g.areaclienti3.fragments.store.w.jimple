@@ -1,0 +1,485 @@
+public class it.h3g.areaclienti3.fragments.store.w extends it.h3g.areaclienti3.fragments.a
+{
+    private android.view.View a;
+    private it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b;
+    private com.google.android.gms.maps.GoogleMap c;
+    private java.lang.String d;
+    private java.lang.String e;
+    private java.lang.String f;
+    private it.h3g.areaclienti3.customview.ExpandableRow g;
+    private java.util.ArrayList h;
+    private java.util.HashMap i;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        return;
+    }
+
+    static java.util.HashMap a(it.h3g.areaclienti3.fragments.store.w)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        java.util.HashMap $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.HashMap i>;
+        return $r1;
+    }
+
+    private void a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.util.ArrayList $r2;
+        java.lang.String $r3, $r5;
+        double $d0, $d1;
+        int $i0;
+        com.google.android.gms.maps.GoogleMap $r4;
+        java.lang.StringBuilder $r6;
+        java.lang.Double $r7, $r8;
+        com.google.android.gms.maps.model.LatLng $r9;
+        com.google.android.gms.maps.a $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label1;
+
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $i0 = virtualinvoke $r2.<java.util.ArrayList: int size()>();
+        if $i0 <= 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("mLongitude");
+        $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String d> = $r3;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("mLatitude");
+        $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String e> = $r3;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("mLocality");
+        if $r3 == null goto label1;
+
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        if $r4 == null goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreMapFragment", "Geocoder returned locality");
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String d>;
+        if $r5 != null goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String e>;
+        if $r5 == null goto label1;
+
+     label0:
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("LONGITUDE = ");
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String d>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - LATITUDE = ");
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String e>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("StoreMapFragment", $r3);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("StoreMapFragment", "SETTING ZOOM = 12");
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String e>;
+        $r7 = staticinvoke <java.lang.Double: java.lang.Double valueOf(java.lang.String)>($r5);
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String d>;
+        $r8 = staticinvoke <java.lang.Double: java.lang.Double valueOf(java.lang.String)>($r5);
+        $r9 = new com.google.android.gms.maps.model.LatLng;
+        $d0 = virtualinvoke $r7.<java.lang.Double: double doubleValue()>();
+        $d1 = virtualinvoke $r8.<java.lang.Double: double doubleValue()>();
+        specialinvoke $r9.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>($d0, $d1);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        $r10 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.a a(com.google.android.gms.maps.model.LatLng,float)>($r9, 12.0F);
+        virtualinvoke $r4.<com.google.android.gms.maps.GoogleMap: void b(com.google.android.gms.maps.a)>($r10);
+
+     label1:
+        return;
+    }
+
+    static it.h3g.areaclienti3.fragments.c b(it.h3g.areaclienti3.fragments.store.w)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        it.h3g.areaclienti3.fragments.c $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.c mDialog>;
+        return $r1;
+    }
+
+    private void b()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        com.google.android.gms.maps.GoogleMap $r1;
+        int $i0, $i1;
+        java.lang.String $r2, $r14, $r16;
+        double $d0, $d1;
+        java.lang.StringBuilder $r3;
+        com.google.android.gms.maps.v $r4;
+        java.util.ArrayList $r5;
+        java.util.HashMap $r6;
+        java.lang.Object $r7;
+        android.os.Bundle $r8;
+        java.lang.Double $r9, $r10;
+        com.google.android.gms.maps.model.LatLng $r11;
+        com.google.android.gms.maps.model.CameraPosition $r12;
+        com.google.android.gms.maps.a $r13;
+        boolean $z0;
+        com.google.android.gms.maps.model.MarkerOptions $r17;
+        com.google.android.gms.maps.model.a $r18;
+        com.google.android.gms.maps.model.i $r19;
+        it.h3g.areaclienti3.fragments.store.x $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $i0 = 0;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void b()>();
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        $r4 = virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: com.google.android.gms.maps.v c()>();
+        $z0 = (boolean) 0;
+        virtualinvoke $r4.<com.google.android.gms.maps.v: void a(boolean)>($z0);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void a(int)>(1);
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        if $r5 == null goto label7;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $i1 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        if $i1 <= 0 goto label7;
+
+        $r6 = new java.util.HashMap;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $i1 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        specialinvoke $r6.<java.util.HashMap: void <init>(int)>($i1);
+        $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.HashMap i> = $r6;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $r7 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r8 = (android.os.Bundle) $r7;
+        $r2 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("longitude");
+        $d1 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>($r2);
+        $r9 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d1);
+        $r2 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("latitude");
+        $d1 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>($r2);
+        $r10 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d1);
+        $r11 = new com.google.android.gms.maps.model.LatLng;
+        $d0 = virtualinvoke $r10.<java.lang.Double: double doubleValue()>();
+        $d1 = virtualinvoke $r9.<java.lang.Double: double doubleValue()>();
+        specialinvoke $r11.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>($d0, $d1);
+        $r12 = staticinvoke <com.google.android.gms.maps.model.CameraPosition: com.google.android.gms.maps.model.CameraPosition a(com.google.android.gms.maps.model.LatLng,float)>($r11, 12.0F);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        $r13 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.a a(com.google.android.gms.maps.model.CameraPosition)>($r12);
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void a(com.google.android.gms.maps.a)>($r13);
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $i1 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        if $i0 >= $i1 goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h>;
+        $r7 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r8 = (android.os.Bundle) $r7;
+        $z0 = virtualinvoke $r8.<android.os.Bundle: boolean containsKey(java.lang.String)>("latitude");
+        if $z0 == 0 goto label4;
+
+        $z0 = virtualinvoke $r8.<android.os.Bundle: boolean containsKey(java.lang.String)>("longitude");
+        if $z0 == 0 goto label4;
+
+        $r2 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("latitude");
+        $r14 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("longitude");
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label4;
+
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label4;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("ADD SHOP ");
+        $r16 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("name");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r16);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" AT LAT:");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" AND LONG = ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r16 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreMapFragment", $r16);
+        $r10 = staticinvoke <java.lang.Double: java.lang.Double valueOf(java.lang.String)>($r2);
+        $r9 = staticinvoke <java.lang.Double: java.lang.Double valueOf(java.lang.String)>($r14);
+        $r11 = new com.google.android.gms.maps.model.LatLng;
+        $d1 = virtualinvoke $r10.<java.lang.Double: double doubleValue()>();
+        $d0 = virtualinvoke $r9.<java.lang.Double: double doubleValue()>();
+        specialinvoke $r11.<com.google.android.gms.maps.model.LatLng: void <init>(double,double)>($d1, $d0);
+        $r16 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>("Vendita");
+        if $z0 == 0 goto label5;
+
+        $i1 = 2130837834;
+
+     label3:
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        $r17 = new com.google.android.gms.maps.model.MarkerOptions;
+        specialinvoke $r17.<com.google.android.gms.maps.model.MarkerOptions: void <init>()>();
+        $r17 = virtualinvoke $r17.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(com.google.android.gms.maps.model.LatLng)>($r11);
+        $r18 = staticinvoke <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.a a(int)>($i1);
+        $r17 = virtualinvoke $r17.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(com.google.android.gms.maps.model.a)>($r18);
+        $r16 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("name");
+        $r17 = virtualinvoke $r17.<com.google.android.gms.maps.model.MarkerOptions: com.google.android.gms.maps.model.MarkerOptions a(java.lang.String)>($r16);
+        $r19 = virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: com.google.android.gms.maps.model.i a(com.google.android.gms.maps.model.MarkerOptions)>($r17);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.HashMap i>;
+        virtualinvoke $r6.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r19, $r8);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        $r20 = new it.h3g.areaclienti3.fragments.store.x;
+        specialinvoke $r20.<it.h3g.areaclienti3.fragments.store.x: void <init>(it.h3g.areaclienti3.fragments.store.w,it.h3g.areaclienti3.fragments.store.x)>($r0, null);
+        virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: void a(com.google.android.gms.maps.k)>($r20);
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label2;
+
+     label5:
+        $r16 = virtualinvoke $r8.<android.os.Bundle: java.lang.String getString(java.lang.String)>("type");
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>("Assistenza");
+        if $z0 == 0 goto label6;
+
+        $i1 = 2130837835;
+        goto label3;
+
+     label6:
+        $i1 = 2130837836;
+        goto label3;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreMapFragment", "SHOPS IS NULL ");
+        goto label0;
+    }
+
+    static android.content.Context c(it.h3g.areaclienti3.fragments.store.w)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: android.content.Context mContext>;
+        return $r1;
+    }
+
+    public void a()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.support.v4.app.h $r1;
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r2;
+        android.support.v4.app.n $r3;
+        android.support.v4.app.Fragment $r4;
+        android.support.v4.app.y $r5;
+        boolean $z0;
+        com.google.android.gms.maps.GoogleMap $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: android.support.v4.app.h getActivity()>();
+        $r3 = virtualinvoke $r1.<android.support.v4.app.h: android.support.v4.app.n e()>();
+        $r4 = virtualinvoke $r3.<android.support.v4.app.n: android.support.v4.app.Fragment a(int)>(2131165875);
+        $r2 = (it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment) $r4;
+        $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b> = $r2;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: android.support.v4.app.h getActivity()>();
+        $r3 = virtualinvoke $r1.<android.support.v4.app.h: android.support.v4.app.n e()>();
+        $r5 = virtualinvoke $r3.<android.support.v4.app.n: android.support.v4.app.y a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        if $r2 != null goto label0;
+
+        $r2 = new it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment;
+        specialinvoke $r2.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b> = $r2;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        virtualinvoke $r5.<android.support.v4.app.y: android.support.v4.app.y a(int,android.support.v4.app.Fragment)>(2131165875, $r2);
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        $z0 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: boolean isVisible()>();
+        if $z0 != 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        virtualinvoke $r5.<android.support.v4.app.y: android.support.v4.app.y c(android.support.v4.app.Fragment)>($r2);
+
+     label1:
+        virtualinvoke $r5.<android.support.v4.app.y: int a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        $r6 = virtualinvoke $r2.<it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment: com.google.android.gms.maps.GoogleMap b()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c> = $r6;
+        return;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        return 2131231018;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        return 2130837868;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        return 34;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 := @parameter0: android.os.Bundle;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("getLocationCoordinates");
+        if $z0 == 0 goto label1;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: void a(android.os.Bundle)>($r1);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreMapFragment", "The action finished is not konwn");
+        goto label0;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        android.view.View $r6;
+        it.h3g.areaclienti3.customview.ExpandableRow $r7;
+        android.widget.LinearLayout $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreMapFragment", "onCreateView: StoreMapFragment");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a>;
+        if $r6 != null goto label0;
+
+        $r6 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903152, $r2, 0);
+        $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a> = $r6;
+
+     label0:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a>;
+        $r6 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165876);
+        $r7 = (it.h3g.areaclienti3.customview.ExpandableRow) $r6;
+        $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.customview.ExpandableRow g> = $r7;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a>;
+        $r6 = virtualinvoke $r6.<android.view.View: android.view.View findViewById(int)>(2131165877);
+        $r8 = (android.widget.LinearLayout) $r6;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.customview.ExpandableRow g>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.customview.ExpandableRow: void a(android.view.View,boolean)>($r8, 1);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a>;
+        return $r6;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDestroyView()>();
+        $r0.<it.h3g.areaclienti3.fragments.store.w: android.view.View a> = null;
+        return;
+    }
+
+    public void onPause()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment $r1;
+        android.support.v4.app.h $r2;
+        android.support.v4.app.n $r3;
+        android.support.v4.app.y $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        if $r1 == null goto label0;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: android.support.v4.app.h getActivity()>();
+        $r3 = virtualinvoke $r2.<android.support.v4.app.h: android.support.v4.app.n e()>();
+        $r4 = virtualinvoke $r3.<android.support.v4.app.n: android.support.v4.app.y a()>();
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.store.NiceSupportMapFragment b>;
+        $r4 = virtualinvoke $r4.<android.support.v4.app.y: android.support.v4.app.y a(android.support.v4.app.Fragment)>($r1);
+        virtualinvoke $r4.<android.support.v4.app.y: int a()>();
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onPause()>();
+        return;
+    }
+
+    public void onResume()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        com.google.android.gms.maps.GoogleMap $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onResume()>();
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.store.w: com.google.android.gms.maps.GoogleMap c>;
+        if $r1 != null goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: void a()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: void startAction()>();
+
+     label0:
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.store.w $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2;
+        java.util.ArrayList $r3;
+        it.h3g.areaclienti3.fragments.d $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.store.w;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: android.os.Bundle getArguments()>();
+        if $r1 == null goto label1;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("locality");
+        $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String f> = $r2;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.util.ArrayList getParcelableArrayList(java.lang.String)>("shops");
+        $r0.<it.h3g.areaclienti3.fragments.store.w: java.util.ArrayList h> = $r3;
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.store.w: java.lang.String f>;
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("locality", $r2);
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.store.w: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r5.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle)>("getLocationCoordinates", $r1);
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.store.w: void b()>();
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreMapFragment", "Error results not found");
+        goto label0;
+    }
+}

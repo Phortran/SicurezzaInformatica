@@ -1,0 +1,120 @@
+class android.support.v4.view.LayoutInflaterCompatHC extends java.lang.Object
+{
+    private static final java.lang.String TAG;
+    private static boolean sCheckedField;
+    private static java.lang.reflect.Field sLayoutInflaterFactory2Field;
+
+    void <init>()
+    {
+        android.support.v4.view.LayoutInflaterCompatHC $r0;
+
+        $r0 := @this: android.support.v4.view.LayoutInflaterCompatHC;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static void forceSetFactory2(android.view.LayoutInflater, android.view.LayoutInflater$Factory2)
+    {
+        android.view.LayoutInflater $r0;
+        android.view.LayoutInflater$Factory2 $r1;
+        java.lang.NoSuchFieldException $r2;
+        boolean $z0;
+        java.lang.String $r3;
+        java.lang.reflect.Field $r4;
+        java.lang.Class $r5;
+        java.lang.StringBuilder $r7;
+        java.lang.IllegalAccessException $r8;
+
+        $r0 := @parameter0: android.view.LayoutInflater;
+        $r1 := @parameter1: android.view.LayoutInflater$Factory2;
+        $z0 = <android.support.v4.view.LayoutInflaterCompatHC: boolean sCheckedField>;
+        if $z0 != 0 goto label2;
+
+        $r5 = class "android/view/LayoutInflater";
+
+     label0:
+        $r4 = virtualinvoke $r5.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("mFactory2");
+        <android.support.v4.view.LayoutInflaterCompatHC: java.lang.reflect.Field sLayoutInflaterFactory2Field> = $r4;
+        $r4 = <android.support.v4.view.LayoutInflaterCompatHC: java.lang.reflect.Field sLayoutInflaterFactory2Field>;
+        virtualinvoke $r4.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+
+     label1:
+        <android.support.v4.view.LayoutInflaterCompatHC: boolean sCheckedField> = 1;
+
+     label2:
+        $r4 = <android.support.v4.view.LayoutInflaterCompatHC: java.lang.reflect.Field sLayoutInflaterFactory2Field>;
+        if $r4 == null goto label4;
+
+        $r4 = <android.support.v4.view.LayoutInflaterCompatHC: java.lang.reflect.Field sLayoutInflaterFactory2Field>;
+
+     label3:
+        virtualinvoke $r4.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>($r0, $r1);
+
+     label4:
+        return;
+
+     label5:
+        $r2 := @caughtexception;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("forceSetFactory2 Could not find field \'mFactory2\' on class ");
+        $r5 = class "android/view/LayoutInflater";
+        $r3 = virtualinvoke $r5.<java.lang.Class: java.lang.String getName()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; inflation may have unexpected results.");
+        $r3 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("LayoutInflaterCompatHC", $r3, $r2);
+        goto label1;
+
+     label6:
+        $r8 := @caughtexception;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("forceSetFactory2 could not set the Factory2 on LayoutInflater ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; inflation may have unexpected results.");
+        $r3 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("LayoutInflaterCompatHC", $r3, $r8);
+        goto label4;
+
+        catch java.lang.NoSuchFieldException from label0 to label1 with label5;
+        catch java.lang.IllegalAccessException from label3 to label4 with label6;
+    }
+
+    static void setFactory(android.view.LayoutInflater, android.support.v4.view.LayoutInflaterFactory)
+    {
+        android.view.LayoutInflater $r0;
+        android.support.v4.view.LayoutInflaterFactory $r1;
+        android.view.LayoutInflater$Factory $r2;
+        android.support.v4.view.LayoutInflaterCompatHC$FactoryWrapperHC $r3;
+        boolean $z0;
+        android.view.LayoutInflater$Factory2 $r4;
+
+        $r0 := @parameter0: android.view.LayoutInflater;
+        $r1 := @parameter1: android.support.v4.view.LayoutInflaterFactory;
+        if $r1 == null goto label2;
+
+        $r3 = new android.support.v4.view.LayoutInflaterCompatHC$FactoryWrapperHC;
+        specialinvoke $r3.<android.support.v4.view.LayoutInflaterCompatHC$FactoryWrapperHC: void <init>(android.support.v4.view.LayoutInflaterFactory)>($r1);
+
+     label0:
+        virtualinvoke $r0.<android.view.LayoutInflater: void setFactory2(android.view.LayoutInflater$Factory2)>($r3);
+        $r2 = virtualinvoke $r0.<android.view.LayoutInflater: android.view.LayoutInflater$Factory getFactory()>();
+        $z0 = $r2 instanceof android.view.LayoutInflater$Factory2;
+        if $z0 == 0 goto label3;
+
+        $r4 = (android.view.LayoutInflater$Factory2) $r2;
+        staticinvoke <android.support.v4.view.LayoutInflaterCompatHC: void forceSetFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2)>($r0, $r4);
+
+     label1:
+        return;
+
+     label2:
+        $r3 = null;
+        goto label0;
+
+     label3:
+        staticinvoke <android.support.v4.view.LayoutInflaterCompatHC: void forceSetFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2)>($r0, $r3);
+        goto label1;
+    }
+}

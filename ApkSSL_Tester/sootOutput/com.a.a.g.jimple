@@ -1,0 +1,282 @@
+final class com.a.a.g extends java.lang.Object implements java.io.Closeable
+{
+    private byte[] a;
+    private final java.nio.charset.Charset b;
+    private int c;
+    private final java.io.InputStream d;
+    private int e;
+
+    public void <init>(java.io.InputStream, java.nio.charset.Charset)
+    {
+        com.a.a.g $r0;
+        java.io.InputStream $r1;
+        java.nio.charset.Charset $r2;
+
+        $r0 := @this: com.a.a.g;
+        $r1 := @parameter0: java.io.InputStream;
+        $r2 := @parameter1: java.nio.charset.Charset;
+        specialinvoke $r0.<com.a.a.g: void <init>(java.io.InputStream,java.nio.charset.Charset,byte)>($r1, $r2, 0);
+        return;
+    }
+
+    private void <init>(java.io.InputStream, java.nio.charset.Charset, byte)
+    {
+        com.a.a.g $r0;
+        java.io.InputStream $r1;
+        java.nio.charset.Charset $r2, $r5;
+        byte $b0;
+        java.lang.NullPointerException $r3;
+        boolean $z0;
+        java.lang.IllegalArgumentException $r6;
+        byte[] $r7;
+
+        $r0 := @this: com.a.a.g;
+        $r1 := @parameter0: java.io.InputStream;
+        $r2 := @parameter1: java.nio.charset.Charset;
+        $b0 := @parameter2: byte;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        if $r1 == null goto label0;
+
+        if $r2 != null goto label1;
+
+     label0:
+        $r3 = new java.lang.NullPointerException;
+        specialinvoke $r3.<java.lang.NullPointerException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $r5 = <com.a.a.i: java.nio.charset.Charset a>;
+        $z0 = virtualinvoke $r2.<java.nio.charset.Charset: boolean equals(java.lang.Object)>($r5);
+        if $z0 != 0 goto label2;
+
+        $r6 = new java.lang.IllegalArgumentException;
+        specialinvoke $r6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Unsupported encoding");
+        throw $r6;
+
+     label2:
+        $r0.<com.a.a.g: java.io.InputStream d> = $r1;
+        $r0.<com.a.a.g: java.nio.charset.Charset b> = $r2;
+        $r7 = newarray (byte)[8192];
+        $r0.<com.a.a.g: byte[] a> = $r7;
+        return;
+    }
+
+    static java.nio.charset.Charset a(com.a.a.g)
+    {
+        com.a.a.g $r0;
+        java.nio.charset.Charset $r1;
+
+        $r0 := @parameter0: com.a.a.g;
+        $r1 = $r0.<com.a.a.g: java.nio.charset.Charset b>;
+        return $r1;
+    }
+
+    private void c()
+    {
+        com.a.a.g $r0;
+        java.io.InputStream $r1;
+        byte[] $r2, $r3;
+        int $i1;
+        java.io.EOFException $r4;
+
+        $r0 := @this: com.a.a.g;
+        $r1 = $r0.<com.a.a.g: java.io.InputStream d>;
+        $r2 = $r0.<com.a.a.g: byte[] a>;
+        $r3 = $r0.<com.a.a.g: byte[] a>;
+        $i1 = lengthof $r3;
+        $i1 = virtualinvoke $r1.<java.io.InputStream: int read(byte[],int,int)>($r2, 0, $i1);
+        if $i1 != -1 goto label0;
+
+        $r4 = new java.io.EOFException;
+        specialinvoke $r4.<java.io.EOFException: void <init>()>();
+        throw $r4;
+
+     label0:
+        $r0.<com.a.a.g: int e> = 0;
+        $r0.<com.a.a.g: int c> = $i1;
+        return;
+    }
+
+    public final boolean a()
+    {
+        com.a.a.g $r0;
+        int $i0;
+
+        $r0 := @this: com.a.a.g;
+        $i0 = $r0.<com.a.a.g: int c>;
+        if $i0 != -1 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final java.lang.String b()
+    {
+        com.a.a.g $r0;
+        byte[] $r1;
+        java.lang.String $r2, $r6;
+        int $i0, $i1, $i4, $i5;
+        java.io.InputStream $r3;
+        java.io.IOException $r4;
+        java.lang.Throwable $r5;
+        byte $b3;
+        java.nio.charset.Charset $r7;
+        com.a.a.h $r8;
+
+        $r0 := @this: com.a.a.g;
+        $r3 = $r0.<com.a.a.g: java.io.InputStream d>;
+        entermonitor $r3;
+
+     label0:
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        if $r1 != null goto label3;
+
+        $r4 = new java.io.IOException;
+        specialinvoke $r4.<java.io.IOException: void <init>(java.lang.String)>("LineReader is closed");
+        throw $r4;
+
+     label1:
+        $r5 := @caughtexception;
+        exitmonitor $r3;
+
+     label2:
+        throw $r5;
+
+     label3:
+        $i1 = $r0.<com.a.a.g: int e>;
+        $i0 = $r0.<com.a.a.g: int c>;
+        if $i1 < $i0 goto label4;
+
+        specialinvoke $r0.<com.a.a.g: void c()>();
+
+     label4:
+        $i0 = $r0.<com.a.a.g: int e>;
+
+     label5:
+        $i1 = $r0.<com.a.a.g: int c>;
+        if $i0 == $i1 goto label9;
+
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $b3 = $r1[$i0];
+        if $b3 != 10 goto label8;
+
+        $i1 = $r0.<com.a.a.g: int e>;
+        if $i0 == $i1 goto label7;
+
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $i1 = $i0 + -1;
+        $b3 = $r1[$i1];
+        if $b3 != 13 goto label7;
+
+        $i4 = $i0 + -1;
+
+     label6:
+        $r6 = new java.lang.String;
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $i1 = $r0.<com.a.a.g: int e>;
+        $i5 = $r0.<com.a.a.g: int e>;
+        $i5 = $i4 - $i5;
+        $r7 = $r0.<com.a.a.g: java.nio.charset.Charset b>;
+        $r2 = virtualinvoke $r7.<java.nio.charset.Charset: java.lang.String name()>();
+        specialinvoke $r6.<java.lang.String: void <init>(byte[],int,int,java.lang.String)>($r1, $i1, $i5, $r2);
+        $i5 = $i0 + 1;
+        $r0.<com.a.a.g: int e> = $i5;
+        exitmonitor $r3;
+        return $r6;
+
+     label7:
+        $i4 = $i0;
+        goto label6;
+
+     label8:
+        $i0 = $i0 + 1;
+        goto label5;
+
+     label9:
+        $r8 = new com.a.a.h;
+        $i5 = $r0.<com.a.a.g: int c>;
+        $i4 = $r0.<com.a.a.g: int e>;
+        $i5 = $i5 - $i4;
+        $i5 = $i5 + 80;
+        specialinvoke $r8.<com.a.a.h: void <init>(com.a.a.g,int)>($r0, $i5);
+
+     label10:
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $i5 = $r0.<com.a.a.g: int e>;
+        $i4 = $r0.<com.a.a.g: int c>;
+        $i1 = $r0.<com.a.a.g: int e>;
+        $i4 = $i4 - $i1;
+        virtualinvoke $r8.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r1, $i5, $i4);
+        $r0.<com.a.a.g: int c> = -1;
+        specialinvoke $r0.<com.a.a.g: void c()>();
+        $i5 = $r0.<com.a.a.g: int e>;
+
+     label11:
+        $i4 = $r0.<com.a.a.g: int c>;
+        if $i5 == $i4 goto label10;
+
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $b3 = $r1[$i5];
+        if $b3 != 10 goto label14;
+
+        $i4 = $r0.<com.a.a.g: int e>;
+        if $i5 == $i4 goto label12;
+
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        $i4 = $r0.<com.a.a.g: int e>;
+        $i1 = $r0.<com.a.a.g: int e>;
+        $i1 = $i5 - $i1;
+        virtualinvoke $r8.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r1, $i4, $i1);
+
+     label12:
+        $i5 = $i5 + 1;
+        $r0.<com.a.a.g: int e> = $i5;
+        $r6 = virtualinvoke $r8.<java.io.ByteArrayOutputStream: java.lang.String toString()>();
+        exitmonitor $r3;
+
+     label13:
+        return $r6;
+
+     label14:
+        $i5 = $i5 + 1;
+        goto label11;
+
+        catch java.lang.Throwable from label0 to label2 with label1;
+        catch java.lang.Throwable from label3 to label13 with label1;
+    }
+
+    public final void close()
+    {
+        com.a.a.g $r0;
+        byte[] $r1;
+        java.io.InputStream $r2, $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.a.a.g;
+        $r2 = $r0.<com.a.a.g: java.io.InputStream d>;
+        entermonitor $r2;
+
+     label0:
+        $r1 = $r0.<com.a.a.g: byte[] a>;
+        if $r1 == null goto label1;
+
+        $r0.<com.a.a.g: byte[] a> = null;
+        $r3 = $r0.<com.a.a.g: java.io.InputStream d>;
+        virtualinvoke $r3.<java.io.InputStream: void close()>();
+
+     label1:
+        exitmonitor $r2;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r2;
+
+     label3:
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label3 with label2;
+    }
+}

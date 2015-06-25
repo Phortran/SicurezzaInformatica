@@ -1,0 +1,55 @@
+class com.google.android.gms.dynamic.e extends java.lang.Object implements com.google.android.gms.dynamic.l
+{
+    final com.google.android.gms.dynamic.d a;
+
+    void <init>(com.google.android.gms.dynamic.d)
+    {
+        com.google.android.gms.dynamic.e $r0;
+        com.google.android.gms.dynamic.d $r1;
+
+        $r0 := @this: com.google.android.gms.dynamic.e;
+        $r1 := @parameter0: com.google.android.gms.dynamic.d;
+        $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.android.gms.dynamic.a)
+    {
+        com.google.android.gms.dynamic.e $r0;
+        com.google.android.gms.dynamic.a $r1;
+        com.google.android.gms.dynamic.d $r2;
+        java.util.Iterator $r3;
+        java.util.LinkedList $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        com.google.android.gms.dynamic.k $r6;
+
+        $r0 := @this: com.google.android.gms.dynamic.e;
+        $r1 := @parameter0: com.google.android.gms.dynamic.a;
+        $r2 = $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a>;
+        staticinvoke <com.google.android.gms.dynamic.d: com.google.android.gms.dynamic.a a(com.google.android.gms.dynamic.d,com.google.android.gms.dynamic.a)>($r2, $r1);
+        $r2 = $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a>;
+        $r4 = staticinvoke <com.google.android.gms.dynamic.d: java.util.LinkedList a(com.google.android.gms.dynamic.d)>($r2);
+        $r3 = virtualinvoke $r4.<java.util.LinkedList: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (com.google.android.gms.dynamic.k) $r5;
+        $r2 = $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a>;
+        $r1 = staticinvoke <com.google.android.gms.dynamic.d: com.google.android.gms.dynamic.a b(com.google.android.gms.dynamic.d)>($r2);
+        interfaceinvoke $r6.<com.google.android.gms.dynamic.k: void a(com.google.android.gms.dynamic.a)>($r1);
+        goto label0;
+
+     label1:
+        $r2 = $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a>;
+        $r4 = staticinvoke <com.google.android.gms.dynamic.d: java.util.LinkedList a(com.google.android.gms.dynamic.d)>($r2);
+        virtualinvoke $r4.<java.util.LinkedList: void clear()>();
+        $r2 = $r0.<com.google.android.gms.dynamic.e: com.google.android.gms.dynamic.d a>;
+        staticinvoke <com.google.android.gms.dynamic.d: android.os.Bundle a(com.google.android.gms.dynamic.d,android.os.Bundle)>($r2, null);
+        return;
+    }
+}

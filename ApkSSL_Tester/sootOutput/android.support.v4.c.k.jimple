@@ -1,0 +1,283 @@
+final class android.support.v4.c.k extends java.lang.Object implements java.util.Iterator, java.util.Map$Entry
+{
+    int a;
+    int b;
+    boolean c;
+    final android.support.v4.c.g d;
+
+    void <init>(android.support.v4.c.g)
+    {
+        android.support.v4.c.k $r0;
+        android.support.v4.c.g $r1;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.k;
+        $r1 := @parameter0: android.support.v4.c.g;
+        $r0.<android.support.v4.c.k: android.support.v4.c.g d> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<android.support.v4.c.k: boolean c> = 0;
+        $i0 = virtualinvoke $r1.<android.support.v4.c.g: int a()>();
+        $i0 = $i0 + -1;
+        $r0.<android.support.v4.c.k: int a> = $i0;
+        $r0.<android.support.v4.c.k: int b> = -1;
+        return;
+    }
+
+    public java.util.Map$Entry a()
+    {
+        android.support.v4.c.k $r0;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.k;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        $i0 = $i0 + 1;
+        $r0.<android.support.v4.c.k: int b> = $i0;
+        $r0.<android.support.v4.c.k: boolean c> = 1;
+        return $r0;
+    }
+
+    public final boolean equals(java.lang.Object)
+    {
+        android.support.v4.c.k $r0;
+        java.lang.Object $r1, $r6;
+        boolean $z0, $z2;
+        android.support.v4.c.g $r2;
+        int $i0, i1;
+        java.lang.IllegalStateException $r3;
+        java.util.Map$Entry $r5;
+
+        $r0 := @this: android.support.v4.c.k;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = 1;
+        $z2 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z2 != 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This container does not support retaining Map.Entry objects");
+        throw $r3;
+
+     label0:
+        $z2 = $r1 instanceof java.util.Map$Entry;
+        if $z2 != 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r5 = (java.util.Map$Entry) $r1;
+        $r1 = interfaceinvoke $r5.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r2 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        i1 = (int) 0;
+        $r6 = virtualinvoke $r2.<android.support.v4.c.g: java.lang.Object a(int,int)>($i0, i1);
+        $z2 = staticinvoke <android.support.v4.c.c: boolean a(java.lang.Object,java.lang.Object)>($r1, $r6);
+        if $z2 == 0 goto label3;
+
+        $r6 = interfaceinvoke $r5.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r2 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        i1 = (int) 1;
+        $r1 = virtualinvoke $r2.<android.support.v4.c.g: java.lang.Object a(int,int)>($i0, i1);
+        $z2 = staticinvoke <android.support.v4.c.c: boolean a(java.lang.Object,java.lang.Object)>($r6, $r1);
+        if $z2 == 0 goto label3;
+
+     label2:
+        return $z0;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+    }
+
+    public java.lang.Object getKey()
+    {
+        android.support.v4.c.k $r0;
+        boolean $z0;
+        java.lang.Object $r2;
+        java.lang.IllegalStateException $r3;
+        android.support.v4.c.g $r4;
+        int $i1;
+
+        $r0 := @this: android.support.v4.c.k;
+        $z0 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z0 != 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This container does not support retaining Map.Entry objects");
+        throw $r3;
+
+     label0:
+        $r4 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i1 = $r0.<android.support.v4.c.k: int b>;
+        $r2 = virtualinvoke $r4.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, 0);
+        return $r2;
+    }
+
+    public java.lang.Object getValue()
+    {
+        android.support.v4.c.k $r0;
+        boolean $z0;
+        java.lang.Object $r2;
+        java.lang.IllegalStateException $r3;
+        android.support.v4.c.g $r4;
+        int $i1;
+
+        $r0 := @this: android.support.v4.c.k;
+        $z0 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z0 != 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This container does not support retaining Map.Entry objects");
+        throw $r3;
+
+     label0:
+        $r4 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i1 = $r0.<android.support.v4.c.k: int b>;
+        $r2 = virtualinvoke $r4.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, 1);
+        return $r2;
+    }
+
+    public boolean hasNext()
+    {
+        android.support.v4.c.k $r0;
+        int $i0, $i1;
+
+        $r0 := @this: android.support.v4.c.k;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        $i1 = $r0.<android.support.v4.c.k: int a>;
+        if $i0 >= $i1 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final int hashCode()
+    {
+        android.support.v4.c.k $r0;
+        int $i0, $i1;
+        boolean $z0;
+        java.lang.Object $r1, $r5;
+        java.lang.IllegalStateException $r2;
+        android.support.v4.c.g $r4;
+
+        $r0 := @this: android.support.v4.c.k;
+        $i0 = 0;
+        $z0 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z0 != 0 goto label0;
+
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This container does not support retaining Map.Entry objects");
+        throw $r2;
+
+     label0:
+        $r4 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i1 = $r0.<android.support.v4.c.k: int b>;
+        $r1 = virtualinvoke $r4.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, 0);
+        $r4 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i1 = $r0.<android.support.v4.c.k: int b>;
+        $r5 = virtualinvoke $r4.<android.support.v4.c.g: java.lang.Object a(int,int)>($i1, 1);
+        if $r1 != null goto label3;
+
+        $i1 = 0;
+
+     label1:
+        if $r5 != null goto label4;
+
+     label2:
+        $i1 = $i0 ^ $i1;
+        return $i1;
+
+     label3:
+        $i1 = virtualinvoke $r1.<java.lang.Object: int hashCode()>();
+        goto label1;
+
+     label4:
+        $i0 = virtualinvoke $r5.<java.lang.Object: int hashCode()>();
+        goto label2;
+    }
+
+    public java.lang.Object next()
+    {
+        android.support.v4.c.k $r0;
+        java.util.Map$Entry $r1;
+
+        $r0 := @this: android.support.v4.c.k;
+        $r1 = virtualinvoke $r0.<android.support.v4.c.k: java.util.Map$Entry a()>();
+        return $r1;
+    }
+
+    public void remove()
+    {
+        android.support.v4.c.k $r0;
+        boolean $z0;
+        int $i0;
+        java.lang.IllegalStateException $r1;
+        android.support.v4.c.g $r2;
+
+        $r0 := @this: android.support.v4.c.k;
+        $z0 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z0 != 0 goto label0;
+
+        $r1 = new java.lang.IllegalStateException;
+        specialinvoke $r1.<java.lang.IllegalStateException: void <init>()>();
+        throw $r1;
+
+     label0:
+        $r2 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        virtualinvoke $r2.<android.support.v4.c.g: void a(int)>($i0);
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        $i0 = $i0 + -1;
+        $r0.<android.support.v4.c.k: int b> = $i0;
+        $i0 = $r0.<android.support.v4.c.k: int a>;
+        $i0 = $i0 + -1;
+        $r0.<android.support.v4.c.k: int a> = $i0;
+        $r0.<android.support.v4.c.k: boolean c> = 0;
+        return;
+    }
+
+    public java.lang.Object setValue(java.lang.Object)
+    {
+        android.support.v4.c.k $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        java.lang.IllegalStateException $r3;
+        android.support.v4.c.g $r4;
+        int $i0;
+
+        $r0 := @this: android.support.v4.c.k;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = $r0.<android.support.v4.c.k: boolean c>;
+        if $z0 != 0 goto label0;
+
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This container does not support retaining Map.Entry objects");
+        throw $r3;
+
+     label0:
+        $r4 = $r0.<android.support.v4.c.k: android.support.v4.c.g d>;
+        $i0 = $r0.<android.support.v4.c.k: int b>;
+        $r1 = virtualinvoke $r4.<android.support.v4.c.g: java.lang.Object a(int,java.lang.Object)>($i0, $r1);
+        return $r1;
+    }
+
+    public final java.lang.String toString()
+    {
+        android.support.v4.c.k $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.Object $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: android.support.v4.c.k;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r0.<android.support.v4.c.k: java.lang.Object getKey()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        $r2 = virtualinvoke $r0.<android.support.v4.c.k: java.lang.Object getValue()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r3;
+    }
+}

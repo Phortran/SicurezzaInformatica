@@ -1,0 +1,178 @@
+public class org.a.f extends java.lang.Object implements org.a.d
+{
+    private org.a.c.b a;
+    private float b;
+    private float c;
+    private android.graphics.RectF d;
+    private org.a.d.c e;
+    private org.a.b f;
+
+    public void <init>(org.a.b, org.a.a.a)
+    {
+        org.a.f $r0;
+        org.a.b $r1;
+        org.a.a.a $r2;
+        android.graphics.RectF $r3;
+        boolean $z0;
+        org.a.a.j $r5;
+        org.a.c.d $r6;
+        org.a.c.b $r7;
+        org.a.d.c $r8;
+        org.a.a.g $r9;
+
+        $r0 := @this: org.a.f;
+        $r1 := @parameter0: org.a.b;
+        $r2 := @parameter1: org.a.a.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r3 = new android.graphics.RectF;
+        specialinvoke $r3.<android.graphics.RectF: void <init>()>();
+        $r0.<org.a.f: android.graphics.RectF d> = $r3;
+        $r0.<org.a.f: org.a.b f> = $r1;
+        $r1 = $r0.<org.a.f: org.a.b f>;
+        $r3 = virtualinvoke $r1.<org.a.b: android.graphics.RectF getZoomRectangle()>();
+        $r0.<org.a.f: android.graphics.RectF d> = $r3;
+        $z0 = $r2 instanceof org.a.a.j;
+        if $z0 == 0 goto label2;
+
+        $r5 = (org.a.a.j) $r2;
+        $r6 = virtualinvoke $r5.<org.a.a.j: org.a.c.d a()>();
+        $r0.<org.a.f: org.a.c.b a> = $r6;
+
+     label0:
+        $r7 = $r0.<org.a.f: org.a.c.b a>;
+        $z0 = virtualinvoke $r7.<org.a.c.b: boolean A()>();
+        if $z0 == 0 goto label1;
+
+        $r8 = new org.a.d.c;
+        specialinvoke $r8.<org.a.d.c: void <init>(org.a.a.a)>($r2);
+        $r0.<org.a.f: org.a.d.c e> = $r8;
+
+     label1:
+        return;
+
+     label2:
+        $r9 = (org.a.a.g) $r2;
+        $r7 = virtualinvoke $r9.<org.a.a.g: org.a.c.b a()>();
+        $r0.<org.a.f: org.a.c.b a> = $r7;
+        goto label0;
+    }
+
+    public boolean a(android.view.MotionEvent)
+    {
+        org.a.f $r0;
+        android.view.MotionEvent $r1;
+        int $i1;
+        org.a.c.b $r2;
+        float $f0, $f1, $f2, $f3, $f4;
+        byte $b3;
+        boolean $z0;
+        org.a.d.c $r3;
+        org.a.b $r4;
+        android.graphics.RectF $r5;
+
+        $r0 := @this: org.a.f;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $i1 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        $r2 = $r0.<org.a.f: org.a.c.b a>;
+        if $r2 == null goto label3;
+
+        if $i1 != 2 goto label3;
+
+        $f1 = $r0.<org.a.f: float b>;
+        $b3 = $f1 cmpl 0.0F;
+        if $b3 >= 0 goto label0;
+
+        $f1 = $r0.<org.a.f: float c>;
+        $b3 = $f1 cmpl 0.0F;
+        if $b3 < 0 goto label7;
+
+     label0:
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f2 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        $r2 = $r0.<org.a.f: org.a.c.b a>;
+        $z0 = virtualinvoke $r2.<org.a.c.b: boolean A()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.<org.a.f: org.a.d.c e>;
+        $f0 = $r0.<org.a.f: float b>;
+        $f3 = $r0.<org.a.f: float c>;
+        virtualinvoke $r3.<org.a.d.c: void a(float,float,float,float)>($f0, $f3, $f1, $f2);
+
+     label1:
+        $r0.<org.a.f: float b> = $f1;
+        $r0.<org.a.f: float c> = $f2;
+        $r4 = $r0.<org.a.f: org.a.b f>;
+        virtualinvoke $r4.<org.a.b: void d()>();
+
+     label2:
+        return 1;
+
+     label3:
+        if $i1 != 0 goto label6;
+
+        $f3 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $r0.<org.a.f: float b> = $f3;
+        $f3 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        $r0.<org.a.f: float c> = $f3;
+        $r2 = $r0.<org.a.f: org.a.c.b a>;
+        if $r2 == null goto label7;
+
+        $r2 = $r0.<org.a.f: org.a.c.b a>;
+        $z0 = virtualinvoke $r2.<org.a.c.b: boolean w()>();
+        if $z0 == 0 goto label7;
+
+        $r5 = $r0.<org.a.f: android.graphics.RectF d>;
+        $f3 = $r0.<org.a.f: float b>;
+        $f2 = $r0.<org.a.f: float c>;
+        $z0 = virtualinvoke $r5.<android.graphics.RectF: boolean contains(float,float)>($f3, $f2);
+        if $z0 == 0 goto label7;
+
+        $f3 = $r0.<org.a.f: float b>;
+        $r5 = $r0.<org.a.f: android.graphics.RectF d>;
+        $f2 = $r5.<android.graphics.RectF: float left>;
+        $r5 = $r0.<org.a.f: android.graphics.RectF d>;
+        $f0 = virtualinvoke $r5.<android.graphics.RectF: float width()>();
+        $f0 = $f0 / 3.0F;
+        $f2 = $f2 + $f0;
+        $b3 = $f3 cmpg $f2;
+        if $b3 >= 0 goto label4;
+
+        $r4 = $r0.<org.a.f: org.a.b f>;
+        virtualinvoke $r4.<org.a.b: void a()>();
+        return 1;
+
+     label4:
+        $f3 = $r0.<org.a.f: float b>;
+        $r5 = $r0.<org.a.f: android.graphics.RectF d>;
+        $f2 = $r5.<android.graphics.RectF: float left>;
+        $r5 = $r0.<org.a.f: android.graphics.RectF d>;
+        $f0 = virtualinvoke $r5.<android.graphics.RectF: float width()>();
+        $f4 = $f0 * 2.0F;
+        $f4 = $f4 / 3.0F;
+        $f4 = $f2 + $f4;
+        $b3 = $f3 cmpg $f4;
+        if $b3 >= 0 goto label5;
+
+        $r4 = $r0.<org.a.f: org.a.b f>;
+        virtualinvoke $r4.<org.a.b: void b()>();
+        return 1;
+
+     label5:
+        $r4 = $r0.<org.a.f: org.a.b f>;
+        virtualinvoke $r4.<org.a.b: void c()>();
+        return 1;
+
+     label6:
+        if $i1 != 1 goto label7;
+
+        $r0.<org.a.f: float b> = 0.0F;
+        $r0.<org.a.f: float c> = 0.0F;
+
+     label7:
+        $r2 = $r0.<org.a.f: org.a.c.b a>;
+        $z0 = virtualinvoke $r2.<org.a.c.b: boolean B()>();
+        if $z0 == 0 goto label2;
+
+        return 0;
+    }
+}

@@ -1,0 +1,388 @@
+public class com.facebook.rti.b.e.a.a extends java.lang.Object
+{
+    private static final java.lang.String b;
+    java.util.List a;
+    private final java.util.TreeSet c;
+    private final int d;
+    private final android.content.SharedPreferences e;
+    private final java.lang.String f;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/rti/b/e/a/a";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.rti.b.e.a.a: java.lang.String b> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.SharedPreferences, java.lang.String)
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2;
+        com.facebook.rti.b.e.a.b $r3;
+        java.util.TreeSet $r4;
+        java.util.ArrayList $r5;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $r1 := @parameter0: android.content.SharedPreferences;
+        $r2 := @parameter1: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.e.a.a: int d> = 10;
+        $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e> = $r1;
+        $r0.<com.facebook.rti.b.e.a.a: java.lang.String f> = $r2;
+        $r4 = new java.util.TreeSet;
+        $r3 = new com.facebook.rti.b.e.a.b;
+        specialinvoke $r3.<com.facebook.rti.b.e.a.b: void <init>(com.facebook.rti.b.e.a.a)>($r0);
+        specialinvoke $r4.<java.util.TreeSet: void <init>(java.util.Comparator)>($r3);
+        $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c> = $r4;
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r0.<com.facebook.rti.b.e.a.a: java.util.List a> = $r5;
+        return;
+    }
+
+    private java.lang.String c()
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        java.util.List $r1;
+        org.json.JSONObject $r2;
+        org.json.JSONArray $r3;
+        java.util.Iterator $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        com.facebook.rti.b.e.a.c $r6;
+        java.lang.String $r7;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $r2 = new org.json.JSONObject;
+        specialinvoke $r2.<org.json.JSONObject: void <init>()>();
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.List a>;
+        if $r1 == null goto label2;
+
+        $r3 = new org.json.JSONArray;
+        specialinvoke $r3.<org.json.JSONArray: void <init>()>();
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.List a>;
+        $r4 = interfaceinvoke $r1.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r5 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (com.facebook.rti.b.e.a.c) $r5;
+        $r7 = virtualinvoke $r6.<com.facebook.rti.b.e.a.c: java.lang.String h()>();
+        virtualinvoke $r3.<org.json.JSONArray: org.json.JSONArray put(java.lang.Object)>($r7);
+        goto label0;
+
+     label1:
+        virtualinvoke $r2.<org.json.JSONObject: org.json.JSONObject put(java.lang.String,java.lang.Object)>("address_entries", $r3);
+
+     label2:
+        $r7 = virtualinvoke $r2.<org.json.JSONObject: java.lang.String toString()>();
+        return $r7;
+    }
+
+    private void d()
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        java.util.List $r1;
+        java.util.Iterator $r2;
+        java.util.TreeSet $r3;
+        boolean $z0;
+        java.lang.Object $r4;
+        com.facebook.rti.b.e.a.c $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.List a>;
+        interfaceinvoke $r1.<java.util.List: void clear()>();
+        $r3 = virtualinvoke $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet a()>();
+        $r2 = virtualinvoke $r3.<java.util.TreeSet: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (com.facebook.rti.b.e.a.c) $r4;
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.List a>;
+        interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>($r5);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+        throw $r6;
+
+     label4:
+        exitmonitor $r0;
+        return;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public final java.util.TreeSet a()
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        int $i0, $i1;
+        java.util.TreeSet $r1;
+        java.lang.String $r2, $r4;
+        boolean $z0;
+        android.content.SharedPreferences $r3;
+        org.json.JSONObject $r5;
+        org.json.JSONArray $r6;
+        com.facebook.rti.b.e.a.c $r7;
+        org.json.JSONException $r8;
+        java.lang.Object[] $r9;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $i0 = 0;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+        $z0 = virtualinvoke $r1.<java.util.TreeSet: boolean isEmpty()>();
+        if $z0 == 0 goto label7;
+
+        $r3 = $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e>;
+        if $r3 == null goto label7;
+
+        $r3 = $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e>;
+        $r2 = $r0.<com.facebook.rti.b.e.a.a: java.lang.String f>;
+        $z0 = interfaceinvoke $r3.<android.content.SharedPreferences: boolean contains(java.lang.String)>($r2);
+        if $z0 == 0 goto label7;
+
+        $r3 = $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e>;
+        $r4 = $r0.<com.facebook.rti.b.e.a.a: java.lang.String f>;
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r4, "");
+
+     label1:
+        $r5 = new org.json.JSONObject;
+
+     label2:
+        specialinvoke $r5.<org.json.JSONObject: void <init>(java.lang.String)>($r4);
+        $r6 = virtualinvoke $r5.<org.json.JSONObject: org.json.JSONArray optJSONArray(java.lang.String)>("address_entries");
+        if $r6 == null goto label7;
+
+        $i1 = virtualinvoke $r6.<org.json.JSONArray: int length()>();
+        if $i1 <= 0 goto label7;
+
+     label3:
+        $i1 = virtualinvoke $r6.<org.json.JSONArray: int length()>();
+        if $i0 >= $i1 goto label7;
+
+        $r4 = virtualinvoke $r6.<org.json.JSONArray: java.lang.String getString(int)>($i0);
+        $r7 = staticinvoke <com.facebook.rti.b.e.a.c: com.facebook.rti.b.e.a.c a(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r7.<com.facebook.rti.b.e.a.c: boolean d()>();
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r0.<com.facebook.rti.b.e.a.a: boolean a(com.facebook.rti.b.e.a.c)>($r7);
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label3;
+
+     label5:
+        $r8 := @caughtexception;
+
+     label6:
+        $r4 = <com.facebook.rti.b.e.a.a: java.lang.String b>;
+        $r9 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r4, $r8, "Cannot create JSONObject from rawJson", $r9);
+
+     label7:
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+
+     label8:
+        exitmonitor $r0;
+        return $r1;
+
+     label9:
+        $r10 := @caughtexception;
+        exitmonitor $r0;
+        throw $r10;
+
+        catch java.lang.Throwable from label0 to label1 with label9;
+        catch org.json.JSONException from label2 to label4 with label5;
+        catch java.lang.Throwable from label1 to label4 with label9;
+        catch java.lang.Throwable from label6 to label8 with label9;
+    }
+
+    public final void a(com.facebook.rti.b.e.a.c, com.facebook.rti.b.e.a.c)
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        com.facebook.rti.b.e.a.c $r1, $r2;
+        java.util.TreeSet $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $r1 := @parameter0: com.facebook.rti.b.e.a.c;
+        $r2 := @parameter1: com.facebook.rti.b.e.a.c;
+        entermonitor $r0;
+
+     label0:
+        $r3 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+        virtualinvoke $r3.<java.util.TreeSet: boolean remove(java.lang.Object)>($r1);
+        virtualinvoke $r0.<com.facebook.rti.b.e.a.a: boolean a(com.facebook.rti.b.e.a.c)>($r2);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final boolean a(com.facebook.rti.b.e.a.c)
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        com.facebook.rti.b.e.a.c $r1;
+        java.util.TreeSet $r2;
+        int $i0, $i1;
+        boolean $z0;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $r1 := @parameter0: com.facebook.rti.b.e.a.c;
+        entermonitor $r0;
+
+     label0:
+        $r2 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+        $i1 = virtualinvoke $r2.<java.util.TreeSet: int size()>();
+        $i0 = $r0.<com.facebook.rti.b.e.a.a: int d>;
+        if $i1 < $i0 goto label1;
+
+        $r2 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+        virtualinvoke $r2.<java.util.TreeSet: java.lang.Object pollLast()>();
+
+     label1:
+        $r2 = $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet c>;
+        $z0 = virtualinvoke $r2.<java.util.TreeSet: boolean add(java.lang.Object)>($r1);
+
+     label2:
+        exitmonitor $r0;
+        return $z0;
+
+     label3:
+        $r3 := @caughtexception;
+        exitmonitor $r0;
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public final com.facebook.rti.b.e.a.c b(com.facebook.rti.b.e.a.c)
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        com.facebook.rti.b.e.a.c $r1, $r5;
+        java.util.TreeSet $r2;
+        java.util.Iterator $r3;
+        boolean $z0;
+        java.lang.Object $r4;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        $r1 := @parameter0: com.facebook.rti.b.e.a.c;
+        entermonitor $r0;
+
+     label0:
+        $r2 = virtualinvoke $r0.<com.facebook.rti.b.e.a.a: java.util.TreeSet a()>();
+        $r3 = virtualinvoke $r2.<java.util.TreeSet: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (com.facebook.rti.b.e.a.c) $r4;
+        $z0 = virtualinvoke $r5.<com.facebook.rti.b.e.a.c: boolean equals(java.lang.Object)>($r1);
+
+     label2:
+        if $z0 == 0 goto label1;
+
+     label3:
+        exitmonitor $r0;
+        return $r5;
+
+     label4:
+        $r5 = null;
+        goto label3;
+
+     label5:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+    }
+
+    public final void b()
+    {
+        com.facebook.rti.b.e.a.a $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2, $r3;
+        android.content.SharedPreferences$Editor $r4;
+        org.json.JSONException $r5;
+        java.lang.Object[] $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: com.facebook.rti.b.e.a.a;
+        entermonitor $r0;
+
+     label0:
+        specialinvoke $r0.<com.facebook.rti.b.e.a.a: void d()>();
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e>;
+
+     label1:
+        if $r1 == null goto label4;
+
+     label2:
+        $r1 = $r0.<com.facebook.rti.b.e.a.a: android.content.SharedPreferences e>;
+
+     label3:
+        $r4 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+        $r2 = $r0.<com.facebook.rti.b.e.a.a: java.lang.String f>;
+        $r3 = specialinvoke $r0.<com.facebook.rti.b.e.a.a: java.lang.String c()>();
+        $r4 = interfaceinvoke $r4.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>($r2, $r3);
+        staticinvoke <com.facebook.rti.a.f.a: void a(android.content.SharedPreferences$Editor)>($r4);
+
+     label4:
+        exitmonitor $r0;
+        return;
+
+     label5:
+        $r5 := @caughtexception;
+
+     label6:
+        $r3 = <com.facebook.rti.b.e.a.a: java.lang.String b>;
+        $r6 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.Throwable,java.lang.String,java.lang.Object[])>($r3, $r5, "Failed to save addressEntries", $r6);
+
+     label7:
+        goto label4;
+
+     label8:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label1 with label8;
+        catch org.json.JSONException from label3 to label4 with label5;
+        catch java.lang.Throwable from label2 to label4 with label8;
+        catch java.lang.Throwable from label6 to label7 with label8;
+    }
+}

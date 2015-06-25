@@ -1,0 +1,206 @@
+public class it.h3g.areaclienti3.remoteservice.b.m.a extends it.h3g.areaclienti3.remoteservice.b.g
+{
+    private it.h3g.areaclienti3.remoteservice.b.m.b f;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.g: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: it.h3g.areaclienti3.remoteservice.b.m.b f> = null;
+        return;
+    }
+
+    private it.h3g.areaclienti3.remoteservice.b.m.c a(org.e.a.j)
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        org.e.a.j $r1;
+        it.h3g.areaclienti3.remoteservice.b.m.c $r2;
+        boolean $z0;
+        java.lang.String $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 := @parameter0: org.e.a.j;
+        $r2 = new it.h3g.areaclienti3.remoteservice.b.m.c;
+        specialinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.m.c: void <init>()>();
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("label");
+        if $z0 != 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSRoamingCountries", "label property not found");
+
+     label0:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("countryId");
+        if $z0 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSRoamingCountries", "countryId property not found");
+
+     label1:
+        $z0 = virtualinvoke $r1.<org.e.a.j: boolean e(java.lang.String)>("countryCode");
+        if $z0 != 0 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSRoamingCountries", "countryCode property not found");
+        return $r2;
+
+     label2:
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.String d(java.lang.String)>("label");
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.m.c: void b(java.lang.String)>($r4);
+        goto label0;
+
+     label3:
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.String d(java.lang.String)>("countryId");
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.m.c: void c(java.lang.String)>($r4);
+        goto label1;
+
+     label4:
+        $r4 = virtualinvoke $r1.<org.e.a.j: java.lang.String d(java.lang.String)>("countryCode");
+        virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.m.c: void d(java.lang.String)>($r4);
+        return $r2;
+    }
+
+    public java.lang.Object a(it.h3g.areaclienti3.remoteservice.b.i)
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        it.h3g.areaclienti3.remoteservice.b.i $r1;
+        java.lang.Object $r2;
+        java.util.Vector $r3, $r4;
+        boolean $z0;
+        it.h3g.areaclienti3.remoteservice.b.m.b $r5;
+        java.util.Iterator $r6;
+        org.e.a.j $r7;
+        it.h3g.areaclienti3.remoteservice.b.m.c $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 := @parameter0: it.h3g.areaclienti3.remoteservice.b.i;
+        $r5 = (it.h3g.areaclienti3.remoteservice.b.m.b) $r1;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: it.h3g.areaclienti3.remoteservice.b.m.b f> = $r5;
+        $r4 = new java.util.Vector;
+        specialinvoke $r4.<java.util.Vector: void <init>()>();
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: java.lang.Object h()>();
+        if $r2 == null goto label2;
+
+        $r3 = new java.util.Vector;
+        specialinvoke $r3.<java.util.Vector: void <init>()>();
+        $z0 = $r2 instanceof java.util.Vector;
+        if $z0 == 0 goto label3;
+
+        $r3 = (java.util.Vector) $r2;
+
+     label0:
+        $r6 = virtualinvoke $r3.<java.util.Vector: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label5;
+
+     label2:
+        return $r4;
+
+     label3:
+        $z0 = $r2 instanceof org.e.a.j;
+        if $z0 == 0 goto label4;
+
+        $r7 = (org.e.a.j) $r2;
+        virtualinvoke $r3.<java.util.Vector: boolean add(java.lang.Object)>($r7);
+
+     label4:
+        goto label0;
+
+     label5:
+        $r2 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (org.e.a.j) $r2;
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: it.h3g.areaclienti3.remoteservice.b.m.c a(org.e.a.j)>($r7);
+        if $r8 == null goto label1;
+
+        virtualinvoke $r4.<java.util.Vector: boolean add(java.lang.Object)>($r8);
+        goto label1;
+    }
+
+    public java.util.ArrayList f()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        java.util.ArrayList $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r2 = staticinvoke <it.h3g.areaclienti3.remoteservice.b.m.b: java.lang.String b()>();
+        virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r2);
+        return $r1;
+    }
+
+    public java.util.ArrayList g()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        java.util.ArrayList $r1;
+        it.h3g.areaclienti3.remoteservice.b.m.b $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: it.h3g.areaclienti3.remoteservice.b.m.b f>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.remoteservice.b.m.b: java.lang.String a()>();
+        virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r3);
+        return $r1;
+    }
+
+    public java.lang.String i()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232044);
+        return $r3;
+    }
+
+    public java.lang.String j()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232047);
+        return $r3;
+    }
+
+    public java.lang.String k()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232045);
+        return $r3;
+    }
+
+    public java.lang.String l()
+    {
+        it.h3g.areaclienti3.remoteservice.b.m.a $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.m.a;
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.m.a: android.content.Context c>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: java.lang.String getString(int)>(2131232046);
+        return $r3;
+    }
+}

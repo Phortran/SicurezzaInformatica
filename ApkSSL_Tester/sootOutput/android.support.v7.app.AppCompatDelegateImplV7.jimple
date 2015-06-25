@@ -1,0 +1,2849 @@
+class android.support.v7.app.AppCompatDelegateImplV7 extends android.support.v7.app.AppCompatDelegateImplBase implements android.support.v7.internal.view.menu.MenuBuilder$Callback, android.support.v4.view.LayoutInflaterFactory
+{
+    private android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback;
+    android.support.v7.view.ActionMode mActionMode;
+    android.widget.PopupWindow mActionModePopup;
+    android.support.v7.internal.widget.ActionBarContextView mActionModeView;
+    private android.support.v7.internal.app.AppCompatViewInflater mAppCompatViewInflater;
+    private boolean mClosingActionMenu;
+    private android.support.v7.internal.widget.DecorContentParent mDecorContentParent;
+    private boolean mEnableDefaultActionBarUp;
+    private boolean mFeatureIndeterminateProgress;
+    private boolean mFeatureProgress;
+    private int mInvalidatePanelMenuFeatures;
+    private boolean mInvalidatePanelMenuPosted;
+    private final java.lang.Runnable mInvalidatePanelMenuRunnable;
+    private android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback mPanelMenuPresenterCallback;
+    private android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels;
+    private android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel;
+    java.lang.Runnable mShowActionModePopup;
+    private android.view.View mStatusGuard;
+    private android.view.ViewGroup mSubDecor;
+    private boolean mSubDecorInstalled;
+    private android.graphics.Rect mTempRect1;
+    private android.graphics.Rect mTempRect2;
+    private android.widget.TextView mTitleView;
+    private android.view.ViewGroup mWindowDecor;
+
+    void <init>(android.content.Context, android.view.Window, android.support.v7.app.AppCompatCallback)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.content.Context $r1;
+        android.view.Window $r2;
+        android.support.v7.app.AppCompatCallback $r3;
+        android.support.v7.app.AppCompatDelegateImplV7$1 $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.view.Window;
+        $r3 := @parameter2: android.support.v7.app.AppCompatCallback;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplBase: void <init>(android.content.Context,android.view.Window,android.support.v7.app.AppCompatCallback)>($r1, $r2, $r3);
+        $r4 = new android.support.v7.app.AppCompatDelegateImplV7$1;
+        specialinvoke $r4.<android.support.v7.app.AppCompatDelegateImplV7$1: void <init>(android.support.v7.app.AppCompatDelegateImplV7)>($r0);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mInvalidatePanelMenuRunnable> = $r4;
+        return;
+    }
+
+    static int access$000(android.support.v7.app.AppCompatDelegateImplV7)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: int mInvalidatePanelMenuFeatures>;
+        return $i0;
+    }
+
+    static int access$002(android.support.v7.app.AppCompatDelegateImplV7, int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter1: int;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: int mInvalidatePanelMenuFeatures> = $i0;
+        return $i0;
+    }
+
+    static void access$100(android.support.v7.app.AppCompatDelegateImplV7, int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void doInvalidatePanelMenu(int)>($i0);
+        return;
+    }
+
+    static void access$1200(android.support.v7.app.AppCompatDelegateImplV7, int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(int)>($i0);
+        return;
+    }
+
+    static boolean access$202(android.support.v7.app.AppCompatDelegateImplV7, boolean)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $z0 := @parameter1: boolean;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mInvalidatePanelMenuPosted> = $z0;
+        return $z0;
+    }
+
+    static int access$300(android.support.v7.app.AppCompatDelegateImplV7, int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter1: int;
+        $i0 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: int updateStatusGuard(int)>($i0);
+        return $i0;
+    }
+
+    static android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState access$600(android.support.v7.app.AppCompatDelegateImplV7, android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.Menu $r1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r2;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter1: android.view.Menu;
+        $r2 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState findMenuPanel(android.view.Menu)>($r1);
+        return $r2;
+    }
+
+    static void access$700(android.support.v7.app.AppCompatDelegateImplV7, int, android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.view.Menu $r2;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter1: int;
+        $r1 := @parameter2: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r2 := @parameter3: android.view.Menu;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void callOnPanelClosed(int,android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.Menu)>($i0, $r1, $r2);
+        return;
+    }
+
+    static void access$800(android.support.v7.app.AppCompatDelegateImplV7, android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, boolean)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter1: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $z0 := @parameter2: boolean;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r1, $z0);
+        return;
+    }
+
+    static void access$900(android.support.v7.app.AppCompatDelegateImplV7, android.support.v7.internal.view.menu.MenuBuilder)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.view.menu.MenuBuilder $r1;
+
+        $r0 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter1: android.support.v7.internal.view.menu.MenuBuilder;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void checkCloseActionMenu(android.support.v7.internal.view.menu.MenuBuilder)>($r1);
+        return;
+    }
+
+    private void applyFixedSizeWindow(android.support.v7.internal.widget.ContentFrameLayout)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.widget.ContentFrameLayout $r1;
+        android.content.res.TypedArray $r2;
+        android.view.ViewGroup $r3;
+        int $i0, $i1, $i2, $i3;
+        android.content.Context $r4;
+        int[] $r5;
+        android.util.TypedValue $r6;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.internal.widget.ContentFrameLayout;
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $i0 = virtualinvoke $r3.<android.view.ViewGroup: int getPaddingLeft()>();
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $i1 = virtualinvoke $r3.<android.view.ViewGroup: int getPaddingTop()>();
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $i2 = virtualinvoke $r3.<android.view.ViewGroup: int getPaddingRight()>();
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $i3 = virtualinvoke $r3.<android.view.ViewGroup: int getPaddingBottom()>();
+        virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: void setDecorPadding(int,int,int,int)>($i0, $i1, $i2, $i3);
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r5 = <android.support.v7.appcompat.R$styleable: int[] Theme>;
+        $r2 = virtualinvoke $r4.<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int[])>($r5);
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowMinWidthMajor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getMinWidthMajor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowMinWidthMinor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getMinWidthMinor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedWidthMajor>;
+        $z0 = virtualinvoke $r2.<android.content.res.TypedArray: boolean hasValue(int)>($i3);
+        if $z0 == 0 goto label0;
+
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedWidthMajor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getFixedWidthMajor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+
+     label0:
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedWidthMinor>;
+        $z0 = virtualinvoke $r2.<android.content.res.TypedArray: boolean hasValue(int)>($i3);
+        if $z0 == 0 goto label1;
+
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedWidthMinor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getFixedWidthMinor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+
+     label1:
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedHeightMajor>;
+        $z0 = virtualinvoke $r2.<android.content.res.TypedArray: boolean hasValue(int)>($i3);
+        if $z0 == 0 goto label2;
+
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedHeightMajor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getFixedHeightMajor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+
+     label2:
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedHeightMinor>;
+        $z0 = virtualinvoke $r2.<android.content.res.TypedArray: boolean hasValue(int)>($i3);
+        if $z0 == 0 goto label3;
+
+        $i3 = <android.support.v7.appcompat.R$styleable: int Theme_windowFixedHeightMinor>;
+        $r6 = virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: android.util.TypedValue getFixedHeightMinor()>();
+        virtualinvoke $r2.<android.content.res.TypedArray: boolean getValue(int,android.util.TypedValue)>($i3, $r6);
+
+     label3:
+        virtualinvoke $r2.<android.content.res.TypedArray: void recycle()>();
+        virtualinvoke $r1.<android.support.v7.internal.widget.ContentFrameLayout: void requestLayout()>();
+        return;
+    }
+
+    private void callOnPanelClosed(int, android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.view.Menu $r2;
+        android.view.Window$Callback $r3;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] $r4;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r2 := @parameter2: android.view.Menu;
+        if $r2 != null goto label1;
+
+        if $r1 != null goto label0;
+
+        if $i0 < 0 goto label0;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels>;
+        $i1 = lengthof $r4;
+        if $i0 >= $i1 goto label0;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels>;
+        $r1 = $r4[$i0];
+
+     label0:
+        if $r1 == null goto label1;
+
+        $r2 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+
+     label1:
+        if $r1 == null goto label3;
+
+        $z0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z0 != 0 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        $r3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        if $r3 == null goto label2;
+
+        interfaceinvoke $r3.<android.view.Window$Callback: void onPanelClosed(int,android.view.Menu)>($i0, $r2);
+        goto label2;
+    }
+
+    private void checkCloseActionMenu(android.support.v7.internal.view.menu.MenuBuilder)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.view.menu.MenuBuilder $r1;
+        android.view.Window$Callback $r2;
+        boolean $z0;
+        android.support.v7.internal.widget.DecorContentParent $r3;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.internal.view.menu.MenuBuilder;
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mClosingActionMenu>;
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mClosingActionMenu> = 1;
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r3.<android.support.v7.internal.widget.DecorContentParent: void dismissPopups()>();
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        if $r2 == null goto label2;
+
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z0 != 0 goto label2;
+
+        interfaceinvoke $r2.<android.view.Window$Callback: void onPanelClosed(int,android.view.Menu)>(8, $r1);
+
+     label2:
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mClosingActionMenu> = 0;
+        goto label0;
+    }
+
+    private void closePanel(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 1);
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r1, 1);
+        return;
+    }
+
+    private void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, boolean)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1, $r9;
+        boolean $z0, $z1;
+        java.lang.Object $r2;
+        int $i0;
+        android.support.v7.internal.widget.DecorContentParent $r4;
+        android.support.v7.internal.view.menu.MenuBuilder $r5;
+        android.content.Context $r6;
+        android.view.WindowManager $r7;
+        android.view.ViewGroup $r8;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $z0 := @parameter1: boolean;
+        if $z0 == 0 goto label1;
+
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i0 != 0 goto label1;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z1 = interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean isOverflowMenuShowing()>();
+        if $z1 == 0 goto label1;
+
+        $r5 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void checkCloseActionMenu(android.support.v7.internal.view.menu.MenuBuilder)>($r5);
+
+     label0:
+        return;
+
+     label1:
+        $z1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r2 = virtualinvoke $r6.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+        $r7 = (android.view.WindowManager) $r2;
+        if $r7 == null goto label2;
+
+        if $z1 == 0 goto label2;
+
+        $r8 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        if $r8 == null goto label2;
+
+        $r8 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        interfaceinvoke $r7.<android.view.WindowManager: void removeView(android.view.View)>($r8);
+
+     label2:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared> = 0;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isHandled> = 0;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen> = 0;
+        if $z1 == 0 goto label3;
+
+        if $z0 == 0 goto label3;
+
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void callOnPanelClosed(int,android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.Menu)>($i0, $r1, null);
+
+     label3:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView> = null;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshDecorView> = 1;
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r9 != $r1 goto label0;
+
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel> = null;
+        goto label0;
+    }
+
+    private void doInvalidatePanelMenu(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1;
+        android.os.Bundle $r1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r2;
+        android.support.v7.internal.view.menu.MenuBuilder $r3;
+        android.support.v7.internal.widget.DecorContentParent $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r2 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 1);
+        $r3 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r3 == null goto label1;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r3 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r3.<android.support.v7.internal.view.menu.MenuBuilder: void saveActionViewStates(android.os.Bundle)>($r1);
+        $i1 = virtualinvoke $r1.<android.os.Bundle: int size()>();
+        if $i1 <= 0 goto label0;
+
+        $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.os.Bundle frozenActionViewState> = $r1;
+
+     label0:
+        $r3 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r3.<android.support.v7.internal.view.menu.MenuBuilder: void stopDispatchingItemsChanged()>();
+        $r3 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r3.<android.support.v7.internal.view.menu.MenuBuilder: void clear()>();
+
+     label1:
+        $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshMenuContent> = 1;
+        $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshDecorView> = 1;
+        if $i0 == 8 goto label2;
+
+        if $i0 != 0 goto label3;
+
+     label2:
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r4 == null goto label3;
+
+        $i1 = (int) 0;
+        $r2 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i1, 0);
+        if $r2 == null goto label3;
+
+        $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared> = 0;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r2, null);
+
+     label3:
+        return;
+    }
+
+    private void ensureSubDecor()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1;
+        android.view.LayoutInflater $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r4;
+        android.content.Context $r5, $r11;
+        java.lang.CharSequence $r6;
+        boolean $z0, $z2;
+        int $i1, $i2;
+        android.view.ViewGroup $r8, $r19;
+        android.content.res.Resources$Theme $r10;
+        android.support.v7.internal.widget.DecorContentParent $r12;
+        android.view.Window$Callback $r13;
+        android.support.v7.internal.widget.FitWindowsViewGroup $r15;
+        android.widget.TextView $r17;
+        android.view.Window $r18;
+        android.support.v7.internal.widget.ContentFrameLayout $r20;
+        android.widget.FrameLayout $r21;
+        android.support.v7.internal.view.menu.MenuBuilder $r22;
+        java.lang.IllegalArgumentException r23;
+        android.util.TypedValue r24;
+        android.support.v7.internal.view.ContextThemeWrapper r25;
+        android.support.v7.app.AppCompatDelegateImplV7$2 r26;
+        android.support.v7.app.AppCompatDelegateImplV7$3 r27;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mSubDecorInstalled>;
+        if $z0 != 0 goto label17;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r2 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r5);
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mWindowNoTitle>;
+        if $z0 != 0 goto label6;
+
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mIsFloating>;
+        if $z0 == 0 goto label1;
+
+        $i1 = <android.support.v7.appcompat.R$layout: int abc_dialog_title_material>;
+        $r1 = virtualinvoke $r2.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>($i1, null);
+        $r8 = (android.view.ViewGroup) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor> = $r8;
+
+     label0:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        if $r8 != null goto label10;
+
+        r23 = new java.lang.IllegalArgumentException;
+        specialinvoke r23.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("AppCompat does not support the current theme features");
+        throw r23;
+
+     label1:
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mHasActionBar>;
+        if $z0 == 0 goto label0;
+
+        r24 = new android.util.TypedValue;
+        specialinvoke r24.<android.util.TypedValue: void <init>()>();
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r10 = virtualinvoke $r5.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        $i1 = <android.support.v7.appcompat.R$attr: int actionBarTheme>;
+        virtualinvoke $r10.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i1, r24, 1);
+        $i1 = r24.<android.util.TypedValue: int resourceId>;
+        if $i1 == 0 goto label5;
+
+        r25 = new android.support.v7.internal.view.ContextThemeWrapper;
+        $r5 = r25;
+        $r11 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $i1 = r24.<android.util.TypedValue: int resourceId>;
+        specialinvoke r25.<android.support.v7.internal.view.ContextThemeWrapper: void <init>(android.content.Context,int)>($r11, $i1);
+
+     label2:
+        $r2 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r5);
+        $i1 = <android.support.v7.appcompat.R$layout: int abc_screen_toolbar>;
+        $r1 = virtualinvoke $r2.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>($i1, null);
+        $r8 = (android.view.ViewGroup) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor> = $r8;
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $i1 = <android.support.v7.appcompat.R$id: int decor_content_parent>;
+        $r1 = virtualinvoke $r8.<android.view.ViewGroup: android.view.View findViewById(int)>($i1);
+        $r12 = (android.support.v7.internal.widget.DecorContentParent) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent> = $r12;
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $r13 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        interfaceinvoke $r12.<android.support.v7.internal.widget.DecorContentParent: void setWindowCallback(android.view.Window$Callback)>($r13);
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionBar>;
+        if $z0 == 0 goto label3;
+
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r12.<android.support.v7.internal.widget.DecorContentParent: void initFeature(int)>(9);
+
+     label3:
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mFeatureProgress>;
+        if $z0 == 0 goto label4;
+
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r12.<android.support.v7.internal.widget.DecorContentParent: void initFeature(int)>(2);
+
+     label4:
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mFeatureIndeterminateProgress>;
+        if $z0 == 0 goto label0;
+
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r12.<android.support.v7.internal.widget.DecorContentParent: void initFeature(int)>(5);
+        goto label0;
+
+     label5:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        goto label2;
+
+     label6:
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionMode>;
+        if $z0 == 0 goto label8;
+
+        $i1 = <android.support.v7.appcompat.R$layout: int abc_screen_simple_overlay_action_mode>;
+        $r1 = virtualinvoke $r2.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>($i1, null);
+        $r8 = (android.view.ViewGroup) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor> = $r8;
+
+     label7:
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 21 goto label9;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        r26 = new android.support.v7.app.AppCompatDelegateImplV7$2;
+        specialinvoke r26.<android.support.v7.app.AppCompatDelegateImplV7$2: void <init>(android.support.v7.app.AppCompatDelegateImplV7)>($r0);
+        staticinvoke <android.support.v4.view.ViewCompat: void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener)>($r8, r26);
+        goto label0;
+
+     label8:
+        $i2 = <android.support.v7.appcompat.R$layout: int abc_screen_simple>;
+        $r1 = virtualinvoke $r2.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>($i2, null);
+        $r8 = (android.view.ViewGroup) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor> = $r8;
+        goto label7;
+
+     label9:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r15 = (android.support.v7.internal.widget.FitWindowsViewGroup) $r8;
+        r27 = new android.support.v7.app.AppCompatDelegateImplV7$3;
+        specialinvoke r27.<android.support.v7.app.AppCompatDelegateImplV7$3: void <init>(android.support.v7.app.AppCompatDelegateImplV7)>($r0);
+        interfaceinvoke $r15.<android.support.v7.internal.widget.FitWindowsViewGroup: void setOnFitSystemWindowsListener(android.support.v7.internal.widget.FitWindowsViewGroup$OnFitSystemWindowsListener)>(r27);
+        goto label0;
+
+     label10:
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r12 != null goto label11;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $i2 = <android.support.v7.appcompat.R$id: int title>;
+        $r1 = virtualinvoke $r8.<android.view.ViewGroup: android.view.View findViewById(int)>($i2);
+        $r17 = (android.widget.TextView) $r1;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.TextView mTitleView> = $r17;
+
+     label11:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        staticinvoke <android.support.v7.internal.widget.ViewUtils: void makeOptionalFitsSystemWindows(android.view.View)>($r8);
+        $r18 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $r1 = virtualinvoke $r18.<android.view.Window: android.view.View findViewById(int)>(16908290);
+        $r8 = (android.view.ViewGroup) $r1;
+        $r19 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $i2 = <android.support.v7.appcompat.R$id: int action_bar_activity_content>;
+        $r1 = virtualinvoke $r19.<android.view.ViewGroup: android.view.View findViewById(int)>($i2);
+        $r20 = (android.support.v7.internal.widget.ContentFrameLayout) $r1;
+
+     label12:
+        $i2 = virtualinvoke $r8.<android.view.ViewGroup: int getChildCount()>();
+        if $i2 <= 0 goto label13;
+
+        $i2 = (int) 0;
+        $r1 = virtualinvoke $r8.<android.view.ViewGroup: android.view.View getChildAt(int)>($i2);
+        $i2 = (int) 0;
+        virtualinvoke $r8.<android.view.ViewGroup: void removeViewAt(int)>($i2);
+        virtualinvoke $r20.<android.support.v7.internal.widget.ContentFrameLayout: void addView(android.view.View)>($r1);
+        goto label12;
+
+     label13:
+        $r18 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $r19 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        virtualinvoke $r18.<android.view.Window: void setContentView(android.view.View)>($r19);
+        virtualinvoke $r8.<android.view.ViewGroup: void setId(int)>(-1);
+        virtualinvoke $r20.<android.support.v7.internal.widget.ContentFrameLayout: void setId(int)>(16908290);
+        $z0 = $r8 instanceof android.widget.FrameLayout;
+        if $z0 == 0 goto label14;
+
+        $r21 = (android.widget.FrameLayout) $r8;
+        virtualinvoke $r21.<android.widget.FrameLayout: void setForeground(android.graphics.drawable.Drawable)>(null);
+
+     label14:
+        $r6 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.CharSequence getTitle()>();
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r6);
+        if $z0 != 0 goto label15;
+
+        virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void onTitleChanged(java.lang.CharSequence)>($r6);
+
+     label15:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void applyFixedSizeWindow(android.support.v7.internal.widget.ContentFrameLayout)>($r20);
+        $r19 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void onSubDecorInstalled(android.view.ViewGroup)>($r19);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mSubDecorInstalled> = 1;
+        $i2 = (int) 0;
+        $r4 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i2, 0);
+        $z2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z2 != 0 goto label17;
+
+        if $r4 == null goto label16;
+
+        $r22 = $r4.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r22 != null goto label17;
+
+     label16:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void invalidatePanelMenu(int)>(8);
+
+     label17:
+        return;
+    }
+
+    private android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState findMenuPanel(android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.Menu $r1;
+        int $i0, $i1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] $r3;
+        android.support.v7.internal.view.menu.MenuBuilder $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.Menu;
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels>;
+        if $r3 == null goto label2;
+
+        $i0 = lengthof $r3;
+
+     label0:
+        $i1 = 0;
+
+     label1:
+        if $i1 >= $i0 goto label4;
+
+        $r2 = $r3[$i1];
+        if $r2 == null goto label3;
+
+        $r4 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r4 != $r1 goto label3;
+
+        return $r2;
+
+     label2:
+        $i0 = 0;
+        goto label0;
+
+     label3:
+        $i1 = $i1 + 1;
+        goto label1;
+
+     label4:
+        return null;
+    }
+
+    private android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int, boolean)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1;
+        boolean $z0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] $r1, $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r3;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $z0 := @parameter1: boolean;
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels>;
+        if $r1 == null goto label0;
+
+        $i1 = lengthof $r1;
+        if $i1 > $i0 goto label2;
+
+     label0:
+        $i1 = $i0 + 1;
+        $r2 = newarray (android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)[$i1];
+        if $r1 == null goto label1;
+
+        $i1 = lengthof $r1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r1, 0, $r2, 0, $i1);
+
+     label1:
+        $r1 = $r2;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState[] mPanels> = $r2;
+
+     label2:
+        $r3 = $r1[$i0];
+        if $r3 != null goto label3;
+
+        $r3 = new android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        specialinvoke $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: void <init>(int)>($i0);
+        $r1[$i0] = $r3;
+
+     label3:
+        return $r3;
+    }
+
+    private boolean initializePanelContent(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.support.v7.internal.view.menu.MenuView $r2;
+        android.view.View $r3;
+        android.support.v7.internal.view.menu.MenuBuilder $r4;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback $r5;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        if $r3 == null goto label1;
+
+        $r3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView> = $r3;
+
+     label0:
+        return 1;
+
+     label1:
+        $r4 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r4 != null goto label2;
+
+        return 0;
+
+     label2:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback mPanelMenuPresenterCallback>;
+        if $r5 != null goto label3;
+
+        $r5 = new android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback;
+        specialinvoke $r5.<android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback: void <init>(android.support.v7.app.AppCompatDelegateImplV7,android.support.v7.app.AppCompatDelegateImplV7$1)>($r0, null);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback mPanelMenuPresenterCallback> = $r5;
+
+     label3:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelMenuPresenterCallback mPanelMenuPresenterCallback>;
+        $r2 = virtualinvoke $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuView getListMenuView(android.support.v7.internal.view.menu.MenuPresenter$Callback)>($r5);
+        $r3 = (android.view.View) $r2;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView> = $r3;
+        $r3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        if $r3 != null goto label0;
+
+        return 0;
+    }
+
+    private boolean initializePanelDecor(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.content.Context $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$ListMenuDecorView $r3;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context getActionBarThemedContext()>();
+        virtualinvoke $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: void setStyle(android.content.Context)>($r2);
+        $r3 = new android.support.v7.app.AppCompatDelegateImplV7$ListMenuDecorView;
+        $r2 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.content.Context listPresenterContext>;
+        specialinvoke $r3.<android.support.v7.app.AppCompatDelegateImplV7$ListMenuDecorView: void <init>(android.support.v7.app.AppCompatDelegateImplV7,android.content.Context)>($r0, $r2);
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView> = $r3;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int gravity> = 81;
+        return 1;
+    }
+
+    private boolean initializePanelMenu(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.content.res.Resources$Theme $r2, $r7;
+        android.content.Context $r3;
+        android.support.v7.internal.view.ContextThemeWrapper $r4;
+        android.support.v7.internal.view.menu.MenuBuilder $r5;
+        android.util.TypedValue $r6;
+        int $i0;
+        android.support.v7.internal.widget.DecorContentParent $r8;
+        android.content.res.Resources $r9;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i0 == 0 goto label0;
+
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i0 != 8 goto label4;
+
+     label0:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r8 == null goto label4;
+
+        $r6 = new android.util.TypedValue;
+        specialinvoke $r6.<android.util.TypedValue: void <init>()>();
+        $r2 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        $i0 = <android.support.v7.appcompat.R$attr: int actionBarTheme>;
+        virtualinvoke $r2.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i0, $r6, 1);
+        $r7 = null;
+        $i0 = $r6.<android.util.TypedValue: int resourceId>;
+        if $i0 == 0 goto label5;
+
+        $r9 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r9.<android.content.res.Resources: android.content.res.Resources$Theme newTheme()>();
+        virtualinvoke $r7.<android.content.res.Resources$Theme: void setTo(android.content.res.Resources$Theme)>($r2);
+        $i0 = $r6.<android.util.TypedValue: int resourceId>;
+        virtualinvoke $r7.<android.content.res.Resources$Theme: void applyStyle(int,boolean)>($i0, 1);
+        $i0 = <android.support.v7.appcompat.R$attr: int actionBarWidgetTheme>;
+        virtualinvoke $r7.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i0, $r6, 1);
+
+     label1:
+        $i0 = $r6.<android.util.TypedValue: int resourceId>;
+        if $i0 == 0 goto label3;
+
+        if $r7 != null goto label2;
+
+        $r9 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r9.<android.content.res.Resources: android.content.res.Resources$Theme newTheme()>();
+        virtualinvoke $r7.<android.content.res.Resources$Theme: void setTo(android.content.res.Resources$Theme)>($r2);
+
+     label2:
+        $i0 = $r6.<android.util.TypedValue: int resourceId>;
+        virtualinvoke $r7.<android.content.res.Resources$Theme: void applyStyle(int,boolean)>($i0, 1);
+
+     label3:
+        if $r7 == null goto label4;
+
+        $r4 = new android.support.v7.internal.view.ContextThemeWrapper;
+        specialinvoke $r4.<android.support.v7.internal.view.ContextThemeWrapper: void <init>(android.content.Context,int)>($r3, 0);
+        $r2 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        virtualinvoke $r2.<android.content.res.Resources$Theme: void setTo(android.content.res.Resources$Theme)>($r7);
+        $r3 = $r4;
+
+     label4:
+        $r5 = new android.support.v7.internal.view.menu.MenuBuilder;
+        specialinvoke $r5.<android.support.v7.internal.view.menu.MenuBuilder: void <init>(android.content.Context)>($r3);
+        virtualinvoke $r5.<android.support.v7.internal.view.menu.MenuBuilder: void setCallback(android.support.v7.internal.view.menu.MenuBuilder$Callback)>($r0);
+        virtualinvoke $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: void setMenu(android.support.v7.internal.view.menu.MenuBuilder)>($r5);
+        return 1;
+
+     label5:
+        $i0 = <android.support.v7.appcompat.R$attr: int actionBarWidgetTheme>;
+        virtualinvoke $r2.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i0, $r6, 1);
+        goto label1;
+    }
+
+    private void invalidatePanelMenu(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1, i2;
+        boolean $z1;
+        android.view.ViewGroup $r1;
+        java.lang.Runnable $r2;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $i1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: int mInvalidatePanelMenuFeatures>;
+        i2 = (int) 1;
+        $i0 = i2 << $i0;
+        $i1 = $i1 | $i0;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: int mInvalidatePanelMenuFeatures> = $i1;
+        $z1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mInvalidatePanelMenuPosted>;
+        if $z1 != 0 goto label0;
+
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mInvalidatePanelMenuRunnable>;
+        staticinvoke <android.support.v4.view.ViewCompat: void postOnAnimation(android.view.View,java.lang.Runnable)>($r1, $r2);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mInvalidatePanelMenuPosted> = 1;
+
+     label0:
+        return;
+    }
+
+    private boolean onKeyDownPanel(int, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1;
+        android.view.KeyEvent $r1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r2;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        $i1 = virtualinvoke $r1.<android.view.KeyEvent: int getRepeatCount()>();
+        if $i1 != 0 goto label0;
+
+        $r2 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 1);
+        $z0 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r2, $r1);
+        return $z0;
+
+     label0:
+        return 0;
+    }
+
+    private void onKeyUpPanel(int, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.view.KeyEvent $r1;
+        java.lang.Object $r2;
+        boolean $z0, $z1, $z3;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r3;
+        android.support.v7.view.ActionMode $r4;
+        android.support.v7.internal.widget.DecorContentParent $r5;
+        android.content.Context $r6;
+        android.view.ViewConfiguration $r7;
+        android.media.AudioManager $r9;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r4 == null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z0 = 0;
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 1);
+        if $i0 != 0 goto label4;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r5 == null goto label4;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z3 = interfaceinvoke $r5.<android.support.v7.internal.widget.DecorContentParent: boolean canShowOverflowMenu()>();
+        if $z3 == 0 goto label4;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r7 = staticinvoke <android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>($r6);
+        $z3 = staticinvoke <android.support.v4.view.ViewConfigurationCompat: boolean hasPermanentMenuKey(android.view.ViewConfiguration)>($r7);
+        if $z3 != 0 goto label4;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z3 = interfaceinvoke $r5.<android.support.v7.internal.widget.DecorContentParent: boolean isOverflowMenuShowing()>();
+        if $z3 != 0 goto label3;
+
+        $z3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z3 != 0 goto label2;
+
+        $z3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r3, $r1);
+        if $z3 == 0 goto label2;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z0 = interfaceinvoke $r5.<android.support.v7.internal.widget.DecorContentParent: boolean showOverflowMenu()>();
+
+     label2:
+        if $z0 == 0 goto label0;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r2 = virtualinvoke $r6.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("audio");
+        $r9 = (android.media.AudioManager) $r2;
+        if $r9 == null goto label8;
+
+        $i0 = (int) 0;
+        virtualinvoke $r9.<android.media.AudioManager: void playSoundEffect(int)>($i0);
+        goto label0;
+
+     label3:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z0 = interfaceinvoke $r5.<android.support.v7.internal.widget.DecorContentParent: boolean hideOverflowMenu()>();
+        goto label2;
+
+     label4:
+        $z3 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z3 != 0 goto label5;
+
+        $z3 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isHandled>;
+        if $z3 == 0 goto label6;
+
+     label5:
+        $z0 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r3, 1);
+        goto label2;
+
+     label6:
+        $z3 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared>;
+        if $z3 == 0 goto label2;
+
+        $z1 = 1;
+        $z3 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshMenuContent>;
+        if $z3 == 0 goto label7;
+
+        $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared> = 0;
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r3, $r1);
+
+     label7:
+        if $z1 == 0 goto label2;
+
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void openPanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r3, $r1);
+        $z0 = 1;
+        goto label2;
+
+     label8:
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("AppCompatDelegate", "Couldn\'t get audio manager");
+        goto label0;
+    }
+
+    private void openPanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        android.view.KeyEvent $r2;
+        android.view.ViewGroup$LayoutParams $r4;
+        byte $b0;
+        boolean $z0, $z1;
+        int $i1, $i3, $i6;
+        android.view.Window$Callback $r5;
+        android.content.res.Configuration $r6;
+        android.content.Context $r7;
+        android.view.ViewParent $r8;
+        java.lang.Object $r9;
+        android.content.res.Resources $r11;
+        android.content.pm.ApplicationInfo $r12;
+        android.support.v7.internal.view.menu.MenuBuilder $r13;
+        android.view.WindowManager $r15;
+        android.view.ViewGroup $r16;
+        android.view.View $r17;
+        android.view.WindowManager$LayoutParams $r19;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r2 := @parameter1: android.view.KeyEvent;
+        $z0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z0 != 0 goto label0;
+
+        $z1 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z1 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $i3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i3 != 0 goto label4;
+
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r11 = virtualinvoke $r7.<android.content.Context: android.content.res.Resources getResources()>();
+        $r6 = virtualinvoke $r11.<android.content.res.Resources: android.content.res.Configuration getConfiguration()>();
+        $i3 = $r6.<android.content.res.Configuration: int screenLayout>;
+        $i3 = $i3 & 15;
+        if $i3 != 4 goto label5;
+
+        $z1 = 1;
+
+     label2:
+        $r12 = virtualinvoke $r7.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $i3 = $r12.<android.content.pm.ApplicationInfo: int targetSdkVersion>;
+        if $i3 < 11 goto label6;
+
+        $z0 = 1;
+
+     label3:
+        if $z1 == 0 goto label4;
+
+        if $z0 != 0 goto label0;
+
+     label4:
+        $r5 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        if $r5 == null goto label7;
+
+        $i3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        $r13 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $z1 = interfaceinvoke $r5.<android.view.Window$Callback: boolean onMenuOpened(int,android.view.Menu)>($i3, $r13);
+        if $z1 != 0 goto label7;
+
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r1, 1);
+        goto label0;
+
+     label5:
+        $z1 = 0;
+        goto label2;
+
+     label6:
+        $z0 = 0;
+        goto label3;
+
+     label7:
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r9 = virtualinvoke $r7.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+        $r15 = (android.view.WindowManager) $r9;
+        if $r15 == null goto label0;
+
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r1, $r2);
+        if $z1 == 0 goto label0;
+
+        $b0 = -2;
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        if $r16 == null goto label8;
+
+        $z1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshDecorView>;
+        if $z1 == 0 goto label14;
+
+     label8:
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        if $r16 != null goto label13;
+
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean initializePanelDecor(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)>($r1);
+        if $z1 == 0 goto label0;
+
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        if $r16 == null goto label0;
+
+     label9:
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean initializePanelContent(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)>($r1);
+        if $z1 == 0 goto label0;
+
+        $z1 = virtualinvoke $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean hasPanelItems()>();
+        if $z1 == 0 goto label0;
+
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        $r4 = virtualinvoke $r17.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        if $r4 != null goto label10;
+
+        $r4 = new android.view.ViewGroup$LayoutParams;
+        specialinvoke $r4.<android.view.ViewGroup$LayoutParams: void <init>(int,int)>(-2, -2);
+
+     label10:
+        $i3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int background>;
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        virtualinvoke $r16.<android.view.ViewGroup: void setBackgroundResource(int)>($i3);
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        $r8 = virtualinvoke $r17.<android.view.View: android.view.ViewParent getParent()>();
+        if $r8 == null goto label11;
+
+        $z1 = $r8 instanceof android.view.ViewGroup;
+        if $z1 == 0 goto label11;
+
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        $r16 = (android.view.ViewGroup) $r8;
+        virtualinvoke $r16.<android.view.ViewGroup: void removeView(android.view.View)>($r17);
+
+     label11:
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        virtualinvoke $r16.<android.view.ViewGroup: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r17, $r4);
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        $z1 = virtualinvoke $r17.<android.view.View: boolean hasFocus()>();
+        if $z1 != 0 goto label12;
+
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View shownPanelView>;
+        virtualinvoke $r17.<android.view.View: boolean requestFocus()>();
+
+     label12:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isHandled> = 0;
+        $r19 = new android.view.WindowManager$LayoutParams;
+        $i6 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int x>;
+        $i1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int y>;
+        specialinvoke $r19.<android.view.WindowManager$LayoutParams: void <init>(int,int,int,int,int,int,int)>($b0, -2, $i6, $i1, 1002, 8519680, -3);
+        $i6 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int gravity>;
+        $r19.<android.view.WindowManager$LayoutParams: int gravity> = $i6;
+        $i6 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int windowAnimations>;
+        $r19.<android.view.WindowManager$LayoutParams: int windowAnimations> = $i6;
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        interfaceinvoke $r15.<android.view.WindowManager: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r16, $r19);
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen> = 1;
+        goto label0;
+
+     label13:
+        $z1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshDecorView>;
+        if $z1 == 0 goto label9;
+
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        $i6 = virtualinvoke $r16.<android.view.ViewGroup: int getChildCount()>();
+        if $i6 <= 0 goto label9;
+
+        $r16 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.ViewGroup decorView>;
+        virtualinvoke $r16.<android.view.ViewGroup: void removeAllViews()>();
+        goto label9;
+
+     label14:
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        if $r17 == null goto label12;
+
+        $r17 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        $r4 = virtualinvoke $r17.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        if $r4 == null goto label12;
+
+        $i6 = $r4.<android.view.ViewGroup$LayoutParams: int width>;
+        if $i6 != -1 goto label12;
+
+        $b0 = -1;
+        goto label12;
+    }
+
+    private boolean performPanelShortcut(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, int, android.view.KeyEvent, int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1;
+        int $i0, $i1;
+        android.view.KeyEvent $r2;
+        boolean $z0, $z1;
+        android.support.v7.internal.view.menu.MenuBuilder $r3;
+        android.support.v7.internal.widget.DecorContentParent $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: android.view.KeyEvent;
+        $i1 := @parameter3: int;
+        $z0 = virtualinvoke $r2.<android.view.KeyEvent: boolean isSystem()>();
+        if $z0 == 0 goto label1;
+
+        $z0 = 0;
+
+     label0:
+        return $z0;
+
+     label1:
+        $z0 = 0;
+        $z1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared>;
+        if $z1 != 0 goto label2;
+
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r1, $r2);
+        if $z1 == 0 goto label3;
+
+     label2:
+        $r3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r3 == null goto label3;
+
+        $r3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $z0 = virtualinvoke $r3.<android.support.v7.internal.view.menu.MenuBuilder: boolean performShortcut(int,android.view.KeyEvent,int)>($i0, $r2, $i1);
+
+     label3:
+        if $z0 == 0 goto label0;
+
+        $i1 = $i1 & 1;
+        if $i1 != 0 goto label0;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r4 != null goto label0;
+
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r1, 1);
+        return $z0;
+    }
+
+    private boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r1, $r6;
+        android.view.KeyEvent $r2;
+        android.view.Window$Callback $r3;
+        boolean $z0, $z3;
+        android.view.KeyCharacterMap $r4;
+        int $i0, $i1;
+        android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback $r5;
+        android.view.View $r7;
+        android.support.v7.internal.widget.DecorContentParent $r8;
+        android.support.v7.internal.view.menu.MenuBuilder $r9;
+        android.os.Bundle $r10;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState;
+        $r2 := @parameter1: android.view.KeyEvent;
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $z0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared>;
+        if $z0 == 0 goto label2;
+
+        return 1;
+
+     label2:
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r6 == null goto label3;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r6 == $r1 goto label3;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r6, 0);
+
+     label3:
+        $r3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        if $r3 == null goto label4;
+
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        $r7 = interfaceinvoke $r3.<android.view.Window$Callback: android.view.View onCreatePanelView(int)>($i0);
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView> = $r7;
+
+     label4:
+        $i0 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i0 == 0 goto label5;
+
+        $i1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        if $i1 != 8 goto label12;
+
+     label5:
+        $z0 = 1;
+
+     label6:
+        if $z0 == 0 goto label7;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r8 == null goto label7;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r8.<android.support.v7.internal.widget.DecorContentParent: void setMenuPrepared()>();
+
+     label7:
+        $r7 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        if $r7 != null goto label20;
+
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r9 == null goto label8;
+
+        $z3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshMenuContent>;
+        if $z3 == 0 goto label14;
+
+     label8:
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r9 != null goto label9;
+
+        $z3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean initializePanelMenu(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState)>($r1);
+        if $z3 == 0 goto label0;
+
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r9 == null goto label0;
+
+     label9:
+        if $z0 == 0 goto label11;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r8 == null goto label11;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback>;
+        if $r5 != null goto label10;
+
+        $r5 = new android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback;
+        specialinvoke $r5.<android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback: void <init>(android.support.v7.app.AppCompatDelegateImplV7,android.support.v7.app.AppCompatDelegateImplV7$1)>($r0, null);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback> = $r5;
+
+     label10:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback>;
+        interfaceinvoke $r8.<android.support.v7.internal.widget.DecorContentParent: void setMenu(android.view.Menu,android.support.v7.internal.view.menu.MenuPresenter$Callback)>($r9, $r5);
+
+     label11:
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void stopDispatchingItemsChanged()>();
+        $i1 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $z3 = interfaceinvoke $r3.<android.view.Window$Callback: boolean onCreatePanelMenu(int,android.view.Menu)>($i1, $r9);
+        if $z3 != 0 goto label13;
+
+        virtualinvoke $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: void setMenu(android.support.v7.internal.view.menu.MenuBuilder)>(null);
+        if $z0 == 0 goto label0;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r8 == null goto label0;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback>;
+        interfaceinvoke $r8.<android.support.v7.internal.widget.DecorContentParent: void setMenu(android.view.Menu,android.support.v7.internal.view.menu.MenuPresenter$Callback)>(null, $r5);
+        return 0;
+
+     label12:
+        $z0 = 0;
+        goto label6;
+
+     label13:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshMenuContent> = 0;
+
+     label14:
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void stopDispatchingItemsChanged()>();
+        $r10 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.os.Bundle frozenActionViewState>;
+        if $r10 == null goto label15;
+
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $r10 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.os.Bundle frozenActionViewState>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void restoreActionViewStates(android.os.Bundle)>($r10);
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.os.Bundle frozenActionViewState> = null;
+
+     label15:
+        $r7 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $i1 = (int) 0;
+        $z3 = interfaceinvoke $r3.<android.view.Window$Callback: boolean onPreparePanel(int,android.view.View,android.view.Menu)>($i1, $r7, $r9);
+        if $z3 != 0 goto label17;
+
+        if $z0 == 0 goto label16;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r8 == null goto label16;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$ActionMenuPresenterCallback mActionMenuPresenterCallback>;
+        interfaceinvoke $r8.<android.support.v7.internal.widget.DecorContentParent: void setMenu(android.view.Menu,android.support.v7.internal.view.menu.MenuPresenter$Callback)>(null, $r5);
+
+     label16:
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void startDispatchingItemsChanged()>();
+        return 0;
+
+     label17:
+        if $r2 == null goto label21;
+
+        $i1 = virtualinvoke $r2.<android.view.KeyEvent: int getDeviceId()>();
+
+     label18:
+        $r4 = staticinvoke <android.view.KeyCharacterMap: android.view.KeyCharacterMap load(int)>($i1);
+        $i1 = virtualinvoke $r4.<android.view.KeyCharacterMap: int getKeyboardType()>();
+        $i0 = (int) 1;
+        if $i1 == $i0 goto label22;
+
+        $z3 = 1;
+
+     label19:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean qwertyMode> = $z3;
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $z3 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean qwertyMode>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void setQwertyMode(boolean)>($z3);
+        $r9 = $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        virtualinvoke $r9.<android.support.v7.internal.view.menu.MenuBuilder: void startDispatchingItemsChanged()>();
+
+     label20:
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared> = 1;
+        $r1.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isHandled> = 0;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel> = $r1;
+        return 1;
+
+     label21:
+        $i1 = -1;
+        goto label18;
+
+     label22:
+        $z3 = 0;
+        goto label19;
+    }
+
+    private void reopenMenu(android.support.v7.internal.view.menu.MenuBuilder, boolean)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.view.menu.MenuBuilder $r1;
+        boolean $z0, $z3;
+        android.view.Window$Callback $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r3;
+        android.support.v7.internal.widget.DecorContentParent $r4;
+        java.lang.Runnable $r5;
+        android.content.Context $r6;
+        android.view.ViewConfiguration $r7;
+        int $i1;
+        android.view.ViewGroup $r8;
+        android.view.View $r9;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.internal.view.menu.MenuBuilder;
+        $z0 := @parameter1: boolean;
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r4 == null goto label5;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z3 = interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean canShowOverflowMenu()>();
+        if $z3 == 0 goto label5;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r7 = staticinvoke <android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>($r6);
+        $z3 = staticinvoke <android.support.v4.view.ViewConfigurationCompat: boolean hasPermanentMenuKey(android.view.ViewConfiguration)>($r7);
+        if $z3 == 0 goto label0;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z3 = interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean isOverflowMenuShowPending()>();
+        if $z3 == 0 goto label5;
+
+     label0:
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        $z3 = interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean isOverflowMenuShowing()>();
+        if $z3 == 0 goto label1;
+
+        if $z0 != 0 goto label4;
+
+     label1:
+        if $r2 == null goto label3;
+
+        $z3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z3 != 0 goto label3;
+
+        $z3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mInvalidatePanelMenuPosted>;
+        if $z3 == 0 goto label2;
+
+        $i1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: int mInvalidatePanelMenuFeatures>;
+        $i1 = $i1 & 1;
+        if $i1 == 0 goto label2;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor>;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mInvalidatePanelMenuRunnable>;
+        virtualinvoke $r8.<android.view.ViewGroup: boolean removeCallbacks(java.lang.Runnable)>($r5);
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mInvalidatePanelMenuRunnable>;
+        interfaceinvoke $r5.<java.lang.Runnable: void run()>();
+
+     label2:
+        $i1 = (int) 0;
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i1, 1);
+        $r1 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        if $r1 == null goto label3;
+
+        $z3 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshMenuContent>;
+        if $z3 != 0 goto label3;
+
+        $r9 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.view.View createdPanelView>;
+        $r1 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        $i1 = (int) 0;
+        $z3 = interfaceinvoke $r2.<android.view.Window$Callback: boolean onPreparePanel(int,android.view.View,android.view.Menu)>($i1, $r9, $r1);
+        if $z3 == 0 goto label3;
+
+        $r1 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        interfaceinvoke $r2.<android.view.Window$Callback: boolean onMenuOpened(int,android.view.Menu)>(8, $r1);
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean showOverflowMenu()>();
+
+     label3:
+        return;
+
+     label4:
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r4.<android.support.v7.internal.widget.DecorContentParent: boolean hideOverflowMenu()>();
+        $z3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z3 != 0 goto label3;
+
+        $i1 = (int) 0;
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i1, 1);
+        $r1 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: android.support.v7.internal.view.menu.MenuBuilder menu>;
+        interfaceinvoke $r2.<android.view.Window$Callback: void onPanelClosed(int,android.view.Menu)>(8, $r1);
+        goto label3;
+
+     label5:
+        $i1 = (int) 0;
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i1, 1);
+        $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean refreshDecorView> = 1;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r3, 0);
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void openPanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r3, null);
+        goto label3;
+    }
+
+    private void throwFeatureRequestIfSubDecorInstalled()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        boolean $z0;
+        android.util.AndroidRuntimeException $r2;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mSubDecorInstalled>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new android.util.AndroidRuntimeException;
+        specialinvoke $r2.<android.util.AndroidRuntimeException: void <init>(java.lang.String)>("Window feature must be requested before adding content");
+        throw $r2;
+
+     label0:
+        return;
+    }
+
+    private int updateStatusGuard(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1, $i5;
+        android.graphics.Rect $r1, $r2;
+        android.view.ViewGroup$LayoutParams $r3;
+        boolean $z0, $z1;
+        byte $b2, $b3;
+        android.support.v7.internal.widget.ActionBarContextView $r4;
+        android.content.Context $r5;
+        android.view.ViewGroup$MarginLayoutParams $r6;
+        android.view.ViewGroup $r7;
+        android.view.View $r8;
+        android.content.res.Resources $r9;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $b3 = 0;
+        $b2 = 0;
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        if $r4 == null goto label5;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r3 = virtualinvoke $r4.<android.support.v7.internal.widget.ActionBarContextView: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $z0 = $r3 instanceof android.view.ViewGroup$MarginLayoutParams;
+        if $z0 == 0 goto label5;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r3 = virtualinvoke $r4.<android.support.v7.internal.widget.ActionBarContextView: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r6 = (android.view.ViewGroup$MarginLayoutParams) $r3;
+        $z0 = 0;
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $z1 = virtualinvoke $r4.<android.support.v7.internal.widget.ActionBarContextView: boolean isShown()>();
+        if $z1 == 0 goto label11;
+
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.graphics.Rect mTempRect1>;
+        if $r2 != null goto label0;
+
+        $r2 = new android.graphics.Rect;
+        specialinvoke $r2.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.graphics.Rect mTempRect1> = $r2;
+        $r2 = new android.graphics.Rect;
+        specialinvoke $r2.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.graphics.Rect mTempRect2> = $r2;
+
+     label0:
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.graphics.Rect mTempRect1>;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.graphics.Rect mTempRect2>;
+        virtualinvoke $r1.<android.graphics.Rect: void set(int,int,int,int)>(0, $i0, 0, 0);
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        staticinvoke <android.support.v7.internal.widget.ViewUtils: void computeFitSystemWindows(android.view.View,android.graphics.Rect,android.graphics.Rect)>($r7, $r1, $r2);
+        $i1 = $r2.<android.graphics.Rect: int top>;
+        if $i1 != 0 goto label8;
+
+        $i1 = $i0;
+
+     label1:
+        $i5 = $r6.<android.view.ViewGroup$MarginLayoutParams: int topMargin>;
+        if $i5 == $i1 goto label2;
+
+        $z0 = 1;
+        $r6.<android.view.ViewGroup$MarginLayoutParams: int topMargin> = $i0;
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        if $r8 != null goto label9;
+
+        $r8 = new android.view.View;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        specialinvoke $r8.<android.view.View: void <init>(android.content.Context)>($r5);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard> = $r8;
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r9 = virtualinvoke $r5.<android.content.Context: android.content.res.Resources getResources()>();
+        $i1 = <android.support.v7.appcompat.R$color: int abc_input_method_navigation_guard>;
+        $i5 = virtualinvoke $r9.<android.content.res.Resources: int getColor(int)>($i1);
+        virtualinvoke $r8.<android.view.View: void setBackgroundColor(int)>($i5);
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        $r3 = new android.view.ViewGroup$LayoutParams;
+        specialinvoke $r3.<android.view.ViewGroup$LayoutParams: void <init>(int,int)>(-1, $i0);
+        virtualinvoke $r7.<android.view.ViewGroup: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>($r8, -1, $r3);
+
+     label2:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        if $r8 == null goto label10;
+
+        $b2 = 1;
+
+     label3:
+        $z1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionMode>;
+        if $z1 != 0 goto label4;
+
+        if $b2 == 0 goto label4;
+
+        $i0 = 0;
+
+     label4:
+        if $z0 == 0 goto label5;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r4.<android.support.v7.internal.widget.ActionBarContextView: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r6);
+
+     label5:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        if $r8 == null goto label7;
+
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        if $b2 == 0 goto label12;
+
+     label6:
+        virtualinvoke $r8.<android.view.View: void setVisibility(int)>($b3);
+
+     label7:
+        return $i0;
+
+     label8:
+        $i1 = 0;
+        goto label1;
+
+     label9:
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        $r3 = virtualinvoke $r8.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $i5 = $r3.<android.view.ViewGroup$LayoutParams: int height>;
+        if $i5 == $i0 goto label2;
+
+        $r3.<android.view.ViewGroup$LayoutParams: int height> = $i0;
+        $r8 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View mStatusGuard>;
+        virtualinvoke $r8.<android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>($r3);
+        goto label2;
+
+     label10:
+        $b2 = 0;
+        goto label3;
+
+     label11:
+        $i5 = $r6.<android.view.ViewGroup$MarginLayoutParams: int topMargin>;
+        if $i5 == 0 goto label4;
+
+        $z0 = 1;
+        $r6.<android.view.ViewGroup$MarginLayoutParams: int topMargin> = 0;
+        goto label4;
+
+     label12:
+        $b3 = 8;
+        goto label6;
+    }
+
+    public void addContentView(android.view.View, android.view.ViewGroup$LayoutParams)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1, $r3;
+        android.view.ViewGroup$LayoutParams $r2;
+        android.view.ViewGroup $r4;
+        android.view.Window$Callback $r5;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.ViewGroup$LayoutParams;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r3 = virtualinvoke $r4.<android.view.ViewGroup: android.view.View findViewById(int)>(16908290);
+        $r4 = (android.view.ViewGroup) $r3;
+        virtualinvoke $r4.<android.view.ViewGroup: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r1, $r2);
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        interfaceinvoke $r5.<android.view.Window$Callback: void onContentChanged()>();
+        return;
+    }
+
+    android.view.View callActivityOnCreateView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1, $r6;
+        java.lang.String $r2;
+        android.content.Context $r3;
+        android.util.AttributeSet $r4;
+        android.view.Window$Callback $r5;
+        boolean $z0;
+        android.view.LayoutInflater$Factory $r7;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: android.content.Context;
+        $r4 := @parameter3: android.util.AttributeSet;
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $z0 = $r5 instanceof android.view.LayoutInflater$Factory;
+        if $z0 == 0 goto label0;
+
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $r7 = (android.view.LayoutInflater$Factory) $r5;
+        $r6 = interfaceinvoke $r7.<android.view.LayoutInflater$Factory: android.view.View onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet)>($r2, $r3, $r4);
+        if $r6 == null goto label0;
+
+        return $r6;
+
+     label0:
+        return null;
+    }
+
+    public android.support.v7.app.ActionBar createSupportActionBar()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.app.WindowDecorActionBar $r1;
+        android.view.Window$Callback $r2;
+        boolean $z0;
+        android.app.Activity $r3;
+        android.app.Dialog $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        $r1 = null;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $z0 = $r2 instanceof android.app.Activity;
+        if $z0 == 0 goto label2;
+
+        $r1 = new android.support.v7.internal.app.WindowDecorActionBar;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $r3 = (android.app.Activity) $r2;
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionBar>;
+        specialinvoke $r1.<android.support.v7.internal.app.WindowDecorActionBar: void <init>(android.app.Activity,boolean)>($r3, $z0);
+
+     label0:
+        if $r1 == null goto label1;
+
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mEnableDefaultActionBarUp>;
+        virtualinvoke $r1.<android.support.v7.app.ActionBar: void setDefaultDisplayHomeAsUpEnabled(boolean)>($z0);
+
+     label1:
+        return $r1;
+
+     label2:
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $z0 = $r2 instanceof android.app.Dialog;
+        if $z0 == 0 goto label0;
+
+        $r1 = new android.support.v7.internal.app.WindowDecorActionBar;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $r4 = (android.app.Dialog) $r2;
+        specialinvoke $r1.<android.support.v7.internal.app.WindowDecorActionBar: void <init>(android.app.Dialog)>($r4);
+        goto label0;
+    }
+
+    public android.view.View createView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1;
+        java.lang.String $r2;
+        android.content.Context $r3, $r6;
+        android.util.AttributeSet $r4;
+        boolean $z1, $z2, $z3;
+        int $i0;
+        android.support.v7.internal.app.AppCompatViewInflater $r5;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: android.content.Context;
+        $r4 := @parameter3: android.util.AttributeSet;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 >= 21 goto label3;
+
+        $z2 = 1;
+
+     label0:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.app.AppCompatViewInflater mAppCompatViewInflater>;
+        if $r5 != null goto label1;
+
+        $r5 = new android.support.v7.internal.app.AppCompatViewInflater;
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        specialinvoke $r5.<android.support.v7.internal.app.AppCompatViewInflater: void <init>(android.content.Context)>($r6);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.app.AppCompatViewInflater mAppCompatViewInflater> = $r5;
+
+     label1:
+        if $z2 == 0 goto label4;
+
+        $z3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mSubDecorInstalled>;
+        if $z3 == 0 goto label4;
+
+        if $r1 == null goto label4;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+        if $i0 == 16908290 goto label4;
+
+        $z1 = 1;
+
+     label2:
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.app.AppCompatViewInflater mAppCompatViewInflater>;
+        $r1 = virtualinvoke $r5.<android.support.v7.internal.app.AppCompatViewInflater: android.view.View createView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet,boolean,boolean)>($r1, $r2, $r3, $r4, $z1, $z2);
+        return $r1;
+
+     label3:
+        $z2 = 0;
+        goto label0;
+
+     label4:
+        $z1 = 0;
+        goto label2;
+    }
+
+    boolean dispatchKeyEvent(android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.KeyEvent $r1;
+        int $i0, $i1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.KeyEvent;
+        $i1 = virtualinvoke $r1.<android.view.KeyEvent: int getKeyCode()>();
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getAction()>();
+        if $i0 != 0 goto label1;
+
+        $z0 = 1;
+
+     label0:
+        if $z0 == 0 goto label2;
+
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean onKeyDown(int,android.view.KeyEvent)>($i1, $r1);
+        return $z0;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+
+     label2:
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean onKeyUp(int,android.view.KeyEvent)>($i1, $r1);
+        return $z0;
+    }
+
+    android.view.ViewGroup getSubDecor()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.ViewGroup $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        return $r1;
+    }
+
+    public void installViewFactory()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.LayoutInflater $r1;
+        android.content.Context $r2;
+        android.view.LayoutInflater$Factory $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r1 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r2);
+        $r4 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.LayoutInflater$Factory getFactory()>();
+        if $r4 != null goto label1;
+
+        staticinvoke <android.support.v4.view.LayoutInflaterCompat: void setFactory(android.view.LayoutInflater,android.support.v4.view.LayoutInflaterFactory)>($r1, $r0);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("AppCompatDelegate", "The Activity\'s LayoutInflater already has a Factory installed so we can not install AppCompat\'s");
+        goto label0;
+    }
+
+    public void invalidateOptionsMenu()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.ActionBar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r1 == null goto label1;
+
+        $z0 = virtualinvoke $r1.<android.support.v7.app.ActionBar: boolean invalidateOptionsMenu()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void invalidatePanelMenu(int)>(0);
+        goto label0;
+    }
+
+    boolean onBackPressed()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.ActionBar $r1;
+        android.support.v7.view.ActionMode $r2;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        virtualinvoke $r2.<android.support.v7.view.ActionMode: void finish()>();
+
+     label0:
+        return 1;
+
+     label1:
+        $r1 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r1 == null goto label2;
+
+        $z0 = virtualinvoke $r1.<android.support.v7.app.ActionBar: boolean collapseActionView()>();
+        if $z0 != 0 goto label0;
+
+     label2:
+        return 0;
+    }
+
+    public void onConfigurationChanged(android.content.res.Configuration)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.content.res.Configuration $r1;
+        android.support.v7.app.ActionBar $r2;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.content.res.Configuration;
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mHasActionBar>;
+        if $z0 == 0 goto label0;
+
+        $z0 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mSubDecorInstalled>;
+        if $z0 == 0 goto label0;
+
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r2 == null goto label0;
+
+        virtualinvoke $r2.<android.support.v7.app.ActionBar: void onConfigurationChanged(android.content.res.Configuration)>($r1);
+
+     label0:
+        return;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.os.Bundle $r1;
+        android.support.v7.app.ActionBar $r2;
+        android.view.Window $r3;
+        android.view.View $r4;
+        android.view.ViewGroup $r5;
+        android.view.Window$Callback $r6;
+        boolean $z1;
+        android.app.Activity $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplBase: void onCreate(android.os.Bundle)>($r1);
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $r4 = virtualinvoke $r3.<android.view.Window: android.view.View getDecorView()>();
+        $r5 = (android.view.ViewGroup) $r4;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mWindowDecor> = $r5;
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $z1 = $r6 instanceof android.app.Activity;
+        if $z1 == 0 goto label0;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $r7 = (android.app.Activity) $r6;
+        $r8 = staticinvoke <android.support.v4.app.NavUtils: java.lang.String getParentActivityName(android.app.Activity)>($r7);
+        if $r8 == null goto label0;
+
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar peekSupportActionBar()>();
+        if $r2 != null goto label1;
+
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mEnableDefaultActionBarUp> = 1;
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r2.<android.support.v7.app.ActionBar: void setDefaultDisplayHomeAsUpEnabled(boolean)>(1);
+        goto label0;
+    }
+
+    public final android.view.View onCreateView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1, $r6;
+        java.lang.String $r2;
+        android.content.Context $r3;
+        android.util.AttributeSet $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: android.content.Context;
+        $r4 := @parameter3: android.util.AttributeSet;
+        $r6 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View callActivityOnCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet)>($r1, $r2, $r3, $r4);
+        if $r6 == null goto label0;
+
+        return $r6;
+
+     label0:
+        $r6 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.View createView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet)>($r1, $r2, $r3, $r4);
+        return $r6;
+    }
+
+    boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, $i1, $i2;
+        android.view.KeyEvent $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        $z0 = 0;
+        lookupswitch($i0)
+        {
+            case 82: goto label2;
+            default: goto label0;
+        };
+
+     label0:
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 >= 11 goto label1;
+
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean onKeyShortcut(int,android.view.KeyEvent)>($i0, $r1);
+
+     label1:
+        return $z0;
+
+     label2:
+        $i2 = (int) 0;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean onKeyDownPanel(int,android.view.KeyEvent)>($i2, $r1);
+        return 1;
+    }
+
+    boolean onKeyShortcut(int, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0, i1;
+        android.view.KeyEvent $r1;
+        android.support.v7.app.ActionBar $r2;
+        boolean $z0, $z1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r3;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r2 == null goto label1;
+
+        $z0 = virtualinvoke $r2.<android.support.v7.app.ActionBar: boolean onKeyShortcut(int,android.view.KeyEvent)>($i0, $r1);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return 1;
+
+     label1:
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r3 == null goto label2;
+
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getKeyCode()>();
+        i1 = (int) 1;
+        $z0 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean performPanelShortcut(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,int,android.view.KeyEvent,int)>($r3, $i0, $r1, i1);
+        if $z0 == 0 goto label2;
+
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r3 == null goto label0;
+
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isHandled> = 1;
+        return 1;
+
+     label2:
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState mPreparedPanel>;
+        if $r3 != null goto label3;
+
+        i1 = (int) 0;
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>(i1, 1);
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean preparePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,android.view.KeyEvent)>($r3, $r1);
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getKeyCode()>();
+        i1 = (int) 1;
+        $z1 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean performPanelShortcut(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,int,android.view.KeyEvent,int)>($r3, $i0, $r1, i1);
+        $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isPrepared> = 0;
+        if $z1 != 0 goto label0;
+
+     label3:
+        return 0;
+    }
+
+    boolean onKeyUp(int, android.view.KeyEvent)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.view.KeyEvent $r1;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r2;
+        boolean $z2;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        lookupswitch($i0)
+        {
+            case 4: goto label2;
+            case 82: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        return 0;
+
+     label1:
+        $i0 = (int) 0;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void onKeyUpPanel(int,android.view.KeyEvent)>($i0, $r1);
+        return 1;
+
+     label2:
+        $i0 = (int) 0;
+        $r2 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 0);
+        if $r2 == null goto label3;
+
+        $z2 = $r2.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z2 == 0 goto label3;
+
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r2, 1);
+        return 1;
+
+     label3:
+        $z2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean onBackPressed()>();
+        if $z2 == 0 goto label0;
+
+        return 1;
+    }
+
+    public boolean onMenuItemSelected(android.support.v7.internal.view.menu.MenuBuilder, android.view.MenuItem)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.view.menu.MenuBuilder $r1;
+        android.view.MenuItem $r2;
+        android.view.Window$Callback $r3;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r4;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.internal.view.menu.MenuBuilder;
+        $r2 := @parameter1: android.view.MenuItem;
+        $r3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback getWindowCallback()>();
+        if $r3 == null goto label0;
+
+        $z0 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean isDestroyed()>();
+        if $z0 != 0 goto label0;
+
+        $r1 = virtualinvoke $r1.<android.support.v7.internal.view.menu.MenuBuilder: android.support.v7.internal.view.menu.MenuBuilder getRootMenu()>();
+        $r4 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState findMenuPanel(android.view.Menu)>($r1);
+        if $r4 == null goto label0;
+
+        $i0 = $r4.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: int featureId>;
+        $z0 = interfaceinvoke $r3.<android.view.Window$Callback: boolean onMenuItemSelected(int,android.view.MenuItem)>($i0, $r2);
+        return $z0;
+
+     label0:
+        return 0;
+    }
+
+    public void onMenuModeChange(android.support.v7.internal.view.menu.MenuBuilder)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.internal.view.menu.MenuBuilder $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.internal.view.menu.MenuBuilder;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void reopenMenu(android.support.v7.internal.view.menu.MenuBuilder,boolean)>($r1, 1);
+        return;
+    }
+
+    boolean onMenuOpened(int, android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.view.Menu $r1;
+        android.support.v7.app.ActionBar $r2;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.Menu;
+        if $i0 != 8 goto label1;
+
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r2 == null goto label0;
+
+        virtualinvoke $r2.<android.support.v7.app.ActionBar: void dispatchMenuVisibilityChanged(boolean)>(1);
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    boolean onPanelClosed(int, android.view.Menu)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.view.Menu $r1;
+        android.support.v7.app.ActionBar $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState $r3;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.Menu;
+        if $i0 != 8 goto label1;
+
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r2 == null goto label0;
+
+        virtualinvoke $r2.<android.support.v7.app.ActionBar: void dispatchMenuVisibilityChanged(boolean)>(0);
+
+     label0:
+        return 1;
+
+     label1:
+        if $i0 != 0 goto label2;
+
+        $r3 = specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState getPanelState(int,boolean)>($i0, 1);
+        $z0 = $r3.<android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState: boolean isOpen>;
+        if $z0 == 0 goto label2;
+
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void closePanel(android.support.v7.app.AppCompatDelegateImplV7$PanelFeatureState,boolean)>($r3, 0);
+
+     label2:
+        return 0;
+    }
+
+    public void onPostCreate(android.os.Bundle)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        return;
+    }
+
+    public void onPostResume()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.ActionBar $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r1 == null goto label0;
+
+        virtualinvoke $r1.<android.support.v7.app.ActionBar: void setShowHideAnimationEnabled(boolean)>(1);
+
+     label0:
+        return;
+    }
+
+    public void onStop()
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.app.ActionBar $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r1 == null goto label0;
+
+        virtualinvoke $r1.<android.support.v7.app.ActionBar: void setShowHideAnimationEnabled(boolean)>(0);
+
+     label0:
+        return;
+    }
+
+    void onSubDecorInstalled(android.view.ViewGroup)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.ViewGroup $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.ViewGroup;
+        return;
+    }
+
+    void onTitleChanged(java.lang.CharSequence)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        java.lang.CharSequence $r1;
+        android.support.v7.internal.widget.DecorContentParent $r2;
+        android.support.v7.app.ActionBar $r3;
+        android.widget.TextView $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: java.lang.CharSequence;
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.DecorContentParent mDecorContentParent>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorContentParent: void setWindowTitle(java.lang.CharSequence)>($r1);
+
+     label0:
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r3 == null goto label2;
+
+        $r3 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        virtualinvoke $r3.<android.support.v7.app.ActionBar: void setWindowTitle(java.lang.CharSequence)>($r1);
+        goto label0;
+
+     label2:
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.TextView mTitleView>;
+        if $r4 == null goto label0;
+
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.TextView mTitleView>;
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r1);
+        goto label0;
+    }
+
+    public boolean requestWindowFeature(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        boolean $z0;
+        android.view.Window $r1;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label6;
+            case 2: goto label4;
+            case 3: goto label0;
+            case 4: goto label0;
+            case 5: goto label5;
+            case 6: goto label0;
+            case 7: goto label0;
+            case 8: goto label1;
+            case 9: goto label2;
+            case 10: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        $r1 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $z0 = virtualinvoke $r1.<android.view.Window: boolean requestFeature(int)>($i0);
+        return $z0;
+
+     label1:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mHasActionBar> = 1;
+        return 1;
+
+     label2:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionBar> = 1;
+        return 1;
+
+     label3:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mOverlayActionMode> = 1;
+        return 1;
+
+     label4:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mFeatureProgress> = 1;
+        return 1;
+
+     label5:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mFeatureIndeterminateProgress> = 1;
+        return 1;
+
+     label6:
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void throwFeatureRequestIfSubDecorInstalled()>();
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mWindowNoTitle> = 1;
+        return 1;
+    }
+
+    public void setContentView(int)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        int $i0;
+        android.view.View $r1;
+        android.view.ViewGroup $r2;
+        android.content.Context $r3;
+        android.view.LayoutInflater $r4;
+        android.view.Window$Callback $r5;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r1 = virtualinvoke $r2.<android.view.ViewGroup: android.view.View findViewById(int)>(16908290);
+        $r2 = (android.view.ViewGroup) $r1;
+        virtualinvoke $r2.<android.view.ViewGroup: void removeAllViews()>();
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r4 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r3);
+        virtualinvoke $r4.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>($i0, $r2);
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        interfaceinvoke $r5.<android.view.Window$Callback: void onContentChanged()>();
+        return;
+    }
+
+    public void setContentView(android.view.View)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1, $r2;
+        android.view.ViewGroup $r3;
+        android.view.Window$Callback $r4;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        $r3 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r2 = virtualinvoke $r3.<android.view.ViewGroup: android.view.View findViewById(int)>(16908290);
+        $r3 = (android.view.ViewGroup) $r2;
+        virtualinvoke $r3.<android.view.ViewGroup: void removeAllViews()>();
+        virtualinvoke $r3.<android.view.ViewGroup: void addView(android.view.View)>($r1);
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        interfaceinvoke $r4.<android.view.Window$Callback: void onContentChanged()>();
+        return;
+    }
+
+    public void setContentView(android.view.View, android.view.ViewGroup$LayoutParams)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.view.View $r1, $r3;
+        android.view.ViewGroup$LayoutParams $r2;
+        android.view.ViewGroup $r4;
+        android.view.Window$Callback $r5;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.ViewGroup$LayoutParams;
+        specialinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void ensureSubDecor()>();
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $r3 = virtualinvoke $r4.<android.view.ViewGroup: android.view.View findViewById(int)>(16908290);
+        $r4 = (android.view.ViewGroup) $r3;
+        virtualinvoke $r4.<android.view.ViewGroup: void removeAllViews()>();
+        virtualinvoke $r4.<android.view.ViewGroup: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r1, $r2);
+        $r5 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        interfaceinvoke $r5.<android.view.Window$Callback: void onContentChanged()>();
+        return;
+    }
+
+    public void setSupportActionBar(android.support.v7.widget.Toolbar)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.widget.Toolbar $r1;
+        android.support.v7.app.ActionBar $r2;
+        android.support.v7.internal.app.ToolbarActionBar $r3;
+        android.view.Window$Callback $r4;
+        boolean $z0;
+        java.lang.IllegalStateException $r6;
+        android.content.Context $r7;
+        android.app.Activity $r8;
+        java.lang.CharSequence $r9;
+        android.view.Window $r10;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.widget.Toolbar;
+        $r4 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window$Callback mOriginalWindowCallback>;
+        $z0 = $r4 instanceof android.app.Activity;
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        $z0 = $r2 instanceof android.support.v7.internal.app.WindowDecorActionBar;
+        if $z0 == 0 goto label2;
+
+        $r6 = new java.lang.IllegalStateException;
+        specialinvoke $r6.<java.lang.IllegalStateException: void <init>(java.lang.String)>("This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.");
+        throw $r6;
+
+     label2:
+        $r3 = new android.support.v7.internal.app.ToolbarActionBar;
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r8 = (android.app.Activity) $r7;
+        $r9 = virtualinvoke $r8.<android.app.Activity: java.lang.CharSequence getTitle()>();
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        specialinvoke $r3.<android.support.v7.internal.app.ToolbarActionBar: void <init>(android.support.v7.widget.Toolbar,java.lang.CharSequence,android.view.Window)>($r1, $r9, $r10);
+        virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: void setSupportActionBar(android.support.v7.app.ActionBar)>($r3);
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $r4 = virtualinvoke $r3.<android.support.v7.internal.app.ToolbarActionBar: android.view.Window$Callback getWrappedWindowCallback()>();
+        virtualinvoke $r10.<android.view.Window: void setCallback(android.view.Window$Callback)>($r4);
+        virtualinvoke $r3.<android.support.v7.internal.app.ToolbarActionBar: boolean invalidateOptionsMenu()>();
+        goto label0;
+    }
+
+    public android.support.v7.view.ActionMode startSupportActionMode(android.support.v7.view.ActionMode$Callback)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.view.ActionMode$Callback $r1;
+        android.support.v7.app.ActionBar $r2;
+        android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper $r3;
+        java.lang.IllegalArgumentException $r4;
+        android.support.v7.view.ActionMode $r6;
+        android.support.v7.app.AppCompatCallback $r7;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.view.ActionMode$Callback;
+        if $r1 != null goto label0;
+
+        $r4 = new java.lang.IllegalArgumentException;
+        specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("ActionMode callback can not be null.");
+        throw $r4;
+
+     label0:
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r6 == null goto label1;
+
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        virtualinvoke $r6.<android.support.v7.view.ActionMode: void finish()>();
+
+     label1:
+        $r3 = new android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper;
+        specialinvoke $r3.<android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper: void <init>(android.support.v7.app.AppCompatDelegateImplV7,android.support.v7.view.ActionMode$Callback)>($r0, $r1);
+        $r2 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.ActionBar getSupportActionBar()>();
+        if $r2 == null goto label2;
+
+        $r6 = virtualinvoke $r2.<android.support.v7.app.ActionBar: android.support.v7.view.ActionMode startActionMode(android.support.v7.view.ActionMode$Callback)>($r3);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode> = $r6;
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r6 == null goto label2;
+
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatCallback mAppCompatCallback>;
+        if $r7 == null goto label2;
+
+        $r7 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatCallback mAppCompatCallback>;
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        interfaceinvoke $r7.<android.support.v7.app.AppCompatCallback: void onSupportActionModeStarted(android.support.v7.view.ActionMode)>($r6);
+
+     label2:
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r6 != null goto label3;
+
+        $r6 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode startSupportActionModeFromWindow(android.support.v7.view.ActionMode$Callback)>($r3);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode> = $r6;
+
+     label3:
+        $r6 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        return $r6;
+    }
+
+    android.support.v7.view.ActionMode startSupportActionModeFromWindow(android.support.v7.view.ActionMode$Callback)
+    {
+        android.support.v7.app.AppCompatDelegateImplV7 $r0;
+        android.support.v7.view.ActionMode$Callback $r1;
+        android.content.Context $r2, $r12;
+        android.content.res.Resources$Theme $r3, $r4;
+        int $i0;
+        android.view.View $r7;
+        android.support.v7.view.ActionMode $r9;
+        android.support.v7.internal.widget.ActionBarContextView $r10, r27;
+        boolean $z2;
+        android.content.res.Resources $r11;
+        android.widget.PopupWindow $r13, r28;
+        android.util.DisplayMetrics $r14;
+        android.view.Menu $r16;
+        android.view.Window $r17;
+        java.lang.Runnable $r18;
+        android.view.ViewParent $r19;
+        android.support.v7.app.AppCompatCallback $r20;
+        android.view.ViewGroup $r21;
+        android.support.v7.internal.widget.ViewStubCompat $r22;
+        android.view.LayoutInflater $r23;
+        android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper r24;
+        android.util.TypedValue r25;
+        android.support.v7.internal.view.ContextThemeWrapper r26;
+        android.support.v7.app.AppCompatDelegateImplV7$4 r29;
+        android.support.v7.internal.view.StandaloneActionMode r30;
+
+        $r0 := @this: android.support.v7.app.AppCompatDelegateImplV7;
+        $r1 := @parameter0: android.support.v7.view.ActionMode$Callback;
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r9 == null goto label0;
+
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        virtualinvoke $r9.<android.support.v7.view.ActionMode: void finish()>();
+
+     label0:
+        r24 = new android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper;
+        specialinvoke r24.<android.support.v7.app.AppCompatDelegateImplV7$ActionModeCallbackWrapper: void <init>(android.support.v7.app.AppCompatDelegateImplV7,android.support.v7.view.ActionMode$Callback)>($r0, $r1);
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        if $r10 != null goto label2;
+
+        $z2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: boolean mIsFloating>;
+        if $z2 == 0 goto label8;
+
+        r25 = new android.util.TypedValue;
+        specialinvoke r25.<android.util.TypedValue: void <init>()>();
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r4 = virtualinvoke $r2.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        $i0 = <android.support.v7.appcompat.R$attr: int actionBarTheme>;
+        virtualinvoke $r4.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i0, r25, 1);
+        $i0 = r25.<android.util.TypedValue: int resourceId>;
+        if $i0 == 0 goto label7;
+
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $r11 = virtualinvoke $r2.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r11.<android.content.res.Resources: android.content.res.Resources$Theme newTheme()>();
+        virtualinvoke $r3.<android.content.res.Resources$Theme: void setTo(android.content.res.Resources$Theme)>($r4);
+        $i0 = r25.<android.util.TypedValue: int resourceId>;
+        virtualinvoke $r3.<android.content.res.Resources$Theme: void applyStyle(int,boolean)>($i0, 1);
+        r26 = new android.support.v7.internal.view.ContextThemeWrapper;
+        $r2 = r26;
+        $r12 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        $i0 = (int) 0;
+        specialinvoke r26.<android.support.v7.internal.view.ContextThemeWrapper: void <init>(android.content.Context,int)>($r12, $i0);
+        $r4 = virtualinvoke r26.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        virtualinvoke $r4.<android.content.res.Resources$Theme: void setTo(android.content.res.Resources$Theme)>($r3);
+
+     label1:
+        r27 = new android.support.v7.internal.widget.ActionBarContextView;
+        specialinvoke r27.<android.support.v7.internal.widget.ActionBarContextView: void <init>(android.content.Context)>($r2);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView> = r27;
+        r28 = new android.widget.PopupWindow;
+        $i0 = <android.support.v7.appcompat.R$attr: int actionModePopupWindowStyle>;
+        specialinvoke r28.<android.widget.PopupWindow: void <init>(android.content.Context,android.util.AttributeSet,int)>($r2, null, $i0);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup> = r28;
+        $r13 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup>;
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r13.<android.widget.PopupWindow: void setContentView(android.view.View)>($r10);
+        $r13 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup>;
+        virtualinvoke $r13.<android.widget.PopupWindow: void setWidth(int)>(-1);
+        $r4 = virtualinvoke $r2.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        $i0 = <android.support.v7.appcompat.R$attr: int actionBarSize>;
+        virtualinvoke $r4.<android.content.res.Resources$Theme: boolean resolveAttribute(int,android.util.TypedValue,boolean)>($i0, r25, 1);
+        $i0 = r25.<android.util.TypedValue: int data>;
+        $r11 = virtualinvoke $r2.<android.content.Context: android.content.res.Resources getResources()>();
+        $r14 = virtualinvoke $r11.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $i0 = staticinvoke <android.util.TypedValue: int complexToDimensionPixelSize(int,android.util.DisplayMetrics)>($i0, $r14);
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: void setContentHeight(int)>($i0);
+        $r13 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup>;
+        virtualinvoke $r13.<android.widget.PopupWindow: void setHeight(int)>(-2);
+        r29 = new android.support.v7.app.AppCompatDelegateImplV7$4;
+        specialinvoke r29.<android.support.v7.app.AppCompatDelegateImplV7$4: void <init>(android.support.v7.app.AppCompatDelegateImplV7)>($r0);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mShowActionModePopup> = r29;
+
+     label2:
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        if $r10 == null goto label5;
+
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: void killMode()>();
+        r30 = new android.support.v7.internal.view.StandaloneActionMode;
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r12 = virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: android.content.Context getContext()>();
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r13 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup>;
+        if $r13 != null goto label9;
+
+        $z2 = 1;
+
+     label3:
+        specialinvoke r30.<android.support.v7.internal.view.StandaloneActionMode: void <init>(android.content.Context,android.support.v7.internal.widget.ActionBarContextView,android.support.v7.view.ActionMode$Callback,boolean)>($r12, $r10, r24, $z2);
+        $r16 = virtualinvoke r30.<android.support.v7.view.ActionMode: android.view.Menu getMenu()>();
+        $z2 = interfaceinvoke $r1.<android.support.v7.view.ActionMode$Callback: boolean onCreateActionMode(android.support.v7.view.ActionMode,android.view.Menu)>(r30, $r16);
+        if $z2 == 0 goto label10;
+
+        virtualinvoke r30.<android.support.v7.view.ActionMode: void invalidate()>();
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: void initForMode(android.support.v7.view.ActionMode)>(r30);
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $i0 = (int) 0;
+        virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: void setVisibility(int)>($i0);
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode> = r30;
+        $r13 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.widget.PopupWindow mActionModePopup>;
+        if $r13 == null goto label4;
+
+        $r17 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.Window mWindow>;
+        $r7 = virtualinvoke $r17.<android.view.Window: android.view.View getDecorView()>();
+        $r18 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: java.lang.Runnable mShowActionModePopup>;
+        virtualinvoke $r7.<android.view.View: boolean post(java.lang.Runnable)>($r18);
+
+     label4:
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: void sendAccessibilityEvent(int)>(32);
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r19 = virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: android.view.ViewParent getParent()>();
+        if $r19 == null goto label5;
+
+        $r10 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView>;
+        $r19 = virtualinvoke $r10.<android.support.v7.internal.widget.ActionBarContextView: android.view.ViewParent getParent()>();
+        $r7 = (android.view.View) $r19;
+        staticinvoke <android.support.v4.view.ViewCompat: void requestApplyInsets(android.view.View)>($r7);
+
+     label5:
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        if $r9 == null goto label6;
+
+        $r20 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatCallback mAppCompatCallback>;
+        if $r20 == null goto label6;
+
+        $r20 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.app.AppCompatCallback mAppCompatCallback>;
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        interfaceinvoke $r20.<android.support.v7.app.AppCompatCallback: void onSupportActionModeStarted(android.support.v7.view.ActionMode)>($r9);
+
+     label6:
+        $r9 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode>;
+        return $r9;
+
+     label7:
+        $r2 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context mContext>;
+        goto label1;
+
+     label8:
+        $r21 = $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.view.ViewGroup mSubDecor>;
+        $i0 = <android.support.v7.appcompat.R$id: int action_mode_bar_stub>;
+        $r7 = virtualinvoke $r21.<android.view.ViewGroup: android.view.View findViewById(int)>($i0);
+        $r22 = (android.support.v7.internal.widget.ViewStubCompat) $r7;
+        if $r22 == null goto label2;
+
+        $r12 = virtualinvoke $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.content.Context getActionBarThemedContext()>();
+        $r23 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r12);
+        virtualinvoke $r22.<android.support.v7.internal.widget.ViewStubCompat: void setLayoutInflater(android.view.LayoutInflater)>($r23);
+        $r7 = virtualinvoke $r22.<android.support.v7.internal.widget.ViewStubCompat: android.view.View inflate()>();
+        $r10 = (android.support.v7.internal.widget.ActionBarContextView) $r7;
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.internal.widget.ActionBarContextView mActionModeView> = $r10;
+        goto label2;
+
+     label9:
+        $z2 = 0;
+        goto label3;
+
+     label10:
+        $r0.<android.support.v7.app.AppCompatDelegateImplV7: android.support.v7.view.ActionMode mActionMode> = null;
+        goto label5;
+    }
+}

@@ -1,0 +1,68 @@
+class com.google.android.gms.maps.internal.m$a$a extends java.lang.Object implements com.google.android.gms.maps.internal.m
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.maps.internal.m$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.m$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.maps.internal.m$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public boolean a()
+    {
+        com.google.android.gms.maps.internal.m$a$a $r0;
+        boolean $z0;
+        android.os.Parcel $r1, $r2;
+        android.os.IBinder $r4;
+        int $i2;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.m$a$a;
+        $z0 = 1;
+        $r1 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r1.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IOnMyLocationButtonClickListener");
+        $r4 = $r0.<com.google.android.gms.maps.internal.m$a$a: android.os.IBinder a>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r1, $r2, 0);
+        virtualinvoke $r2.<android.os.Parcel: void readException()>();
+        $i2 = virtualinvoke $r2.<android.os.Parcel: int readInt()>();
+
+     label1:
+        if $i2 == 0 goto label3;
+
+     label2:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        return $z0;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+
+     label4:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r1.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.maps.internal.m$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.m$a$a;
+        $r1 = $r0.<com.google.android.gms.maps.internal.m$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+}

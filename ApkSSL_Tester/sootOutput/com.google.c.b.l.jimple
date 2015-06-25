@@ -1,0 +1,81 @@
+class com.google.c.b.l extends java.lang.Object implements com.google.c.b.ae
+{
+    final java.lang.reflect.Constructor a;
+    final com.google.c.b.f b;
+
+    void <init>(com.google.c.b.f, java.lang.reflect.Constructor)
+    {
+        com.google.c.b.l $r0;
+        com.google.c.b.f $r1;
+        java.lang.reflect.Constructor $r2;
+
+        $r0 := @this: com.google.c.b.l;
+        $r1 := @parameter0: com.google.c.b.f;
+        $r2 := @parameter1: java.lang.reflect.Constructor;
+        $r0.<com.google.c.b.l: com.google.c.b.f b> = $r1;
+        $r0.<com.google.c.b.l: java.lang.reflect.Constructor a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public java.lang.Object a()
+    {
+        com.google.c.b.l $r0;
+        java.lang.reflect.Constructor $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        java.lang.Object $r4;
+        java.lang.InstantiationException $r5;
+        java.lang.RuntimeException $r6;
+        java.lang.reflect.InvocationTargetException $r7;
+        java.lang.Throwable $r8;
+        java.lang.IllegalAccessException $r9;
+        java.lang.AssertionError $r10;
+
+        $r0 := @this: com.google.c.b.l;
+        $r1 = $r0.<com.google.c.b.l: java.lang.reflect.Constructor a>;
+
+     label0:
+        $r4 = virtualinvoke $r1.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(null);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r6 = new java.lang.RuntimeException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Failed to invoke ");
+        $r1 = $r0.<com.google.c.b.l: java.lang.reflect.Constructor a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" with no args");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r6.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r3, $r5);
+        throw $r6;
+
+     label3:
+        $r7 := @caughtexception;
+        $r6 = new java.lang.RuntimeException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Failed to invoke ");
+        $r1 = $r0.<com.google.c.b.l: java.lang.reflect.Constructor a>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" with no args");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = virtualinvoke $r7.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getTargetException()>();
+        specialinvoke $r6.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r3, $r8);
+        throw $r6;
+
+     label4:
+        $r9 := @caughtexception;
+        $r10 = new java.lang.AssertionError;
+        specialinvoke $r10.<java.lang.AssertionError: void <init>(java.lang.Object)>($r9);
+        throw $r10;
+
+        catch java.lang.InstantiationException from label0 to label1 with label2;
+        catch java.lang.reflect.InvocationTargetException from label0 to label1 with label3;
+        catch java.lang.IllegalAccessException from label0 to label1 with label4;
+    }
+}

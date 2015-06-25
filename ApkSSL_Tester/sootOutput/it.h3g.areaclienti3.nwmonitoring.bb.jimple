@@ -1,0 +1,93 @@
+public class it.h3g.areaclienti3.nwmonitoring.bb extends java.lang.Object implements java.lang.Runnable
+{
+    java.util.ArrayList a;
+    it.h3g.areaclienti3.nwmonitoring.l b;
+    android.content.Context c;
+    java.lang.String d;
+
+    void <init>(android.content.Context, java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bb $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        it.h3g.areaclienti3.nwmonitoring.l $r3;
+        java.util.ArrayList $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bb;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bb: android.content.Context c> = $r1;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.lang.String d> = $r2;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: android.content.Context c>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.l: it.h3g.areaclienti3.nwmonitoring.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bb: it.h3g.areaclienti3.nwmonitoring.l b> = $r3;
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a> = $r4;
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bb $r0;
+        it.h3g.areaclienti3.nwmonitoring.l $r1;
+        boolean $z0;
+        java.util.ArrayList $r3, $r7;
+        int $i0, $i1;
+        java.lang.String $r4;
+        android.content.Context $r5;
+        it.h3g.areaclienti3.nwmonitoring.r $r6;
+        java.lang.Object $r8;
+        it.h3g.model.ConsentData $r9;
+        it.h3g.areaclienti3.nwmonitoring.av $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bb;
+        $z0 = 0;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: it.h3g.areaclienti3.nwmonitoring.l b>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.l: java.util.ArrayList b()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a> = $r3;
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a>;
+        $i0 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        if $i0 <= 0 goto label2;
+
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a>;
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: java.lang.String a(java.util.ArrayList)>($r3);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SEND_CONSENTS", $r4);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: android.content.Context c>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.r: it.h3g.areaclienti3.nwmonitoring.r a(android.content.Context)>($r5);
+        $i0 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.r: int a(java.lang.String)>($r4);
+        $r7 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a>;
+        $r3 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: java.util.ArrayList a>;
+        $i1 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        $i1 = $i1 + -1;
+        $r8 = virtualinvoke $r7.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r9 = (it.h3g.model.ConsentData) $r8;
+        if $i0 != 0 goto label3;
+
+        virtualinvoke $r9.<it.h3g.model.ConsentData: boolean isConsent()>();
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: it.h3g.areaclienti3.nwmonitoring.l b>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.l: boolean c()>();
+        $i1 = $i0;
+
+     label0:
+        $r10 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bb: android.content.Context c>;
+        $i0 = (int) 1;
+        if $i1 != $i0 goto label1;
+
+        $z0 = 1;
+
+     label1:
+        virtualinvoke $r10.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r5, "pendingConsents", $z0);
+        return;
+
+     label2:
+        $i1 = (int) 0;
+        goto label0;
+
+     label3:
+        $i1 = $i0;
+        goto label0;
+    }
+}

@@ -1,0 +1,48 @@
+class it.h3g.areaclienti3.tremobility.ao extends java.lang.Object implements java.util.Comparator
+{
+    final it.h3g.areaclienti3.tremobility.al a;
+
+    void <init>(it.h3g.areaclienti3.tremobility.al)
+    {
+        it.h3g.areaclienti3.tremobility.ao $r0;
+        it.h3g.areaclienti3.tremobility.al $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.ao;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.al;
+        $r0.<it.h3g.areaclienti3.tremobility.ao: it.h3g.areaclienti3.tremobility.al a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public int a(it.h3g.areaclienti3.tremobility.model.TreMobTicket, it.h3g.areaclienti3.tremobility.model.TreMobTicket)
+    {
+        it.h3g.areaclienti3.tremobility.ao $r0;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r1, $r2;
+        java.lang.String $r3, $r4;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.ao;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.model.TreMobTicket;
+        $r2 := @parameter1: it.h3g.areaclienti3.tremobility.model.TreMobTicket;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCitta()>();
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCitta()>();
+        $i0 = virtualinvoke $r3.<java.lang.String: int compareTo(java.lang.String)>($r4);
+        return $i0;
+    }
+
+    public int compare(java.lang.Object, java.lang.Object)
+    {
+        it.h3g.areaclienti3.tremobility.ao $r0;
+        java.lang.Object $r1, $r2;
+        int $i0;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r3, $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.ao;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (it.h3g.areaclienti3.tremobility.model.TreMobTicket) $r1;
+        $r4 = (it.h3g.areaclienti3.tremobility.model.TreMobTicket) $r2;
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.tremobility.ao: int a(it.h3g.areaclienti3.tremobility.model.TreMobTicket,it.h3g.areaclienti3.tremobility.model.TreMobTicket)>($r3, $r4);
+        return $i0;
+    }
+}

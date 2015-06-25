@@ -1,0 +1,260 @@
+public final class com.facebook.b.d.d extends java.lang.Object
+{
+    private final com.facebook.b.d.c a;
+    private final com.facebook.b.d.i b;
+    private java.lang.Integer c;
+
+    public void <init>(com.facebook.b.d.i, com.facebook.b.d.c)
+    {
+        com.facebook.b.d.d $r0;
+        com.facebook.b.d.i $r1;
+        com.facebook.b.d.c $r2;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 := @parameter0: com.facebook.b.d.i;
+        $r2 := @parameter1: com.facebook.b.d.c;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.b.d.d: com.facebook.b.d.i b> = $r1;
+        $r0.<com.facebook.b.d.d: com.facebook.b.d.c a> = $r2;
+        return;
+    }
+
+    private static void a(java.util.ArrayList, int)
+    {
+        java.util.ArrayList $r0;
+        int $i0;
+        java.lang.Integer $r1;
+
+        $r0 := @parameter0: java.util.ArrayList;
+        $i0 := @parameter1: int;
+        if $i0 == 0 goto label0;
+
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.ArrayList: boolean add(java.lang.Object)>($r1);
+
+     label0:
+        return;
+    }
+
+    private int b()
+    {
+        com.facebook.b.d.d $r0;
+        int $i0, $i1, $i2;
+        java.util.ArrayList $r1;
+        boolean $z0;
+        java.lang.Object $r2;
+        java.lang.Integer $r3;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $i0 = specialinvoke $r0.<com.facebook.b.d.d: int d()>();
+        staticinvoke <com.facebook.b.d.d: void a(java.util.ArrayList,int)>($r1, $i0);
+        $i1 = specialinvoke $r0.<com.facebook.b.d.d: int c()>();
+        staticinvoke <com.facebook.b.d.d: void a(java.util.ArrayList,int)>($r1, $i1);
+        $i1 = specialinvoke $r0.<com.facebook.b.d.d: int e()>();
+        staticinvoke <com.facebook.b.d.d: void a(java.util.ArrayList,int)>($r1, $i1);
+        $z0 = virtualinvoke $r1.<java.util.ArrayList: boolean isEmpty()>();
+        if $z0 == 0 goto label0;
+
+        return 2008;
+
+     label0:
+        staticinvoke <java.util.Collections: void sort(java.util.List)>($r1);
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        $i1 = $i1 & 1;
+        if $i1 != 1 goto label1;
+
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        $i1 = $i1 / 2;
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r3 = (java.lang.Integer) $r2;
+        $i1 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        return $i1;
+
+     label1:
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        $i1 = $i1 / 2;
+        $i2 = $i1 + -1;
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.Integer) $r2;
+        $i0 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $i1 = $i2 + 1;
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r3 = (java.lang.Integer) $r2;
+        $i1 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i2);
+        $r3 = (java.lang.Integer) $r2;
+        $i2 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+        $i2 = $i1 - $i2;
+        $i2 = $i2 / 2;
+        $i1 = $i2 + $i0;
+        return $i1;
+    }
+
+    private int c()
+    {
+        com.facebook.b.d.d $r0;
+        com.facebook.b.d.i $r1;
+        java.lang.Integer $r2;
+        int $i1;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 = $r0.<com.facebook.b.d.d: com.facebook.b.d.i b>;
+        $r2 = virtualinvoke $r1.<com.facebook.b.d.i: java.lang.Integer b()>();
+        $i1 = virtualinvoke $r2.<java.lang.Integer: int intValue()>();
+        if $i1 != -1 goto label0;
+
+        return 0;
+
+     label0:
+        if $i1 > 528000 goto label1;
+
+        return 2008;
+
+     label1:
+        if $i1 > 620000 goto label2;
+
+        return 2009;
+
+     label2:
+        if $i1 > 1020000 goto label3;
+
+        return 2010;
+
+     label3:
+        if $i1 > 1220000 goto label4;
+
+        return 2011;
+
+     label4:
+        if $i1 > 1520000 goto label5;
+
+        return 2012;
+
+     label5:
+        if $i1 > 2020000 goto label6;
+
+        return 2013;
+
+     label6:
+        return 2014;
+    }
+
+    private int d()
+    {
+        com.facebook.b.d.d $r0;
+        com.facebook.b.d.i $r1;
+        int $i1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 = $r0.<com.facebook.b.d.d: com.facebook.b.d.i b>;
+        $i1 = virtualinvoke $r1.<com.facebook.b.d.i: int a()>();
+        if $i1 != 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        if $i1 != 1 goto label2;
+
+        $z0 = staticinvoke <com.facebook.b.d.d: boolean f()>();
+        if $z0 != 0 goto label0;
+
+        return 2008;
+
+     label2:
+        if $i1 > 3 goto label3;
+
+        return 2011;
+
+     label3:
+        return 2012;
+    }
+
+    private int e()
+    {
+        com.facebook.b.d.d $r0;
+        com.facebook.b.d.c $r1;
+        long $l1;
+        byte $b2;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 = $r0.<com.facebook.b.d.d: com.facebook.b.d.c a>;
+        $l1 = virtualinvoke $r1.<com.facebook.b.d.c: long a()>();
+        $b2 = $l1 cmp 0L;
+        if $b2 != 0 goto label0;
+
+        return 0;
+
+     label0:
+        $b2 = $l1 cmp 201326592L;
+        if $b2 > 0 goto label1;
+
+        return 2008;
+
+     label1:
+        $b2 = $l1 cmp 304087040L;
+        if $b2 > 0 goto label2;
+
+        return 2009;
+
+     label2:
+        $b2 = $l1 cmp 536870912L;
+        if $b2 > 0 goto label3;
+
+        return 2010;
+
+     label3:
+        $b2 = $l1 cmp 1073741824L;
+        if $b2 > 0 goto label4;
+
+        return 2011;
+
+     label4:
+        $b2 = $l1 cmp 1610612736L;
+        if $b2 > 0 goto label5;
+
+        return 2012;
+
+     label5:
+        $b2 = $l1 cmp 2147483648L;
+        if $b2 > 0 goto label6;
+
+        return 2013;
+
+     label6:
+        return 2014;
+    }
+
+    private static boolean f()
+    {
+        java.lang.String $r0;
+        boolean $z0;
+
+        $r0 = <android.os.Build: java.lang.String FINGERPRINT>;
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("generic");
+        return $z0;
+    }
+
+    public final int a()
+    {
+        com.facebook.b.d.d $r0;
+        java.lang.Integer $r1;
+        int $i0;
+
+        $r0 := @this: com.facebook.b.d.d;
+        $r1 = $r0.<com.facebook.b.d.d: java.lang.Integer c>;
+        if $r1 != null goto label0;
+
+        $i0 = specialinvoke $r0.<com.facebook.b.d.d: int b()>();
+        $r1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r0.<com.facebook.b.d.d: java.lang.Integer c> = $r1;
+
+     label0:
+        $r1 = $r0.<com.facebook.b.d.d: java.lang.Integer c>;
+        $i0 = virtualinvoke $r1.<java.lang.Integer: int intValue()>();
+        return $i0;
+    }
+}

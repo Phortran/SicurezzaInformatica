@@ -1,0 +1,71 @@
+public abstract class com.facebook.rti.a.f.a extends java.lang.Object
+{
+    public static final com.facebook.rti.a.f.a a;
+
+    static void <clinit>()
+    {
+        int $i0;
+        com.facebook.rti.a.f.b $r0;
+        com.facebook.rti.a.f.c $r1;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label1;
+
+        $r0 = new com.facebook.rti.a.f.b;
+        specialinvoke $r0.<com.facebook.rti.a.f.b: void <init>(byte)>(0);
+        <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a> = $r0;
+
+     label0:
+        return;
+
+     label1:
+        $r1 = new com.facebook.rti.a.f.c;
+        specialinvoke $r1.<com.facebook.rti.a.f.c: void <init>(byte)>(0);
+        <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a> = $r1;
+        goto label0;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.a.f.a $r0;
+
+        $r0 := @this: com.facebook.rti.a.f.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void a(android.content.SharedPreferences$Editor)
+    {
+        android.content.SharedPreferences$Editor $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.SharedPreferences$Editor;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 9 goto label1;
+
+        interfaceinvoke $r0.<android.content.SharedPreferences$Editor: void apply()>();
+
+     label0:
+        return;
+
+     label1:
+        interfaceinvoke $r0.<android.content.SharedPreferences$Editor: boolean commit()>();
+        goto label0;
+    }
+
+    public final android.content.SharedPreferences a(android.content.Context, java.lang.String)
+    {
+        com.facebook.rti.a.f.a $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        android.content.SharedPreferences $r3;
+
+        $r0 := @this: com.facebook.rti.a.f.a;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        $r3 = virtualinvoke $r0.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String,boolean)>($r1, $r2, 0);
+        return $r3;
+    }
+
+    public abstract android.content.SharedPreferences a(android.content.Context, java.lang.String, boolean);
+}

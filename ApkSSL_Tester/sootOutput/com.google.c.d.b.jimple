@@ -1,0 +1,78 @@
+final class com.google.c.d.b extends com.google.c.b.u
+{
+
+    void <init>()
+    {
+        com.google.c.d.b $r0;
+
+        $r0 := @this: com.google.c.d.b;
+        specialinvoke $r0.<com.google.c.b.u: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.c.d.a)
+    {
+        com.google.c.d.b $r0;
+        com.google.c.d.a $r1;
+        boolean $z0;
+        java.lang.String $r2;
+        int $i1;
+        com.google.c.b.a.g $r3;
+        java.lang.IllegalStateException $r4;
+        java.lang.StringBuilder $r5;
+        com.google.c.d.c $r6;
+
+        $r0 := @this: com.google.c.d.b;
+        $r1 := @parameter0: com.google.c.d.a;
+        $z0 = $r1 instanceof com.google.c.b.a.g;
+        if $z0 == 0 goto label1;
+
+        $r3 = (com.google.c.b.a.g) $r1;
+        virtualinvoke $r3.<com.google.c.b.a.g: void o()>();
+
+     label0:
+        return;
+
+     label1:
+        $i1 = staticinvoke <com.google.c.d.a: int a(com.google.c.d.a)>($r1);
+        if $i1 != 0 goto label2;
+
+        $i1 = staticinvoke <com.google.c.d.a: int b(com.google.c.d.a)>($r1);
+
+     label2:
+        if $i1 != 13 goto label3;
+
+        staticinvoke <com.google.c.d.a: int a(com.google.c.d.a,int)>($r1, 9);
+        goto label0;
+
+     label3:
+        if $i1 != 12 goto label4;
+
+        staticinvoke <com.google.c.d.a: int a(com.google.c.d.a,int)>($r1, 8);
+        goto label0;
+
+     label4:
+        if $i1 != 14 goto label5;
+
+        staticinvoke <com.google.c.d.a: int a(com.google.c.d.a,int)>($r1, 10);
+        goto label0;
+
+     label5:
+        $r4 = new java.lang.IllegalStateException;
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Expected a name but was ");
+        $r6 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" at line ");
+        $i1 = staticinvoke <com.google.c.d.a: int c(com.google.c.d.a)>($r1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" column ");
+        $i1 = staticinvoke <com.google.c.d.a: int d(com.google.c.d.a)>($r1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r2 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r2);
+        throw $r4;
+    }
+}

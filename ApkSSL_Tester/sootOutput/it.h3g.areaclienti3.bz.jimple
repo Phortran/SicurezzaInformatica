@@ -1,0 +1,96 @@
+class it.h3g.areaclienti3.bz extends it.h3g.areaclienti3.remoteservice.a
+{
+    final it.h3g.areaclienti3.ResetPasswordActivity a;
+
+    void <init>(it.h3g.areaclienti3.ResetPasswordActivity)
+    {
+        it.h3g.areaclienti3.bz $r0;
+        it.h3g.areaclienti3.ResetPasswordActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.bz;
+        $r1 := @parameter0: it.h3g.areaclienti3.ResetPasswordActivity;
+        $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a> = $r1;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.bz $r0;
+        it.h3g.areaclienti3.ResetPasswordActivity $r1;
+        java.lang.String $r2, $r5;
+        it.h3g.areaclienti3.remoteservice.IService $r3;
+        boolean $z0;
+        android.os.Bundle $r4;
+        java.lang.Throwable $r6;
+        java.lang.InterruptedException $r7;
+        java.lang.RuntimeException $r8;
+        android.os.RemoteException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.bz;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a>;
+        $r3 = $r1.<it.h3g.areaclienti3.ResetPasswordActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r3 != null goto label1;
+
+        $r1 = $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a>;
+        $z0 = $r1.<it.h3g.areaclienti3.ResetPasswordActivity: boolean E>;
+        if $z0 == 0 goto label4;
+
+     label1:
+        $r4 = new android.os.Bundle;
+
+     label2:
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r1 = $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a>;
+        $r5 = $r1.<it.h3g.areaclienti3.ResetPasswordActivity: java.lang.String J>;
+        virtualinvoke $r4.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r5);
+        $r1 = $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a>;
+        $r2 = $r1.<it.h3g.areaclienti3.ResetPasswordActivity: java.lang.String K>;
+        virtualinvoke $r4.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("channel", $r2);
+        $r1 = $r0.<it.h3g.areaclienti3.bz: it.h3g.areaclienti3.ResetPasswordActivity a>;
+        $r3 = $r1.<it.h3g.areaclienti3.ResetPasswordActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r3.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("resetPasswordFormAction", $r4);
+
+     label3:
+        return;
+
+     label4:
+        entermonitor $r0;
+
+     label5:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("ResetPassword", "Try to connect...");
+        virtualinvoke $r0.<java.lang.Object: void wait(long)>(500L);
+
+     label6:
+        exitmonitor $r0;
+        goto label0;
+
+     label7:
+        $r6 := @caughtexception;
+        exitmonitor $r0;
+
+     label8:
+        throw $r6;
+
+     label9:
+        $r7 := @caughtexception;
+
+     label10:
+        $r8 = new java.lang.RuntimeException;
+        specialinvoke $r8.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r7);
+        throw $r8;
+
+     label11:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("ResetPassword", "Error during start action");
+        goto label3;
+
+        catch android.os.RemoteException from label2 to label3 with label11;
+        catch java.lang.InterruptedException from label5 to label6 with label9;
+        catch java.lang.Throwable from label5 to label6 with label7;
+        catch java.lang.Throwable from label6 to label8 with label7;
+        catch java.lang.Throwable from label10 to label11 with label7;
+    }
+}

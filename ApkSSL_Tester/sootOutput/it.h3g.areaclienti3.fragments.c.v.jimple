@@ -1,0 +1,72 @@
+class it.h3g.areaclienti3.fragments.c.v extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.fragments.c.u a;
+
+    void <init>(it.h3g.areaclienti3.fragments.c.u)
+    {
+        it.h3g.areaclienti3.fragments.c.v $r0;
+        it.h3g.areaclienti3.fragments.c.u $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.c.v;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.c.u;
+        $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.fragments.c.v $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.fragments.c.u $r2;
+        android.os.Bundle $r3;
+        java.lang.String $r4, $r6;
+        int $i0;
+        it.h3g.areaclienti3.d.aj $r5;
+        it.h3g.areaclienti3.d.aa $r7;
+        it.h3g.areaclienti3.fragments.d $r8;
+        java.util.ArrayList $r9;
+        java.lang.Object $r10;
+        java.lang.String[] $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.c.v;
+        $r1 := @parameter0: android.view.View;
+        $r3 = new android.os.Bundle;
+        specialinvoke $r3.<android.os.Bundle: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r5 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.d.aj a>;
+        $i0 = virtualinvoke $r5.<it.h3g.areaclienti3.d.aj: int u()>();
+        if $i0 != 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r5 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.d.aj a>;
+        $r6 = virtualinvoke $r5.<it.h3g.areaclienti3.d.aj: java.lang.String C()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("optionCode", $r6);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r7 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.d.aa c>;
+        $r4 = virtualinvoke $r7.<it.h3g.areaclienti3.d.aa: java.lang.String l()>();
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("condizione", $r4);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r7 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.d.aa c>;
+        $r4 = virtualinvoke $r7.<it.h3g.areaclienti3.d.aa: java.lang.String k()>();
+        virtualinvoke $r3.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("combinazione", $r4);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r8 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r8.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("confirmOptionAction", $r3, 1);
+        return;
+
+     label1:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $r7 = $r2.<it.h3g.areaclienti3.fragments.c.u: it.h3g.areaclienti3.d.aa c>;
+        $r9 = virtualinvoke $r7.<it.h3g.areaclienti3.d.aa: java.util.ArrayList m()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.c.v: it.h3g.areaclienti3.fragments.c.u a>;
+        $i0 = $r2.<it.h3g.areaclienti3.fragments.c.u: int b>;
+        $r10 = virtualinvoke $r9.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r6 = (java.lang.String) $r10;
+        $r12 = virtualinvoke $r6.<java.lang.String: java.lang.String[] split(java.lang.String)>("#");
+        $r6 = $r12[0];
+        goto label0;
+    }
+}

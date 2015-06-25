@@ -1,0 +1,3686 @@
+public class it.h3g.areaclienti3.k.a extends java.lang.Object
+{
+    private static it.h3g.areaclienti3.k.a a;
+    private java.util.ArrayList b;
+    private java.util.ArrayList c;
+    private java.util.ArrayList d;
+    private java.util.ArrayList e;
+    private it.h3g.areaclienti3.d.bd f;
+    private it.h3g.areaclienti3.d.bf g;
+
+    private void <init>()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.util.ArrayList $r1;
+        it.h3g.areaclienti3.d.bd $r2;
+        it.h3g.areaclienti3.d.bf $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList b> = $r1;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList c> = $r1;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList d> = $r1;
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList e> = $r1;
+        $r2 = new it.h3g.areaclienti3.d.bd;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.bd: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f> = $r2;
+        $r3 = new it.h3g.areaclienti3.d.bf;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.bf: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g> = $r3;
+        return;
+    }
+
+    public static java.util.ArrayList a(android.content.Context)
+    {
+        android.content.Context $r0;
+        org.xmlpull.v1.XmlPullParserFactory $r1;
+        boolean $z0;
+        java.lang.Object $r2, $r3, $r5, $r12, $r13;
+        java.lang.String $r4, $r10, $r14;
+        java.util.ArrayList $r7, r26;
+        org.xmlpull.v1.XmlPullParser $r8;
+        int $i0, $i2;
+        android.content.res.AssetManager $r9;
+        java.io.InputStream $r11;
+        java.lang.Boolean $r16;
+        java.lang.Integer $r17;
+        java.lang.StringBuilder $r18, r30;
+        java.io.IOException $r19;
+        java.lang.Exception $r20, $r22, $r24, $r25;
+        org.xmlpull.v1.XmlPullParserException $r21;
+        java.lang.Throwable $r23;
+        java.util.zip.GZIPInputStream r27;
+        it.h3g.areaclienti3.d.ac r28;
+        it.h3g.areaclienti3.d.ad r29;
+
+        $r0 := @parameter0: android.content.Context;
+        $r2 = null;
+        r26 = new java.util.ArrayList;
+        $r7 = r26;
+        specialinvoke r26.<java.util.ArrayList: void <init>()>();
+
+     label0:
+        $r1 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r8 = virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        $r9 = virtualinvoke $r0.<android.content.Context: android.content.res.AssetManager getAssets()>();
+        $r11 = virtualinvoke $r9.<android.content.res.AssetManager: java.io.InputStream open(java.lang.String)>("gzip/menugz");
+
+     label1:
+        $r3 = $r11;
+
+     label2:
+        r27 = new java.util.zip.GZIPInputStream;
+        $r12 = r27;
+        $r11 = (java.io.InputStream) $r11;
+
+     label3:
+        specialinvoke r27.<java.util.zip.GZIPInputStream: void <init>(java.io.InputStream)>($r11);
+
+     label4:
+        $r11 = (java.io.InputStream) r27;
+
+     label5:
+        interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r11, "UTF-8");
+        $i0 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+
+     label6:
+        $r4 = "";
+        $r5 = null;
+        $i2 = $i0;
+        $r13 = null;
+
+     label7:
+        if $i2 != 1 goto label10;
+
+     label8:
+        r27 = (java.util.zip.GZIPInputStream) $r12;
+        virtualinvoke r27.<java.util.zip.GZIPInputStream: void close()>();
+        $r11 = (java.io.InputStream) $r3;
+        virtualinvoke $r11.<java.io.InputStream: void close()>();
+
+     label9:
+        return $r7;
+
+     label10:
+        if $i2 != 0 goto label13;
+
+     label11:
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLMenu", "Start document");
+        $r10 = $r4;
+
+     label12:
+        $r4 = $r10;
+        $i2 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label7;
+
+     label13:
+        if $i2 != 1 goto label14;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLMenu", "End document");
+        $r10 = $r4;
+        goto label12;
+
+     label14:
+        if $i2 != 2 goto label17;
+
+        $r4 = "";
+        $r10 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("group");
+        if $z0 == 0 goto label15;
+
+        r28 = new it.h3g.areaclienti3.d.ac;
+        $r2 = r28;
+        specialinvoke r28.<it.h3g.areaclienti3.d.ac: void <init>()>();
+
+     label15:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("items");
+        if $z0 == 0 goto label16;
+
+        r26 = new java.util.ArrayList;
+        $r13 = r26;
+        specialinvoke r26.<java.util.ArrayList: void <init>()>();
+
+     label16:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("item");
+        if $z0 == 0 goto label57;
+
+        r29 = new it.h3g.areaclienti3.d.ad;
+        specialinvoke r29.<it.h3g.areaclienti3.d.ad: void <init>()>();
+        $r5 = r29;
+        $r10 = "";
+        goto label12;
+
+     label17:
+        if $i2 != 3 goto label33;
+
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("groupTitle");
+        if $z0 == 0 goto label18;
+
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void a(java.lang.String)>($r4);
+
+     label18:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("groupIcon");
+        if $z0 == 0 goto label19;
+
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void c(java.lang.String)>($r4);
+
+     label19:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("groupName");
+        if $z0 == 0 goto label20;
+
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void b(java.lang.String)>($r4);
+
+     label20:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("groupVisibleCons");
+        if $z0 == 0 goto label21;
+
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r16.<java.lang.Boolean: boolean booleanValue()>();
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void a(boolean)>($z0);
+
+     label21:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("groupVisibleBiz");
+        if $z0 == 0 goto label22;
+
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r16.<java.lang.Boolean: boolean booleanValue()>();
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void b(boolean)>($z0);
+
+     label22:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("icon");
+        if $z0 == 0 goto label23;
+
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void a(java.lang.String)>($r4);
+
+     label23:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("title");
+        if $z0 == 0 goto label24;
+
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void b(java.lang.String)>($r4);
+
+     label24:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("name");
+        if $z0 == 0 goto label25;
+
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void d(java.lang.String)>($r4);
+
+     label25:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("fragment");
+        if $z0 == 0 goto label26;
+
+        $r17 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(java.lang.String)>($r4);
+        $i2 = virtualinvoke $r17.<java.lang.Integer: int intValue()>();
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void a(int)>($i2);
+
+     label26:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("sectionId");
+        if $z0 == 0 goto label27;
+
+        $r17 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(java.lang.String)>($r4);
+        $i2 = virtualinvoke $r17.<java.lang.Integer: int intValue()>();
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void b(int)>($i2);
+
+     label27:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("visibilityKey");
+        if $z0 == 0 goto label28;
+
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void c(java.lang.String)>($r4);
+
+     label28:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("visibleCons");
+        if $z0 == 0 goto label29;
+
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r16.<java.lang.Boolean: boolean booleanValue()>();
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void b(boolean)>($z0);
+
+     label29:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("visibleBiz");
+        if $z0 == 0 goto label30;
+
+        $r16 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r16.<java.lang.Boolean: boolean booleanValue()>();
+        r29 = (it.h3g.areaclienti3.d.ad) $r5;
+        virtualinvoke r29.<it.h3g.areaclienti3.d.ad: void c(boolean)>($z0);
+
+     label30:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("item");
+        if $z0 == 0 goto label31;
+
+        r26 = (java.util.ArrayList) $r13;
+        virtualinvoke r26.<java.util.ArrayList: boolean add(java.lang.Object)>($r5);
+
+     label31:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("items");
+        if $z0 == 0 goto label32;
+
+        r28 = (it.h3g.areaclienti3.d.ac) $r2;
+        r26 = (java.util.ArrayList) $r13;
+        virtualinvoke r28.<it.h3g.areaclienti3.d.ac: void a(java.util.ArrayList)>(r26);
+
+     label32:
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("group");
+        if $z0 == 0 goto label57;
+
+        virtualinvoke $r7.<java.util.ArrayList: boolean add(java.lang.Object)>($r2);
+        $r10 = $r4;
+        goto label12;
+
+     label33:
+        if $i2 != 4 goto label57;
+
+        r30 = new java.lang.StringBuilder;
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke r30.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14);
+        $r14 = interfaceinvoke $r8.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r18 = virtualinvoke r30.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r14 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label34:
+        $r10 = $r14;
+        goto label12;
+
+     label35:
+        $r19 := @caughtexception;
+        $r12 = null;
+
+     label36:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("parseXMLMenu", "IOException", $r19);
+
+     label37:
+        r27 = (java.util.zip.GZIPInputStream) $r12;
+        virtualinvoke r27.<java.util.zip.GZIPInputStream: void close()>();
+        $r11 = (java.io.InputStream) $r2;
+        virtualinvoke $r11.<java.io.InputStream: void close()>();
+
+     label38:
+        return $r7;
+
+     label39:
+        $r20 := @caughtexception;
+        return $r7;
+
+     label40:
+        $r21 := @caughtexception;
+        $r12 = null;
+        $r3 = null;
+
+     label41:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("parseXMLMenu", "XmlPullParserException", $r21);
+
+     label42:
+        r27 = (java.util.zip.GZIPInputStream) $r12;
+        virtualinvoke r27.<java.util.zip.GZIPInputStream: void close()>();
+        $r11 = (java.io.InputStream) $r3;
+        virtualinvoke $r11.<java.io.InputStream: void close()>();
+
+     label43:
+        return $r7;
+
+     label44:
+        $r22 := @caughtexception;
+        return $r7;
+
+     label45:
+        $r23 := @caughtexception;
+        $r12 = null;
+        $r3 = null;
+
+     label46:
+        r27 = (java.util.zip.GZIPInputStream) $r12;
+        virtualinvoke r27.<java.util.zip.GZIPInputStream: void close()>();
+        $r11 = (java.io.InputStream) $r3;
+        virtualinvoke $r11.<java.io.InputStream: void close()>();
+
+     label47:
+        throw $r23;
+
+     label48:
+        $r24 := @caughtexception;
+        return $r7;
+
+     label49:
+        $r25 := @caughtexception;
+        goto label47;
+
+     label50:
+        $r23 := @caughtexception;
+        $r12 = null;
+        goto label46;
+
+     label51:
+        $r23 := @caughtexception;
+        goto label46;
+
+     label52:
+        $r23 := @caughtexception;
+        $r3 = $r2;
+        goto label46;
+
+     label53:
+        $r21 := @caughtexception;
+        $r12 = null;
+        goto label41;
+
+     label54:
+        $r21 := @caughtexception;
+        goto label41;
+
+     label55:
+        $r19 := @caughtexception;
+        $r12 = null;
+        $r2 = $r3;
+        goto label36;
+
+     label56:
+        $r19 := @caughtexception;
+        $r2 = $r3;
+        goto label36;
+
+     label57:
+        $r10 = $r4;
+        goto label12;
+
+        catch java.io.IOException from label0 to label1 with label35;
+        catch org.xmlpull.v1.XmlPullParserException from label0 to label1 with label40;
+        catch java.lang.Throwable from label0 to label1 with label45;
+        catch java.io.IOException from label3 to label4 with label55;
+        catch org.xmlpull.v1.XmlPullParserException from label3 to label4 with label53;
+        catch java.lang.Throwable from label2 to label4 with label50;
+        catch java.io.IOException from label5 to label6 with label56;
+        catch org.xmlpull.v1.XmlPullParserException from label5 to label6 with label54;
+        catch java.lang.Throwable from label4 to label6 with label51;
+        catch java.lang.Exception from label8 to label9 with label48;
+        catch java.io.IOException from label11 to label34 with label56;
+        catch org.xmlpull.v1.XmlPullParserException from label11 to label34 with label54;
+        catch java.lang.Throwable from label11 to label34 with label51;
+        catch java.lang.Throwable from label36 to label37 with label52;
+        catch java.lang.Exception from label37 to label38 with label39;
+        catch java.lang.Throwable from label41 to label42 with label51;
+        catch java.lang.Exception from label42 to label43 with label44;
+        catch java.lang.Exception from label46 to label47 with label49;
+    }
+
+    private java.util.ArrayList a(org.w3c.dom.Element)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        org.w3c.dom.Element $r1;
+        org.w3c.dom.Node $r2, $r3;
+        int $i0, $i2, $i3, $i5, $i6;
+        java.lang.String $r4, $r12, $r13;
+        org.w3c.dom.NodeList $r5, $r7, $r10, $r16;
+        java.util.ArrayList $r6, $r9;
+        it.h3g.areaclienti3.d.at $r8;
+        it.h3g.areaclienti3.d.c $r11;
+        short $s4;
+        boolean $z0;
+        java.lang.Integer $r14;
+        java.lang.StringBuilder $r15;
+        javax.xml.parsers.FactoryConfigurationError $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: org.w3c.dom.Element;
+        $r6 = new java.util.ArrayList;
+        specialinvoke $r6.<java.util.ArrayList: void <init>()>();
+
+     label0:
+        $r7 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i0 = 0;
+
+     label1:
+        $i3 = interfaceinvoke $r7.<org.w3c.dom.NodeList: int getLength()>();
+        if $i0 < $i3 goto label2;
+
+        return $r6;
+
+     label2:
+        $r3 = interfaceinvoke $r7.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i0);
+        $s4 = interfaceinvoke $r3.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label4;
+
+        $r8 = new it.h3g.areaclienti3.d.at;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.at: void <init>()>();
+        $r9 = new java.util.ArrayList;
+        specialinvoke $r9.<java.util.ArrayList: void <init>()>();
+        $r1 = (org.w3c.dom.Element) $r3;
+        $r4 = interfaceinvoke $r1.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("id");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void a(java.lang.String)>($r4);
+        $r10 = interfaceinvoke $r3.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $i2 = 0;
+
+     label3:
+        $i3 = interfaceinvoke $r10.<org.w3c.dom.NodeList: int getLength()>();
+        if $i2 < $i3 goto label5;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void a(java.util.ArrayList)>($r9);
+        virtualinvoke $r6.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label5:
+        $r2 = interfaceinvoke $r10.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i2);
+        $s4 = interfaceinvoke $r2.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label15;
+
+        $r1 = (org.w3c.dom.Element) $r2;
+        $r4 = interfaceinvoke $r1.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r3 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r3 == null goto label17;
+
+        $r12 = "";
+        $i3 = 0;
+
+     label6:
+        $r5 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i5 = interfaceinvoke $r5.<org.w3c.dom.NodeList: int getLength()>();
+        if $i3 < $i5 goto label16;
+
+     label7:
+        $r13 = "mandatory";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label8;
+
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r12);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void a(boolean)>($z0);
+
+     label8:
+        $r13 = "text";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void b(java.lang.String)>($r12);
+
+     label9:
+        $r13 = "comment";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void c(java.lang.String)>($r12);
+
+     label10:
+        $r13 = "typology1";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label11;
+
+        $i5 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i5);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void a(java.lang.Integer)>($r14);
+
+     label11:
+        $r13 = "typology2";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label12;
+
+        $i5 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i5);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void b(java.lang.Integer)>($r14);
+
+     label12:
+        $r13 = "other";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label13;
+
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r12);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.at: void b(boolean)>($z0);
+
+     label13:
+        $r13 = "answer";
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label15;
+
+        $r11 = new it.h3g.areaclienti3.d.c;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.c: void <init>()>();
+        $r1 = (org.w3c.dom.Element) $r2;
+        $r13 = interfaceinvoke $r1.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("id");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.c: void a(java.lang.String)>($r13);
+        $r5 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i5 = 0;
+
+     label14:
+        $i3 = interfaceinvoke $r5.<org.w3c.dom.NodeList: int getLength()>();
+        if $i5 < $i3 goto label18;
+
+        virtualinvoke $r9.<java.util.ArrayList: boolean add(java.lang.Object)>($r11);
+
+     label15:
+        $i2 = $i2 + 1;
+        goto label3;
+
+     label16:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r12);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r13);
+        $r5 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r3 = interfaceinvoke $r5.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i3);
+        $r13 = interfaceinvoke $r3.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
+        $i3 = $i3 + 1;
+        $r12 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label6;
+
+     label17:
+        $r4 = null;
+        $r12 = "";
+        goto label7;
+
+     label18:
+        $r3 = interfaceinvoke $r5.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i5);
+        $s4 = interfaceinvoke $r3.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label22;
+
+        $r1 = (org.w3c.dom.Element) $r3;
+        $r13 = interfaceinvoke $r1.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r3 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r3 == null goto label25;
+
+        $r12 = "";
+        $i3 = 0;
+
+     label19:
+        $r16 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i6 = interfaceinvoke $r16.<org.w3c.dom.NodeList: int getLength()>();
+        if $i3 < $i6 goto label23;
+
+     label20:
+        $r4 = "text";
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r13);
+        if $z0 == 0 goto label21;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.c: void b(java.lang.String)>($r12);
+
+     label21:
+        $r4 = "gotoPage";
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r13);
+        if $z0 == 0 goto label22;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.c: void c(java.lang.String)>($r12);
+
+     label22:
+        $i5 = $i5 + 1;
+        goto label14;
+
+     label23:
+        $r15 = new java.lang.StringBuilder;
+        $r12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r12);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r12);
+        $r16 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r3 = interfaceinvoke $r16.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i3);
+        $r12 = interfaceinvoke $r3.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r12 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label24:
+        $i3 = $i3 + 1;
+        goto label19;
+
+     label25:
+        $r13 = null;
+        $r12 = "";
+        goto label20;
+
+     label26:
+        $r17 := @caughtexception;
+        $r13 = virtualinvoke $r17.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r13);
+        return $r6;
+
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label24 with label26;
+    }
+
+    private static void a(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n");
+        $r0 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("XMLParser", $r0);
+        return;
+    }
+
+    private it.h3g.areaclienti3.d.af b(org.w3c.dom.Element)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        org.w3c.dom.Element $r1;
+        int $i0, $i3;
+        it.h3g.areaclienti3.d.af $r2;
+        org.w3c.dom.NodeList $r3;
+        short $s1;
+        org.w3c.dom.Node $r4;
+        java.lang.String $r5, $r6, $r7;
+        boolean $z0;
+        javax.xml.parsers.FactoryConfigurationError $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: org.w3c.dom.Element;
+        $r2 = new it.h3g.areaclienti3.d.af;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.af: void <init>()>();
+
+     label0:
+        $r3 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i0 = 0;
+
+     label1:
+        $i3 = interfaceinvoke $r3.<org.w3c.dom.NodeList: int getLength()>();
+        if $i0 < $i3 goto label2;
+
+        return $r2;
+
+     label2:
+        $r4 = interfaceinvoke $r3.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i0);
+        $s1 = interfaceinvoke $r4.<org.w3c.dom.Node: short getNodeType()>();
+        if $s1 != 1 goto label3;
+
+        $r1 = (org.w3c.dom.Element) $r4;
+        $r5 = interfaceinvoke $r1.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r4 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r4 == null goto label3;
+
+        $r4 = interfaceinvoke $r1.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        $r6 = interfaceinvoke $r4.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r7 = "activeLabel";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void b(java.lang.String)>($r6);
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label4:
+        $r7 = "activeMessage";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label7;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void c(java.lang.String)>($r6);
+
+     label5:
+        goto label3;
+
+     label6:
+        $r8 := @caughtexception;
+        $r7 = virtualinvoke $r8.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r7);
+        return $r2;
+
+     label7:
+        $r7 = "okMessage";
+
+     label8:
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void d(java.lang.String)>($r6);
+        goto label3;
+
+     label9:
+        $r7 = "koMessage";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void e(java.lang.String)>($r6);
+        goto label3;
+
+     label10:
+        $r7 = "noActiveLabel";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void f(java.lang.String)>($r6);
+        goto label3;
+
+     label11:
+        $r7 = "noActiveMessage";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label12;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void g(java.lang.String)>($r6);
+        goto label3;
+
+     label12:
+        $r7 = "courtesyMessage";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void h(java.lang.String)>($r6);
+        goto label3;
+
+     label13:
+        $r7 = "description";
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.af: void i(java.lang.String)>($r6);
+
+     label14:
+        goto label3;
+
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label5 with label6;
+        catch javax.xml.parsers.FactoryConfigurationError from label8 to label14 with label6;
+    }
+
+    private static java.io.InputStream b(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.net.URL $r1;
+        java.net.URLConnection $r2;
+        java.net.HttpURLConnection $r3;
+        java.io.InputStream $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = new java.net.URL;
+        specialinvoke $r1.<java.net.URL: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r1.<java.net.URL: java.net.URLConnection openConnection()>();
+        $r3 = (java.net.HttpURLConnection) $r2;
+        virtualinvoke $r3.<java.net.HttpURLConnection: void setConnectTimeout(int)>(6000);
+        $r4 = virtualinvoke $r3.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>();
+        return $r4;
+    }
+
+    public static it.h3g.areaclienti3.d.ag f(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        org.xmlpull.v1.XmlPullParserFactory $r1;
+        boolean $z0, $z1;
+        org.xmlpull.v1.XmlPullParser $r3;
+        java.lang.String $r4, $r12, $r13;
+        java.util.ArrayList $r5, $r6, $r7;
+        it.h3g.areaclienti3.d.c $r8;
+        it.h3g.areaclienti3.d.af $r9;
+        it.h3g.areaclienti3.d.at $r10;
+        it.h3g.areaclienti3.d.ag $r11;
+        int $i1;
+        java.lang.Boolean $r14;
+        java.lang.Integer $r15;
+        java.lang.StringBuilder $r16;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r3 = virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r0, null);
+        $r4 = "";
+        $r5 = null;
+        $r6 = null;
+        $z1 = 0;
+        $r7 = null;
+        $r8 = null;
+        $r9 = null;
+        $r10 = null;
+        $r11 = null;
+        $i1 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+
+     label0:
+        if $i1 != 1 goto label1;
+
+        return $r11;
+
+     label1:
+        if $i1 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseDetailNewsAndPoll", "Start document");
+
+     label2:
+        $i1 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label0;
+
+     label3:
+        if $i1 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseDetailNewsAndPoll", "End document");
+        goto label2;
+
+     label4:
+        if $i1 != 2 goto label12;
+
+        $r4 = "";
+        $r12 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r12.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("news");
+        if $z0 == 0 goto label5;
+
+        $r11 = new it.h3g.areaclienti3.d.ag;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.ag: void <init>()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("news");
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "itemId");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void b(java.lang.String)>($r13);
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "read");
+        $r14 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r13);
+        $z0 = virtualinvoke $r14.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(boolean)>($z0);
+
+     label5:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("poll");
+        if $z0 == 0 goto label6;
+
+        $r11 = new it.h3g.areaclienti3.d.ag;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.ag: void <init>()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("poll");
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "itemId");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void b(java.lang.String)>($r13);
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "read");
+        $r14 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r13);
+        $z0 = virtualinvoke $r14.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(boolean)>($z0);
+
+     label6:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("option");
+        if $z0 == 0 goto label7;
+
+        $r9 = new it.h3g.areaclienti3.d.af;
+        specialinvoke $r9.<it.h3g.areaclienti3.d.af: void <init>()>();
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "code");
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void a(java.lang.String)>($r13);
+
+     label7:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("imageUrl");
+        if $z0 == 0 goto label8;
+
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "horiz");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void j(java.lang.String)>($r13);
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "vertical");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void k(java.lang.String)>($r13);
+
+     label8:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("page");
+        if $z0 == 0 goto label9;
+
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void o(java.lang.String)>($r13);
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "last");
+        $r14 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r13);
+        $z0 = virtualinvoke $r14.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void b(boolean)>($z0);
+
+     label9:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("question");
+        if $z0 == 0 goto label10;
+
+        $r7 = new java.util.ArrayList;
+        specialinvoke $r7.<java.util.ArrayList: void <init>()>();
+        $r10 = new it.h3g.areaclienti3.d.at;
+        specialinvoke $r10.<it.h3g.areaclienti3.d.at: void <init>()>();
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void a(java.lang.String)>($r13);
+
+     label10:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("answer");
+        if $z0 == 0 goto label11;
+
+        $z1 = 1;
+        $r8 = new it.h3g.areaclienti3.d.c;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.c: void <init>()>();
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.c: void a(java.lang.String)>($r13);
+
+     label11:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("params");
+        if $z0 == 0 goto label2;
+
+        $r6 = new java.util.ArrayList;
+        specialinvoke $r6.<java.util.ArrayList: void <init>()>();
+        goto label2;
+
+     label12:
+        if $i1 != 3 goto label45;
+
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("error");
+        if $z0 == 0 goto label14;
+
+        if $r11 != null goto label13;
+
+        $r11 = new it.h3g.areaclienti3.d.ag;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.ag: void <init>()>();
+
+     label13:
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void n(java.lang.String)>($r4);
+
+     label14:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("title");
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void c(java.lang.String)>($r4);
+
+     label15:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("abs");
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void d(java.lang.String)>($r4);
+
+     label16:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("body");
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void e(java.lang.String)>($r4);
+
+     label17:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("refDate");
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void f(java.lang.String)>($r4);
+
+     label18:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("rangeFromDate");
+        if $z0 == 0 goto label19;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void g(java.lang.String)>($r4);
+
+     label19:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("rangeToDate");
+        if $z0 == 0 goto label20;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void h(java.lang.String)>($r4);
+
+     label20:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("imageUrl");
+        if $z0 == 0 goto label21;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void i(java.lang.String)>($r4);
+
+     label21:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("typology");
+        if $z0 == 0 goto label22;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void l(java.lang.String)>($r4);
+
+     label22:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("content");
+        if $z0 == 0 goto label23;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void m(java.lang.String)>($r4);
+
+     label23:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("mandatory");
+        if $z0 == 0 goto label24;
+
+        $r14 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r14.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void a(boolean)>($z0);
+
+     label24:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("text");
+        if $z0 == 0 goto label25;
+
+        if $z1 == 0 goto label44;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.c: void b(java.lang.String)>($r4);
+
+     label25:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("comment");
+        if $z0 == 0 goto label26;
+
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void c(java.lang.String)>($r4);
+
+     label26:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("typology1");
+        if $z0 == 0 goto label27;
+
+        $r15 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(java.lang.String)>($r4);
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void a(java.lang.Integer)>($r15);
+
+     label27:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("typology2");
+        if $z0 == 0 goto label28;
+
+        $r15 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(java.lang.String)>($r4);
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void b(java.lang.Integer)>($r15);
+
+     label28:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("other");
+        if $z0 == 0 goto label29;
+
+        $r14 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r4);
+        $z0 = virtualinvoke $r14.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void b(boolean)>($z0);
+
+     label29:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("gotoPage");
+        if $z0 == 0 goto label30;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.c: void c(java.lang.String)>($r4);
+
+     label30:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("answer");
+        if $z0 == 0 goto label31;
+
+        $z1 = 0;
+        virtualinvoke $r7.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+     label31:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("question");
+        if $z0 == 0 goto label32;
+
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void a(java.util.ArrayList)>($r7);
+        virtualinvoke $r5.<java.util.ArrayList: boolean add(java.lang.Object)>($r10);
+
+     label32:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("page");
+        if $z0 == 0 goto label33;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(java.util.ArrayList)>($r5);
+
+     label33:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("param");
+        if $z0 == 0 goto label34;
+
+        virtualinvoke $r6.<java.util.ArrayList: boolean add(java.lang.Object)>($r4);
+
+     label34:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("params");
+        if $z0 == 0 goto label35;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void b(java.util.ArrayList)>($r6);
+
+     label35:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("option");
+        if $z0 == 0 goto label36;
+
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.ag: void a(it.h3g.areaclienti3.d.af)>($r9);
+
+     label36:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("activeLabel");
+        if $z0 == 0 goto label37;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void b(java.lang.String)>($r4);
+
+     label37:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("activeMessage");
+        if $z0 == 0 goto label38;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void c(java.lang.String)>($r4);
+
+     label38:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("okMessage");
+        if $z0 == 0 goto label39;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void d(java.lang.String)>($r4);
+
+     label39:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("koMessage");
+        if $z0 == 0 goto label40;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void e(java.lang.String)>($r4);
+
+     label40:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("noActiveLabel");
+        if $z0 == 0 goto label41;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void f(java.lang.String)>($r4);
+
+     label41:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("noActiveMessage");
+        if $z0 == 0 goto label42;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void g(java.lang.String)>($r4);
+
+     label42:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("courtesyMessage");
+        if $z0 == 0 goto label43;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void h(java.lang.String)>($r4);
+
+     label43:
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("description");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r9.<it.h3g.areaclienti3.d.af: void i(java.lang.String)>($r4);
+        goto label2;
+
+     label44:
+        virtualinvoke $r10.<it.h3g.areaclienti3.d.at: void b(java.lang.String)>($r4);
+        goto label25;
+
+     label45:
+        if $i1 != 4 goto label2;
+
+        $r16 = new java.lang.StringBuilder;
+        $r13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>($r13);
+        $r13 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
+        $r4 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+    }
+
+    public static it.h3g.areaclienti3.k.a f()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+
+        $r0 = <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a a>;
+        if $r0 != null goto label0;
+
+        $r0 = new it.h3g.areaclienti3.k.a;
+        specialinvoke $r0.<it.h3g.areaclienti3.k.a: void <init>()>();
+        <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a a> = $r0;
+
+     label0:
+        $r0 = <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a a>;
+        return $r0;
+    }
+
+    public static it.h3g.areaclienti3.k.a g()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+
+        $r0 = new it.h3g.areaclienti3.k.a;
+        specialinvoke $r0.<it.h3g.areaclienti3.k.a: void <init>()>();
+        <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a a> = $r0;
+        $r0 = <it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.k.a a>;
+        return $r0;
+    }
+
+    public static java.util.ArrayList h()
+    {
+        org.xmlpull.v1.XmlPullParserFactory $r0;
+        boolean $z0;
+        java.util.ArrayList $r2;
+        org.xmlpull.v1.XmlPullParser $r3;
+        java.lang.String $r4, $r7, $r8;
+        java.io.InputStream $r5;
+        it.h3g.areaclienti3.d.bp $r6;
+        int $i2;
+        java.lang.StringBuilder $r9;
+
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r0.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r3 = virtualinvoke $r0.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        $r5 = staticinvoke <it.h3g.areaclienti3.k.a: java.io.InputStream b(java.lang.String)>("https://areaclienti3.tre.it/widget/Servizi/services/InitApp");
+        interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r5, null);
+        $r4 = "";
+        $r6 = null;
+        $i2 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+
+     label0:
+        if $i2 != 1 goto label1;
+
+        return $r2;
+
+     label1:
+        if $i2 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlTranscoding", "Start document");
+        $r7 = $r4;
+
+     label2:
+        $i2 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: int next()>();
+        $r4 = $r7;
+        goto label0;
+
+     label3:
+        if $i2 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlTranscoding", "End document");
+        $r7 = $r4;
+        goto label2;
+
+     label4:
+        if $i2 != 2 goto label6;
+
+        $r4 = "";
+        $r7 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("f");
+        if $z0 == 0 goto label5;
+
+        $r6 = new it.h3g.areaclienti3.d.bp;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.bp: void <init>()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bp: void a(java.lang.String)>("transcoding");
+
+     label5:
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("splash");
+        if $z0 == 0 goto label11;
+
+        $r6 = new it.h3g.areaclienti3.d.bp;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.bp: void <init>()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bp: void a(java.lang.String)>("splashscreen");
+        $r7 = "";
+        goto label2;
+
+     label6:
+        if $i2 != 3 goto label10;
+
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("f");
+        if $z0 != 0 goto label7;
+
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("splash");
+        if $z0 == 0 goto label8;
+
+     label7:
+        virtualinvoke $r2.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+
+     label8:
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("n");
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bp: void b(java.lang.String)>($r4);
+
+     label9:
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("d");
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.bp: void c(java.lang.String)>($r4);
+        $r7 = $r4;
+        goto label2;
+
+     label10:
+        if $i2 != 4 goto label11;
+
+        $r9 = new java.lang.StringBuilder;
+        $r8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>($r8);
+        $r8 = interfaceinvoke $r3.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r7 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+
+     label11:
+        $r7 = $r4;
+        goto label2;
+    }
+
+    public static it.h3g.areaclienti3.d.j i(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        org.xmlpull.v1.XmlPullParserFactory $r1;
+        boolean $z0;
+        int $i0, $i1;
+        it.h3g.areaclienti3.d.j $r3;
+        java.util.ArrayList $r4;
+        org.xmlpull.v1.XmlPullParser $r5;
+        java.lang.String $r6, $r8, $r9;
+        it.h3g.areaclienti3.d.g $r7;
+        java.lang.Boolean $r10;
+        java.lang.StringBuilder $r11;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r3 = new it.h3g.areaclienti3.d.j;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.j: void <init>()>();
+        $r4 = new java.util.ArrayList;
+        specialinvoke $r4.<java.util.ArrayList: void <init>()>();
+        $r1 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r5 = virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r0, "UTF-8");
+        $r6 = "";
+        $i0 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        $r7 = null;
+
+     label0:
+        if $i0 != 1 goto label1;
+
+        return $r3;
+
+     label1:
+        if $i0 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLBannerPiccolo", "Start document");
+
+     label2:
+        $i0 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label0;
+
+     label3:
+        if $i0 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLBannerPiccolo", "End document");
+        goto label2;
+
+     label4:
+        if $i0 != 2 goto label5;
+
+        $r6 = "";
+        $r8 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("banner");
+        if $z0 == 0 goto label2;
+
+        $r7 = new it.h3g.areaclienti3.d.g;
+        specialinvoke $r7.<it.h3g.areaclienti3.d.g: void <init>()>();
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.g: void a(java.lang.String)>($r9);
+        goto label2;
+
+     label5:
+        if $i0 != 3 goto label12;
+
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("timer");
+        if $z0 == 0 goto label6;
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r6);
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.j: void a(int)>($i1);
+
+     label6:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("random");
+        if $z0 == 0 goto label7;
+
+        $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r6);
+        $z0 = virtualinvoke $r10.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.j: void a(boolean)>($z0);
+
+     label7:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("enableClose");
+        if $z0 == 0 goto label8;
+
+        $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r6);
+        $z0 = virtualinvoke $r10.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.g: void a(boolean)>($z0);
+
+     label8:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("img");
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.g: void b(java.lang.String)>($r6);
+
+     label9:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("link");
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.g: void c(java.lang.String)>($r6);
+
+     label10:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("banner");
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r4.<java.util.ArrayList: boolean add(java.lang.Object)>($r7);
+
+     label11:
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("bannerPiccolo");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.j: void a(java.util.ArrayList)>($r4);
+        goto label2;
+
+     label12:
+        if $i0 != 4 goto label2;
+
+        $r11 = new java.lang.StringBuilder;
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6);
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>($r9);
+        $r9 = interfaceinvoke $r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r6 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+    }
+
+    private void i()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        return;
+    }
+
+    public static it.h3g.areaclienti3.d.h j(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        org.xmlpull.v1.XmlPullParserFactory $r1;
+        boolean $z0;
+        int $i0;
+        it.h3g.areaclienti3.d.h $r3;
+        org.xmlpull.v1.XmlPullParser $r4;
+        java.lang.String $r5, $r7, $r8;
+        it.h3g.areaclienti3.d.i $r6;
+        java.lang.StringBuilder $r9;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r3 = new it.h3g.areaclienti3.d.h;
+        specialinvoke $r3.<it.h3g.areaclienti3.d.h: void <init>()>();
+        $r1 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r4 = virtualinvoke $r1.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r0, "UTF-8");
+        $r5 = "";
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        $r6 = null;
+
+     label0:
+        if $i0 != 1 goto label1;
+
+        return $r3;
+
+     label1:
+        if $i0 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLBannerFilm", "Start document");
+        $r7 = $r5;
+
+     label2:
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int next()>();
+        $r5 = $r7;
+        goto label0;
+
+     label3:
+        if $i0 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXMLBannerFilm", "End document");
+        $r7 = $r5;
+        goto label2;
+
+     label4:
+        if $i0 != 2 goto label8;
+
+        $r5 = "";
+        $r7 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonEnter");
+        if $z0 == 0 goto label5;
+
+        $r6 = new it.h3g.areaclienti3.d.i;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.i: void <init>()>();
+
+     label5:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonRemind");
+        if $z0 == 0 goto label6;
+
+        $r6 = new it.h3g.areaclienti3.d.i;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.i: void <init>()>();
+
+     label6:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonClose");
+        if $z0 == 0 goto label7;
+
+        $r6 = new it.h3g.areaclienti3.d.i;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.i: void <init>()>();
+
+     label7:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("banner");
+        if $z0 == 0 goto label21;
+
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void f(java.lang.String)>($r8);
+        $r7 = "";
+        goto label2;
+
+     label8:
+        if $i0 != 3 goto label20;
+
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("backgroundColor");
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void a(java.lang.String)>($r5);
+
+     label9:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("imageUrlFilm");
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void c(java.lang.String)>($r5);
+
+     label10:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("titolo");
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void b(java.lang.String)>($r5);
+
+     label11:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("link");
+        if $z0 == 0 goto label12;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.i: void a(java.lang.String)>($r5);
+
+     label12:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("label");
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.i: void b(java.lang.String)>($r5);
+
+     label13:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colorBg");
+        if $z0 == 0 goto label14;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.i: void c(java.lang.String)>($r5);
+
+     label14:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colorLabel");
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.i: void d(java.lang.String)>($r5);
+
+     label15:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colorX");
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.i: void e(java.lang.String)>($r5);
+
+     label16:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonEnter");
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void a(it.h3g.areaclienti3.d.i)>($r6);
+        $r6 = null;
+
+     label17:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonRemind");
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void b(it.h3g.areaclienti3.d.i)>($r6);
+        $r6 = null;
+
+     label18:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("buttonClose");
+        if $z0 == 0 goto label19;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void c(it.h3g.areaclienti3.d.i)>($r6);
+        $r6 = null;
+
+     label19:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("error");
+        if $z0 == 0 goto label21;
+
+        virtualinvoke $r3.<it.h3g.areaclienti3.d.h: void e(java.lang.String)>($r5);
+        $r7 = $r5;
+        goto label2;
+
+     label20:
+        if $i0 != 4 goto label21;
+
+        $r9 = new java.lang.StringBuilder;
+        $r8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>($r8);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r7 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+
+     label21:
+        $r7 = $r5;
+        goto label2;
+    }
+
+    public java.util.ArrayList a()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList b>;
+        return $r1;
+    }
+
+    public void a(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        java.util.ArrayList $r3;
+        org.w3c.dom.Node $r4;
+        java.lang.String $r5, $r14, $r15;
+        org.w3c.dom.NodeList $r6, $r7, $r9;
+        int $i1, $i2, $i5, $i6;
+        it.h3g.areaclienti3.d.p $r8;
+        javax.xml.parsers.DocumentBuilderFactory $r10;
+        javax.xml.parsers.DocumentBuilder $r11;
+        org.w3c.dom.Document $r12;
+        org.w3c.dom.Element $r13;
+        short $s4;
+        boolean $z0;
+        java.lang.StringBuilder $r16;
+        org.xml.sax.SAXException $r17;
+        java.io.IOException $r18;
+        javax.xml.parsers.ParserConfigurationException $r19;
+        javax.xml.parsers.FactoryConfigurationError $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+        $r3 = new java.util.ArrayList;
+        specialinvoke $r3.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList b> = $r3;
+
+     label0:
+        $r10 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r11 = virtualinvoke $r10.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r12 = virtualinvoke $r11.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>($r1);
+        $r13 = interfaceinvoke $r12.<org.w3c.dom.Document: org.w3c.dom.Element getDocumentElement()>();
+        $r7 = interfaceinvoke $r13.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i2 = 0;
+
+     label1:
+        $i1 = interfaceinvoke $r7.<org.w3c.dom.NodeList: int getLength()>();
+
+     label2:
+        if $i2 < $i1 goto label4;
+
+     label3:
+        specialinvoke $r0.<it.h3g.areaclienti3.k.a: void i()>();
+        return;
+
+     label4:
+        $r4 = interfaceinvoke $r7.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i2);
+        $s4 = interfaceinvoke $r4.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label6;
+
+        $r8 = new it.h3g.areaclienti3.d.p;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.p: void <init>()>();
+        $r13 = (org.w3c.dom.Element) $r4;
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("key");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void c(java.lang.String)>($r5);
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("destinazione");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void p(java.lang.String)>($r5);
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("priority");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void d(java.lang.String)>($r5);
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("marca");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void s(java.lang.String)>($r5);
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("modello");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void t(java.lang.String)>($r5);
+        $r9 = interfaceinvoke $r4.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $i1 = 0;
+
+     label5:
+        $i5 = interfaceinvoke $r9.<org.w3c.dom.NodeList: int getLength()>();
+        if $i1 < $i5 goto label7;
+
+        $r3 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList b>;
+        virtualinvoke $r3.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+     label6:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label7:
+        $r4 = interfaceinvoke $r9.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i1);
+        $s4 = interfaceinvoke $r4.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label51;
+
+        $r13 = (org.w3c.dom.Element) $r4;
+        $r5 = interfaceinvoke $r13.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r4 = interfaceinvoke $r13.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r4 == null goto label54;
+
+        $r14 = "";
+        $i5 = 0;
+
+     label8:
+        $r6 = interfaceinvoke $r13.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i6 = interfaceinvoke $r6.<org.w3c.dom.NodeList: int getLength()>();
+        if $i5 < $i6 goto label52;
+
+        $r15 = $r5;
+
+     label9:
+        $r5 = "shortdescription";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void e(java.lang.String)>($r14);
+
+     label10:
+        $r5 = "title";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void f(java.lang.String)>($r14);
+
+     label11:
+        $r5 = "description";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 != 0 goto label12;
+
+        $r5 = "descrizione";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label13;
+
+     label12:
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void g(java.lang.String)>($r14);
+
+     label13:
+        $r5 = "colorefu";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label14;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void h(java.lang.String)>($r14);
+
+     label14:
+        $r5 = "colorebackgroundfu";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void i(java.lang.String)>($r14);
+
+     label15:
+        $r5 = "misura";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void j(java.lang.String)>($r14);
+
+     label16:
+        $r5 = "intro";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void k(java.lang.String)>($r14);
+
+     label17:
+        $r5 = "testosospesa";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void l(java.lang.String)>($r14);
+
+     label18:
+        $r5 = "visibile";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label19;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void m(java.lang.String)>($r14);
+
+     label19:
+        $r5 = "colore";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label20;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void n(java.lang.String)>($r14);
+
+     label20:
+        $r5 = "transcodifica";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label21;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void o(java.lang.String)>($r14);
+
+     label21:
+        $r5 = "costooperazione";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label22;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void q(java.lang.String)>($r14);
+
+     label22:
+        $r5 = "costoPiano";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label23;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void r(java.lang.String)>($r14);
+
+     label23:
+        $r5 = "transcodificamarca";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label24;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void u(java.lang.String)>($r14);
+
+     label24:
+        $r5 = "transcodificamodello";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label25;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void v(java.lang.String)>($r14);
+
+     label25:
+        $r5 = "offerta";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label26;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void w(java.lang.String)>($r14);
+
+     label26:
+        $r5 = "tipo";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label27;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void x(java.lang.String)>($r14);
+
+     label27:
+        $r5 = "prodotto";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label28;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void y(java.lang.String)>($r14);
+
+     label28:
+        $r5 = "modalitaricarica";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label29;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void z(java.lang.String)>($r14);
+
+     label29:
+        $r5 = "nascondiCampi";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label30;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void A(java.lang.String)>($r14);
+
+     label30:
+        $r5 = "label";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label31;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void a(java.lang.String)>($r14);
+
+     label31:
+        $r5 = "no_extraSoglia_message";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label32;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void b(java.lang.String)>($r14);
+
+     label32:
+        $r5 = "transcodificaLabel";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label33;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void B(java.lang.String)>($r14);
+
+     label33:
+        $r5 = "descrizioneUtilizzo";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label34;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void C(java.lang.String)>($r14);
+
+     label34:
+        $r5 = "scratchtype";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label35;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void E(java.lang.String)>($r14);
+
+     label35:
+        $r5 = "tipologiasenonscratchtype";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label36;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void D(java.lang.String)>($r14);
+
+     label36:
+        $r5 = "codiceIcona";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label37;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void F(java.lang.String)>($r14);
+
+     label37:
+        $r5 = "labelFuDaVisualizzare";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label38;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void G(java.lang.String)>($r14);
+
+     label38:
+        $r5 = "coloreFuNonUtilizzata";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label39;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void H(java.lang.String)>($r14);
+
+     label39:
+        $r5 = "coloreFuUtilizzata";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label40;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void I(java.lang.String)>($r14);
+
+     label40:
+        $r5 = "coloreFuNonUtilizzataOpzioni";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label41;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void J(java.lang.String)>($r14);
+
+     label41:
+        $r5 = "raggruppamento";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label42;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void K(java.lang.String)>($r14);
+
+     label42:
+        $r5 = "titoloUnlimited";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label43;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void P(java.lang.String)>($r14);
+
+     label43:
+        $r5 = "fuUnlimited";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label44;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void L(java.lang.String)>($r14);
+
+     label44:
+        $r5 = "fuMyBusiness";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label45;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void M(java.lang.String)>($r14);
+
+     label45:
+        $r5 = "titleUnlimited";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label46;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void N(java.lang.String)>($r14);
+
+     label46:
+        $r5 = "value";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label47;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void O(java.lang.String)>($r14);
+
+     label47:
+        $r5 = "groupC";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label48;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void Q(java.lang.String)>($r14);
+
+     label48:
+        $r5 = "groupB";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label49;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void R(java.lang.String)>($r14);
+
+     label49:
+        $r5 = "consumer";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label50;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void S(java.lang.String)>($r14);
+
+     label50:
+        $r5 = "business";
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>($r15);
+        if $z0 == 0 goto label51;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.p: void T(java.lang.String)>($r14);
+
+     label51:
+        $i1 = $i1 + 1;
+        goto label5;
+
+     label52:
+        $r16 = new java.lang.StringBuilder;
+        $r15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r14);
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>($r15);
+        $r6 = interfaceinvoke $r13.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r4 = interfaceinvoke $r6.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i5);
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        $r15 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label53:
+        $i5 = $i5 + 1;
+        $r14 = $r15;
+        goto label8;
+
+     label54:
+        $r15 = "";
+        $r14 = "";
+        goto label9;
+
+     label55:
+        $r17 := @caughtexception;
+        $r15 = virtualinvoke $r17.<org.xml.sax.SAXException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label3;
+
+     label56:
+        $r18 := @caughtexception;
+        $r15 = virtualinvoke $r18.<java.io.IOException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label3;
+
+     label57:
+        $r19 := @caughtexception;
+        $r15 = virtualinvoke $r19.<javax.xml.parsers.ParserConfigurationException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label3;
+
+     label58:
+        $r20 := @caughtexception;
+        $r15 = virtualinvoke $r20.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label3;
+
+        catch org.xml.sax.SAXException from label0 to label2 with label55;
+        catch java.io.IOException from label0 to label2 with label56;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label2 with label57;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label2 with label58;
+        catch org.xml.sax.SAXException from label4 to label53 with label55;
+        catch java.io.IOException from label4 to label53 with label56;
+        catch javax.xml.parsers.ParserConfigurationException from label4 to label53 with label57;
+        catch javax.xml.parsers.FactoryConfigurationError from label4 to label53 with label58;
+    }
+
+    public void a(java.lang.String, boolean, android.content.Context)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.lang.String $r1, $r3, $r4, $r6;
+        boolean $z0;
+        android.content.Context $r2;
+        it.h3g.areaclienti3.j.k $r5;
+        int $i0;
+        java.lang.StringBuilder $r7;
+        org.xmlpull.v1.XmlPullParserFactory $r8;
+        org.xmlpull.v1.XmlPullParser $r9;
+        java.io.InputStream $r10;
+        it.h3g.areaclienti3.d.bg $r11;
+        it.h3g.areaclienti3.d.bi $r12;
+        it.h3g.areaclienti3.d.bh $r13;
+        java.util.ArrayList $r14, $r15, $r16;
+        it.h3g.areaclienti3.d.bf $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.lang.String;
+        $z0 := @parameter1: boolean;
+        $r2 := @parameter2: android.content.Context;
+        $r3 = "";
+        if $z0 == 0 goto label0;
+
+        $r3 = "_unl";
+
+     label0:
+        $r4 = "";
+        $r5 = new it.h3g.areaclienti3.j.k;
+        specialinvoke $r5.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r2);
+        $z0 = virtualinvoke $r5.<it.h3g.areaclienti3.j.k: boolean b()>();
+        if $z0 != 0 goto label1;
+
+        $r4 = "_EN";
+
+     label1:
+        $r7 = new java.lang.StringBuilder;
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml");
+        $r3 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r8.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r9 = virtualinvoke $r8.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        $r7 = new java.lang.StringBuilder;
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("https://areaclienti3.tre.it/app_tariffe/");
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r6 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r10 = staticinvoke <it.h3g.areaclienti3.k.a: java.io.InputStream b(java.lang.String)>($r6);
+        interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r10, "UTF-8");
+        $r6 = "";
+        $r11 = null;
+        $r12 = null;
+        $r13 = null;
+        $r14 = null;
+        $r15 = null;
+        $r16 = null;
+        $i0 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+
+     label2:
+        if $i0 != 1 goto label3;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.k.a: void i()>();
+        return;
+
+     label3:
+        if $i0 != 0 goto label5;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlTariff", "Start document");
+
+     label4:
+        $i0 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label2;
+
+     label5:
+        if $i0 != 1 goto label6;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlTariff", "End document");
+        goto label4;
+
+     label6:
+        if $i0 != 2 goto label13;
+
+        $r6 = "";
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("boxSelfCare");
+        if $z0 == 0 goto label7;
+
+        $r16 = new java.util.ArrayList;
+        specialinvoke $r16.<java.util.ArrayList: void <init>()>();
+
+     label7:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("grigliaCosti");
+        if $z0 == 0 goto label8;
+
+        $r15 = new java.util.ArrayList;
+        specialinvoke $r15.<java.util.ArrayList: void <init>()>();
+
+     label8:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("lstFile");
+        if $z0 == 0 goto label9;
+
+        $r14 = new java.util.ArrayList;
+        specialinvoke $r14.<java.util.ArrayList: void <init>()>();
+
+     label9:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("itemCosti");
+        if $z0 == 0 goto label10;
+
+        $r12 = new it.h3g.areaclienti3.d.bi;
+        specialinvoke $r12.<it.h3g.areaclienti3.d.bi: void <init>()>();
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void a(java.lang.String)>($r3);
+
+     label10:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("List87_itemName");
+        if $z0 == 0 goto label11;
+
+        $r13 = new it.h3g.areaclienti3.d.bh;
+        specialinvoke $r13.<it.h3g.areaclienti3.d.bh: void <init>()>();
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "id");
+        virtualinvoke $r13.<it.h3g.areaclienti3.d.bh: void a(java.lang.String)>($r3);
+
+     label11:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("itemFile");
+        if $z0 == 0 goto label12;
+
+        $r11 = new it.h3g.areaclienti3.d.bg;
+        specialinvoke $r11.<it.h3g.areaclienti3.d.bg: void <init>()>();
+
+     label12:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("filePdf");
+        if $z0 == 0 goto label36;
+
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "resourcename");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.bg: void b(java.lang.String)>($r3);
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "mediaserverpath");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.bg: void c(java.lang.String)>($r3);
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "lastmodifiedtime");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.bg: void e(java.lang.String)>($r3);
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "contenttype");
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.bg: void d(java.lang.String)>($r3);
+        $r6 = "";
+        goto label4;
+
+     label13:
+        if $i0 != 3 goto label35;
+
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("boxSelfCare");
+        if $z0 == 0 goto label14;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void a(java.util.ArrayList)>($r16);
+
+     label14:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("grigliaCosti");
+        if $z0 == 0 goto label15;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void b(java.util.ArrayList)>($r15);
+
+     label15:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("List87_itemName");
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r16.<java.util.ArrayList: boolean add(java.lang.Object)>($r13);
+
+     label16:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("itemCosti");
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r15.<java.util.ArrayList: boolean add(java.lang.Object)>($r12);
+
+     label17:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("titolo");
+        if $z0 == 0 goto label18;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void a(java.lang.String)>($r3);
+
+     label18:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("codice");
+        if $z0 == 0 goto label19;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void b(java.lang.String)>($r3);
+
+     label19:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("notelegali");
+        if $z0 == 0 goto label20;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void c(java.lang.String)>($r3);
+
+     label20:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("riga");
+        if $z0 == 0 goto label21;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void b(java.lang.String)>($r3);
+
+     label21:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colonna1");
+        if $z0 == 0 goto label22;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void c(java.lang.String)>($r3);
+
+     label22:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colonna2");
+        if $z0 == 0 goto label23;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void c(java.lang.String)>($r3);
+
+     label23:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colonna3");
+        if $z0 == 0 goto label24;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void c(java.lang.String)>($r3);
+
+     label24:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colonna4");
+        if $z0 == 0 goto label25;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void c(java.lang.String)>($r3);
+
+     label25:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("colonna5");
+        if $z0 == 0 goto label26;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void c(java.lang.String)>($r3);
+
+     label26:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("highlightRiga");
+        if $z0 == 0 goto label27;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r3);
+        virtualinvoke $r12.<it.h3g.areaclienti3.d.bi: void a(boolean)>($z0);
+
+     label27:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("title");
+        if $z0 == 0 goto label28;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.d.bh: void b(java.lang.String)>($r3);
+
+     label28:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("subTitle");
+        if $z0 == 0 goto label29;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.d.bh: void c(java.lang.String)>($r3);
+
+     label29:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("valueBox");
+        if $z0 == 0 goto label30;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.d.bh: void d(java.lang.String)>($r3);
+
+     label30:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("descriptionBox");
+        if $z0 == 0 goto label31;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r13.<it.h3g.areaclienti3.d.bh: void e(java.lang.String)>($r3);
+
+     label31:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("labelPdf");
+        if $z0 == 0 goto label32;
+
+        $r3 = virtualinvoke $r6.<java.lang.String: java.lang.String trim()>();
+        virtualinvoke $r11.<it.h3g.areaclienti3.d.bg: void a(java.lang.String)>($r3);
+
+     label32:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("itemFile");
+        if $z0 == 0 goto label33;
+
+        virtualinvoke $r14.<java.util.ArrayList: boolean add(java.lang.Object)>($r11);
+
+     label33:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("lstFile");
+        if $z0 == 0 goto label34;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void c(java.util.ArrayList)>($r14);
+
+     label34:
+        $r3 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("descAssistenza");
+        if $z0 == 0 goto label36;
+
+        $r17 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.bf: void d(java.lang.String)>($r6);
+        goto label4;
+
+     label35:
+        if $i0 != 4 goto label36;
+
+        $r7 = new java.lang.StringBuilder;
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6);
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+        $r6 = interfaceinvoke $r9.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label4;
+
+     label36:
+        goto label4;
+    }
+
+    public it.h3g.areaclienti3.d.bd b(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        it.h3g.areaclienti3.d.bd $r2;
+        org.w3c.dom.Node $r3, $r6;
+        org.w3c.dom.NodeList $r4, $r5, $r8;
+        int $i1, $i2, $i3, $i4, $i6;
+        it.h3g.areaclienti3.d.bc $r7, $r18;
+        javax.xml.parsers.DocumentBuilderFactory $r9;
+        javax.xml.parsers.DocumentBuilder $r10;
+        org.w3c.dom.Document $r11;
+        org.w3c.dom.Element $r12;
+        short $s5;
+        java.lang.String $r13, $r14, $r15;
+        boolean $z0;
+        java.lang.StringBuilder $r16;
+        java.lang.Object $r17;
+        org.xml.sax.SAXException $r19;
+        java.io.IOException $r20;
+        javax.xml.parsers.ParserConfigurationException $r21;
+        javax.xml.parsers.FactoryConfigurationError $r22;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+        $r2 = new it.h3g.areaclienti3.d.bd;
+        specialinvoke $r2.<it.h3g.areaclienti3.d.bd: void <init>()>();
+        $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f> = $r2;
+
+     label0:
+        $r9 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r10 = virtualinvoke $r9.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r11 = virtualinvoke $r10.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>($r1);
+        $r12 = interfaceinvoke $r11.<org.w3c.dom.Document: org.w3c.dom.Element getDocumentElement()>();
+        $r5 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i3 = 0;
+
+     label1:
+        $i4 = interfaceinvoke $r5.<org.w3c.dom.NodeList: int getLength()>();
+
+     label2:
+        if $i3 < $i4 goto label3;
+
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        return $r2;
+
+     label3:
+        $r6 = interfaceinvoke $r5.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i3);
+        $s5 = interfaceinvoke $r6.<org.w3c.dom.Node: short getNodeType()>();
+        if $s5 != 1 goto label7;
+
+        $r13 = interfaceinvoke $r6.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>("statusCode");
+        if $z0 == 0 goto label4;
+
+        $r3 = interfaceinvoke $r6.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r14 = interfaceinvoke $r3.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equals(java.lang.Object)>("1");
+        if $z0 == 0 goto label4;
+
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        return $r2;
+
+     label4:
+        $r14 = interfaceinvoke $r6.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equals(java.lang.Object)>("errorCode");
+        if $z0 == 0 goto label5;
+
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        $r6 = interfaceinvoke $r6.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r14 = interfaceinvoke $r6.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bd: void a(java.lang.String)>($r14);
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        return $r2;
+
+     label5:
+        $r14 = interfaceinvoke $r6.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equals(java.lang.Object)>("shortNumber");
+        if $z0 == 0 goto label7;
+
+        $i2 = 0;
+
+     label6:
+        $r8 = interfaceinvoke $r6.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $i4 = interfaceinvoke $r8.<org.w3c.dom.NodeList: int getLength()>();
+        if $i2 < $i4 goto label8;
+
+     label7:
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label8:
+        $r8 = interfaceinvoke $r6.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $r3 = interfaceinvoke $r8.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i2);
+        $s5 = interfaceinvoke $r3.<org.w3c.dom.Node: short getNodeType()>();
+        if $s5 != 1 goto label12;
+
+        $r12 = (org.w3c.dom.Element) $r3;
+        $r14 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r14.<java.lang.String: boolean equals(java.lang.Object)>("serviceName");
+        if $z0 == 0 goto label12;
+
+        $r7 = new it.h3g.areaclienti3.d.bc;
+        specialinvoke $r7.<it.h3g.areaclienti3.d.bc: void <init>()>();
+        $r14 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("value");
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void a(java.lang.String)>($r14);
+        $r8 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i1 = 0;
+
+     label9:
+        $i4 = interfaceinvoke $r8.<org.w3c.dom.NodeList: int getLength()>();
+        if $i1 < $i4 goto label13;
+
+        $z0 = 0;
+        $i4 = 0;
+
+     label10:
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        $i1 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bd: int size()>();
+        if $i4 >= $i1 goto label11;
+
+        if $z0 == 0 goto label23;
+
+     label11:
+        if $z0 != 0 goto label12;
+
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bd: boolean add(java.lang.Object)>($r7);
+
+     label12:
+        $i2 = $i2 + 1;
+        goto label6;
+
+     label13:
+        $r3 = interfaceinvoke $r8.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i1);
+        $s5 = interfaceinvoke $r3.<org.w3c.dom.Node: short getNodeType()>();
+        if $s5 != 1 goto label20;
+
+        $r12 = (org.w3c.dom.Element) $r3;
+        $r14 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r3 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r3 == null goto label22;
+
+        $r13 = "";
+        $i4 = 0;
+
+     label14:
+        $r4 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i6 = interfaceinvoke $r4.<org.w3c.dom.NodeList: int getLength()>();
+        if $i4 < $i6 goto label21;
+
+     label15:
+        $r15 = "serviceId";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r14);
+        if $z0 == 0 goto label16;
+
+        $i6 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r13);
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void a(int)>($i6);
+
+     label16:
+        $r15 = "startDate";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r14);
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void b(java.lang.String)>($r13);
+
+     label17:
+        $r15 = "endDate";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r14);
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void c(java.lang.String)>($r13);
+
+     label18:
+        $r15 = "subscriptionStatus";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r14);
+        if $z0 == 0 goto label19;
+
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>("1");
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void a(boolean)>($z0);
+
+     label19:
+        $r15 = "recurringFlag";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r14);
+        if $z0 == 0 goto label20;
+
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>("Y");
+        virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: void b(boolean)>($z0);
+
+     label20:
+        $i1 = $i1 + 1;
+        goto label9;
+
+     label21:
+        $r16 = new java.lang.StringBuilder;
+        $r15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r13);
+        specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>($r15);
+        $r4 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r3 = interfaceinvoke $r4.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i4);
+        $r15 = interfaceinvoke $r3.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r16 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        $i4 = $i4 + 1;
+        $r13 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label14;
+
+     label22:
+        $r14 = null;
+        $r13 = "";
+        goto label15;
+
+     label23:
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        $r17 = virtualinvoke $r2.<it.h3g.areaclienti3.d.bd: java.lang.Object get(int)>($i4);
+        $r18 = (it.h3g.areaclienti3.d.bc) $r17;
+        $i6 = virtualinvoke $r18.<it.h3g.areaclienti3.d.bc: int b()>();
+        $i1 = virtualinvoke $r7.<it.h3g.areaclienti3.d.bc: int b()>();
+        if $i6 <= $i1 goto label29;
+
+        $z0 = 1;
+        $r2 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bd f>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.d.bd: void add(int,java.lang.Object)>($i4, $r7);
+
+     label24:
+        $i4 = $i4 + 1;
+        goto label10;
+
+     label25:
+        $r19 := @caughtexception;
+        $r15 = virtualinvoke $r19.<org.xml.sax.SAXException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        return null;
+
+     label26:
+        $r20 := @caughtexception;
+        $r15 = virtualinvoke $r20.<java.io.IOException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        return null;
+
+     label27:
+        $r21 := @caughtexception;
+        $r15 = virtualinvoke $r21.<javax.xml.parsers.ParserConfigurationException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        return null;
+
+     label28:
+        $r22 := @caughtexception;
+        $r15 = virtualinvoke $r22.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        return null;
+
+     label29:
+        goto label24;
+
+        catch org.xml.sax.SAXException from label0 to label2 with label25;
+        catch java.io.IOException from label0 to label2 with label26;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label2 with label27;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label2 with label28;
+        catch org.xml.sax.SAXException from label3 to label24 with label25;
+        catch java.io.IOException from label3 to label24 with label26;
+        catch javax.xml.parsers.ParserConfigurationException from label3 to label24 with label27;
+        catch javax.xml.parsers.FactoryConfigurationError from label3 to label24 with label28;
+    }
+
+    public it.h3g.areaclienti3.d.bf b()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        it.h3g.areaclienti3.d.bf $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 = $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.bf g>;
+        return $r1;
+    }
+
+    public java.lang.String c(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        javax.xml.parsers.DocumentBuilderFactory $r2;
+        int $i0, $i1;
+        org.w3c.dom.NodeList $r3;
+        short $s2;
+        javax.xml.parsers.DocumentBuilder $r4;
+        org.w3c.dom.Document $r5;
+        org.w3c.dom.Element $r6;
+        java.lang.String $r7, $r9, $r10;
+        org.w3c.dom.Node $r8, $r11;
+        boolean $z0;
+        org.xml.sax.SAXException $r12;
+        java.io.IOException $r13;
+        javax.xml.parsers.ParserConfigurationException $r14;
+        javax.xml.parsers.FactoryConfigurationError $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+
+     label0:
+        $r2 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r4 = virtualinvoke $r2.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r5 = virtualinvoke $r4.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>($r1);
+        $r6 = interfaceinvoke $r5.<org.w3c.dom.Document: org.w3c.dom.Element getDocumentElement()>();
+        $r3 = interfaceinvoke $r6.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i0 = 0;
+        $r7 = null;
+
+     label1:
+        $i1 = interfaceinvoke $r3.<org.w3c.dom.NodeList: int getLength()>();
+        if $i0 < $i1 goto label2;
+
+        return $r7;
+
+     label2:
+        $r8 = interfaceinvoke $r3.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i0);
+        $s2 = interfaceinvoke $r8.<org.w3c.dom.Node: short getNodeType()>();
+        if $s2 != 1 goto label5;
+
+        $r9 = interfaceinvoke $r8.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("statusCode");
+        if $z0 == 0 goto label3;
+
+        $r11 = interfaceinvoke $r8.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r10 = interfaceinvoke $r11.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("0");
+        if $z0 == 0 goto label3;
+
+        $r11 = interfaceinvoke $r8.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r7 = interfaceinvoke $r11.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+
+     label3:
+        $r10 = interfaceinvoke $r8.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("errorCode");
+        if $z0 == 0 goto label5;
+
+        $r11 = interfaceinvoke $r8.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r10 = interfaceinvoke $r11.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+
+     label4:
+        $r7 = $r10;
+
+     label5:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label6:
+        $r12 := @caughtexception;
+        $r10 = virtualinvoke $r12.<org.xml.sax.SAXException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r10);
+        return null;
+
+     label7:
+        $r13 := @caughtexception;
+        $r10 = virtualinvoke $r13.<java.io.IOException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r10);
+        return null;
+
+     label8:
+        $r14 := @caughtexception;
+        $r10 = virtualinvoke $r14.<javax.xml.parsers.ParserConfigurationException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r10);
+        return null;
+
+     label9:
+        $r15 := @caughtexception;
+        $r10 = virtualinvoke $r15.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r10);
+        return null;
+
+        catch org.xml.sax.SAXException from label0 to label4 with label6;
+        catch java.io.IOException from label0 to label4 with label7;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label4 with label8;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label4 with label9;
+    }
+
+    public java.util.ArrayList c()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList c>;
+        return $r1;
+    }
+
+    public java.util.ArrayList d()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList d>;
+        return $r1;
+    }
+
+    public void d(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        org.w3c.dom.Node $r2, $r13;
+        javax.xml.parsers.DocumentBuilderFactory $r3;
+        java.lang.String $r4, $r5, $r16;
+        org.w3c.dom.NodeList $r6, $r7, $r9;
+        int $i1, $i2, $i5, $i6;
+        it.h3g.areaclienti3.d.ag $r8;
+        javax.xml.parsers.DocumentBuilder $r10;
+        org.w3c.dom.Document $r11;
+        org.w3c.dom.Element $r12;
+        short $s4;
+        boolean $z0;
+        java.util.ArrayList $r14;
+        org.xml.sax.SAXException $r15;
+        it.h3g.areaclienti3.d.af $r17;
+        java.lang.StringBuilder $r18;
+        java.io.IOException $r19;
+        javax.xml.parsers.ParserConfigurationException $r20;
+        javax.xml.parsers.FactoryConfigurationError $r21;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+
+     label0:
+        $r3 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r10 = virtualinvoke $r3.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r11 = virtualinvoke $r10.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>($r1);
+        $r5 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String a(org.w3c.dom.Document)>($r11);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Parser News", $r5);
+        $r12 = interfaceinvoke $r11.<org.w3c.dom.Document: org.w3c.dom.Element getDocumentElement()>();
+        $r7 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i2 = 0;
+
+     label1:
+        $i1 = interfaceinvoke $r7.<org.w3c.dom.NodeList: int getLength()>();
+        if $i2 < $i1 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        $r13 = interfaceinvoke $r7.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i2);
+        $s4 = interfaceinvoke $r13.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label6;
+
+        $r8 = new it.h3g.areaclienti3.d.ag;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.ag: void <init>()>();
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("news");
+        $r12 = (org.w3c.dom.Element) $r13;
+        $r4 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>("news");
+        if $z0 == 0 goto label7;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("news");
+
+     label4:
+        $r5 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("itemId");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void b(java.lang.String)>($r5);
+        $r5 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("read");
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r5);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(boolean)>($z0);
+        $r9 = interfaceinvoke $r13.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $i1 = 0;
+
+     label5:
+        $i5 = interfaceinvoke $r9.<org.w3c.dom.NodeList: int getLength()>();
+        if $i1 < $i5 goto label10;
+
+        $r14 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList c>;
+        virtualinvoke $r14.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+     label6:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label7:
+        $r5 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("banner");
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("banner");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void l(java.lang.String)>("BANNER");
+
+     label8:
+        goto label4;
+
+     label9:
+        $r15 := @caughtexception;
+        $r5 = virtualinvoke $r15.<org.xml.sax.SAXException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r5);
+        goto label2;
+
+     label10:
+        $r13 = interfaceinvoke $r9.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i1);
+        $s4 = interfaceinvoke $r13.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label23;
+
+        $r12 = (org.w3c.dom.Element) $r13;
+        $r5 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r4 = "";
+        $r2 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r2 == null goto label26;
+
+        $r4 = "";
+        $i5 = 0;
+
+     label11:
+        $r6 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i6 = interfaceinvoke $r6.<org.w3c.dom.NodeList: int getLength()>();
+        if $i5 < $i6 goto label24;
+
+     label12:
+        $r16 = "title";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void c(java.lang.String)>($r4);
+
+     label13:
+        $r16 = "abs";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label14;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void d(java.lang.String)>($r4);
+
+     label14:
+        $r16 = "body";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void e(java.lang.String)>($r4);
+
+     label15:
+        $r16 = "refDate";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void f(java.lang.String)>($r4);
+
+     label16:
+        $r16 = "rangeFromDate";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void g(java.lang.String)>($r4);
+
+     label17:
+        $r16 = "rangeToDate";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void h(java.lang.String)>($r4);
+
+     label18:
+        $r16 = "imageUrl";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label19;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void i(java.lang.String)>($r4);
+        $r12 = (org.w3c.dom.Element) $r13;
+        $r16 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("horiz");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void j(java.lang.String)>($r16);
+        $r16 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("vertical");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void k(java.lang.String)>($r16);
+
+     label19:
+        $r16 = "typology";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label20;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void l(java.lang.String)>($r4);
+
+     label20:
+        $r16 = "option";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label21;
+
+        $r17 = new it.h3g.areaclienti3.d.af;
+        specialinvoke $r17.<it.h3g.areaclienti3.d.af: void <init>()>();
+        $r12 = (org.w3c.dom.Element) $r13;
+        $r16 = interfaceinvoke $r12.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("code");
+        $r17 = specialinvoke $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.af b(org.w3c.dom.Element)>($r12);
+        virtualinvoke $r17.<it.h3g.areaclienti3.d.af: void a(java.lang.String)>($r16);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(it.h3g.areaclienti3.d.af)>($r17);
+
+     label21:
+        $r16 = "imgBanner";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label22;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void p(java.lang.String)>($r4);
+
+     label22:
+        $r16 = "link";
+        $z0 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label23;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void q(java.lang.String)>($r4);
+
+     label23:
+        $i1 = $i1 + 1;
+        goto label5;
+
+     label24:
+        $r18 = new java.lang.StringBuilder;
+        $r16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r4);
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>(java.lang.String)>($r16);
+        $r6 = interfaceinvoke $r12.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r2 = interfaceinvoke $r6.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i5);
+        $r16 = interfaceinvoke $r2.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r16);
+        $r16 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label25:
+        $i5 = $i5 + 1;
+        $r4 = $r16;
+        goto label11;
+
+     label26:
+        $r5 = null;
+        goto label12;
+
+     label27:
+        $r19 := @caughtexception;
+        $r16 = virtualinvoke $r19.<java.io.IOException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r16);
+        goto label2;
+
+     label28:
+        $r20 := @caughtexception;
+        $r16 = virtualinvoke $r20.<javax.xml.parsers.ParserConfigurationException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r16);
+        goto label2;
+
+     label29:
+        $r21 := @caughtexception;
+        $r16 = virtualinvoke $r21.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r16);
+        goto label2;
+
+        catch org.xml.sax.SAXException from label0 to label8 with label9;
+        catch java.io.IOException from label0 to label8 with label27;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label8 with label28;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label8 with label29;
+        catch org.xml.sax.SAXException from label10 to label25 with label9;
+        catch java.io.IOException from label10 to label25 with label27;
+        catch javax.xml.parsers.ParserConfigurationException from label10 to label25 with label28;
+        catch javax.xml.parsers.FactoryConfigurationError from label10 to label25 with label29;
+    }
+
+    public java.util.ArrayList e()
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList e>;
+        return $r1;
+    }
+
+    public void e(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        org.w3c.dom.Node $r2, $r13;
+        javax.xml.parsers.DocumentBuilderFactory $r3;
+        org.w3c.dom.Element $r4;
+        java.lang.String $r5, $r12, $r15;
+        org.w3c.dom.NodeList $r6, $r7, $r9;
+        int $i1, $i2, $i5, $i6;
+        it.h3g.areaclienti3.d.ag $r8;
+        javax.xml.parsers.DocumentBuilder $r10;
+        org.w3c.dom.Document $r11;
+        short $s4;
+        boolean $z0;
+        java.util.ArrayList $r14;
+        it.h3g.areaclienti3.d.af $r16;
+        java.lang.StringBuilder $r17;
+        org.xml.sax.SAXException $r18;
+        java.io.IOException $r19;
+        javax.xml.parsers.ParserConfigurationException $r20;
+        javax.xml.parsers.FactoryConfigurationError $r21;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+
+     label0:
+        $r3 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r10 = virtualinvoke $r3.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r11 = virtualinvoke $r10.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>($r1);
+        $r4 = interfaceinvoke $r11.<org.w3c.dom.Document: org.w3c.dom.Element getDocumentElement()>();
+        $r12 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String a(org.w3c.dom.Document)>($r11);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Parser Pools", $r12);
+        $r7 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i2 = 0;
+
+     label1:
+        $i1 = interfaceinvoke $r7.<org.w3c.dom.NodeList: int getLength()>();
+        if $i2 < $i1 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        $r13 = interfaceinvoke $r7.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i2);
+        $s4 = interfaceinvoke $r13.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label5;
+
+        $r8 = new it.h3g.areaclienti3.d.ag;
+        specialinvoke $r8.<it.h3g.areaclienti3.d.ag: void <init>()>();
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(java.lang.String)>("poll");
+        $r4 = (org.w3c.dom.Element) $r13;
+        $r12 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("itemId");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void b(java.lang.String)>($r12);
+        $r12 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("read");
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r12);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(boolean)>($z0);
+        $r9 = interfaceinvoke $r13.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $i1 = 0;
+
+     label4:
+        $i5 = interfaceinvoke $r9.<org.w3c.dom.NodeList: int getLength()>();
+        if $i1 < $i5 goto label6;
+
+        $r14 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList c>;
+        virtualinvoke $r14.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+     label5:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label6:
+        $r13 = interfaceinvoke $r9.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i1);
+        $s4 = interfaceinvoke $r13.<org.w3c.dom.Node: short getNodeType()>();
+        if $s4 != 1 goto label18;
+
+        $r4 = (org.w3c.dom.Element) $r13;
+        $r5 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getNodeName()>();
+        $r12 = "";
+        $r2 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        if $r2 == null goto label21;
+
+        $r12 = "";
+        $i5 = 0;
+
+     label7:
+        $r6 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $i6 = interfaceinvoke $r6.<org.w3c.dom.NodeList: int getLength()>();
+        if $i5 < $i6 goto label19;
+
+     label8:
+        $r15 = "title";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void c(java.lang.String)>($r12);
+
+     label9:
+        $r15 = "content";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void m(java.lang.String)>($r12);
+
+     label10:
+        $r15 = "body";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void e(java.lang.String)>($r12);
+
+     label11:
+        $r15 = "imageUrl";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label12;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void i(java.lang.String)>($r12);
+        $r4 = (org.w3c.dom.Element) $r13;
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("horiz");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void j(java.lang.String)>($r15);
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("vertical");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void k(java.lang.String)>($r15);
+
+     label12:
+        $r15 = "typology";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void l(java.lang.String)>($r12);
+
+     label13:
+        $r15 = "rangeFromDate";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label14;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void g(java.lang.String)>($r12);
+
+     label14:
+        $r15 = "rangeToDate";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void h(java.lang.String)>($r12);
+
+     label15:
+        $r15 = "page";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label16;
+
+        $r4 = (org.w3c.dom.Element) $r13;
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("last");
+        $z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r15);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void b(boolean)>($z0);
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("id");
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void o(java.lang.String)>($r15);
+        $r14 = specialinvoke $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList a(org.w3c.dom.Element)>($r4);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(java.util.ArrayList)>($r14);
+
+     label16:
+        $r15 = "option";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label17;
+
+        $r16 = new it.h3g.areaclienti3.d.af;
+        specialinvoke $r16.<it.h3g.areaclienti3.d.af: void <init>()>();
+        $r4 = (org.w3c.dom.Element) $r13;
+        $r15 = interfaceinvoke $r4.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("code");
+        $r16 = specialinvoke $r0.<it.h3g.areaclienti3.k.a: it.h3g.areaclienti3.d.af b(org.w3c.dom.Element)>($r4);
+        virtualinvoke $r16.<it.h3g.areaclienti3.d.af: void a(java.lang.String)>($r15);
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void a(it.h3g.areaclienti3.d.af)>($r16);
+
+     label17:
+        $r15 = "imgBanner";
+        $z0 = virtualinvoke $r15.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+        if $z0 == 0 goto label18;
+
+        virtualinvoke $r8.<it.h3g.areaclienti3.d.ag: void p(java.lang.String)>($r12);
+
+     label18:
+        $i1 = $i1 + 1;
+        goto label4;
+
+     label19:
+        $r17 = new java.lang.StringBuilder;
+        $r15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r12);
+        specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>($r15);
+        $r6 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>();
+        $r2 = interfaceinvoke $r6.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i5);
+        $r15 = interfaceinvoke $r2.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        $r15 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label20:
+        $i5 = $i5 + 1;
+        $r12 = $r15;
+        goto label7;
+
+     label21:
+        $r5 = null;
+        goto label8;
+
+     label22:
+        $r18 := @caughtexception;
+        $r15 = virtualinvoke $r18.<org.xml.sax.SAXException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label2;
+
+     label23:
+        $r19 := @caughtexception;
+        $r15 = virtualinvoke $r19.<java.io.IOException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label2;
+
+     label24:
+        $r20 := @caughtexception;
+        $r15 = virtualinvoke $r20.<javax.xml.parsers.ParserConfigurationException: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label2;
+
+     label25:
+        $r21 := @caughtexception;
+        $r15 = virtualinvoke $r21.<javax.xml.parsers.FactoryConfigurationError: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.k.a: void a(java.lang.String)>($r15);
+        goto label2;
+
+        catch org.xml.sax.SAXException from label0 to label20 with label22;
+        catch java.io.IOException from label0 to label20 with label23;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label20 with label24;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label20 with label25;
+    }
+
+    public java.util.ArrayList g(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        org.xmlpull.v1.XmlPullParserFactory $r2;
+        boolean $z0;
+        int $i0;
+        org.xmlpull.v1.XmlPullParser $r4;
+        java.lang.String $r5, $r8, $r9;
+        it.h3g.areaclienti3.d.v $r6;
+        java.util.ArrayList $r7;
+        java.lang.StringBuilder $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+        $r2 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r2.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r4 = virtualinvoke $r2.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r1, "UTF-8");
+        $r5 = "";
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        $r6 = null;
+
+     label0:
+        if $i0 != 1 goto label1;
+
+        $r7 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList e>;
+        return $r7;
+
+     label1:
+        if $i0 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlSubjectList", "Start document");
+
+     label2:
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label0;
+
+     label3:
+        if $i0 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlSubjectList", "End document");
+        goto label2;
+
+     label4:
+        if $i0 != 2 goto label5;
+
+        $r5 = "";
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("code");
+        if $z0 == 0 goto label2;
+
+        $r6 = new it.h3g.areaclienti3.d.v;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.v: void <init>()>();
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "key");
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void a(java.lang.String)>($r9);
+        goto label2;
+
+     label5:
+        if $i0 != 3 goto label18;
+
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("priorita");
+        if $z0 == 0 goto label6;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void b(java.lang.String)>($r5);
+
+     label6:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("visibilitaAll");
+        if $z0 == 0 goto label7;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void c(java.lang.String)>($r5);
+
+     label7:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("tipologia");
+        if $z0 == 0 goto label8;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void d(java.lang.String)>($r5);
+
+     label8:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("proposition");
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void e(java.lang.String)>($r5);
+
+     label9:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("tipo");
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void f(java.lang.String)>($r5);
+
+     label10:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("testo");
+        if $z0 == 0 goto label11;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void g(java.lang.String)>($r5);
+
+     label11:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("oggetto");
+        if $z0 == 0 goto label12;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void h(java.lang.String)>($r5);
+
+     label12:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("sottoArgomento");
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void j(java.lang.String)>($r5);
+
+     label13:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("routing");
+        if $z0 == 0 goto label14;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void i(java.lang.String)>($r5);
+
+     label14:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("attachDesc");
+        if $z0 == 0 goto label15;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void m(java.lang.String)>($r5);
+
+     label15:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("attach");
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void k(java.lang.String)>($r5);
+
+     label16:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("proc");
+        if $z0 == 0 goto label17;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.v: void l(java.lang.String)>($r5);
+
+     label17:
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("code");
+        if $z0 == 0 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList e>;
+        virtualinvoke $r7.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+        goto label2;
+
+     label18:
+        if $i0 != 4 goto label2;
+
+        $r10 = new java.lang.StringBuilder;
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>($r9);
+        $r9 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r5 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+    }
+
+    public void h(java.io.InputStream)
+    {
+        it.h3g.areaclienti3.k.a $r0;
+        java.io.InputStream $r1;
+        org.xmlpull.v1.XmlPullParserFactory $r2;
+        boolean $z0;
+        int $i0;
+        org.xmlpull.v1.XmlPullParser $r4;
+        java.lang.String $r5, $r7, $r8;
+        it.h3g.areaclienti3.d.be $r6;
+        java.util.ArrayList $r9;
+        double $d0;
+        java.lang.StringBuilder $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.k.a;
+        $r1 := @parameter0: java.io.InputStream;
+        $r2 = staticinvoke <org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParserFactory newInstance()>();
+        virtualinvoke $r2.<org.xmlpull.v1.XmlPullParserFactory: void setNamespaceAware(boolean)>(0);
+        $r4 = virtualinvoke $r2.<org.xmlpull.v1.XmlPullParserFactory: org.xmlpull.v1.XmlPullParser newPullParser()>();
+        interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.InputStream,java.lang.String)>($r1, null);
+        $r5 = "";
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int getEventType()>();
+        $r6 = null;
+
+     label0:
+        if $i0 != 1 goto label1;
+
+        return;
+
+     label1:
+        if $i0 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlSpending", "Start document");
+
+     label2:
+        $i0 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: int next()>();
+        goto label0;
+
+     label3:
+        if $i0 != 1 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("parseXmlSpending", "End document");
+        goto label2;
+
+     label4:
+        if $i0 != 2 goto label5;
+
+        $r5 = "";
+        $r7 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("code");
+        if $z0 == 0 goto label2;
+
+        $r6 = new it.h3g.areaclienti3.d.be;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.be: void <init>()>();
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "proposition");
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void e(java.lang.String)>($r8);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>(null, "tipologia");
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void d(java.lang.String)>($r8);
+        goto label2;
+
+     label5:
+        if $i0 != 3 goto label11;
+
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("code");
+        if $z0 == 0 goto label6;
+
+        $r9 = $r0.<it.h3g.areaclienti3.k.a: java.util.ArrayList d>;
+        virtualinvoke $r9.<java.util.ArrayList: boolean add(java.lang.Object)>($r6);
+
+     label6:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("fattoreDiMoltiplicazione4spendingamount");
+        if $z0 == 0 goto label7;
+
+        $r8 = virtualinvoke $r5.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>(",", ".");
+        $d0 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>($r8);
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void a(double)>($d0);
+
+     label7:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("fattoreDiMoltiplicazione4spendinglimit");
+        if $z0 == 0 goto label8;
+
+        $r8 = virtualinvoke $r5.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>(",", ".");
+        $d0 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>($r8);
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void b(double)>($d0);
+
+     label8:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("value1");
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void a(java.lang.String)>($r5);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void a(java.lang.String,java.lang.String)>($r8, $r5);
+
+     label9:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("value2");
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void b(java.lang.String)>($r5);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void a(java.lang.String,java.lang.String)>($r8, $r5);
+
+     label10:
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("value3");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void c(java.lang.String)>($r5);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.be: void a(java.lang.String,java.lang.String)>($r8, $r5);
+        goto label2;
+
+     label11:
+        if $i0 != 4 goto label2;
+
+        $r10 = new java.lang.StringBuilder;
+        $r8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>($r8);
+        $r8 = interfaceinvoke $r4.<org.xmlpull.v1.XmlPullParser: java.lang.String getText()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r5 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+    }
+}

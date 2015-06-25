@@ -1,0 +1,55 @@
+final class com.google.android.gms.internal.j extends java.lang.Object implements com.google.android.gms.internal.k
+{
+
+    void <init>()
+    {
+        com.google.android.gms.internal.j $r0;
+
+        $r0 := @this: com.google.android.gms.internal.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.j $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        java.lang.String $r3, $r6, $r7;
+        com.google.android.gms.internal.je $r4;
+        java.lang.Object $r5;
+        int $i0, $i1, $i2;
+        com.google.android.gms.internal.eo $r8;
+        java.lang.NumberFormatException $r9;
+
+        $r0 := @this: com.google.android.gms.internal.j;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("tx");
+        $r6 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("ty");
+        $r7 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("td");
+        $r3 = (java.lang.String) $r5;
+
+     label0:
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r6);
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r7);
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dg: com.google.android.gms.internal.je f()>();
+        if $r4 == null goto label1;
+
+        $r8 = virtualinvoke $r4.<com.google.android.gms.internal.je: com.google.android.gms.internal.eo a()>();
+        interfaceinvoke $r8.<com.google.android.gms.internal.eo: void a(int,int,int)>($i0, $i1, $i2);
+
+     label1:
+        return;
+
+     label2:
+        $r9 := @caughtexception;
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Could not parse touch parameters from gmsg.");
+        goto label1;
+
+        catch java.lang.NumberFormatException from label0 to label1 with label2;
+    }
+}

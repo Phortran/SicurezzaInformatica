@@ -1,0 +1,437 @@
+public final class com.google.c.b.a.i extends com.google.c.d.d
+{
+    private static final java.io.Writer a;
+    private static final com.google.c.y b;
+    private final java.util.List c;
+    private java.lang.String d;
+    private com.google.c.t e;
+
+    static void <clinit>()
+    {
+        com.google.c.b.a.j $r0;
+        com.google.c.y $r2;
+
+        $r0 = new com.google.c.b.a.j;
+        specialinvoke $r0.<com.google.c.b.a.j: void <init>()>();
+        <com.google.c.b.a.i: java.io.Writer a> = $r0;
+        $r2 = new com.google.c.y;
+        specialinvoke $r2.<com.google.c.y: void <init>(java.lang.String)>("closed");
+        <com.google.c.b.a.i: com.google.c.y b> = $r2;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.google.c.b.a.i $r0;
+        java.io.Writer $r1;
+        java.util.ArrayList $r2;
+        com.google.c.v $r3;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = <com.google.c.b.a.i: java.io.Writer a>;
+        specialinvoke $r0.<com.google.c.d.d: void <init>(java.io.Writer)>($r1);
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0.<com.google.c.b.a.i: java.util.List c> = $r2;
+        $r3 = <com.google.c.v: com.google.c.v a>;
+        $r0.<com.google.c.b.a.i: com.google.c.t e> = $r3;
+        return;
+    }
+
+    private void a(com.google.c.t)
+    {
+        com.google.c.b.a.i $r0;
+        com.google.c.t $r1, $r3;
+        java.lang.String $r2;
+        boolean $z0;
+        com.google.c.w $r4;
+        java.util.List $r5;
+        com.google.c.r $r6;
+        java.lang.IllegalStateException $r7;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 := @parameter0: com.google.c.t;
+        $r2 = $r0.<com.google.c.b.a.i: java.lang.String d>;
+        if $r2 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<com.google.c.t: boolean j()>();
+        if $z0 == 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<com.google.c.b.a.i: boolean i()>();
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r3 = specialinvoke $r0.<com.google.c.b.a.i: com.google.c.t j()>();
+        $r4 = (com.google.c.w) $r3;
+        $r2 = $r0.<com.google.c.b.a.i: java.lang.String d>;
+        virtualinvoke $r4.<com.google.c.w: void a(java.lang.String,com.google.c.t)>($r2, $r1);
+
+     label1:
+        $r0.<com.google.c.b.a.i: java.lang.String d> = null;
+
+     label2:
+        return;
+
+     label3:
+        $r5 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r5.<java.util.List: boolean isEmpty()>();
+        if $z0 == 0 goto label4;
+
+        $r0.<com.google.c.b.a.i: com.google.c.t e> = $r1;
+        goto label2;
+
+     label4:
+        $r3 = specialinvoke $r0.<com.google.c.b.a.i: com.google.c.t j()>();
+        $z0 = $r3 instanceof com.google.c.r;
+        if $z0 == 0 goto label5;
+
+        $r6 = (com.google.c.r) $r3;
+        virtualinvoke $r6.<com.google.c.r: void a(com.google.c.t)>($r1);
+        goto label2;
+
+     label5:
+        $r7 = new java.lang.IllegalStateException;
+        specialinvoke $r7.<java.lang.IllegalStateException: void <init>()>();
+        throw $r7;
+    }
+
+    private com.google.c.t j()
+    {
+        com.google.c.b.a.i $r0;
+        java.util.List $r1, $r2;
+        int $i0;
+        java.lang.Object $r3;
+        com.google.c.t $r4;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $r2 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $i0 = interfaceinvoke $r2.<java.util.List: int size()>();
+        $i0 = $i0 + -1;
+        $r3 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i0);
+        $r4 = (com.google.c.t) $r3;
+        return $r4;
+    }
+
+    public com.google.c.d.d a(long)
+    {
+        com.google.c.b.a.i $r0;
+        long $l0;
+        com.google.c.y $r1;
+        java.lang.Long $r2;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $l0 := @parameter0: long;
+        $r1 = new com.google.c.y;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        specialinvoke $r1.<com.google.c.y: void <init>(java.lang.Number)>($r2);
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r1);
+        return $r0;
+    }
+
+    public com.google.c.d.d a(java.lang.Number)
+    {
+        com.google.c.b.a.i $r0;
+        java.lang.Number $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        com.google.c.d.d $r3;
+        double $d0;
+        java.lang.IllegalArgumentException $r4;
+        java.lang.String $r5;
+        com.google.c.y $r6;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 := @parameter0: java.lang.Number;
+        if $r1 != null goto label0;
+
+        $r3 = virtualinvoke $r0.<com.google.c.b.a.i: com.google.c.d.d f()>();
+        return $r3;
+
+     label0:
+        $z0 = virtualinvoke $r0.<com.google.c.b.a.i: boolean g()>();
+        if $z0 != 0 goto label2;
+
+        $d0 = virtualinvoke $r1.<java.lang.Number: double doubleValue()>();
+        $z0 = staticinvoke <java.lang.Double: boolean isNaN(double)>($d0);
+        if $z0 != 0 goto label1;
+
+        $z0 = staticinvoke <java.lang.Double: boolean isInfinite(double)>($d0);
+        if $z0 == 0 goto label2;
+
+     label1:
+        $r4 = new java.lang.IllegalArgumentException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("JSON forbids NaN and infinities: ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r5);
+        throw $r4;
+
+     label2:
+        $r6 = new com.google.c.y;
+        specialinvoke $r6.<com.google.c.y: void <init>(java.lang.Number)>($r1);
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r6);
+        return $r0;
+    }
+
+    public com.google.c.d.d a(java.lang.String)
+    {
+        com.google.c.b.a.i $r0;
+        java.lang.String $r1, $r3;
+        java.util.List $r2;
+        boolean $z0;
+        java.lang.IllegalStateException $r4;
+        com.google.c.t $r5;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r2.<java.util.List: boolean isEmpty()>();
+        if $z0 != 0 goto label0;
+
+        $r3 = $r0.<com.google.c.b.a.i: java.lang.String d>;
+        if $r3 == null goto label1;
+
+     label0:
+        $r4 = new java.lang.IllegalStateException;
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>()>();
+        throw $r4;
+
+     label1:
+        $r5 = specialinvoke $r0.<com.google.c.b.a.i: com.google.c.t j()>();
+        $z0 = $r5 instanceof com.google.c.w;
+        if $z0 == 0 goto label2;
+
+        $r0.<com.google.c.b.a.i: java.lang.String d> = $r1;
+        return $r0;
+
+     label2:
+        $r4 = new java.lang.IllegalStateException;
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>()>();
+        throw $r4;
+    }
+
+    public com.google.c.d.d a(boolean)
+    {
+        com.google.c.b.a.i $r0;
+        boolean $z0;
+        com.google.c.y $r1;
+        java.lang.Boolean $r2;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $z0 := @parameter0: boolean;
+        $r1 = new com.google.c.y;
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        specialinvoke $r1.<com.google.c.y: void <init>(java.lang.Boolean)>($r2);
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r1);
+        return $r0;
+    }
+
+    public com.google.c.t a()
+    {
+        com.google.c.b.a.i $r0;
+        java.util.List $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        boolean $z0;
+        java.lang.IllegalStateException $r4;
+        com.google.c.t $r5;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r1.<java.util.List: boolean isEmpty()>();
+        if $z0 != 0 goto label0;
+
+        $r4 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Expected one JSON element but was ");
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r4;
+
+     label0:
+        $r5 = $r0.<com.google.c.b.a.i: com.google.c.t e>;
+        return $r5;
+    }
+
+    public com.google.c.d.d b()
+    {
+        com.google.c.b.a.i $r0;
+        com.google.c.r $r1;
+        java.util.List $r2;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = new com.google.c.r;
+        specialinvoke $r1.<com.google.c.r: void <init>()>();
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r1);
+        $r2 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r1);
+        return $r0;
+    }
+
+    public com.google.c.d.d b(java.lang.String)
+    {
+        com.google.c.b.a.i $r0;
+        java.lang.String $r1;
+        com.google.c.y $r2;
+        com.google.c.d.d $r3;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 := @parameter0: java.lang.String;
+        if $r1 != null goto label0;
+
+        $r3 = virtualinvoke $r0.<com.google.c.b.a.i: com.google.c.d.d f()>();
+        return $r3;
+
+     label0:
+        $r2 = new com.google.c.y;
+        specialinvoke $r2.<com.google.c.y: void <init>(java.lang.String)>($r1);
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r2);
+        return $r0;
+    }
+
+    public com.google.c.d.d c()
+    {
+        com.google.c.b.a.i $r0;
+        java.util.List $r1, $r5;
+        boolean $z0;
+        java.lang.String $r2;
+        java.lang.IllegalStateException $r3;
+        com.google.c.t $r4;
+        int $i0;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r1.<java.util.List: boolean isEmpty()>();
+        if $z0 != 0 goto label0;
+
+        $r2 = $r0.<com.google.c.b.a.i: java.lang.String d>;
+        if $r2 == null goto label1;
+
+     label0:
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $r4 = specialinvoke $r0.<com.google.c.b.a.i: com.google.c.t j()>();
+        $z0 = $r4 instanceof com.google.c.r;
+        if $z0 == 0 goto label2;
+
+        $r5 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+        $i0 = $i0 + -1;
+        interfaceinvoke $r5.<java.util.List: java.lang.Object remove(int)>($i0);
+        return $r0;
+
+     label2:
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>()>();
+        throw $r3;
+    }
+
+    public void close()
+    {
+        com.google.c.b.a.i $r0;
+        java.util.List $r1;
+        boolean $z0;
+        java.io.IOException $r3;
+        com.google.c.y $r4;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r1.<java.util.List: boolean isEmpty()>();
+        if $z0 != 0 goto label0;
+
+        $r3 = new java.io.IOException;
+        specialinvoke $r3.<java.io.IOException: void <init>(java.lang.String)>("Incomplete document");
+        throw $r3;
+
+     label0:
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $r4 = <com.google.c.b.a.i: com.google.c.y b>;
+        interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>($r4);
+        return;
+    }
+
+    public com.google.c.d.d d()
+    {
+        com.google.c.b.a.i $r0;
+        com.google.c.w $r1;
+        java.util.List $r2;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = new com.google.c.w;
+        specialinvoke $r1.<com.google.c.w: void <init>()>();
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r1);
+        $r2 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r1);
+        return $r0;
+    }
+
+    public com.google.c.d.d e()
+    {
+        com.google.c.b.a.i $r0;
+        java.util.List $r1, $r5;
+        boolean $z0;
+        java.lang.String $r2;
+        java.lang.IllegalStateException $r3;
+        com.google.c.t $r4;
+        int $i0;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $z0 = interfaceinvoke $r1.<java.util.List: boolean isEmpty()>();
+        if $z0 != 0 goto label0;
+
+        $r2 = $r0.<com.google.c.b.a.i: java.lang.String d>;
+        if $r2 == null goto label1;
+
+     label0:
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>()>();
+        throw $r3;
+
+     label1:
+        $r4 = specialinvoke $r0.<com.google.c.b.a.i: com.google.c.t j()>();
+        $z0 = $r4 instanceof com.google.c.w;
+        if $z0 == 0 goto label2;
+
+        $r5 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $r1 = $r0.<com.google.c.b.a.i: java.util.List c>;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+        $i0 = $i0 + -1;
+        interfaceinvoke $r5.<java.util.List: java.lang.Object remove(int)>($i0);
+        return $r0;
+
+     label2:
+        $r3 = new java.lang.IllegalStateException;
+        specialinvoke $r3.<java.lang.IllegalStateException: void <init>()>();
+        throw $r3;
+    }
+
+    public com.google.c.d.d f()
+    {
+        com.google.c.b.a.i $r0;
+        com.google.c.v $r1;
+
+        $r0 := @this: com.google.c.b.a.i;
+        $r1 = <com.google.c.v: com.google.c.v a>;
+        specialinvoke $r0.<com.google.c.b.a.i: void a(com.google.c.t)>($r1);
+        return $r0;
+    }
+
+    public void flush()
+    {
+        com.google.c.b.a.i $r0;
+
+        $r0 := @this: com.google.c.b.a.i;
+        return;
+    }
+}

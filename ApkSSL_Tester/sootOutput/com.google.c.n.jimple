@@ -1,0 +1,96 @@
+class com.google.c.n extends com.google.c.ae
+{
+    final com.google.c.j a;
+
+    void <init>(com.google.c.j)
+    {
+        com.google.c.n $r0;
+        com.google.c.j $r1;
+
+        $r0 := @this: com.google.c.n;
+        $r1 := @parameter0: com.google.c.j;
+        $r0.<com.google.c.n: com.google.c.j a> = $r1;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.lang.Float a(com.google.c.d.a)
+    {
+        com.google.c.n $r0;
+        com.google.c.d.a $r1;
+        com.google.c.d.c $r2, $r3;
+        double $d0;
+        float $f0;
+        java.lang.Float $r4;
+
+        $r0 := @this: com.google.c.n;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r3 = <com.google.c.d.c: com.google.c.d.c i>;
+        if $r2 != $r3 goto label0;
+
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+        return null;
+
+     label0:
+        $d0 = virtualinvoke $r1.<com.google.c.d.a: double k()>();
+        $f0 = (float) $d0;
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        return $r4;
+    }
+
+    public void a(com.google.c.d.d, java.lang.Number)
+    {
+        com.google.c.n $r0;
+        com.google.c.d.d $r1;
+        java.lang.Number $r2;
+        float $f0;
+        com.google.c.j $r3;
+        double $d0;
+
+        $r0 := @this: com.google.c.n;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Number;
+        if $r2 != null goto label1;
+
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d f()>();
+
+     label0:
+        return;
+
+     label1:
+        $f0 = virtualinvoke $r2.<java.lang.Number: float floatValue()>();
+        $r3 = $r0.<com.google.c.n: com.google.c.j a>;
+        $d0 = (double) $f0;
+        staticinvoke <com.google.c.j: void a(com.google.c.j,double)>($r3, $d0);
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d a(java.lang.Number)>($r2);
+        goto label0;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.n $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.lang.Number $r3;
+
+        $r0 := @this: com.google.c.n;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.lang.Number) $r2;
+        virtualinvoke $r0.<com.google.c.n: void a(com.google.c.d.d,java.lang.Number)>($r1, $r3);
+        return;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.n $r0;
+        com.google.c.d.a $r1;
+        java.lang.Float $r2;
+
+        $r0 := @this: com.google.c.n;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.n: java.lang.Float a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

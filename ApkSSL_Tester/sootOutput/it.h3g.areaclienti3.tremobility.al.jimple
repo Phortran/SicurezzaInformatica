@@ -1,0 +1,309 @@
+public class it.h3g.areaclienti3.tremobility.al extends it.h3g.areaclienti3.tremobility.af
+{
+    android.widget.RelativeLayout a;
+    android.widget.Button b;
+    private android.widget.ImageView c;
+    private android.widget.ListView d;
+    private java.util.ArrayList k;
+    private android.view.View$OnClickListener l;
+    private it.h3g.areaclienti3.tremobility.ag m;
+    private android.view.View n;
+    private android.location.LocationManager o;
+    private android.location.Location p;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        java.util.ArrayList $r1;
+        it.h3g.areaclienti3.tremobility.am $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        specialinvoke $r0.<it.h3g.areaclienti3.tremobility.af: void <init>()>();
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k> = $r1;
+        $r2 = new it.h3g.areaclienti3.tremobility.am;
+        specialinvoke $r2.<it.h3g.areaclienti3.tremobility.am: void <init>(it.h3g.areaclienti3.tremobility.al)>($r0);
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View$OnClickListener l> = $r2;
+        return;
+    }
+
+    static android.location.Location a(it.h3g.areaclienti3.tremobility.al)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        android.location.Location $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.tremobility.al;
+        $r1 = $r0.<it.h3g.areaclienti3.tremobility.al: android.location.Location p>;
+        return $r1;
+    }
+
+    static android.content.Context b(it.h3g.areaclienti3.tremobility.al)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.tremobility.al;
+        $r1 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        return $r1;
+    }
+
+    public void a(it.h3g.areaclienti3.tremobility.model.TreMobTicket)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r1;
+        android.os.Bundle $r2;
+        com.google.c.j $r3;
+        int $i0;
+        java.lang.String $r5;
+        android.support.v4.app.h $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.model.TreMobTicket;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $r3 = new com.google.c.j;
+        specialinvoke $r3.<com.google.c.j: void <init>()>();
+        $r5 = virtualinvoke $r3.<com.google.c.j: java.lang.String a(java.lang.Object)>($r1);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("tre_mob_city", $r5);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.tremobility.al: android.support.v4.app.h getActivity()>();
+        $i0 = $r0.<it.h3g.areaclienti3.tremobility.al: int g>;
+        staticinvoke <it.h3g.areaclienti3.tremobility.ak: void a(android.support.v4.app.h,int,int,int,android.os.Bundle)>($r6, 2, $i0, 1, $r2);
+        return;
+    }
+
+    public void b(it.h3g.areaclienti3.tremobility.model.TreMobTicket)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r1;
+        android.content.Context $r2;
+        java.lang.String $r3, $r5;
+        android.content.res.Resources $r4;
+        java.lang.Object[] $r6;
+        it.h3g.areaclienti3.fragments.c $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        $r1 := @parameter0: it.h3g.areaclienti3.tremobility.model.TreMobTicket;
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        $r4 = virtualinvoke $r2.<android.content.Context: android.content.res.Resources getResources()>();
+        $r5 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getString(int)>(2131231742);
+        $r6 = newarray (java.lang.Object)[1];
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCitta()>();
+        $r6[0] = $r3;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r5, $r6);
+        $r7 = $r0.<it.h3g.areaclienti3.tremobility.al: it.h3g.areaclienti3.fragments.c mDialog>;
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r5, 2);
+        return;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        return 0;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        return 0;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        $r1 := @parameter0: android.os.Bundle;
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        int $i0;
+        java.util.ArrayList $r4;
+        android.view.View $r5;
+        android.widget.ImageView $r6;
+        android.view.View$OnClickListener $r7;
+        android.widget.ListView $r8;
+        it.h3g.areaclienti3.tremobility.ag $r9;
+        android.content.Context $r10;
+        android.widget.RelativeLayout $r11;
+        android.widget.Button $r12;
+        boolean $z1;
+        it.h3g.areaclienti3.tremobility.an $r13;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r5 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903176, $r2, 0);
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n> = $r5;
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n>;
+        $r5 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165938);
+        $r6 = (android.widget.ImageView) $r5;
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.ImageView c> = $r6;
+        $r6 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.ImageView c>;
+        $r7 = $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View$OnClickListener l>;
+        virtualinvoke $r6.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r7);
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n>;
+        $r5 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165964);
+        $r8 = (android.widget.ListView) $r5;
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.ListView d> = $r8;
+        $r8 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.ListView d>;
+        $i0 = (int) 0;
+        virtualinvoke $r8.<android.widget.ListView: void setVisibility(int)>($i0);
+        $r9 = new it.h3g.areaclienti3.tremobility.ag;
+        $r10 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        $r4 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        specialinvoke $r9.<it.h3g.areaclienti3.tremobility.ag: void <init>(it.h3g.areaclienti3.tremobility.al,android.content.Context,int,java.util.ArrayList)>($r0, $r10, 2130903171, $r4);
+        $r0.<it.h3g.areaclienti3.tremobility.al: it.h3g.areaclienti3.tremobility.ag m> = $r9;
+        $r8 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.ListView d>;
+        $r9 = $r0.<it.h3g.areaclienti3.tremobility.al: it.h3g.areaclienti3.tremobility.ag m>;
+        virtualinvoke $r8.<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>($r9);
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n>;
+        $r5 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131165965);
+        $r11 = (android.widget.RelativeLayout) $r5;
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.RelativeLayout a> = $r11;
+        $r11 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.RelativeLayout a>;
+        $r5 = virtualinvoke $r11.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165966);
+        $r12 = (android.widget.Button) $r5;
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.Button b> = $r12;
+        $r10 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        $z1 = staticinvoke <it.h3g.areaclienti3.tremobility.ae: boolean k(android.content.Context)>($r10);
+        if $z1 != 0 goto label0;
+
+        $r11 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.RelativeLayout a>;
+        $i0 = (int) 0;
+        virtualinvoke $r11.<android.widget.RelativeLayout: void setVisibility(int)>($i0);
+        $r12 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.Button b>;
+        $i0 = (int) 0;
+        virtualinvoke $r12.<android.widget.Button: void setVisibility(int)>($i0);
+        $r12 = $r0.<it.h3g.areaclienti3.tremobility.al: android.widget.Button b>;
+        $r13 = new it.h3g.areaclienti3.tremobility.an;
+        specialinvoke $r13.<it.h3g.areaclienti3.tremobility.an: void <init>(it.h3g.areaclienti3.tremobility.al)>($r0);
+        virtualinvoke $r12.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r13);
+
+     label0:
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.os.Bundle e> = $r3;
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n>;
+        return $r5;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        specialinvoke $r0.<it.h3g.areaclienti3.tremobility.af: void onDestroyView()>();
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.view.View n> = null;
+        return;
+    }
+
+    public void onResume()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+        it.h3g.areaclienti3.tremobility.model.ContainerBuyTicket $r1;
+        java.util.ArrayList $r2, $r3;
+        android.location.LocationManager $r4;
+        android.content.Context $r5;
+        java.lang.String $r6, $r13;
+        java.lang.Object $r7;
+        android.location.Location $r8;
+        it.h3g.areaclienti3.tremobility.ap $r9;
+        int $i1, $i2;
+        it.h3g.areaclienti3.tremobility.ag $r10;
+        it.h3g.areaclienti3.tremobility.ao $r11;
+        it.h3g.areaclienti3.tremobility.model.TreMobTicket $r12;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        specialinvoke $r0.<it.h3g.areaclienti3.tremobility.af: void onResume()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.tremobility.al: void b()>();
+        $r1 = staticinvoke <it.h3g.areaclienti3.tremobility.ak: it.h3g.areaclienti3.tremobility.model.ContainerBuyTicket a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        virtualinvoke $r2.<java.util.ArrayList: void clear()>();
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.tremobility.model.ContainerBuyTicket: java.util.ArrayList getTicketing()>();
+        virtualinvoke $r2.<java.util.ArrayList: boolean addAll(java.util.Collection)>($r3);
+        $r4 = $r0.<it.h3g.areaclienti3.tremobility.al: android.location.LocationManager o>;
+        if $r4 != null goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        $r7 = virtualinvoke $r5.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("location");
+        $r4 = (android.location.LocationManager) $r7;
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.location.LocationManager o> = $r4;
+
+     label0:
+        $r4 = $r0.<it.h3g.areaclienti3.tremobility.al: android.location.LocationManager o>;
+        $r8 = virtualinvoke $r4.<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)>("network");
+        $r0.<it.h3g.areaclienti3.tremobility.al: android.location.Location p> = $r8;
+        $r8 = $r0.<it.h3g.areaclienti3.tremobility.al: android.location.Location p>;
+        if $r8 == null goto label4;
+
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $r9 = new it.h3g.areaclienti3.tremobility.ap;
+        specialinvoke $r9.<it.h3g.areaclienti3.tremobility.ap: void <init>(it.h3g.areaclienti3.tremobility.al,it.h3g.areaclienti3.tremobility.ap)>($r0, null);
+        staticinvoke <java.util.Collections: void sort(java.util.List,java.util.Comparator)>($r3, $r9);
+
+     label1:
+        $r5 = $r0.<it.h3g.areaclienti3.tremobility.al: android.content.Context mContext>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.tremobility.ae: java.lang.String f(android.content.Context)>($r5);
+        if $r6 == null goto label3;
+
+        $i1 = 0;
+
+     label2:
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $i2 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        if $i1 < $i2 goto label5;
+
+     label3:
+        $r10 = $r0.<it.h3g.areaclienti3.tremobility.al: it.h3g.areaclienti3.tremobility.ag m>;
+        virtualinvoke $r10.<it.h3g.areaclienti3.tremobility.ag: void notifyDataSetChanged()>();
+        return;
+
+     label4:
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $r11 = new it.h3g.areaclienti3.tremobility.ao;
+        specialinvoke $r11.<it.h3g.areaclienti3.tremobility.ao: void <init>(it.h3g.areaclienti3.tremobility.al)>($r0);
+        staticinvoke <java.util.Collections: void sort(java.util.List,java.util.Comparator)>($r3, $r11);
+        goto label1;
+
+     label5:
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $r7 = virtualinvoke $r3.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r12 = (it.h3g.areaclienti3.tremobility.model.TreMobTicket) $r7;
+        $r13 = virtualinvoke $r12.<it.h3g.areaclienti3.tremobility.model.TreMobTicket: java.lang.String getCodice()>();
+        $z0 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 == 0 goto label6;
+
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        $r7 = virtualinvoke $r3.<java.util.ArrayList: java.lang.Object get(int)>($i1);
+        $r12 = (it.h3g.areaclienti3.tremobility.model.TreMobTicket) $r7;
+        $r2 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        virtualinvoke $r2.<java.util.ArrayList: java.lang.Object remove(int)>($i1);
+        $r3 = $r0.<it.h3g.areaclienti3.tremobility.al: java.util.ArrayList k>;
+        virtualinvoke $r3.<java.util.ArrayList: void add(int,java.lang.Object)>(0, $r12);
+
+     label6:
+        $i1 = $i1 + 1;
+        goto label2;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.tremobility.al $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.tremobility.al;
+        return;
+    }
+}

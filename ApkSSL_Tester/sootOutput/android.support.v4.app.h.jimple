@@ -1,0 +1,1502 @@
+public class android.support.v4.app.h extends android.app.Activity
+{
+    final android.os.Handler a;
+    final android.support.v4.app.p b;
+    final android.support.v4.app.m c;
+    boolean d;
+    boolean e;
+    boolean f;
+    boolean g;
+    boolean h;
+    boolean i;
+    boolean j;
+    boolean k;
+    android.support.v4.c.m l;
+    android.support.v4.app.ab m;
+
+    public void <init>()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.i $r1;
+        android.support.v4.app.p $r2;
+        android.support.v4.app.j $r3;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+        $r1 = new android.support.v4.app.i;
+        specialinvoke $r1.<android.support.v4.app.i: void <init>(android.support.v4.app.h)>($r0);
+        $r0.<android.support.v4.app.h: android.os.Handler a> = $r1;
+        $r2 = new android.support.v4.app.p;
+        specialinvoke $r2.<android.support.v4.app.p: void <init>()>();
+        $r0.<android.support.v4.app.h: android.support.v4.app.p b> = $r2;
+        $r3 = new android.support.v4.app.j;
+        specialinvoke $r3.<android.support.v4.app.j: void <init>(android.support.v4.app.h)>($r0);
+        $r0.<android.support.v4.app.h: android.support.v4.app.m c> = $r3;
+        return;
+    }
+
+    private static java.lang.String a(android.view.View)
+    {
+        android.view.View $r0;
+        char $c1, $c2, $c6;
+        java.lang.StringBuilder $r1;
+        java.lang.Class $r2;
+        java.lang.String $r3, $r5, $r6, $r7;
+        int $i7, $i9;
+        boolean $z0;
+        android.content.res.Resources $r4;
+        android.content.res.Resources$NotFoundException $r8;
+
+        $r0 := @parameter0: android.view.View;
+        $c1 = 70;
+        $c2 = 46;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(int)>(128);
+        $r2 = virtualinvoke $r0.<java.lang.Object: java.lang.Class getClass()>();
+        $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(123);
+        $i7 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>($r0);
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32);
+        $i7 = virtualinvoke $r0.<android.view.View: int getVisibility()>();
+        lookupswitch($i7)
+        {
+            case 0: goto label15;
+            case 4: goto label16;
+            case 8: goto label17;
+            default: goto label0;
+        };
+
+     label0:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(46);
+
+     label1:
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isFocusable()>();
+        if $z0 == 0 goto label18;
+
+        $c6 = 70;
+
+     label2:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isEnabled()>();
+        if $z0 == 0 goto label19;
+
+        $c6 = 69;
+
+     label3:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean willNotDraw()>();
+        if $z0 == 0 goto label20;
+
+        $c6 = 46;
+
+     label4:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isHorizontalScrollBarEnabled()>();
+        if $z0 == 0 goto label21;
+
+        $c6 = 72;
+
+     label5:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isVerticalScrollBarEnabled()>();
+        if $z0 == 0 goto label22;
+
+        $c6 = 86;
+
+     label6:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isClickable()>();
+        if $z0 == 0 goto label23;
+
+        $c6 = 67;
+
+     label7:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isLongClickable()>();
+        if $z0 == 0 goto label24;
+
+        $c6 = 76;
+
+     label8:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isFocused()>();
+        if $z0 == 0 goto label25;
+
+     label9:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c1);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isSelected()>();
+        if $z0 == 0 goto label26;
+
+        $c6 = 83;
+
+     label10:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6);
+        $z0 = virtualinvoke $r0.<android.view.View: boolean isPressed()>();
+        if $z0 == 0 goto label11;
+
+        $c2 = 80;
+
+     label11:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32);
+        $i7 = virtualinvoke $r0.<android.view.View: int getLeft()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+        $i7 = virtualinvoke $r0.<android.view.View: int getTop()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(45);
+        $i7 = virtualinvoke $r0.<android.view.View: int getRight()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+        $i7 = virtualinvoke $r0.<android.view.View: int getBottom()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i7);
+        $i7 = virtualinvoke $r0.<android.view.View: int getId()>();
+        if $i7 == -1 goto label14;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" #");
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r0.<android.view.View: android.content.res.Resources getResources()>();
+        if $i7 == 0 goto label14;
+
+        if $r4 == null goto label14;
+
+        $i9 = -16777216 & $i7;
+        lookupswitch($i9)
+        {
+            case 16777216: goto label28;
+            case 2130706432: goto label27;
+            default: goto label12;
+        };
+
+     label12:
+        $r3 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getResourcePackageName(int)>($i7);
+
+     label13:
+        $r5 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getResourceTypeName(int)>($i7);
+        $r6 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getResourceEntryName(int)>($i7);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+     label14:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+        $r7 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r7;
+
+     label15:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(86);
+        goto label1;
+
+     label16:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(73);
+        goto label1;
+
+     label17:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(71);
+        goto label1;
+
+     label18:
+        $c6 = 46;
+        goto label2;
+
+     label19:
+        $c6 = 46;
+        goto label3;
+
+     label20:
+        $c6 = 68;
+        goto label4;
+
+     label21:
+        $c6 = 46;
+        goto label5;
+
+     label22:
+        $c6 = 46;
+        goto label6;
+
+     label23:
+        $c6 = 46;
+        goto label7;
+
+     label24:
+        $c6 = 46;
+        goto label8;
+
+     label25:
+        $c1 = 46;
+        goto label9;
+
+     label26:
+        $c6 = 46;
+        goto label10;
+
+     label27:
+        $r3 = "app";
+        goto label13;
+
+     label28:
+        $r3 = "android";
+        goto label13;
+
+     label29:
+        $r8 := @caughtexception;
+        goto label14;
+
+        catch android.content.res.Resources$NotFoundException from label12 to label14 with label29;
+    }
+
+    private void a(java.lang.String, java.io.PrintWriter, android.view.View)
+    {
+        android.support.v4.app.h $r0;
+        java.lang.String $r1, $r4;
+        java.io.PrintWriter $r2;
+        android.view.View $r3;
+        int $i0, $i1;
+        boolean $z0;
+        android.view.ViewGroup $r5;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.io.PrintWriter;
+        $r3 := @parameter2: android.view.View;
+        virtualinvoke $r2.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        if $r3 != null goto label1;
+
+        virtualinvoke $r2.<java.io.PrintWriter: void println(java.lang.String)>("null");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = staticinvoke <android.support.v4.app.h: java.lang.String a(android.view.View)>($r3);
+        virtualinvoke $r2.<java.io.PrintWriter: void println(java.lang.String)>($r4);
+        $z0 = $r3 instanceof android.view.ViewGroup;
+        if $z0 == 0 goto label0;
+
+        $r5 = (android.view.ViewGroup) $r3;
+        $i0 = virtualinvoke $r5.<android.view.ViewGroup: int getChildCount()>();
+        if $i0 <= 0 goto label0;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i1 = 0;
+
+     label2:
+        if $i1 >= $i0 goto label0;
+
+        $r3 = virtualinvoke $r5.<android.view.ViewGroup: android.view.View getChildAt(int)>($i1);
+        specialinvoke $r0.<android.support.v4.app.h: void a(java.lang.String,java.io.PrintWriter,android.view.View)>($r4, $r2, $r3);
+        $i1 = $i1 + 1;
+        goto label2;
+    }
+
+    android.support.v4.app.ab a(java.lang.String, boolean, boolean)
+    {
+        android.support.v4.app.h $r0;
+        java.lang.String $r1;
+        boolean $z0, $z1;
+        android.support.v4.c.m $r2;
+        java.lang.Object $r3;
+        android.support.v4.app.ab $r4;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: java.lang.String;
+        $z0 := @parameter1: boolean;
+        $z1 := @parameter2: boolean;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        if $r2 != null goto label0;
+
+        $r2 = new android.support.v4.c.m;
+        specialinvoke $r2.<android.support.v4.c.m: void <init>()>();
+        $r0.<android.support.v4.app.h: android.support.v4.c.m l> = $r2;
+
+     label0:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r3 = virtualinvoke $r2.<android.support.v4.c.m: java.lang.Object get(java.lang.Object)>($r1);
+        $r4 = (android.support.v4.app.ab) $r3;
+        if $r4 != null goto label2;
+
+        if $z1 == 0 goto label1;
+
+        $r4 = new android.support.v4.app.ab;
+        specialinvoke $r4.<android.support.v4.app.ab: void <init>(java.lang.String,android.support.v4.app.h,boolean)>($r1, $r0, $z0);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        virtualinvoke $r2.<android.support.v4.c.m: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r4);
+
+     label1:
+        return $r4;
+
+     label2:
+        virtualinvoke $r4.<android.support.v4.app.ab: void a(android.support.v4.app.h)>($r0);
+        return $r4;
+    }
+
+    protected void a()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.p $r1;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r1.<android.support.v4.app.p: void o()>();
+        return;
+    }
+
+    public void a(android.support.v4.app.Fragment)
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.Fragment $r1;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.support.v4.app.Fragment;
+        return;
+    }
+
+    public void a(android.support.v4.app.Fragment, android.content.Intent, int)
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.Fragment $r1;
+        android.content.Intent $r2;
+        int $i0, $i2;
+        java.lang.IllegalArgumentException $r4;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.support.v4.app.Fragment;
+        $r2 := @parameter1: android.content.Intent;
+        $i0 := @parameter2: int;
+        if $i0 != -1 goto label1;
+
+        specialinvoke $r0.<android.app.Activity: void startActivityForResult(android.content.Intent,int)>($r2, -1);
+
+     label0:
+        return;
+
+     label1:
+        $i2 = -65536 & $i0;
+        if $i2 == 0 goto label2;
+
+        $r4 = new java.lang.IllegalArgumentException;
+        specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Can only use lower 16 bits for requestCode");
+        throw $r4;
+
+     label2:
+        $i2 = $r1.<android.support.v4.app.Fragment: int mIndex>;
+        $i2 = $i2 + 1;
+        $i2 = $i2 << 16;
+        $i0 = 65535 & $i0;
+        $i2 = $i2 + $i0;
+        specialinvoke $r0.<android.app.Activity: void startActivityForResult(android.content.Intent,int)>($r2, $i2);
+        goto label0;
+    }
+
+    void a(java.lang.String)
+    {
+        android.support.v4.app.h $r0;
+        java.lang.String $r1;
+        android.support.v4.c.m $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+        android.support.v4.app.ab $r4;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r3 = virtualinvoke $r2.<android.support.v4.c.m: java.lang.Object get(java.lang.Object)>($r1);
+        $r4 = (android.support.v4.app.ab) $r3;
+        if $r4 == null goto label0;
+
+        $z0 = $r4.<android.support.v4.app.ab: boolean g>;
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r4.<android.support.v4.app.ab: void h()>();
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        virtualinvoke $r2.<android.support.v4.c.m: java.lang.Object remove(java.lang.Object)>($r1);
+
+     label0:
+        return;
+    }
+
+    void a(boolean)
+    {
+        android.support.v4.app.h $r0;
+        boolean $z0, $z1;
+        android.os.Handler $r1;
+        int i0;
+
+        $r0 := @this: android.support.v4.app.h;
+        $z0 := @parameter0: boolean;
+        $z1 = $r0.<android.support.v4.app.h: boolean g>;
+        if $z1 != 0 goto label0;
+
+        $r0.<android.support.v4.app.h: boolean g> = 1;
+        $r0.<android.support.v4.app.h: boolean h> = $z0;
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        i0 = (int) 1;
+        virtualinvoke $r1.<android.os.Handler: void removeMessages(int)>(i0);
+        virtualinvoke $r0.<android.support.v4.app.h: void d()>();
+
+     label0:
+        return;
+    }
+
+    protected boolean a(android.view.View, android.view.Menu)
+    {
+        android.support.v4.app.h $r0;
+        android.view.View $r1;
+        android.view.Menu $r2;
+        boolean $z0;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.Menu;
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean onPreparePanel(int,android.view.View,android.view.Menu)>(0, $r1, $r2);
+        return $z0;
+    }
+
+    public java.lang.Object b()
+    {
+        android.support.v4.app.h $r0;
+
+        $r0 := @this: android.support.v4.app.h;
+        return null;
+    }
+
+    public void c()
+    {
+        android.support.v4.app.h $r0;
+        int $i0;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label1;
+
+        staticinvoke <android.support.v4.app.a: void a(android.app.Activity)>($r0);
+
+     label0:
+        return;
+
+     label1:
+        $r0.<android.support.v4.app.h: boolean i> = 1;
+        goto label0;
+    }
+
+    void d()
+    {
+        android.support.v4.app.h $r0;
+        boolean $z0;
+        android.support.v4.app.ab $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        $z0 = $r0.<android.support.v4.app.h: boolean k>;
+        if $z0 == 0 goto label0;
+
+        $r0.<android.support.v4.app.h: boolean k> = 0;
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        if $r1 == null goto label0;
+
+        $z0 = $r0.<android.support.v4.app.h: boolean h>;
+        if $z0 != 0 goto label1;
+
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        virtualinvoke $r1.<android.support.v4.app.ab: void c()>();
+
+     label0:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void r()>();
+        return;
+
+     label1:
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        virtualinvoke $r1.<android.support.v4.app.ab: void d()>();
+        goto label0;
+    }
+
+    public void dump(java.lang.String, java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[])
+    {
+        android.support.v4.app.h $r0;
+        java.lang.String $r1, $r5, $r7;
+        java.io.FileDescriptor $r2;
+        java.io.PrintWriter $r3;
+        java.lang.String[] $r4;
+        int $i0;
+        java.lang.StringBuilder $r6;
+        boolean $z0;
+        android.support.v4.app.ab $r8;
+        android.support.v4.app.p $r9;
+        android.view.Window $r10;
+        android.view.View $r11;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.io.FileDescriptor;
+        $r3 := @parameter2: java.io.PrintWriter;
+        $r4 := @parameter3: java.lang.String[];
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+     label0:
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("Local FragmentActivity ");
+        $i0 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>($r0);
+        $r5 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r5);
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.String)>(" State:");
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r5);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mCreated=");
+        $z0 = $r0.<android.support.v4.app.h: boolean d>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mResumed=");
+        $z0 = $r0.<android.support.v4.app.h: boolean e>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mStopped=");
+        $z0 = $r0.<android.support.v4.app.h: boolean f>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mReallyStopped=");
+        $z0 = $r0.<android.support.v4.app.h: boolean g>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r5);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mLoadersStarted=");
+        $z0 = $r0.<android.support.v4.app.h: boolean k>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(boolean)>($z0);
+        $r8 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        if $r8 == null goto label1;
+
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("Loader Manager ");
+        $r8 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        $i0 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>($r8);
+        $r7 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r7);
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.String)>(":");
+        $r8 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<android.support.v4.app.ab: void a(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])>($r7, $r2, $r3, $r4);
+
+     label1:
+        $r9 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r9.<android.support.v4.app.p: void a(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])>($r1, $r2, $r3, $r4);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.String)>("View Hierarchy:");
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r10 = virtualinvoke $r0.<android.support.v4.app.h: android.view.Window getWindow()>();
+        $r11 = virtualinvoke $r10.<android.view.Window: android.view.View getDecorView()>();
+        specialinvoke $r0.<android.support.v4.app.h: void a(java.lang.String,java.io.PrintWriter,android.view.View)>($r7, $r3, $r11);
+        return;
+    }
+
+    public android.support.v4.app.n e()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.p $r1;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        return $r1;
+    }
+
+    protected void onActivityResult(int, int, android.content.Intent)
+    {
+        android.support.v4.app.h $r0;
+        int $i0, $i1, $i2, $i3;
+        android.content.Intent $r1;
+        android.support.v4.app.p $r2;
+        java.lang.String $r3;
+        java.util.ArrayList $r4;
+        java.lang.StringBuilder $r6;
+        java.lang.Object $r7;
+        android.support.v4.app.Fragment $r8;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 := @parameter2: android.content.Intent;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void k()>();
+        $i2 = $i0 >> 16;
+        if $i2 == 0 goto label4;
+
+        $i3 = $i2 + -1;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r4 = $r2.<android.support.v4.app.p: java.util.ArrayList f>;
+        if $r4 == null goto label0;
+
+        if $i3 < 0 goto label0;
+
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r4 = $r2.<android.support.v4.app.p: java.util.ArrayList f>;
+        $i2 = virtualinvoke $r4.<java.util.ArrayList: int size()>();
+        if $i3 < $i2 goto label2;
+
+     label0:
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Activity result fragment index out of range: 0x");
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i0);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("FragmentActivity", $r3);
+
+     label1:
+        return;
+
+     label2:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r4 = $r2.<android.support.v4.app.p: java.util.ArrayList f>;
+        $r7 = virtualinvoke $r4.<java.util.ArrayList: java.lang.Object get(int)>($i3);
+        $r8 = (android.support.v4.app.Fragment) $r7;
+        if $r8 != null goto label3;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Activity result no fragment exists for index: 0x");
+        $r3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i0);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("FragmentActivity", $r3);
+        goto label1;
+
+     label3:
+        $i3 = 65535 & $i0;
+        virtualinvoke $r8.<android.support.v4.app.Fragment: void onActivityResult(int,int,android.content.Intent)>($i3, $i1, $r1);
+        goto label1;
+
+     label4:
+        specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+        goto label1;
+    }
+
+    public void onBackPressed()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.p $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $z0 = virtualinvoke $r1.<android.support.v4.app.p: boolean c()>();
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r0.<android.support.v4.app.h: void finish()>();
+
+     label0:
+        return;
+    }
+
+    public void onConfigurationChanged(android.content.res.Configuration)
+    {
+        android.support.v4.app.h $r0;
+        android.content.res.Configuration $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.content.res.Configuration;
+        specialinvoke $r0.<android.app.Activity: void onConfigurationChanged(android.content.res.Configuration)>($r1);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void a(android.content.res.Configuration)>($r1);
+        return;
+    }
+
+    protected void onCreate(android.os.Bundle)
+    {
+        android.support.v4.app.h $r0;
+        android.os.Bundle $r1;
+        android.support.v4.app.p $r2;
+        android.support.v4.app.m $r3;
+        android.view.LayoutInflater $r4;
+        android.view.LayoutInflater$Factory $r5;
+        java.lang.Object $r6;
+        android.support.v4.app.l $r7;
+        android.support.v4.c.m $r8;
+        android.os.Parcelable $r10;
+        java.util.ArrayList $r11;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.m c>;
+        virtualinvoke $r2.<android.support.v4.app.p: void a(android.support.v4.app.h,android.support.v4.app.m,android.support.v4.app.Fragment)>($r0, $r3, null);
+        $r4 = virtualinvoke $r0.<android.support.v4.app.h: android.view.LayoutInflater getLayoutInflater()>();
+        $r5 = virtualinvoke $r4.<android.view.LayoutInflater: android.view.LayoutInflater$Factory getFactory()>();
+        if $r5 != null goto label0;
+
+        $r4 = virtualinvoke $r0.<android.support.v4.app.h: android.view.LayoutInflater getLayoutInflater()>();
+        virtualinvoke $r4.<android.view.LayoutInflater: void setFactory(android.view.LayoutInflater$Factory)>($r0);
+
+     label0:
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+        $r6 = virtualinvoke $r0.<android.support.v4.app.h: java.lang.Object getLastNonConfigurationInstance()>();
+        $r7 = (android.support.v4.app.l) $r6;
+        if $r7 == null goto label1;
+
+        $r8 = $r7.<android.support.v4.app.l: android.support.v4.c.m e>;
+        $r0.<android.support.v4.app.h: android.support.v4.c.m l> = $r8;
+
+     label1:
+        if $r1 == null goto label3;
+
+        $r10 = virtualinvoke $r1.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("android:support:fragments");
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        if $r7 == null goto label4;
+
+        $r11 = $r7.<android.support.v4.app.l: java.util.ArrayList d>;
+
+     label2:
+        virtualinvoke $r2.<android.support.v4.app.p: void a(android.os.Parcelable,java.util.ArrayList)>($r10, $r11);
+
+     label3:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void l()>();
+        return;
+
+     label4:
+        $r11 = null;
+        goto label2;
+    }
+
+    public boolean onCreatePanelMenu(int, android.view.Menu)
+    {
+        android.support.v4.app.h $r0;
+        int $i0;
+        android.view.Menu $r1;
+        boolean $z0, $z1;
+        android.support.v4.app.p $r2;
+        android.view.MenuInflater $r3;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.Menu;
+        if $i0 != 0 goto label1;
+
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean onCreatePanelMenu(int,android.view.Menu)>($i0, $r1);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r3 = virtualinvoke $r0.<android.support.v4.app.h: android.view.MenuInflater getMenuInflater()>();
+        $z1 = virtualinvoke $r2.<android.support.v4.app.p: boolean a(android.view.Menu,android.view.MenuInflater)>($r1, $r3);
+        $z1 = $z0 | $z1;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+        return $z1;
+
+     label0:
+        return 1;
+
+     label1:
+        $z1 = specialinvoke $r0.<android.app.Activity: boolean onCreatePanelMenu(int,android.view.Menu)>($i0, $r1);
+        return $z1;
+    }
+
+    public android.view.View onCreateView(java.lang.String, android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v4.app.h $r0;
+        java.lang.String $r1, $r4, $r9, $r10;
+        android.content.Context $r2;
+        android.util.AttributeSet $r3;
+        android.support.v4.app.Fragment $r5;
+        int[] $r6;
+        int $i0, $i1, $i3;
+        android.content.res.TypedArray $r7;
+        boolean $z1;
+        android.view.View $r8;
+        java.lang.StringBuilder $r12, r17;
+        android.support.v4.app.p $r13;
+        android.os.Bundle $r14;
+        java.lang.Object $r16;
+        java.lang.IllegalArgumentException r18;
+        java.lang.IllegalStateException r19;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: android.content.Context;
+        $r3 := @parameter2: android.util.AttributeSet;
+        $i0 = 0;
+        $r5 = null;
+        $r4 = "fragment";
+        $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z1 != 0 goto label0;
+
+        $r8 = specialinvoke $r0.<android.app.Activity: android.view.View onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet)>($r1, $r2, $r3);
+        return $r8;
+
+     label0:
+        $r10 = (java.lang.String) null;
+        $r9 = interfaceinvoke $r3.<android.util.AttributeSet: java.lang.String getAttributeValue(java.lang.String,java.lang.String)>($r10, "class");
+        $r6 = <android.support.v4.app.k: int[] a>;
+        $r7 = virtualinvoke $r2.<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet,int[])>($r3, $r6);
+        if $r9 != null goto label1;
+
+        $r9 = virtualinvoke $r7.<android.content.res.TypedArray: java.lang.String getString(int)>(0);
+
+     label1:
+        $i3 = (int) 1;
+        $i3 = virtualinvoke $r7.<android.content.res.TypedArray: int getResourceId(int,int)>($i3, -1);
+        $r10 = virtualinvoke $r7.<android.content.res.TypedArray: java.lang.String getString(int)>(2);
+        virtualinvoke $r7.<android.content.res.TypedArray: void recycle()>();
+        $z1 = staticinvoke <android.support.v4.app.Fragment: boolean isSupportFragmentClass(android.content.Context,java.lang.String)>($r0, $r9);
+        if $z1 != 0 goto label2;
+
+        $r8 = specialinvoke $r0.<android.app.Activity: android.view.View onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet)>($r1, $r2, $r3);
+        return $r8;
+
+     label2:
+        goto label3;
+
+     label3:
+        if $i0 != -1 goto label4;
+
+        if $i3 != -1 goto label4;
+
+        if $r10 != null goto label4;
+
+        r18 = new java.lang.IllegalArgumentException;
+        r17 = new java.lang.StringBuilder;
+        specialinvoke r17.<java.lang.StringBuilder: void <init>()>();
+        $r10 = interfaceinvoke $r3.<android.util.AttributeSet: java.lang.String getPositionDescription()>();
+        $r12 = virtualinvoke r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": Must specify unique android:id, android:tag, or have a parent with an id for ");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r10 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke r18.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r10);
+        throw r18;
+
+     label4:
+        if $i3 == -1 goto label5;
+
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r5 = virtualinvoke $r13.<android.support.v4.app.p: android.support.v4.app.Fragment a(int)>($i3);
+
+     label5:
+        if $r5 != null goto label6;
+
+        if $r10 == null goto label6;
+
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r5 = virtualinvoke $r13.<android.support.v4.app.p: android.support.v4.app.Fragment a(java.lang.String)>($r10);
+
+     label6:
+        if $r5 != null goto label7;
+
+        if $i0 == -1 goto label7;
+
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r5 = virtualinvoke $r13.<android.support.v4.app.p: android.support.v4.app.Fragment a(int)>($i0);
+
+     label7:
+        $z1 = <android.support.v4.app.p: boolean a>;
+        if $z1 == 0 goto label8;
+
+        r17 = new java.lang.StringBuilder;
+        specialinvoke r17.<java.lang.StringBuilder: void <init>()>();
+        $r12 = virtualinvoke r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("onCreateView: id=0x");
+        $r4 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i3);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" fname=");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" existing=");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+        $r4 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("FragmentActivity", $r4);
+
+     label8:
+        if $r5 != null goto label12;
+
+        $r5 = staticinvoke <android.support.v4.app.Fragment: android.support.v4.app.Fragment instantiate(android.content.Context,java.lang.String)>($r0, $r9);
+        $r5.<android.support.v4.app.Fragment: boolean mFromLayout> = 1;
+        if $i3 == 0 goto label11;
+
+        $i1 = $i3;
+
+     label9:
+        $r5.<android.support.v4.app.Fragment: int mFragmentId> = $i1;
+        $r5.<android.support.v4.app.Fragment: int mContainerId> = $i0;
+        $r5.<android.support.v4.app.Fragment: java.lang.String mTag> = $r10;
+        $r5.<android.support.v4.app.Fragment: boolean mInLayout> = 1;
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r5.<android.support.v4.app.Fragment: android.support.v4.app.p mFragmentManager> = $r13;
+        $r14 = $r5.<android.support.v4.app.Fragment: android.os.Bundle mSavedFragmentState>;
+        virtualinvoke $r5.<android.support.v4.app.Fragment: void onInflate(android.app.Activity,android.util.AttributeSet,android.os.Bundle)>($r0, $r3, $r14);
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r13.<android.support.v4.app.p: void a(android.support.v4.app.Fragment,boolean)>($r5, 1);
+
+     label10:
+        $r8 = $r5.<android.support.v4.app.Fragment: android.view.View mView>;
+        if $r8 != null goto label15;
+
+        r19 = new java.lang.IllegalStateException;
+        r17 = new java.lang.StringBuilder;
+        specialinvoke r17.<java.lang.StringBuilder: void <init>()>();
+        $r12 = virtualinvoke r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Fragment ");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" did not create a view.");
+        $r10 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke r19.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r10);
+        throw r19;
+
+     label11:
+        $i1 = $i0;
+        goto label9;
+
+     label12:
+        $z1 = $r5.<android.support.v4.app.Fragment: boolean mInLayout>;
+        if $z1 == 0 goto label13;
+
+        r18 = new java.lang.IllegalArgumentException;
+        r17 = new java.lang.StringBuilder;
+        specialinvoke r17.<java.lang.StringBuilder: void <init>()>();
+        $r4 = interfaceinvoke $r3.<android.util.AttributeSet: java.lang.String getPositionDescription()>();
+        $r12 = virtualinvoke r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": Duplicate id 0x");
+        $r4 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i3);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", tag ");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", or parent id 0x");
+        $r10 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i0);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" with another fragment for ");
+        $r12 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r10 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke r18.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r10);
+        throw r18;
+
+     label13:
+        $r5.<android.support.v4.app.Fragment: boolean mInLayout> = 1;
+        $z1 = $r5.<android.support.v4.app.Fragment: boolean mRetaining>;
+        if $z1 != 0 goto label14;
+
+        $r14 = $r5.<android.support.v4.app.Fragment: android.os.Bundle mSavedFragmentState>;
+        virtualinvoke $r5.<android.support.v4.app.Fragment: void onInflate(android.app.Activity,android.util.AttributeSet,android.os.Bundle)>($r0, $r3, $r14);
+
+     label14:
+        $r13 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r13.<android.support.v4.app.p: void b(android.support.v4.app.Fragment)>($r5);
+        goto label10;
+
+     label15:
+        if $i3 == 0 goto label16;
+
+        $r8 = $r5.<android.support.v4.app.Fragment: android.view.View mView>;
+        virtualinvoke $r8.<android.view.View: void setId(int)>($i3);
+
+     label16:
+        $r8 = $r5.<android.support.v4.app.Fragment: android.view.View mView>;
+        $r16 = virtualinvoke $r8.<android.view.View: java.lang.Object getTag()>();
+        if $r16 != null goto label17;
+
+        $r8 = $r5.<android.support.v4.app.Fragment: android.view.View mView>;
+        virtualinvoke $r8.<android.view.View: void setTag(java.lang.Object)>($r10);
+
+     label17:
+        $r8 = $r5.<android.support.v4.app.Fragment: android.view.View mView>;
+        return $r8;
+    }
+
+    protected void onDestroy()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.p $r1;
+        android.support.v4.app.ab $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+        virtualinvoke $r0.<android.support.v4.app.h: void a(boolean)>(0);
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r1.<android.support.v4.app.p: void t()>();
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        virtualinvoke $r2.<android.support.v4.app.ab: void h()>();
+
+     label0:
+        return;
+    }
+
+    public boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        android.support.v4.app.h $r0;
+        int $i0, $i1;
+        android.view.KeyEvent $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 >= 5 goto label0;
+
+        if $i0 != 4 goto label0;
+
+        $i1 = virtualinvoke $r1.<android.view.KeyEvent: int getRepeatCount()>();
+        if $i1 != 0 goto label0;
+
+        virtualinvoke $r0.<android.support.v4.app.h: void onBackPressed()>();
+        return 1;
+
+     label0:
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean onKeyDown(int,android.view.KeyEvent)>($i0, $r1);
+        return $z0;
+    }
+
+    public void onLowMemory()
+    {
+        android.support.v4.app.h $r0;
+        android.support.v4.app.p $r1;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onLowMemory()>();
+        $r1 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r1.<android.support.v4.app.p: void u()>();
+        return;
+    }
+
+    public boolean onMenuItemSelected(int, android.view.MenuItem)
+    {
+        android.support.v4.app.h $r0;
+        int $i0;
+        android.view.MenuItem $r1;
+        boolean $z0;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.MenuItem;
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean onMenuItemSelected(int,android.view.MenuItem)>($i0, $r1);
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        lookupswitch($i0)
+        {
+            case 0: goto label2;
+            case 6: goto label3;
+            default: goto label1;
+        };
+
+     label1:
+        return 0;
+
+     label2:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $z0 = virtualinvoke $r2.<android.support.v4.app.p: boolean a(android.view.MenuItem)>($r1);
+        return $z0;
+
+     label3:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $z0 = virtualinvoke $r2.<android.support.v4.app.p: boolean b(android.view.MenuItem)>($r1);
+        return $z0;
+    }
+
+    protected void onNewIntent(android.content.Intent)
+    {
+        android.support.v4.app.h $r0;
+        android.content.Intent $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.content.Intent;
+        specialinvoke $r0.<android.app.Activity: void onNewIntent(android.content.Intent)>($r1);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void k()>();
+        return;
+    }
+
+    public void onPanelClosed(int, android.view.Menu)
+    {
+        android.support.v4.app.h $r0;
+        int $i0;
+        android.view.Menu $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.Menu;
+        lookupswitch($i0)
+        {
+            case 0: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        specialinvoke $r0.<android.app.Activity: void onPanelClosed(int,android.view.Menu)>($i0, $r1);
+        return;
+
+     label1:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void b(android.view.Menu)>($r1);
+        goto label0;
+    }
+
+    protected void onPause()
+    {
+        android.support.v4.app.h $r0;
+        boolean $z0;
+        android.os.Handler $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onPause()>();
+        $r0.<android.support.v4.app.h: boolean e> = 0;
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        $z0 = virtualinvoke $r1.<android.os.Handler: boolean hasMessages(int)>(2);
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        virtualinvoke $r1.<android.os.Handler: void removeMessages(int)>(2);
+        virtualinvoke $r0.<android.support.v4.app.h: void a()>();
+
+     label0:
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void p()>();
+        return;
+    }
+
+    protected void onPostResume()
+    {
+        android.support.v4.app.h $r0;
+        android.os.Handler $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onPostResume()>();
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        virtualinvoke $r1.<android.os.Handler: void removeMessages(int)>(2);
+        virtualinvoke $r0.<android.support.v4.app.h: void a()>();
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: boolean g()>();
+        return;
+    }
+
+    public boolean onPreparePanel(int, android.view.View, android.view.Menu)
+    {
+        android.support.v4.app.h $r0;
+        int $i0;
+        android.view.View $r1;
+        android.view.Menu $r2;
+        boolean $z0, $z1;
+        android.support.v4.app.p $r3;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.View;
+        $r2 := @parameter2: android.view.Menu;
+        if $i0 != 0 goto label1;
+
+        if $r2 == null goto label1;
+
+        $z0 = $r0.<android.support.v4.app.h: boolean i>;
+        if $z0 == 0 goto label0;
+
+        $r0.<android.support.v4.app.h: boolean i> = 0;
+        interfaceinvoke $r2.<android.view.Menu: void clear()>();
+        virtualinvoke $r0.<android.support.v4.app.h: boolean onCreatePanelMenu(int,android.view.Menu)>($i0, $r2);
+
+     label0:
+        $z0 = virtualinvoke $r0.<android.support.v4.app.h: boolean a(android.view.View,android.view.Menu)>($r1, $r2);
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $z1 = virtualinvoke $r3.<android.support.v4.app.p: boolean a(android.view.Menu)>($r2);
+        $z1 = $z0 | $z1;
+        return $z1;
+
+     label1:
+        $z1 = specialinvoke $r0.<android.app.Activity: boolean onPreparePanel(int,android.view.View,android.view.Menu)>($i0, $r1, $r2);
+        return $z1;
+    }
+
+    protected void onResume()
+    {
+        android.support.v4.app.h $r0;
+        android.os.Handler $r1;
+        android.support.v4.app.p $r2;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onResume()>();
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        virtualinvoke $r1.<android.os.Handler: boolean sendEmptyMessage(int)>(2);
+        $r0.<android.support.v4.app.h: boolean e> = 1;
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: boolean g()>();
+        return;
+    }
+
+    public final java.lang.Object onRetainNonConfigurationInstance()
+    {
+        android.support.v4.app.h $r0;
+        boolean $z0;
+        int $i0, $i1, $i2;
+        java.lang.Object $r1, $r6;
+        java.util.ArrayList $r2;
+        android.support.v4.app.ab[] $r3;
+        android.support.v4.app.p $r4;
+        android.support.v4.c.m $r5;
+        android.support.v4.app.ab $r7;
+        java.lang.String $r8;
+        android.support.v4.app.l $r9;
+
+        $r0 := @this: android.support.v4.app.h;
+        $i0 = 0;
+        $z0 = $r0.<android.support.v4.app.h: boolean f>;
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<android.support.v4.app.h: void a(boolean)>(1);
+
+     label0:
+        $r1 = virtualinvoke $r0.<android.support.v4.app.h: java.lang.Object b()>();
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r2 = virtualinvoke $r4.<android.support.v4.app.p: java.util.ArrayList i()>();
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        if $r5 == null goto label6;
+
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $i2 = virtualinvoke $r5.<android.support.v4.c.m: int size()>();
+        $r3 = newarray (android.support.v4.app.ab)[$i2];
+        $i1 = $i2 + -1;
+
+     label1:
+        if $i1 < 0 goto label2;
+
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r6 = virtualinvoke $r5.<android.support.v4.c.m: java.lang.Object c(int)>($i1);
+        $r7 = (android.support.v4.app.ab) $r6;
+        $r3[$i1] = $r7;
+        $i1 = $i1 + -1;
+        goto label1;
+
+     label2:
+        $i1 = 0;
+
+     label3:
+        if $i0 >= $i2 goto label7;
+
+        $r7 = $r3[$i0];
+        $z0 = $r7.<android.support.v4.app.ab: boolean g>;
+        if $z0 == 0 goto label5;
+
+        $i1 = (int) 1;
+
+     label4:
+        $i0 = $i0 + 1;
+        goto label3;
+
+     label5:
+        virtualinvoke $r7.<android.support.v4.app.ab: void h()>();
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r8 = $r7.<android.support.v4.app.ab: java.lang.String d>;
+        virtualinvoke $r5.<android.support.v4.c.m: java.lang.Object remove(java.lang.Object)>($r8);
+        goto label4;
+
+     label6:
+        $i1 = 0;
+
+     label7:
+        if $r2 != null goto label8;
+
+        if $i1 != 0 goto label8;
+
+        if $r1 != null goto label8;
+
+        return null;
+
+     label8:
+        $r9 = new android.support.v4.app.l;
+        specialinvoke $r9.<android.support.v4.app.l: void <init>()>();
+        $r9.<android.support.v4.app.l: java.lang.Object a> = null;
+        $r9.<android.support.v4.app.l: java.lang.Object b> = $r1;
+        $r9.<android.support.v4.app.l: android.support.v4.c.m c> = null;
+        $r9.<android.support.v4.app.l: java.util.ArrayList d> = $r2;
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r9.<android.support.v4.app.l: android.support.v4.c.m e> = $r5;
+        return $r9;
+    }
+
+    protected void onSaveInstanceState(android.os.Bundle)
+    {
+        android.support.v4.app.h $r0;
+        android.os.Bundle $r1;
+        android.support.v4.app.p $r2;
+        android.os.Parcelable $r4;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r4 = virtualinvoke $r2.<android.support.v4.app.p: android.os.Parcelable j()>();
+        if $r4 == null goto label0;
+
+        virtualinvoke $r1.<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)>("android:support:fragments", $r4);
+
+     label0:
+        return;
+    }
+
+    protected void onStart()
+    {
+        android.support.v4.app.h $r0;
+        android.os.Handler $r1;
+        int $i0, $i1;
+        android.support.v4.app.ab[] $r2;
+        boolean $z2;
+        android.support.v4.app.p $r3;
+        android.support.v4.app.ab $r4;
+        android.support.v4.c.m $r5;
+        java.lang.Object $r6;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onStart()>();
+        $r0.<android.support.v4.app.h: boolean f> = 0;
+        $r0.<android.support.v4.app.h: boolean g> = 0;
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        $i1 = (int) 1;
+        virtualinvoke $r1.<android.os.Handler: void removeMessages(int)>($i1);
+        $z2 = $r0.<android.support.v4.app.h: boolean d>;
+        if $z2 != 0 goto label0;
+
+        $r0.<android.support.v4.app.h: boolean d> = 1;
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r3.<android.support.v4.app.p: void m()>();
+
+     label0:
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r3.<android.support.v4.app.p: void k()>();
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r3.<android.support.v4.app.p: boolean g()>();
+        $z2 = $r0.<android.support.v4.app.h: boolean k>;
+        if $z2 != 0 goto label2;
+
+        $r0.<android.support.v4.app.h: boolean k> = 1;
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        if $r4 == null goto label4;
+
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        virtualinvoke $r4.<android.support.v4.app.ab: void b()>();
+
+     label1:
+        $r0.<android.support.v4.app.h: boolean j> = 1;
+
+     label2:
+        $r3 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r3.<android.support.v4.app.p: void n()>();
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        if $r5 == null goto label7;
+
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $i1 = virtualinvoke $r5.<android.support.v4.c.m: int size()>();
+        $r2 = newarray (android.support.v4.app.ab)[$i1];
+        $i0 = $i1 + -1;
+
+     label3:
+        if $i0 < 0 goto label5;
+
+        $r5 = $r0.<android.support.v4.app.h: android.support.v4.c.m l>;
+        $r6 = virtualinvoke $r5.<android.support.v4.c.m: java.lang.Object c(int)>($i0);
+        $r4 = (android.support.v4.app.ab) $r6;
+        $r2[$i0] = $r4;
+        $i0 = $i0 + -1;
+        goto label3;
+
+     label4:
+        $z2 = $r0.<android.support.v4.app.h: boolean j>;
+        if $z2 != 0 goto label1;
+
+        $z2 = $r0.<android.support.v4.app.h: boolean k>;
+        $r4 = virtualinvoke $r0.<android.support.v4.app.h: android.support.v4.app.ab a(java.lang.String,boolean,boolean)>("(root)", $z2, 0);
+        $r0.<android.support.v4.app.h: android.support.v4.app.ab m> = $r4;
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        $z2 = $r4.<android.support.v4.app.ab: boolean f>;
+        if $z2 != 0 goto label1;
+
+        $r4 = $r0.<android.support.v4.app.h: android.support.v4.app.ab m>;
+        virtualinvoke $r4.<android.support.v4.app.ab: void b()>();
+        goto label1;
+
+     label5:
+        $i0 = (int) 0;
+
+     label6:
+        if $i0 >= $i1 goto label7;
+
+        $r4 = $r2[$i0];
+        virtualinvoke $r4.<android.support.v4.app.ab: void e()>();
+        virtualinvoke $r4.<android.support.v4.app.ab: void g()>();
+        $i0 = $i0 + 1;
+        goto label6;
+
+     label7:
+        return;
+    }
+
+    protected void onStop()
+    {
+        android.support.v4.app.h $r0;
+        android.os.Handler $r1;
+        android.support.v4.app.p $r2;
+        int i0;
+
+        $r0 := @this: android.support.v4.app.h;
+        specialinvoke $r0.<android.app.Activity: void onStop()>();
+        $r0.<android.support.v4.app.h: boolean f> = 1;
+        $r1 = $r0.<android.support.v4.app.h: android.os.Handler a>;
+        i0 = (int) 1;
+        virtualinvoke $r1.<android.os.Handler: boolean sendEmptyMessage(int)>(i0);
+        $r2 = $r0.<android.support.v4.app.h: android.support.v4.app.p b>;
+        virtualinvoke $r2.<android.support.v4.app.p: void q()>();
+        return;
+    }
+
+    public void startActivityForResult(android.content.Intent, int)
+    {
+        android.support.v4.app.h $r0;
+        android.content.Intent $r1;
+        int $i0, $i2;
+        java.lang.IllegalArgumentException $r3;
+
+        $r0 := @this: android.support.v4.app.h;
+        $r1 := @parameter0: android.content.Intent;
+        $i0 := @parameter1: int;
+        if $i0 == -1 goto label0;
+
+        $i2 = -65536 & $i0;
+        if $i2 == 0 goto label0;
+
+        $r3 = new java.lang.IllegalArgumentException;
+        specialinvoke $r3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Can only use lower 16 bits for requestCode");
+        throw $r3;
+
+     label0:
+        specialinvoke $r0.<android.app.Activity: void startActivityForResult(android.content.Intent,int)>($r1, $i0);
+        return;
+    }
+}

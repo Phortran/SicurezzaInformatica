@@ -1,0 +1,270 @@
+public final class com.facebook.b.d.k extends java.lang.Object
+{
+    private final android.content.Context a;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.b.d.k $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.b.d.k;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.b.d.k: android.content.Context a> = $r1;
+        return;
+    }
+
+    private static long a(java.io.File)
+    {
+        java.io.File $r0;
+        long $l0, $l4;
+        java.util.Stack $r1;
+        java.io.File[] $r2;
+        int $i1, $i3;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        java.io.IOException $r6;
+
+        $r0 := @parameter0: java.io.File;
+        $r1 = new java.util.Stack;
+        specialinvoke $r1.<java.util.Stack: void <init>()>();
+        virtualinvoke $r1.<java.util.Stack: java.lang.Object push(java.lang.Object)>($r0);
+        $l0 = 0L;
+
+     label0:
+        $z0 = virtualinvoke $r1.<java.util.Stack: boolean isEmpty()>();
+        if $z0 != 0 goto label7;
+
+        $r5 = virtualinvoke $r1.<java.util.Stack: java.lang.Object pop()>();
+        $r0 = (java.io.File) $r5;
+        $r2 = virtualinvoke $r0.<java.io.File: java.io.File[] listFiles()>();
+        $i1 = lengthof $r2;
+        $i3 = 0;
+
+     label1:
+        if $i3 >= $i1 goto label6;
+
+        $r0 = $r2[$i3];
+
+     label2:
+        $r3 = virtualinvoke $r0.<java.io.File: java.lang.String getPath()>();
+        $r4 = virtualinvoke $r0.<java.io.File: java.lang.String getCanonicalPath()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label3;
+
+        $z0 = virtualinvoke $r0.<java.io.File: boolean isDirectory()>();
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r1.<java.util.Stack: java.lang.Object push(java.lang.Object)>($r0);
+
+     label3:
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label4:
+        $z0 = virtualinvoke $r0.<java.io.File: boolean isFile()>();
+        if $z0 == 0 goto label3;
+
+        $l4 = virtualinvoke $r0.<java.io.File: long length()>();
+
+     label5:
+        $l0 = $l0 + $l4;
+        goto label3;
+
+     label6:
+        goto label0;
+
+     label7:
+        return $l0;
+
+     label8:
+        $r6 := @caughtexception;
+        goto label3;
+
+        catch java.io.IOException from label2 to label5 with label8;
+    }
+
+    public final java.util.Map a()
+    {
+        com.facebook.b.d.k $r0;
+        android.os.StatFs $r1;
+        java.io.File $r2;
+        long $l0, $l1, $l2, $l4, $l5;
+        java.util.HashMap $r3;
+        android.content.Context $r4;
+        java.lang.String $r5;
+        int $i3;
+        java.lang.Long $r6;
+        java.lang.Exception $r7, $r8, $r9, $r10, $r11, $r12, $r13, $r14;
+
+        $r0 := @this: com.facebook.b.d.k;
+        $l0 = 0L;
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $r1 = new android.os.StatFs;
+
+     label0:
+        $r2 = staticinvoke <android.os.Environment: java.io.File getDataDirectory()>();
+        $r5 = virtualinvoke $r2.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r5);
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getAvailableBlocks()>();
+        $l1 = (long) $i3;
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+
+     label1:
+        $l2 = (long) $i3;
+        $l2 = $l1 * $l2;
+
+     label2:
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockCount()>();
+        $l1 = (long) $i3;
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+
+     label3:
+        $l4 = (long) $i3;
+        $l4 = $l4 * $l1;
+
+     label4:
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("device_free_space", $r6);
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("device_total_space", $r6);
+        $r1 = new android.os.StatFs;
+
+     label5:
+        $r2 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+        $r5 = virtualinvoke $r2.<java.io.File: java.lang.String getPath()>();
+        specialinvoke $r1.<android.os.StatFs: void <init>(java.lang.String)>($r5);
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getAvailableBlocks()>();
+        $l4 = (long) $i3;
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+
+     label6:
+        $l2 = (long) $i3;
+        $l4 = $l4 * $l2;
+
+     label7:
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockSize()>();
+        $l2 = (long) $i3;
+        $i3 = virtualinvoke $r1.<android.os.StatFs: int getBlockCount()>();
+
+     label8:
+        $l1 = (long) $i3;
+        $l2 = $l1 * $l2;
+
+     label9:
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("sd_free_space", $r6);
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("sd_total_space", $r6);
+
+     label10:
+        $r4 = $r0.<com.facebook.b.d.k: android.content.Context a>;
+        $r2 = virtualinvoke $r4.<android.content.Context: java.io.File getCacheDir()>();
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getCanonicalFile()>();
+        $l4 = staticinvoke <com.facebook.b.d.k: long a(java.io.File)>($r2);
+
+     label11:
+        $r4 = $r0.<com.facebook.b.d.k: android.content.Context a>;
+        $r2 = virtualinvoke $r4.<android.content.Context: java.io.File getExternalCacheDir()>();
+        if $r2 == null goto label26;
+
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getCanonicalFile()>();
+        $l2 = staticinvoke <com.facebook.b.d.k: long a(java.io.File)>($r2);
+
+     label12:
+        $r4 = $r0.<com.facebook.b.d.k: android.content.Context a>;
+        $r2 = virtualinvoke $r4.<android.content.Context: java.io.File getFilesDir()>();
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getParentFile()>();
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getCanonicalFile()>();
+        $l1 = staticinvoke <com.facebook.b.d.k: long a(java.io.File)>($r2);
+
+     label13:
+        $r4 = $r0.<com.facebook.b.d.k: android.content.Context a>;
+        $r5 = <android.os.Environment: java.lang.String DIRECTORY_DOWNLOADS>;
+        $r2 = virtualinvoke $r4.<android.content.Context: java.io.File getExternalFilesDir(java.lang.String)>($r5);
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getParentFile()>();
+        $r2 = virtualinvoke $r2.<java.io.File: java.io.File getCanonicalFile()>();
+        $l5 = staticinvoke <com.facebook.b.d.k: long a(java.io.File)>($r2);
+
+     label14:
+        $l0 = $l5;
+
+     label15:
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("cache_size", $r6);
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("external_cache_size", $r6);
+        $l5 = $l1 - $l4;
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("app_data_size", $r6);
+        $l5 = $l0 - $l2;
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("external_app_data_size", $r6);
+        return $r3;
+
+     label16:
+        $r7 := @caughtexception;
+        $l5 = 0L;
+
+     label17:
+        $l2 = $l5;
+        $l4 = 0L;
+        goto label4;
+
+     label18:
+        $r8 := @caughtexception;
+        $l5 = 0L;
+
+     label19:
+        $l4 = $l5;
+        $l2 = 0L;
+        goto label9;
+
+     label20:
+        $r9 := @caughtexception;
+        $l1 = 0L;
+        $l2 = 0L;
+        $l4 = 0L;
+        goto label15;
+
+     label21:
+        $r10 := @caughtexception;
+        $l1 = 0L;
+        $l2 = 0L;
+        goto label15;
+
+     label22:
+        $r11 := @caughtexception;
+        $l1 = 0L;
+        goto label15;
+
+     label23:
+        $r12 := @caughtexception;
+        goto label15;
+
+     label24:
+        $r13 := @caughtexception;
+        $l5 = $l4;
+        goto label19;
+
+     label25:
+        $r14 := @caughtexception;
+        $l5 = $l2;
+        goto label17;
+
+     label26:
+        $l2 = 0L;
+        goto label12;
+
+        catch java.lang.Exception from label0 to label1 with label16;
+        catch java.lang.Exception from label2 to label3 with label25;
+        catch java.lang.Exception from label5 to label6 with label18;
+        catch java.lang.Exception from label7 to label8 with label24;
+        catch java.lang.Exception from label10 to label11 with label20;
+        catch java.lang.Exception from label11 to label12 with label21;
+        catch java.lang.Exception from label12 to label13 with label22;
+        catch java.lang.Exception from label13 to label14 with label23;
+    }
+}

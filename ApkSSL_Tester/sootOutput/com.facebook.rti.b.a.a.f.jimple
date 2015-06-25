@@ -1,0 +1,669 @@
+public final class com.facebook.rti.b.a.a.f extends java.lang.Object
+{
+    private final android.telephony.TelephonyManager a;
+    private final com.facebook.rti.b.a.d.b b;
+    private final com.facebook.rti.b.a.d.d c;
+    private final com.facebook.rti.b.a.a.l d;
+    private final java.lang.String e;
+    private final android.content.SharedPreferences f;
+    private final android.content.SharedPreferences g;
+    private final android.content.SharedPreferences h;
+    private int i;
+    private final java.util.concurrent.atomic.AtomicLong j;
+    private final java.util.concurrent.atomic.AtomicLong k;
+    private final java.util.concurrent.atomic.AtomicLong l;
+    private final java.util.concurrent.atomic.AtomicLong m;
+    private final java.util.concurrent.atomic.AtomicInteger n;
+    private final java.util.concurrent.atomic.AtomicInteger o;
+    private final java.util.concurrent.atomic.AtomicLong p;
+    private volatile com.facebook.rti.b.a.a.g q;
+    private volatile java.lang.String r;
+    private volatile com.facebook.rti.b.a.a.h s;
+    private final java.util.concurrent.atomic.AtomicLong t;
+    private final java.util.concurrent.atomic.AtomicLong u;
+    private final java.util.concurrent.atomic.AtomicLong v;
+
+    public void <init>(android.content.Context, android.telephony.TelephonyManager, com.facebook.rti.b.a.d.b, com.facebook.rti.b.a.d.d, com.facebook.rti.a.g.b, com.facebook.rti.a.g.a)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        android.content.Context $r1;
+        android.telephony.TelephonyManager $r2;
+        com.facebook.rti.b.a.d.b $r3;
+        com.facebook.rti.b.a.d.d $r4;
+        com.facebook.rti.a.g.b $r5;
+        com.facebook.rti.a.g.a $r6;
+        java.util.concurrent.atomic.AtomicLong $r7;
+        java.lang.String $r8;
+        android.content.ContentResolver $r9;
+        java.util.concurrent.atomic.AtomicInteger $r10;
+        com.facebook.rti.b.a.a.l $r11;
+        com.facebook.rti.a.f.a $r12;
+        android.content.SharedPreferences $r13;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.telephony.TelephonyManager;
+        $r3 := @parameter2: com.facebook.rti.b.a.d.b;
+        $r4 := @parameter3: com.facebook.rti.b.a.d.d;
+        $r5 := @parameter4: com.facebook.rti.a.g.b;
+        $r6 := @parameter5: com.facebook.rti.a.g.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong j> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong k> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong l> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong m> = $r7;
+        $r10 = new java.util.concurrent.atomic.AtomicInteger;
+        specialinvoke $r10.<java.util.concurrent.atomic.AtomicInteger: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger n> = $r10;
+        $r10 = new java.util.concurrent.atomic.AtomicInteger;
+        specialinvoke $r10.<java.util.concurrent.atomic.AtomicInteger: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger o> = $r10;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong p> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong t> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong u> = $r7;
+        $r7 = new java.util.concurrent.atomic.AtomicLong;
+        specialinvoke $r7.<java.util.concurrent.atomic.AtomicLong: void <init>()>();
+        $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong v> = $r7;
+        $r0.<com.facebook.rti.b.a.a.f: android.telephony.TelephonyManager a> = $r2;
+        $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.d.b b> = $r3;
+        $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.d.d c> = $r4;
+        $r11 = new com.facebook.rti.b.a.a.l;
+        specialinvoke $r11.<com.facebook.rti.b.a.a.l: void <init>(android.content.Context,com.facebook.rti.a.g.b,com.facebook.rti.a.g.a)>($r1, $r5, $r6);
+        $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d> = $r11;
+        $r9 = virtualinvoke $r1.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r8 = staticinvoke <android.provider.Settings$Secure: java.lang.String getString(android.content.ContentResolver,java.lang.String)>($r9, "android_id");
+        $r0.<com.facebook.rti.b.a.a.f: java.lang.String e> = $r8;
+        $r12 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r13 = virtualinvoke $r12.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String,boolean)>($r1, "rti.mqtt.analytics", 1);
+        $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences h> = $r13;
+        $r12 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r13 = virtualinvoke $r12.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r1, "rti.mqtt.gk");
+        $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences f> = $r13;
+        $r12 = <com.facebook.rti.a.f.a: com.facebook.rti.a.f.a a>;
+        $r13 = virtualinvoke $r12.<com.facebook.rti.a.f.a: android.content.SharedPreferences a(android.content.Context,java.lang.String)>($r1, "rti.mqtt.qe");
+        $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences g> = $r13;
+        return;
+    }
+
+    public static com.facebook.rti.b.a.a.h a(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+        boolean $z0;
+        com.facebook.rti.b.a.a.h $r1;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        $z0 = $r0 instanceof java.util.concurrent.TimeoutException;
+        if $z0 != 0 goto label0;
+
+        $z0 = $r0 instanceof java.net.SocketTimeoutException;
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h h>;
+        return $r1;
+
+     label1:
+        $z0 = $r0 instanceof java.io.EOFException;
+        if $z0 == 0 goto label2;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h i>;
+        return $r1;
+
+     label2:
+        $z0 = $r0 instanceof java.net.SocketException;
+        if $z0 == 0 goto label3;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h j>;
+        return $r1;
+
+     label3:
+        $z0 = $r0 instanceof javax.net.ssl.SSLException;
+        if $z0 == 0 goto label4;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h k>;
+        return $r1;
+
+     label4:
+        $z0 = $r0 instanceof java.io.IOException;
+        if $z0 == 0 goto label5;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h l>;
+        return $r1;
+
+     label5:
+        $z0 = $r0 instanceof java.util.zip.DataFormatException;
+        if $z0 == 0 goto label6;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h m>;
+        return $r1;
+
+     label6:
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h n>;
+        return $r1;
+    }
+
+    private static java.lang.String a(android.content.SharedPreferences)
+    {
+        android.content.SharedPreferences $r0;
+        boolean $z0, $z1;
+        java.util.Map $r1;
+        java.lang.StringBuilder $r2, $r8;
+        java.util.Iterator $r3;
+        java.lang.String $r4;
+        java.util.Set $r5;
+        java.lang.Object $r6;
+        java.util.Map$Entry $r7;
+
+        $r0 := @parameter0: android.content.SharedPreferences;
+        $r1 = interfaceinvoke $r0.<android.content.SharedPreferences: java.util.Map getAll()>();
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r5 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
+        $r3 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+        $z0 = 1;
+
+     label0:
+        $z1 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label3;
+
+        $r6 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.util.Map$Entry) $r6;
+        if $z0 == 0 goto label2;
+
+        $z0 = 0;
+
+     label1:
+        $r6 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r4 = (java.lang.String) $r6;
+        $r8 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("|");
+        $r6 = interfaceinvoke $r7.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r4 = (java.lang.String) $r6;
+        virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        goto label0;
+
+     label2:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";");
+        goto label1;
+
+     label3:
+        $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+    }
+
+    private static void a(java.util.concurrent.atomic.AtomicLong, long)
+    {
+        java.util.concurrent.atomic.AtomicLong $r0;
+        long $l0, $l2, $l4;
+        byte $b1;
+        boolean $z0;
+        double $d1, $d2;
+
+        $r0 := @parameter0: java.util.concurrent.atomic.AtomicLong;
+        $l0 := @parameter1: long;
+        $b1 = $l0 cmp 0L;
+        if $b1 > 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $l2 = virtualinvoke $r0.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $b1 = $l2 cmp 0L;
+        if $b1 != 0 goto label3;
+
+        $l4 = $l0;
+
+     label2:
+        $z0 = virtualinvoke $r0.<java.util.concurrent.atomic.AtomicLong: boolean compareAndSet(long,long)>($l2, $l4);
+        if $z0 == 0 goto label1;
+
+        goto label0;
+
+     label3:
+        $d1 = (double) $l2;
+        $d1 = $d1 * 0.8;
+        $d2 = (double) $l0;
+        $d2 = $d2 * 0.2;
+        $d2 = $d1 + $d2;
+        $l4 = (long) $d2;
+        goto label2;
+    }
+
+    public static com.facebook.rti.b.a.a.h b(java.lang.Throwable)
+    {
+        java.lang.Throwable $r0;
+        boolean $z0;
+        com.facebook.rti.b.a.a.h $r1;
+
+        $r0 := @parameter0: java.lang.Throwable;
+        $z0 = $r0 instanceof java.util.concurrent.TimeoutException;
+        if $z0 != 0 goto label0;
+
+        $z0 = $r0 instanceof java.net.SocketTimeoutException;
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h o>;
+        return $r1;
+
+     label1:
+        $z0 = $r0 instanceof java.io.EOFException;
+        if $z0 == 0 goto label2;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h p>;
+        return $r1;
+
+     label2:
+        $z0 = $r0 instanceof java.net.SocketException;
+        if $z0 == 0 goto label3;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h q>;
+        return $r1;
+
+     label3:
+        $z0 = $r0 instanceof javax.net.ssl.SSLException;
+        if $z0 == 0 goto label4;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h r>;
+        return $r1;
+
+     label4:
+        $z0 = $r0 instanceof java.io.IOException;
+        if $z0 == 0 goto label5;
+
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h s>;
+        return $r1;
+
+     label5:
+        $r1 = <com.facebook.rti.b.a.a.h: com.facebook.rti.b.a.a.h t>;
+        return $r1;
+    }
+
+    private com.facebook.rti.b.a.a.d f()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        int $i0;
+        java.lang.String $r1, $r5, $r9, $r10, $r11, $r12;
+        android.telephony.TelephonyManager $r2;
+        com.facebook.rti.b.a.d.b $r3;
+        com.facebook.rti.b.a.d.d $r4;
+        android.content.SharedPreferences $r6;
+        com.facebook.rti.b.a.a.d $r8;
+        boolean $z1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $i0 = $r0.<com.facebook.rti.b.a.a.f: int i>;
+        if $i0 != 0 goto label0;
+
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences h>;
+        $i0 = (int) 0;
+        $i0 = interfaceinvoke $r6.<android.content.SharedPreferences: int getInt(java.lang.String,int)>("year_class", $i0);
+        $r0.<com.facebook.rti.b.a.a.f: int i> = $i0;
+
+     label0:
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences f>;
+        $r1 = staticinvoke <com.facebook.rti.b.a.a.f: java.lang.String a(android.content.SharedPreferences)>($r6);
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences g>;
+        $r5 = staticinvoke <com.facebook.rti.b.a.a.f: java.lang.String a(android.content.SharedPreferences)>($r6);
+        $r8 = new com.facebook.rti.b.a.a.d;
+        $r9 = $r0.<com.facebook.rti.b.a.a.f: java.lang.String e>;
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: android.telephony.TelephonyManager a>;
+        $r10 = virtualinvoke $r2.<android.telephony.TelephonyManager: java.lang.String getNetworkCountryIso()>();
+        $r3 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.d.b b>;
+        $r11 = virtualinvoke $r3.<com.facebook.rti.b.a.d.b: java.lang.String c()>();
+        $r4 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.d.d c>;
+        $z1 = virtualinvoke $r4.<com.facebook.rti.b.a.d.d: boolean a()>();
+        if $z1 == 0 goto label2;
+
+        $r12 = "1";
+
+     label1:
+        $i0 = $r0.<com.facebook.rti.b.a.a.f: int i>;
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: android.content.SharedPreferences h>;
+        $z1 = interfaceinvoke $r6.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("is_employee", 0);
+        specialinvoke $r8.<com.facebook.rti.b.a.a.d: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,boolean)>($r9, $r10, $r11, $r12, $i0, $r1, $r5, $z1);
+        return $r8;
+
+     label2:
+        $r12 = "0";
+        goto label1;
+    }
+
+    public final com.facebook.rti.b.a.a.c a()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.e $r1;
+        java.util.concurrent.atomic.AtomicInteger $r2;
+        java.util.concurrent.atomic.AtomicLong $r3;
+        com.facebook.rti.b.a.a.g $r4;
+        java.lang.String $r5, $r9, $r10;
+        com.facebook.rti.b.a.a.h $r6;
+        com.facebook.rti.b.a.a.c $r7;
+        com.facebook.rti.b.a.a.d $r8;
+        int $i0, $i1;
+        long $l2;
+        com.facebook.rti.b.a.a.l $r11;
+        com.facebook.rti.b.a.a.k $r12;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r7 = new com.facebook.rti.b.a.a.c;
+        $r8 = specialinvoke $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.d f()>();
+        $r1 = new com.facebook.rti.b.a.a.e;
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger n>;
+        $i0 = virtualinvoke $r2.<java.util.concurrent.atomic.AtomicInteger: int get()>();
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger o>;
+        $i1 = virtualinvoke $r2.<java.util.concurrent.atomic.AtomicInteger: int get()>();
+        $r3 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong p>;
+        $l2 = virtualinvoke $r3.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $r4 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.g q>;
+        if $r4 != null goto label2;
+
+        $r9 = null;
+
+     label0:
+        $r5 = $r0.<com.facebook.rti.b.a.a.f: java.lang.String r>;
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.h s>;
+        if $r6 != null goto label3;
+
+        $r10 = null;
+
+     label1:
+        specialinvoke $r1.<com.facebook.rti.b.a.a.e: void <init>(int,int,long,java.lang.String,java.lang.String,java.lang.String)>($i0, $i1, $l2, $r9, $r5, $r10);
+        $r11 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        $r12 = virtualinvoke $r11.<com.facebook.rti.b.a.a.l: com.facebook.rti.b.a.a.k a()>();
+        specialinvoke $r7.<com.facebook.rti.b.a.a.c: void <init>(com.facebook.rti.b.a.a.d,com.facebook.rti.b.a.a.j,com.facebook.rti.b.a.a.e,com.facebook.rti.b.a.a.i,com.facebook.rti.b.a.a.k)>($r8, null, $r1, null, $r12);
+        return $r7;
+
+     label2:
+        $r4 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.g q>;
+        $r9 = virtualinvoke $r4.<com.facebook.rti.b.a.a.g: java.lang.String name()>();
+        goto label0;
+
+     label3:
+        $r6 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.h s>;
+        $r10 = virtualinvoke $r6.<com.facebook.rti.b.a.a.h: java.lang.String name()>();
+        goto label1;
+    }
+
+    public final com.facebook.rti.b.a.a.c a(long, long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        long $l0, $l1, $l2, $l3, $l5, $l6;
+        java.util.concurrent.atomic.AtomicLong $r1;
+        com.facebook.rti.b.a.a.j $r2;
+        com.facebook.rti.b.a.a.i $r3;
+        com.facebook.rti.b.a.a.d $r4;
+        byte $b4;
+        com.facebook.rti.b.a.a.c $r5;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $l0 := @parameter0: long;
+        $l1 := @parameter1: long;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong k>;
+        $l3 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $b4 = $l3 cmp 0L;
+        if $b4 != 0 goto label1;
+
+        $l3 = 0L;
+
+     label0:
+        $r2 = new com.facebook.rti.b.a.a.j;
+        $l5 = $l1 - $l0;
+        $l2 = $l1 - $l0;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong m>;
+        $l0 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $l0 = $l2 + $l0;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong l>;
+        $l2 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $l6 = $l2 + $l3;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong j>;
+        $l2 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $l2 = $l1 - $l2;
+        specialinvoke $r2.<com.facebook.rti.b.a.a.j: void <init>(long,long,long,long,long)>($l5, $l0, $l3, $l6, $l2);
+        $r3 = new com.facebook.rti.b.a.a.i;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong t>;
+        $l6 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong u>;
+        $l5 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong v>;
+        $l3 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        specialinvoke $r3.<com.facebook.rti.b.a.a.i: void <init>(long,long,long)>($l6, $l5, $l3);
+        $r5 = new com.facebook.rti.b.a.a.c;
+        $r4 = specialinvoke $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.d f()>();
+        specialinvoke $r5.<com.facebook.rti.b.a.a.c: void <init>(com.facebook.rti.b.a.a.d,com.facebook.rti.b.a.a.j,com.facebook.rti.b.a.a.e,com.facebook.rti.b.a.a.i,com.facebook.rti.b.a.a.k)>($r4, $r2, null, $r3, null);
+        return $r5;
+
+     label1:
+        $l3 = $l1 - $l3;
+        goto label0;
+    }
+
+    public final void a(long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        long $l0;
+        java.util.concurrent.atomic.AtomicLong $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong j>;
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: void set(long)>($l0);
+        return;
+    }
+
+    public final void a(com.facebook.rti.b.a.a.g)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.g $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 := @parameter0: com.facebook.rti.b.a.a.g;
+        $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.g q> = $r1;
+        return;
+    }
+
+    public final void a(com.facebook.rti.b.a.a.h)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.h $r1;
+        com.facebook.rti.b.a.a.l $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 := @parameter0: com.facebook.rti.b.a.a.h;
+        $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.h s> = $r1;
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        virtualinvoke $r2.<com.facebook.rti.b.a.a.l: void e()>();
+        return;
+    }
+
+    public final void a(java.lang.String)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<com.facebook.rti.b.a.a.f: java.lang.String r> = $r1;
+        return;
+    }
+
+    public final void a(boolean, long, long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        boolean $z0;
+        long $l0, $l1, $l3, $l5;
+        byte $b2;
+        java.util.concurrent.atomic.AtomicLong $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $z0 := @parameter0: boolean;
+        $l0 := @parameter1: long;
+        $l1 := @parameter2: long;
+        if $z0 == 0 goto label0;
+
+        $b2 = $l0 cmp 0L;
+        if $b2 != 0 goto label0;
+
+        $l0 = $l1;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong k>;
+        $l3 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long get()>();
+        $b2 = $l3 cmp $l0;
+        if $b2 == 0 goto label2;
+
+        $b2 = $l0 cmp 0L;
+        if $b2 == 0 goto label1;
+
+        $b2 = $l0 cmp $l3;
+        if $b2 < 0 goto label2;
+
+     label1:
+        $b2 = $l3 cmp 0L;
+        if $b2 != 0 goto label3;
+
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong k>;
+        $z0 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: boolean compareAndSet(long,long)>($l3, $l0);
+        if $z0 == 0 goto label0;
+
+     label2:
+        return;
+
+     label3:
+        $b2 = $l0 cmp 0L;
+        if $b2 != 0 goto label5;
+
+        $l5 = $l1 - $l3;
+        $l5 = $l5 + 0L;
+
+     label4:
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong k>;
+        $z0 = virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: boolean compareAndSet(long,long)>($l3, $l0);
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong l>;
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long addAndGet(long)>($l5);
+        goto label2;
+
+     label5:
+        $l5 = $l0 - $l3;
+        $l5 = $l5 + 0L;
+        goto label4;
+    }
+
+    public final void b()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        java.util.concurrent.atomic.AtomicInteger $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger o>;
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicInteger: int incrementAndGet()>();
+        return;
+    }
+
+    public final void b(long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        long $l0;
+        java.util.concurrent.atomic.AtomicLong $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong m>;
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicLong: long addAndGet(long)>($l0);
+        return;
+    }
+
+    public final void b(java.lang.String)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        java.lang.String $r1;
+        com.facebook.rti.b.a.a.l $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        virtualinvoke $r2.<com.facebook.rti.b.a.a.l: void a(java.lang.String)>($r1);
+        return;
+    }
+
+    public final com.facebook.rti.b.a.a.g c()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.g $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.g q>;
+        return $r1;
+    }
+
+    public final void c(long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        long $l0;
+        java.util.concurrent.atomic.AtomicInteger $r1;
+        java.util.concurrent.atomic.AtomicLong $r2;
+        com.facebook.rti.b.a.a.l $r3;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicInteger n>;
+        virtualinvoke $r1.<java.util.concurrent.atomic.AtomicInteger: int incrementAndGet()>();
+        $r2 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong p>;
+        virtualinvoke $r2.<java.util.concurrent.atomic.AtomicLong: void set(long)>($l0);
+        $r3 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        virtualinvoke $r3.<com.facebook.rti.b.a.a.l: void d()>();
+        return;
+    }
+
+    public final void d()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.l $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        virtualinvoke $r1.<com.facebook.rti.b.a.a.l: void b()>();
+        return;
+    }
+
+    public final void d(long)
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        long $l0;
+        java.util.concurrent.atomic.AtomicLong $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $l0 := @parameter0: long;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: java.util.concurrent.atomic.AtomicLong t>;
+        staticinvoke <com.facebook.rti.b.a.a.f: void a(java.util.concurrent.atomic.AtomicLong,long)>($r1, $l0);
+        return;
+    }
+
+    public final void e()
+    {
+        com.facebook.rti.b.a.a.f $r0;
+        com.facebook.rti.b.a.a.l $r1;
+
+        $r0 := @this: com.facebook.rti.b.a.a.f;
+        $r1 = $r0.<com.facebook.rti.b.a.a.f: com.facebook.rti.b.a.a.l d>;
+        virtualinvoke $r1.<com.facebook.rti.b.a.a.l: void c()>();
+        return;
+    }
+}

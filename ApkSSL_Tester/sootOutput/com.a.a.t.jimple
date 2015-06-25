@@ -1,0 +1,42 @@
+class com.a.a.t extends java.lang.Object implements java.lang.Runnable
+{
+    final android.os.Message a;
+    final com.a.a.s b;
+
+    void <init>(com.a.a.s, android.os.Message)
+    {
+        com.a.a.t $r0;
+        com.a.a.s $r1;
+        android.os.Message $r2;
+
+        $r0 := @this: com.a.a.t;
+        $r1 := @parameter0: com.a.a.s;
+        $r2 := @parameter1: android.os.Message;
+        $r0.<com.a.a.t: com.a.a.s b> = $r1;
+        $r0.<com.a.a.t: android.os.Message a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.a.a.t $r0;
+        java.lang.AssertionError $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.os.Message $r4;
+        int $i0;
+
+        $r0 := @this: com.a.a.t;
+        $r1 = new java.lang.AssertionError;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unknown handler message received: ");
+        $r4 = $r0.<com.a.a.t: android.os.Message a>;
+        $i0 = $r4.<android.os.Message: int what>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r1.<java.lang.AssertionError: void <init>(java.lang.Object)>($r3);
+        throw $r1;
+    }
+}

@@ -1,0 +1,422 @@
+public final class com.facebook.c.a.c extends java.lang.Object implements javax.net.ssl.HostnameVerifier
+{
+    private static final java.util.regex.Pattern a;
+
+    static void <clinit>()
+    {
+        java.util.regex.Pattern $r1;
+
+        $r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("([0-9a-fA-F]*:[0-9a-fA-F:.]*)|([\\d.]+)");
+        <com.facebook.c.a.c: java.util.regex.Pattern a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.c.a.c $r0;
+
+        $r0 := @this: com.facebook.c.a.c;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static com.facebook.c.a.e a(java.lang.String, java.lang.String, java.util.List)
+    {
+        java.lang.String $r0, $r1;
+        java.util.List $r2;
+        boolean $z0;
+        com.facebook.c.a.e $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.util.List;
+        $z0 = staticinvoke <com.facebook.c.a.c: boolean a(java.lang.String)>($r0);
+        if $z0 == 0 goto label0;
+
+        $r3 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e a(java.lang.String,java.util.List)>($r0, $r2);
+        return $r3;
+
+     label0:
+        $r3 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e b(java.lang.String,java.lang.String,java.util.List)>($r0, $r1, $r2);
+        return $r3;
+    }
+
+    public static com.facebook.c.a.e a(java.lang.String, java.security.cert.X509Certificate)
+    {
+        java.lang.String $r0;
+        java.security.cert.X509Certificate $r1;
+        boolean $z0;
+        com.facebook.c.a.e $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.security.cert.X509Certificate;
+        $z0 = staticinvoke <com.facebook.c.a.c: boolean a(java.lang.String)>($r0);
+        if $z0 == 0 goto label0;
+
+        $r2 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e b(java.lang.String,java.security.cert.X509Certificate)>($r0, $r1);
+        return $r2;
+
+     label0:
+        $r2 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e c(java.lang.String,java.security.cert.X509Certificate)>($r0, $r1);
+        return $r2;
+    }
+
+    private static com.facebook.c.a.e a(java.lang.String, java.util.List)
+    {
+        java.lang.String $r0, $r5;
+        java.util.List $r1;
+        boolean $z0;
+        com.facebook.c.a.e $r2;
+        java.util.Iterator $r3;
+        java.lang.Object $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.util.List;
+        $r2 = new com.facebook.c.a.e;
+        specialinvoke $r2.<com.facebook.c.a.e: void <init>(java.lang.String)>($r0);
+        virtualinvoke $r2.<com.facebook.c.a.e: void g()>();
+        virtualinvoke $r2.<com.facebook.c.a.e: void c(java.lang.String)>($r0);
+        virtualinvoke $r2.<com.facebook.c.a.e: void a(java.util.List)>($r1);
+        $r3 = interfaceinvoke $r1.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (java.lang.String) $r4;
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r5);
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r2.<com.facebook.c.a.e: void f()>();
+        virtualinvoke $r2.<com.facebook.c.a.e: void a(java.lang.String)>($r5);
+        $r2 = virtualinvoke $r2.<com.facebook.c.a.e: com.facebook.c.a.e b()>();
+        return $r2;
+
+     label1:
+        $r2 = virtualinvoke $r2.<com.facebook.c.a.e: com.facebook.c.a.e c()>();
+        return $r2;
+    }
+
+    private static java.util.List a(java.security.cert.X509Certificate, int)
+    {
+        java.security.cert.X509Certificate $r0;
+        int $i0, $i1;
+        java.util.Collection $r1;
+        java.util.ArrayList $r2;
+        java.util.Iterator $r3;
+        java.util.List $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        java.lang.Integer $r6;
+        java.lang.String $r7;
+
+        $r0 := @parameter0: java.security.cert.X509Certificate;
+        $i0 := @parameter1: int;
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r1 = virtualinvoke $r0.<java.security.cert.X509Certificate: java.util.Collection getSubjectAlternativeNames()>();
+        if $r1 != null goto label0;
+
+        $r4 = staticinvoke <java.util.Collections: java.util.List emptyList()>();
+        return $r4;
+
+     label0:
+        $r3 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label2;
+
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r4 = (java.util.List) $r5;
+        if $r4 == null goto label1;
+
+        $i1 = interfaceinvoke $r4.<java.util.List: int size()>();
+        if $i1 < 2 goto label1;
+
+        $r5 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>(0);
+        $r6 = (java.lang.Integer) $r5;
+        if $r6 == null goto label1;
+
+        $i1 = virtualinvoke $r6.<java.lang.Integer: int intValue()>();
+        if $i1 != $i0 goto label1;
+
+        $r5 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>(1);
+        $r7 = (java.lang.String) $r5;
+        if $r7 == null goto label1;
+
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r7);
+        goto label1;
+
+     label2:
+        return $r2;
+    }
+
+    private static boolean a(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.util.regex.Pattern $r1;
+        java.util.regex.Matcher $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = <com.facebook.c.a.c: java.util.regex.Pattern a>;
+        $r2 = virtualinvoke $r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z0 = virtualinvoke $r2.<java.util.regex.Matcher: boolean matches()>();
+        return $z0;
+    }
+
+    private static boolean a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r3;
+        boolean $z0, $z2;
+        int $i0, $i1, $i2, $i3;
+        java.util.Locale $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = 1;
+        if $r0 == null goto label0;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 == 0 goto label0;
+
+        if $r1 == null goto label0;
+
+        $i0 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i0 != 0 goto label2;
+
+     label0:
+        $z0 = 0;
+
+     label1:
+        return $z0;
+
+     label2:
+        $r2 = <java.util.Locale: java.util.Locale US>;
+        $r3 = virtualinvoke $r1.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r2);
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean contains(java.lang.CharSequence)>("*");
+        if $z2 != 0 goto label3;
+
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        return $z2;
+
+     label3:
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean startsWith(java.lang.String)>("*.");
+        if $z2 == 0 goto label4;
+
+        $i0 = virtualinvoke $r3.<java.lang.String: int length()>();
+        $i0 = $i0 + -2;
+        $i3 = (int) 0;
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean regionMatches(int,java.lang.String,int,int)>($i3, $r3, 2, $i0);
+        if $z2 != 0 goto label1;
+
+     label4:
+        $i2 = virtualinvoke $r3.<java.lang.String: int indexOf(int)>(42);
+        $i0 = virtualinvoke $r3.<java.lang.String: int indexOf(int)>(46);
+        if $i2 <= $i0 goto label5;
+
+        return 0;
+
+     label5:
+        $i3 = (int) 0;
+        $i0 = (int) 0;
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean regionMatches(int,java.lang.String,int,int)>($i3, $r3, $i0, $i2);
+        if $z2 != 0 goto label6;
+
+        return 0;
+
+     label6:
+        $i3 = virtualinvoke $r3.<java.lang.String: int length()>();
+        $i0 = $i2 + 1;
+        $i3 = $i3 - $i0;
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        $i0 = $i0 - $i3;
+        $i1 = virtualinvoke $r0.<java.lang.String: int indexOf(int,int)>(46, $i2);
+        if $i1 >= $i0 goto label7;
+
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean endsWith(java.lang.String)>(".clients.google.com");
+        if $z2 != 0 goto label7;
+
+        return 0;
+
+     label7:
+        $i2 = $i2 + 1;
+        $z2 = virtualinvoke $r0.<java.lang.String: boolean regionMatches(int,java.lang.String,int,int)>($i0, $r3, $i2, $i3);
+        if $z2 != 0 goto label1;
+
+        return 0;
+    }
+
+    private static com.facebook.c.a.e b(java.lang.String, java.lang.String, java.util.List)
+    {
+        java.lang.String $r0, $r1, $r7;
+        java.util.List $r2;
+        java.util.Locale $r3;
+        boolean $z0, $z1;
+        com.facebook.c.a.e $r4;
+        java.util.Iterator $r5;
+        java.lang.Object $r6;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.util.List;
+        $r4 = new com.facebook.c.a.e;
+        specialinvoke $r4.<com.facebook.c.a.e: void <init>(java.lang.String)>($r0);
+        virtualinvoke $r4.<com.facebook.c.a.e: void c(java.lang.String)>($r1);
+        virtualinvoke $r4.<com.facebook.c.a.e: void a(java.util.List)>($r2);
+        $r3 = <java.util.Locale: java.util.Locale US>;
+        $r0 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r3);
+        $z1 = 0;
+        $r5 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r5.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label2;
+
+        $r6 = interfaceinvoke $r5.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.lang.String) $r6;
+        $z0 = staticinvoke <com.facebook.c.a.c: boolean a(java.lang.String,java.lang.String)>($r0, $r7);
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r4.<com.facebook.c.a.e: void e()>();
+        virtualinvoke $r4.<com.facebook.c.a.e: void a(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r4.<com.facebook.c.a.e: com.facebook.c.a.e b()>();
+        return $r4;
+
+     label1:
+        $z1 = 1;
+        goto label0;
+
+     label2:
+        if $z1 != 0 goto label3;
+
+        if $r1 == null goto label3;
+
+        $z1 = staticinvoke <com.facebook.c.a.c: boolean a(java.lang.String,java.lang.String)>($r0, $r1);
+        if $z1 == 0 goto label3;
+
+        virtualinvoke $r4.<com.facebook.c.a.e: void d()>();
+        virtualinvoke $r4.<com.facebook.c.a.e: void a(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r4.<com.facebook.c.a.e: com.facebook.c.a.e b()>();
+        return $r4;
+
+     label3:
+        $r4 = virtualinvoke $r4.<com.facebook.c.a.e: com.facebook.c.a.e c()>();
+        return $r4;
+    }
+
+    private static com.facebook.c.a.e b(java.lang.String, java.security.cert.X509Certificate)
+    {
+        java.lang.String $r0, $r2;
+        java.security.cert.X509Certificate $r1;
+        java.util.List $r3;
+        com.facebook.c.a.e $r4;
+        java.security.cert.CertificateParsingException $r6;
+        java.lang.StringBuilder $r7, r9;
+        java.util.ArrayList r8;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.security.cert.X509Certificate;
+        $r2 = "";
+
+     label0:
+        $r3 = staticinvoke <com.facebook.c.a.c: java.util.List a(java.security.cert.X509Certificate,int)>($r1, 7);
+
+     label1:
+        $r4 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e a(java.lang.String,java.util.List)>($r0, $r3);
+        virtualinvoke $r4.<com.facebook.c.a.e: void b(java.lang.String)>($r2);
+        return $r4;
+
+     label2:
+        $r6 := @caughtexception;
+        r8 = new java.util.ArrayList;
+        $r3 = r8;
+        specialinvoke r8.<java.util.ArrayList: void <init>(int)>(0);
+        r9 = new java.lang.StringBuilder;
+        specialinvoke r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed parsing subjectAltName: ");
+        $r2 = virtualinvoke $r6.<java.security.cert.CertificateParsingException: java.lang.String getMessage()>();
+        $r7 = virtualinvoke r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label1;
+
+        catch java.security.cert.CertificateParsingException from label0 to label1 with label2;
+    }
+
+    private static com.facebook.c.a.e c(java.lang.String, java.security.cert.X509Certificate)
+    {
+        java.lang.String $r0, $r4, $r5;
+        java.security.cert.X509Certificate $r1;
+        javax.security.auth.x500.X500Principal $r2;
+        java.util.List $r6;
+        com.facebook.c.a.e $r7;
+        java.security.cert.CertificateParsingException $r9;
+        java.lang.StringBuilder $r10, r13;
+        com.facebook.c.a.b r11;
+        java.util.ArrayList r12;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.security.cert.X509Certificate;
+        $r2 = virtualinvoke $r1.<java.security.cert.X509Certificate: javax.security.auth.x500.X500Principal getSubjectX500Principal()>();
+        r11 = new com.facebook.c.a.b;
+        specialinvoke r11.<com.facebook.c.a.b: void <init>(javax.security.auth.x500.X500Principal)>($r2);
+        $r4 = virtualinvoke r11.<com.facebook.c.a.b: java.lang.String a(java.lang.String)>("cn");
+        $r5 = "";
+
+     label0:
+        $r6 = staticinvoke <com.facebook.c.a.c: java.util.List a(java.security.cert.X509Certificate,int)>($r1, 2);
+
+     label1:
+        $r7 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e b(java.lang.String,java.lang.String,java.util.List)>($r0, $r4, $r6);
+        virtualinvoke $r7.<com.facebook.c.a.e: void b(java.lang.String)>($r5);
+        return $r7;
+
+     label2:
+        $r9 := @caughtexception;
+        r12 = new java.util.ArrayList;
+        $r6 = r12;
+        specialinvoke r12.<java.util.ArrayList: void <init>(int)>(0);
+        r13 = new java.lang.StringBuilder;
+        specialinvoke r13.<java.lang.StringBuilder: void <init>(java.lang.String)>("Failed parsing subjectAltName: ");
+        $r5 = virtualinvoke $r9.<java.security.cert.CertificateParsingException: java.lang.String getMessage()>();
+        $r10 = virtualinvoke r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label1;
+
+        catch java.security.cert.CertificateParsingException from label0 to label1 with label2;
+    }
+
+    public final boolean verify(java.lang.String, javax.net.ssl.SSLSession)
+    {
+        com.facebook.c.a.c $r0;
+        java.lang.String $r1;
+        javax.net.ssl.SSLSession $r2;
+        java.security.cert.Certificate[] $r3;
+        java.security.cert.Certificate $r4;
+        java.security.cert.X509Certificate $r5;
+        com.facebook.c.a.e $r6;
+        boolean $z1;
+        javax.net.ssl.SSLException $r7;
+
+        $r0 := @this: com.facebook.c.a.c;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: javax.net.ssl.SSLSession;
+
+     label0:
+        $r3 = interfaceinvoke $r2.<javax.net.ssl.SSLSession: java.security.cert.Certificate[] getPeerCertificates()>();
+        $r4 = $r3[0];
+        $r5 = (java.security.cert.X509Certificate) $r4;
+        $r6 = staticinvoke <com.facebook.c.a.c: com.facebook.c.a.e a(java.lang.String,java.security.cert.X509Certificate)>($r1, $r5);
+        $z1 = virtualinvoke $r6.<com.facebook.c.a.e: boolean a()>();
+
+     label1:
+        return $z1;
+
+     label2:
+        $r7 := @caughtexception;
+        return 0;
+
+        catch javax.net.ssl.SSLException from label0 to label1 with label2;
+    }
+}

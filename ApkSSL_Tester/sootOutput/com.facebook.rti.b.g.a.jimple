@@ -1,0 +1,149 @@
+public class com.facebook.rti.b.g.a extends java.lang.Object
+{
+    public static final java.lang.String a;
+    public static final java.lang.String b;
+    public static final java.lang.String c;
+    private final com.facebook.rti.a.b.a d;
+    private final com.facebook.rti.b.a.d.d e;
+    private final com.facebook.rti.a.g.b f;
+    private volatile long g;
+
+    static void <clinit>()
+    {
+        java.lang.StringBuilder $r0;
+        java.lang.Class $r1;
+        java.lang.String $r2;
+
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "com/facebook/rti/b/g/a";
+        $r2 = virtualinvoke $r1.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".ACTIVITY_MAYBE_CHANGED");
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        <com.facebook.rti.b.g.a: java.lang.String a> = $r2;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "com/facebook/rti/b/g/a";
+        $r2 = virtualinvoke $r1.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".USER_ENTERED_DEVICE");
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        <com.facebook.rti.b.g.a: java.lang.String b> = $r2;
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+        $r1 = class "com/facebook/rti/b/g/a";
+        $r2 = virtualinvoke $r1.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".USER_LEFT_DEVICE");
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        <com.facebook.rti.b.g.a: java.lang.String c> = $r2;
+        return;
+    }
+
+    public void <init>(com.facebook.rti.a.b.a, com.facebook.rti.b.a.d.d, com.facebook.rti.a.g.b)
+    {
+        com.facebook.rti.b.g.a $r0;
+        com.facebook.rti.a.b.a $r1;
+        com.facebook.rti.b.a.d.d $r2;
+        com.facebook.rti.a.g.b $r3;
+        com.facebook.rti.b.g.b $r4;
+
+        $r0 := @this: com.facebook.rti.b.g.a;
+        $r1 := @parameter0: com.facebook.rti.a.b.a;
+        $r2 := @parameter1: com.facebook.rti.b.a.d.d;
+        $r3 := @parameter2: com.facebook.rti.a.g.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.b.a d> = $r1;
+        $r0.<com.facebook.rti.b.g.a: com.facebook.rti.b.a.d.d e> = $r2;
+        $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.g.b f> = $r3;
+        $r2 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.b.a.d.d e>;
+        $r4 = new com.facebook.rti.b.g.b;
+        specialinvoke $r4.<com.facebook.rti.b.g.b: void <init>(com.facebook.rti.b.g.a)>($r0);
+        virtualinvoke $r2.<com.facebook.rti.b.a.d.d: void a(com.facebook.rti.b.a.d.g)>($r4);
+        return;
+    }
+
+    static void a(com.facebook.rti.b.g.a)
+    {
+        com.facebook.rti.b.g.a $r0;
+
+        $r0 := @parameter0: com.facebook.rti.b.g.a;
+        specialinvoke $r0.<com.facebook.rti.b.g.a: void b()>();
+        return;
+    }
+
+    private void b()
+    {
+        com.facebook.rti.b.g.a $r0;
+        java.lang.String $r2;
+        java.lang.Object[] $r3;
+        com.facebook.rti.a.b.a $r4;
+        android.content.Intent $r5;
+
+        $r0 := @this: com.facebook.rti.b.g.a;
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("DeviceUserInteractionManager", "onScreenOn", $r3);
+        $r4 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.b.a d>;
+        $r5 = new android.content.Intent;
+        $r2 = <com.facebook.rti.b.g.a: java.lang.String b>;
+        specialinvoke $r5.<android.content.Intent: void <init>(java.lang.String)>($r2);
+        virtualinvoke $r4.<com.facebook.rti.a.b.a: boolean a(android.content.Intent)>($r5);
+        $r4 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.b.a d>;
+        $r5 = new android.content.Intent;
+        $r2 = <com.facebook.rti.b.g.a: java.lang.String a>;
+        specialinvoke $r5.<android.content.Intent: void <init>(java.lang.String)>($r2);
+        virtualinvoke $r4.<com.facebook.rti.a.b.a: boolean a(android.content.Intent)>($r5);
+        return;
+    }
+
+    static void b(com.facebook.rti.b.g.a)
+    {
+        com.facebook.rti.b.g.a $r0;
+
+        $r0 := @parameter0: com.facebook.rti.b.g.a;
+        specialinvoke $r0.<com.facebook.rti.b.g.a: void c()>();
+        return;
+    }
+
+    private void c()
+    {
+        com.facebook.rti.b.g.a $r0;
+        java.lang.String $r2;
+        long $l1;
+        java.lang.Object[] $r3;
+        com.facebook.rti.a.g.b $r4;
+        com.facebook.rti.a.b.a $r5;
+        android.content.Intent $r6;
+
+        $r0 := @this: com.facebook.rti.b.g.a;
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("DeviceUserInteractionManager", "onScreenOff", $r3);
+        $r4 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.g.b f>;
+        $l1 = interfaceinvoke $r4.<com.facebook.rti.a.g.b: long a()>();
+        $r0.<com.facebook.rti.b.g.a: long g> = $l1;
+        $r5 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.b.a d>;
+        $r6 = new android.content.Intent;
+        $r2 = <com.facebook.rti.b.g.a: java.lang.String c>;
+        specialinvoke $r6.<android.content.Intent: void <init>(java.lang.String)>($r2);
+        virtualinvoke $r5.<com.facebook.rti.a.b.a: boolean a(android.content.Intent)>($r6);
+        $r5 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.a.b.a d>;
+        $r6 = new android.content.Intent;
+        $r2 = <com.facebook.rti.b.g.a: java.lang.String a>;
+        specialinvoke $r6.<android.content.Intent: void <init>(java.lang.String)>($r2);
+        virtualinvoke $r5.<com.facebook.rti.a.b.a: boolean a(android.content.Intent)>($r6);
+        return;
+    }
+
+    public final boolean a()
+    {
+        com.facebook.rti.b.g.a $r0;
+        com.facebook.rti.b.a.d.d $r1;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.rti.b.g.a;
+        $r1 = $r0.<com.facebook.rti.b.g.a: com.facebook.rti.b.a.d.d e>;
+        $z0 = virtualinvoke $r1.<com.facebook.rti.b.a.d.d: boolean a()>();
+        return $z0;
+    }
+}

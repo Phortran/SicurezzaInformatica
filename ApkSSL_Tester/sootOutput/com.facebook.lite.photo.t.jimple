@@ -1,0 +1,359 @@
+public class com.facebook.lite.photo.t extends android.os.HandlerThread
+{
+    private static final java.lang.String f;
+    private static com.facebook.lite.a.i g;
+    android.content.ContentResolver a;
+    android.os.Handler b;
+    com.facebook.lite.photo.x c;
+    android.os.Handler d;
+    java.util.WeakHashMap e;
+    private final android.content.Context h;
+    private final android.util.SparseArray i;
+    private final android.util.SparseArray j;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/photo/t";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.photo.t: java.lang.String f> = $r1;
+        <com.facebook.lite.photo.t: com.facebook.lite.a.i g> = null;
+        return;
+    }
+
+    public void <init>(android.os.Handler, android.content.ContentResolver, android.content.Context)
+    {
+        com.facebook.lite.photo.t $r0;
+        android.os.Handler $r1;
+        android.content.ContentResolver $r2;
+        android.content.Context $r3;
+        java.lang.String $r4;
+        com.facebook.lite.photo.u $r5;
+        long $l0, $l3;
+        java.util.WeakHashMap $r6;
+        android.util.SparseArray $r7;
+        com.facebook.lite.a.i $r8;
+        byte $b4;
+        int $i5;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 := @parameter0: android.os.Handler;
+        $r2 := @parameter1: android.content.ContentResolver;
+        $r3 := @parameter2: android.content.Context;
+        $r4 = <com.facebook.lite.photo.t: java.lang.String f>;
+        specialinvoke $r0.<android.os.HandlerThread: void <init>(java.lang.String)>($r4);
+        $r6 = new java.util.WeakHashMap;
+        specialinvoke $r6.<java.util.WeakHashMap: void <init>()>();
+        $r0.<com.facebook.lite.photo.t: java.util.WeakHashMap e> = $r6;
+        $r7 = new android.util.SparseArray;
+        specialinvoke $r7.<android.util.SparseArray: void <init>()>();
+        $r0.<com.facebook.lite.photo.t: android.util.SparseArray i> = $r7;
+        $r7 = new android.util.SparseArray;
+        specialinvoke $r7.<android.util.SparseArray: void <init>()>();
+        $r0.<com.facebook.lite.photo.t: android.util.SparseArray j> = $r7;
+        $r0.<com.facebook.lite.photo.t: android.os.Handler d> = $r1;
+        $r0.<com.facebook.lite.photo.t: android.content.ContentResolver a> = $r2;
+        $r0.<com.facebook.lite.photo.t: android.content.Context h> = $r3;
+        $r8 = <com.facebook.lite.photo.t: com.facebook.lite.a.i g>;
+        if $r8 != null goto label1;
+
+        $l3 = staticinvoke <com.facebook.lite.b.b: long d(android.content.Context)>($r3);
+        $l0 = $l3 / 10L;
+        $b4 = $l0 cmp 2147483647L;
+        if $b4 <= 0 goto label2;
+
+        $i5 = 2147483647;
+
+     label0:
+        $r5 = new com.facebook.lite.photo.u;
+        specialinvoke $r5.<com.facebook.lite.photo.u: void <init>(com.facebook.lite.photo.t,int)>($r0, $i5);
+        <com.facebook.lite.photo.t: com.facebook.lite.a.i g> = $r5;
+
+     label1:
+        return;
+
+     label2:
+        $l3 = $l3 / 10L;
+        $i5 = (int) $l3;
+        goto label0;
+    }
+
+    static void a(com.facebook.lite.photo.t, java.lang.Object)
+    {
+        com.facebook.lite.photo.t $r0;
+        java.lang.Object $r1;
+
+        $r0 := @parameter0: com.facebook.lite.photo.t;
+        $r1 := @parameter1: java.lang.Object;
+        specialinvoke $r0.<com.facebook.lite.photo.t: void a(java.lang.Object)>($r1);
+        return;
+    }
+
+    private void a(java.lang.Object)
+    {
+        com.facebook.lite.photo.t $r0;
+        java.lang.Object $r1, $r3;
+        java.util.WeakHashMap $r2;
+        int $i0;
+        java.lang.Integer $r4, $r11;
+        android.content.ContentResolver $r5;
+        long $l2;
+        android.graphics.Bitmap $r6;
+        android.net.Uri $r7;
+        java.lang.String $r8;
+        android.content.Context $r9;
+        android.util.SparseArray $r10;
+        boolean $z0;
+        com.facebook.lite.a.i $r12;
+        android.os.Handler $r13;
+        com.facebook.lite.photo.w $r14;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 := @parameter0: java.lang.Object;
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = $r0.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        $r3 = virtualinvoke $r2.<java.util.WeakHashMap: java.lang.Object get(java.lang.Object)>($r1);
+        $r4 = (java.lang.Integer) $r3;
+        if $r4 == null goto label0;
+
+        $i0 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        if $i0 < 0 goto label0;
+
+        $r5 = $r0.<com.facebook.lite.photo.t: android.content.ContentResolver a>;
+        $i0 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        $l2 = (long) $i0;
+        $r6 = staticinvoke <android.provider.MediaStore$Images$Thumbnails: android.graphics.Bitmap getThumbnail(android.content.ContentResolver,long,int,android.graphics.BitmapFactory$Options)>($r5, $l2, 1, null);
+        $r7 = <android.provider.MediaStore$Images$Media: android.net.Uri EXTERNAL_CONTENT_URI>;
+        $i0 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        $r8 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($i0);
+        $r7 = staticinvoke <android.net.Uri: android.net.Uri withAppendedPath(android.net.Uri,java.lang.String)>($r7, $r8);
+        $r9 = $r0.<com.facebook.lite.photo.t: android.content.Context h>;
+        $r8 = staticinvoke <com.facebook.lite.photo.n: java.lang.String a(android.content.Context,android.net.Uri)>($r9, $r7);
+        $r10 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        $i0 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        $r3 = virtualinvoke $r10.<android.util.SparseArray: java.lang.Object get(int)>($i0);
+        $r11 = (java.lang.Integer) $r3;
+        if $r11 != null goto label4;
+
+        $i0 = 0;
+
+     label2:
+        $r6 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(java.lang.String,android.graphics.Bitmap,com.facebook.b.k,int)>($r8, $r6, null, $i0);
+        $r10 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray i>;
+        $i0 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        virtualinvoke $r10.<android.util.SparseArray: void remove(int)>($i0);
+        if $r6 == null goto label3;
+
+        $z0 = virtualinvoke $r6.<android.graphics.Bitmap: boolean isRecycled()>();
+        if $z0 != 0 goto label3;
+
+        $r12 = <com.facebook.lite.photo.t: com.facebook.lite.a.i g>;
+        virtualinvoke $r12.<com.facebook.lite.a.i: java.lang.Object a(java.lang.Object,java.lang.Object)>($r4, $r6);
+
+     label3:
+        $r13 = $r0.<com.facebook.lite.photo.t: android.os.Handler d>;
+        $r14 = new com.facebook.lite.photo.w;
+        specialinvoke $r14.<com.facebook.lite.photo.w: void <init>(com.facebook.lite.photo.t,java.lang.Object,java.lang.Integer,android.graphics.Bitmap)>($r0, $r1, $r4, $r6);
+        virtualinvoke $r13.<android.os.Handler: boolean post(java.lang.Runnable)>($r14);
+        goto label0;
+
+     label4:
+        $i0 = virtualinvoke $r11.<java.lang.Integer: int intValue()>();
+        goto label2;
+    }
+
+    static java.lang.String c()
+    {
+        java.lang.String $r0;
+
+        $r0 = <com.facebook.lite.photo.t: java.lang.String f>;
+        return $r0;
+    }
+
+    public final android.graphics.Bitmap a(java.lang.Object, int)
+    {
+        com.facebook.lite.photo.t $r0;
+        java.lang.Object $r1, $r4;
+        int $i0;
+        android.util.SparseArray $r2;
+        java.lang.Integer $r3;
+        android.graphics.Bitmap $r5;
+        com.facebook.lite.a.i $r6;
+        boolean $z0;
+        java.util.WeakHashMap $r7;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 := @parameter0: java.lang.Object;
+        $i0 := @parameter1: int;
+        $r2 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray i>;
+        $r4 = virtualinvoke $r2.<android.util.SparseArray: java.lang.Object get(int)>($i0);
+        if $r4 == null goto label0;
+
+        return null;
+
+     label0:
+        $r6 = <com.facebook.lite.photo.t: com.facebook.lite.a.i g>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r4 = virtualinvoke $r6.<com.facebook.lite.a.i: java.lang.Object a(java.lang.Object)>($r3);
+        $r5 = (android.graphics.Bitmap) $r4;
+        if $r5 == null goto label1;
+
+        $z0 = virtualinvoke $r5.<android.graphics.Bitmap: boolean isRecycled()>();
+        if $z0 != 0 goto label1;
+
+        $r7 = $r0.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r7.<java.util.WeakHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r3);
+        return $r5;
+
+     label1:
+        if $r5 == null goto label2;
+
+        $z0 = virtualinvoke $r5.<android.graphics.Bitmap: boolean isRecycled()>();
+        if $z0 == 0 goto label2;
+
+        $r6 = <com.facebook.lite.photo.t: com.facebook.lite.a.i g>;
+        virtualinvoke $r6.<com.facebook.lite.a.i: java.lang.Object b(java.lang.Object)>($r5);
+
+     label2:
+        return null;
+    }
+
+    public final void a()
+    {
+        com.facebook.lite.photo.t $r0;
+        android.os.Handler $r1;
+        java.util.WeakHashMap $r2;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 = $r0.<com.facebook.lite.photo.t: android.os.Handler b>;
+        virtualinvoke $r1.<android.os.Handler: void removeMessages(int)>(0);
+        $r2 = $r0.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        virtualinvoke $r2.<java.util.WeakHashMap: void clear()>();
+        return;
+    }
+
+    public final void a(int, int)
+    {
+        com.facebook.lite.photo.t $r0;
+        int $i0, $i1;
+        android.util.SparseArray $r1;
+        java.lang.Integer $r2;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        if $i1 != 0 goto label1;
+
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        virtualinvoke $r1.<android.util.SparseArray: void remove(int)>($i0);
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray i>;
+        $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        virtualinvoke $r1.<android.util.SparseArray: void put(int,java.lang.Object)>($i0, $r2);
+        return;
+
+     label1:
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        virtualinvoke $r1.<android.util.SparseArray: void put(int,java.lang.Object)>($i0, $r2);
+        goto label0;
+    }
+
+    public final void a(com.facebook.lite.photo.x)
+    {
+        com.facebook.lite.photo.t $r0;
+        com.facebook.lite.photo.x $r1;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 := @parameter0: com.facebook.lite.photo.x;
+        $r0.<com.facebook.lite.photo.t: com.facebook.lite.photo.x c> = $r1;
+        return;
+    }
+
+    public final void a(java.lang.Object, java.lang.Integer)
+    {
+        com.facebook.lite.photo.t $r0;
+        java.lang.Object $r1;
+        java.lang.Integer $r2;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r4;
+        java.util.WeakHashMap $r6;
+        android.os.Handler $r7;
+        android.os.Message $r8;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 := @parameter1: java.lang.Integer;
+        $r3 = <com.facebook.lite.photo.t: java.lang.String f>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("thumbnail/got an origId:");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r3, $r5);
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r6 = $r0.<com.facebook.lite.photo.t: java.util.WeakHashMap e>;
+        virtualinvoke $r6.<java.util.WeakHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r2);
+        $r7 = $r0.<com.facebook.lite.photo.t: android.os.Handler b>;
+        $r8 = virtualinvoke $r7.<android.os.Handler: android.os.Message obtainMessage(int,java.lang.Object)>(0, $r1);
+        virtualinvoke $r8.<android.os.Message: void sendToTarget()>();
+        goto label0;
+    }
+
+    public final void b()
+    {
+        com.facebook.lite.photo.t $r0;
+        int $i0, $i1;
+        android.util.SparseArray $r1;
+        com.facebook.lite.a.i $r2;
+        java.lang.Integer $r3;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $i0 = 0;
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        $i1 = virtualinvoke $r1.<android.util.SparseArray: int size()>();
+        if $i0 >= $i1 goto label1;
+
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        $i1 = virtualinvoke $r1.<android.util.SparseArray: int keyAt(int)>($i0);
+        $r2 = <com.facebook.lite.photo.t: com.facebook.lite.a.i g>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        virtualinvoke $r2.<com.facebook.lite.a.i: java.lang.Object b(java.lang.Object)>($r3);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label1:
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray j>;
+        virtualinvoke $r1.<android.util.SparseArray: void clear()>();
+        $r1 = $r0.<com.facebook.lite.photo.t: android.util.SparseArray i>;
+        virtualinvoke $r1.<android.util.SparseArray: void clear()>();
+        return;
+    }
+
+    protected void onLooperPrepared()
+    {
+        com.facebook.lite.photo.t $r0;
+        com.facebook.lite.photo.v $r1;
+
+        $r0 := @this: com.facebook.lite.photo.t;
+        $r1 = new com.facebook.lite.photo.v;
+        specialinvoke $r1.<com.facebook.lite.photo.v: void <init>(com.facebook.lite.photo.t)>($r0);
+        $r0.<com.facebook.lite.photo.t: android.os.Handler b> = $r1;
+        return;
+    }
+}

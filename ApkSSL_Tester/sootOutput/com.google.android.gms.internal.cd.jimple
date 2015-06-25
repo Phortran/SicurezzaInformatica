@@ -1,0 +1,73 @@
+final class com.google.android.gms.internal.cd extends java.lang.Object implements java.lang.Runnable
+{
+    final android.content.Context a;
+    final com.google.android.gms.internal.bu b;
+    final com.google.android.gms.internal.cf c;
+    final java.lang.String d;
+
+    void <init>(android.content.Context, com.google.android.gms.internal.bu, com.google.android.gms.internal.cf, java.lang.String)
+    {
+        com.google.android.gms.internal.cd $r0;
+        android.content.Context $r1;
+        com.google.android.gms.internal.bu $r2;
+        com.google.android.gms.internal.cf $r3;
+        java.lang.String $r4;
+
+        $r0 := @this: com.google.android.gms.internal.cd;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.google.android.gms.internal.bu;
+        $r3 := @parameter2: com.google.android.gms.internal.cf;
+        $r4 := @parameter3: java.lang.String;
+        $r0.<com.google.android.gms.internal.cd: android.content.Context a> = $r1;
+        $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.bu b> = $r2;
+        $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.cf c> = $r3;
+        $r0.<com.google.android.gms.internal.cd: java.lang.String d> = $r4;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        com.google.android.gms.internal.cd $r0;
+        android.content.Context $r1;
+        com.google.android.gms.internal.x $r2;
+        com.google.android.gms.internal.bu $r3;
+        com.google.android.gms.internal.co $r4;
+        java.lang.String $r6, $r8;
+        com.google.android.gms.internal.dg $r9;
+        com.google.android.gms.internal.cf $r10;
+        com.google.android.gms.internal.dh $r11;
+        com.google.android.gms.internal.k $r12;
+        java.lang.StringBuilder $r13;
+
+        $r0 := @this: com.google.android.gms.internal.cd;
+        $r1 = $r0.<com.google.android.gms.internal.cd: android.content.Context a>;
+        $r2 = new com.google.android.gms.internal.x;
+        specialinvoke $r2.<com.google.android.gms.internal.x: void <init>()>();
+        $r3 = $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.bu b>;
+        $r4 = $r3.<com.google.android.gms.internal.bu: com.google.android.gms.internal.co l>;
+        $r9 = staticinvoke <com.google.android.gms.internal.dg: com.google.android.gms.internal.dg a(android.content.Context,com.google.android.gms.internal.x,boolean,boolean,com.google.android.gms.internal.je,com.google.android.gms.internal.co)>($r1, $r2, 0, 0, null, $r4);
+        virtualinvoke $r9.<com.google.android.gms.internal.dg: void setWillNotDraw(boolean)>(1);
+        $r10 = $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.cf c>;
+        virtualinvoke $r10.<com.google.android.gms.internal.cf: void a(com.google.android.gms.internal.dg)>($r9);
+        $r11 = virtualinvoke $r9.<com.google.android.gms.internal.dg: com.google.android.gms.internal.dh e()>();
+        $r10 = $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.cf c>;
+        $r12 = $r10.<com.google.android.gms.internal.cf: com.google.android.gms.internal.k a>;
+        virtualinvoke $r11.<com.google.android.gms.internal.dh: void a(java.lang.String,com.google.android.gms.internal.k)>("/invalidRequest", $r12);
+        $r10 = $r0.<com.google.android.gms.internal.cd: com.google.android.gms.internal.cf c>;
+        $r12 = $r10.<com.google.android.gms.internal.cf: com.google.android.gms.internal.k b>;
+        virtualinvoke $r11.<com.google.android.gms.internal.dh: void a(java.lang.String,com.google.android.gms.internal.k)>("/loadAdURL", $r12);
+        $r12 = <com.google.android.gms.internal.c: com.google.android.gms.internal.k f>;
+        virtualinvoke $r11.<com.google.android.gms.internal.dh: void a(java.lang.String,com.google.android.gms.internal.k)>("/log", $r12);
+        staticinvoke <com.google.android.gms.internal.dc: void a(java.lang.String)>("Getting the ad request URL.");
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<!DOCTYPE html><html><head><script src=\"http://googleads.g.doubleclick.net/mads/static/sdk/native/sdk-core-v40.js\"></script><script>AFMA_buildAdURL(");
+        $r8 = $r0.<com.google.android.gms.internal.cd: java.lang.String d>;
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(");</script></head><body></body></html>");
+        $r6 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<com.google.android.gms.internal.dg: void loadDataWithBaseURL(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("http://googleads.g.doubleclick.net", $r6, "text/html", "UTF-8", null);
+        return;
+    }
+}

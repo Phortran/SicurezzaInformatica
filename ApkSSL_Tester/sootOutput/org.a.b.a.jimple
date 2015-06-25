@@ -1,0 +1,146 @@
+public class org.a.b.a extends java.lang.Object implements java.io.Serializable
+{
+    private java.lang.String a;
+    private java.util.List b;
+    private java.util.List c;
+
+    public void <init>(java.lang.String)
+    {
+        org.a.b.a $r0;
+        java.lang.String $r1;
+        java.util.ArrayList $r2;
+
+        $r0 := @this: org.a.b.a;
+        $r1 := @parameter0: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0.<org.a.b.a: java.util.List b> = $r2;
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0.<org.a.b.a: java.util.List c> = $r2;
+        $r0.<org.a.b.a: java.lang.String a> = $r1;
+        return;
+    }
+
+    public double a(int)
+    {
+        org.a.b.a $r0;
+        int $i0;
+        java.util.List $r1;
+        java.lang.Object $r2;
+        java.lang.Double $r3;
+        double $d0;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: org.a.b.a;
+        $i0 := @parameter0: int;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.b.a: java.util.List c>;
+        $r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i0);
+        $r3 = (java.lang.Double) $r2;
+        $d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>();
+
+     label1:
+        exitmonitor $r0;
+        return $d0;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public int a()
+    {
+        org.a.b.a $r0;
+        java.util.List $r1;
+        int $i0;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: org.a.b.a;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.b.a: java.util.List b>;
+        $i0 = interfaceinvoke $r1.<java.util.List: int size()>();
+
+     label1:
+        exitmonitor $r0;
+        return $i0;
+
+     label2:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void a(java.lang.String, double)
+    {
+        org.a.b.a $r0;
+        java.lang.String $r1;
+        double $d0;
+        java.util.List $r2;
+        java.lang.Double $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: org.a.b.a;
+        $r1 := @parameter0: java.lang.String;
+        $d0 := @parameter1: double;
+        entermonitor $r0;
+
+     label0:
+        $r2 = $r0.<org.a.b.a: java.util.List b>;
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r1);
+        $r2 = $r0.<org.a.b.a: java.util.List c>;
+        $r3 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>($d0);
+        interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r3);
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public java.lang.String b(int)
+    {
+        org.a.b.a $r0;
+        int $i0;
+        java.util.List $r1;
+        java.lang.Object $r2;
+        java.lang.String $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: org.a.b.a;
+        $i0 := @parameter0: int;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<org.a.b.a: java.util.List b>;
+        $r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>($i0);
+        $r3 = (java.lang.String) $r2;
+
+     label1:
+        exitmonitor $r0;
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

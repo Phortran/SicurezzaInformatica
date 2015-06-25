@@ -1,0 +1,141 @@
+public class it.h3g.areaclienti3.j.d extends android.os.AsyncTask
+{
+    private final java.lang.String a;
+    private final int b;
+    private it.h3g.areaclienti3.j.l c;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.j.d $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.l $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.j.d;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        $r0.<it.h3g.areaclienti3.j.d: java.lang.String a> = "GetTimeThread";
+        $r0.<it.h3g.areaclienti3.j.d: int b> = 10000;
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.j.d: it.h3g.areaclienti3.j.l c> = $r3;
+        return;
+    }
+
+    private long a()
+    {
+        it.h3g.areaclienti3.j.d $r0;
+        java.lang.Object $r1;
+        java.net.HttpURLConnection $r2;
+        java.lang.String $r3;
+        java.net.URLConnection $r4;
+        java.io.InputStream $r6;
+        long $l2;
+        java.lang.Exception $r7;
+        java.lang.Throwable $r9;
+        java.net.URL r10;
+
+        $r0 := @this: it.h3g.areaclienti3.j.d;
+        $r2 = null;
+
+     label0:
+        r10 = new java.net.URL;
+        $r1 = r10;
+
+     label1:
+        specialinvoke r10.<java.net.URL: void <init>(java.lang.String)>("https://areaclienti3.tre.it/133/getData.shtml");
+        r10 = (java.net.URL) $r1;
+        $r4 = virtualinvoke r10.<java.net.URL: java.net.URLConnection openConnection()>();
+        $r2 = (java.net.HttpURLConnection) $r4;
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setConnectTimeout(int)>(10000);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setReadTimeout(int)>(10000);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setDoInput(boolean)>(1);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setDoOutput(boolean)>(1);
+        virtualinvoke $r2.<java.net.HttpURLConnection: void setUseCaches(boolean)>(0);
+        $r6 = virtualinvoke $r2.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>();
+        $r3 = staticinvoke <org.b.a.a.b: java.lang.String b(java.io.InputStream)>($r6);
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String trim()>();
+        $l2 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r3);
+
+     label2:
+        virtualinvoke $r2.<java.net.HttpURLConnection: void disconnect()>();
+        return $l2;
+
+     label3:
+        $r7 := @caughtexception;
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("GetTimeThread", "Exception getTimeNow", $r7);
+
+     label5:
+        virtualinvoke $r2.<java.net.HttpURLConnection: void disconnect()>();
+        return -1L;
+
+     label6:
+        $r9 := @caughtexception;
+        virtualinvoke $r2.<java.net.HttpURLConnection: void disconnect()>();
+        throw $r9;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label0 to label2 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    protected transient java.lang.Void a(java.lang.Void[])
+    {
+        it.h3g.areaclienti3.j.d $r0;
+        java.lang.Void[] $r1;
+        long $l0;
+        java.lang.Long $r2;
+        byte $b2;
+        it.h3g.areaclienti3.j.l $r3;
+        java.lang.String $r4, $r6;
+        java.util.Date $r5;
+        java.lang.Exception $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.j.d;
+        $r1 := @parameter0: java.lang.Void[];
+
+     label0:
+        $l0 = specialinvoke $r0.<it.h3g.areaclienti3.j.d: long a()>();
+        $b2 = $l0 cmp 0L;
+        if $b2 <= 0 goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.j.d: it.h3g.areaclienti3.j.l c>;
+        $r2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.j.l: boolean a(java.lang.Long)>($r2);
+        $r5 = new java.util.Date;
+        specialinvoke $r5.<java.util.Date: void <init>(long)>($l0);
+        $r6 = virtualinvoke $r5.<java.util.Date: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("GetTimeThread", $r6);
+        return null;
+
+     label1:
+        $r3 = $r0.<it.h3g.areaclienti3.j.d: it.h3g.areaclienti3.j.l c>;
+        virtualinvoke $r3.<it.h3g.areaclienti3.j.l: boolean a(java.lang.Long)>(null);
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("GetTimeThread", "No client found");
+
+     label2:
+        return null;
+
+     label3:
+        $r7 := @caughtexception;
+        $r4 = virtualinvoke $r7.<java.lang.Exception: java.lang.String getMessage()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("GetTimeThread", $r4);
+        return null;
+
+        catch java.lang.Exception from label0 to label2 with label3;
+    }
+
+    protected transient java.lang.Object doInBackground(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.j.d $r0;
+        java.lang.Object[] $r1;
+        java.lang.Void $r2;
+        java.lang.Void[] $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.j.d;
+        $r1 := @parameter0: java.lang.Object[];
+        $r3 = (java.lang.Void[]) $r1;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.j.d: java.lang.Void a(java.lang.Void[])>($r3);
+        return $r2;
+    }
+}

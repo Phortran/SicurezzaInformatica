@@ -1,0 +1,89 @@
+class android.support.v4.widget.MaterialProgressDrawable$1 extends android.view.animation.Animation
+{
+    final android.support.v4.widget.MaterialProgressDrawable this$0;
+    final android.support.v4.widget.MaterialProgressDrawable$Ring val$ring;
+
+    void <init>(android.support.v4.widget.MaterialProgressDrawable, android.support.v4.widget.MaterialProgressDrawable$Ring)
+    {
+        android.support.v4.widget.MaterialProgressDrawable$1 $r0;
+        android.support.v4.widget.MaterialProgressDrawable $r1;
+        android.support.v4.widget.MaterialProgressDrawable$Ring $r2;
+
+        $r0 := @this: android.support.v4.widget.MaterialProgressDrawable$1;
+        $r1 := @parameter0: android.support.v4.widget.MaterialProgressDrawable;
+        $r2 := @parameter1: android.support.v4.widget.MaterialProgressDrawable$Ring;
+        $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable this$0> = $r1;
+        $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring> = $r2;
+        specialinvoke $r0.<android.view.animation.Animation: void <init>()>();
+        return;
+    }
+
+    public void applyTransformation(float, android.view.animation.Transformation)
+    {
+        android.support.v4.widget.MaterialProgressDrawable$1 $r0;
+        float $f0, $f1, $f2, $f3, $f4, $f5;
+        android.view.animation.Transformation $r1;
+        android.support.v4.widget.MaterialProgressDrawable $r3;
+        android.support.v4.widget.MaterialProgressDrawable$Ring $r4;
+        double $d1, $d2;
+        boolean $z0;
+        android.view.animation.Interpolator $r5;
+
+        $r0 := @this: android.support.v4.widget.MaterialProgressDrawable$1;
+        $f0 := @parameter0: float;
+        $r1 := @parameter1: android.view.animation.Transformation;
+        $r3 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable this$0>;
+        $z0 = $r3.<android.support.v4.widget.MaterialProgressDrawable: boolean mFinishing>;
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable this$0>;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        staticinvoke <android.support.v4.widget.MaterialProgressDrawable: void access$200(android.support.v4.widget.MaterialProgressDrawable,float,android.support.v4.widget.MaterialProgressDrawable$Ring)>($r3, $f0, $r4);
+
+     label0:
+        return;
+
+     label1:
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        $f4 = virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: float getStrokeWidth()>();
+        $d2 = (double) $f4;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        $d1 = virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: double getCenterRadius()>();
+        $d1 = 6.283185307179586 * $d1;
+        $d2 = $d2 / $d1;
+        $d2 = staticinvoke <java.lang.Math: double toRadians(double)>($d2);
+        $f1 = (float) $d2;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        $f2 = virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: float getStartingEndTrim()>();
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        $f4 = virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: float getStartingStartTrim()>();
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        $f3 = virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: float getStartingRotation()>();
+        $f1 = 0.8F - $f1;
+        $r5 = staticinvoke <android.support.v4.widget.MaterialProgressDrawable: android.view.animation.Interpolator access$300()>();
+        $f5 = interfaceinvoke $r5.<android.view.animation.Interpolator: float getInterpolation(float)>($f0);
+        $f5 = $f5 * $f1;
+        $f1 = $f2 + $f5;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: void setEndTrim(float)>($f1);
+        $r5 = staticinvoke <android.support.v4.widget.MaterialProgressDrawable: android.view.animation.Interpolator access$400()>();
+        $f2 = interfaceinvoke $r5.<android.view.animation.Interpolator: float getInterpolation(float)>($f0);
+        $f5 = 0.8F * $f2;
+        $f1 = $f4 + $f5;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: void setStartTrim(float)>($f1);
+        $f5 = 0.25F * $f0;
+        $f1 = $f3 + $f5;
+        $r4 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable$Ring val$ring>;
+        virtualinvoke $r4.<android.support.v4.widget.MaterialProgressDrawable$Ring: void setRotation(float)>($f1);
+        $f5 = 144.0F * $f0;
+        $r3 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable this$0>;
+        $f3 = staticinvoke <android.support.v4.widget.MaterialProgressDrawable: float access$500(android.support.v4.widget.MaterialProgressDrawable)>($r3);
+        $f3 = $f3 / 5.0F;
+        $f4 = 720.0F * $f3;
+        $f1 = $f5 + $f4;
+        $r3 = $r0.<android.support.v4.widget.MaterialProgressDrawable$1: android.support.v4.widget.MaterialProgressDrawable this$0>;
+        virtualinvoke $r3.<android.support.v4.widget.MaterialProgressDrawable: void setRotation(float)>($f1);
+        goto label0;
+    }
+}

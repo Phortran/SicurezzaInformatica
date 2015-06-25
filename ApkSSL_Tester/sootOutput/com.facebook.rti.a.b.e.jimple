@@ -1,0 +1,138 @@
+public abstract class com.facebook.rti.a.b.e extends android.content.BroadcastReceiver
+{
+    private static final android.util.SparseArray a;
+    private static int b;
+
+    static void <clinit>()
+    {
+        android.util.SparseArray $r0;
+
+        $r0 = new android.util.SparseArray;
+        specialinvoke $r0.<android.util.SparseArray: void <init>()>();
+        <com.facebook.rti.a.b.e: android.util.SparseArray a> = $r0;
+        <com.facebook.rti.a.b.e: int b> = 1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.rti.a.b.e $r0;
+
+        $r0 := @this: com.facebook.rti.a.b.e;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public static android.content.ComponentName a(android.content.Context, android.content.Intent)
+    {
+        android.content.Context $r0;
+        android.content.Intent $r1;
+        int $i0, $i1;
+        android.content.ComponentName $r2;
+        android.util.SparseArray $r3, $r9;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+        java.lang.Object $r6;
+        android.os.PowerManager $r7;
+        android.os.PowerManager$WakeLock $r8;
+        java.lang.Throwable $r10;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.content.Intent;
+        $r3 = <com.facebook.rti.a.b.e: android.util.SparseArray a>;
+        entermonitor $r3;
+
+     label0:
+        $i1 = <com.facebook.rti.a.b.e: int b>;
+        $i0 = <com.facebook.rti.a.b.e: int b>;
+        $i0 = $i0 + 1;
+        <com.facebook.rti.a.b.e: int b> = $i0;
+        if $i0 > 0 goto label1;
+
+        <com.facebook.rti.a.b.e: int b> = 1;
+
+     label1:
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)>("android.support.content.wakelockid", $i1);
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r1);
+        if $r2 != null goto label2;
+
+        exitmonitor $r3;
+        return null;
+
+     label2:
+        $r6 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("power");
+        $r7 = (android.os.PowerManager) $r6;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("wake:");
+        $r5 = virtualinvoke $r2.<android.content.ComponentName: java.lang.String flattenToShortString()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r8 = virtualinvoke $r7.<android.os.PowerManager: android.os.PowerManager$WakeLock newWakeLock(int,java.lang.String)>(1, $r5);
+        virtualinvoke $r8.<android.os.PowerManager$WakeLock: void setReferenceCounted(boolean)>(0);
+        virtualinvoke $r8.<android.os.PowerManager$WakeLock: void acquire(long)>(60000L);
+        $r9 = <com.facebook.rti.a.b.e: android.util.SparseArray a>;
+        virtualinvoke $r9.<android.util.SparseArray: void put(int,java.lang.Object)>($i1, $r8);
+        exitmonitor $r3;
+        return $r2;
+
+     label3:
+        $r10 := @caughtexception;
+        exitmonitor $r3;
+
+     label4:
+        throw $r10;
+
+        catch java.lang.Throwable from label0 to label4 with label3;
+    }
+
+    public static boolean a(android.content.Intent)
+    {
+        android.content.Intent $r0;
+        android.util.SparseArray $r2, $r3;
+        int $i1;
+        java.lang.Object $r4;
+        android.os.PowerManager$WakeLock $r5;
+        java.lang.Object[] $r7;
+        java.lang.Integer $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @parameter0: android.content.Intent;
+        $i1 = virtualinvoke $r0.<android.content.Intent: int getIntExtra(java.lang.String,int)>("android.support.content.wakelockid", 0);
+        if $i1 != 0 goto label0;
+
+        return 0;
+
+     label0:
+        $r2 = <com.facebook.rti.a.b.e: android.util.SparseArray a>;
+        entermonitor $r2;
+
+     label1:
+        $r3 = <com.facebook.rti.a.b.e: android.util.SparseArray a>;
+        $r4 = virtualinvoke $r3.<android.util.SparseArray: java.lang.Object get(int)>($i1);
+        $r5 = (android.os.PowerManager$WakeLock) $r4;
+        if $r5 == null goto label2;
+
+        virtualinvoke $r5.<android.os.PowerManager$WakeLock: void release()>();
+        $r3 = <com.facebook.rti.a.b.e: android.util.SparseArray a>;
+        virtualinvoke $r3.<android.util.SparseArray: void remove(int)>($i1);
+        exitmonitor $r2;
+        return 1;
+
+     label2:
+        $r7 = newarray (java.lang.Object)[1];
+        $r8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r7[0] = $r8;
+        staticinvoke <com.facebook.rti.a.e.a: void e(java.lang.String,java.lang.String,java.lang.Object[])>("WakefulBroadcastReceiver", "No active wake lock id #%s", $r7);
+        exitmonitor $r2;
+        return 1;
+
+     label3:
+        $r9 := @caughtexception;
+        exitmonitor $r2;
+
+     label4:
+        throw $r9;
+
+        catch java.lang.Throwable from label1 to label4 with label3;
+    }
+}

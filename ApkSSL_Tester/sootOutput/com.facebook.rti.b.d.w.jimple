@@ -1,0 +1,69 @@
+final class com.facebook.rti.b.d.w extends java.lang.Object implements java.lang.Runnable
+{
+    final com.facebook.rti.b.e.b.l a;
+    final com.facebook.rti.b.d.r b;
+
+    void <init>(com.facebook.rti.b.d.r, com.facebook.rti.b.e.b.l)
+    {
+        com.facebook.rti.b.d.w $r0;
+        com.facebook.rti.b.d.r $r1;
+        com.facebook.rti.b.e.b.l $r2;
+
+        $r0 := @this: com.facebook.rti.b.d.w;
+        $r1 := @parameter0: com.facebook.rti.b.d.r;
+        $r2 := @parameter1: com.facebook.rti.b.e.b.l;
+        $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.d.r b> = $r1;
+        $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.e.b.l a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.rti.b.d.w $r0;
+        com.facebook.rti.b.d.r $r1;
+        com.facebook.rti.b.e.b.l $r3;
+        long $l0, $l1;
+        java.lang.String $r4;
+        com.facebook.rti.b.d.b $r5;
+        byte[] $r6;
+        com.facebook.rti.b.a.b.b $r7;
+        int $i3;
+        boolean $z0;
+        java.lang.Object[] $r8;
+        java.lang.Boolean $r9;
+        java.lang.InterruptedException $r10;
+
+        $r0 := @this: com.facebook.rti.b.d.w;
+        $r1 = $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.d.r b>;
+        $r5 = $r1.<com.facebook.rti.b.d.r: com.facebook.rti.b.d.b a>;
+        $r3 = $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.e.b.l a>;
+
+     label0:
+        $r4 = virtualinvoke $r3.<com.facebook.rti.b.e.b.l: java.lang.String toString()>();
+        $r6 = staticinvoke <com.facebook.rti.a.h.a: byte[] b(java.lang.String)>($r4);
+        $r1 = $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.d.r b>;
+        $r7 = $r1.<com.facebook.rti.b.d.r: com.facebook.rti.b.a.b.b j>;
+        $i3 = $r7.<com.facebook.rti.b.a.b.b: int d>;
+        $l0 = (long) $i3;
+        $l1 = $l0 * 1000L;
+        $z0 = virtualinvoke $r5.<com.facebook.rti.b.d.b: boolean a(java.lang.String,byte[],long)>("/foreground_state", $r6, $l1);
+        $r8 = newarray (java.lang.Object)[2];
+        $r9 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+        $r8[0] = $r9;
+        $r3 = $r0.<com.facebook.rti.b.d.w: com.facebook.rti.b.e.b.l a>;
+        $r8[1] = $r3;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("MqttPushService", "Publish /foreground_state succeed:%b, with payload:%s", $r8);
+
+     label1:
+        return;
+
+     label2:
+        $r10 := @caughtexception;
+        $r8 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void c(java.lang.String,java.lang.String,java.lang.Object[])>("MqttPushService", "failed to publish foreground state", $r8);
+        goto label1;
+
+        catch java.lang.InterruptedException from label0 to label1 with label2;
+    }
+}

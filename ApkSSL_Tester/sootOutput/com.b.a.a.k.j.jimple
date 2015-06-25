@@ -1,0 +1,152 @@
+public final class com.b.a.a.k.j extends java.lang.Object
+{
+    private static final long[] a;
+    private long[] b;
+    private final int c;
+    private int d;
+
+    static void <clinit>()
+    {
+        long[] $r0;
+
+        $r0 = newarray (long)[0];
+        <com.b.a.a.k.j: long[] a> = $r0;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.b.a.a.k.j $r0;
+
+        $r0 := @this: com.b.a.a.k.j;
+        specialinvoke $r0.<com.b.a.a.k.j: void <init>(byte)>(0);
+        return;
+    }
+
+    private void <init>(byte)
+    {
+        com.b.a.a.k.j $r0;
+        byte $b0;
+        long[] $r1;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $b0 := @parameter0: byte;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = newarray (long)[10];
+        $r0.<com.b.a.a.k.j: long[] b> = $r1;
+        $r0.<com.b.a.a.k.j: int c> = 75;
+        return;
+    }
+
+    private void c()
+    {
+        com.b.a.a.k.j $r0;
+        long[] $r1, $r2;
+        long $l0, $l1, $l4;
+        int $i3;
+        byte $b5;
+        java.lang.ArrayIndexOutOfBoundsException $r3;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $r1 = $r0.<com.b.a.a.k.j: long[] b>;
+        $i3 = lengthof $r1;
+        $l0 = (long) $i3;
+        $i3 = $r0.<com.b.a.a.k.j: int c>;
+        $l1 = (long) $i3;
+        $l4 = $l1 * $l0;
+        $l4 = $l4 / 100L;
+        $l4 = $l4 + $l0;
+        $b5 = $l4 cmp $l0;
+        if $b5 != 0 goto label0;
+
+        $l4 = $l4 + 1L;
+
+     label0:
+        $b5 = $l4 cmp 2147483647L;
+        if $b5 > 0 goto label1;
+
+        $i3 = (int) $l4;
+        $r2 = newarray (long)[$i3];
+        $r1 = $r0.<com.b.a.a.k.j: long[] b>;
+        $i3 = $r0.<com.b.a.a.k.j: int d>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r1, 0, $r2, 0, $i3);
+        $r0.<com.b.a.a.k.j: long[] b> = $r2;
+        return;
+
+     label1:
+        $r3 = new java.lang.ArrayIndexOutOfBoundsException;
+        specialinvoke $r3.<java.lang.ArrayIndexOutOfBoundsException: void <init>()>();
+        throw $r3;
+    }
+
+    public final long a(int)
+    {
+        com.b.a.a.k.j $r0;
+        int $i0, $i1;
+        java.lang.IndexOutOfBoundsException $r1;
+        long[] $r2;
+        long $l2;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $i0 := @parameter0: int;
+        if $i0 < 0 goto label0;
+
+        $i1 = $r0.<com.b.a.a.k.j: int d>;
+        if $i0 < $i1 goto label1;
+
+     label0:
+        $r1 = new java.lang.IndexOutOfBoundsException;
+        specialinvoke $r1.<java.lang.IndexOutOfBoundsException: void <init>()>();
+        throw $r1;
+
+     label1:
+        $r2 = $r0.<com.b.a.a.k.j: long[] b>;
+        $l2 = $r2[$i0];
+        return $l2;
+    }
+
+    public final void a()
+    {
+        com.b.a.a.k.j $r0;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $r0.<com.b.a.a.k.j: int d> = 0;
+        return;
+    }
+
+    public final void a(long)
+    {
+        com.b.a.a.k.j $r0;
+        long $l0;
+        int $i1, $i2;
+        long[] $r1;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $l0 := @parameter0: long;
+        $i1 = $r0.<com.b.a.a.k.j: int d>;
+        $r1 = $r0.<com.b.a.a.k.j: long[] b>;
+        $i2 = lengthof $r1;
+        if $i1 < $i2 goto label0;
+
+        specialinvoke $r0.<com.b.a.a.k.j: void c()>();
+
+     label0:
+        $r1 = $r0.<com.b.a.a.k.j: long[] b>;
+        $i2 = $r0.<com.b.a.a.k.j: int d>;
+        $r1[$i2] = $l0;
+        $i2 = $r0.<com.b.a.a.k.j: int d>;
+        $i2 = $i2 + 1;
+        $r0.<com.b.a.a.k.j: int d> = $i2;
+        return;
+    }
+
+    public final int b()
+    {
+        com.b.a.a.k.j $r0;
+        int $i0;
+
+        $r0 := @this: com.b.a.a.k.j;
+        $i0 = $r0.<com.b.a.a.k.j: int d>;
+        return $i0;
+    }
+}

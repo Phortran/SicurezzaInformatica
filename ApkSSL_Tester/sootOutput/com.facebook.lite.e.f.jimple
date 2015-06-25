@@ -1,0 +1,54 @@
+final class com.facebook.lite.e.f extends java.lang.Object implements com.facebook.lite.e.g
+{
+    final com.facebook.lite.e.d a;
+
+    private void <init>(com.facebook.lite.e.d)
+    {
+        com.facebook.lite.e.f $r0;
+        com.facebook.lite.e.d $r1;
+
+        $r0 := @this: com.facebook.lite.e.f;
+        $r1 := @parameter0: com.facebook.lite.e.d;
+        $r0.<com.facebook.lite.e.f: com.facebook.lite.e.d a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    void <init>(com.facebook.lite.e.d, byte)
+    {
+        com.facebook.lite.e.f $r0;
+        com.facebook.lite.e.d $r1;
+        byte $b0;
+
+        $r0 := @this: com.facebook.lite.e.f;
+        $r1 := @parameter0: com.facebook.lite.e.d;
+        $b0 := @parameter1: byte;
+        specialinvoke $r0.<com.facebook.lite.e.f: void <init>(com.facebook.lite.e.d)>($r1);
+        return;
+    }
+
+    public final java.lang.String a(java.lang.StringBuilder)
+    {
+        com.facebook.lite.e.f $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        com.facebook.lite.e.d $r3;
+        com.facebook.lite.e.h $r4;
+        int $i0;
+        double $d1;
+        long $l1;
+
+        $r0 := @this: com.facebook.lite.e.f;
+        $r1 := @parameter0: java.lang.StringBuilder;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FPS: ");
+        $r3 = $r0.<com.facebook.lite.e.f: com.facebook.lite.e.d a>;
+        $r4 = staticinvoke <com.facebook.lite.e.d: com.facebook.lite.e.h a(com.facebook.lite.e.d)>($r3);
+        $i0 = virtualinvoke $r4.<com.facebook.lite.e.h: int c()>();
+        $d1 = (double) $i0;
+        $d1 = 1000.0 / $d1;
+        $l1 = staticinvoke <java.lang.Math: long round(double)>($d1);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+}

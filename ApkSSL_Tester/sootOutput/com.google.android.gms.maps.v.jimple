@@ -1,0 +1,43 @@
+public final class com.google.android.gms.maps.v extends java.lang.Object
+{
+    private final com.google.android.gms.maps.internal.IUiSettingsDelegate a;
+
+    void <init>(com.google.android.gms.maps.internal.IUiSettingsDelegate)
+    {
+        com.google.android.gms.maps.v $r0;
+        com.google.android.gms.maps.internal.IUiSettingsDelegate $r1;
+
+        $r0 := @this: com.google.android.gms.maps.v;
+        $r1 := @parameter0: com.google.android.gms.maps.internal.IUiSettingsDelegate;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.maps.v: com.google.android.gms.maps.internal.IUiSettingsDelegate a> = $r1;
+        return;
+    }
+
+    public void a(boolean)
+    {
+        com.google.android.gms.maps.v $r0;
+        boolean $z0;
+        com.google.android.gms.maps.internal.IUiSettingsDelegate $r1;
+        com.google.android.gms.maps.model.m $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.maps.v;
+        $z0 := @parameter0: boolean;
+        $r1 = $r0.<com.google.android.gms.maps.v: com.google.android.gms.maps.internal.IUiSettingsDelegate a>;
+
+     label0:
+        interfaceinvoke $r1.<com.google.android.gms.maps.internal.IUiSettingsDelegate: void a(boolean)>($z0);
+
+     label1:
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        $r2 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r2.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r2;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+}

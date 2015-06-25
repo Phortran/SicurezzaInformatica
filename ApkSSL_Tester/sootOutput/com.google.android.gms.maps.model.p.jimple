@@ -1,0 +1,148 @@
+public class com.google.android.gms.maps.model.p extends java.lang.Object implements android.os.Parcelable$Creator
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.maps.model.p $r0;
+
+        $r0 := @this: com.google.android.gms.maps.model.p;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    static void a(com.google.android.gms.maps.model.TileOverlayOptions, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.model.TileOverlayOptions $r0;
+        android.os.Parcel $r1;
+        int $i0, $i2;
+        boolean $z0;
+        android.os.IBinder $r2;
+        float $f0;
+
+        $r0 := @parameter0: com.google.android.gms.maps.model.TileOverlayOptions;
+        $r1 := @parameter1: android.os.Parcel;
+        $i0 := @parameter2: int;
+        $i0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.c: int a(android.os.Parcel)>($r1);
+        $i2 = virtualinvoke $r0.<com.google.android.gms.maps.model.TileOverlayOptions: int a()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,int)>($r1, 1, $i2);
+        $r2 = virtualinvoke $r0.<com.google.android.gms.maps.model.TileOverlayOptions: android.os.IBinder b()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,android.os.IBinder,boolean)>($r1, 2, $r2, 0);
+        $z0 = virtualinvoke $r0.<com.google.android.gms.maps.model.TileOverlayOptions: boolean d()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,boolean)>($r1, 3, $z0);
+        $f0 = virtualinvoke $r0.<com.google.android.gms.maps.model.TileOverlayOptions: float c()>();
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int,float)>($r1, 4, $f0);
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.c: void a(android.os.Parcel,int)>($r1, $i0);
+        return;
+    }
+
+    public com.google.android.gms.maps.model.TileOverlayOptions a(android.os.Parcel)
+    {
+        com.google.android.gms.maps.model.p $r0;
+        android.os.Parcel $r1;
+        float $f0;
+        boolean $z0;
+        android.os.IBinder $r2;
+        int $i0, $i1, $i2, $i3;
+        com.google.android.gms.common.internal.safeparcel.b $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+        com.google.android.gms.maps.model.TileOverlayOptions $r6;
+
+        $r0 := @this: com.google.android.gms.maps.model.p;
+        $r1 := @parameter0: android.os.Parcel;
+        $z0 = 0;
+        $i1 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int b(android.os.Parcel)>($r1);
+        $r2 = null;
+        $f0 = 0.0F;
+        $i0 = (int) 0;
+
+     label0:
+        $i2 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i2 >= $i1 goto label6;
+
+        $i3 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(android.os.Parcel)>($r1);
+        $i2 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int a(int)>($i3);
+        lookupswitch($i2)
+        {
+            case 1: goto label2;
+            case 2: goto label3;
+            case 3: goto label4;
+            case 4: goto label5;
+            default: goto label1;
+        };
+
+     label1:
+        staticinvoke <com.google.android.gms.common.internal.safeparcel.a: void b(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label2:
+        $i0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: int f(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label3:
+        $r2 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: android.os.IBinder m(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label4:
+        $z0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: boolean c(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label5:
+        $f0 = staticinvoke <com.google.android.gms.common.internal.safeparcel.a: float i(android.os.Parcel,int)>($r1, $i3);
+        goto label0;
+
+     label6:
+        $i3 = virtualinvoke $r1.<android.os.Parcel: int dataPosition()>();
+        if $i3 == $i1 goto label7;
+
+        $r3 = new com.google.android.gms.common.internal.safeparcel.b;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Overread allowed size end=");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<com.google.android.gms.common.internal.safeparcel.b: void <init>(java.lang.String,android.os.Parcel)>($r5, $r1);
+        throw $r3;
+
+     label7:
+        $r6 = new com.google.android.gms.maps.model.TileOverlayOptions;
+        specialinvoke $r6.<com.google.android.gms.maps.model.TileOverlayOptions: void <init>(int,android.os.IBinder,boolean,float)>($i0, $r2, $z0, $f0);
+        return $r6;
+    }
+
+    public com.google.android.gms.maps.model.TileOverlayOptions[] a(int)
+    {
+        com.google.android.gms.maps.model.p $r0;
+        int $i0;
+        com.google.android.gms.maps.model.TileOverlayOptions[] $r1;
+
+        $r0 := @this: com.google.android.gms.maps.model.p;
+        $i0 := @parameter0: int;
+        $r1 = newarray (com.google.android.gms.maps.model.TileOverlayOptions)[$i0];
+        return $r1;
+    }
+
+    public java.lang.Object createFromParcel(android.os.Parcel)
+    {
+        com.google.android.gms.maps.model.p $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.maps.model.TileOverlayOptions $r2;
+
+        $r0 := @this: com.google.android.gms.maps.model.p;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.maps.model.p: com.google.android.gms.maps.model.TileOverlayOptions a(android.os.Parcel)>($r1);
+        return $r2;
+    }
+
+    public java.lang.Object[] newArray(int)
+    {
+        com.google.android.gms.maps.model.p $r0;
+        int $i0;
+        com.google.android.gms.maps.model.TileOverlayOptions[] $r1;
+
+        $r0 := @this: com.google.android.gms.maps.model.p;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<com.google.android.gms.maps.model.p: com.google.android.gms.maps.model.TileOverlayOptions[] a(int)>($i0);
+        return $r1;
+    }
+}

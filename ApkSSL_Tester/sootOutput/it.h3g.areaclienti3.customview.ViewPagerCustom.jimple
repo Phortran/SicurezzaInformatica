@@ -1,0 +1,197 @@
+public class it.h3g.areaclienti3.customview.ViewPagerCustom extends android.support.v4.view.ViewPager
+{
+    private boolean a;
+    private boolean b;
+    private float c;
+    private int d;
+    private float e;
+    private it.h3g.areaclienti3.customview.b.a f;
+    private final int g;
+    private it.h3g.areaclienti3.j.m h;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        android.content.Context $r1;
+        int $i0;
+        float $f0;
+        it.h3g.areaclienti3.j.m $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.support.v4.view.ViewPager: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean a> = 1;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean b> = 0;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float e> = 200.0F;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.customview.b.a f> = null;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: int g> = 4;
+        $r2 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.j.m h> = $r2;
+        $r2 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.j.m h>;
+        $i0 = virtualinvoke $r2.<it.h3g.areaclienti3.j.m: int i()>();
+        $i0 = $i0 / 4;
+        $f0 = (float) $i0;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float e> = $f0;
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0;
+        float $f0;
+        it.h3g.areaclienti3.j.m $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        specialinvoke $r0.<android.support.v4.view.ViewPager: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean a> = 1;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean b> = 0;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float e> = 200.0F;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.customview.b.a f> = null;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: int g> = 4;
+        $r3 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r3.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.j.m h> = $r3;
+        $r3 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.j.m h>;
+        $i0 = virtualinvoke $r3.<it.h3g.areaclienti3.j.m: int i()>();
+        $i0 = $i0 / 4;
+        $f0 = (float) $i0;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float e> = $f0;
+        return;
+    }
+
+    public boolean onInterceptTouchEvent(android.view.MotionEvent)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        android.view.MotionEvent $r1;
+        boolean $z0, $z2;
+        float $f0, $f1;
+        int $i0;
+        byte $b1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $z0 = 0;
+        $z2 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean a>;
+        if $z2 == 0 goto label1;
+
+        $z0 = specialinvoke $r0.<android.support.v4.view.ViewPager: boolean onInterceptTouchEvent(android.view.MotionEvent)>($r1);
+
+     label0:
+        return $z0;
+
+     label1:
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        if $i0 != 0 goto label2;
+
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float c> = $f0;
+        return 0;
+
+     label2:
+        $f1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float c>;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f1 = $f1 - $f0;
+        $f1 = staticinvoke <java.lang.Math: float abs(float)>($f1);
+        $f0 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float e>;
+        $b1 = $f1 cmpl $f0;
+        if $b1 <= 0 goto label0;
+
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean b> = 1;
+        $f1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float c>;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f1 = $f1 - $f0;
+        $b1 = $f1 cmpg 0.0F;
+        if $b1 >= 0 goto label4;
+
+     label3:
+        $i0 = (int) $z0;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: int d> = $i0;
+        virtualinvoke $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean onTouchEvent(android.view.MotionEvent)>($r1);
+        return 1;
+
+     label4:
+        $z0 = 1;
+        goto label3;
+    }
+
+    public boolean onTouchEvent(android.view.MotionEvent)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        android.view.MotionEvent $r1;
+        boolean $z0, $z1;
+        int $i0, $i1;
+        float $f0, $f1;
+        it.h3g.areaclienti3.customview.b.a $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $r1 := @parameter0: android.view.MotionEvent;
+        $z0 = 0;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 11 goto label0;
+
+        $z1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean a>;
+        if $z1 == 0 goto label1;
+
+        $z0 = specialinvoke $r0.<android.support.v4.view.ViewPager: boolean onTouchEvent(android.view.MotionEvent)>($r1);
+
+     label0:
+        return $z0;
+
+     label1:
+        $i1 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+        if $i1 != 1 goto label2;
+
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean b> = 0;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float c>;
+        $f1 = $f0 - $f1;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        virtualinvoke $r1.<android.view.MotionEvent: void setLocation(float,float)>($f1, $f0);
+        $r2 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.customview.b.a f>;
+        $i1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: int d>;
+        $z1 = virtualinvoke $r2.<it.h3g.areaclienti3.customview.b.a: boolean a(int,android.view.MotionEvent)>($i1, $r1);
+        return $z1;
+
+     label2:
+        $z1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean b>;
+        if $z1 == 0 goto label0;
+
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+        $f0 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: float c>;
+        $f1 = $f1 - $f0;
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+        virtualinvoke $r1.<android.view.MotionEvent: void setLocation(float,float)>($f1, $f0);
+        $r2 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.customview.b.a f>;
+        $i1 = $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: int d>;
+        $z1 = virtualinvoke $r2.<it.h3g.areaclienti3.customview.b.a: boolean a(int,android.view.MotionEvent)>($i1, $r1);
+        return $z1;
+    }
+
+    public void setPagingEnabled(boolean)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $z0 := @parameter0: boolean;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: boolean a> = $z0;
+        return;
+    }
+
+    public void setSlider(it.h3g.areaclienti3.customview.b.a)
+    {
+        it.h3g.areaclienti3.customview.ViewPagerCustom $r0;
+        it.h3g.areaclienti3.customview.b.a $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.customview.ViewPagerCustom;
+        $r1 := @parameter0: it.h3g.areaclienti3.customview.b.a;
+        $r0.<it.h3g.areaclienti3.customview.ViewPagerCustom: it.h3g.areaclienti3.customview.b.a f> = $r1;
+        return;
+    }
+}

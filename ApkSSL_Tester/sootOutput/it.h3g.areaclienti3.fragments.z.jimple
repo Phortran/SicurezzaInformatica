@@ -1,0 +1,134 @@
+class it.h3g.areaclienti3.fragments.z extends java.lang.Object implements android.text.TextWatcher
+{
+    final it.h3g.areaclienti3.fragments.x a;
+    private final android.widget.TextView b;
+    private final android.widget.EditText c;
+    private final it.h3g.areaclienti3.d.at d;
+
+    void <init>(it.h3g.areaclienti3.fragments.x, android.widget.TextView, android.widget.EditText, it.h3g.areaclienti3.d.at)
+    {
+        it.h3g.areaclienti3.fragments.z $r0;
+        it.h3g.areaclienti3.fragments.x $r1;
+        android.widget.TextView $r2;
+        android.widget.EditText $r3;
+        it.h3g.areaclienti3.d.at $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.z;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.x;
+        $r2 := @parameter1: android.widget.TextView;
+        $r3 := @parameter2: android.widget.EditText;
+        $r4 := @parameter3: it.h3g.areaclienti3.d.at;
+        $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.fragments.x a> = $r1;
+        $r0.<it.h3g.areaclienti3.fragments.z: android.widget.TextView b> = $r2;
+        $r0.<it.h3g.areaclienti3.fragments.z: android.widget.EditText c> = $r3;
+        $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d> = $r4;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void afterTextChanged(android.text.Editable)
+    {
+        it.h3g.areaclienti3.fragments.z $r0;
+        android.text.Editable $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.z;
+        $r1 := @parameter0: android.text.Editable;
+        return;
+    }
+
+    public void beforeTextChanged(java.lang.CharSequence, int, int, int)
+    {
+        it.h3g.areaclienti3.fragments.z $r0;
+        java.lang.CharSequence $r1;
+        int $i0, $i1, $i2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.z;
+        $r1 := @parameter0: java.lang.CharSequence;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        return;
+    }
+
+    public void onTextChanged(java.lang.CharSequence, int, int, int)
+    {
+        it.h3g.areaclienti3.fragments.z $r0;
+        java.lang.CharSequence $r1;
+        int $i0, $i1, $i2, $i3;
+        android.widget.TextView $r2;
+        it.h3g.areaclienti3.fragments.x $r3;
+        java.lang.Object[] $r4;
+        android.widget.EditText $r5;
+        boolean $z0, $z1;
+        android.text.Editable $r6;
+        java.lang.Integer $r7;
+        java.lang.String $r8;
+        java.lang.StringBuilder $r9;
+        it.h3g.areaclienti3.d.at $r10;
+        java.util.HashMap $r11;
+        java.lang.Boolean $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.z;
+        $r1 := @parameter0: java.lang.CharSequence;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.z: android.widget.TextView b>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.fragments.x a>;
+        $i3 = (int) 1;
+        $r4 = newarray (java.lang.Object)[$i3];
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.z: android.widget.EditText c>;
+        $r6 = virtualinvoke $r5.<android.widget.EditText: android.text.Editable getText()>();
+        $i3 = interfaceinvoke $r6.<android.text.Editable: int length()>();
+        $i3 = 5000 - $i3;
+        $r7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i3);
+        $r4[0] = $r7;
+        $r8 = virtualinvoke $r3.<it.h3g.areaclienti3.fragments.x: java.lang.String getString(int,java.lang.Object[])>(2131230913, $r4);
+        virtualinvoke $r2.<android.widget.TextView: void setText(java.lang.CharSequence)>($r8);
+        if $i2 <= 0 goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.z: android.widget.EditText c>;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("APP_1_");
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.fragments.x a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.fragments.x: java.lang.String b(it.h3g.areaclienti3.fragments.x)>($r3);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d>;
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.d.at: java.lang.String a()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r8 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r5.<android.widget.EditText: void setContentDescription(java.lang.CharSequence)>($r8);
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d>;
+        $z0 = virtualinvoke $r10.<it.h3g.areaclienti3.d.at: boolean b()>();
+        if $z0 == 0 goto label0;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.fragments.x a>;
+        $r11 = staticinvoke <it.h3g.areaclienti3.fragments.x: java.util.HashMap c(it.h3g.areaclienti3.fragments.x)>($r3);
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d>;
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.d.at: java.lang.String a()>();
+        virtualinvoke $r11.<java.util.HashMap: java.lang.Object remove(java.lang.Object)>($r8);
+
+     label0:
+        return;
+
+     label1:
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d>;
+        $z1 = virtualinvoke $r10.<it.h3g.areaclienti3.d.at: boolean b()>();
+        if $z1 == 0 goto label2;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.fragments.x a>;
+        $r11 = staticinvoke <it.h3g.areaclienti3.fragments.x: java.util.HashMap c(it.h3g.areaclienti3.fragments.x)>($r3);
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.z: it.h3g.areaclienti3.d.at d>;
+        $r8 = virtualinvoke $r10.<it.h3g.areaclienti3.d.at: java.lang.String a()>();
+        $r12 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        virtualinvoke $r11.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r8, $r12);
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.z: android.widget.EditText c>;
+        virtualinvoke $r5.<android.widget.EditText: void setContentDescription(java.lang.CharSequence)>(null);
+        goto label0;
+    }
+}

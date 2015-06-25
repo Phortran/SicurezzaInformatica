@@ -1,0 +1,88 @@
+public abstract class com.google.android.gms.maps.internal.n$a extends android.os.Binder implements com.google.android.gms.maps.internal.n
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.maps.internal.n$a $r0;
+
+        $r0 := @this: com.google.android.gms.maps.internal.n$a;
+        specialinvoke $r0.<android.os.Binder: void <init>()>();
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.n$a: void attachInterface(android.os.IInterface,java.lang.String)>($r0, "com.google.android.gms.maps.internal.IOnMyLocationChangeListener");
+        return;
+    }
+
+    public static com.google.android.gms.maps.internal.n a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.maps.internal.n $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.maps.internal.n$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.maps.internal.IOnMyLocationChangeListener");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.maps.internal.n;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.maps.internal.n) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.maps.internal.n$a$a;
+        specialinvoke r4.<com.google.android.gms.maps.internal.n$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.maps.internal.n$a $r0;
+
+        $r0 := @this: com.google.android.gms.maps.internal.n$a;
+        return $r0;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.maps.internal.n$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        boolean $z0;
+        android.os.IBinder $r4;
+        com.google.android.gms.dynamic.b $r5;
+
+        $r0 := @this: com.google.android.gms.maps.internal.n$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.maps.internal.IOnMyLocationChangeListener");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.maps.internal.IOnMyLocationChangeListener");
+        $r4 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.dynamic.b$a: com.google.android.gms.dynamic.b a(android.os.IBinder)>($r4);
+        virtualinvoke $r0.<com.google.android.gms.maps.internal.n$a: void a(com.google.android.gms.dynamic.b)>($r5);
+        virtualinvoke $r2.<android.os.Parcel: void writeNoException()>();
+        return 1;
+    }
+}

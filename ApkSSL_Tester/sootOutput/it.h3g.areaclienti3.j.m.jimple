@@ -1,0 +1,2723 @@
+public class it.h3g.areaclienti3.j.m extends java.lang.Object
+{
+    public static final java.util.regex.Pattern b;
+    private static it.h3g.areaclienti3.j.l c;
+    protected android.content.Context a;
+    private it.h3g.areaclienti3.f.a d;
+    private it.h3g.areaclienti3.f.b e;
+
+    static void <clinit>()
+    {
+        java.util.regex.Pattern $r1;
+
+        $r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}\\@[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}(\\.[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25})+");
+        <it.h3g.areaclienti3.j.m: java.util.regex.Pattern b> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.l $r2;
+        it.h3g.areaclienti3.f.a $r3;
+        it.h3g.areaclienti3.f.b $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.j.m: android.content.Context a> = $r1;
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c> = $r2;
+        $r3 = new it.h3g.areaclienti3.f.a;
+        specialinvoke $r3.<it.h3g.areaclienti3.f.a: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.f.a d> = $r3;
+        $r4 = staticinvoke <it.h3g.areaclienti3.f.b: it.h3g.areaclienti3.f.b c()>();
+        $r0.<it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.f.b e> = $r4;
+        return;
+    }
+
+    public static int a(java.lang.String, int)
+    {
+        java.lang.String $r0, $r2;
+        int $i0, $i1;
+        java.lang.StringBuilder $r1;
+        java.lang.Exception $r3, $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r1 = new java.lang.StringBuilder;
+
+     label0:
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("#");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        $i1 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>($r2);
+
+     label1:
+        return $i1;
+
+     label2:
+        $r3 := @caughtexception;
+
+     label3:
+        $i1 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>($r0);
+
+     label4:
+        return $i1;
+
+     label5:
+        $r4 := @caughtexception;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("Color ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" not found!");
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", $r2);
+        return $i0;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+        catch java.lang.Exception from label3 to label4 with label5;
+    }
+
+    public static int a(java.util.Date, java.util.Date)
+    {
+        java.util.Date $r0, $r1;
+        java.util.Calendar $r2, $r3;
+        int $i0, $i2;
+        long $l4, $l5;
+
+        $r0 := @parameter0: java.util.Date;
+        $r1 := @parameter1: java.util.Date;
+        $r2 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r2.<java.util.Calendar: void setTime(java.util.Date)>($r0);
+        $r3 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r3.<java.util.Calendar: void setTime(java.util.Date)>($r1);
+        $i2 = virtualinvoke $r2.<java.util.Calendar: int get(int)>(11);
+        $i0 = virtualinvoke $r3.<java.util.Calendar: int get(int)>(11);
+        if $i2 != $i0 goto label0;
+
+        virtualinvoke $r3.<java.util.Calendar: void add(int,int)>(11, 1);
+        $r1 = virtualinvoke $r3.<java.util.Calendar: java.util.Date getTime()>();
+
+     label0:
+        $l4 = virtualinvoke $r0.<java.util.Date: long getTime()>();
+        $l5 = virtualinvoke $r1.<java.util.Date: long getTime()>();
+        $l5 = $l4 - $l5;
+        $l5 = $l5 / 86400000L;
+        $i2 = (int) $l5;
+        return $i2;
+    }
+
+    private android.graphics.Bitmap a(android.graphics.Bitmap, java.io.File)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.graphics.Bitmap $r1;
+        java.io.File $r2;
+        byte $b0, $b1;
+        int $i2;
+        java.lang.String $r3;
+        java.io.FileOutputStream $r4;
+        android.graphics.Bitmap$CompressFormat $r5;
+        java.io.FileNotFoundException $r6;
+        java.lang.StringBuilder $r8;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: android.graphics.Bitmap;
+        $r2 := @parameter1: java.io.File;
+        $b1 = 1;
+        $b0 = 0;
+        $i2 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i2 != 8 goto label3;
+
+        $b0 = 100;
+
+     label0:
+        if $b1 == 0 goto label2;
+
+        $r4 = new java.io.FileOutputStream;
+
+     label1:
+        specialinvoke $r4.<java.io.FileOutputStream: void <init>(java.io.File)>($r2);
+        $r5 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat PNG>;
+        virtualinvoke $r1.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r5, $b0, $r4);
+        virtualinvoke $r4.<java.io.OutputStream: void flush()>();
+        virtualinvoke $r4.<java.io.OutputStream: void close()>();
+
+     label2:
+        return $r1;
+
+     label3:
+        $i2 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i2 != 9 goto label4;
+
+        $b0 = 70;
+        goto label0;
+
+     label4:
+        $b1 = 0;
+        goto label0;
+
+     label5:
+        $r6 := @caughtexception;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Image: ");
+        $r3 = virtualinvoke $r2.<java.io.File: java.lang.String getAbsolutePath()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" not found in cache");
+        $r3 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", $r3);
+        return $r1;
+
+     label6:
+        $r9 := @caughtexception;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Image: ");
+        $r3 = virtualinvoke $r2.<java.io.File: java.lang.String getAbsolutePath()>();
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" not found in cache");
+        $r3 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", $r3);
+        return $r1;
+
+        catch java.io.FileNotFoundException from label1 to label2 with label5;
+        catch java.io.IOException from label1 to label2 with label6;
+    }
+
+    private android.graphics.Bitmap a(java.io.File)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.io.File $r1;
+        android.graphics.BitmapFactory$Options $r2, $r4;
+        int $i0, $i1;
+        java.io.FileInputStream $r3;
+        android.graphics.Bitmap $r5;
+        java.io.FileNotFoundException $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.io.File;
+        $r2 = new android.graphics.BitmapFactory$Options;
+
+     label0:
+        specialinvoke $r2.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r2.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r3 = new java.io.FileInputStream;
+        specialinvoke $r3.<java.io.FileInputStream: void <init>(java.io.File)>($r1);
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r3, null, $r2);
+        $r4 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $i0 = $r2.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $i1 = $r2.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $i1 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: int a(int,int)>($i0, $i1);
+        $r4.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i1;
+        $r3 = new java.io.FileInputStream;
+        specialinvoke $r3.<java.io.FileInputStream: void <init>(java.io.File)>($r1);
+        $r5 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r3, null, $r4);
+
+     label1:
+        return $r5;
+
+     label2:
+        $r6 := @caughtexception;
+        return null;
+
+        catch java.io.FileNotFoundException from label0 to label1 with label2;
+    }
+
+    private android.os.Bundle a(org.e.c, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        org.e.c $r1;
+        android.os.Bundle $r2;
+        java.lang.String $r3, $r6, $r7, $r8;
+        android.content.Context $r4;
+        int $i0;
+        android.content.res.Resources $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: org.e.c;
+        $r2 := @parameter1: android.os.Bundle;
+        $r3 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r6 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232075);
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r6);
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", "la sessione \u00e8 scaduta.");
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232075);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("expired_session", $r3);
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 8);
+        $r6 = $r1.<org.e.c: java.lang.String a>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>($r6, "error", "title");
+        if $r7 == null goto label0;
+
+        $r6 = $r1.<org.e.c: java.lang.String a>;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label0;
+
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r6 = $r1.<org.e.c: java.lang.String a>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r6);
+
+     label0:
+        return $r2;
+
+     label1:
+        $r7 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r6 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232066);
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r6);
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 6);
+        $r6 = $r1.<org.e.c: java.lang.String b>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>($r6, "error", "title");
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r8);
+        $r7 = $r1.<org.e.c: java.lang.String b>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+
+     label2:
+        $r7 = $r1.<org.e.c: java.lang.String a>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("errorCode", $r7);
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>($r8, "error", "title");
+        if $r8 == null goto label22;
+
+        $r7 = $r1.<org.e.c: java.lang.String a>;
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r7);
+        if $z0 != 0 goto label22;
+
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label22;
+
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r8);
+        $r7 = $r1.<org.e.c: java.lang.String a>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        return $r2;
+
+     label3:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232067);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 6);
+        $r7 = $r1.<org.e.c: java.lang.String b>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>($r7, "error", "title");
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r7 = $r1.<org.e.c: java.lang.String b>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label4:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232069);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label5;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 9);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231466);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231686);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label5:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232057);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label6;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 10);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231468);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231687);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label6:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232055);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label7;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 17);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231475);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231688);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label7:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232056);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label8;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 18);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231476);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231689);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label8:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232058);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label9;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 20);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231477);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231690);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label9:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232070);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label11;
+
+        $r8 = $r1.<org.e.c: java.lang.String b>;
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean contains(java.lang.CharSequence)>("DataCard");
+        if $z0 == 0 goto label10;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 24);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231480);
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>($r7, "error", "title");
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231691);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label10:
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231110);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231691);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label11:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232054);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label12;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 11);
+        goto label2;
+
+     label12:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232068);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label13;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 26);
+        goto label2;
+
+     label13:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232063);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 != 0 goto label14;
+
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232065);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label15;
+
+     label14:
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 16);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231112);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231692);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label15:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232064);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label16;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 15);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231472);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231693);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label16:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232059);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label17;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 21);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231478);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231694);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label17:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232060);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label18;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 22);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231479);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231695);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label18:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232052);
+        $i0 = virtualinvoke $r8.<java.lang.String: int compareTo(java.lang.String)>($r7);
+        if $i0 != 0 goto label19;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 14);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231473);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231696);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label19:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232061);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label20;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 12);
+        goto label2;
+
+     label20:
+        $r8 = $r1.<org.e.c: java.lang.String a>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232062);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+        if $z0 == 0 goto label21;
+
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 13);
+        goto label2;
+
+     label21:
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231110);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131231691);
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        goto label2;
+
+     label22:
+        $r8 = $r1.<org.e.c: java.lang.String b>;
+        $r4 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>(2131232076);
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean contains(java.lang.CharSequence)>($r7);
+        if $z0 != 0 goto label0;
+
+        $r7 = $r1.<org.e.c: java.lang.String b>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteError", $r7);
+        $r7 = $r1.<org.e.c: java.lang.String a>;
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("remoteCode", $r7);
+        return $r2;
+    }
+
+    public static java.lang.String a(double)
+    {
+        double $d0;
+        java.text.DecimalFormat $r0;
+        java.lang.String $r1;
+        int $i0, $i1, $i2, $i3;
+        java.lang.Integer $r2;
+        java.lang.StringBuilder $r3;
+        long $l4;
+
+        $d0 := @parameter0: double;
+        $r0 = new java.text.DecimalFormat;
+        specialinvoke $r0.<java.text.DecimalFormat: void <init>(java.lang.String)>("00");
+        $i1 = (int) $d0;
+        $i2 = $i1 / 3600;
+        $i0 = (int) $d0;
+        $i1 = $i2 * 3600;
+        $i0 = $i0 - $i1;
+        $i3 = $i0 / 60;
+        $i1 = $i3 * 60;
+        $i1 = $i0 - $i1;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("h");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $l4 = (long) $i3;
+        $r1 = virtualinvoke $r0.<java.text.DecimalFormat: java.lang.String format(long)>($l4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("m");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $l4 = (long) $i1;
+        $r1 = virtualinvoke $r0.<java.text.DecimalFormat: java.lang.String format(long)>($l4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("s");
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+
+    public static java.lang.String a(int, int, int)
+    {
+        int $i0, $i1, $i2, $i4;
+        java.lang.String $r0;
+        java.lang.StringBuilder $r1;
+
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $r1 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $i4 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i4 >= 2 goto label3;
+
+        $r0 = "0";
+
+     label0:
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);
+        $i4 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i4 >= 2 goto label4;
+
+        $r0 = "0";
+
+     label1:
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i4 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i4 >= 2 goto label5;
+
+        $r0 = "200";
+
+     label2:
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r0;
+
+     label3:
+        $r0 = "";
+        goto label0;
+
+     label4:
+        $r0 = "";
+        goto label1;
+
+     label5:
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i4 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i4 >= 3 goto label6;
+
+        $r0 = "20";
+        goto label2;
+
+     label6:
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i4 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i4 >= 4 goto label7;
+
+        $r0 = "2";
+        goto label2;
+
+     label7:
+        $r0 = "";
+        goto label2;
+    }
+
+    public static java.lang.String a(int, int, int, java.lang.String)
+    {
+        int $i0, $i1, $i2, $i5;
+        java.lang.String $r0, $r1;
+        java.lang.StringBuilder $r2;
+
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $r0 := @parameter3: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i5 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i5 >= 2 goto label3;
+
+        $r1 = "200";
+
+     label0:
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1);
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);
+        $i5 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i5 >= 2 goto label6;
+
+        $r1 = "0";
+
+     label1:
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $i5 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i5 >= 2 goto label7;
+
+        $r1 = "0";
+
+     label2:
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+
+     label3:
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i5 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i5 >= 3 goto label4;
+
+        $r1 = "20";
+        goto label0;
+
+     label4:
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $i5 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i5 >= 4 goto label5;
+
+        $r1 = "2";
+        goto label0;
+
+     label5:
+        $r1 = "";
+        goto label0;
+
+     label6:
+        $r1 = "";
+        goto label1;
+
+     label7:
+        $r1 = "";
+        goto label2;
+    }
+
+    static java.lang.String a(it.h3g.areaclienti3.j.m, java.lang.String, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1, $r2, $r3;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+        $r3 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String,java.lang.String,java.lang.String)>($r1, $r2, $r3);
+        return $r3;
+    }
+
+    public static java.lang.String a(java.io.InputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.ByteArrayOutputStream $r1;
+        int $i1;
+        byte[] $r2;
+        java.lang.String $r3;
+        java.io.IOException $r4;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r2 = newarray (byte)[1024];
+
+     label0:
+        $i1 = virtualinvoke $r0.<java.io.InputStream: int read(byte[])>($r2);
+        if $i1 != -1 goto label2;
+
+        virtualinvoke $r1.<java.io.ByteArrayOutputStream: void close()>();
+        virtualinvoke $r0.<java.io.InputStream: void close()>();
+
+     label1:
+        $r3 = virtualinvoke $r1.<java.io.ByteArrayOutputStream: java.lang.String toString()>();
+        return $r3;
+
+     label2:
+        virtualinvoke $r1.<java.io.ByteArrayOutputStream: void write(byte[],int,int)>($r2, 0, $i1);
+
+     label3:
+        goto label0;
+
+     label4:
+        $r4 := @caughtexception;
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label4;
+        catch java.io.IOException from label2 to label3 with label4;
+    }
+
+    public static java.lang.String a(java.lang.Double)
+    {
+        java.lang.Double $r0;
+        java.text.DecimalFormat $r1;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+
+        $r0 := @parameter0: java.lang.Double;
+        $r1 = new java.text.DecimalFormat;
+        specialinvoke $r1.<java.text.DecimalFormat: void <init>(java.lang.String)>("0.00");
+        if $r0 == null goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        $r5 = virtualinvoke $r1.<java.text.DecimalFormat: java.lang.String format(java.lang.Object)>($r0);
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(".", ",");
+        $r5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5);
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(8364);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r5;
+
+     label0:
+        return "";
+    }
+
+    public static java.lang.String a(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2, $r3;
+        int $i0, $i1, $i2;
+        java.lang.NumberFormatException $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: java.lang.String;
+
+     label0:
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r2);
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String a(int,int,int,java.lang.String)>($i0, $i1, $i2, $r3);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        return "";
+
+        catch java.lang.NumberFormatException from label0 to label1 with label2;
+    }
+
+    public static java.lang.String a(java.lang.String, java.util.Locale)
+    {
+        java.lang.String $r0, $r2;
+        java.util.Locale $r1;
+        boolean $z0;
+        java.text.SimpleDateFormat $r3;
+        java.util.Date $r4;
+        java.lang.Exception $r5;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.util.Locale;
+        if $r0 == null goto label0;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label0;
+
+        if $r1 != null goto label1;
+
+     label0:
+        return "";
+
+     label1:
+        $r3 = new java.text.SimpleDateFormat;
+
+     label2:
+        specialinvoke $r3.<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>("dd MMM", $r1);
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.m: java.util.Date l(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r3.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r4);
+
+     label3:
+        return $r2;
+
+     label4:
+        $r5 := @caughtexception;
+        return $r0;
+
+        catch java.lang.Exception from label2 to label3 with label4;
+    }
+
+    public static java.lang.String a(java.util.Date, java.lang.String)
+    {
+        java.util.Date $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0;
+        java.text.SimpleDateFormat $r3;
+        java.lang.Exception $r4;
+
+        $r0 := @parameter0: java.util.Date;
+        $r1 := @parameter1: java.lang.String;
+        if $r0 == null goto label0;
+
+        if $r1 == null goto label0;
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $r3 = new java.text.SimpleDateFormat;
+
+     label2:
+        specialinvoke $r3.<java.text.SimpleDateFormat: void <init>(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r3.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r0);
+
+     label3:
+        return $r2;
+
+     label4:
+        $r4 := @caughtexception;
+        return null;
+
+        catch java.lang.Exception from label2 to label3 with label4;
+    }
+
+    public static java.lang.String a(java.util.List, java.lang.String)
+    {
+        java.util.List $r0;
+        java.lang.String $r1, $r4, $r7;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        java.util.Iterator $r3;
+        int $i0;
+        java.lang.Object $r5;
+        org.apache.http.NameValuePair $r6;
+
+        $r0 := @parameter0: java.util.List;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r3 = interfaceinvoke $r0.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label1;
+
+        $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+
+     label1:
+        $r5 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+        $r6 = (org.apache.http.NameValuePair) $r5;
+        $r4 = interfaceinvoke $r6.<org.apache.http.NameValuePair: java.lang.String getName()>();
+        $r4 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String f(java.lang.String,java.lang.String)>($r4, $r1);
+        $r7 = interfaceinvoke $r6.<org.apache.http.NameValuePair: java.lang.String getValue()>();
+        if $r7 == null goto label4;
+
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String f(java.lang.String,java.lang.String)>($r7, $r1);
+
+     label2:
+        $i0 = virtualinvoke $r2.<java.lang.StringBuilder: int length()>();
+        if $i0 <= 0 goto label3;
+
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&");
+
+     label3:
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        goto label0;
+
+     label4:
+        $r7 = "";
+        goto label2;
+    }
+
+    public static java.lang.String a(org.w3c.dom.Document)
+    {
+        org.w3c.dom.Document $r0;
+        java.io.StringWriter $r1;
+        javax.xml.transform.TransformerFactory $r2;
+        java.lang.String $r4;
+        javax.xml.transform.Transformer $r5;
+        javax.xml.transform.dom.DOMSource $r6;
+        javax.xml.transform.stream.StreamResult $r7;
+        java.lang.Exception $r8;
+
+        $r0 := @parameter0: org.w3c.dom.Document;
+        $r1 = new java.io.StringWriter;
+
+     label0:
+        specialinvoke $r1.<java.io.StringWriter: void <init>()>();
+        $r2 = staticinvoke <javax.xml.transform.TransformerFactory: javax.xml.transform.TransformerFactory newInstance()>();
+        $r5 = virtualinvoke $r2.<javax.xml.transform.TransformerFactory: javax.xml.transform.Transformer newTransformer()>();
+        virtualinvoke $r5.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("omit-xml-declaration", "no");
+        virtualinvoke $r5.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("method", "xml");
+        virtualinvoke $r5.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("indent", "no");
+        virtualinvoke $r5.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("encoding", "UTF-8");
+        $r6 = new javax.xml.transform.dom.DOMSource;
+        specialinvoke $r6.<javax.xml.transform.dom.DOMSource: void <init>(org.w3c.dom.Node)>($r0);
+        $r7 = new javax.xml.transform.stream.StreamResult;
+        specialinvoke $r7.<javax.xml.transform.stream.StreamResult: void <init>(java.io.Writer)>($r1);
+        virtualinvoke $r5.<javax.xml.transform.Transformer: void transform(javax.xml.transform.Source,javax.xml.transform.Result)>($r6, $r7);
+        $r4 = virtualinvoke $r1.<java.io.StringWriter: java.lang.String toString()>();
+
+     label1:
+        return $r4;
+
+     label2:
+        $r8 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "Error converting XML Document to String");
+        return "";
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+
+        $r0 := @parameter0: android.content.Context;
+        return;
+    }
+
+    public static void a(android.os.IBinder, android.content.Context)
+    {
+        android.os.IBinder $r0;
+        android.content.Context $r1;
+        java.lang.Object $r3;
+        android.view.inputmethod.InputMethodManager $r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        $r1 := @parameter1: android.content.Context;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("input_method");
+        $r4 = (android.view.inputmethod.InputMethodManager) $r3;
+        virtualinvoke $r4.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r0, 0);
+        return;
+    }
+
+    public static void a(android.view.View, android.content.Context)
+    {
+        android.view.View $r0;
+        android.content.Context $r1;
+        android.os.IBinder $r2;
+
+        $r0 := @parameter0: android.view.View;
+        $r1 := @parameter1: android.content.Context;
+        if $r0 == null goto label0;
+
+        $r2 = virtualinvoke $r0.<android.view.View: android.os.IBinder getWindowToken()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.os.IBinder,android.content.Context)>($r2, $r1);
+
+     label0:
+        return;
+    }
+
+    public static void a(android.widget.ScrollView, int, int)
+    {
+        android.widget.ScrollView $r0;
+        int $i0, $i1;
+        android.view.ViewTreeObserver $r1;
+        it.h3g.areaclienti3.j.n $r2;
+
+        $r0 := @parameter0: android.widget.ScrollView;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        if $r0 == null goto label0;
+
+        $r1 = virtualinvoke $r0.<android.widget.ScrollView: android.view.ViewTreeObserver getViewTreeObserver()>();
+        $r2 = new it.h3g.areaclienti3.j.n;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.n: void <init>(android.widget.ScrollView,int,int)>($r0, $i0, $i1);
+        virtualinvoke $r1.<android.view.ViewTreeObserver: void addOnGlobalLayoutListener(android.view.ViewTreeObserver$OnGlobalLayoutListener)>($r2);
+
+     label0:
+        return;
+    }
+
+    public static void a(java.io.InputStream, java.io.OutputStream)
+    {
+        java.io.InputStream $r0;
+        java.io.OutputStream $r1;
+        int $i2;
+        byte[] $r2;
+        java.lang.Exception $r3;
+
+        $r0 := @parameter0: java.io.InputStream;
+        $r1 := @parameter1: java.io.OutputStream;
+
+     label0:
+        $r2 = newarray (byte)[1024];
+
+     label1:
+        $i2 = virtualinvoke $r0.<java.io.InputStream: int read(byte[],int,int)>($r2, 0, 1024);
+        if $i2 != -1 goto label3;
+
+     label2:
+        return;
+
+     label3:
+        virtualinvoke $r1.<java.io.OutputStream: void write(byte[],int,int)>($r2, 0, $i2);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r3 := @caughtexception;
+        goto label2;
+
+        catch java.lang.Exception from label0 to label4 with label5;
+    }
+
+    private void a(java.lang.Exception)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.Exception $r1;
+        java.lang.String $r2;
+        int $i0, $i1;
+        java.lang.StackTraceElement $r4;
+        java.lang.StackTraceElement[] $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.Exception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", ">>>>>>>>>>>>>>>>>>>>>");
+        $r5 = virtualinvoke $r1.<java.lang.Exception: java.lang.StackTraceElement[] getStackTrace()>();
+        $i0 = lengthof $r5;
+        $i1 = 0;
+
+     label0:
+        if $i1 < $i0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "<<<<<<<<<<<<<<<<<<<<<");
+        return;
+
+     label1:
+        $r4 = $r5[$i1];
+        $r2 = virtualinvoke $r4.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", $r2);
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+
+    public static void a(java.lang.String)
+    {
+        java.lang.String $r0, $r3, $r7;
+        java.util.Calendar $r1;
+        java.text.SimpleDateFormat $r2;
+        java.io.FileWriter $r4;
+        boolean $z0;
+        java.util.Date $r5;
+        java.io.File $r6;
+        java.io.BufferedWriter $r8;
+        java.lang.StringBuilder $r9;
+        java.io.IOException $r10, $r11;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        $r2 = new java.text.SimpleDateFormat;
+        specialinvoke $r2.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("yyyy-MM-dd HH:mm:ss");
+        $r5 = virtualinvoke $r1.<java.util.Calendar: java.util.Date getTime()>();
+        $r3 = virtualinvoke $r2.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r5);
+        $r6 = new java.io.File;
+        specialinvoke $r6.<java.io.File: void <init>(java.lang.String)>("sdcard/log.file");
+        $z0 = virtualinvoke $r6.<java.io.File: boolean exists()>();
+        if $z0 != 0 goto label1;
+
+     label0:
+        virtualinvoke $r6.<java.io.File: boolean createNewFile()>();
+
+     label1:
+        $r8 = new java.io.BufferedWriter;
+        $r4 = new java.io.FileWriter;
+
+     label2:
+        specialinvoke $r4.<java.io.FileWriter: void <init>(java.io.File,boolean)>($r6, 1);
+        specialinvoke $r8.<java.io.BufferedWriter: void <init>(java.io.Writer)>($r4);
+        $r9 = new java.lang.StringBuilder;
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r3);
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r7 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<java.io.BufferedWriter: java.io.Writer append(java.lang.CharSequence)>($r7);
+        virtualinvoke $r8.<java.io.BufferedWriter: void newLine()>();
+        virtualinvoke $r8.<java.io.BufferedWriter: void close()>();
+
+     label3:
+        return;
+
+     label4:
+        $r10 := @caughtexception;
+        virtualinvoke $r10.<java.io.IOException: void printStackTrace()>();
+        goto label1;
+
+     label5:
+        $r11 := @caughtexception;
+        virtualinvoke $r11.<java.io.IOException: void printStackTrace()>();
+        goto label3;
+
+        catch java.io.IOException from label0 to label1 with label4;
+        catch java.io.IOException from label2 to label3 with label5;
+    }
+
+    public static void a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static void a(java.lang.String, java.lang.String, java.lang.Throwable)
+    {
+        java.lang.String $r0, $r1;
+        java.lang.Throwable $r2;
+        boolean $z0;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 := @parameter2: java.lang.Throwable;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r3 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static boolean a()
+    {
+        java.lang.String $r2;
+        java.lang.Boolean $r3;
+        boolean $z0;
+
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("payBackandroid", "abilitazioneMenu", "value");
+        if $r2 == null goto label0;
+
+        $r3 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r2);
+        $z0 = virtualinvoke $r3.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static boolean a(android.os.Bundle)
+    {
+        android.os.Bundle $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.os.Bundle;
+        if $r0 == null goto label0;
+
+        $z0 = virtualinvoke $r0.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label0;
+
+        return 0;
+
+     label0:
+        return 1;
+    }
+
+    public static boolean a(java.lang.String, boolean)
+    {
+        java.lang.String $r0;
+        boolean $z0, $z1;
+        java.lang.Exception $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 := @parameter1: boolean;
+
+     label0:
+        $z1 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>($r0);
+
+     label1:
+        return $z1;
+
+     label2:
+        $r1 := @caughtexception;
+        return $z0;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public static int b(java.util.Date, java.util.Date)
+    {
+        java.util.Date $r0, $r1;
+        long $l0, $l1;
+        int $i2;
+
+        $r0 := @parameter0: java.util.Date;
+        $r1 := @parameter1: java.util.Date;
+        $l0 = virtualinvoke $r0.<java.util.Date: long getTime()>();
+        $l1 = virtualinvoke $r1.<java.util.Date: long getTime()>();
+        $l1 = $l0 - $l1;
+        $l1 = $l1 / 60000L;
+        $l1 = $l1 % 60L;
+        $i2 = (int) $l1;
+        return $i2;
+    }
+
+    public static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label0;
+
+        $r1 = virtualinvoke $r0.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&amp;", "&");
+        $r2 = virtualinvoke $r1.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&nbsp;", " ");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&agrave;", "\u00e0");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&eacute;", "\u00e9");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&egrave;", "\u00e8");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&Egrave;", "\u00c8");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&deg;", "\u00b0");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&ccedil;", "\u00e7");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&Ccedil;", "\u00c7");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&not;", "\u00ac");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&euro;", "\u20ac");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&igrave;", "\u00ec");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&ugrave;", "\u00f9");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&ograve;", "\u00f2");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&reg;", "\u00ae");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&euro;", "\u20ac");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&pound;", "\u00a3");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&apos;", "\'");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&rsquo;", "\'");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&quot;", "\"");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&#39;", "\'");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&#224;", "\u00e0");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&#8217;", "\u2019");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&hellip;", "\u2026");
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(146);
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r0 = virtualinvoke $r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>($r1, "\'");
+
+     label0:
+        return $r0;
+    }
+
+    private java.lang.String b(java.lang.String, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1, $r2, $r3, $r4;
+        java.util.HashMap $r5;
+        java.lang.StringBuilder $r6, $r15;
+        boolean $z0;
+        it.h3g.areaclienti3.j.l $r7;
+        java.util.Set $r8;
+        java.util.Iterator $r9;
+        java.lang.String[] $r10;
+        java.lang.Exception $r11;
+        android.content.Context $r12;
+        java.lang.Object $r13;
+        java.util.Map$Entry $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r5 = new java.util.HashMap;
+        specialinvoke $r5.<java.util.HashMap: void <init>()>();
+        if $r1 == null goto label5;
+
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("section_code", $r1);
+
+     label0:
+        if $r2 == null goto label9;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("errorDetail ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Utils", $r4);
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean contains(java.lang.CharSequence)>("#");
+        if $z0 != 0 goto label6;
+
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("error_code", $r2);
+
+     label1:
+        if $r3 == null goto label10;
+
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("description", $r3);
+
+     label2:
+        $r7 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label11;
+
+        $r3 = "10";
+
+     label3:
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("siteId", $r3);
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: java.lang.String h()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("app_version", $r3);
+        $r3 = <android.os.Build: java.lang.String MODEL>;
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("phone_model", $r3);
+        $r3 = <android.os.Build$VERSION: java.lang.String RELEASE>;
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("os_version", $r3);
+        $r7 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("msisdn", $r3);
+        $r7 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: java.lang.String n()>();
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("proposition", $r3);
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r8 = virtualinvoke $r5.<java.util.HashMap: java.util.Set entrySet()>();
+        $r9 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+
+     label4:
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label12;
+
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+
+     label5:
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("section_code", "");
+        goto label0;
+
+     label6:
+        $r10 = virtualinvoke $r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("#");
+        $r2 = $r10[0];
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("error_code", $r2);
+        $r2 = $r10[1];
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("error_xml_detail", $r2);
+
+     label7:
+        goto label1;
+
+     label8:
+        $r11 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("Utils", "errorDetail split error ");
+        goto label1;
+
+     label9:
+        $r12 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r2 = virtualinvoke $r12.<android.content.Context: java.lang.String getString(int)>(2131231691);
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("error_code", $r2);
+        goto label1;
+
+     label10:
+        virtualinvoke $r5.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("description", "");
+        goto label2;
+
+     label11:
+        $r3 = "9";
+        goto label3;
+
+     label12:
+        $r13 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        $r14 = (java.util.Map$Entry) $r13;
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r4 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(61);
+        $r13 = interfaceinvoke $r14.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r4 = (java.lang.String) $r13;
+        $r4 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r4, "ISO-8859-1");
+        virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $z0 = interfaceinvoke $r9.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(38);
+        goto label4;
+
+        catch java.lang.Exception from label6 to label7 with label8;
+    }
+
+    public static void b(android.view.View, android.content.Context)
+    {
+        android.view.View $r0;
+        android.content.Context $r1;
+        android.os.IBinder $r3;
+        java.lang.Object $r4;
+        android.view.inputmethod.InputMethodManager $r5;
+
+        $r0 := @parameter0: android.view.View;
+        $r1 := @parameter1: android.content.Context;
+        $r4 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("input_method");
+        $r5 = (android.view.inputmethod.InputMethodManager) $r4;
+        $r3 = virtualinvoke $r0.<android.view.View: android.os.IBinder getWindowToken()>();
+        virtualinvoke $r5.<android.view.inputmethod.InputMethodManager: void showSoftInputFromInputMethod(android.os.IBinder,int)>($r3, 0);
+        return;
+    }
+
+    public static void b(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static boolean b()
+    {
+        java.lang.String $r2;
+        java.lang.Boolean $r3;
+        boolean $z0;
+
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("socialAndroid", "abilitazioneMenu", "value");
+        if $r2 == null goto label0;
+
+        $r3 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r2);
+        $z0 = virtualinvoke $r3.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static boolean b(android.os.Bundle)
+    {
+        android.os.Bundle $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.os.Bundle;
+        if $r0 == null goto label0;
+
+        $z0 = virtualinvoke $r0.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static java.lang.String c(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        int $i0;
+        java.lang.StringBuilder $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 != null goto label0;
+
+        return $r0;
+
+     label0:
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 > 1 goto label1;
+
+        $r0 = virtualinvoke $r0.<java.lang.String: java.lang.String toUpperCase()>();
+        return $r0;
+
+     label1:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String substring(int,int)>(0, 1);
+        $r1 = new java.lang.StringBuilder;
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String toUpperCase()>();
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String substring(int)>(1);
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String toLowerCase()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+
+    public static void c(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static boolean c()
+    {
+        java.lang.String $r2;
+        java.lang.Boolean $r3;
+        boolean $z0;
+        it.h3g.areaclienti3.j.l $r4;
+
+        $r2 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("grandeCinema3Android", "abilitazioneMenu", "value");
+        if $r2 == null goto label0;
+
+        $r3 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r2);
+        $z0 = virtualinvoke $r3.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label0;
+
+        $r4 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $r2 = virtualinvoke $r4.<it.h3g.areaclienti3.j.l: java.lang.String g()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("business");
+        if $z0 != 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static java.lang.String d(java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        int $i0, $i2;
+        java.lang.String[] $r2;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 != null goto label0;
+
+        return $r0;
+
+     label0:
+        $i0 = virtualinvoke $r0.<java.lang.String: int indexOf(java.lang.String)>(" ");
+        if $i0 >= 0 goto label1;
+
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String c(java.lang.String)>($r0);
+        return $r1;
+
+     label1:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String[] split(java.lang.String)>(" ");
+        $r1 = "";
+        $i2 = 0;
+
+     label2:
+        $i0 = lengthof $r2;
+        if $i2 < $i0 goto label3;
+
+        return $r1;
+
+     label3:
+        $i0 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i0 <= 0 goto label4;
+
+        $r3 = new java.lang.StringBuilder;
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label4:
+        $r3 = new java.lang.StringBuilder;
+        $r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1);
+        $r1 = $r2[$i2];
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String c(java.lang.String)>($r1);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $i2 = $i2 + 1;
+        $r1 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+    }
+
+    public static void d(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static java.lang.String e(java.lang.String)
+    {
+        java.lang.String $r0, $r1, $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 = virtualinvoke $r0.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("<.*?>", " ");
+        $r2 = virtualinvoke $r1.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("\\s+", " ");
+        return $r2;
+    }
+
+    public static void e(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $z0 = <it.h3g.areaclienti3.remoteservice.HtmlActions: boolean DEBUG_FILE>;
+        if $z0 == 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String)>($r1);
+
+     label0:
+        return;
+    }
+
+    public static java.lang.String f(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        java.lang.IllegalArgumentException $r2;
+        java.io.UnsupportedEncodingException $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        if $r1 == null goto label2;
+
+     label0:
+        $r1 = staticinvoke <java.net.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r0, $r1);
+
+     label1:
+        return $r1;
+
+     label2:
+        $r1 = "ISO-8859-1";
+        goto label0;
+
+     label3:
+        $r3 := @caughtexception;
+        $r2 = new java.lang.IllegalArgumentException;
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.Throwable)>($r3);
+        throw $r2;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label3;
+    }
+
+    public static boolean f(java.lang.String)
+    {
+        java.lang.String $r0;
+        int $i0;
+
+        $r0 := @parameter0: java.lang.String;
+        $i0 = virtualinvoke $r0.<java.lang.String: int indexOf(java.lang.String)>("<!--MESSAGGIO DI ERRORE-->");
+        if $i0 < 0 goto label0;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int indexOf(java.lang.String)>("Inserisci il tuo Numero 3");
+        if $i0 < 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public static java.lang.String g()
+    {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 = <android.os.Build: java.lang.String MANUFACTURER>;
+        $r1 = <android.os.Build: java.lang.String MODEL>;
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean startsWith(java.lang.String)>($r0);
+        if $z0 == 0 goto label0;
+
+        $r1 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String p(java.lang.String)>($r1);
+        return $r1;
+
+     label0:
+        $r2 = new java.lang.StringBuilder;
+        $r0 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String p(java.lang.String)>($r0);
+        $r0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r0);
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r1 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r1;
+    }
+
+    public static boolean h(java.lang.String)
+    {
+        java.lang.String $r0;
+        boolean $z0, $z1;
+        int $i0, $i1;
+        java.util.regex.Pattern $r2;
+        java.util.regex.Matcher $r3, $r5;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = 0;
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 >= 6 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "password length to short");
+
+     label0:
+        return $z0;
+
+     label1:
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[a-zA-Z0-9_!]+");
+        $r3 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z1 = virtualinvoke $r3.<java.util.regex.Matcher: boolean matches()>();
+        if $z1 != 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "password contains non alphanumeric characters");
+        return 0;
+
+     label2:
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[a-zA-Z]+");
+        $r3 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $i1 = (int) 0;
+        $z1 = virtualinvoke $r3.<java.util.regex.Matcher: boolean find(int)>($i1);
+        if $z1 != 0 goto label3;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "password doesn\'t contain at least one alphabetic charaterc");
+
+     label3:
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[0-9]+");
+        $r5 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $i1 = (int) 0;
+        $z1 = virtualinvoke $r5.<java.util.regex.Matcher: boolean find(int)>($i1);
+        if $z1 != 0 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "password doesn\'t contain at least one number");
+
+     label4:
+        $i1 = (int) 0;
+        $z1 = virtualinvoke $r3.<java.util.regex.Matcher: boolean find(int)>($i1);
+        if $z1 == 0 goto label5;
+
+        $i1 = (int) 0;
+        $z1 = virtualinvoke $r5.<java.util.regex.Matcher: boolean find(int)>($i1);
+        if $z1 == 0 goto label5;
+
+        $z0 = 1;
+
+     label5:
+        if $z0 != 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", "password doesn\'t contain at least one number and one alphabetic charaterc");
+        return $z0;
+    }
+
+    public static boolean i(java.lang.String)
+    {
+        java.lang.String $r0;
+        int $i0;
+        java.util.regex.Pattern $r2;
+        java.util.regex.Matcher $r3;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 < 9 goto label0;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 <= 11 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[0-9]+");
+        $r3 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z0 = virtualinvoke $r3.<java.util.regex.Matcher: boolean matches()>();
+        return $z0;
+    }
+
+    public static android.os.Bundle j()
+    {
+        android.os.Bundle $r0;
+
+        $r0 = new android.os.Bundle;
+        specialinvoke $r0.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r0.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        return $r0;
+    }
+
+    public static boolean j(java.lang.String)
+    {
+        java.lang.String $r0;
+        java.util.regex.Pattern $r2;
+        java.util.regex.Matcher $r3;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("[a-zA-Z0-9 \']+");
+        $r3 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z0 = virtualinvoke $r3.<java.util.regex.Matcher: boolean matches()>();
+        return $z0;
+    }
+
+    public static java.util.Date k()
+    {
+        it.h3g.areaclienti3.j.l $r0;
+        java.lang.Long $r1;
+        java.util.Date $r2;
+        long $l0;
+
+        $r0 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        if $r0 == null goto label0;
+
+        $r2 = new java.util.Date;
+        $r0 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.j.l: java.lang.Long a()>();
+        $l0 = virtualinvoke $r1.<java.lang.Long: long longValue()>();
+        specialinvoke $r2.<java.util.Date: void <init>(long)>($l0);
+        return $r2;
+
+     label0:
+        $r2 = new java.util.Date;
+        specialinvoke $r2.<java.util.Date: void <init>()>();
+        return $r2;
+    }
+
+    public static boolean k(java.lang.String)
+    {
+        java.lang.String $r0;
+        int $i0;
+        java.util.regex.Matcher $r1;
+        java.util.regex.Pattern $r2;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 <= 7 goto label1;
+
+        $r2 = <android.util.Patterns: java.util.regex.Pattern EMAIL_ADDRESS>;
+
+     label0:
+        $r1 = virtualinvoke $r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r0);
+        $z0 = virtualinvoke $r1.<java.util.regex.Matcher: boolean matches()>();
+        return $z0;
+
+     label1:
+        $r2 = <it.h3g.areaclienti3.j.m: java.util.regex.Pattern b>;
+        goto label0;
+    }
+
+    public static java.util.Date l(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        java.text.SimpleDateFormat $r1;
+        java.util.Date $r3;
+        java.lang.Exception $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label3;
+
+        $r1 = new java.text.SimpleDateFormat;
+        specialinvoke $r1.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("dd/MM/yyyy");
+
+     label0:
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String trim()>();
+        $r3 = virtualinvoke $r1.<java.text.SimpleDateFormat: java.util.Date parse(java.lang.String)>($r2);
+
+     label1:
+        return $r3;
+
+     label2:
+        $r4 := @caughtexception;
+        $r0 = virtualinvoke $r4.<java.lang.Exception: java.lang.String getMessage()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", $r0);
+
+     label3:
+        return null;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    private boolean l()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.Context $r1;
+        java.lang.Object $r3;
+        android.net.ConnectivityManager $r4;
+        android.net.NetworkInfo $r5;
+        int $i0, i1;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r4 = (android.net.ConnectivityManager) $r3;
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r5 == null goto label1;
+
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        $i0 = virtualinvoke $r5.<android.net.NetworkInfo: int getType()>();
+        virtualinvoke $r5.<android.net.NetworkInfo: int getSubtype()>();
+        i1 = (int) 1;
+        if $i0 != i1 goto label0;
+
+        return 0;
+
+     label0:
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    public static java.lang.String m(java.lang.String)
+    {
+        java.lang.String $r0;
+        int $i0;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label1;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 <= 0 goto label1;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean startsWith(java.lang.String)>("http://");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean startsWith(java.lang.String)>("https://");
+        if $z0 != 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean startsWith(java.lang.String)>("h3g://");
+        if $z0 != 0 goto label0;
+
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label0:
+        return $r0;
+
+     label1:
+        return null;
+    }
+
+    private boolean m()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        java.lang.Object $r3;
+        android.telephony.TelephonyManager $r4;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r4 = (android.telephony.TelephonyManager) $r3;
+        $r2 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()>();
+        if $r2 == null goto label0;
+
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean startsWith(java.lang.String)>("893999");
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    private void n()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        it.h3g.areaclienti3.f.b $r1;
+        it.h3g.areaclienti3.f.a $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.f.b e>;
+        virtualinvoke $r1.<it.h3g.areaclienti3.f.b: void a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.f.a d>;
+        virtualinvoke $r2.<it.h3g.areaclienti3.f.a: void a()>();
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r3 := @caughtexception;
+        exitmonitor $r0;
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    private static java.lang.String p(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        int $i0;
+        boolean $z0;
+        char $c2;
+        java.lang.StringBuilder $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label0;
+
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i0 != 0 goto label2;
+
+     label0:
+        $r0 = "";
+
+     label1:
+        return $r0;
+
+     label2:
+        $c2 = virtualinvoke $r0.<java.lang.String: char charAt(int)>(0);
+        $z0 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>($c2);
+        if $z0 != 0 goto label1;
+
+        $r1 = new java.lang.StringBuilder;
+        $c2 = staticinvoke <java.lang.Character: char toUpperCase(char)>($c2);
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(char)>($c2);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String substring(int)>(1);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+
+    public int a(float)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        float $f0, $f1;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        android.util.DisplayMetrics $r3;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $f0 := @parameter0: float;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $f1 = $r3.<android.util.DisplayMetrics: float density>;
+        $f1 = $f1 * $f0;
+        $f1 = $f1 + 0.5F;
+        $i0 = (int) $f1;
+        return $i0;
+    }
+
+    public int a(int, int)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        float $f0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 = 1;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $f0 = virtualinvoke $r2.<android.content.res.Resources: float getDimension(int)>(2131492900);
+        $i4 = (int) $f0;
+        $i5 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: int i()>();
+        if $i1 > $i4 goto label0;
+
+        if $i0 <= $i5 goto label2;
+
+     label0:
+        $i3 = $i1 / 2;
+        $i1 = $i0 / 2;
+
+     label1:
+        $i0 = $i3 / $i2;
+        if $i0 < $i4 goto label2;
+
+        $i0 = $i1 / $i2;
+        if $i0 >= $i5 goto label3;
+
+     label2:
+        return $i2;
+
+     label3:
+        $i2 = $i2 * 2;
+        goto label1;
+    }
+
+    public android.os.Bundle a(java.lang.Exception, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.Exception $r1;
+        android.os.Bundle $r2;
+        boolean $z0;
+        java.lang.String $r3, $r5;
+        java.lang.StringBuilder $r4;
+        org.e.c $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.Exception;
+        $r2 := @parameter1: android.os.Bundle;
+        $z0 = $r1 instanceof org.e.c;
+        if $z0 == 0 goto label0;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Soap faultcode: ");
+        $r7 = (org.e.c) $r1;
+        $r5 = $r7.<org.e.c: java.lang.String a>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" faultstring: ");
+        $r7 = (org.e.c) $r1;
+        $r5 = $r7.<org.e.c: java.lang.String b>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", $r5);
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void a(java.lang.Exception)>($r1);
+        $r7 = (org.e.c) $r1;
+        $r2 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: android.os.Bundle a(org.e.c,android.os.Bundle)>($r7, $r2);
+        return $r2;
+
+     label0:
+        $z0 = $r1 instanceof org.xmlpull.v1.XmlPullParserException;
+        if $z0 == 0 goto label1;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error parsing xml: ");
+        $r3 = virtualinvoke $r1.<java.lang.Exception: java.lang.String getMessage()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", $r3);
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void a(java.lang.Exception)>($r1);
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r2;
+
+     label1:
+        $z0 = $r1 instanceof java.io.IOException;
+        if $z0 == 0 goto label2;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error network connection: ");
+        $r3 = virtualinvoke $r1.<java.lang.Exception: java.lang.String getMessage()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", $r3);
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void a(java.lang.Exception)>($r1);
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        return $r2;
+
+     label2:
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Generic error: ");
+        $r3 = virtualinvoke $r1.<java.lang.Exception: java.lang.String getMessage()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("Utils", $r3);
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void a(java.lang.Exception)>($r1);
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 3);
+        return $r2;
+    }
+
+    public void a(java.lang.String, java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1, $r2, $r3, $r5, $r6;
+        java.lang.Boolean $r7;
+        boolean $z0;
+        java.lang.StringBuilder $r8;
+        it.h3g.areaclienti3.j.o $r9;
+        java.lang.String[] $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r6 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("LogErroriApp", "abilitazioneMenu", "value");
+        $r7 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>($r6);
+        $z0 = virtualinvoke $r7.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", "callReportError: Active");
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("callReportError sectionName: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", $r5);
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("callReportError errorCode: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r5 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", $r5);
+        $r9 = new it.h3g.areaclienti3.j.o;
+        specialinvoke $r9.<it.h3g.areaclienti3.j.o: void <init>(it.h3g.areaclienti3.j.m,it.h3g.areaclienti3.j.o)>($r0, null);
+        $r10 = newarray (java.lang.String)[3];
+        $r10[0] = $r1;
+        $r10[1] = $r2;
+        $r10[2] = $r3;
+        virtualinvoke $r9.<it.h3g.areaclienti3.j.o: android.os.AsyncTask execute(java.lang.Object[])>($r10);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", "callReportError: Deactive");
+        goto label0;
+    }
+
+    public boolean d()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.Context $r1;
+        boolean $z0;
+        java.lang.Object $r3;
+        android.net.ConnectivityManager $r4;
+        android.net.NetworkInfo $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r4 = (android.net.ConnectivityManager) $r3;
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r5 == null goto label0;
+
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        $z0 = virtualinvoke $r5.<android.net.NetworkInfo: boolean isConnectedOrConnecting()>();
+        return $z0;
+
+     label0:
+        return 0;
+    }
+
+    public boolean e()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: boolean l()>();
+        if $z0 == 0 goto label0;
+
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: boolean m()>();
+        if $z0 == 0 goto label0;
+
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean f()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: boolean m()>();
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: boolean l()>();
+        if $z0 != 0 goto label2;
+
+     label0:
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: boolean d()>();
+        if $z0 == 0 goto label1;
+
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: boolean l()>();
+        if $z0 == 0 goto label2;
+
+     label1:
+        return 0;
+
+     label2:
+        return 1;
+    }
+
+    public void g(java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1, $r2;
+        int $i0, $i1, $i2;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $i0 = 0;
+        $i1 = 0;
+
+     label0:
+        $i2 = virtualinvoke $r1.<java.lang.String: int length()>();
+        if $i0 < $i2 goto label1;
+
+        return;
+
+     label1:
+        $r2 = virtualinvoke $r1.<java.lang.String: java.lang.String substring(int,int)>($i1, $i0);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("Utils", $r2);
+        $i2 = $i0 - $i1;
+        $i1 = $i1 + $i2;
+        $i2 = virtualinvoke $r1.<java.lang.String: int length()>();
+        $i2 = $i2 - $i0;
+        $i2 = staticinvoke <java.lang.Math: int min(int,int)>(200, $i2);
+        $i0 = $i0 + $i2;
+        goto label0;
+    }
+
+    public void g(java.lang.String, java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1, $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.lang.String;
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.String)>($r1, $r2, null);
+        return;
+    }
+
+    public java.lang.String h()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.pm.PackageInfo $r1, $r5;
+        android.content.Context $r2;
+        android.content.pm.PackageManager $r3;
+        java.lang.String $r4;
+        android.content.pm.PackageManager$NameNotFoundException $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 = null;
+        $r2 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+
+     label0:
+        $r3 = virtualinvoke $r2.<android.content.Context: android.content.pm.PackageManager getPackageManager()>();
+        $r2 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r4 = virtualinvoke $r2.<android.content.Context: java.lang.String getPackageName()>();
+        $r5 = virtualinvoke $r3.<android.content.pm.PackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)>($r4, 0);
+
+     label1:
+        $r1 = $r5;
+
+     label2:
+        $r4 = $r1.<android.content.pm.PackageInfo: java.lang.String versionName>;
+        return $r4;
+
+     label3:
+        $r6 := @caughtexception;
+        virtualinvoke $r6.<android.content.pm.PackageManager$NameNotFoundException: void printStackTrace()>();
+        goto label2;
+
+        catch android.content.pm.PackageManager$NameNotFoundException from label0 to label1 with label3;
+    }
+
+    public int i()
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        android.content.Context $r1;
+        android.content.res.Resources $r2;
+        android.util.DisplayMetrics $r3;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 = $r0.<it.h3g.areaclienti3.j.m: android.content.Context a>;
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $i0 = $r3.<android.util.DisplayMetrics: int widthPixels>;
+        return $i0;
+    }
+
+    public android.graphics.Bitmap n(java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1;
+        it.h3g.areaclienti3.f.a $r2;
+        java.io.File $r3;
+        android.graphics.Bitmap $r6, $r7;
+        java.lang.OutOfMemoryError $r8, $r13, $r18;
+        java.net.URL $r9;
+        java.net.URLConnection $r10;
+        java.io.InputStream $r11;
+        java.io.FileOutputStream $r12;
+        java.io.IOException $r14;
+        java.lang.Throwable $r15;
+        java.lang.Exception $r16, $r17;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.f.a d>;
+        $r3 = virtualinvoke $r2.<it.h3g.areaclienti3.f.a: java.io.File a(java.lang.String)>($r1);
+
+     label0:
+        $r6 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: android.graphics.Bitmap a(java.io.File)>($r3);
+
+     label1:
+        $r7 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: android.graphics.Bitmap a(android.graphics.Bitmap,java.io.File)>($r6, $r3);
+
+     label2:
+        $r6 = $r7;
+
+     label3:
+        if $r6 == null goto label6;
+
+        return $r6;
+
+     label4:
+        $r8 := @caughtexception;
+        $r6 = null;
+
+     label5:
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void n()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", "Warning: Banner Piccolo Out of Memory");
+        goto label3;
+
+     label6:
+        $r9 = new java.net.URL;
+
+     label7:
+        specialinvoke $r9.<java.net.URL: void <init>(java.lang.String)>($r1);
+        $r10 = virtualinvoke $r9.<java.net.URL: java.net.URLConnection openConnection()>();
+        virtualinvoke $r10.<java.net.URLConnection: void connect()>();
+        $r11 = virtualinvoke $r10.<java.net.URLConnection: java.io.InputStream getInputStream()>();
+        $r12 = new java.io.FileOutputStream;
+        specialinvoke $r12.<java.io.FileOutputStream: void <init>(java.io.File)>($r3);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.io.InputStream,java.io.OutputStream)>($r11, $r12);
+        $r7 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: android.graphics.Bitmap a(java.io.File)>($r3);
+        $r7 = specialinvoke $r0.<it.h3g.areaclienti3.j.m: android.graphics.Bitmap a(android.graphics.Bitmap,java.io.File)>($r7, $r3);
+
+     label8:
+        return $r7;
+
+     label9:
+        $r13 := @caughtexception;
+
+     label10:
+        specialinvoke $r0.<it.h3g.areaclienti3.j.m: void n()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("Utils", "Warning: Banner Piccolo Out of Memory");
+        return null;
+
+     label11:
+        $r14 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("Utils", "Error: Banner Piccolo IOException", $r14);
+
+     label12:
+        return null;
+
+     label13:
+        $r15 := @caughtexception;
+        throw $r15;
+
+     label14:
+        $r16 := @caughtexception;
+        $r6 = null;
+        goto label3;
+
+     label15:
+        $r17 := @caughtexception;
+        goto label3;
+
+     label16:
+        $r18 := @caughtexception;
+        goto label5;
+
+        catch java.lang.OutOfMemoryError from label0 to label1 with label4;
+        catch java.lang.Exception from label0 to label1 with label14;
+        catch java.lang.OutOfMemoryError from label1 to label2 with label16;
+        catch java.lang.Exception from label1 to label2 with label15;
+        catch java.lang.OutOfMemoryError from label6 to label8 with label9;
+        catch java.io.IOException from label7 to label8 with label11;
+        catch java.lang.Throwable from label6 to label8 with label13;
+        catch java.lang.Throwable from label10 to label12 with label13;
+    }
+
+    public java.lang.String o(java.lang.String)
+    {
+        it.h3g.areaclienti3.j.m $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        it.h3g.areaclienti3.j.l $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.j.m;
+        $r1 := @parameter0: java.lang.String;
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.j.m: boolean d()>();
+        if $z0 == 0 goto label0;
+
+        $r3 = <it.h3g.areaclienti3.j.m: it.h3g.areaclienti3.j.l c>;
+        $z0 = virtualinvoke $r3.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label0;
+
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://ac3.tre.it");
+
+     label0:
+        return $r1;
+    }
+}

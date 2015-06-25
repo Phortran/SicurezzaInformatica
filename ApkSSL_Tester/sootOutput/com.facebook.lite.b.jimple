@@ -1,0 +1,209 @@
+final class com.facebook.lite.b extends android.os.AsyncTask
+{
+    int a;
+    int b;
+    final com.facebook.b.k c;
+    final com.facebook.lite.a d;
+
+    void <init>(com.facebook.lite.a, com.facebook.b.k)
+    {
+        com.facebook.lite.b $r0;
+        com.facebook.lite.a $r1;
+        com.facebook.b.k $r2;
+
+        $r0 := @this: com.facebook.lite.b;
+        $r1 := @parameter0: com.facebook.lite.a;
+        $r2 := @parameter1: com.facebook.b.k;
+        $r0.<com.facebook.lite.b: com.facebook.lite.a d> = $r1;
+        $r0.<com.facebook.lite.b: com.facebook.b.k c> = $r2;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    private void a(byte[])
+    {
+        com.facebook.lite.b $r0;
+        byte[] $r1;
+        java.lang.String $r2;
+        int $i0, $i1, $i2;
+        com.facebook.lite.a $r4;
+        com.facebook.lite.g.a $r5;
+        com.b.a.a.b.b $r6;
+        com.b.a.a.b.a $r7;
+        com.facebook.b.k $r8;
+        android.content.Context $r9;
+        com.facebook.lite.e $r10;
+        android.net.Uri $r11;
+        com.b.a.a.j.g $r12;
+
+        $r0 := @this: com.facebook.lite.b;
+        $r1 := @parameter0: byte[];
+        if $r1 != null goto label1;
+
+        $r2 = staticinvoke <com.facebook.lite.a: java.lang.String M()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r2, "camera/fail to handle camera app result.");
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: com.facebook.lite.g.a c(com.facebook.lite.a)>($r4);
+        $r6 = virtualinvoke $r5.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        $r7 = staticinvoke <com.facebook.lite.a: com.b.a.a.b.a N()>();
+        virtualinvoke $r6.<com.b.a.a.b.b: void b(com.b.a.a.b.a)>($r7);
+        $r8 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        virtualinvoke $r8.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("handling_succeeded", 0);
+        $r8 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r9 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r4);
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r8, $r9);
+
+     label0:
+        return;
+
+     label1:
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r10 = staticinvoke <com.facebook.lite.a: com.facebook.lite.e e(com.facebook.lite.a)>($r4);
+        $r11 = staticinvoke <com.facebook.lite.a: android.net.Uri L()>();
+        virtualinvoke $r10.<com.facebook.lite.e: void a(android.net.Uri)>($r11);
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: com.facebook.lite.g.a c(com.facebook.lite.a)>($r4);
+        $r12 = virtualinvoke $r5.<com.facebook.lite.g.a: com.b.a.a.j.g Y()>();
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $i1 = staticinvoke <com.facebook.lite.a: int a(com.facebook.lite.a)>($r4);
+        $i2 = $r0.<com.facebook.lite.b: int a>;
+        $i0 = $r0.<com.facebook.lite.b: int b>;
+        interfaceinvoke $r12.<com.b.a.a.j.g: com.b.a.a.j.c a(int,byte[],int,int)>($i1, $r1, $i2, $i0);
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: com.facebook.lite.g.a c(com.facebook.lite.a)>($r4);
+        $r6 = virtualinvoke $r5.<com.facebook.lite.g.a: com.b.a.a.b.b R()>();
+        $r7 = staticinvoke <com.facebook.lite.a: com.b.a.a.b.a O()>();
+        virtualinvoke $r6.<com.b.a.a.b.b: void b(com.b.a.a.b.a)>($r7);
+        $r8 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        virtualinvoke $r8.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("handling_succeeded", 1);
+        $r8 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $r4 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r9 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r4);
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r8, $r9);
+        goto label0;
+    }
+
+    private transient byte[] a()
+    {
+        com.facebook.lite.b $r0;
+        com.facebook.b.k $r1;
+        java.lang.String $r2;
+        com.facebook.lite.a $r3;
+        int $i0, $i2;
+        long $l1;
+        android.content.Context $r4, $r5;
+        android.content.ContentResolver $r6;
+        android.net.Uri $r7;
+        android.graphics.Bitmap $r8;
+        com.facebook.lite.g.a $r9;
+        java.io.ByteArrayOutputStream $r10;
+        android.graphics.Bitmap$CompressFormat $r11;
+        byte[] $r12;
+        java.io.IOException $r13;
+
+        $r0 := @this: com.facebook.lite.b;
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $i0 = staticinvoke <com.facebook.lite.a: int a(com.facebook.lite.a)>($r3);
+        $l1 = (long) $i0;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("image_id", $l1);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r4 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $r6 = virtualinvoke $r5.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r7 = staticinvoke <com.facebook.lite.a: android.net.Uri L()>();
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $i0 = staticinvoke <com.facebook.lite.b.e: int d(android.content.Context)>($r5);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $i2 = staticinvoke <com.facebook.lite.b.e: int b(android.content.Context)>($r5);
+        $r8 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(android.content.Context,android.content.ContentResolver,android.net.Uri,int,int)>($r4, $r6, $r7, $i0, $i2);
+        if $r8 != null goto label0;
+
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("decoding_succeeded", 0);
+        return null;
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("decoding_succeeded", 1);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $r7 = staticinvoke <com.facebook.lite.a: android.net.Uri L()>();
+        $r2 = staticinvoke <com.facebook.lite.photo.n: java.lang.String a(android.content.Context,android.net.Uri)>($r5, $r7);
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $i2 = (int) 0;
+        $r8 = staticinvoke <com.facebook.lite.photo.n: android.graphics.Bitmap a(java.lang.String,android.graphics.Bitmap,com.facebook.b.k,int)>($r2, $r8, $r1, $i2);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r9 = staticinvoke <com.facebook.lite.a: com.facebook.lite.g.a c(com.facebook.lite.a)>($r3);
+        $i2 = virtualinvoke $r9.<com.facebook.lite.g.a: int u()>();
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $l1 = (long) $i2;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("photo_quality", $l1);
+        $r10 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r10.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r11 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat JPEG>;
+        virtualinvoke $r8.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r11, $i2, $r10);
+        $i2 = virtualinvoke $r8.<android.graphics.Bitmap: int getWidth()>();
+        $r0.<com.facebook.lite.b: int a> = $i2;
+        $i2 = virtualinvoke $r8.<android.graphics.Bitmap: int getHeight()>();
+        $r0.<com.facebook.lite.b: int b> = $i2;
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $i2 = $r0.<com.facebook.lite.b: int a>;
+        $l1 = (long) $i2;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("photo_width", $l1);
+        $r1 = $r0.<com.facebook.lite.b: com.facebook.b.k c>;
+        $i2 = $r0.<com.facebook.lite.b: int b>;
+        $l1 = (long) $i2;
+        virtualinvoke $r1.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("photo_height", $l1);
+        virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>();
+        $r12 = virtualinvoke $r10.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r5 = staticinvoke <com.facebook.lite.a: android.content.Context b(com.facebook.lite.a)>($r3);
+        $r3 = $r0.<com.facebook.lite.b: com.facebook.lite.a d>;
+        $r2 = staticinvoke <com.facebook.lite.a: java.lang.String d(com.facebook.lite.a)>($r3);
+        staticinvoke <com.facebook.lite.photo.n: void a(android.content.Context,java.lang.String)>($r5, $r2);
+
+     label1:
+        virtualinvoke $r10.<java.io.ByteArrayOutputStream: void close()>();
+
+     label2:
+        return $r12;
+
+     label3:
+        $r13 := @caughtexception;
+        $r2 = staticinvoke <com.facebook.lite.a: java.lang.String M()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r2, "camera/unable to close photo byte stream.", $r13);
+        return $r12;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+
+    protected final java.lang.Object doInBackground(java.lang.Object[])
+    {
+        com.facebook.lite.b $r0;
+        java.lang.Object[] $r1;
+        byte[] $r2;
+
+        $r0 := @this: com.facebook.lite.b;
+        $r1 := @parameter0: java.lang.Object[];
+        $r2 = specialinvoke $r0.<com.facebook.lite.b: byte[] a()>();
+        return $r2;
+    }
+
+    protected final void onPostExecute(java.lang.Object)
+    {
+        com.facebook.lite.b $r0;
+        java.lang.Object $r1;
+        byte[] $r2;
+
+        $r0 := @this: com.facebook.lite.b;
+        $r1 := @parameter0: java.lang.Object;
+        $r2 = (byte[]) $r1;
+        specialinvoke $r0.<com.facebook.lite.b: void a(byte[])>($r2);
+        return;
+    }
+}

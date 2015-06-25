@@ -1,0 +1,71 @@
+public class it.h3g.areaclienti3.nwmonitoring.NetworkReceiver extends android.content.BroadcastReceiver
+{
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.nwmonitoring.NetworkReceiver $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.NetworkReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        it.h3g.areaclienti3.nwmonitoring.NetworkReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r4, $r7;
+        it.h3g.areaclienti3.nwmonitoring.av $r5;
+        boolean $z0;
+        it.h3g.areaclienti3.nwmonitoring.as $r6;
+        android.os.Handler $r8;
+        it.h3g.areaclienti3.nwmonitoring.aq $r9;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.NetworkReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-EVENT_NETWORK_CHANGE", "OnReceive");
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bn: void a(android.content.Context)>($r1);
+        $r6 = new it.h3g.areaclienti3.nwmonitoring.as;
+        specialinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r1);
+        $r5 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $z0 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r1, "SIM_LOCKED", 0);
+        if $z0 == 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-NETWORKCHANGE", "SIM_LOCKED");
+        $r8 = new android.os.Handler;
+        specialinvoke $r8.<android.os.Handler: void <init>()>();
+        $r9 = new it.h3g.areaclienti3.nwmonitoring.aq;
+        specialinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.aq: void <init>(it.h3g.areaclienti3.nwmonitoring.NetworkReceiver,android.content.Context)>($r0, $r1);
+        virtualinvoke $r8.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r9, 60000L);
+
+     label0:
+        $i1 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: int a(android.content.Context)>($r1);
+        if $i1 != 1 goto label3;
+
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: java.lang.String b(android.content.Context)>($r1);
+        $r4 = virtualinvoke $r6.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label2;
+
+        $r2 = new android.content.Intent;
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r1, class "it/h3g/areaclienti3/nwmonitoring/CollectDataService");
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("it.h3g.areaclienti3.nwmonitoring.CHANGE_NETWORK_STATE");
+        virtualinvoke $r1.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r2);
+
+     label1:
+        return;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-NETWORKCHANGE", "CONSENT DENIED FOR THIS IMSI");
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bn: void a()>();
+        goto label1;
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-NETWORKCHANGE", "CONSENT DENIED");
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bn: void a()>();
+        goto label1;
+    }
+}

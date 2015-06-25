@@ -1,0 +1,53 @@
+final class com.facebook.lite.l extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final com.facebook.lite.k a;
+
+    void <init>(com.facebook.lite.k)
+    {
+        com.facebook.lite.l $r0;
+        com.facebook.lite.k $r1;
+
+        $r0 := @this: com.facebook.lite.l;
+        $r1 := @parameter0: com.facebook.lite.k;
+        $r0.<com.facebook.lite.l: com.facebook.lite.k a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void onClick(android.view.View)
+    {
+        com.facebook.lite.l $r0;
+        android.view.View $r1;
+        com.facebook.lite.k $r2;
+        android.content.Intent $r3;
+        com.facebook.lite.widget.q $r5;
+        com.facebook.lite.MainActivity $r6;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.l;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<com.facebook.lite.l: com.facebook.lite.k a>;
+        $r6 = $r2.<com.facebook.lite.k: com.facebook.lite.MainActivity f>;
+        $r5 = staticinvoke <com.facebook.lite.MainActivity: com.facebook.lite.widget.q g(com.facebook.lite.MainActivity)>($r6);
+        if $r5 == null goto label0;
+
+        $r2 = $r0.<com.facebook.lite.l: com.facebook.lite.k a>;
+        $r6 = $r2.<com.facebook.lite.k: com.facebook.lite.MainActivity f>;
+        $r5 = staticinvoke <com.facebook.lite.MainActivity: com.facebook.lite.widget.q g(com.facebook.lite.MainActivity)>($r6);
+        $z0 = virtualinvoke $r5.<com.facebook.lite.widget.q: boolean isShowing()>();
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<com.facebook.lite.l: com.facebook.lite.k a>;
+        $r6 = $r2.<com.facebook.lite.k: com.facebook.lite.MainActivity f>;
+        $r5 = staticinvoke <com.facebook.lite.MainActivity: com.facebook.lite.widget.q g(com.facebook.lite.MainActivity)>($r6);
+        virtualinvoke $r5.<com.facebook.lite.widget.q: void dismiss()>();
+
+     label0:
+        $r2 = $r0.<com.facebook.lite.l: com.facebook.lite.k a>;
+        $r6 = $r2.<com.facebook.lite.k: com.facebook.lite.MainActivity f>;
+        $r3 = new android.content.Intent;
+        specialinvoke $r3.<android.content.Intent: void <init>(java.lang.String)>("android.settings.SETTINGS");
+        virtualinvoke $r6.<com.facebook.lite.MainActivity: void startActivity(android.content.Intent)>($r3);
+        return;
+    }
+}

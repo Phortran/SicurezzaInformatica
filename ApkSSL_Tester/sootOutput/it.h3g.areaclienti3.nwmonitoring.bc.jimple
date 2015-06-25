@@ -1,0 +1,246 @@
+public class it.h3g.areaclienti3.nwmonitoring.bc extends java.lang.Object implements java.lang.Runnable
+{
+    private it.h3g.areaclienti3.nwmonitoring.l a;
+    private it.h3g.areaclienti3.nwmonitoring.r b;
+    private android.content.Context c;
+    private java.util.ArrayList d;
+    private java.util.ArrayList e;
+    private java.lang.String f;
+
+    public void <init>(android.content.Context, java.lang.String)
+    {
+        it.h3g.areaclienti3.nwmonitoring.bc $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        java.util.ArrayList $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bc;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.lang.String;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c> = $r1;
+        $r3 = new java.util.ArrayList;
+        specialinvoke $r3.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList d> = $r3;
+        $r3 = new java.util.ArrayList;
+        specialinvoke $r3.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList e> = $r3;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.lang.String f> = $r2;
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.nwmonitoring.bc $r0;
+        it.h3g.areaclienti3.nwmonitoring.bf $r1;
+        android.content.Context $r2;
+        long $l0, $l1, $l3, $l4;
+        boolean $z0, $z1, $z3;
+        java.lang.String $r3, $r9;
+        it.h3g.areaclienti3.nwmonitoring.av $r4;
+        int $i2, $i6;
+        byte $b5;
+        it.h3g.areaclienti3.nwmonitoring.l $r5, $r11;
+        java.util.ArrayList $r6;
+        it.h3g.areaclienti3.nwmonitoring.r $r7;
+        it.h3g.areaclienti3.nwmonitoring.as $r8;
+        java.util.Iterator $r10;
+        it.h3g.areaclienti3.nwmonitoring.ay $r12;
+        java.lang.Exception $r13;
+        java.lang.Object $r14;
+        it.h3g.areaclienti3.nwmonitoring.ar $r15;
+        java.util.List $r16, $r18;
+        it.h3g.areaclienti3.nwmonitoring.k $r17;
+        java.lang.StringBuilder $r19;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.bc;
+        $l0 = -1L;
+        $z1 = 0;
+        $r1 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        specialinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r2);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        $l1 = virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r2, "SETTINGS_PREV_TIME_SEND", 0L);
+        $i2 = virtualinvoke $r1.<it.h3g.areaclienti3.nwmonitoring.bf: int g()>();
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: boolean b(android.content.Context,java.lang.String,boolean)>($r2, "PendingPackets", 0);
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        if $z0 != 0 goto label0;
+
+        $l4 = (long) $i2;
+        $l4 = $l4 + $l1;
+        $b5 = $l3 cmp $l4;
+        if $b5 >= 0 goto label0;
+
+        $b5 = $l3 cmp $l1;
+        if $b5 >= 0 goto label16;
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.l: it.h3g.areaclienti3.nwmonitoring.l a(android.content.Context)>($r2);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.l a> = $r5;
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.l a>;
+        $r6 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.l: java.util.ArrayList a()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList d> = $r6;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.r: it.h3g.areaclienti3.nwmonitoring.r a(android.content.Context)>($r2);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.r b> = $r7;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList d>;
+        $i2 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        if $i2 <= 0 goto label15;
+
+        $r8 = new it.h3g.areaclienti3.nwmonitoring.as;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        specialinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.as: void <init>(android.content.Context)>($r2);
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.a: java.lang.String e(android.content.Context)>($r2);
+
+     label1:
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String d()>();
+        $l4 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r9);
+
+     label2:
+        $r9 = virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.as: java.lang.String c()>();
+        $l3 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r9);
+
+     label3:
+        if $r3 == null goto label6;
+
+     label4:
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label6;
+
+        $l1 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r3);
+
+     label5:
+        $l0 = $l1;
+
+     label6:
+        $r7 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.r b>;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList d>;
+        $r6 = virtualinvoke $r7.<it.h3g.areaclienti3.nwmonitoring.r: java.util.ArrayList a(java.util.ArrayList,long,long,long)>($r6, $l0, $l3, $l4);
+        $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList e> = $r6;
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList e>;
+        if $r6 == null goto label8;
+
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList e>;
+        $i2 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        if $i2 <= 0 goto label8;
+
+        $r6 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.util.ArrayList e>;
+        $r10 = virtualinvoke $r6.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $r9 = "";
+        $z0 = 0;
+
+     label7:
+        $z3 = interfaceinvoke $r10.<java.util.Iterator: boolean hasNext()>();
+        if $z3 != 0 goto label12;
+
+        $z3 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z3 != 0 goto label19;
+
+        $i2 = virtualinvoke $r9.<java.lang.String: int length()>();
+        $i2 = $i2 + -3;
+        $i6 = (int) 0;
+        $r9 = virtualinvoke $r9.<java.lang.String: java.lang.String substring(int,int)>($i6, $i2);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.l a>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.l: boolean a(java.lang.String)>($r9);
+        $r5 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.l a>;
+        $r11 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: it.h3g.areaclienti3.nwmonitoring.l a>;
+        $i2 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.l: int a(boolean)>(1);
+        virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.l: void a(int)>($i2);
+        $z1 = $z0;
+
+     label8:
+        $r12 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.ay: it.h3g.areaclienti3.nwmonitoring.ay a()>();
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: java.lang.String f>;
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        virtualinvoke $r12.<it.h3g.areaclienti3.nwmonitoring.ay: void a(boolean,java.lang.String,android.content.Context)>($z1, $r9, $r2);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = $r0.<it.h3g.areaclienti3.nwmonitoring.bc: android.content.Context c>;
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,boolean)>($r2, "PendingPackets", $z1);
+
+     label9:
+        return;
+
+     label10:
+        $r13 := @caughtexception;
+        $l3 = -1L;
+        $l4 = -1L;
+
+     label11:
+        virtualinvoke $r13.<java.lang.Exception: void printStackTrace()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SEND_DATA", "Errore di conversione dati");
+        goto label6;
+
+     label12:
+        $r14 = interfaceinvoke $r10.<java.util.Iterator: java.lang.Object next()>();
+        $r15 = (it.h3g.areaclienti3.nwmonitoring.ar) $r14;
+        $i2 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: int b()>();
+        if $i2 == 0 goto label13;
+
+        $i2 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: int b()>();
+        if $i2 != 2 goto label14;
+
+     label13:
+        $r16 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: java.util.List a()>();
+        $i6 = (int) 0;
+        $r14 = interfaceinvoke $r16.<java.util.List: java.lang.Object get(int)>($i6);
+        $r17 = (it.h3g.areaclienti3.nwmonitoring.k) $r14;
+        $i6 = virtualinvoke $r17.<it.h3g.areaclienti3.nwmonitoring.k: int a()>();
+        $r16 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: java.util.List a()>();
+        $r18 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: java.util.List a()>();
+        $i2 = interfaceinvoke $r18.<java.util.List: int size()>();
+        $i2 = $i2 + -1;
+        $r14 = interfaceinvoke $r16.<java.util.List: java.lang.Object get(int)>($i2);
+        $r17 = (it.h3g.areaclienti3.nwmonitoring.k) $r14;
+        $i2 = virtualinvoke $r17.<it.h3g.areaclienti3.nwmonitoring.k: int a()>();
+        $r19 = new java.lang.StringBuilder;
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r9);
+        specialinvoke $r19.<java.lang.StringBuilder: void <init>(java.lang.String)>($r9);
+        $r19 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(_id BETWEEN ");
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i6);
+        $r19 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r19 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" AND ");
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2);
+        $r19 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r19 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") OR");
+        $r9 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label7;
+
+     label14:
+        $i6 = virtualinvoke $r15.<it.h3g.areaclienti3.nwmonitoring.ar: int b()>();
+        $i2 = (int) 1;
+        if $i6 != $i2 goto label7;
+
+        $z0 = 1;
+        goto label7;
+
+     label15:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MOMONITORING-SendDataThread", "Nessun record da inviare");
+        goto label8;
+
+     label16:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_SEND-DATA-LOCKED", "Invio dati non valido");
+        goto label9;
+
+     label17:
+        $r13 := @caughtexception;
+        $l3 = -1L;
+        goto label11;
+
+     label18:
+        $r13 := @caughtexception;
+        goto label11;
+
+     label19:
+        $z1 = $z0;
+        goto label8;
+
+        catch java.lang.Exception from label1 to label2 with label10;
+        catch java.lang.Exception from label2 to label3 with label17;
+        catch java.lang.Exception from label4 to label5 with label18;
+    }
+}

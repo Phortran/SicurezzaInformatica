@@ -1,0 +1,636 @@
+class com.google.b.a.a.ah extends java.lang.Thread implements com.google.b.a.a.h
+{
+    private static com.google.b.a.a.ah g;
+    private final java.util.concurrent.LinkedBlockingQueue a;
+    private volatile boolean b;
+    private volatile boolean c;
+    private volatile java.util.List d;
+    private volatile java.lang.String e;
+    private volatile java.lang.String f;
+    private volatile com.google.b.a.a.bd h;
+    private final android.content.Context i;
+
+    private void <init>(android.content.Context)
+    {
+        com.google.b.a.a.ah $r0;
+        android.content.Context $r1;
+        java.util.concurrent.LinkedBlockingQueue $r3;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Thread: void <init>(java.lang.String)>("GAThread");
+        $r3 = new java.util.concurrent.LinkedBlockingQueue;
+        specialinvoke $r3.<java.util.concurrent.LinkedBlockingQueue: void <init>()>();
+        $r0.<com.google.b.a.a.ah: java.util.concurrent.LinkedBlockingQueue a> = $r3;
+        $r0.<com.google.b.a.a.ah: boolean b> = 0;
+        $r0.<com.google.b.a.a.ah: boolean c> = 0;
+        if $r1 == null goto label1;
+
+        $r1 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.google.b.a.a.ah: android.content.Context i> = $r1;
+
+     label0:
+        virtualinvoke $r0.<com.google.b.a.a.ah: void start()>();
+        return;
+
+     label1:
+        $r0.<com.google.b.a.a.ah: android.content.Context i> = $r1;
+        goto label0;
+    }
+
+    static int a(java.lang.String)
+    {
+        java.lang.String $r0;
+        int $i0, $i2, $i4;
+        boolean $z0;
+        char $c1;
+
+        $r0 := @parameter0: java.lang.String;
+        $i0 = 1;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r0);
+        if $z0 != 0 goto label2;
+
+        $i2 = virtualinvoke $r0.<java.lang.String: int length()>();
+        $i0 = 0;
+        $i2 = $i2 + -1;
+
+     label0:
+        if $i2 < 0 goto label2;
+
+        $c1 = virtualinvoke $r0.<java.lang.String: char charAt(int)>($i2);
+        $i4 = $i0 << 6;
+        $i4 = $i4 & 268435455;
+        $i4 = $i4 + $c1;
+        $i0 = $c1 << 14;
+        $i0 = $i4 + $i0;
+        $i4 = 266338304 & $i0;
+        if $i4 == 0 goto label1;
+
+        $i4 = $i4 >> 21;
+        $i0 = $i0 ^ $i4;
+
+     label1:
+        $i2 = $i2 + -1;
+        goto label0;
+
+     label2:
+        return $i0;
+    }
+
+    static com.google.b.a.a.ah a(android.content.Context)
+    {
+        android.content.Context $r0;
+        com.google.b.a.a.ah $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <com.google.b.a.a.ah: com.google.b.a.a.ah g>;
+        if $r1 != null goto label0;
+
+        $r1 = new com.google.b.a.a.ah;
+        specialinvoke $r1.<com.google.b.a.a.ah: void <init>(android.content.Context)>($r0);
+        <com.google.b.a.a.ah: com.google.b.a.a.ah g> = $r1;
+
+     label0:
+        $r1 = <com.google.b.a.a.ah: com.google.b.a.a.ah g>;
+        return $r1;
+    }
+
+    static java.lang.String a(com.google.b.a.a.ah)
+    {
+        com.google.b.a.a.ah $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: java.lang.String f>;
+        return $r1;
+    }
+
+    static java.lang.String a(com.google.b.a.a.ah, java.lang.String)
+    {
+        com.google.b.a.a.ah $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 := @parameter1: java.lang.String;
+        $r0.<com.google.b.a.a.ah: java.lang.String e> = $r1;
+        return $r1;
+    }
+
+    private java.lang.String a(java.lang.Throwable)
+    {
+        com.google.b.a.a.ah $r0;
+        java.lang.Throwable $r1;
+        java.io.ByteArrayOutputStream $r2;
+        java.io.PrintStream $r3;
+        byte[] $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.lang.Throwable;
+        $r2 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r3 = new java.io.PrintStream;
+        specialinvoke $r3.<java.io.PrintStream: void <init>(java.io.OutputStream)>($r2);
+        virtualinvoke $r1.<java.lang.Throwable: void printStackTrace(java.io.PrintStream)>($r3);
+        virtualinvoke $r3.<java.io.PrintStream: void flush()>();
+        $r5 = new java.lang.String;
+        $r4 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        specialinvoke $r5.<java.lang.String: void <init>(byte[])>($r4);
+        return $r5;
+    }
+
+    static boolean a(com.google.b.a.a.ah, java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        boolean $z0;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 := @parameter1: java.util.Map;
+        $z0 = specialinvoke $r0.<com.google.b.a.a.ah: boolean c(java.util.Map)>($r1);
+        return $z0;
+    }
+
+    static android.content.Context b(com.google.b.a.a.ah)
+    {
+        com.google.b.a.a.ah $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: android.content.Context i>;
+        return $r1;
+    }
+
+    static java.lang.String b(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1, $r6;
+        java.io.FileInputStream $r2;
+        byte[] $r3;
+        int $i2, $i3;
+        java.io.FileNotFoundException $r4;
+        java.lang.StringBuilder $r5;
+        java.io.IOException $r7;
+
+        $r0 := @parameter0: android.content.Context;
+
+     label0:
+        $r2 = virtualinvoke $r0.<android.content.Context: java.io.FileInputStream openFileInput(java.lang.String)>("gaInstallData");
+        $r3 = newarray (byte)[8192];
+        $i2 = virtualinvoke $r2.<java.io.FileInputStream: int read(byte[],int,int)>($r3, 0, 8192);
+        $i3 = virtualinvoke $r2.<java.io.FileInputStream: int available()>();
+        if $i3 <= 0 goto label1;
+
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Too much campaign data, ignoring it.");
+        virtualinvoke $r2.<java.io.FileInputStream: void close()>();
+        virtualinvoke $r0.<android.content.Context: boolean deleteFile(java.lang.String)>("gaInstallData");
+        return null;
+
+     label1:
+        virtualinvoke $r2.<java.io.FileInputStream: void close()>();
+        virtualinvoke $r0.<android.content.Context: boolean deleteFile(java.lang.String)>("gaInstallData");
+        if $i2 > 0 goto label4;
+
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("Campaign file is empty.");
+
+     label2:
+        return null;
+
+     label3:
+        $r4 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void b(java.lang.String)>("No campaign data found.");
+        return null;
+
+     label4:
+        $r1 = new java.lang.String;
+
+     label5:
+        specialinvoke $r1.<java.lang.String: void <init>(byte[],int,int)>($r3, 0, $i2);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Campaign found: ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void b(java.lang.String)>($r6);
+
+     label6:
+        return $r1;
+
+     label7:
+        $r7 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Error reading campaign data.");
+        virtualinvoke $r0.<android.content.Context: boolean deleteFile(java.lang.String)>("gaInstallData");
+        return null;
+
+        catch java.io.FileNotFoundException from label0 to label2 with label3;
+        catch java.io.IOException from label0 to label2 with label7;
+        catch java.io.FileNotFoundException from label5 to label6 with label3;
+        catch java.io.IOException from label5 to label6 with label7;
+    }
+
+    private java.lang.String b(java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        java.lang.String $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.util.Map;
+        $z0 = interfaceinvoke $r1.<java.util.Map: boolean containsKey(java.lang.Object)>("useSecure");
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("useSecure");
+        $r2 = (java.lang.String) $r3;
+        $z0 = staticinvoke <com.google.b.a.a.bi: boolean a(java.lang.String,boolean)>($r2, 1);
+        if $z0 == 0 goto label0;
+
+        return "https:";
+
+     label0:
+        return "http:";
+
+     label1:
+        return "https:";
+    }
+
+    static void b(com.google.b.a.a.ah, java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 := @parameter1: java.util.Map;
+        specialinvoke $r0.<com.google.b.a.a.ah: void d(java.util.Map)>($r1);
+        return;
+    }
+
+    static java.lang.String c(com.google.b.a.a.ah)
+    {
+        com.google.b.a.a.ah $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: java.lang.String e>;
+        return $r1;
+    }
+
+    static java.lang.String c(com.google.b.a.a.ah, java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        java.lang.String $r2;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 := @parameter1: java.util.Map;
+        $r2 = specialinvoke $r0.<com.google.b.a.a.ah: java.lang.String b(java.util.Map)>($r1);
+        return $r2;
+    }
+
+    private boolean c(java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        java.lang.String $r2, $r5;
+        double $d0, $d1, $d2;
+        java.lang.Object[] $r3;
+        java.lang.Object $r4;
+        byte $b0;
+        int $i1;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.util.Map;
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&sf");
+        if $r4 != null goto label0;
+
+        return 0;
+
+     label0:
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&sf");
+        $r2 = (java.lang.String) $r4;
+        $d0 = staticinvoke <com.google.b.a.a.bi: double a(java.lang.String,double)>($r2, 100.0);
+        $b0 = $d0 cmpl 100.0;
+        if $b0 < 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&cid");
+        $r2 = (java.lang.String) $r4;
+        $i1 = staticinvoke <com.google.b.a.a.ah: int a(java.lang.String)>($r2);
+        $i1 = $i1 % 10000;
+        $d1 = (double) $i1;
+        $d2 = $d0 * 100.0;
+        $b0 = $d1 cmpl $d2;
+        if $b0 < 0 goto label4;
+
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&t");
+        if $r4 != null goto label3;
+
+        $r2 = "unknown";
+
+     label2:
+        $i1 = (int) 1;
+        $r3 = newarray (java.lang.Object)[$i1];
+        $i1 = (int) 0;
+        $r3[$i1] = $r2;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s hit sampled out", $r3);
+        staticinvoke <com.google.b.a.a.aq: void c(java.lang.String)>($r5);
+        return 1;
+
+     label3:
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&t");
+        $r2 = (java.lang.String) $r4;
+        goto label2;
+
+     label4:
+        return 0;
+    }
+
+    static java.util.List d(com.google.b.a.a.ah)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.List $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: java.util.List d>;
+        return $r1;
+    }
+
+    private void d(java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        com.google.b.a.a.i $r2;
+        java.lang.String $r3, $r4;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.util.Map;
+        $r2 = staticinvoke <com.google.b.a.a.i: com.google.b.a.a.i a()>();
+        $r4 = interfaceinvoke $r2.<com.google.b.a.a.n: java.lang.String a(java.lang.String)>("&an");
+        staticinvoke <com.google.b.a.a.bi: void a(java.util.Map,java.lang.String,java.lang.String)>($r1, "&an", $r4);
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.n: java.lang.String a(java.lang.String)>("&av");
+        staticinvoke <com.google.b.a.a.bi: void a(java.util.Map,java.lang.String,java.lang.String)>($r1, "&av", $r3);
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.n: java.lang.String a(java.lang.String)>("&aid");
+        staticinvoke <com.google.b.a.a.bi: void a(java.util.Map,java.lang.String,java.lang.String)>($r1, "&aid", $r3);
+        $r3 = interfaceinvoke $r2.<com.google.b.a.a.n: java.lang.String a(java.lang.String)>("&aiid");
+        staticinvoke <com.google.b.a.a.bi: void a(java.util.Map,java.lang.String,java.lang.String)>($r1, "&aiid", $r3);
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("&v", "1");
+        return;
+    }
+
+    static com.google.b.a.a.bd e(com.google.b.a.a.ah)
+    {
+        com.google.b.a.a.ah $r0;
+        com.google.b.a.a.bd $r1;
+
+        $r0 := @parameter0: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: com.google.b.a.a.bd h>;
+        return $r1;
+    }
+
+    public void a()
+    {
+        com.google.b.a.a.ah $r0;
+        com.google.b.a.a.aj $r1;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 = new com.google.b.a.a.aj;
+        specialinvoke $r1.<com.google.b.a.a.aj: void <init>(com.google.b.a.a.ah)>($r0);
+        virtualinvoke $r0.<com.google.b.a.a.ah: void a(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    void a(java.lang.Runnable)
+    {
+        com.google.b.a.a.ah $r0;
+        java.lang.Runnable $r1;
+        java.util.concurrent.LinkedBlockingQueue $r2;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.lang.Runnable;
+        $r2 = $r0.<com.google.b.a.a.ah: java.util.concurrent.LinkedBlockingQueue a>;
+        virtualinvoke $r2.<java.util.concurrent.LinkedBlockingQueue: boolean add(java.lang.Object)>($r1);
+        return;
+    }
+
+    public void a(java.util.Map)
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.Map $r1;
+        java.lang.String $r2, $r6;
+        java.util.HashMap $r3;
+        java.lang.Long $r4;
+        java.lang.Object $r5;
+        long $l0;
+        com.google.b.a.a.ai $r7;
+        java.lang.NumberFormatException $r8;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 := @parameter0: java.util.Map;
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>(java.util.Map)>($r1);
+        $r5 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("&ht");
+        $r2 = (java.lang.String) $r5;
+        if $r2 == null goto label1;
+
+     label0:
+        $r4 = staticinvoke <java.lang.Long: java.lang.Long valueOf(java.lang.String)>($r2);
+        virtualinvoke $r4.<java.lang.Long: long longValue()>();
+
+     label1:
+        if $r2 != null goto label2;
+
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r6 = staticinvoke <java.lang.Long: java.lang.String toString(long)>($l0);
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("&ht", $r6);
+
+     label2:
+        $r7 = new com.google.b.a.a.ai;
+        specialinvoke $r7.<com.google.b.a.a.ai: void <init>(com.google.b.a.a.ah,java.util.Map)>($r0, $r3);
+        virtualinvoke $r0.<com.google.b.a.a.ah: void a(java.lang.Runnable)>($r7);
+        return;
+
+     label3:
+        $r8 := @caughtexception;
+        $r2 = null;
+        goto label1;
+
+        catch java.lang.NumberFormatException from label0 to label1 with label3;
+    }
+
+    public void b()
+    {
+        com.google.b.a.a.ah $r0;
+        com.google.b.a.a.ak $r1;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 = new com.google.b.a.a.ak;
+        specialinvoke $r1.<com.google.b.a.a.ak: void <init>(com.google.b.a.a.ah)>($r0);
+        virtualinvoke $r0.<com.google.b.a.a.ah: void a(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public java.util.concurrent.LinkedBlockingQueue c()
+    {
+        com.google.b.a.a.ah $r0;
+        java.util.concurrent.LinkedBlockingQueue $r1;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: java.util.concurrent.LinkedBlockingQueue a>;
+        return $r1;
+    }
+
+    public java.lang.Thread d()
+    {
+        com.google.b.a.a.ah $r0;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        return $r0;
+    }
+
+    protected void e()
+    {
+        com.google.b.a.a.ah $r0;
+        com.google.b.a.a.bd $r1;
+        com.google.android.gms.analytics.internal.Command $r2;
+        java.lang.String $r4, $r7;
+        java.util.ArrayList $r5;
+        java.util.List $r6;
+
+        $r0 := @this: com.google.b.a.a.ah;
+        $r1 = $r0.<com.google.b.a.a.ah: com.google.b.a.a.bd h>;
+        interfaceinvoke $r1.<com.google.b.a.a.bd: void f()>();
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r0.<com.google.b.a.a.ah: java.util.List d> = $r5;
+        $r6 = $r0.<com.google.b.a.a.ah: java.util.List d>;
+        $r2 = new com.google.android.gms.analytics.internal.Command;
+        $r4 = "&_v";
+        $r7 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int)>(1);
+        specialinvoke $r2.<com.google.android.gms.analytics.internal.Command: void <init>(java.lang.String,java.lang.String,java.lang.String)>("appendVersion", $r7, "ma3.0.2");
+        interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r2);
+        $r6 = $r0.<com.google.b.a.a.ah: java.util.List d>;
+        $r2 = new com.google.android.gms.analytics.internal.Command;
+        $r4 = "&qt";
+        $r4 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int)>(1);
+        specialinvoke $r2.<com.google.android.gms.analytics.internal.Command: void <init>(java.lang.String,java.lang.String,java.lang.String)>("appendQueueTime", $r4, null);
+        interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r2);
+        $r6 = $r0.<com.google.b.a.a.ah: java.util.List d>;
+        $r2 = new com.google.android.gms.analytics.internal.Command;
+        $r4 = "&z";
+        $r4 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int)>(1);
+        specialinvoke $r2.<com.google.android.gms.analytics.internal.Command: void <init>(java.lang.String,java.lang.String,java.lang.String)>("appendCacheBuster", $r4, null);
+        interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r2);
+        return;
+    }
+
+    public void run()
+    {
+        com.google.b.a.a.ah $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        com.google.b.a.a.j $r3;
+        com.google.b.a.a.bd $r4;
+        com.google.b.a.a.y $r5;
+        boolean $z1;
+        java.util.concurrent.LinkedBlockingQueue $r6;
+        java.lang.Object $r7;
+        java.lang.Runnable $r8;
+        java.lang.InterruptedException $r9, $r12;
+        java.lang.Throwable $r10, $r13;
+        java.lang.StringBuilder $r11;
+
+        $r0 := @this: com.google.b.a.a.ah;
+
+     label0:
+        staticinvoke <java.lang.Thread: void sleep(long)>(5000L);
+
+     label1:
+        $r4 = $r0.<com.google.b.a.a.ah: com.google.b.a.a.bd h>;
+        if $r4 != null goto label2;
+
+        $r5 = new com.google.b.a.a.y;
+        $r1 = $r0.<com.google.b.a.a.ah: android.content.Context i>;
+        specialinvoke $r5.<com.google.b.a.a.y: void <init>(android.content.Context,com.google.b.a.a.h)>($r1, $r0);
+        $r0.<com.google.b.a.a.ah: com.google.b.a.a.bd h> = $r5;
+
+     label2:
+        virtualinvoke $r0.<com.google.b.a.a.ah: void e()>();
+        $r3 = staticinvoke <com.google.b.a.a.j: com.google.b.a.a.j a()>();
+        $r2 = virtualinvoke $r3.<com.google.b.a.a.j: java.lang.String a(java.lang.String)>("&cid");
+        $r0.<com.google.b.a.a.ah: java.lang.String f> = $r2;
+        $r1 = $r0.<com.google.b.a.a.ah: android.content.Context i>;
+        $r2 = staticinvoke <com.google.b.a.a.ah: java.lang.String b(android.content.Context)>($r1);
+        $r0.<com.google.b.a.a.ah: java.lang.String e> = $r2;
+
+     label3:
+        $z1 = $r0.<com.google.b.a.a.ah: boolean c>;
+        if $z1 != 0 goto label13;
+
+     label4:
+        $r6 = $r0.<com.google.b.a.a.ah: java.util.concurrent.LinkedBlockingQueue a>;
+
+     label5:
+        $r7 = virtualinvoke $r6.<java.util.concurrent.LinkedBlockingQueue: java.lang.Object take()>();
+        $r8 = (java.lang.Runnable) $r7;
+        $z1 = $r0.<com.google.b.a.a.ah: boolean b>;
+        if $z1 != 0 goto label3;
+
+        interfaceinvoke $r8.<java.lang.Runnable: void run()>();
+
+     label6:
+        goto label3;
+
+     label7:
+        $r9 := @caughtexception;
+
+     label8:
+        $r2 = virtualinvoke $r9.<java.lang.InterruptedException: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void b(java.lang.String)>($r2);
+
+     label9:
+        goto label3;
+
+     label10:
+        $r10 := @caughtexception;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error on GAThread: ");
+        $r2 = specialinvoke $r0.<com.google.b.a.a.ah: java.lang.String a(java.lang.Throwable)>($r10);
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>($r2);
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Google Analytics is shutting down.");
+        $r0.<com.google.b.a.a.ah: boolean b> = 1;
+        goto label3;
+
+     label11:
+        $r12 := @caughtexception;
+        staticinvoke <com.google.b.a.a.aq: void d(java.lang.String)>("sleep interrupted in GAThread initialize");
+        goto label1;
+
+     label12:
+        $r13 := @caughtexception;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>()>();
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error initializing the GAThread: ");
+        $r2 = specialinvoke $r0.<com.google.b.a.a.ah: java.lang.String a(java.lang.Throwable)>($r13);
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>($r2);
+        staticinvoke <com.google.b.a.a.aq: void a(java.lang.String)>("Google Analytics will not start up.");
+        $r0.<com.google.b.a.a.ah: boolean b> = 1;
+        goto label3;
+
+     label13:
+        return;
+
+        catch java.lang.InterruptedException from label0 to label1 with label11;
+        catch java.lang.Throwable from label1 to label3 with label12;
+        catch java.lang.InterruptedException from label5 to label6 with label7;
+        catch java.lang.Throwable from label4 to label6 with label10;
+        catch java.lang.Throwable from label8 to label9 with label10;
+    }
+}

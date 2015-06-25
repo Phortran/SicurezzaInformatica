@@ -1,0 +1,438 @@
+public class com.a.a.ax extends java.lang.Object
+{
+    private static int a;
+    private final com.a.a.ah b;
+    private final com.a.a.aw c;
+    private boolean d;
+    private boolean e;
+    private boolean f;
+    private boolean g;
+    private int h;
+    private int i;
+    private android.graphics.drawable.Drawable j;
+    private android.graphics.drawable.Drawable k;
+    private java.lang.Object l;
+
+    static void <clinit>()
+    {
+        <com.a.a.ax: int a> = 0;
+        return;
+    }
+
+    void <init>()
+    {
+        com.a.a.ax $r0;
+        com.a.a.aw $r1;
+
+        $r0 := @this: com.a.a.ax;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.a.a.ax: boolean g> = 1;
+        $r0.<com.a.a.ax: com.a.a.ah b> = null;
+        $r1 = new com.a.a.aw;
+        specialinvoke $r1.<com.a.a.aw: void <init>(android.net.Uri,int)>(null, 0);
+        $r0.<com.a.a.ax: com.a.a.aw c> = $r1;
+        return;
+    }
+
+    void <init>(com.a.a.ah, android.net.Uri, int)
+    {
+        com.a.a.ax $r0;
+        com.a.a.ah $r1;
+        android.net.Uri $r2;
+        int $i0;
+        boolean $z0;
+        java.lang.IllegalStateException $r4;
+        com.a.a.aw $r5;
+
+        $r0 := @this: com.a.a.ax;
+        $r1 := @parameter0: com.a.a.ah;
+        $r2 := @parameter1: android.net.Uri;
+        $i0 := @parameter2: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.a.a.ax: boolean g> = 1;
+        $z0 = $r1.<com.a.a.ah: boolean l>;
+        if $z0 == 0 goto label0;
+
+        $r4 = new java.lang.IllegalStateException;
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Picasso instance already shut down. Cannot submit new requests.");
+        throw $r4;
+
+     label0:
+        $r0.<com.a.a.ax: com.a.a.ah b> = $r1;
+        $r5 = new com.a.a.aw;
+        specialinvoke $r5.<com.a.a.aw: void <init>(android.net.Uri,int)>($r2, $i0);
+        $r0.<com.a.a.ax: com.a.a.aw c> = $r5;
+        return;
+    }
+
+    private com.a.a.au a(long)
+    {
+        com.a.a.ax $r0;
+        long $l0;
+        int $i1;
+        com.a.a.aw $r1;
+        com.a.a.ah $r2;
+        java.lang.String $r3, $r4, $r5, $r6;
+        com.a.a.au $r7, $r8;
+        boolean $z0;
+        java.lang.StringBuilder $r10;
+
+        $r0 := @this: com.a.a.ax;
+        $l0 := @parameter0: long;
+        $i1 = staticinvoke <com.a.a.ax: int c()>();
+        $r1 = $r0.<com.a.a.ax: com.a.a.aw c>;
+        $r7 = virtualinvoke $r1.<com.a.a.aw: com.a.a.au c()>();
+        $r7.<com.a.a.au: int a> = $i1;
+        $r7.<com.a.a.au: long b> = $l0;
+        $r2 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $z0 = $r2.<com.a.a.ah: boolean k>;
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r7.<com.a.a.au: java.lang.String b()>();
+        $r6 = virtualinvoke $r7.<com.a.a.au: java.lang.String toString()>();
+        staticinvoke <com.a.a.bj: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("Main", "created", $r5, $r6);
+
+     label0:
+        $r2 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $r8 = virtualinvoke $r2.<com.a.a.ah: com.a.a.au a(com.a.a.au)>($r7);
+        if $r8 == $r7 goto label1;
+
+        $r8.<com.a.a.au: int a> = $i1;
+        $r8.<com.a.a.au: long b> = $l0;
+        if $z0 == 0 goto label1;
+
+        $r4 = virtualinvoke $r8.<com.a.a.au: java.lang.String a()>();
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("into ");
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r3 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.a.a.bj: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("Main", "changed", $r4, $r3);
+
+     label1:
+        return $r8;
+    }
+
+    static int b()
+    {
+        int $i0;
+
+        $i0 = staticinvoke <com.a.a.ax: int c()>();
+        return $i0;
+    }
+
+    private static int c()
+    {
+        boolean $z0;
+        int $i0, $i1;
+        android.os.Handler $r0;
+        com.a.a.ay $r1;
+        java.util.concurrent.CountDownLatch $r2;
+        java.util.concurrent.atomic.AtomicInteger $r3;
+        java.lang.InterruptedException $r4;
+
+        $z0 = staticinvoke <com.a.a.bj: boolean b()>();
+        if $z0 == 0 goto label0;
+
+        $i1 = <com.a.a.ax: int a>;
+        $i0 = $i1 + 1;
+        <com.a.a.ax: int a> = $i0;
+        return $i1;
+
+     label0:
+        $r2 = new java.util.concurrent.CountDownLatch;
+        specialinvoke $r2.<java.util.concurrent.CountDownLatch: void <init>(int)>(1);
+        $r3 = new java.util.concurrent.atomic.AtomicInteger;
+        specialinvoke $r3.<java.util.concurrent.atomic.AtomicInteger: void <init>()>();
+        $r0 = <com.a.a.ah: android.os.Handler a>;
+        $r1 = new com.a.a.ay;
+        specialinvoke $r1.<com.a.a.ay: void <init>(java.util.concurrent.atomic.AtomicInteger,java.util.concurrent.CountDownLatch)>($r3, $r2);
+        virtualinvoke $r0.<android.os.Handler: boolean post(java.lang.Runnable)>($r1);
+
+     label1:
+        virtualinvoke $r2.<java.util.concurrent.CountDownLatch: void await()>();
+
+     label2:
+        $i1 = virtualinvoke $r3.<java.util.concurrent.atomic.AtomicInteger: int get()>();
+        return $i1;
+
+     label3:
+        $r4 := @caughtexception;
+        staticinvoke <com.a.a.bj: void a(java.lang.Throwable)>($r4);
+        goto label2;
+
+        catch java.lang.InterruptedException from label1 to label2 with label3;
+    }
+
+    private android.graphics.drawable.Drawable d()
+    {
+        com.a.a.ax $r0;
+        int $i0;
+        android.content.res.Resources $r1;
+        com.a.a.ah $r2;
+        android.content.Context $r3;
+        android.graphics.drawable.Drawable $r4;
+
+        $r0 := @this: com.a.a.ax;
+        $i0 = $r0.<com.a.a.ax: int h>;
+        if $i0 == 0 goto label0;
+
+        $r2 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $r3 = $r2.<com.a.a.ah: android.content.Context c>;
+        $r1 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources getResources()>();
+        $i0 = $r0.<com.a.a.ax: int h>;
+        $r4 = virtualinvoke $r1.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+        return $r4;
+
+     label0:
+        $r4 = $r0.<com.a.a.ax: android.graphics.drawable.Drawable j>;
+        return $r4;
+    }
+
+    com.a.a.ax a()
+    {
+        com.a.a.ax $r0;
+
+        $r0 := @this: com.a.a.ax;
+        $r0.<com.a.a.ax: boolean f> = 0;
+        return $r0;
+    }
+
+    public com.a.a.ax a(int)
+    {
+        com.a.a.ax $r0;
+        int $i0;
+        boolean $z0;
+        java.lang.IllegalStateException $r2;
+        java.lang.IllegalArgumentException $r3;
+        android.graphics.drawable.Drawable $r4;
+
+        $r0 := @this: com.a.a.ax;
+        $i0 := @parameter0: int;
+        $z0 = $r0.<com.a.a.ax: boolean g>;
+        if $z0 != 0 goto label0;
+
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Already explicitly declared as no placeholder.");
+        throw $r2;
+
+     label0:
+        if $i0 != 0 goto label1;
+
+        $r3 = new java.lang.IllegalArgumentException;
+        specialinvoke $r3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Placeholder image resource invalid.");
+        throw $r3;
+
+     label1:
+        $r4 = $r0.<com.a.a.ax: android.graphics.drawable.Drawable j>;
+        if $r4 == null goto label2;
+
+        $r2 = new java.lang.IllegalStateException;
+        specialinvoke $r2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Placeholder image already set.");
+        throw $r2;
+
+     label2:
+        $r0.<com.a.a.ax: int h> = $i0;
+        return $r0;
+    }
+
+    public com.a.a.ax a(int, int)
+    {
+        com.a.a.ax $r0;
+        int $i0, $i1;
+        com.a.a.aw $r1;
+
+        $r0 := @this: com.a.a.ax;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r1 = $r0.<com.a.a.ax: com.a.a.aw c>;
+        virtualinvoke $r1.<com.a.a.aw: com.a.a.aw a(int,int)>($i0, $i1);
+        return $r0;
+    }
+
+    public void a(android.widget.ImageView)
+    {
+        com.a.a.ax $r0;
+        android.widget.ImageView $r1;
+
+        $r0 := @this: com.a.a.ax;
+        $r1 := @parameter0: android.widget.ImageView;
+        virtualinvoke $r0.<com.a.a.ax: void a(android.widget.ImageView,com.a.a.m)>($r1, null);
+        return;
+    }
+
+    public void a(android.widget.ImageView, com.a.a.m)
+    {
+        com.a.a.ax $r0;
+        android.widget.ImageView $r1;
+        com.a.a.m $r2;
+        long $l0;
+        java.lang.String $r3, $r16, $r18;
+        com.a.a.aw $r4;
+        int $i1, $i2;
+        boolean $z0, $z1;
+        android.graphics.drawable.Drawable $r5;
+        java.lang.Object $r6;
+        com.a.a.au $r7;
+        java.lang.IllegalArgumentException $r8;
+        com.a.a.ah $r9;
+        java.lang.IllegalStateException $r10;
+        com.a.a.q $r11;
+        android.graphics.Bitmap $r12;
+        android.content.Context $r13;
+        com.a.a.an $r14;
+        java.lang.StringBuilder $r17;
+        com.a.a.aa $r19;
+
+        $r0 := @this: com.a.a.ax;
+        $r1 := @parameter0: android.widget.ImageView;
+        $r2 := @parameter1: com.a.a.m;
+        $l0 = staticinvoke <java.lang.System: long nanoTime()>();
+        staticinvoke <com.a.a.bj: void a()>();
+        if $r1 != null goto label0;
+
+        $r8 = new java.lang.IllegalArgumentException;
+        specialinvoke $r8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Target must not be null.");
+        throw $r8;
+
+     label0:
+        $r4 = $r0.<com.a.a.ax: com.a.a.aw c>;
+        $z0 = virtualinvoke $r4.<com.a.a.aw: boolean a()>();
+        if $z0 != 0 goto label2;
+
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        virtualinvoke $r9.<com.a.a.ah: void a(android.widget.ImageView)>($r1);
+        $z0 = $r0.<com.a.a.ax: boolean g>;
+        if $z0 == 0 goto label1;
+
+        $r5 = specialinvoke $r0.<com.a.a.ax: android.graphics.drawable.Drawable d()>();
+        staticinvoke <com.a.a.ar: void a(android.widget.ImageView,android.graphics.drawable.Drawable)>($r1, $r5);
+
+     label1:
+        return;
+
+     label2:
+        $z0 = $r0.<com.a.a.ax: boolean f>;
+        if $z0 == 0 goto label7;
+
+        $r4 = $r0.<com.a.a.ax: com.a.a.aw c>;
+        $z0 = virtualinvoke $r4.<com.a.a.aw: boolean b()>();
+        if $z0 == 0 goto label3;
+
+        $r10 = new java.lang.IllegalStateException;
+        specialinvoke $r10.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Fit cannot be used with resize.");
+        throw $r10;
+
+     label3:
+        $i2 = virtualinvoke $r1.<android.widget.ImageView: int getWidth()>();
+        $i1 = virtualinvoke $r1.<android.widget.ImageView: int getHeight()>();
+        if $i2 == 0 goto label4;
+
+        if $i1 != 0 goto label6;
+
+     label4:
+        $z0 = $r0.<com.a.a.ax: boolean g>;
+        if $z0 == 0 goto label5;
+
+        $r5 = specialinvoke $r0.<com.a.a.ax: android.graphics.drawable.Drawable d()>();
+        staticinvoke <com.a.a.ar: void a(android.widget.ImageView,android.graphics.drawable.Drawable)>($r1, $r5);
+
+     label5:
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $r11 = new com.a.a.q;
+        specialinvoke $r11.<com.a.a.q: void <init>(com.a.a.ax,android.widget.ImageView,com.a.a.m)>($r0, $r1, $r2);
+        virtualinvoke $r9.<com.a.a.ah: void a(android.widget.ImageView,com.a.a.q)>($r1, $r11);
+        goto label1;
+
+     label6:
+        $r4 = $r0.<com.a.a.ax: com.a.a.aw c>;
+        virtualinvoke $r4.<com.a.a.aw: com.a.a.aw a(int,int)>($i2, $i1);
+
+     label7:
+        $r7 = specialinvoke $r0.<com.a.a.ax: com.a.a.au a(long)>($l0);
+        $r3 = staticinvoke <com.a.a.bj: java.lang.String a(com.a.a.au)>($r7);
+        $z0 = $r0.<com.a.a.ax: boolean d>;
+        if $z0 != 0 goto label9;
+
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $r12 = virtualinvoke $r9.<com.a.a.ah: android.graphics.Bitmap b(java.lang.String)>($r3);
+        if $r12 == null goto label9;
+
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        virtualinvoke $r9.<com.a.a.ah: void a(android.widget.ImageView)>($r1);
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $r13 = $r9.<com.a.a.ah: android.content.Context c>;
+        $r14 = <com.a.a.an: com.a.a.an a>;
+        $z1 = $r0.<com.a.a.ax: boolean e>;
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $z0 = $r9.<com.a.a.ah: boolean j>;
+        staticinvoke <com.a.a.ar: void a(android.widget.ImageView,android.content.Context,android.graphics.Bitmap,com.a.a.an,boolean,boolean)>($r1, $r13, $r12, $r14, $z1, $z0);
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $z1 = $r9.<com.a.a.ah: boolean k>;
+        if $z1 == 0 goto label8;
+
+        $r16 = virtualinvoke $r7.<com.a.a.au: java.lang.String b()>();
+        $r17 = new java.lang.StringBuilder;
+        specialinvoke $r17.<java.lang.StringBuilder: void <init>()>();
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("from ");
+        $r14 = <com.a.a.an: com.a.a.an a>;
+        $r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r14);
+        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.a.a.bj: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("Main", "completed", $r16, $r18);
+
+     label8:
+        if $r2 == null goto label1;
+
+        interfaceinvoke $r2.<com.a.a.m: void a()>();
+        goto label1;
+
+     label9:
+        $z1 = $r0.<com.a.a.ax: boolean g>;
+        if $z1 == 0 goto label10;
+
+        $r5 = specialinvoke $r0.<com.a.a.ax: android.graphics.drawable.Drawable d()>();
+        staticinvoke <com.a.a.ar: void a(android.widget.ImageView,android.graphics.drawable.Drawable)>($r1, $r5);
+
+     label10:
+        $r19 = new com.a.a.aa;
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        $z1 = $r0.<com.a.a.ax: boolean d>;
+        $z0 = $r0.<com.a.a.ax: boolean e>;
+        $i1 = $r0.<com.a.a.ax: int i>;
+        $r5 = $r0.<com.a.a.ax: android.graphics.drawable.Drawable k>;
+        $r6 = $r0.<com.a.a.ax: java.lang.Object l>;
+        specialinvoke $r19.<com.a.a.aa: void <init>(com.a.a.ah,android.widget.ImageView,com.a.a.au,boolean,boolean,int,android.graphics.drawable.Drawable,java.lang.String,java.lang.Object,com.a.a.m)>($r9, $r1, $r7, $z1, $z0, $i1, $r5, $r3, $r6, $r2);
+        $r9 = $r0.<com.a.a.ax: com.a.a.ah b>;
+        virtualinvoke $r9.<com.a.a.ah: void a(com.a.a.a)>($r19);
+        goto label1;
+    }
+
+    public com.a.a.ax b(int)
+    {
+        com.a.a.ax $r0;
+        int $i0;
+        java.lang.IllegalArgumentException $r1;
+        android.graphics.drawable.Drawable $r3;
+        java.lang.IllegalStateException $r4;
+
+        $r0 := @this: com.a.a.ax;
+        $i0 := @parameter0: int;
+        if $i0 != 0 goto label0;
+
+        $r1 = new java.lang.IllegalArgumentException;
+        specialinvoke $r1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Error image resource invalid.");
+        throw $r1;
+
+     label0:
+        $r3 = $r0.<com.a.a.ax: android.graphics.drawable.Drawable k>;
+        if $r3 == null goto label1;
+
+        $r4 = new java.lang.IllegalStateException;
+        specialinvoke $r4.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Error image already set.");
+        throw $r4;
+
+     label1:
+        $r0.<com.a.a.ax: int i> = $i0;
+        return $r0;
+    }
+}

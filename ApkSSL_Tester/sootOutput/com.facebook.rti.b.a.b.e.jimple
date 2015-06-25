@@ -1,0 +1,260 @@
+public final class com.facebook.rti.b.a.b.e extends java.lang.Object
+{
+    private final android.content.Context a;
+    private final com.facebook.rti.b.a.b.a b;
+
+    public void <init>(android.content.Context, com.facebook.rti.b.a.b.a)
+    {
+        com.facebook.rti.b.a.b.e $r0;
+        android.content.Context $r1;
+        com.facebook.rti.b.a.b.a $r2;
+
+        $r0 := @this: com.facebook.rti.b.a.b.e;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: com.facebook.rti.b.a.b.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.a.b.e: android.content.Context a> = $r1;
+        $r0.<com.facebook.rti.b.a.b.e: com.facebook.rti.b.a.b.a b> = $r2;
+        return;
+    }
+
+    private static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+
+        $r0 := @parameter0: java.lang.String;
+        $r0 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String b(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r0.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("/", "-");
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(";", "-");
+        return $r2;
+    }
+
+    private static java.lang.String b()
+    {
+        java.lang.String $r0;
+
+        $r0 = <android.os.Build: java.lang.String MODEL>;
+        return $r0;
+    }
+
+    private static java.lang.String b(java.lang.String)
+    {
+        java.lang.String $r0, $r2;
+        int $i0, $i2;
+        java.lang.StringBuilder $r1;
+        char $c3;
+
+        $r0 := @parameter0: java.lang.String;
+        if $r0 == null goto label5;
+
+        $r1 = new java.lang.StringBuilder;
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(int)>($i0);
+        $i2 = 0;
+
+     label0:
+        $i0 = virtualinvoke $r0.<java.lang.String: int length()>();
+        if $i2 >= $i0 goto label4;
+
+        $c3 = virtualinvoke $r0.<java.lang.String: char charAt(int)>($i2);
+        if $c3 != 38 goto label2;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&amp;");
+
+     label1:
+        $i2 = $i2 + 1;
+        goto label0;
+
+     label2:
+        if $c3 < 32 goto label3;
+
+        if $c3 > 126 goto label3;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c3);
+        goto label1;
+
+     label3:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&#");
+        $r2 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>($c3);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";");
+        goto label1;
+
+     label4:
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+
+     label5:
+        return "";
+    }
+
+    private static java.lang.String c()
+    {
+        java.lang.String $r0;
+
+        $r0 = <android.os.Build$VERSION: java.lang.String RELEASE>;
+        return $r0;
+    }
+
+    private java.lang.String d()
+    {
+        com.facebook.rti.b.a.b.e $r0;
+        android.content.Context $r1;
+        android.util.DisplayMetrics $r2;
+        android.graphics.Point $r3;
+        int $i0, $i1;
+        android.content.res.Resources $r4;
+        java.lang.String $r5;
+        java.lang.Object $r6;
+        android.view.WindowManager $r7;
+        android.view.Display $r8;
+        java.lang.StringBuilder $r9;
+        float $f0;
+
+        $r0 := @this: com.facebook.rti.b.a.b.e;
+        $r1 = $r0.<com.facebook.rti.b.a.b.e: android.content.Context a>;
+        $r4 = virtualinvoke $r1.<android.content.Context: android.content.res.Resources getResources()>();
+        $r2 = virtualinvoke $r4.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $r3 = new android.graphics.Point;
+        $i1 = $r2.<android.util.DisplayMetrics: int widthPixels>;
+        $i0 = $r2.<android.util.DisplayMetrics: int heightPixels>;
+        specialinvoke $r3.<android.graphics.Point: void <init>(int,int)>($i1, $i0);
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 14 goto label0;
+
+        $r1 = $r0.<com.facebook.rti.b.a.b.e: android.content.Context a>;
+        $r6 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("window");
+        $r7 = (android.view.WindowManager) $r6;
+        if $r7 == null goto label0;
+
+        $r8 = interfaceinvoke $r7.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+        virtualinvoke $r8.<android.view.Display: void getSize(android.graphics.Point)>($r3);
+
+     label0:
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("{density=");
+        $f0 = $r2.<android.util.DisplayMetrics: float density>;
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",width=");
+        $i1 = $r3.<android.graphics.Point: int x>;
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",height=");
+        $i1 = $r3.<android.graphics.Point: int y>;
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+        $r5 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r5;
+    }
+
+    private java.lang.String e()
+    {
+        com.facebook.rti.b.a.b.e $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        java.lang.Object $r3;
+        android.telephony.TelephonyManager $r4;
+
+        $r0 := @this: com.facebook.rti.b.a.b.e;
+        $r1 = $r0.<com.facebook.rti.b.a.b.e: android.content.Context a>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("phone");
+        $r4 = (android.telephony.TelephonyManager) $r3;
+        if $r4 == null goto label0;
+
+        $r2 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getNetworkOperatorName()>();
+        return $r2;
+
+     label0:
+        return "";
+    }
+
+    private static java.lang.String f()
+    {
+        java.util.Locale $r0;
+        java.lang.String $r1;
+
+        $r0 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>();
+        $r1 = virtualinvoke $r0.<java.util.Locale: java.lang.String toString()>();
+        return $r1;
+    }
+
+    public final java.lang.String a()
+    {
+        com.facebook.rti.b.a.b.e $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2, $r4;
+        com.facebook.rti.b.a.b.a $r3;
+        java.lang.Object[] $r5;
+        android.content.Context $r6;
+
+        $r0 := @this: com.facebook.rti.b.a.b.e;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[");
+        $r5 = newarray (java.lang.Object)[10];
+        $r5[0] = "FBAN";
+        $r5[1] = "MQTT";
+        $r5[2] = "FBAV";
+        $r3 = $r0.<com.facebook.rti.b.a.b.e: com.facebook.rti.b.a.b.a b>;
+        $r2 = virtualinvoke $r3.<com.facebook.rti.b.a.b.a: java.lang.String a()>();
+        $r5[3] = $r2;
+        $r5[4] = "FBBV";
+        $r3 = $r0.<com.facebook.rti.b.a.b.e: com.facebook.rti.b.a.b.a b>;
+        $r2 = virtualinvoke $r3.<com.facebook.rti.b.a.b.a: java.lang.String b()>();
+        $r5[5] = $r2;
+        $r5[6] = "FBDM";
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.a.b.e: java.lang.String d()>();
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[7] = $r2;
+        $r5[8] = "FBLC";
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String f()>();
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[9] = $r2;
+        $r4 = staticinvoke <com.facebook.rti.a.h.a: java.lang.String a(java.lang.String,java.lang.Object[])>("%s/%s;%s/%s;%s/%s;%s/%s;%s/%s;", $r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = newarray (java.lang.Object)[12];
+        $r5[0] = "FBCR";
+        $r2 = specialinvoke $r0.<com.facebook.rti.b.a.b.e: java.lang.String e()>();
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[1] = $r2;
+        $r5[2] = "FBMF";
+        $r2 = <android.os.Build: java.lang.String MANUFACTURER>;
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[3] = $r2;
+        $r5[4] = "FBBD";
+        $r2 = <android.os.Build: java.lang.String BRAND>;
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[5] = $r2;
+        $r5[6] = "FBPN";
+        $r6 = $r0.<com.facebook.rti.b.a.b.e: android.content.Context a>;
+        $r2 = virtualinvoke $r6.<android.content.Context: java.lang.String getPackageName()>();
+        $r5[7] = $r2;
+        $r5[8] = "FBDV";
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String b()>();
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[9] = $r2;
+        $r5[10] = "FBSV";
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String c()>();
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[11] = $r2;
+        $r4 = staticinvoke <com.facebook.rti.a.h.a: java.lang.String a(java.lang.String,java.lang.Object[])>("%s/%s;%s/%s;%s/%s;%s/%s;%s/%s;%s/%s;", $r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = newarray (java.lang.Object)[2];
+        $r5[0] = "FBBK";
+        $r5[1] = "1";
+        $r4 = staticinvoke <com.facebook.rti.a.h.a: java.lang.String a(java.lang.String,java.lang.Object[])>("%s/%s;", $r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r5 = newarray (java.lang.Object)[3];
+        $r5[0] = "FBCA";
+        $r2 = <android.os.Build: java.lang.String CPU_ABI>;
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[1] = $r2;
+        $r2 = <android.os.Build: java.lang.String CPU_ABI2>;
+        $r2 = staticinvoke <com.facebook.rti.b.a.b.e: java.lang.String a(java.lang.String)>($r2);
+        $r5[2] = $r2;
+        $r4 = staticinvoke <com.facebook.rti.a.h.a: java.lang.String a(java.lang.String,java.lang.Object[])>("%s/%s:%s;", $r5);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");
+        $r4 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r4;
+    }
+}

@@ -1,0 +1,203 @@
+public class org.a.a.d extends java.lang.Object implements java.io.Serializable
+{
+    private java.util.List a;
+    private int b;
+    private int c;
+    private int d;
+
+    public void <init>()
+    {
+        org.a.a.d $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: org.a.a.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new java.util.ArrayList;
+        specialinvoke $r1.<java.util.ArrayList: void <init>()>();
+        $r0.<org.a.a.d: java.util.List a> = $r1;
+        return;
+    }
+
+    public double a(org.a.b.b)
+    {
+        org.a.a.d $r0;
+        org.a.b.b $r1;
+        float $f0, $f1;
+        int $i0;
+        double $d0, $d1;
+        byte $b1;
+
+        $r0 := @this: org.a.a.d;
+        $r1 := @parameter0: org.a.b.b;
+        $f0 = virtualinvoke $r1.<org.a.b.b: float a()>();
+        $i0 = $r0.<org.a.a.d: int c>;
+        $f1 = (float) $i0;
+        $f1 = $f0 - $f1;
+        $d0 = (double) $f1;
+        $f0 = virtualinvoke $r1.<org.a.b.b: float b()>();
+        $i0 = $r0.<org.a.a.d: int d>;
+        $f1 = (float) $i0;
+        $f1 = $f0 - $f1;
+        $f1 = neg $f1;
+        $d1 = (double) $f1;
+        $d1 = staticinvoke <java.lang.Math: double atan2(double,double)>($d1, $d0);
+        $b1 = $d1 cmpg 0.0;
+        if $b1 >= 0 goto label1;
+
+        $d1 = staticinvoke <java.lang.Math: double abs(double)>($d1);
+
+     label0:
+        $d1 = staticinvoke <java.lang.Math: double toDegrees(double)>($d1);
+        return $d1;
+
+     label1:
+        $d1 = 6.283185307179586 - $d1;
+        goto label0;
+    }
+
+    public void a()
+    {
+        org.a.a.d $r0;
+        java.util.List $r1;
+
+        $r0 := @this: org.a.a.d;
+        $r1 = $r0.<org.a.a.d: java.util.List a>;
+        interfaceinvoke $r1.<java.util.List: void clear()>();
+        return;
+    }
+
+    public void a(int, float, float, float)
+    {
+        org.a.a.d $r0;
+        int $i0;
+        float $f0, $f1, $f2;
+        java.util.List $r1;
+        org.a.a.e $r2;
+
+        $r0 := @this: org.a.a.d;
+        $i0 := @parameter0: int;
+        $f0 := @parameter1: float;
+        $f1 := @parameter2: float;
+        $f2 := @parameter3: float;
+        $r1 = $r0.<org.a.a.d: java.util.List a>;
+        $r2 = new org.a.a.e;
+        specialinvoke $r2.<org.a.a.e: void <init>(int,float,float,float)>($i0, $f0, $f1, $f2);
+        interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>($r2);
+        return;
+    }
+
+    public void a(int, int, int)
+    {
+        org.a.a.d $r0;
+        int $i0, $i1, $i2;
+
+        $r0 := @this: org.a.a.d;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $r0.<org.a.a.d: int b> = $i0;
+        $r0.<org.a.a.d: int c> = $i1;
+        $r0.<org.a.a.d: int d> = $i2;
+        return;
+    }
+
+    public boolean a(int)
+    {
+        org.a.a.d $r0;
+        int $i0, $i1;
+        java.util.List $r1;
+
+        $r0 := @this: org.a.a.d;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<org.a.a.d: java.util.List a>;
+        $i1 = interfaceinvoke $r1.<java.util.List: int size()>();
+        if $i1 != $i0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public boolean b(org.a.b.b)
+    {
+        org.a.a.d $r0;
+        org.a.b.b $r1;
+        int $i0, $i1;
+        float $f0, $f1;
+        double $d1, $d2;
+        byte $b2;
+
+        $r0 := @this: org.a.a.d;
+        $r1 := @parameter0: org.a.b.b;
+        $i0 = $r0.<org.a.a.d: int c>;
+        $f1 = (float) $i0;
+        $f0 = virtualinvoke $r1.<org.a.b.b: float a()>();
+        $f1 = $f1 - $f0;
+        $d1 = (double) $f1;
+        $d1 = staticinvoke <java.lang.Math: double pow(double,double)>($d1, 2.0);
+        $i0 = $r0.<org.a.a.d: int d>;
+        $f1 = (float) $i0;
+        $f0 = virtualinvoke $r1.<org.a.b.b: float b()>();
+        $f1 = $f1 - $f0;
+        $d2 = (double) $f1;
+        $d2 = staticinvoke <java.lang.Math: double pow(double,double)>($d2, 2.0);
+        $d2 = $d1 + $d2;
+        $i0 = $r0.<org.a.a.d: int b>;
+        $i1 = $r0.<org.a.a.d: int b>;
+        $i1 = $i0 * $i1;
+        $d1 = (double) $i1;
+        $b2 = $d2 cmpg $d1;
+        if $b2 > 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public org.a.b.c c(org.a.b.b)
+    {
+        org.a.a.d $r0;
+        org.a.b.b $r1;
+        boolean $z0;
+        double $d0, $d1;
+        int $i0;
+        java.util.Iterator $r2;
+        java.lang.Object $r3;
+        java.util.List $r4;
+        org.a.a.e $r5;
+        org.a.b.c $r6;
+        float $f0;
+
+        $r0 := @this: org.a.a.d;
+        $r1 := @parameter0: org.a.b.b;
+        $z0 = virtualinvoke $r0.<org.a.a.d: boolean b(org.a.b.b)>($r1);
+        if $z0 == 0 goto label1;
+
+        $d0 = virtualinvoke $r0.<org.a.a.d: double a(org.a.b.b)>($r1);
+        $r4 = $r0.<org.a.a.d: java.util.List a>;
+        $r2 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r5 = (org.a.a.e) $r3;
+        $z0 = virtualinvoke $r5.<org.a.a.e: boolean a(double)>($d0);
+        if $z0 == 0 goto label0;
+
+        $r6 = new org.a.b.c;
+        $i0 = virtualinvoke $r5.<org.a.a.e: int a()>();
+        $f0 = virtualinvoke $r5.<org.a.a.e: float b()>();
+        $d0 = (double) $f0;
+        $f0 = virtualinvoke $r5.<org.a.a.e: float b()>();
+        $d1 = (double) $f0;
+        specialinvoke $r6.<org.a.b.c: void <init>(int,int,double,double)>(0, $i0, $d0, $d1);
+        return $r6;
+
+     label1:
+        return null;
+    }
+}

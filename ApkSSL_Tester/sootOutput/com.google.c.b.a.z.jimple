@@ -1,0 +1,91 @@
+final class com.google.c.b.a.z extends com.google.c.ae
+{
+
+    void <init>()
+    {
+        com.google.c.b.a.z $r0;
+
+        $r0 := @this: com.google.c.b.a.z;
+        specialinvoke $r0.<com.google.c.ae: void <init>()>();
+        return;
+    }
+
+    public java.lang.Class a(com.google.c.d.a)
+    {
+        com.google.c.b.a.z $r0;
+        com.google.c.d.a $r1;
+        com.google.c.d.c $r2, $r3;
+        java.lang.UnsupportedOperationException $r4;
+
+        $r0 := @this: com.google.c.b.a.z;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r1.<com.google.c.d.a: com.google.c.d.c f()>();
+        $r3 = <com.google.c.d.c: com.google.c.d.c i>;
+        if $r2 != $r3 goto label0;
+
+        virtualinvoke $r1.<com.google.c.d.a: void j()>();
+        return null;
+
+     label0:
+        $r4 = new java.lang.UnsupportedOperationException;
+        specialinvoke $r4.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>("Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?");
+        throw $r4;
+    }
+
+    public void a(com.google.c.d.d, java.lang.Class)
+    {
+        com.google.c.b.a.z $r0;
+        com.google.c.d.d $r1;
+        java.lang.Class $r2;
+        java.lang.UnsupportedOperationException $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.google.c.b.a.z;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Class;
+        if $r2 != null goto label0;
+
+        virtualinvoke $r1.<com.google.c.d.d: com.google.c.d.d f()>();
+        return;
+
+     label0:
+        $r3 = new java.lang.UnsupportedOperationException;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Attempted to serialize java.lang.Class: ");
+        $r5 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". Forgot to register a type adapter?");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r3.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>($r5);
+        throw $r3;
+    }
+
+    public volatile void a(com.google.c.d.d, java.lang.Object)
+    {
+        com.google.c.b.a.z $r0;
+        com.google.c.d.d $r1;
+        java.lang.Object $r2;
+        java.lang.Class $r3;
+
+        $r0 := @this: com.google.c.b.a.z;
+        $r1 := @parameter0: com.google.c.d.d;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = (java.lang.Class) $r2;
+        virtualinvoke $r0.<com.google.c.b.a.z: void a(com.google.c.d.d,java.lang.Class)>($r1, $r3);
+        return;
+    }
+
+    public java.lang.Object b(com.google.c.d.a)
+    {
+        com.google.c.b.a.z $r0;
+        com.google.c.d.a $r1;
+        java.lang.Class $r2;
+
+        $r0 := @this: com.google.c.b.a.z;
+        $r1 := @parameter0: com.google.c.d.a;
+        $r2 = virtualinvoke $r0.<com.google.c.b.a.z: java.lang.Class a(com.google.c.d.a)>($r1);
+        return $r2;
+    }
+}

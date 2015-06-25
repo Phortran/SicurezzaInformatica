@@ -1,0 +1,65 @@
+final class com.google.android.gms.internal.fl$a extends com.google.android.gms.internal.fg
+{
+    final com.google.android.gms.internal.fl a;
+    private final com.google.android.gms.d.c b;
+
+    public void a(com.google.android.gms.common.data.d, java.lang.String, java.lang.String)
+    {
+        com.google.android.gms.internal.fl$a $r0;
+        com.google.android.gms.common.data.d $r1;
+        java.lang.String $r2, $r3;
+        android.os.Bundle $r4;
+        com.google.android.gms.common.a $r6;
+        com.google.android.gms.internal.fl $r7, $r11;
+        android.os.Parcelable $r8;
+        android.app.PendingIntent $r9;
+        int $i0;
+        boolean $z0;
+        com.google.android.gms.internal.il $r10;
+        com.google.android.gms.d.c $r12;
+
+        $r0 := @this: com.google.android.gms.internal.fl$a;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 = virtualinvoke $r1.<com.google.android.gms.common.data.d: android.os.Bundle f()>();
+        if $r4 == null goto label4;
+
+        $r4 = virtualinvoke $r1.<com.google.android.gms.common.data.d: android.os.Bundle f()>();
+        $r8 = virtualinvoke $r4.<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)>("pendingIntent");
+        $r9 = (android.app.PendingIntent) $r8;
+
+     label0:
+        $r6 = new com.google.android.gms.common.a;
+        $i0 = virtualinvoke $r1.<com.google.android.gms.common.data.d: int e()>();
+        specialinvoke $r6.<com.google.android.gms.common.a: void <init>(int,android.app.PendingIntent)>($i0, $r9);
+        $z0 = virtualinvoke $r6.<com.google.android.gms.common.a: boolean b()>();
+        if $z0 != 0 goto label3;
+
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<com.google.android.gms.common.data.d: boolean h()>();
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r1.<com.google.android.gms.common.data.d: void i()>();
+
+     label1:
+        $r1 = null;
+
+     label2:
+        $r7 = $r0.<com.google.android.gms.internal.fl$a: com.google.android.gms.internal.fl a>;
+        $r10 = new com.google.android.gms.internal.il;
+        $r11 = $r0.<com.google.android.gms.internal.fl$a: com.google.android.gms.internal.fl a>;
+        $r12 = $r0.<com.google.android.gms.internal.fl$a: com.google.android.gms.d.c b>;
+        specialinvoke $r10.<com.google.android.gms.internal.il: void <init>(com.google.android.gms.internal.fl,com.google.android.gms.d.c,com.google.android.gms.common.a,com.google.android.gms.common.data.d,java.lang.String,java.lang.String)>($r11, $r12, $r6, $r1, $r2, $r3);
+        virtualinvoke $r7.<com.google.android.gms.internal.fl: void a(com.google.android.gms.internal.ev)>($r10);
+        return;
+
+     label3:
+        goto label2;
+
+     label4:
+        $r9 = null;
+        goto label0;
+    }
+}

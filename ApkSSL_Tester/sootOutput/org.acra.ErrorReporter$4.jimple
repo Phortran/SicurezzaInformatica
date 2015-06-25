@@ -1,0 +1,99 @@
+class org.acra.ErrorReporter$4 extends java.lang.Thread
+{
+    final org.acra.ErrorReporter this$0;
+    final boolean val$endApplication;
+    final java.lang.String val$reportFileName;
+    final boolean val$showDirectDialog;
+    final org.acra.SendWorker val$worker;
+
+    void <init>(org.acra.ErrorReporter, org.acra.SendWorker, boolean, java.lang.String, boolean)
+    {
+        org.acra.ErrorReporter$4 $r0;
+        org.acra.ErrorReporter $r1;
+        org.acra.SendWorker $r2;
+        boolean $z0, $z1;
+        java.lang.String $r3;
+
+        $r0 := @this: org.acra.ErrorReporter$4;
+        $r1 := @parameter0: org.acra.ErrorReporter;
+        $r2 := @parameter1: org.acra.SendWorker;
+        $z0 := @parameter2: boolean;
+        $r3 := @parameter3: java.lang.String;
+        $z1 := @parameter4: boolean;
+        $r0.<org.acra.ErrorReporter$4: org.acra.ErrorReporter this$0> = $r1;
+        $r0.<org.acra.ErrorReporter$4: org.acra.SendWorker val$worker> = $r2;
+        $r0.<org.acra.ErrorReporter$4: boolean val$showDirectDialog> = $z0;
+        $r0.<org.acra.ErrorReporter$4: java.lang.String val$reportFileName> = $r3;
+        $r0.<org.acra.ErrorReporter$4: boolean val$endApplication> = $z1;
+        specialinvoke $r0.<java.lang.Thread: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        org.acra.ErrorReporter$4 $r0;
+        java.lang.String $r1, $r2;
+        boolean $z0;
+        org.acra.SendWorker $r3;
+        java.lang.InterruptedException $r4;
+        org.acra.ErrorReporter $r5;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: org.acra.ErrorReporter$4;
+        $r1 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r1, "Waiting for Toast + worker...");
+
+     label0:
+        $z0 = staticinvoke <org.acra.ErrorReporter: boolean access$200()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.<org.acra.ErrorReporter$4: org.acra.SendWorker val$worker>;
+        if $r3 == null goto label4;
+
+        $r3 = $r0.<org.acra.ErrorReporter$4: org.acra.SendWorker val$worker>;
+        $z0 = virtualinvoke $r3.<org.acra.SendWorker: boolean isAlive()>();
+        if $z0 == 0 goto label4;
+
+     label1:
+        staticinvoke <java.lang.Thread: void sleep(long)>(100L);
+
+     label2:
+        goto label0;
+
+     label3:
+        $r4 := @caughtexception;
+        $r1 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>($r1, "Error : ", $r4);
+        goto label0;
+
+     label4:
+        $z0 = $r0.<org.acra.ErrorReporter$4: boolean val$showDirectDialog>;
+        if $z0 == 0 goto label5;
+
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r2, "About to create DIALOG from #handleException");
+        $r5 = $r0.<org.acra.ErrorReporter$4: org.acra.ErrorReporter this$0>;
+        $r2 = $r0.<org.acra.ErrorReporter$4: java.lang.String val$reportFileName>;
+        virtualinvoke $r5.<org.acra.ErrorReporter: void notifyDialog(java.lang.String)>($r2);
+
+     label5:
+        $r2 = <org.acra.ACRA: java.lang.String LOG_TAG>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Wait for Toast + worker ended. Kill Application ? ");
+        $z0 = $r0.<org.acra.ErrorReporter$4: boolean val$endApplication>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r1 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>($r2, $r1);
+        $z0 = $r0.<org.acra.ErrorReporter$4: boolean val$endApplication>;
+        if $z0 == 0 goto label6;
+
+        $r5 = $r0.<org.acra.ErrorReporter$4: org.acra.ErrorReporter this$0>;
+        staticinvoke <org.acra.ErrorReporter: void access$300(org.acra.ErrorReporter)>($r5);
+
+     label6:
+        return;
+
+        catch java.lang.InterruptedException from label1 to label2 with label3;
+    }
+}

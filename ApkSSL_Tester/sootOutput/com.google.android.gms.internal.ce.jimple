@@ -1,0 +1,345 @@
+public final class com.google.android.gms.internal.ce extends java.lang.Object
+{
+    private static final java.text.SimpleDateFormat a;
+
+    static void <clinit>()
+    {
+        java.text.SimpleDateFormat $r0;
+
+        $r0 = new java.text.SimpleDateFormat;
+        specialinvoke $r0.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("yyyyMMdd");
+        <com.google.android.gms.internal.ce: java.text.SimpleDateFormat a> = $r0;
+        return;
+    }
+
+    private static java.lang.Integer a(boolean)
+    {
+        boolean $z0;
+        byte $b0;
+        java.lang.Integer $r0;
+
+        $z0 := @parameter0: boolean;
+        if $z0 == 0 goto label1;
+
+        $b0 = 1;
+
+     label0:
+        $r0 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($b0);
+        return $r0;
+
+     label1:
+        $b0 = 0;
+        goto label0;
+    }
+
+    public static java.lang.String a(com.google.android.gms.internal.bu, com.google.android.gms.internal.cj, android.location.Location)
+    {
+        com.google.android.gms.internal.bu $r0;
+        com.google.android.gms.internal.cj $r1;
+        android.location.Location $r2;
+        java.util.HashMap $r3;
+        android.os.Bundle $r4;
+        java.lang.String $r5, $r9;
+        java.lang.Integer $r6;
+        com.google.android.gms.internal.v $r7;
+        com.google.android.gms.internal.x $r8;
+        int $i0;
+        android.content.pm.ApplicationInfo $r10;
+        android.content.pm.PackageInfo $r11;
+        com.google.android.gms.internal.co $r12;
+        boolean $z0;
+        org.json.JSONObject $r13;
+        java.lang.StringBuilder $r14;
+        org.json.JSONException $r15;
+
+        $r0 := @parameter0: com.google.android.gms.internal.bu;
+        $r1 := @parameter1: com.google.android.gms.internal.cj;
+        $r2 := @parameter2: android.location.Location;
+        $r3 = new java.util.HashMap;
+
+     label0:
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $r4 = $r0.<com.google.android.gms.internal.bu: android.os.Bundle c>;
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<com.google.android.gms.internal.bu: android.os.Bundle c>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("ad_pos", $r4);
+
+     label1:
+        $r7 = $r0.<com.google.android.gms.internal.bu: com.google.android.gms.internal.v d>;
+        staticinvoke <com.google.android.gms.internal.ce: void a(java.util.HashMap,com.google.android.gms.internal.v)>($r3, $r7);
+        $r8 = $r0.<com.google.android.gms.internal.bu: com.google.android.gms.internal.x e>;
+        $r9 = $r8.<com.google.android.gms.internal.x: java.lang.String c>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("format", $r9);
+        $r8 = $r0.<com.google.android.gms.internal.bu: com.google.android.gms.internal.x e>;
+        $i0 = $r8.<com.google.android.gms.internal.x: int g>;
+        if $i0 != -1 goto label2;
+
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("smart_w", "full");
+
+     label2:
+        $r8 = $r0.<com.google.android.gms.internal.bu: com.google.android.gms.internal.x e>;
+        $i0 = $r8.<com.google.android.gms.internal.x: int d>;
+        if $i0 != -2 goto label3;
+
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("smart_h", "auto");
+
+     label3:
+        $r5 = $r0.<com.google.android.gms.internal.bu: java.lang.String f>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("slotname", $r5);
+        $r10 = $r0.<com.google.android.gms.internal.bu: android.content.pm.ApplicationInfo g>;
+        $r5 = $r10.<android.content.pm.ApplicationInfo: java.lang.String packageName>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("pn", $r5);
+        $r11 = $r0.<com.google.android.gms.internal.bu: android.content.pm.PackageInfo h>;
+        if $r11 == null goto label4;
+
+        $r11 = $r0.<com.google.android.gms.internal.bu: android.content.pm.PackageInfo h>;
+        $i0 = $r11.<android.content.pm.PackageInfo: int versionCode>;
+        $r6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("vc", $r6);
+
+     label4:
+        $r5 = $r0.<com.google.android.gms.internal.bu: java.lang.String i>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("ms", $r5);
+        $r5 = $r0.<com.google.android.gms.internal.bu: java.lang.String j>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("seq_num", $r5);
+        $r5 = $r0.<com.google.android.gms.internal.bu: java.lang.String k>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("session_id", $r5);
+        $r12 = $r0.<com.google.android.gms.internal.bu: com.google.android.gms.internal.co l>;
+        $r5 = $r12.<com.google.android.gms.internal.co: java.lang.String c>;
+        virtualinvoke $r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("js", $r5);
+        staticinvoke <com.google.android.gms.internal.ce: void a(java.util.HashMap,com.google.android.gms.internal.cj)>($r3, $r1);
+        staticinvoke <com.google.android.gms.internal.ce: void a(java.util.HashMap,android.location.Location)>($r3, $r2);
+        $z0 = staticinvoke <com.google.android.gms.internal.dc: boolean a(int)>(2);
+        if $z0 == 0 goto label5;
+
+        $r13 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(java.util.Map)>($r3);
+        $r9 = virtualinvoke $r13.<org.json.JSONObject: java.lang.String toString(int)>(2);
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Ad Request JSON: ");
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void d(java.lang.String)>($r9);
+
+     label5:
+        $r13 = staticinvoke <com.google.android.gms.internal.cs: org.json.JSONObject a(java.util.Map)>($r3);
+        $r9 = virtualinvoke $r13.<org.json.JSONObject: java.lang.String toString()>();
+
+     label6:
+        return $r9;
+
+     label7:
+        $r15 := @caughtexception;
+        $r14 = new java.lang.StringBuilder;
+        specialinvoke $r14.<java.lang.StringBuilder: void <init>()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Problem serializing ad request to JSON: ");
+        $r9 = virtualinvoke $r15.<org.json.JSONException: java.lang.String getMessage()>();
+        $r14 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>($r9);
+        return null;
+
+        catch org.json.JSONException from label0 to label6 with label7;
+    }
+
+    private static void a(java.util.HashMap, android.location.Location)
+    {
+        java.util.HashMap $r0, $r2;
+        android.location.Location $r1;
+        float $f0, $f1;
+        double $d0, $d1;
+        java.lang.Float $r4;
+        long $l1;
+        java.lang.Long $r5, $r6, $r7;
+
+        $r0 := @parameter0: java.util.HashMap;
+        $r1 := @parameter1: android.location.Location;
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        $f0 = virtualinvoke $r1.<android.location.Location: float getAccuracy()>();
+        $f1 = $f0 * 1000.0F;
+        $r4 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f1);
+        $l1 = virtualinvoke $r1.<android.location.Location: long getTime()>();
+        $l1 = $l1 * 1000L;
+        $r5 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>();
+        $d0 = $d0 * 1.0E7;
+        $l1 = (long) $d0;
+        $r6 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        $d0 = virtualinvoke $r1.<android.location.Location: double getLongitude()>();
+        $d1 = $d0 * 1.0E7;
+        $l1 = (long) $d1;
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("radius", $r4);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("lat", $r6);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("long", $r7);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("time", $r5);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("loc", $r2);
+        goto label0;
+    }
+
+    private static void a(java.util.HashMap, com.google.android.gms.internal.cj)
+    {
+        java.util.HashMap $r0;
+        com.google.android.gms.internal.cj $r1;
+        java.lang.String $r2, $r4;
+        int $i0;
+        java.lang.Integer $r3;
+        boolean $z0;
+        float $f0;
+        java.lang.Float $r5;
+
+        $r0 := @parameter0: java.util.HashMap;
+        $r1 := @parameter1: com.google.android.gms.internal.cj;
+        $i0 = $r1.<com.google.android.gms.internal.cj: int a>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("am", $r3);
+        $z0 = $r1.<com.google.android.gms.internal.cj: boolean b>;
+        $r3 = staticinvoke <com.google.android.gms.internal.ce: java.lang.Integer a(boolean)>($z0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("cog", $r3);
+        $z0 = $r1.<com.google.android.gms.internal.cj: boolean c>;
+        $r3 = staticinvoke <com.google.android.gms.internal.ce: java.lang.Integer a(boolean)>($z0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("coh", $r3);
+        $r2 = $r1.<com.google.android.gms.internal.cj: java.lang.String d>;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r2);
+        if $z0 != 0 goto label0;
+
+        $r4 = $r1.<com.google.android.gms.internal.cj: java.lang.String d>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("carrier", $r4);
+
+     label0:
+        $r2 = $r1.<com.google.android.gms.internal.cj: java.lang.String e>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("gl", $r2);
+        $z0 = $r1.<com.google.android.gms.internal.cj: boolean f>;
+        if $z0 == 0 goto label1;
+
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("simulator", $r3);
+
+     label1:
+        $z0 = $r1.<com.google.android.gms.internal.cj: boolean g>;
+        $r3 = staticinvoke <com.google.android.gms.internal.ce: java.lang.Integer a(boolean)>($z0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("ma", $r3);
+        $z0 = $r1.<com.google.android.gms.internal.cj: boolean h>;
+        $r3 = staticinvoke <com.google.android.gms.internal.ce: java.lang.Integer a(boolean)>($z0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("sp", $r3);
+        $r2 = $r1.<com.google.android.gms.internal.cj: java.lang.String i>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("hl", $r2);
+        $r4 = $r1.<com.google.android.gms.internal.cj: java.lang.String j>;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r4);
+        if $z0 != 0 goto label2;
+
+        $r2 = $r1.<com.google.android.gms.internal.cj: java.lang.String j>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("mv", $r2);
+
+     label2:
+        $i0 = $r1.<com.google.android.gms.internal.cj: int k>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("muv", $r3);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int l>;
+        if $i0 == -2 goto label3;
+
+        $i0 = $r1.<com.google.android.gms.internal.cj: int l>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("cnt", $r3);
+
+     label3:
+        $i0 = $r1.<com.google.android.gms.internal.cj: int m>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("gnt", $r3);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int n>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("pt", $r3);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int o>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("rm", $r3);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int p>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("riv", $r3);
+        $f0 = $r1.<com.google.android.gms.internal.cj: float q>;
+        $r5 = staticinvoke <java.lang.Float: java.lang.Float valueOf(float)>($f0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("u_sd", $r5);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int s>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("sh", $r3);
+        $i0 = $r1.<com.google.android.gms.internal.cj: int r>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("sw", $r3);
+        return;
+    }
+
+    private static void a(java.util.HashMap, com.google.android.gms.internal.v)
+    {
+        java.util.HashMap $r0;
+        com.google.android.gms.internal.v $r1;
+        long $l0, $l1;
+        java.text.SimpleDateFormat $r2;
+        java.lang.String $r3;
+        byte $b3;
+        java.util.Date $r5;
+        android.os.Bundle $r6;
+        int $i4;
+        java.lang.Integer $r7;
+        java.util.List $r8;
+        boolean $z0;
+
+        $r0 := @parameter0: java.util.HashMap;
+        $r1 := @parameter1: com.google.android.gms.internal.v;
+        $l0 = $r1.<com.google.android.gms.internal.v: long c>;
+        $b3 = $l0 cmp -1L;
+        if $b3 == 0 goto label0;
+
+        $r2 = <com.google.android.gms.internal.ce: java.text.SimpleDateFormat a>;
+        $r5 = new java.util.Date;
+        $l1 = $r1.<com.google.android.gms.internal.v: long c>;
+        specialinvoke $r5.<java.util.Date: void <init>(long)>($l1);
+        $r3 = virtualinvoke $r2.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r5);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("cust_age", $r3);
+
+     label0:
+        $r6 = $r1.<com.google.android.gms.internal.v: android.os.Bundle d>;
+        if $r6 == null goto label1;
+
+        $r6 = $r1.<com.google.android.gms.internal.v: android.os.Bundle d>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("extras", $r6);
+
+     label1:
+        $i4 = $r1.<com.google.android.gms.internal.v: int e>;
+        if $i4 == -1 goto label2;
+
+        $i4 = $r1.<com.google.android.gms.internal.v: int e>;
+        $r7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i4);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("cust_gender", $r7);
+
+     label2:
+        $r8 = $r1.<com.google.android.gms.internal.v: java.util.List f>;
+        if $r8 == null goto label3;
+
+        $r8 = $r1.<com.google.android.gms.internal.v: java.util.List f>;
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("kw", $r8);
+
+     label3:
+        $i4 = $r1.<com.google.android.gms.internal.v: int h>;
+        if $i4 == -1 goto label4;
+
+        $i4 = $r1.<com.google.android.gms.internal.v: int h>;
+        $r7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i4);
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("tag_for_child_directed_treatment", $r7);
+
+     label4:
+        $z0 = $r1.<com.google.android.gms.internal.v: boolean g>;
+        if $z0 == 0 goto label5;
+
+        virtualinvoke $r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("adtest", "on");
+
+     label5:
+        return;
+    }
+}

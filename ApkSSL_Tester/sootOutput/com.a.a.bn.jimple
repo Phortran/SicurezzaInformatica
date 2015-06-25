@@ -1,0 +1,24 @@
+class com.a.a.bn extends java.lang.Thread
+{
+
+    public void <init>(java.lang.Runnable)
+    {
+        com.a.a.bn $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: com.a.a.bn;
+        $r1 := @parameter0: java.lang.Runnable;
+        specialinvoke $r0.<java.lang.Thread: void <init>(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public void run()
+    {
+        com.a.a.bn $r0;
+
+        $r0 := @this: com.a.a.bn;
+        staticinvoke <android.os.Process: void setThreadPriority(int)>(10);
+        specialinvoke $r0.<java.lang.Thread: void run()>();
+        return;
+    }
+}

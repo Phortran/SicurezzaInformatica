@@ -1,0 +1,39 @@
+public class android.support.v4.view.n extends java.lang.Object
+{
+    static final android.support.v4.view.o a;
+
+    static void <clinit>()
+    {
+        int $i0;
+        android.support.v4.view.q $r0;
+        android.support.v4.view.p $r1;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 17 goto label1;
+
+        $r0 = new android.support.v4.view.q;
+        specialinvoke $r0.<android.support.v4.view.q: void <init>()>();
+        <android.support.v4.view.n: android.support.v4.view.o a> = $r0;
+
+     label0:
+        return;
+
+     label1:
+        $r1 = new android.support.v4.view.p;
+        specialinvoke $r1.<android.support.v4.view.p: void <init>()>();
+        <android.support.v4.view.n: android.support.v4.view.o a> = $r1;
+        goto label0;
+    }
+
+    public static int a(int, int)
+    {
+        int $i0, $i1;
+        android.support.v4.view.o $r0;
+
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $r0 = <android.support.v4.view.n: android.support.v4.view.o a>;
+        $i1 = interfaceinvoke $r0.<android.support.v4.view.o: int a(int,int)>($i0, $i1);
+        return $i1;
+    }
+}

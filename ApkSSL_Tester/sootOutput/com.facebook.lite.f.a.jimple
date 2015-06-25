@@ -1,0 +1,263 @@
+public final class com.facebook.lite.f.a extends java.lang.Object
+{
+    private final android.content.Context a;
+
+    public void <init>(android.content.Context)
+    {
+        com.facebook.lite.f.a $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.f.a;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = virtualinvoke $r1.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r0.<com.facebook.lite.f.a: android.content.Context a> = $r1;
+        return;
+    }
+
+    private static void a(android.content.ContentResolver, java.util.Map)
+    {
+        android.content.ContentResolver $r0;
+        java.util.Map $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+        java.util.HashSet $r4;
+        android.database.Cursor $r5;
+        android.net.Uri $r6;
+        boolean $z0;
+        int $i1;
+        long $l2;
+        java.lang.Long $r7;
+        java.lang.Object $r8;
+        com.facebook.lite.f.b $r9;
+        java.lang.Exception $r10;
+        java.lang.Throwable $r12;
+
+        $r0 := @parameter0: android.content.ContentResolver;
+        $r1 := @parameter1: java.util.Map;
+        $r3 = newarray (java.lang.String)[2];
+        $r3[0] = "contact_id";
+        $r3[1] = "data1";
+        $r4 = new java.util.HashSet;
+        specialinvoke $r4.<java.util.HashSet: void <init>()>();
+        $r6 = <android.provider.ContactsContract$CommonDataKinds$Email: android.net.Uri CONTENT_URI>;
+        $r5 = virtualinvoke $r0.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r6, $r3, null, null, null);
+        if $r5 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToNext()>();
+        if $z0 == 0 goto label6;
+
+        $i1 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndex(java.lang.String)>("contact_id");
+        $l2 = interfaceinvoke $r5.<android.database.Cursor: long getLong(int)>($i1);
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        if $r8 == null goto label1;
+
+        $i1 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndex(java.lang.String)>("data1");
+        $r2 = interfaceinvoke $r5.<android.database.Cursor: java.lang.String getString(int)>($i1);
+        $z0 = interfaceinvoke $r4.<java.util.Set: boolean contains(java.lang.Object)>($r2);
+        if $z0 != 0 goto label1;
+
+        interfaceinvoke $r4.<java.util.Set: boolean add(java.lang.Object)>($r2);
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        $r9 = (com.facebook.lite.f.b) $r8;
+        virtualinvoke $r9.<com.facebook.lite.f.b: void a(java.lang.String)>($r2);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r10 := @caughtexception;
+
+     label4:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("PhonebookUtils", "contacts/failed while interacting over contact\'s emails.", $r10);
+
+     label5:
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label6:
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label7:
+        $r12 := @caughtexception;
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        throw $r12;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label1 to label2 with label7;
+        catch java.lang.Throwable from label4 to label5 with label7;
+    }
+
+    private static void b(android.content.ContentResolver, java.util.Map)
+    {
+        android.content.ContentResolver $r0;
+        java.util.Map $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+        java.util.HashSet $r4;
+        android.database.Cursor $r5;
+        android.net.Uri $r6;
+        boolean $z0;
+        int $i1;
+        long $l2;
+        java.lang.Long $r7;
+        java.lang.Object $r8;
+        com.facebook.lite.f.b $r9;
+        java.lang.Exception $r10;
+        java.lang.Throwable $r12;
+
+        $r0 := @parameter0: android.content.ContentResolver;
+        $r1 := @parameter1: java.util.Map;
+        $r3 = newarray (java.lang.String)[2];
+        $r3[0] = "contact_id";
+        $r3[1] = "data1";
+        $r4 = new java.util.HashSet;
+        specialinvoke $r4.<java.util.HashSet: void <init>()>();
+        $r6 = <android.provider.ContactsContract$CommonDataKinds$Phone: android.net.Uri CONTENT_URI>;
+        $r5 = virtualinvoke $r0.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r6, $r3, null, null, null);
+        if $r5 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToNext()>();
+        if $z0 == 0 goto label6;
+
+        $i1 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndex(java.lang.String)>("contact_id");
+        $l2 = interfaceinvoke $r5.<android.database.Cursor: long getLong(int)>($i1);
+        $r7 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        if $r8 == null goto label1;
+
+        $i1 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndex(java.lang.String)>("data1");
+        $r2 = interfaceinvoke $r5.<android.database.Cursor: java.lang.String getString(int)>($i1);
+        $z0 = interfaceinvoke $r4.<java.util.Set: boolean contains(java.lang.Object)>($r2);
+        if $z0 != 0 goto label1;
+
+        interfaceinvoke $r4.<java.util.Set: boolean add(java.lang.Object)>($r2);
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+        $r9 = (com.facebook.lite.f.b) $r8;
+        virtualinvoke $r9.<com.facebook.lite.f.b: void b(java.lang.String)>($r2);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r10 := @caughtexception;
+
+     label4:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("PhonebookUtils", "contacts/failed while interacting over contact\'s telephones.", $r10);
+
+     label5:
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label6:
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label7:
+        $r12 := @caughtexception;
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        throw $r12;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label1 to label2 with label7;
+        catch java.lang.Throwable from label4 to label5 with label7;
+    }
+
+    public final java.util.Collection a()
+    {
+        com.facebook.lite.f.a $r0;
+        android.content.Context $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+        java.util.HashMap $r4;
+        int $i0;
+        java.util.Set $r5;
+        android.content.ContentResolver $r6;
+        android.net.Uri $r7;
+        android.database.Cursor $r8;
+        boolean $z0;
+        long $l2;
+        java.lang.Long $r9;
+        com.facebook.lite.f.b $r10;
+        java.lang.Exception $r11;
+        java.util.Collection $r13;
+        java.lang.Throwable $r14;
+
+        $r0 := @this: com.facebook.lite.f.a;
+        $r1 = $r0.<com.facebook.lite.f.a: android.content.Context a>;
+        $i0 = virtualinvoke $r1.<android.content.Context: int checkCallingOrSelfPermission(java.lang.String)>("android.permission.READ_CONTACTS");
+        if $i0 == 0 goto label0;
+
+        $r5 = staticinvoke <java.util.Collections: java.util.Set emptySet()>();
+        return $r5;
+
+     label0:
+        $r1 = $r0.<com.facebook.lite.f.a: android.content.Context a>;
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r4 = new java.util.HashMap;
+        specialinvoke $r4.<java.util.HashMap: void <init>()>();
+        $r3 = newarray (java.lang.String)[2];
+        $r3[0] = "_id";
+        $r3[1] = "display_name";
+        $r7 = <android.provider.ContactsContract$Contacts: android.net.Uri CONTENT_URI>;
+        $r8 = virtualinvoke $r6.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r7, $r3, null, null, null);
+        if $r8 != null goto label1;
+
+        $r5 = staticinvoke <java.util.Collections: java.util.Set emptySet()>();
+        return $r5;
+
+     label1:
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToNext()>();
+        if $z0 == 0 goto label7;
+
+        $i0 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndex(java.lang.String)>("_id");
+        $l2 = interfaceinvoke $r8.<android.database.Cursor: long getLong(int)>($i0);
+        $r9 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2);
+        $i0 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndex(java.lang.String)>("display_name");
+        $r2 = interfaceinvoke $r8.<android.database.Cursor: java.lang.String getString(int)>($i0);
+        $r10 = new com.facebook.lite.f.b;
+        specialinvoke $r10.<com.facebook.lite.f.b: void <init>(java.lang.String)>($r2);
+        virtualinvoke $r4.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r9, $r10);
+
+     label2:
+        goto label1;
+
+     label3:
+        $r11 := @caughtexception;
+
+     label4:
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>("PhonebookUtils", "contacts/failed while interacting over contacts. ", $r11);
+
+     label5:
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+     label6:
+        staticinvoke <com.facebook.lite.f.a: void a(android.content.ContentResolver,java.util.Map)>($r6, $r4);
+        staticinvoke <com.facebook.lite.f.a: void b(android.content.ContentResolver,java.util.Map)>($r6, $r4);
+        $r13 = virtualinvoke $r4.<java.util.HashMap: java.util.Collection values()>();
+        return $r13;
+
+     label7:
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+        goto label6;
+
+     label8:
+        $r14 := @caughtexception;
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+        throw $r14;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+        catch java.lang.Throwable from label1 to label2 with label8;
+        catch java.lang.Throwable from label4 to label5 with label8;
+    }
+}

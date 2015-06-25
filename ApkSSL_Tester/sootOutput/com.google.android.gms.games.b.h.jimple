@@ -1,0 +1,163 @@
+public final class com.google.android.gms.games.b.h extends java.lang.Object
+{
+    private static final java.lang.String[] a;
+    private java.lang.String b;
+    private java.lang.String c;
+    private int d;
+    private java.util.HashMap e;
+
+    static void <clinit>()
+    {
+        java.lang.String[] $r1;
+
+        $r1 = newarray (java.lang.String)[8];
+        $r1[0] = "leaderboardId";
+        $r1[1] = "playerId";
+        $r1[2] = "timeSpan";
+        $r1[3] = "hasResult";
+        $r1[4] = "rawScore";
+        $r1[5] = "formattedScore";
+        $r1[6] = "newBest";
+        $r1[7] = "scoreTag";
+        <com.google.android.gms.games.b.h: java.lang.String[] a> = $r1;
+        return;
+    }
+
+    public void <init>(com.google.android.gms.common.data.d)
+    {
+        com.google.android.gms.games.b.h $r0;
+        com.google.android.gms.common.data.d $r1;
+        int $i0, $i1, $i2;
+        java.lang.String $r2, $r5, $r6;
+        java.util.HashMap $r3;
+        boolean $z1;
+        com.google.android.gms.games.b.i $r4;
+        long $l3;
+
+        $r0 := @this: com.google.android.gms.games.b.h;
+        $r1 := @parameter0: com.google.android.gms.common.data.d;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $i0 = virtualinvoke $r1.<com.google.android.gms.common.data.d: int e()>();
+        $r0.<com.google.android.gms.games.b.h: int d> = $i0;
+        $r3 = new java.util.HashMap;
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+        $r0.<com.google.android.gms.games.b.h: java.util.HashMap e> = $r3;
+        $i1 = virtualinvoke $r1.<com.google.android.gms.common.data.d: int g()>();
+        if $i1 != 3 goto label4;
+
+        $z1 = 1;
+
+     label0:
+        staticinvoke <com.google.android.gms.internal.fz: void b(boolean)>($z1);
+        $i0 = (int) 0;
+
+     label1:
+        if $i0 >= $i1 goto label5;
+
+        $i2 = virtualinvoke $r1.<com.google.android.gms.common.data.d: int a(int)>($i0);
+        if $i0 != 0 goto label2;
+
+        $r2 = virtualinvoke $r1.<com.google.android.gms.common.data.d: java.lang.String c(java.lang.String,int,int)>("leaderboardId", $i0, $i2);
+        $r0.<com.google.android.gms.games.b.h: java.lang.String b> = $r2;
+        $r2 = virtualinvoke $r1.<com.google.android.gms.common.data.d: java.lang.String c(java.lang.String,int,int)>("playerId", $i0, $i2);
+        $r0.<com.google.android.gms.games.b.h: java.lang.String c> = $r2;
+
+     label2:
+        $z1 = virtualinvoke $r1.<com.google.android.gms.common.data.d: boolean d(java.lang.String,int,int)>("hasResult", $i0, $i2);
+        if $z1 == 0 goto label3;
+
+        $r4 = new com.google.android.gms.games.b.i;
+        $l3 = virtualinvoke $r1.<com.google.android.gms.common.data.d: long a(java.lang.String,int,int)>("rawScore", $i0, $i2);
+        $r5 = virtualinvoke $r1.<com.google.android.gms.common.data.d: java.lang.String c(java.lang.String,int,int)>("formattedScore", $i0, $i2);
+        $r6 = virtualinvoke $r1.<com.google.android.gms.common.data.d: java.lang.String c(java.lang.String,int,int)>("scoreTag", $i0, $i2);
+        $z1 = virtualinvoke $r1.<com.google.android.gms.common.data.d: boolean d(java.lang.String,int,int)>("newBest", $i0, $i2);
+        specialinvoke $r4.<com.google.android.gms.games.b.i: void <init>(long,java.lang.String,java.lang.String,boolean)>($l3, $r5, $r6, $z1);
+        $i2 = virtualinvoke $r1.<com.google.android.gms.common.data.d: int b(java.lang.String,int,int)>("timeSpan", $i0, $i2);
+        specialinvoke $r0.<com.google.android.gms.games.b.h: void a(com.google.android.gms.games.b.i,int)>($r4, $i2);
+
+     label3:
+        $i0 = $i0 + 1;
+        goto label1;
+
+     label4:
+        $z1 = 0;
+        goto label0;
+
+     label5:
+        return;
+    }
+
+    private void a(com.google.android.gms.games.b.i, int)
+    {
+        com.google.android.gms.games.b.h $r0;
+        com.google.android.gms.games.b.i $r1;
+        int $i0;
+        java.util.HashMap $r2;
+        java.lang.Integer $r3;
+
+        $r0 := @this: com.google.android.gms.games.b.h;
+        $r1 := @parameter0: com.google.android.gms.games.b.i;
+        $i0 := @parameter1: int;
+        $r2 = $r0.<com.google.android.gms.games.b.h: java.util.HashMap e>;
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, $r1);
+        return;
+    }
+
+    public int a()
+    {
+        com.google.android.gms.games.b.h $r0;
+        int $i0;
+
+        $r0 := @this: com.google.android.gms.games.b.h;
+        $i0 = $r0.<com.google.android.gms.games.b.h: int d>;
+        return $i0;
+    }
+
+    public java.lang.String toString()
+    {
+        com.google.android.gms.games.b.h $r0;
+        com.google.android.gms.internal.fy $r1;
+        java.lang.String $r2, $r3;
+        java.lang.Integer $r4;
+        int $i0;
+        java.util.HashMap $r5;
+        java.lang.Object $r6;
+        com.google.android.gms.games.b.i $r7;
+
+        $r0 := @this: com.google.android.gms.games.b.h;
+        $r1 = staticinvoke <com.google.android.gms.internal.fw: com.google.android.gms.internal.fy a(java.lang.Object)>($r0);
+        $r3 = $r0.<com.google.android.gms.games.b.h: java.lang.String c>;
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("PlayerId", $r3);
+        $i0 = $r0.<com.google.android.gms.games.b.h: int d>;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r1 = virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("StatusCode", $r4);
+        $i0 = 0;
+
+     label0:
+        if $i0 >= 3 goto label3;
+
+        $r5 = $r0.<com.google.android.gms.games.b.h: java.util.HashMap e>;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $r6 = virtualinvoke $r5.<java.util.HashMap: java.lang.Object get(java.lang.Object)>($r4);
+        $r7 = (com.google.android.gms.games.b.i) $r6;
+        $r3 = staticinvoke <com.google.android.gms.internal.ic: java.lang.String a(int)>($i0);
+        virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("TimesSpan", $r3);
+        if $r7 != null goto label2;
+
+        $r2 = "null";
+
+     label1:
+        virtualinvoke $r1.<com.google.android.gms.internal.fy: com.google.android.gms.internal.fy a(java.lang.String,java.lang.Object)>("Result", $r2);
+        $i0 = $i0 + 1;
+        goto label0;
+
+     label2:
+        $r2 = virtualinvoke $r7.<com.google.android.gms.games.b.i: java.lang.String toString()>();
+        goto label1;
+
+     label3:
+        $r3 = virtualinvoke $r1.<com.google.android.gms.internal.fy: java.lang.String toString()>();
+        return $r3;
+    }
+}

@@ -1,0 +1,63 @@
+public final class com.google.android.gms.maps.model.b extends java.lang.Object
+{
+    private static com.google.android.gms.maps.model.internal.a a;
+
+    public static com.google.android.gms.maps.model.a a(int)
+    {
+        int $i0;
+        com.google.android.gms.maps.model.a $r0;
+        com.google.android.gms.maps.model.internal.a $r1;
+        com.google.android.gms.dynamic.b $r2;
+        android.os.RemoteException $r3;
+        com.google.android.gms.maps.model.m $r4;
+
+        $i0 := @parameter0: int;
+        $r0 = new com.google.android.gms.maps.model.a;
+
+     label0:
+        $r1 = staticinvoke <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.internal.a a()>();
+        $r2 = interfaceinvoke $r1.<com.google.android.gms.maps.model.internal.a: com.google.android.gms.dynamic.b a(int)>($i0);
+        specialinvoke $r0.<com.google.android.gms.maps.model.a: void <init>(com.google.android.gms.dynamic.b)>($r2);
+
+     label1:
+        return $r0;
+
+     label2:
+        $r3 := @caughtexception;
+        $r4 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r4.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r3);
+        throw $r4;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    private static com.google.android.gms.maps.model.internal.a a()
+    {
+        com.google.android.gms.maps.model.internal.a $r0;
+        java.lang.Object $r2;
+
+        $r0 = <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.internal.a a>;
+        $r2 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object,java.lang.Object)>($r0, "IBitmapDescriptorFactory is not initialized");
+        $r0 = (com.google.android.gms.maps.model.internal.a) $r2;
+        return $r0;
+    }
+
+    public static void a(com.google.android.gms.maps.model.internal.a)
+    {
+        com.google.android.gms.maps.model.internal.a $r0, $r1;
+        java.lang.Object $r2;
+
+        $r0 := @parameter0: com.google.android.gms.maps.model.internal.a;
+        $r1 = <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.internal.a a>;
+        if $r1 == null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r0);
+        $r1 = (com.google.android.gms.maps.model.internal.a) $r2;
+        <com.google.android.gms.maps.model.b: com.google.android.gms.maps.model.internal.a a> = $r1;
+        goto label0;
+    }
+}

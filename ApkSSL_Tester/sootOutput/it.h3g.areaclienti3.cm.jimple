@@ -1,0 +1,117 @@
+class it.h3g.areaclienti3.cm extends it.h3g.areaclienti3.remoteservice.a
+{
+    final it.h3g.areaclienti3.TutorialActivity a;
+    private final java.lang.String b;
+    private final java.lang.String c;
+    private final boolean d;
+
+    void <init>(it.h3g.areaclienti3.TutorialActivity, java.lang.String, java.lang.String, boolean)
+    {
+        it.h3g.areaclienti3.cm $r0;
+        it.h3g.areaclienti3.TutorialActivity $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.cm;
+        $r1 := @parameter0: it.h3g.areaclienti3.TutorialActivity;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $z0 := @parameter3: boolean;
+        $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a> = $r1;
+        $r0.<it.h3g.areaclienti3.cm: java.lang.String b> = $r2;
+        $r0.<it.h3g.areaclienti3.cm: java.lang.String c> = $r3;
+        $r0.<it.h3g.areaclienti3.cm: boolean d> = $z0;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a: void <init>()>();
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.cm $r0;
+        java.lang.String $r1, $r2, $r10;
+        it.h3g.areaclienti3.TutorialActivity $r3, $r9;
+        it.h3g.areaclienti3.remoteservice.IService $r4;
+        android.os.Bundle $r5;
+        boolean $z0;
+        it.h3g.areaclienti3.j.l $r6;
+        java.lang.Throwable $r7;
+        java.lang.InterruptedException $r8;
+        android.os.RemoteException $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.cm;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("TutorialActivity", "Login thread has started");
+
+     label0:
+        $r3 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r4 = $r3.<it.h3g.areaclienti3.TutorialActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        if $r4 == null goto label3;
+
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.cm: java.lang.String b>;
+        virtualinvoke $r5.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("username", $r2);
+        $r1 = $r0.<it.h3g.areaclienti3.cm: java.lang.String c>;
+        virtualinvoke $r5.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("password", $r1);
+        $z0 = $r0.<it.h3g.areaclienti3.cm: boolean d>;
+        virtualinvoke $r5.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("autoLogin", $z0);
+        $r3 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r6 = $r3.<it.h3g.areaclienti3.TutorialActivity: it.h3g.areaclienti3.j.l p>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.j.l: boolean y()>();
+        $r3 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r6 = $r3.<it.h3g.areaclienti3.TutorialActivity: it.h3g.areaclienti3.j.l p>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.j.l: java.lang.Boolean A()>();
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("TutorialActivity", "Start action login");
+        $r3 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r4 = $r3.<it.h3g.areaclienti3.TutorialActivity: it.h3g.areaclienti3.remoteservice.IService z>;
+        interfaceinvoke $r4.<it.h3g.areaclienti3.remoteservice.IService: void a(java.lang.String,android.os.Bundle)>("loginAction", $r5);
+
+     label2:
+        return;
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("TutorialActivity", "Service instance is null... ");
+        entermonitor $r0;
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("TutorialActivity", "lets go to sleep");
+        virtualinvoke $r0.<java.lang.Object: void wait(long)>(500L);
+
+     label5:
+        exitmonitor $r0;
+        goto label0;
+
+     label6:
+        $r7 := @caughtexception;
+        exitmonitor $r0;
+
+     label7:
+        throw $r7;
+
+     label8:
+        $r8 := @caughtexception;
+
+     label9:
+        $r3 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r9 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r2 = virtualinvoke $r9.<it.h3g.areaclienti3.TutorialActivity: java.lang.String getString(int)>(2131231691);
+        $r9 = $r0.<it.h3g.areaclienti3.cm: it.h3g.areaclienti3.TutorialActivity a>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.TutorialActivity: java.lang.String getString(int)>(2131231110);
+        virtualinvoke $r3.<it.h3g.areaclienti3.TutorialActivity: void a(java.lang.String,java.lang.String,java.lang.String)>("LOGIN", $r2, $r10);
+
+     label10:
+        goto label5;
+
+     label11:
+        $r11 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("TutorialActivity", "Error during start action");
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label11;
+        catch java.lang.InterruptedException from label4 to label5 with label8;
+        catch java.lang.Throwable from label4 to label5 with label6;
+        catch java.lang.Throwable from label5 to label7 with label6;
+        catch java.lang.Throwable from label9 to label10 with label6;
+    }
+}

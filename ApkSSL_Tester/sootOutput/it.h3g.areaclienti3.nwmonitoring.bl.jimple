@@ -1,0 +1,541 @@
+public class it.h3g.areaclienti3.nwmonitoring.bl extends java.lang.Object
+{
+
+    public static float a(float)
+    {
+        float $f0, $f1, $f3;
+        java.lang.StringBuilder $r0;
+        byte $b0;
+        java.lang.String $r2;
+        int $i1;
+
+        $f0 := @parameter0: float;
+        $f1 = 4.0F;
+        $b0 = $f0 cmpl -1.0F;
+        if $b0 != 0 goto label1;
+
+        $f1 = $f0;
+
+     label0:
+        $r0 = new java.lang.StringBuilder;
+        specialinvoke $r0.<java.lang.StringBuilder: void <init>(java.lang.String)>("INPUT:");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" OUTPUT: ");
+        $r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1);
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_ROUND-SIGNAL", $r2);
+        return $f1;
+
+     label1:
+        $b0 = $f0 cmpl 4.0F;
+        if $b0 > 0 goto label0;
+
+        $b0 = $f0 cmpg 0.0F;
+        if $b0 >= 0 goto label2;
+
+        $f1 = 0.0F;
+        goto label0;
+
+     label2:
+        $f3 = $f0 * 10.0F;
+        $i1 = (int) $f3;
+        $f3 = (float) $i1;
+        $f1 = $f3 / 10.0F;
+        goto label0;
+    }
+
+    public static int a(int, int)
+    {
+        int $i0, $i1;
+        byte $b2;
+
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $b2 = 3;
+        if $i1 != 4 goto label4;
+
+        if $i0 <= -126 goto label1;
+
+        if $i0 > -112 goto label1;
+
+        $b2 = 1;
+
+     label0:
+        return $b2;
+
+     label1:
+        if $i0 <= -112 goto label2;
+
+        if $i0 > -104 goto label2;
+
+        return 2;
+
+     label2:
+        if $i0 <= -104 goto label3;
+
+        if $i0 <= -89 goto label0;
+
+     label3:
+        if $i0 <= -89 goto label8;
+
+        return 4;
+
+     label4:
+        if $i1 != 3 goto label8;
+
+        if $i0 < -115 goto label5;
+
+        if $i0 >= -105 goto label5;
+
+        return 1;
+
+     label5:
+        if $i0 < -105 goto label6;
+
+        if $i0 >= -95 goto label6;
+
+        return 2;
+
+     label6:
+        if $i0 < -95 goto label7;
+
+        if $i0 < -88 goto label0;
+
+     label7:
+        if $i0 < -88 goto label8;
+
+        return 4;
+
+     label8:
+        return 0;
+    }
+
+    public static long a()
+    {
+        java.util.Calendar $r0;
+        int $i2;
+        long $l3;
+
+        $r0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(11, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(12, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(13, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(14, 0);
+        $i2 = virtualinvoke $r0.<java.util.Calendar: int get(int)>(7);
+        $i2 = 2 - $i2;
+        if $i2 > 0 goto label0;
+
+        $i2 = $i2 + 7;
+
+     label0:
+        virtualinvoke $r0.<java.util.Calendar: void add(int,int)>(5, $i2);
+        $l3 = virtualinvoke $r0.<java.util.Calendar: long getTimeInMillis()>();
+        return $l3;
+    }
+
+    public static long a(java.lang.String)
+    {
+        java.lang.String $r0;
+        long $l0;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $l0 = 0L;
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("day");
+        if $z0 == 0 goto label1;
+
+        $l0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: long b()>();
+
+     label0:
+        return $l0;
+
+     label1:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("week");
+        if $z0 == 0 goto label2;
+
+        $l0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: long a()>();
+        return $l0;
+
+     label2:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("month");
+        if $z0 == 0 goto label0;
+
+        $l0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: long c()>();
+        return $l0;
+    }
+
+    public static it.h3g.areaclienti3.nwmonitoring.bm a(android.content.Context, long, java.lang.String, long, int, float, long, long, int)
+    {
+        android.content.Context $r0;
+        long $l0, $l1, $l3, $l4;
+        java.lang.String $r1;
+        int $i2, $i5;
+        float $f0, $f1;
+        it.h3g.areaclienti3.nwmonitoring.bm $r2;
+        boolean $z0;
+        byte $b6;
+
+        $r0 := @parameter0: android.content.Context;
+        $l0 := @parameter1: long;
+        $r1 := @parameter2: java.lang.String;
+        $l1 := @parameter3: long;
+        $i2 := @parameter4: int;
+        $f0 := @parameter5: float;
+        $l3 := @parameter6: long;
+        $l4 := @parameter7: long;
+        $i5 := @parameter8: int;
+        $r2 = new it.h3g.areaclienti3.nwmonitoring.bm;
+        specialinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.bm: void <init>(it.h3g.areaclienti3.nwmonitoring.bm)>(null);
+        $z0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: boolean a(long,java.lang.String,android.content.Context)>($l0, $r1, $r0);
+        if $z0 != 0 goto label3;
+
+        $l1 = $l1 + $l4;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,long)>($r2, $l1);
+        if $i2 <= 2 goto label2;
+
+        $b6 = $f0 cmpl -1.0F;
+        if $b6 != 0 goto label1;
+
+        $f1 = (float) $i5;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,float)>($r2, $f1);
+
+     label0:
+        $l4 = $l3 + $l4;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void b(it.h3g.areaclienti3.nwmonitoring.bm,long)>($r2, $l4);
+        return $r2;
+
+     label1:
+        $f1 = (float) $l3;
+        $f1 = $f1 * $f0;
+        $l1 = (long) $i5;
+        $l1 = $l1 * $l4;
+        $f0 = (float) $l1;
+        $f1 = $f1 + $f0;
+        $l1 = $l3 + $l4;
+        $f0 = (float) $l1;
+        $f1 = $f1 / $f0;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,float)>($r2, $f1);
+        goto label0;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void b(it.h3g.areaclienti3.nwmonitoring.bm,long)>($r2, $l3);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,float)>($r2, $f0);
+        return $r2;
+
+     label3:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,long)>($r2, $l4);
+        if $i2 <= 2 goto label4;
+
+        $f1 = (float) $i5;
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void a(it.h3g.areaclienti3.nwmonitoring.bm,float)>($r2, $f1);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: void b(it.h3g.areaclienti3.nwmonitoring.bm,long)>($r2, $l4);
+
+     label4:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: void b(java.lang.String,android.content.Context)>($r1, $r0);
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: void a(java.lang.String,android.content.Context)>($r1, $r0);
+        return $r2;
+    }
+
+    public static void a(android.content.Context, int, int)
+    {
+        android.content.Context $r0;
+        int $i0, $i1, $i6;
+        long $l2, $l3, $l4, $l5, $l7, $l8, $l10, $l11;
+        it.h3g.areaclienti3.nwmonitoring.bf $r2, $r5;
+        it.h3g.areaclienti3.nwmonitoring.av $r3;
+        java.lang.String $r4, $r11;
+        float $f0, $f1, $f2;
+        it.h3g.areaclienti3.nwmonitoring.bm $r6, $r9, $r10;
+        byte $b9;
+        double $d0, $d1;
+        java.lang.Float $r7;
+        java.lang.StringBuilder $r8;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r0);
+        $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l8 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, "timeLastCollect", $l3);
+        if $i0 <= 0 goto label2;
+
+        $r5 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        specialinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r0);
+        $i6 = virtualinvoke $r5.<it.h3g.areaclienti3.nwmonitoring.bf: int d()>();
+        $l7 = (long) $i6;
+        $l5 = $l3 - $l8;
+        $b9 = $l5 cmp 0L;
+        if $b9 <= 0 goto label1;
+
+        $d0 = (double) $l5;
+        $f2 = (float) $l7;
+        $r7 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.Float C()>();
+        $f1 = virtualinvoke $r7.<java.lang.Float: float floatValue()>();
+        $f2 = $f1 * $f2;
+        $d1 = (double) $f2;
+        $b9 = $d0 cmpg $d1;
+        if $b9 > 0 goto label1;
+
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_day_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l10 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, $r4, 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_month_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l7 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, $r4, 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_week_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l8 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, $r4, 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l4 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, "signal_time_day", 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f0 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r0, "signal_value_day", -1.0F);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l11 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, "signal_time_week", 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f1 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r0, "signal_value_week", -1.0F);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l2 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r0, "signal_time_month", 0L);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f2 = virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: float b(android.content.Context,java.lang.String,float)>($r0, "signal_value_month", -1.0F);
+        $i6 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: int a(int,int)>($i1, $i0);
+        $r6 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: it.h3g.areaclienti3.nwmonitoring.bm a(android.content.Context,long,java.lang.String,long,int,float,long,long,int)>($r0, $l3, "day", $l10, $i0, $f0, $l4, $l5, $i6);
+        $r9 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: it.h3g.areaclienti3.nwmonitoring.bm a(android.content.Context,long,java.lang.String,long,int,float,long,long,int)>($r0, $l3, "week", $l8, $i0, $f1, $l11, $l5, $i6);
+        $r10 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: it.h3g.areaclienti3.nwmonitoring.bm a(android.content.Context,long,java.lang.String,long,int,float,long,long,int)>($r0, $l3, "month", $l7, $i0, $f2, $l2, $l5, $i6);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_day_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, $r4, $l11);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_month_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, $r4, $l11);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_week_");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, $r4, $l11);
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("NetworkState: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" DayTime: ");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" WeekTime: ");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" Month: ");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long a(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r11 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_STATS_DATA_NW", $r11);
+        if $i1 == 0 goto label0;
+
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, "signal_time_day", $l11);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r0, "signal_value_day", $f2);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, "signal_time_week", $l11);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r0, "signal_value_week", $f2);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, "signal_time_month", $l11);
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r0, "signal_value_month", $f2);
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("DAY_TIME:");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" DAY_VALUE: ");
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r6);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f2);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" WEEK_TIME:");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" WEEK_VALUE: ");
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r9);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f2);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" MONTH_TIME:");
+        $l11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: long b(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l11);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" MONTH_VALUE: ");
+        $f2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bm: float c(it.h3g.areaclienti3.nwmonitoring.bm)>($r10);
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f2);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_STATS_DATA_SIG", $r4);
+
+     label0:
+        $r3 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r3.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r0, "timeLastCollect", $l3);
+        return;
+
+     label1:
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("Record scartato TIMEOUT. DELTA: ");
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l5);
+        $r4 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_STATS_DATA", $r4);
+        goto label0;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING_STATS_DATA", "Record scartato NO_SERIVCE");
+        goto label0;
+    }
+
+    public static void a(java.lang.String, android.content.Context)
+    {
+        java.lang.String $r0, $r4;
+        android.content.Context $r1;
+        long $l0;
+        it.h3g.areaclienti3.nwmonitoring.av $r2;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: android.content.Context;
+        $l0 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: long a(java.lang.String)>($r0);
+        $r2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("deadLine_");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r1, $r4, $l0);
+        return;
+    }
+
+    public static boolean a(long, java.lang.String, android.content.Context)
+    {
+        long $l0, $l2;
+        java.lang.String $r0, $r4;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.nwmonitoring.av $r2;
+        java.lang.StringBuilder $r3;
+        byte $b3;
+
+        $l0 := @parameter0: long;
+        $r0 := @parameter1: java.lang.String;
+        $r1 := @parameter2: android.content.Context;
+        $r2 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("deadLine_");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        $l2 = virtualinvoke $r2.<it.h3g.areaclienti3.nwmonitoring.av: long b(android.content.Context,java.lang.String,long)>($r1, $r4, -1L);
+        $b3 = $l2 cmp 0L;
+        if $b3 >= 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: void a(java.lang.String,android.content.Context)>($r0, $r1);
+
+     label0:
+        $b3 = $l2 cmp 0L;
+        if $b3 <= 0 goto label1;
+
+        $b3 = $l0 cmp $l2;
+        if $b3 < 0 goto label1;
+
+        return 1;
+
+     label1:
+        return 0;
+    }
+
+    public static long b()
+    {
+        java.util.Calendar $r0;
+        long $l2;
+
+        $r0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(11, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(12, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(13, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(14, 0);
+        virtualinvoke $r0.<java.util.Calendar: void add(int,int)>(5, 1);
+        $l2 = virtualinvoke $r0.<java.util.Calendar: long getTimeInMillis()>();
+        return $l2;
+    }
+
+    public static void b(java.lang.String, android.content.Context)
+    {
+        java.lang.String $r0, $r3;
+        android.content.Context $r1;
+        int $i0;
+        java.lang.StringBuilder $r2;
+        it.h3g.areaclienti3.nwmonitoring.av $r4;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: android.content.Context;
+        $i0 = 2;
+
+     label0:
+        if $i0 <= 4 goto label1;
+
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r1, "signal_time_day", 0L);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r1, "signal_value_day", -1.0F);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r1, "signal_time_week", 0L);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r1, "signal_value_week", -1.0F);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r1, "signal_time_month", 0L);
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,float)>($r1, "signal_value_month", -1.0F);
+        return;
+
+     label1:
+        $r4 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.av: it.h3g.areaclienti3.nwmonitoring.av a()>();
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("time_");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<it.h3g.areaclienti3.nwmonitoring.av: void a(android.content.Context,java.lang.String,long)>($r1, $r3, 0L);
+        $i0 = $i0 + 1;
+        goto label0;
+    }
+
+    public static long c()
+    {
+        java.util.Calendar $r0;
+        int $i3;
+        long $l4;
+
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.bl: long b()>();
+        $r0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(11, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(12, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(13, 0);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(14, 0);
+        virtualinvoke $r0.<java.util.Calendar: void add(int,int)>(2, 1);
+        $i3 = virtualinvoke $r0.<java.util.Calendar: int getMinimum(int)>(5);
+        virtualinvoke $r0.<java.util.Calendar: void set(int,int)>(5, $i3);
+        $l4 = virtualinvoke $r0.<java.util.Calendar: long getTimeInMillis()>();
+        return $l4;
+    }
+}

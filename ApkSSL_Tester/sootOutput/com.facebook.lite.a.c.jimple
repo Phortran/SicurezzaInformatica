@@ -1,0 +1,61 @@
+final class com.facebook.lite.a.c extends java.lang.Object implements java.lang.Runnable
+{
+    final java.lang.String a;
+    final com.facebook.lite.a.b b;
+
+    void <init>(com.facebook.lite.a.b, java.lang.String)
+    {
+        com.facebook.lite.a.c $r0;
+        com.facebook.lite.a.b $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.facebook.lite.a.c;
+        $r1 := @parameter0: com.facebook.lite.a.b;
+        $r2 := @parameter1: java.lang.String;
+        $r0.<com.facebook.lite.a.c: com.facebook.lite.a.b b> = $r1;
+        $r0.<com.facebook.lite.a.c: java.lang.String a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public final void run()
+    {
+        com.facebook.lite.a.c $r0;
+        com.facebook.lite.a.b $r1;
+        java.io.File $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        com.a.a.a $r5;
+        java.io.IOException $r6;
+        com.b.a.a.e.b $r7;
+
+        $r0 := @this: com.facebook.lite.a.c;
+        $r1 = $r0.<com.facebook.lite.a.c: com.facebook.lite.a.b b>;
+        $r2 = new java.io.File;
+        $r3 = new java.lang.StringBuilder;
+
+     label0:
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r4 = $r0.<com.facebook.lite.a.c: java.lang.String a>;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/images");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r2.<java.io.File: void <init>(java.lang.String)>($r4);
+        $r5 = staticinvoke <com.a.a.a: com.a.a.a a(java.io.File)>($r2);
+        staticinvoke <com.facebook.lite.a.b: com.a.a.a a(com.facebook.lite.a.b,com.a.a.a)>($r1, $r5);
+
+     label1:
+        return;
+
+     label2:
+        $r6 := @caughtexception;
+        $r1 = $r0.<com.facebook.lite.a.c: com.facebook.lite.a.b b>;
+        $r7 = staticinvoke <com.facebook.lite.a.b: com.b.a.a.e.b a(com.facebook.lite.a.b)>($r1);
+        interfaceinvoke $r7.<com.b.a.a.e.b: void a(short,java.lang.String,java.lang.Throwable)>(161, null, $r6);
+        $r4 = staticinvoke <com.facebook.lite.a.b: java.lang.String c()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>($r4, "diskcache/can\'t open journal file");
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+}

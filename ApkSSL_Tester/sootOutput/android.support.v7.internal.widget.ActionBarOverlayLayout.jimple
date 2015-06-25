@@ -1,0 +1,1739 @@
+public class android.support.v7.internal.widget.ActionBarOverlayLayout extends android.view.ViewGroup implements android.support.v7.internal.widget.DecorContentParent, android.support.v4.view.NestedScrollingParent
+{
+    static final int[] ATTRS;
+    private static final java.lang.String TAG;
+    private final int ACTION_BAR_ANIMATE_DELAY;
+    private android.support.v7.internal.widget.ActionBarContainer mActionBarBottom;
+    private int mActionBarHeight;
+    private android.support.v7.internal.widget.ActionBarContainer mActionBarTop;
+    private android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback;
+    private final java.lang.Runnable mAddActionBarHideOffset;
+    private boolean mAnimatingForFling;
+    private final android.graphics.Rect mBaseContentInsets;
+    private final android.graphics.Rect mBaseInnerInsets;
+    private final android.support.v4.view.ViewPropertyAnimatorListener mBottomAnimatorListener;
+    private android.support.v7.internal.widget.ContentFrameLayout mContent;
+    private final android.graphics.Rect mContentInsets;
+    private android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarBottomAnimator;
+    private android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarTopAnimator;
+    private android.support.v7.internal.widget.DecorToolbar mDecorToolbar;
+    private android.support.v4.widget.ScrollerCompat mFlingEstimator;
+    private boolean mHasNonEmbeddedTabs;
+    private boolean mHideOnContentScroll;
+    private int mHideOnContentScrollReference;
+    private boolean mIgnoreWindowContentOverlay;
+    private final android.graphics.Rect mInnerInsets;
+    private final android.graphics.Rect mLastBaseContentInsets;
+    private final android.graphics.Rect mLastInnerInsets;
+    private int mLastSystemUiVisibility;
+    private boolean mOverlayMode;
+    private final android.support.v4.view.NestedScrollingParentHelper mParentHelper;
+    private final java.lang.Runnable mRemoveActionBarHideOffset;
+    private final android.support.v4.view.ViewPropertyAnimatorListener mTopAnimatorListener;
+    private android.graphics.drawable.Drawable mWindowContentOverlay;
+    private int mWindowVisibility;
+
+    static void <clinit>()
+    {
+        int $i1;
+        int[] $r0;
+
+        $r0 = newarray (int)[2];
+        $i1 = <android.support.v7.appcompat.R$attr: int actionBarSize>;
+        $r0[0] = $i1;
+        $r0[1] = 16842841;
+        <android.support.v7.internal.widget.ActionBarOverlayLayout: int[] ATTRS> = $r0;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void <init>(android.content.Context,android.util.AttributeSet)>($r1, null);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        android.graphics.Rect $r3;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$1 $r4;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$2 $r5;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$3 $r6;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$4 $r7;
+        android.support.v4.view.NestedScrollingParentHelper $r8;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        specialinvoke $r0.<android.view.ViewGroup: void <init>(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mWindowVisibility> = 0;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseContentInsets> = $r3;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastBaseContentInsets> = $r3;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mContentInsets> = $r3;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseInnerInsets> = $r3;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets> = $r3;
+        $r3 = new android.graphics.Rect;
+        specialinvoke $r3.<android.graphics.Rect: void <init>()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastInnerInsets> = $r3;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int ACTION_BAR_ANIMATE_DELAY> = 600;
+        $r4 = new android.support.v7.internal.widget.ActionBarOverlayLayout$1;
+        specialinvoke $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$1: void <init>(android.support.v7.internal.widget.ActionBarOverlayLayout)>($r0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorListener mTopAnimatorListener> = $r4;
+        $r5 = new android.support.v7.internal.widget.ActionBarOverlayLayout$2;
+        specialinvoke $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$2: void <init>(android.support.v7.internal.widget.ActionBarOverlayLayout)>($r0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorListener mBottomAnimatorListener> = $r5;
+        $r6 = new android.support.v7.internal.widget.ActionBarOverlayLayout$3;
+        specialinvoke $r6.<android.support.v7.internal.widget.ActionBarOverlayLayout$3: void <init>(android.support.v7.internal.widget.ActionBarOverlayLayout)>($r0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mRemoveActionBarHideOffset> = $r6;
+        $r7 = new android.support.v7.internal.widget.ActionBarOverlayLayout$4;
+        specialinvoke $r7.<android.support.v7.internal.widget.ActionBarOverlayLayout$4: void <init>(android.support.v7.internal.widget.ActionBarOverlayLayout)>($r0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mAddActionBarHideOffset> = $r7;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void init(android.content.Context)>($r1);
+        $r8 = new android.support.v4.view.NestedScrollingParentHelper;
+        specialinvoke $r8.<android.support.v4.view.NestedScrollingParentHelper: void <init>(android.view.ViewGroup)>($r0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.NestedScrollingParentHelper mParentHelper> = $r8;
+        return;
+    }
+
+    static android.support.v4.view.ViewPropertyAnimatorCompat access$002(android.support.v7.internal.widget.ActionBarOverlayLayout, android.support.v4.view.ViewPropertyAnimatorCompat)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v4.view.ViewPropertyAnimatorCompat $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter1: android.support.v4.view.ViewPropertyAnimatorCompat;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarTopAnimator> = $r1;
+        return $r1;
+    }
+
+    static boolean access$102(android.support.v7.internal.widget.ActionBarOverlayLayout, boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter1: boolean;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mAnimatingForFling> = $z0;
+        return $z0;
+    }
+
+    static android.support.v4.view.ViewPropertyAnimatorCompat access$202(android.support.v7.internal.widget.ActionBarOverlayLayout, android.support.v4.view.ViewPropertyAnimatorCompat)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v4.view.ViewPropertyAnimatorCompat $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter1: android.support.v4.view.ViewPropertyAnimatorCompat;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarBottomAnimator> = $r1;
+        return $r1;
+    }
+
+    static void access$300(android.support.v7.internal.widget.ActionBarOverlayLayout)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        return;
+    }
+
+    static android.support.v4.view.ViewPropertyAnimatorListener access$400(android.support.v7.internal.widget.ActionBarOverlayLayout)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v4.view.ViewPropertyAnimatorListener $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorListener mTopAnimatorListener>;
+        return $r1;
+    }
+
+    static android.support.v7.internal.widget.ActionBarContainer access$500(android.support.v7.internal.widget.ActionBarOverlayLayout)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarContainer $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        return $r1;
+    }
+
+    static android.support.v7.internal.widget.ActionBarContainer access$600(android.support.v7.internal.widget.ActionBarOverlayLayout)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarContainer $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        return $r1;
+    }
+
+    static android.support.v4.view.ViewPropertyAnimatorListener access$700(android.support.v7.internal.widget.ActionBarOverlayLayout)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v4.view.ViewPropertyAnimatorListener $r1;
+
+        $r0 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorListener mBottomAnimatorListener>;
+        return $r1;
+    }
+
+    private void addActionBarHideOffset()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mAddActionBarHideOffset>;
+        interfaceinvoke $r1.<java.lang.Runnable: void run()>();
+        return;
+    }
+
+    private boolean applyInsets(android.view.View, android.graphics.Rect, boolean, boolean, boolean, boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        android.graphics.Rect $r2;
+        boolean $z0, $z1, $z2, $z3, $z4;
+        android.view.ViewGroup$LayoutParams $r3;
+        int $i0, $i1;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r4;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.graphics.Rect;
+        $z0 := @parameter2: boolean;
+        $z1 := @parameter3: boolean;
+        $z2 := @parameter4: boolean;
+        $z3 := @parameter5: boolean;
+        $z4 = 0;
+        $r3 = virtualinvoke $r1.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r4 = (android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams) $r3;
+        if $z0 == 0 goto label0;
+
+        $i0 = $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin>;
+        $i1 = $r2.<android.graphics.Rect: int left>;
+        if $i0 == $i1 goto label0;
+
+        $z4 = 1;
+        $i1 = $r2.<android.graphics.Rect: int left>;
+        $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin> = $i1;
+
+     label0:
+        if $z1 == 0 goto label1;
+
+        $i1 = $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin>;
+        $i0 = $r2.<android.graphics.Rect: int top>;
+        if $i1 == $i0 goto label1;
+
+        $z4 = 1;
+        $i1 = $r2.<android.graphics.Rect: int top>;
+        $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin> = $i1;
+
+     label1:
+        if $z3 == 0 goto label2;
+
+        $i1 = $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int rightMargin>;
+        $i0 = $r2.<android.graphics.Rect: int right>;
+        if $i1 == $i0 goto label2;
+
+        $z4 = 1;
+        $i1 = $r2.<android.graphics.Rect: int right>;
+        $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int rightMargin> = $i1;
+
+     label2:
+        if $z2 == 0 goto label3;
+
+        $i1 = $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin>;
+        $i0 = $r2.<android.graphics.Rect: int bottom>;
+        if $i1 == $i0 goto label3;
+
+        $z4 = 1;
+        $i1 = $r2.<android.graphics.Rect: int bottom>;
+        $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin> = $i1;
+
+     label3:
+        return $z4;
+    }
+
+    private android.support.v7.internal.widget.DecorToolbar getDecorToolbar(android.view.View)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.support.v7.internal.widget.DecorToolbar $r4;
+        android.support.v7.widget.Toolbar $r5;
+        java.lang.IllegalStateException $r6;
+        java.lang.Class $r7;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $z0 = $r1 instanceof android.support.v7.internal.widget.DecorToolbar;
+        if $z0 == 0 goto label0;
+
+        $r4 = (android.support.v7.internal.widget.DecorToolbar) $r1;
+        return $r4;
+
+     label0:
+        $z0 = $r1 instanceof android.support.v7.widget.Toolbar;
+        if $z0 == 0 goto label1;
+
+        $r5 = (android.support.v7.widget.Toolbar) $r1;
+        $r4 = virtualinvoke $r5.<android.support.v7.widget.Toolbar: android.support.v7.internal.widget.DecorToolbar getWrapper()>();
+        return $r4;
+
+     label1:
+        $r6 = new java.lang.IllegalStateException;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Can\'t make a decor toolbar out of ");
+        $r7 = virtualinvoke $r1.<java.lang.Object: java.lang.Class getClass()>();
+        $r3 = virtualinvoke $r7.<java.lang.Class: java.lang.String getSimpleName()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r6.<java.lang.IllegalStateException: void <init>(java.lang.String)>($r3);
+        throw $r6;
+    }
+
+    private void haltActionBarHideOffsetAnimations()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.Runnable $r1;
+        android.support.v4.view.ViewPropertyAnimatorCompat $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mRemoveActionBarHideOffset>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean removeCallbacks(java.lang.Runnable)>($r1);
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mAddActionBarHideOffset>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean removeCallbacks(java.lang.Runnable)>($r1);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarTopAnimator>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarTopAnimator>;
+        virtualinvoke $r2.<android.support.v4.view.ViewPropertyAnimatorCompat: void cancel()>();
+
+     label0:
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarBottomAnimator>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.ViewPropertyAnimatorCompat mCurrentActionBarBottomAnimator>;
+        virtualinvoke $r2.<android.support.v4.view.ViewPropertyAnimatorCompat: void cancel()>();
+
+     label1:
+        return;
+    }
+
+    private void init(android.content.Context)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.content.Context $r1, $r3;
+        android.content.res.TypedArray $r2;
+        boolean $z0, $z2;
+        int[] $r4;
+        android.content.res.Resources$Theme $r5;
+        int $i0, $i1;
+        android.graphics.drawable.Drawable $r6;
+        android.content.pm.ApplicationInfo $r7;
+        android.support.v4.widget.ScrollerCompat $r8;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.content.Context;
+        $z0 = 1;
+        $r3 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.content.Context getContext()>();
+        $r5 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources$Theme getTheme()>();
+        $r4 = <android.support.v7.internal.widget.ActionBarOverlayLayout: int[] ATTRS>;
+        $r2 = virtualinvoke $r5.<android.content.res.Resources$Theme: android.content.res.TypedArray obtainStyledAttributes(int[])>($r4);
+        $i1 = (int) 0;
+        $i0 = (int) 0;
+        $i0 = virtualinvoke $r2.<android.content.res.TypedArray: int getDimensionPixelSize(int,int)>($i1, $i0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mActionBarHeight> = $i0;
+        $i1 = (int) 1;
+        $r6 = virtualinvoke $r2.<android.content.res.TypedArray: android.graphics.drawable.Drawable getDrawable(int)>($i1);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay> = $r6;
+        $r6 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay>;
+        if $r6 != null goto label2;
+
+        $z2 = 1;
+
+     label0:
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void setWillNotDraw(boolean)>($z2);
+        virtualinvoke $r2.<android.content.res.TypedArray: void recycle()>();
+        $r7 = virtualinvoke $r1.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $i0 = $r7.<android.content.pm.ApplicationInfo: int targetSdkVersion>;
+        if $i0 >= 19 goto label3;
+
+     label1:
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mIgnoreWindowContentOverlay> = $z0;
+        $r8 = staticinvoke <android.support.v4.widget.ScrollerCompat: android.support.v4.widget.ScrollerCompat create(android.content.Context)>($r1);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.widget.ScrollerCompat mFlingEstimator> = $r8;
+        return;
+
+     label2:
+        $z2 = 0;
+        goto label0;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+    }
+
+    private void postAddActionBarHideOffset()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mAddActionBarHideOffset>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean postDelayed(java.lang.Runnable,long)>($r1, 600L);
+        return;
+    }
+
+    private void postRemoveActionBarHideOffset()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mRemoveActionBarHideOffset>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean postDelayed(java.lang.Runnable,long)>($r1, 600L);
+        return;
+    }
+
+    private void removeActionBarHideOffset()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: java.lang.Runnable mRemoveActionBarHideOffset>;
+        interfaceinvoke $r1.<java.lang.Runnable: void run()>();
+        return;
+    }
+
+    private boolean shouldHideActionBarOnFling(float, float)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        float $f0, $f1;
+        android.support.v4.widget.ScrollerCompat $r1;
+        boolean $z0;
+        int $i0, $i1, $i2, i3, i4, i5, i6, i7;
+        android.support.v7.internal.widget.ActionBarContainer $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $f0 := @parameter0: float;
+        $f1 := @parameter1: float;
+        $z0 = 0;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.widget.ScrollerCompat mFlingEstimator>;
+        $i0 = (int) $f1;
+        i3 = (int) 0;
+        i4 = (int) 0;
+        i5 = (int) 0;
+        i6 = (int) 0;
+        i7 = (int) 0;
+        virtualinvoke $r1.<android.support.v4.widget.ScrollerCompat: void fling(int,int,int,int,int,int,int,int)>(i3, i4, i5, $i0, i6, i7, -2147483648, 2147483647);
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.widget.ScrollerCompat mFlingEstimator>;
+        $i2 = virtualinvoke $r1.<android.support.v4.widget.ScrollerCompat: int getFinalY()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i1 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getHeight()>();
+        if $i2 <= $i1 goto label0;
+
+        $z0 = 1;
+
+     label0:
+        return $z0;
+    }
+
+    public boolean canShowOverflowMenu()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean canShowOverflowMenu()>();
+        return $z0;
+    }
+
+    protected boolean checkLayoutParams(android.view.ViewGroup$LayoutParams)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.ViewGroup$LayoutParams $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.ViewGroup$LayoutParams;
+        $z0 = $r1 instanceof android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams;
+        return $z0;
+    }
+
+    public void dismissPopups()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void dismissPopupMenus()>();
+        return;
+    }
+
+    public void draw(android.graphics.Canvas)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.graphics.Canvas $r1;
+        int $i0, $i2, $i3;
+        android.graphics.drawable.Drawable $r2, $r4;
+        android.support.v7.internal.widget.ActionBarContainer $r3;
+        boolean $z0;
+        float $f0, $f1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.graphics.Canvas;
+        specialinvoke $r0.<android.view.ViewGroup: void draw(android.graphics.Canvas)>($r1);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay>;
+        if $r2 == null goto label1;
+
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mIgnoreWindowContentOverlay>;
+        if $z0 != 0 goto label1;
+
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i0 = virtualinvoke $r3.<android.support.v7.internal.widget.ActionBarContainer: int getVisibility()>();
+        if $i0 != 0 goto label2;
+
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i0 = virtualinvoke $r3.<android.support.v7.internal.widget.ActionBarContainer: int getBottom()>();
+        $f0 = (float) $i0;
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $f1 = staticinvoke <android.support.v4.view.ViewCompat: float getTranslationY(android.view.View)>($r3);
+        $f1 = $f0 + $f1;
+        $f1 = $f1 + 0.5F;
+        $i0 = (int) $f1;
+
+     label0:
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay>;
+        $i2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getWidth()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay>;
+        $i3 = virtualinvoke $r2.<android.graphics.drawable.Drawable: int getIntrinsicHeight()>();
+        $i3 = $i3 + $i0;
+        virtualinvoke $r4.<android.graphics.drawable.Drawable: void setBounds(int,int,int,int)>(0, $i0, $i2, $i3);
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.drawable.Drawable mWindowContentOverlay>;
+        virtualinvoke $r4.<android.graphics.drawable.Drawable: void draw(android.graphics.Canvas)>($r1);
+
+     label1:
+        return;
+
+     label2:
+        $i0 = 0;
+        goto label0;
+    }
+
+    protected boolean fitSystemWindows(android.graphics.Rect)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.graphics.Rect $r1, $r4;
+        int $i0;
+        android.support.v7.internal.widget.ActionBarContainer $r2;
+        boolean $z3, $z4;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.graphics.Rect;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $i0 = staticinvoke <android.support.v4.view.ViewCompat: int getWindowSystemUiVisibility(android.view.View)>($r0);
+        $i0 = $i0 & 256;
+        if $i0 == 0 goto label4;
+
+     label0:
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $z3 = specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean applyInsets(android.view.View,android.graphics.Rect,boolean,boolean,boolean,boolean)>($r2, $r1, 1, 1, 0, 1);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $z4 = specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean applyInsets(android.view.View,android.graphics.Rect,boolean,boolean,boolean,boolean)>($r2, $r1, 1, 0, 1, 1);
+        $z3 = $z3 | $z4;
+
+     label1:
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseInnerInsets>;
+        virtualinvoke $r4.<android.graphics.Rect: void set(android.graphics.Rect)>($r1);
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseInnerInsets>;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseContentInsets>;
+        staticinvoke <android.support.v7.internal.widget.ViewUtils: void computeFitSystemWindows(android.view.View,android.graphics.Rect,android.graphics.Rect)>($r0, $r4, $r1);
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastBaseContentInsets>;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseContentInsets>;
+        $z4 = virtualinvoke $r4.<android.graphics.Rect: boolean equals(java.lang.Object)>($r1);
+        if $z4 != 0 goto label2;
+
+        $z3 = 1;
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastBaseContentInsets>;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseContentInsets>;
+        virtualinvoke $r4.<android.graphics.Rect: void set(android.graphics.Rect)>($r1);
+
+     label2:
+        if $z3 == 0 goto label3;
+
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void requestLayout()>();
+
+     label3:
+        return 1;
+
+     label4:
+        goto label0;
+    }
+
+    protected android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams generateDefaultLayoutParams()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = new android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams;
+        specialinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: void <init>(int,int)>(-1, -1);
+        return $r1;
+    }
+
+    protected volatile android.view.ViewGroup$LayoutParams generateDefaultLayoutParams()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams generateDefaultLayoutParams()>();
+        return $r1;
+    }
+
+    public android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams generateLayoutParams(android.util.AttributeSet)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.util.AttributeSet $r1;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.util.AttributeSet;
+        $r2 = new android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams;
+        $r3 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.content.Context getContext()>();
+        specialinvoke $r2.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: void <init>(android.content.Context,android.util.AttributeSet)>($r3, $r1);
+        return $r2;
+    }
+
+    public volatile android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.util.AttributeSet $r1;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.util.AttributeSet;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams generateLayoutParams(android.util.AttributeSet)>($r1);
+        return $r2;
+    }
+
+    protected android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.ViewGroup$LayoutParams $r1;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.ViewGroup$LayoutParams;
+        $r2 = new android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams;
+        specialinvoke $r2.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: void <init>(android.view.ViewGroup$LayoutParams)>($r1);
+        return $r2;
+    }
+
+    public int getActionBarHideOffset()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarContainer $r1;
+        float $f0;
+        int $i0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $f0 = staticinvoke <android.support.v4.view.ViewCompat: float getTranslationY(android.view.View)>($r1);
+        $i0 = (int) $f0;
+        $i0 = neg $i0;
+        return $i0;
+
+     label0:
+        return 0;
+    }
+
+    public int getNestedScrollAxes()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v4.view.NestedScrollingParentHelper $r1;
+        int $i0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.NestedScrollingParentHelper mParentHelper>;
+        $i0 = virtualinvoke $r1.<android.support.v4.view.NestedScrollingParentHelper: int getNestedScrollAxes()>();
+        return $i0;
+    }
+
+    public java.lang.CharSequence getTitle()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        java.lang.CharSequence $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $r2 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: java.lang.CharSequence getTitle()>();
+        return $r2;
+    }
+
+    public boolean hasIcon()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean hasIcon()>();
+        return $z0;
+    }
+
+    public boolean hasLogo()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean hasLogo()>();
+        return $z0;
+    }
+
+    public boolean hideOverflowMenu()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean hideOverflowMenu()>();
+        return $z0;
+    }
+
+    public void initFeature(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        lookupswitch($i0)
+        {
+            case 2: goto label1;
+            case 5: goto label2;
+            case 9: goto label3;
+            default: goto label0;
+        };
+
+     label0:
+        return;
+
+     label1:
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void initProgress()>();
+        goto label0;
+
+     label2:
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void initIndeterminateProgress()>();
+        goto label0;
+
+     label3:
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void setOverlayMode(boolean)>(1);
+        goto label0;
+    }
+
+    public boolean isHideOnContentScrollEnabled()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll>;
+        return $z0;
+    }
+
+    public boolean isInOverlayMode()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mOverlayMode>;
+        return $z0;
+    }
+
+    public boolean isOverflowMenuShowPending()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean isOverflowMenuShowPending()>();
+        return $z0;
+    }
+
+    public boolean isOverflowMenuShowing()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean isOverflowMenuShowing()>();
+        return $z0;
+    }
+
+    protected void onConfigurationChanged(android.content.res.Configuration)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.content.res.Configuration $r1;
+        int $i0;
+        android.content.Context $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.content.res.Configuration;
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i0 < 8 goto label0;
+
+        specialinvoke $r0.<android.view.ViewGroup: void onConfigurationChanged(android.content.res.Configuration)>($r1);
+
+     label0:
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.content.Context getContext()>();
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void init(android.content.Context)>($r2);
+        staticinvoke <android.support.v4.view.ViewCompat: void requestApplyInsets(android.view.View)>($r0);
+        return;
+    }
+
+    protected void onDetachedFromWindow()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        specialinvoke $r0.<android.view.ViewGroup: void onDetachedFromWindow()>();
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        return;
+    }
+
+    protected void onLayout(boolean, int, int, int, int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6, $i7, $i8, $i10;
+        android.view.View $r1;
+        android.view.ViewGroup$LayoutParams $r2;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r3;
+        android.support.v7.internal.widget.ActionBarContainer $r4;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter0: boolean;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $i3 := @parameter4: int;
+        $i0 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getChildCount()>();
+        $i6 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingLeft()>();
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingRight()>();
+        $i7 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingTop()>();
+        $i8 = $i3 - $i1;
+        $i5 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingBottom()>();
+        $i5 = $i8 - $i5;
+        $i4 = 0;
+
+     label0:
+        if $i4 >= $i0 goto label4;
+
+        $r1 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.view.View getChildAt(int)>($i4);
+        $i8 = virtualinvoke $r1.<android.view.View: int getVisibility()>();
+        if $i8 == 8 goto label2;
+
+        $r2 = virtualinvoke $r1.<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r3 = (android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams) $r2;
+        $i8 = virtualinvoke $r1.<android.view.View: int getMeasuredWidth()>();
+        $i1 = virtualinvoke $r1.<android.view.View: int getMeasuredHeight()>();
+        $i3 = $r3.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin>;
+        $i3 = $i6 + $i3;
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        if $r1 != $r4 goto label3;
+
+        $i2 = $i5 - $i1;
+        $i10 = $r3.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin>;
+        $i2 = $i2 - $i10;
+
+     label1:
+        $i10 = $i3 + $i8;
+        $i8 = $i2 + $i1;
+        virtualinvoke $r1.<android.view.View: void layout(int,int,int,int)>($i3, $i2, $i10, $i8);
+
+     label2:
+        $i4 = $i4 + 1;
+        goto label0;
+
+     label3:
+        $i10 = $r3.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin>;
+        $i2 = $i7 + $i10;
+        goto label1;
+
+     label4:
+        return;
+    }
+
+    protected void onMeasure(int, int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0, $i1, $i2, $i4, $i6, $i10, $i11, $i12, $i13;
+        android.support.v7.internal.widget.ActionBarContainer $r2;
+        boolean $z0, $z1, $z3;
+        android.view.ViewGroup$LayoutParams $r3;
+        android.view.View $r4;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams $r5;
+        android.support.v7.internal.widget.DecorToolbar $r6;
+        android.graphics.Rect $r7, $r8;
+        android.support.v7.internal.widget.ContentFrameLayout $r9;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $i10 = 0;
+        $i6 = 0;
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void measureChildWithMargins(android.view.View,int,int,int,int)>($r2, $i0, 0, $i1, 0);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $r3 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r5 = (android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams) $r3;
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i4 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredWidth()>();
+        $i2 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin>;
+        $i4 = $i4 + $i2;
+        $i2 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int rightMargin>;
+        $i4 = $i4 + $i2;
+        $i2 = staticinvoke <java.lang.Math: int max(int,int)>(0, $i4);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i4 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredHeight()>();
+        $i11 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin>;
+        $i11 = $i4 + $i11;
+        $i4 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin>;
+        $i11 = $i11 + $i4;
+        $i11 = staticinvoke <java.lang.Math: int max(int,int)>(0, $i11);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i4 = staticinvoke <android.support.v4.view.ViewCompat: int getMeasuredState(android.view.View)>($r2);
+        $i12 = staticinvoke <android.support.v7.internal.widget.ViewUtils: int combineMeasuredStates(int,int)>(0, $i4);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void measureChildWithMargins(android.view.View,int,int,int,int)>($r2, $i0, 0, $i1, 0);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $r3 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r5 = (android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams) $r3;
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i13 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredWidth()>();
+        $i4 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin>;
+        $i13 = $i13 + $i4;
+        $i4 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int rightMargin>;
+        $i13 = $i13 + $i4;
+        $i2 = staticinvoke <java.lang.Math: int max(int,int)>($i2, $i13);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i13 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredHeight()>();
+        $i4 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin>;
+        $i13 = $i13 + $i4;
+        $i4 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin>;
+        $i13 = $i13 + $i4;
+        $i11 = staticinvoke <java.lang.Math: int max(int,int)>($i11, $i13);
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i13 = staticinvoke <android.support.v4.view.ViewCompat: int getMeasuredState(android.view.View)>($r2);
+        $i12 = staticinvoke <android.support.v7.internal.widget.ViewUtils: int combineMeasuredStates(int,int)>($i12, $i13);
+
+     label0:
+        $i13 = staticinvoke <android.support.v4.view.ViewCompat: int getWindowSystemUiVisibility(android.view.View)>($r0);
+        $i13 = $i13 & 256;
+        if $i13 == 0 goto label6;
+
+        $z0 = 1;
+
+     label1:
+        if $z0 == 0 goto label7;
+
+        $i10 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mActionBarHeight>;
+        $z1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHasNonEmbeddedTabs>;
+        if $z1 == 0 goto label2;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $r4 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: android.view.View getTabContainer()>();
+        if $r4 == null goto label2;
+
+        $i13 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mActionBarHeight>;
+        $i10 = $i10 + $i13;
+
+     label2:
+        $r6 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z1 = interfaceinvoke $r6.<android.support.v7.internal.widget.DecorToolbar: boolean isSplit()>();
+        if $z1 == 0 goto label3;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        if $r2 == null goto label3;
+
+        if $z0 == 0 goto label8;
+
+        $i6 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mActionBarHeight>;
+
+     label3:
+        $r7 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mContentInsets>;
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseContentInsets>;
+        virtualinvoke $r7.<android.graphics.Rect: void set(android.graphics.Rect)>($r8);
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        $r7 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mBaseInnerInsets>;
+        virtualinvoke $r8.<android.graphics.Rect: void set(android.graphics.Rect)>($r7);
+        $z1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mOverlayMode>;
+        if $z1 != 0 goto label9;
+
+        if $z0 != 0 goto label9;
+
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mContentInsets>;
+        $i13 = $r8.<android.graphics.Rect: int top>;
+        $i13 = $i13 + $i10;
+        $r8.<android.graphics.Rect: int top> = $i13;
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mContentInsets>;
+        $i13 = $r8.<android.graphics.Rect: int bottom>;
+        $i13 = $i13 + $i6;
+        $r8.<android.graphics.Rect: int bottom> = $i13;
+
+     label4:
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mContentInsets>;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean applyInsets(android.view.View,android.graphics.Rect,boolean,boolean,boolean,boolean)>($r9, $r8, 1, 1, 1, 1);
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastInnerInsets>;
+        $r7 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        $z3 = virtualinvoke $r8.<android.graphics.Rect: boolean equals(java.lang.Object)>($r7);
+        if $z3 != 0 goto label5;
+
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mLastInnerInsets>;
+        $r7 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        virtualinvoke $r8.<android.graphics.Rect: void set(android.graphics.Rect)>($r7);
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        virtualinvoke $r9.<android.support.v7.internal.widget.ContentFrameLayout: void dispatchFitSystemWindows(android.graphics.Rect)>($r8);
+
+     label5:
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void measureChildWithMargins(android.view.View,int,int,int,int)>($r9, $i0, 0, $i1, 0);
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $r3 = virtualinvoke $r9.<android.support.v7.internal.widget.ContentFrameLayout: android.view.ViewGroup$LayoutParams getLayoutParams()>();
+        $r5 = (android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams) $r3;
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $i13 = virtualinvoke $r9.<android.support.v7.internal.widget.ContentFrameLayout: int getMeasuredWidth()>();
+        $i10 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int leftMargin>;
+        $i13 = $i13 + $i10;
+        $i10 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int rightMargin>;
+        $i13 = $i13 + $i10;
+        $i13 = staticinvoke <java.lang.Math: int max(int,int)>($i2, $i13);
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $i10 = virtualinvoke $r9.<android.support.v7.internal.widget.ContentFrameLayout: int getMeasuredHeight()>();
+        $i6 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int topMargin>;
+        $i10 = $i10 + $i6;
+        $i6 = $r5.<android.support.v7.internal.widget.ActionBarOverlayLayout$LayoutParams: int bottomMargin>;
+        $i10 = $i10 + $i6;
+        $i11 = staticinvoke <java.lang.Math: int max(int,int)>($i11, $i10);
+        $r9 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        $i10 = staticinvoke <android.support.v4.view.ViewCompat: int getMeasuredState(android.view.View)>($r9);
+        $i12 = staticinvoke <android.support.v7.internal.widget.ViewUtils: int combineMeasuredStates(int,int)>($i12, $i10);
+        $i10 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingLeft()>();
+        $i6 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingRight()>();
+        $i10 = $i10 + $i6;
+        $i13 = $i13 + $i10;
+        $i10 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingTop()>();
+        $i6 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getPaddingBottom()>();
+        $i10 = $i10 + $i6;
+        $i11 = $i11 + $i10;
+        $i10 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getSuggestedMinimumHeight()>();
+        $i11 = staticinvoke <java.lang.Math: int max(int,int)>($i11, $i10);
+        $i10 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getSuggestedMinimumWidth()>();
+        $i13 = staticinvoke <java.lang.Math: int max(int,int)>($i13, $i10);
+        $i13 = staticinvoke <android.support.v4.view.ViewCompat: int resolveSizeAndState(int,int,int)>($i13, $i0, $i12);
+        $i12 = $i12 << 16;
+        $i12 = staticinvoke <android.support.v4.view.ViewCompat: int resolveSizeAndState(int,int,int)>($i11, $i1, $i12);
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void setMeasuredDimension(int,int)>($i13, $i12);
+        return;
+
+     label6:
+        $z0 = 0;
+        goto label1;
+
+     label7:
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i13 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getVisibility()>();
+        if $i13 == 8 goto label2;
+
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i10 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredHeight()>();
+        goto label2;
+
+     label8:
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i6 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getMeasuredHeight()>();
+        goto label3;
+
+     label9:
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        $i13 = $r8.<android.graphics.Rect: int top>;
+        $i13 = $i13 + $i10;
+        $r8.<android.graphics.Rect: int top> = $i13;
+        $r8 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.graphics.Rect mInnerInsets>;
+        $i13 = $r8.<android.graphics.Rect: int bottom>;
+        $i13 = $i13 + $i6;
+        $r8.<android.graphics.Rect: int bottom> = $i13;
+        goto label4;
+    }
+
+    public boolean onNestedFling(android.view.View, float, float, boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        float $f0, $f1;
+        boolean $z0, $z2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $f0 := @parameter1: float;
+        $f1 := @parameter2: float;
+        $z0 := @parameter3: boolean;
+        $z2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll>;
+        if $z2 == 0 goto label0;
+
+        if $z0 != 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $z2 = specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean shouldHideActionBarOnFling(float,float)>($f0, $f1);
+        if $z2 == 0 goto label3;
+
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void addActionBarHideOffset()>();
+
+     label2:
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mAnimatingForFling> = 1;
+        return 1;
+
+     label3:
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void removeActionBarHideOffset()>();
+        goto label2;
+    }
+
+    public boolean onNestedPreFling(android.view.View, float, float)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        float $f0, $f1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $f0 := @parameter1: float;
+        $f1 := @parameter2: float;
+        return 0;
+    }
+
+    public void onNestedPreScroll(android.view.View, int, int, int[])
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        int[] $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 := @parameter3: int[];
+        return;
+    }
+
+    public void onNestedScroll(android.view.View, int, int, int, int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        int $i0, $i1, $i2, $i3;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $i2 := @parameter3: int;
+        $i3 := @parameter4: int;
+        $i3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mHideOnContentScrollReference>;
+        $i3 = $i3 + $i1;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mHideOnContentScrollReference> = $i3;
+        $i3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mHideOnContentScrollReference>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void setActionBarHideOffset(int)>($i3);
+        return;
+    }
+
+    public void onNestedScrollAccepted(android.view.View, android.view.View, int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1, $r2;
+        int $i0;
+        android.support.v4.view.NestedScrollingParentHelper $r3;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback $r4;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.View;
+        $i0 := @parameter2: int;
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v4.view.NestedScrollingParentHelper mParentHelper>;
+        virtualinvoke $r3.<android.support.v4.view.NestedScrollingParentHelper: void onNestedScrollAccepted(android.view.View,android.view.View,int)>($r1, $r2, $i0);
+        $i0 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int getActionBarHideOffset()>();
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mHideOnContentScrollReference> = $i0;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $r4 == null goto label0;
+
+        $r4 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        interfaceinvoke $r4.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void onContentScrollStarted()>();
+
+     label0:
+        return;
+    }
+
+    public boolean onStartNestedScroll(android.view.View, android.view.View, int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1, $r2;
+        int $i0;
+        android.support.v7.internal.widget.ActionBarContainer $r3;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $r2 := @parameter1: android.view.View;
+        $i0 := @parameter2: int;
+        $i0 = $i0 & 2;
+        if $i0 == 0 goto label0;
+
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i0 = virtualinvoke $r3.<android.support.v7.internal.widget.ActionBarContainer: int getVisibility()>();
+        if $i0 == 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll>;
+        return $z0;
+    }
+
+    public void onStopNestedScroll(android.view.View)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.View $r1;
+        boolean $z0;
+        android.support.v7.internal.widget.ActionBarContainer $r2;
+        int $i0, $i1;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback $r3;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.View;
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll>;
+        if $z0 == 0 goto label0;
+
+        $z0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mAnimatingForFling>;
+        if $z0 != 0 goto label0;
+
+        $i1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mHideOnContentScrollReference>;
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i0 = virtualinvoke $r2.<android.support.v7.internal.widget.ActionBarContainer: int getHeight()>();
+        if $i1 > $i0 goto label2;
+
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void postRemoveActionBarHideOffset()>();
+
+     label0:
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        interfaceinvoke $r3.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void onContentScrollStopped()>();
+
+     label1:
+        return;
+
+     label2:
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void postAddActionBarHideOffset()>();
+        goto label0;
+    }
+
+    public void onWindowSystemUiVisibilityChanged(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0, $i1, $i3;
+        boolean $z0, $z1, $z2;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        $z2 = 1;
+        $i1 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i1 < 16 goto label0;
+
+        specialinvoke $r0.<android.view.ViewGroup: void onWindowSystemUiVisibilityChanged(int)>($i0);
+
+     label0:
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $i1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mLastSystemUiVisibility>;
+        $i1 = $i1 ^ $i0;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mLastSystemUiVisibility> = $i0;
+        $i3 = $i0 & 4;
+        if $i3 != 0 goto label7;
+
+        $z0 = 1;
+
+     label1:
+        $i3 = $i0 & 256;
+        if $i3 == 0 goto label8;
+
+        $z1 = 1;
+
+     label2:
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $r1 == null goto label5;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $z1 != 0 goto label9;
+
+     label3:
+        interfaceinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void enableContentAnimations(boolean)>($z2);
+        if $z0 != 0 goto label4;
+
+        if $z1 != 0 goto label10;
+
+     label4:
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void showForSystem()>();
+
+     label5:
+        $i3 = $i1 & 256;
+        if $i3 == 0 goto label6;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $r1 == null goto label6;
+
+        staticinvoke <android.support.v4.view.ViewCompat: void requestApplyInsets(android.view.View)>($r0);
+
+     label6:
+        return;
+
+     label7:
+        $z0 = 0;
+        goto label1;
+
+     label8:
+        $z1 = 0;
+        goto label2;
+
+     label9:
+        $z2 = 0;
+        goto label3;
+
+     label10:
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void hideForSystem()>();
+        goto label5;
+    }
+
+    protected void onWindowVisibilityChanged(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<android.view.ViewGroup: void onWindowVisibilityChanged(int)>($i0);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mWindowVisibility> = $i0;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void onWindowVisibilityChanged(int)>($i0);
+
+     label0:
+        return;
+    }
+
+    void pullChildren()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ContentFrameLayout $r1;
+        android.view.View $r2;
+        int $i0;
+        android.support.v7.internal.widget.ActionBarContainer $r3;
+        android.support.v7.internal.widget.DecorToolbar $r4;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent>;
+        if $r1 != null goto label0;
+
+        $i0 = <android.support.v7.appcompat.R$id: int action_bar_activity_content>;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.view.View findViewById(int)>($i0);
+        $r1 = (android.support.v7.internal.widget.ContentFrameLayout) $r2;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ContentFrameLayout mContent> = $r1;
+        $i0 = <android.support.v7.appcompat.R$id: int action_bar_container>;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.view.View findViewById(int)>($i0);
+        $r3 = (android.support.v7.internal.widget.ActionBarContainer) $r2;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop> = $r3;
+        $i0 = <android.support.v7.appcompat.R$id: int action_bar>;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.view.View findViewById(int)>($i0);
+        $r4 = specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar getDecorToolbar(android.view.View)>($r2);
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar> = $r4;
+        $i0 = <android.support.v7.appcompat.R$id: int split_action_bar>;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.view.View findViewById(int)>($i0);
+        $r3 = (android.support.v7.internal.widget.ActionBarContainer) $r2;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom> = $r3;
+
+     label0:
+        return;
+    }
+
+    public void restoreToolbarHierarchyState(android.util.SparseArray)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.util.SparseArray $r1;
+        android.support.v7.internal.widget.DecorToolbar $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.util.SparseArray;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorToolbar: void restoreHierarchyState(android.util.SparseArray)>($r1);
+        return;
+    }
+
+    public void saveToolbarHierarchyState(android.util.SparseArray)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.util.SparseArray $r1;
+        android.support.v7.internal.widget.DecorToolbar $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.util.SparseArray;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorToolbar: void saveHierarchyState(android.util.SparseArray)>($r1);
+        return;
+    }
+
+    public void setActionBarHideOffset(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0, $i1, $i3;
+        float $f0, $f1;
+        android.support.v7.internal.widget.ActionBarContainer $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i1 = virtualinvoke $r1.<android.support.v7.internal.widget.ActionBarContainer: int getHeight()>();
+        $i0 = staticinvoke <java.lang.Math: int min(int,int)>($i0, $i1);
+        $i0 = staticinvoke <java.lang.Math: int max(int,int)>(0, $i0);
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarTop>;
+        $i3 = neg $i0;
+        $f0 = (float) $i3;
+        staticinvoke <android.support.v4.view.ViewCompat: void setTranslationY(android.view.View,float)>($r1, $f0);
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i3 = virtualinvoke $r1.<android.support.v7.internal.widget.ActionBarContainer: int getVisibility()>();
+        if $i3 == 8 goto label0;
+
+        $f0 = (float) $i0;
+        $f1 = (float) $i1;
+        $f0 = $f0 / $f1;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $i3 = virtualinvoke $r1.<android.support.v7.internal.widget.ActionBarContainer: int getHeight()>();
+        $f1 = (float) $i3;
+        $f1 = $f1 * $f0;
+        $i0 = (int) $f1;
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarContainer mActionBarBottom>;
+        $f1 = (float) $i0;
+        staticinvoke <android.support.v4.view.ViewCompat: void setTranslationY(android.view.View,float)>($r1, $f1);
+
+     label0:
+        return;
+    }
+
+    public void setActionBarVisibilityCallback(android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback $r1;
+        int $i0;
+        android.os.IBinder $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback> = $r1;
+        $r2 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.os.IBinder getWindowToken()>();
+        if $r2 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback mActionBarVisibilityCallback>;
+        $i0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mWindowVisibility>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback: void onWindowVisibilityChanged(int)>($i0);
+        $i0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mLastSystemUiVisibility>;
+        if $i0 == 0 goto label0;
+
+        $i0 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: int mLastSystemUiVisibility>;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void onWindowSystemUiVisibilityChanged(int)>($i0);
+        staticinvoke <android.support.v4.view.ViewCompat: void requestApplyInsets(android.view.View)>($r0);
+
+     label0:
+        return;
+    }
+
+    public void setHasNonEmbeddedTabs(boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter0: boolean;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHasNonEmbeddedTabs> = $z0;
+        return;
+    }
+
+    public void setHideOnContentScrollEnabled(boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0, $z1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter0: boolean;
+        $z1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll>;
+        if $z0 == $z1 goto label0;
+
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mHideOnContentScroll> = $z0;
+        if $z0 != 0 goto label0;
+
+        specialinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void haltActionBarHideOffsetAnimations()>();
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void setActionBarHideOffset(int)>(0);
+
+     label0:
+        return;
+    }
+
+    public void setIcon(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void setIcon(int)>($i0);
+        return;
+    }
+
+    public void setIcon(android.graphics.drawable.Drawable)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.graphics.drawable.Drawable $r1;
+        android.support.v7.internal.widget.DecorToolbar $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorToolbar: void setIcon(android.graphics.drawable.Drawable)>($r1);
+        return;
+    }
+
+    public void setLogo(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void setLogo(int)>($i0);
+        return;
+    }
+
+    public void setMenu(android.view.Menu, android.support.v7.internal.view.menu.MenuPresenter$Callback)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.Menu $r1;
+        android.support.v7.internal.view.menu.MenuPresenter$Callback $r2;
+        android.support.v7.internal.widget.DecorToolbar $r3;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.Menu;
+        $r2 := @parameter1: android.support.v7.internal.view.menu.MenuPresenter$Callback;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r3 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r3.<android.support.v7.internal.widget.DecorToolbar: void setMenu(android.view.Menu,android.support.v7.internal.view.menu.MenuPresenter$Callback)>($r1, $r2);
+        return;
+    }
+
+    public void setMenuPrepared()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: void setMenuPrepared()>();
+        return;
+    }
+
+    public void setOverlayMode(boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+        android.content.Context $r1;
+        android.content.pm.ApplicationInfo $r2;
+        int $i1;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter0: boolean;
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mOverlayMode> = $z0;
+        if $z0 == 0 goto label1;
+
+        $r1 = virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.content.Context getContext()>();
+        $r2 = virtualinvoke $r1.<android.content.Context: android.content.pm.ApplicationInfo getApplicationInfo()>();
+        $i1 = $r2.<android.content.pm.ApplicationInfo: int targetSdkVersion>;
+        if $i1 >= 19 goto label1;
+
+        $z0 = 1;
+
+     label0:
+        $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: boolean mIgnoreWindowContentOverlay> = $z0;
+        return;
+
+     label1:
+        $z0 = 0;
+        goto label0;
+    }
+
+    public void setShowingForActionMode(boolean)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $z0 := @parameter0: boolean;
+        return;
+    }
+
+    public void setUiOptions(int)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        int $i0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $i0 := @parameter0: int;
+        return;
+    }
+
+    public void setWindowCallback(android.view.Window$Callback)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.view.Window$Callback $r1;
+        android.support.v7.internal.widget.DecorToolbar $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: android.view.Window$Callback;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorToolbar: void setWindowCallback(android.view.Window$Callback)>($r1);
+        return;
+    }
+
+    public void setWindowTitle(java.lang.CharSequence)
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        java.lang.CharSequence $r1;
+        android.support.v7.internal.widget.DecorToolbar $r2;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        $r1 := @parameter0: java.lang.CharSequence;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r2 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        interfaceinvoke $r2.<android.support.v7.internal.widget.DecorToolbar: void setWindowTitle(java.lang.CharSequence)>($r1);
+        return;
+    }
+
+    public boolean shouldDelayChildPressedState()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        return 0;
+    }
+
+    public boolean showOverflowMenu()
+    {
+        android.support.v7.internal.widget.ActionBarOverlayLayout $r0;
+        android.support.v7.internal.widget.DecorToolbar $r1;
+        boolean $z0;
+
+        $r0 := @this: android.support.v7.internal.widget.ActionBarOverlayLayout;
+        virtualinvoke $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: void pullChildren()>();
+        $r1 = $r0.<android.support.v7.internal.widget.ActionBarOverlayLayout: android.support.v7.internal.widget.DecorToolbar mDecorToolbar>;
+        $z0 = interfaceinvoke $r1.<android.support.v7.internal.widget.DecorToolbar: boolean showOverflowMenu()>();
+        return $z0;
+    }
+}

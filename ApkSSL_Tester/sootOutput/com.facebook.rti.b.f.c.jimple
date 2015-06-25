@@ -1,0 +1,571 @@
+public final class com.facebook.rti.b.f.c extends java.lang.Object
+{
+    private final java.util.concurrent.ExecutorService a;
+    private final java.util.concurrent.ScheduledExecutorService b;
+    private final com.facebook.rti.a.g.b c;
+    private final a.a.a d;
+    private com.facebook.rti.b.a.b.b e;
+    private com.facebook.rti.b.f.d f;
+    private java.lang.Runnable g;
+    private java.util.concurrent.Future h;
+    private int i;
+    private long j;
+    private boolean k;
+
+    public void <init>(com.facebook.rti.a.g.b, a.a.a, java.util.concurrent.ExecutorService, java.util.concurrent.ScheduledExecutorService, com.facebook.rti.b.a.b.b)
+    {
+        com.facebook.rti.b.f.c $r0;
+        com.facebook.rti.a.g.b $r1;
+        a.a.a $r2;
+        java.util.concurrent.ExecutorService $r3;
+        java.util.concurrent.ScheduledExecutorService $r4;
+        com.facebook.rti.b.a.b.b $r5;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $r1 := @parameter0: com.facebook.rti.a.g.b;
+        $r2 := @parameter1: a.a.a;
+        $r3 := @parameter2: java.util.concurrent.ExecutorService;
+        $r4 := @parameter3: java.util.concurrent.ScheduledExecutorService;
+        $r5 := @parameter4: com.facebook.rti.b.a.b.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.rti.b.f.c: com.facebook.rti.a.g.b c> = $r1;
+        $r0.<com.facebook.rti.b.f.c: a.a.a d> = $r2;
+        $r0.<com.facebook.rti.b.f.c: java.util.concurrent.ExecutorService a> = $r3;
+        $r0.<com.facebook.rti.b.f.c: java.util.concurrent.ScheduledExecutorService b> = $r4;
+        $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e> = $r5;
+        $r0.<com.facebook.rti.b.f.c: int i> = 0;
+        return;
+    }
+
+    private void a(com.facebook.rti.b.f.e)
+    {
+        com.facebook.rti.b.f.c $r0;
+        com.facebook.rti.b.f.e $r1, $r5;
+        java.lang.String $r3;
+        java.lang.Object[] $r4;
+        com.facebook.rti.b.f.a $r6;
+        com.facebook.rti.b.a.b.b $r7;
+        int $i2, $i3, $i4;
+        com.facebook.rti.b.f.b $r8;
+        java.lang.IllegalArgumentException $r9;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $r1 := @parameter0: com.facebook.rti.b.f.e;
+        $r4 = newarray (java.lang.Object)[1];
+        $r4[0] = $r1;
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "set strategy to %s", $r4);
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void m()>();
+        $r5 = <com.facebook.rti.b.f.e: com.facebook.rti.b.f.e a>;
+        if $r1 != $r5 goto label1;
+
+        $r6 = new com.facebook.rti.b.f.a;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i2 = $r7.<com.facebook.rti.b.a.b.b: int e>;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i3 = $r7.<com.facebook.rti.b.a.b.b: int f>;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i4 = $r7.<com.facebook.rti.b.a.b.b: int g>;
+        specialinvoke $r6.<com.facebook.rti.b.f.a: void <init>(int,int,int)>($i2, $i3, $i4);
+        $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f> = $r6;
+
+     label0:
+        return;
+
+     label1:
+        $r5 = <com.facebook.rti.b.f.e: com.facebook.rti.b.f.e b>;
+        if $r1 != $r5 goto label2;
+
+        $r8 = new com.facebook.rti.b.f.b;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i4 = $r7.<com.facebook.rti.b.a.b.b: int h>;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i3 = $r7.<com.facebook.rti.b.a.b.b: int i>;
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.a.b.b e>;
+        $i2 = $r7.<com.facebook.rti.b.a.b.b: int j>;
+        specialinvoke $r8.<com.facebook.rti.b.f.b: void <init>(int,int,int)>($i4, $i3, $i2);
+        $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f> = $r8;
+        goto label0;
+
+     label2:
+        $r4 = newarray (java.lang.Object)[1];
+        $r4[0] = $r1;
+        $r3 = staticinvoke <com.facebook.rti.a.h.a: java.lang.String a(java.lang.String,java.lang.Object[])>("Invalid strategy %s specified", $r4);
+        $r4 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", $r3, $r4);
+        $r9 = new java.lang.IllegalArgumentException;
+        specialinvoke $r9.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r3);
+        throw $r9;
+    }
+
+    private java.util.concurrent.Future i()
+    {
+        com.facebook.rti.b.f.c $r0;
+        boolean $z0;
+        java.lang.Runnable $r1;
+        com.facebook.rti.b.a.c.k $r2;
+        java.util.concurrent.ExecutorService $r3;
+        java.util.concurrent.Future $r4;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $z0 = staticinvoke <com.facebook.rti.b.a.c.s: boolean a()>();
+        if $z0 == 0 goto label0;
+
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.lang.Runnable g>;
+        interfaceinvoke $r1.<java.lang.Runnable: void run()>();
+        $r2 = <com.facebook.rti.b.a.c.k: com.facebook.rti.b.a.c.k a>;
+        return $r2;
+
+     label0:
+        $r3 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.ExecutorService a>;
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.lang.Runnable g>;
+        $r4 = interfaceinvoke $r3.<java.util.concurrent.ExecutorService: java.util.concurrent.Future submit(java.lang.Runnable)>($r1);
+        return $r4;
+    }
+
+    private boolean j()
+    {
+        com.facebook.rti.b.f.c $r0;
+        boolean $z0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $z0 = $r0.<com.facebook.rti.b.f.c: boolean k>;
+
+     label1:
+        exitmonitor $r0;
+        return $z0;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    private boolean k()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.util.concurrent.Future $r1;
+        boolean $z0;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h>;
+        if $r1 == null goto label3;
+
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h>;
+        $z0 = interfaceinvoke $r1.<java.util.concurrent.Future: boolean isDone()>();
+
+     label1:
+        if $z0 != 0 goto label3;
+
+        $z0 = 1;
+
+     label2:
+        exitmonitor $r0;
+        return $z0;
+
+     label3:
+        $z0 = 0;
+        goto label2;
+
+     label4:
+        $r2 := @caughtexception;
+        exitmonitor $r0;
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label1 with label4;
+    }
+
+    private void l()
+    {
+        com.facebook.rti.b.f.c $r0;
+        com.facebook.rti.b.f.e $r1;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void m()>();
+        $r1 = <com.facebook.rti.b.f.e: com.facebook.rti.b.f.e a>;
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void a(com.facebook.rti.b.f.e)>($r1);
+        $r0.<com.facebook.rti.b.f.c: int i> = 0;
+        return;
+    }
+
+    private void m()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.util.concurrent.Future $r1;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h>;
+        interfaceinvoke $r1.<java.util.concurrent.Future: boolean cancel(boolean)>(0);
+        $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h> = null;
+
+     label0:
+        return;
+    }
+
+    public final java.util.concurrent.Future a()
+    {
+        com.facebook.rti.b.f.c $r0;
+        boolean $z0;
+        java.lang.Object[] $r3;
+        java.util.concurrent.Future $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "start", $r3);
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void l()>();
+        $z0 = virtualinvoke $r0.<com.facebook.rti.b.f.c: boolean b()>();
+        if $z0 == 0 goto label2;
+
+        $r4 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h>;
+
+     label1:
+        exitmonitor $r0;
+        return $r4;
+
+     label2:
+        $r4 = null;
+        goto label1;
+
+     label3:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label3;
+    }
+
+    public final void a(java.lang.Runnable)
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.lang.Runnable $r1, $r2;
+        boolean $z0;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $r1 := @parameter0: java.lang.Runnable;
+        entermonitor $r0;
+
+     label0:
+        $r2 = $r0.<com.facebook.rti.b.f.c: java.lang.Runnable g>;
+        if $r2 != null goto label3;
+
+        $z0 = 1;
+
+     label1:
+        staticinvoke <com.facebook.rti.a.d.a.d: void b(boolean)>($z0);
+        $r0.<com.facebook.rti.b.f.c: java.lang.Runnable g> = $r1;
+
+     label2:
+        exitmonitor $r0;
+        return;
+
+     label3:
+        $z0 = 0;
+        goto label1;
+
+     label4:
+        $r3 := @caughtexception;
+        exitmonitor $r0;
+        throw $r3;
+
+        catch java.lang.Throwable from label0 to label2 with label4;
+    }
+
+    public final boolean b()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.lang.String $r1;
+        com.facebook.rti.b.f.e $r3, $r11;
+        java.lang.Integer $r4;
+        boolean $z2, $z3;
+        java.lang.Object[] $r5;
+        com.facebook.rti.b.f.d $r6;
+        int $i1;
+        com.facebook.rti.a.g.b $r7;
+        long $l2;
+        a.a.a $r8;
+        java.lang.Object $r9;
+        java.lang.Boolean $r10;
+        java.util.concurrent.Future $r12;
+        java.util.concurrent.ScheduledExecutorService $r13;
+        java.lang.Runnable $r14;
+        java.util.concurrent.TimeUnit $r15;
+        java.util.concurrent.ScheduledFuture $r16;
+        java.lang.Throwable $r17;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "next", $r5);
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        if $r6 != null goto label3;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void e(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "next is called before having a strategy.", $r5);
+
+     label1:
+        $z2 = 0;
+
+     label2:
+        exitmonitor $r0;
+        return $z2;
+
+     label3:
+        $z2 = specialinvoke $r0.<com.facebook.rti.b.f.c: boolean k()>();
+        if $z2 == 0 goto label4;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "Retry attempt already scheduled.", $r5);
+        $z2 = 1;
+        goto label2;
+
+     label4:
+        $i1 = $r0.<com.facebook.rti.b.f.c: int i>;
+        if $i1 != 0 goto label5;
+
+        $r7 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.a.g.b c>;
+        $l2 = interfaceinvoke $r7.<com.facebook.rti.a.g.b: long a()>();
+        $r0.<com.facebook.rti.b.f.c: long j> = $l2;
+
+     label5:
+        $r8 = $r0.<com.facebook.rti.b.f.c: a.a.a d>;
+        $r9 = interfaceinvoke $r8.<a.a.a: java.lang.Object b()>();
+        $r10 = (java.lang.Boolean) $r9;
+        $z2 = virtualinvoke $r10.<java.lang.Boolean: boolean booleanValue()>();
+        if $z2 == 0 goto label8;
+
+        $z2 = specialinvoke $r0.<com.facebook.rti.b.f.c: boolean j()>();
+        if $z2 != 0 goto label8;
+
+        $z2 = 1;
+
+     label6:
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        $z3 = interfaceinvoke $r6.<com.facebook.rti.b.f.d: boolean b(boolean)>($z2);
+        if $z3 != 0 goto label9;
+
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        $r11 = interfaceinvoke $r6.<com.facebook.rti.b.f.d: com.facebook.rti.b.f.e a()>();
+        $r3 = <com.facebook.rti.b.f.e: com.facebook.rti.b.f.e a>;
+        if $r11 != $r3 goto label7;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void d(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "Auto switching from B2B to back off retry strategy.", $r5);
+        $r11 = <com.facebook.rti.b.f.e: com.facebook.rti.b.f.e b>;
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void a(com.facebook.rti.b.f.e)>($r11);
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        $z3 = interfaceinvoke $r6.<com.facebook.rti.b.f.d: boolean b(boolean)>($z2);
+
+     label7:
+        if $z3 != 0 goto label9;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void e(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "No more retry!", $r5);
+        $z2 = 0;
+        goto label2;
+
+     label8:
+        $z2 = 0;
+        goto label6;
+
+     label9:
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        $i1 = interfaceinvoke $r6.<com.facebook.rti.b.f.d: int a(boolean)>($z2);
+        $r6 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        $r1 = virtualinvoke $r6.<java.lang.Object: java.lang.String toString()>();
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void d(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", $r1, $r5);
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void m()>();
+        if $i1 > 0 goto label11;
+
+        $r5 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "Submitting immediate retry", $r5);
+        $r12 = specialinvoke $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future i()>();
+        $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h> = $r12;
+
+     label10:
+        $i1 = $r0.<com.facebook.rti.b.f.c: int i>;
+        $i1 = $i1 + 1;
+        $r0.<com.facebook.rti.b.f.c: int i> = $i1;
+        $z2 = 1;
+        goto label2;
+
+     label11:
+        $r5 = newarray (java.lang.Object)[1];
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+        $r5[0] = $r4;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "Scheduling retry in %d", $r5);
+        $r13 = $r0.<com.facebook.rti.b.f.c: java.util.concurrent.ScheduledExecutorService b>;
+        $r14 = $r0.<com.facebook.rti.b.f.c: java.lang.Runnable g>;
+        $l2 = (long) $i1;
+        $r15 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+        $r16 = interfaceinvoke $r13.<java.util.concurrent.ScheduledExecutorService: java.util.concurrent.ScheduledFuture schedule(java.lang.Runnable,long,java.util.concurrent.TimeUnit)>($r14, $l2, $r15);
+        $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future h> = $r16;
+
+     label12:
+        goto label10;
+
+     label13:
+        $r17 := @caughtexception;
+        exitmonitor $r0;
+        throw $r17;
+
+        catch java.lang.Throwable from label0 to label1 with label13;
+        catch java.lang.Throwable from label3 to label12 with label13;
+    }
+
+    public final void c()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.lang.Object[] $r3;
+        java.lang.Throwable $r4;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "stop retry", $r3);
+        specialinvoke $r0.<com.facebook.rti.b.f.c: void l()>();
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r4 := @caughtexception;
+        exitmonitor $r0;
+        throw $r4;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final boolean d()
+    {
+        com.facebook.rti.b.f.c $r0;
+        boolean $z0, $z1;
+        java.lang.Object[] $r3;
+        com.facebook.rti.b.f.d $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $z0 = 0;
+        entermonitor $r0;
+
+     label0:
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void a(java.lang.String,java.lang.String,java.lang.Object[])>("ConnectionRetryManager", "ensure scheduled", $r3);
+        $z1 = specialinvoke $r0.<com.facebook.rti.b.f.c: boolean k()>();
+        if $z1 != 0 goto label2;
+
+        $r4 = $r0.<com.facebook.rti.b.f.c: com.facebook.rti.b.f.d f>;
+        if $r4 != null goto label3;
+
+        virtualinvoke $r0.<com.facebook.rti.b.f.c: java.util.concurrent.Future a()>();
+
+     label1:
+        $z0 = 1;
+
+     label2:
+        exitmonitor $r0;
+        return $z0;
+
+     label3:
+        virtualinvoke $r0.<com.facebook.rti.b.f.c: boolean b()>();
+
+     label4:
+        goto label1;
+
+     label5:
+        $r5 := @caughtexception;
+        exitmonitor $r0;
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+
+    public final int e()
+    {
+        com.facebook.rti.b.f.c $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $i0 = $r0.<com.facebook.rti.b.f.c: int i>;
+        return $i0;
+    }
+
+    public final long f()
+    {
+        com.facebook.rti.b.f.c $r0;
+        long $l0;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        $l0 = $r0.<com.facebook.rti.b.f.c: long j>;
+        return $l0;
+    }
+
+    public final void g()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r0.<com.facebook.rti.b.f.c: boolean k> = 1;
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public final void h()
+    {
+        com.facebook.rti.b.f.c $r0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.rti.b.f.c;
+        entermonitor $r0;
+
+     label0:
+        $r0.<com.facebook.rti.b.f.c: boolean k> = 0;
+
+     label1:
+        exitmonitor $r0;
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        exitmonitor $r0;
+        throw $r1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+}

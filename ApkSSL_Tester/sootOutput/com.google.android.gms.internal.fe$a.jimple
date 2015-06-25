@@ -1,0 +1,107 @@
+public abstract class com.google.android.gms.internal.fe$a extends android.os.Binder implements com.google.android.gms.internal.fe
+{
+
+    public static com.google.android.gms.internal.fe a(android.os.IBinder)
+    {
+        android.os.IBinder $r0;
+        com.google.android.gms.internal.fe $r1;
+        boolean $z0;
+        android.os.IInterface $r2;
+        com.google.android.gms.internal.fe$a$a r4;
+
+        $r0 := @parameter0: android.os.IBinder;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $r2 = interfaceinvoke $r0.<android.os.IBinder: android.os.IInterface queryLocalInterface(java.lang.String)>("com.google.android.gms.panorama.internal.IPanoramaService");
+        if $r2 == null goto label1;
+
+        $z0 = $r2 instanceof com.google.android.gms.internal.fe;
+        if $z0 == 0 goto label1;
+
+        $r1 = (com.google.android.gms.internal.fe) $r2;
+        return $r1;
+
+     label1:
+        r4 = new com.google.android.gms.internal.fe$a$a;
+        specialinvoke r4.<com.google.android.gms.internal.fe$a$a: void <init>(android.os.IBinder)>($r0);
+        return r4;
+    }
+
+    public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int)
+    {
+        com.google.android.gms.internal.fe$a $r0;
+        int $i0, $i1;
+        android.os.Parcel $r1, $r2;
+        android.net.Uri $r4;
+        boolean $z0;
+        com.google.android.gms.internal.fd $r5;
+        android.os.IBinder $r6;
+        android.os.Parcelable$Creator $r7;
+        java.lang.Object $r8;
+        android.os.Bundle $r9;
+
+        $r0 := @this: com.google.android.gms.internal.fe$a;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.Parcel;
+        $r2 := @parameter2: android.os.Parcel;
+        $i1 := @parameter3: int;
+        lookupswitch($i0)
+        {
+            case 1: goto label2;
+            case 1598968902: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<android.os.Binder: boolean onTransact(int,android.os.Parcel,android.os.Parcel,int)>($i0, $r1, $r2, $i1);
+        return $z0;
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>("com.google.android.gms.panorama.internal.IPanoramaService");
+        return 1;
+
+     label2:
+        virtualinvoke $r1.<android.os.Parcel: void enforceInterface(java.lang.String)>("com.google.android.gms.panorama.internal.IPanoramaService");
+        $r6 = virtualinvoke $r1.<android.os.Parcel: android.os.IBinder readStrongBinder()>();
+        $r5 = staticinvoke <com.google.android.gms.internal.fd$a: com.google.android.gms.internal.fd a(android.os.IBinder)>($r6);
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label6;
+
+        $r7 = <android.net.Uri: android.os.Parcelable$Creator CREATOR>;
+        $r8 = interfaceinvoke $r7.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r4 = (android.net.Uri) $r8;
+
+     label3:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label7;
+
+        $r7 = <android.os.Bundle: android.os.Parcelable$Creator CREATOR>;
+        $r8 = interfaceinvoke $r7.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r9 = (android.os.Bundle) $r8;
+
+     label4:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 == 0 goto label8;
+
+        $z0 = 1;
+
+     label5:
+        virtualinvoke $r0.<com.google.android.gms.internal.fe$a: void a(com.google.android.gms.internal.fd,android.net.Uri,android.os.Bundle,boolean)>($r5, $r4, $r9, $z0);
+        return 1;
+
+     label6:
+        $r4 = null;
+        goto label3;
+
+     label7:
+        $r9 = null;
+        goto label4;
+
+     label8:
+        $z0 = 0;
+        goto label5;
+    }
+}

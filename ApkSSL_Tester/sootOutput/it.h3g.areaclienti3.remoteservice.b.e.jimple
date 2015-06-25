@@ -1,0 +1,785 @@
+public abstract class it.h3g.areaclienti3.remoteservice.b.e extends java.lang.Object
+{
+    protected static java.text.NumberFormat a;
+    protected it.h3g.areaclienti3.remoteservice.b.a b;
+    protected android.content.Context c;
+
+    static void <clinit>()
+    {
+        java.util.Locale $r0;
+        java.text.NumberFormat $r1;
+
+        $r0 = <java.util.Locale: java.util.Locale ENGLISH>;
+        $r1 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getInstance(java.util.Locale)>($r0);
+        <it.h3g.areaclienti3.remoteservice.b.e: java.text.NumberFormat a> = $r1;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.remoteservice.b.a $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = staticinvoke <it.h3g.areaclienti3.remoteservice.b.a: it.h3g.areaclienti3.remoteservice.b.a a()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.b.e: it.h3g.areaclienti3.remoteservice.b.a b> = $r2;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.e: android.content.Context c> = null;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.e: android.content.Context c> = $r1;
+        return;
+    }
+
+    public static java.lang.String a(java.util.Date, java.lang.String)
+    {
+        java.util.Date $r0;
+        java.lang.String $r1, $r4;
+        java.text.SimpleDateFormat $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.Exception $r5;
+        java.lang.StackTraceElement[] $r6;
+        int $i0, $i1;
+        java.lang.StackTraceElement $r7;
+
+        $r0 := @parameter0: java.util.Date;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.text.SimpleDateFormat;
+
+     label0:
+        specialinvoke $r2.<java.text.SimpleDateFormat: void <init>(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r2.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r0);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Date to string error: ");
+        $r4 = virtualinvoke $r5.<java.lang.Exception: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r4);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r6 = virtualinvoke $r5.<java.lang.Exception: java.lang.StackTraceElement[] getStackTrace()>();
+        $i0 = lengthof $r6;
+        $i1 = 0;
+
+     label3:
+        if $i1 < $i0 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        return "";
+
+     label4:
+        $r7 = $r6[$i1];
+        $r1 = virtualinvoke $r7.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r1);
+        $i1 = $i1 + 1;
+        goto label3;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    public static java.util.Date a(java.lang.String, java.lang.String)
+    {
+        java.lang.String $r0, $r1;
+        java.text.SimpleDateFormat $r2;
+        java.lang.StringBuilder $r3;
+        java.util.Date $r4;
+        java.text.ParseException $r5;
+        java.lang.StackTraceElement[] $r6;
+        int $i0, $i1;
+        java.lang.StackTraceElement $r7;
+
+        $r0 := @parameter0: java.lang.String;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new java.text.SimpleDateFormat;
+        specialinvoke $r2.<java.text.SimpleDateFormat: void <init>(java.lang.String)>($r1);
+
+     label0:
+        $r4 = virtualinvoke $r2.<java.text.SimpleDateFormat: java.util.Date parse(java.lang.String)>($r0);
+
+     label1:
+        return $r4;
+
+     label2:
+        $r5 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Exception: ");
+        $r0 = virtualinvoke $r5.<java.text.ParseException: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0);
+        $r0 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r0);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r6 = virtualinvoke $r5.<java.text.ParseException: java.lang.StackTraceElement[] getStackTrace()>();
+        $i0 = lengthof $r6;
+        $i1 = 0;
+
+     label3:
+        if $i1 < $i0 goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        return null;
+
+     label4:
+        $r7 = $r6[$i1];
+        $r0 = virtualinvoke $r7.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r0);
+        $i1 = $i1 + 1;
+        goto label3;
+
+        catch java.text.ParseException from label0 to label1 with label2;
+    }
+
+    protected boolean a()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        return 1;
+    }
+
+    public boolean b()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        return 1;
+    }
+
+    public org.e.a.l c()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+        org.e.a.l $r1;
+        org.e.a.j $r2;
+        it.h3g.areaclienti3.remoteservice.b.f $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        $r1 = new org.e.a.l;
+        specialinvoke $r1.<org.e.a.l: void <init>(int)>(110);
+        $r3 = new it.h3g.areaclienti3.remoteservice.b.f;
+        specialinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f: void <init>(it.h3g.areaclienti3.remoteservice.b.e)>($r0);
+        virtualinvoke $r3.<it.h3g.areaclienti3.remoteservice.b.f: void a(org.e.a.l)>($r1);
+        $r1.<org.e.a.l: boolean q> = 0;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: org.e.a.j e()>();
+        virtualinvoke $r1.<org.e.a.l: void a(java.lang.Object)>($r2);
+        $r1.<org.e.a.l: boolean o> = 1;
+        return $r1;
+    }
+
+    public java.util.ArrayList d()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        return null;
+    }
+
+    protected org.e.a.j e()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+        java.lang.String $r1, $r3;
+        org.e.a.j $r2;
+        int $i0, $i1;
+        java.lang.Object $r4;
+        boolean $z0;
+        java.util.ArrayList $r5, $r6;
+        java.lang.Exception $r7;
+        java.util.Iterator $r8, $r9;
+        org.e.a.i $r10;
+        java.lang.StringBuilder $r11;
+        java.lang.Class $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        $r2 = new org.e.a.j;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String j()>();
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String i()>();
+        specialinvoke $r2.<org.e.a.j: void <init>(java.lang.String,java.lang.String)>($r1, $r3);
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.util.ArrayList f()>();
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.util.ArrayList g()>();
+        if $r5 == null goto label0;
+
+        if $r6 != null goto label1;
+
+     label0:
+        return $r2;
+
+     label1:
+        $i0 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        $i1 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        if $i0 == $i1 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "Request property names and values mismatch");
+        $r7 = new java.lang.Exception;
+        specialinvoke $r7.<java.lang.Exception: void <init>(java.lang.String)>("Request property names and values mismatch");
+        throw $r7;
+
+     label2:
+        $r8 = virtualinvoke $r5.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $r9 = virtualinvoke $r6.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label3:
+        $z0 = interfaceinvoke $r8.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label0;
+
+        $r10 = new org.e.a.i;
+        specialinvoke $r10.<org.e.a.i: void <init>()>();
+        $r4 = interfaceinvoke $r8.<java.util.Iterator: java.lang.Object next()>();
+        $r3 = (java.lang.String) $r4;
+        if $r3 != null goto label4;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "Unable to set property info: NULL property name");
+        $r7 = new java.lang.Exception;
+        specialinvoke $r7.<java.lang.Exception: void <init>(java.lang.String)>("Unable to set property info: NULL property name");
+        throw $r7;
+
+     label4:
+        $r4 = interfaceinvoke $r9.<java.util.Iterator: java.lang.Object next()>();
+        if $r4 != null goto label5;
+
+        $r11 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r3);
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" property info is NULL and will be discarded");
+        $r3 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r3);
+        goto label3;
+
+     label5:
+        virtualinvoke $r10.<org.e.a.i: void a(java.lang.String)>($r3);
+        if $r4 == null goto label3;
+
+        $z0 = $r4 instanceof java.util.Date;
+        if $z0 == 0 goto label7;
+
+        $r12 = <org.e.a.h: java.lang.Class b>;
+        $r10.<org.e.a.i: java.lang.Object l> = $r12;
+
+     label6:
+        virtualinvoke $r2.<org.e.a.j: org.e.a.j c(java.lang.String,java.lang.Object)>($r3, $r4);
+        goto label3;
+
+     label7:
+        $z0 = $r4 instanceof java.lang.Boolean;
+        if $z0 == 0 goto label8;
+
+        $r12 = <org.e.a.i: java.lang.Class e>;
+        $r10.<org.e.a.i: java.lang.Object l> = $r12;
+        goto label6;
+
+     label8:
+        $r12 = <org.e.a.i: java.lang.Class b>;
+        $r10.<org.e.a.i: java.lang.Object l> = $r12;
+        goto label6;
+    }
+
+    public abstract java.util.ArrayList f();
+
+    public abstract java.util.ArrayList g();
+
+    public java.lang.Object h()
+    {
+        it.h3g.areaclienti3.remoteservice.b.e $r0;
+        android.content.Context $r1;
+        org.e.b.b $r2, $r9;
+        int $i1, $i3, $i4;
+        java.lang.String $r3, $r6, $r8;
+        java.util.List $r4;
+        org.e.a.l $r5;
+        it.h3g.areaclienti3.j.l $r7;
+        boolean $z0;
+        java.util.ArrayList $r10;
+        it.h3g.areaclienti3.remoteservice.b.a $r11;
+        java.util.HashMap $r12;
+        java.lang.Object $r13;
+        org.e.c $r14;
+        java.lang.StringBuilder $r15;
+        java.lang.StackTraceElement[] $r16;
+        java.io.IOException $r17, $r18;
+        org.e.a $r19;
+        java.lang.StackTraceElement $r20;
+        org.xmlpull.v1.XmlPullParserException $r21;
+        java.lang.IllegalStateException $r22;
+        java.lang.Exception $r23;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.e;
+        $i1 = 0;
+        $r2 = null;
+
+     label0:
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: org.e.a.l c()>();
+        $r1 = $r0.<it.h3g.areaclienti3.remoteservice.b.e: android.content.Context c>;
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.l: it.h3g.areaclienti3.j.l a(android.content.Context)>($r1);
+        lookupswitch(1)
+        {
+            case 1: goto label16;
+            case 2: goto label18;
+            case 3: goto label25;
+            case 4: goto label32;
+            default: goto label1;
+        };
+
+     label1:
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label33;
+
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r6.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://ac3.tre.it");
+
+     label2:
+        $r9 = new org.e.b.b;
+        specialinvoke $r9.<org.e.b.b: void <init>(java.lang.String,int)>($r8, 20000);
+
+     label3:
+        $i3 = <android.os.Build$VERSION: int SDK_INT>;
+        if $i3 > 8 goto label5;
+
+     label4:
+        staticinvoke <java.lang.System: java.lang.String setProperty(java.lang.String,java.lang.String)>("http.keepAlive", "false");
+
+     label5:
+        $r9.<org.e.b.b: boolean d> = 1;
+        virtualinvoke $r9.<org.e.b.b: void a(java.lang.String)>("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+
+     label6:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String k()>();
+        $r10 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.util.ArrayList d()>();
+        $r4 = virtualinvoke $r9.<org.e.b.b: java.util.List a(java.lang.String,org.e.b,java.util.List)>($r8, $r5, $r10);
+
+     label7:
+        $z0 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: boolean a()>();
+        if $z0 == 0 goto label11;
+
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.b.e: it.h3g.areaclienti3.remoteservice.b.a b>;
+        $r12 = virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.a: java.util.HashMap b()>();
+        if $r12 != null goto label62;
+
+        $r12 = new java.util.HashMap;
+        specialinvoke $r12.<java.util.HashMap: void <init>()>();
+
+     label8:
+        if $r4 == null goto label10;
+
+        $i3 = 0;
+
+     label9:
+        $i4 = interfaceinvoke $r4.<java.util.List: int size()>();
+        if $i3 < $i4 goto label41;
+
+     label10:
+        $r11 = $r0.<it.h3g.areaclienti3.remoteservice.b.e: it.h3g.areaclienti3.remoteservice.b.a b>;
+        virtualinvoke $r11.<it.h3g.areaclienti3.remoteservice.b.a: void a(java.util.HashMap)>($r12);
+
+     label11:
+        $z0 = $r9.<org.e.b.b: boolean d>;
+        if $z0 == 0 goto label12;
+
+     label12:
+        $r13 = virtualinvoke $r5.<org.e.a.l: java.lang.Object a()>();
+
+     label13:
+        $z0 = $r9.<org.e.b.b: boolean d>;
+
+     label14:
+        if $z0 == 0 goto label15;
+
+     label15:
+        return $r13;
+
+     label16:
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label17;
+
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://ac3.tre.it");
+        goto label2;
+
+     label17:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        goto label2;
+
+     label18:
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label24;
+
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://ac3-stage.polymedia.it");
+
+     label19:
+        staticinvoke <it.h3g.areaclienti3.remoteservice.b.b: void a()>();
+
+     label20:
+        goto label2;
+
+     label21:
+        $r14 := @caughtexception;
+
+     label22:
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("SoapFault: ");
+        $r6 = $r14.<org.e.c: java.lang.String a>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");
+        $r6 = $r14.<org.e.c: java.lang.String b>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r16 = virtualinvoke $r14.<org.e.c: java.lang.StackTraceElement[] getStackTrace()>();
+        $i4 = lengthof $r16;
+
+     label23:
+        if $i1 < $i4 goto label45;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Request: ");
+        $r6 = $r2.<org.e.b.b: java.lang.String e>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Response: ");
+        $r6 = $r2.<org.e.b.b: java.lang.String f>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        throw $r14;
+
+     label24:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://areaclienti3-stage.polymedia.it");
+        goto label19;
+
+     label25:
+        $z0 = virtualinvoke $r7.<it.h3g.areaclienti3.j.l: boolean T()>();
+        if $z0 == 0 goto label31;
+
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://ac3dev.polymedia.it");
+
+     label26:
+        staticinvoke <it.h3g.areaclienti3.remoteservice.b.b: void a()>();
+
+     label27:
+        goto label2;
+
+     label28:
+        $r17 := @caughtexception;
+        $r9 = null;
+
+     label29:
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("IOException: ");
+        $r6 = virtualinvoke $r17.<java.io.IOException: java.lang.String getMessage()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r16 = virtualinvoke $r17.<java.io.IOException: java.lang.StackTraceElement[] getStackTrace()>();
+        $i4 = lengthof $r16;
+
+     label30:
+        if $i1 < $i4 goto label46;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Request: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String e>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Response: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String f>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        throw $r17;
+
+     label31:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "https://areaclienti3dev.polymedia.it");
+        goto label26;
+
+     label32:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("https://areaclienti3.tre.it", "http://10.194.23.8:3000");
+        goto label2;
+
+     label33:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String l()>();
+
+     label34:
+        goto label2;
+
+     label35:
+        $r18 := @caughtexception;
+
+     label36:
+        $r8 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        if $r8 == null goto label37;
+
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Exception IOException e.getMessage() ");
+        $r6 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("WSBase", $r6);
+
+     label37:
+        $r8 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        if $r8 == null goto label38;
+
+        $r8 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        $z0 = virtualinvoke $r8.<java.lang.String: boolean contains(java.lang.CharSequence)>("null");
+        if $z0 == 0 goto label39;
+
+     label38:
+        staticinvoke <java.lang.Thread: void sleep(long)>(2000L);
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.lang.String k()>();
+        $r10 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.e: java.util.ArrayList d()>();
+        $r4 = virtualinvoke $r9.<org.e.b.b: java.util.List a(java.lang.String,org.e.b,java.util.List)>($r8, $r5, $r10);
+        goto label7;
+
+     label39:
+        throw $r18;
+
+     label40:
+        $r14 := @caughtexception;
+        $r2 = $r9;
+        goto label22;
+
+     label41:
+        $r13 = interfaceinvoke $r4.<java.util.List: java.lang.Object get(int)>($i3);
+        $r19 = (org.e.a) $r13;
+        $r3 = virtualinvoke $r19.<org.e.a: java.lang.String a()>();
+        $r8 = virtualinvoke $r19.<org.e.a: java.lang.String b()>();
+        if $r3 == null goto label44;
+
+        if $r8 == null goto label44;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("set-cookie");
+        if $z0 == 0 goto label44;
+
+        $i4 = virtualinvoke $r8.<java.lang.String: int indexOf(java.lang.String)>(";");
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String substring(int,int)>(0, $i4);
+        $i4 = virtualinvoke $r8.<java.lang.String: int indexOf(java.lang.String)>("=");
+        $r6 = virtualinvoke $r8.<java.lang.String: java.lang.String substring(int,int)>(0, $i4);
+        $i4 = virtualinvoke $r8.<java.lang.String: int indexOf(java.lang.String)>("=");
+        $i4 = $i4 + 1;
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String substring(int)>($i4);
+        virtualinvoke $r12.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r8);
+
+     label42:
+        goto label10;
+
+     label43:
+        $r17 := @caughtexception;
+        goto label29;
+
+     label44:
+        $i3 = $i3 + 1;
+        goto label9;
+
+     label45:
+        $r20 = $r16[$i1];
+        $r6 = virtualinvoke $r20.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $i1 = $i1 + 1;
+        goto label23;
+
+     label46:
+        $r20 = $r16[$i1];
+        $r6 = virtualinvoke $r20.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $i1 = $i1 + 1;
+        goto label30;
+
+     label47:
+        $r21 := @caughtexception;
+        $r9 = null;
+
+     label48:
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("XmlPullParserException: ");
+        $r6 = virtualinvoke $r21.<org.xmlpull.v1.XmlPullParserException: java.lang.String getMessage()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r16 = virtualinvoke $r21.<org.xmlpull.v1.XmlPullParserException: java.lang.StackTraceElement[] getStackTrace()>();
+        $i4 = lengthof $r16;
+
+     label49:
+        if $i1 < $i4 goto label50;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Request: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String e>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Response: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String f>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        throw $r21;
+
+     label50:
+        $r20 = $r16[$i1];
+        $r6 = virtualinvoke $r20.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $i1 = $i1 + 1;
+        goto label49;
+
+     label51:
+        $r22 := @caughtexception;
+        $r9 = null;
+
+     label52:
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Exception: ");
+        $r6 = virtualinvoke $r22.<java.lang.IllegalStateException: java.lang.String getMessage()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r16 = virtualinvoke $r22.<java.lang.IllegalStateException: java.lang.StackTraceElement[] getStackTrace()>();
+        $i4 = lengthof $r16;
+
+     label53:
+        if $i1 < $i4 goto label54;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Request: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String e>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Response: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String f>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        throw $r22;
+
+     label54:
+        $r20 = $r16[$i1];
+        $r6 = virtualinvoke $r20.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $i1 = $i1 + 1;
+        goto label53;
+
+     label55:
+        $r23 := @caughtexception;
+        $r9 = null;
+
+     label56:
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Exception: ");
+        $r6 = virtualinvoke $r23.<java.lang.Exception: java.lang.String getMessage()>();
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", ">>>>>>>>>>>>>>>>>>>>>");
+        $r16 = virtualinvoke $r23.<java.lang.Exception: java.lang.StackTraceElement[] getStackTrace()>();
+        $i4 = lengthof $r16;
+        $i3 = 0;
+
+     label57:
+        if $i3 < $i4 goto label58;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", "<<<<<<<<<<<<<<<<<<<<<");
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Request: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String e>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Response: ");
+        $r6 = $r9.<org.e.b.b: java.lang.String f>;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r6 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        throw $r23;
+
+     label58:
+        $r20 = $r16[$i3];
+        $r6 = virtualinvoke $r20.<java.lang.StackTraceElement: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("WSBase", $r6);
+        $i3 = $i3 + 1;
+        goto label57;
+
+     label59:
+        $r23 := @caughtexception;
+        goto label56;
+
+     label60:
+        $r22 := @caughtexception;
+        goto label52;
+
+     label61:
+        $r21 := @caughtexception;
+        goto label48;
+
+     label62:
+        goto label8;
+
+        catch org.e.c from label0 to label3 with label21;
+        catch java.io.IOException from label0 to label3 with label28;
+        catch org.xmlpull.v1.XmlPullParserException from label0 to label3 with label47;
+        catch java.lang.IllegalStateException from label0 to label3 with label51;
+        catch java.lang.Exception from label0 to label3 with label55;
+        catch org.e.c from label4 to label6 with label40;
+        catch java.io.IOException from label4 to label6 with label43;
+        catch org.xmlpull.v1.XmlPullParserException from label4 to label6 with label61;
+        catch java.lang.IllegalStateException from label4 to label6 with label60;
+        catch java.lang.Exception from label4 to label6 with label59;
+        catch java.io.IOException from label6 to label7 with label35;
+        catch org.xmlpull.v1.XmlPullParserException from label6 to label7 with label61;
+        catch java.lang.IllegalStateException from label6 to label7 with label60;
+        catch java.lang.Exception from label6 to label7 with label59;
+        catch org.e.c from label7 to label13 with label40;
+        catch java.io.IOException from label7 to label13 with label43;
+        catch org.xmlpull.v1.XmlPullParserException from label7 to label13 with label61;
+        catch java.lang.IllegalStateException from label7 to label13 with label60;
+        catch java.lang.Exception from label7 to label14 with label59;
+        catch org.e.c from label16 to label20 with label21;
+        catch java.io.IOException from label16 to label20 with label28;
+        catch org.xmlpull.v1.XmlPullParserException from label16 to label20 with label47;
+        catch java.lang.IllegalStateException from label16 to label20 with label51;
+        catch java.lang.Exception from label16 to label20 with label55;
+        catch org.e.c from label24 to label27 with label21;
+        catch java.io.IOException from label24 to label27 with label28;
+        catch org.xmlpull.v1.XmlPullParserException from label24 to label27 with label47;
+        catch java.lang.IllegalStateException from label24 to label27 with label51;
+        catch java.lang.Exception from label24 to label27 with label55;
+        catch org.e.c from label31 to label34 with label21;
+        catch java.io.IOException from label31 to label34 with label28;
+        catch org.xmlpull.v1.XmlPullParserException from label31 to label34 with label47;
+        catch java.lang.IllegalStateException from label31 to label34 with label51;
+        catch java.lang.Exception from label31 to label34 with label55;
+        catch org.e.c from label36 to label42 with label40;
+        catch java.io.IOException from label36 to label42 with label43;
+        catch org.xmlpull.v1.XmlPullParserException from label36 to label42 with label61;
+        catch java.lang.IllegalStateException from label36 to label42 with label60;
+        catch java.lang.Exception from label36 to label42 with label59;
+    }
+
+    public abstract java.lang.String i();
+
+    public abstract java.lang.String j();
+
+    public abstract java.lang.String k();
+
+    public abstract java.lang.String l();
+}

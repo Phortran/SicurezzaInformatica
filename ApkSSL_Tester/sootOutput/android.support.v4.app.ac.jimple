@@ -1,0 +1,604 @@
+final class android.support.v4.app.ac extends java.lang.Object implements android.support.v4.a.b
+{
+    final int a;
+    final android.os.Bundle b;
+    android.support.v4.app.aa c;
+    android.support.v4.a.a d;
+    boolean e;
+    boolean f;
+    java.lang.Object g;
+    boolean h;
+    boolean i;
+    boolean j;
+    boolean k;
+    boolean l;
+    boolean m;
+    android.support.v4.app.ac n;
+    final android.support.v4.app.ab o;
+
+    void a()
+    {
+        android.support.v4.app.ac $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2, $r3;
+        android.support.v4.a.a $r4;
+        android.support.v4.app.aa $r5;
+        int $i0;
+        android.os.Bundle $r6;
+        java.lang.Class $r7;
+        java.lang.IllegalArgumentException $r8;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = $r0.<android.support.v4.app.ac: boolean i>;
+        if $z0 == 0 goto label1;
+
+        $z0 = $r0.<android.support.v4.app.ac: boolean j>;
+        if $z0 == 0 goto label1;
+
+        $r0.<android.support.v4.app.ac: boolean h> = 1;
+
+     label0:
+        return;
+
+     label1:
+        $z0 = $r0.<android.support.v4.app.ac: boolean h>;
+        if $z0 != 0 goto label0;
+
+        $r0.<android.support.v4.app.ac: boolean h> = 1;
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label2;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Starting: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label2:
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r4 != null goto label3;
+
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        if $r5 == null goto label3;
+
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        $i0 = $r0.<android.support.v4.app.ac: int a>;
+        $r6 = $r0.<android.support.v4.app.ac: android.os.Bundle b>;
+        $r4 = interfaceinvoke $r5.<android.support.v4.app.aa: android.support.v4.a.a a(int,android.os.Bundle)>($i0, $r6);
+        $r0.<android.support.v4.app.ac: android.support.v4.a.a d> = $r4;
+
+     label3:
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r4 == null goto label0;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r7 = virtualinvoke $r4.<java.lang.Object: java.lang.Class getClass()>();
+        $z0 = virtualinvoke $r7.<java.lang.Class: boolean isMemberClass()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r7 = virtualinvoke $r4.<java.lang.Object: java.lang.Class getClass()>();
+        $i0 = virtualinvoke $r7.<java.lang.Class: int getModifiers()>();
+        $z0 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>($i0);
+        if $z0 != 0 goto label4;
+
+        $r8 = new java.lang.IllegalArgumentException;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Object returned from onCreateLoader must not be a non-static inner member class: ");
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r3);
+        throw $r8;
+
+     label4:
+        $z0 = $r0.<android.support.v4.app.ac: boolean m>;
+        if $z0 != 0 goto label5;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $i0 = $r0.<android.support.v4.app.ac: int a>;
+        virtualinvoke $r4.<android.support.v4.a.a: void a(int,android.support.v4.a.b)>($i0, $r0);
+        $r0.<android.support.v4.app.ac: boolean m> = 1;
+
+     label5:
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r4.<android.support.v4.a.a: void a()>();
+        goto label0;
+    }
+
+    void a(android.support.v4.a.a, java.lang.Object)
+    {
+        android.support.v4.app.ac $r0;
+        android.support.v4.a.a $r1;
+        java.lang.Object $r2;
+        android.support.v4.app.aa $r3;
+        android.support.v4.app.ab $r4;
+        java.lang.String $r5, $r9;
+        java.lang.StringBuilder $r6;
+        android.support.v4.app.h $r7;
+        android.support.v4.app.p $r8;
+        boolean $z0;
+        java.lang.Throwable $r11;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $r1 := @parameter0: android.support.v4.a.a;
+        $r2 := @parameter1: java.lang.Object;
+        $r3 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        if $r3 == null goto label4;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label7;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r9 = $r8.<android.support.v4.app.p: java.lang.String u>;
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = "onLoadFinished";
+
+     label0:
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label1;
+
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  onLoadFinished in ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");
+        $r5 = virtualinvoke $r1.<android.support.v4.a.a: java.lang.String a(java.lang.Object)>($r2);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r5);
+
+     label1:
+        $r3 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        interfaceinvoke $r3.<android.support.v4.app.aa: void a(android.support.v4.a.a,java.lang.Object)>($r1, $r2);
+
+     label2:
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label3;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = $r9;
+
+     label3:
+        $r0.<android.support.v4.app.ac: boolean f> = 1;
+
+     label4:
+        return;
+
+     label5:
+        $r11 := @caughtexception;
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label6;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r4.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = $r9;
+
+     label6:
+        throw $r11;
+
+     label7:
+        $r9 = null;
+        goto label0;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+    }
+
+    public void a(java.lang.String, java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[])
+    {
+        android.support.v4.app.ac $r0, $r11;
+        java.lang.String $r1, $r5;
+        java.io.FileDescriptor $r2;
+        java.io.PrintWriter $r3;
+        java.lang.String[] $r4;
+        java.lang.StringBuilder $r6;
+        int $i0;
+        android.os.Bundle $r7;
+        android.support.v4.app.aa $r8;
+        android.support.v4.a.a $r9;
+        boolean $z0;
+        java.lang.Object $r10;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $r1 := @parameter0: java.lang.String;
+        $r2 := @parameter1: java.io.FileDescriptor;
+        $r3 := @parameter2: java.io.PrintWriter;
+        $r4 := @parameter3: java.lang.String[];
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mId=");
+        $i0 = $r0.<android.support.v4.app.ac: int a>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(int)>($i0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mArgs=");
+        $r7 = $r0.<android.support.v4.app.ac: android.os.Bundle b>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.Object)>($r7);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mCallbacks=");
+        $r8 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.Object)>($r8);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mLoader=");
+        $r9 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.Object)>($r9);
+        $r9 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r9 == null goto label0;
+
+        $r9 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<android.support.v4.a.a: void a(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])>($r5, $r2, $r3, $r4);
+
+     label0:
+        $z0 = $r0.<android.support.v4.app.ac: boolean e>;
+        if $z0 != 0 goto label1;
+
+        $z0 = $r0.<android.support.v4.app.ac: boolean f>;
+        if $z0 == 0 goto label2;
+
+     label1:
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mHaveData=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean e>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("  mDeliveredData=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean f>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mData=");
+        $r10 = $r0.<android.support.v4.app.ac: java.lang.Object g>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.Object)>($r10);
+
+     label2:
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mStarted=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean h>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mReportNextStart=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean k>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mDestroyed=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean l>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>("mRetaining=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean i>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mRetainingStarted=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean j>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(boolean)>($z0);
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>(" mListenerRegistered=");
+        $z0 = $r0.<android.support.v4.app.ac: boolean m>;
+        virtualinvoke $r3.<java.io.PrintWriter: void println(boolean)>($z0);
+        $r11 = $r0.<android.support.v4.app.ac: android.support.v4.app.ac n>;
+        if $r11 == null goto label3;
+
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.String)>($r1);
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.String)>("Pending Loader ");
+        $r11 = $r0.<android.support.v4.app.ac: android.support.v4.app.ac n>;
+        virtualinvoke $r3.<java.io.PrintWriter: void print(java.lang.Object)>($r11);
+        virtualinvoke $r3.<java.io.PrintWriter: void println(java.lang.String)>(":");
+        $r11 = $r0.<android.support.v4.app.ac: android.support.v4.app.ac n>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  ");
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r11.<android.support.v4.app.ac: void a(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])>($r5, $r2, $r3, $r4);
+
+     label3:
+        return;
+    }
+
+    void b()
+    {
+        android.support.v4.app.ac $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label0;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Retaining: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label0:
+        $r0.<android.support.v4.app.ac: boolean i> = 1;
+        $z0 = $r0.<android.support.v4.app.ac: boolean h>;
+        $r0.<android.support.v4.app.ac: boolean j> = $z0;
+        $r0.<android.support.v4.app.ac: boolean h> = 0;
+        $r0.<android.support.v4.app.ac: android.support.v4.app.aa c> = null;
+        return;
+    }
+
+    void c()
+    {
+        android.support.v4.app.ac $r0;
+        boolean $z0, $z1;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        android.support.v4.a.a $r4;
+        java.lang.Object $r5;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = $r0.<android.support.v4.app.ac: boolean i>;
+        if $z0 == 0 goto label1;
+
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label0;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Finished Retaining: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label0:
+        $r0.<android.support.v4.app.ac: boolean i> = 0;
+        $z0 = $r0.<android.support.v4.app.ac: boolean h>;
+        $z1 = $r0.<android.support.v4.app.ac: boolean j>;
+        if $z0 == $z1 goto label1;
+
+        $z1 = $r0.<android.support.v4.app.ac: boolean h>;
+        if $z1 != 0 goto label1;
+
+        virtualinvoke $r0.<android.support.v4.app.ac: void e()>();
+
+     label1:
+        $z1 = $r0.<android.support.v4.app.ac: boolean h>;
+        if $z1 == 0 goto label2;
+
+        $z1 = $r0.<android.support.v4.app.ac: boolean e>;
+        if $z1 == 0 goto label2;
+
+        $z1 = $r0.<android.support.v4.app.ac: boolean k>;
+        if $z1 != 0 goto label2;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r5 = $r0.<android.support.v4.app.ac: java.lang.Object g>;
+        virtualinvoke $r0.<android.support.v4.app.ac: void a(android.support.v4.a.a,java.lang.Object)>($r4, $r5);
+
+     label2:
+        return;
+    }
+
+    void d()
+    {
+        android.support.v4.app.ac $r0;
+        boolean $z0;
+        java.lang.Object $r1;
+        android.support.v4.a.a $r2;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = $r0.<android.support.v4.app.ac: boolean h>;
+        if $z0 == 0 goto label0;
+
+        $z0 = $r0.<android.support.v4.app.ac: boolean k>;
+        if $z0 == 0 goto label0;
+
+        $r0.<android.support.v4.app.ac: boolean k> = 0;
+        $z0 = $r0.<android.support.v4.app.ac: boolean e>;
+        if $z0 == 0 goto label0;
+
+        $r2 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        $r1 = $r0.<android.support.v4.app.ac: java.lang.Object g>;
+        virtualinvoke $r0.<android.support.v4.app.ac: void a(android.support.v4.a.a,java.lang.Object)>($r2, $r1);
+
+     label0:
+        return;
+    }
+
+    void e()
+    {
+        android.support.v4.app.ac $r0;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        android.support.v4.a.a $r4;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label0;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Stopping: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label0:
+        $r0.<android.support.v4.app.ac: boolean h> = 0;
+        $z0 = $r0.<android.support.v4.app.ac: boolean i>;
+        if $z0 != 0 goto label1;
+
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r4 == null goto label1;
+
+        $z0 = $r0.<android.support.v4.app.ac: boolean m>;
+        if $z0 == 0 goto label1;
+
+        $r0.<android.support.v4.app.ac: boolean m> = 0;
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r4.<android.support.v4.a.a: void a(android.support.v4.a.b)>($r0);
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r4.<android.support.v4.a.a: void c()>();
+
+     label1:
+        return;
+    }
+
+    void f()
+    {
+        android.support.v4.app.ac $r0, $r9;
+        boolean $z0, $z2;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2, $r3;
+        android.support.v4.app.aa $r4;
+        android.support.v4.a.a $r5;
+        android.support.v4.app.ab $r6;
+        android.support.v4.app.h $r7;
+        android.support.v4.app.p $r8;
+        java.lang.Throwable $r10;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $z0 = <android.support.v4.app.ab: boolean a>;
+        if $z0 == 0 goto label0;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Destroying: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label0:
+        $r0.<android.support.v4.app.ac: boolean l> = 1;
+        $z0 = $r0.<android.support.v4.app.ac: boolean f>;
+        $r0.<android.support.v4.app.ac: boolean f> = 0;
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        if $r4 == null goto label4;
+
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r5 == null goto label4;
+
+        $z2 = $r0.<android.support.v4.app.ac: boolean e>;
+        if $z2 == 0 goto label4;
+
+        if $z0 == 0 goto label4;
+
+        $z2 = <android.support.v4.app.ab: boolean a>;
+        if $z2 == 0 goto label1;
+
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Reseting: ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("LoaderManager", $r2);
+
+     label1:
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label10;
+
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r3 = $r8.<android.support.v4.app.p: java.lang.String u>;
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = "onLoaderReset";
+
+     label2:
+        $r4 = $r0.<android.support.v4.app.ac: android.support.v4.app.aa c>;
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        interfaceinvoke $r4.<android.support.v4.app.aa: void a(android.support.v4.a.a)>($r5);
+
+     label3:
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label4;
+
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = $r3;
+
+     label4:
+        $r0.<android.support.v4.app.ac: android.support.v4.app.aa c> = null;
+        $r0.<android.support.v4.app.ac: java.lang.Object g> = null;
+        $r0.<android.support.v4.app.ac: boolean e> = 0;
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        if $r5 == null goto label6;
+
+        $z2 = $r0.<android.support.v4.app.ac: boolean m>;
+        if $z2 == 0 goto label5;
+
+        $r0.<android.support.v4.app.ac: boolean m> = 0;
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r5.<android.support.v4.a.a: void a(android.support.v4.a.b)>($r0);
+
+     label5:
+        $r5 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        virtualinvoke $r5.<android.support.v4.a.a: void e()>();
+
+     label6:
+        $r9 = $r0.<android.support.v4.app.ac: android.support.v4.app.ac n>;
+        if $r9 == null goto label7;
+
+        $r9 = $r0.<android.support.v4.app.ac: android.support.v4.app.ac n>;
+        virtualinvoke $r9.<android.support.v4.app.ac: void f()>();
+
+     label7:
+        return;
+
+     label8:
+        $r10 := @caughtexception;
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        if $r7 == null goto label9;
+
+        $r6 = $r0.<android.support.v4.app.ac: android.support.v4.app.ab o>;
+        $r7 = $r6.<android.support.v4.app.ab: android.support.v4.app.h e>;
+        $r8 = $r7.<android.support.v4.app.h: android.support.v4.app.p b>;
+        $r8.<android.support.v4.app.p: java.lang.String u> = $r3;
+
+     label9:
+        throw $r10;
+
+     label10:
+        $r3 = null;
+        goto label2;
+
+        catch java.lang.Throwable from label2 to label3 with label8;
+    }
+
+    public java.lang.String toString()
+    {
+        android.support.v4.app.ac $r0;
+        java.lang.StringBuilder $r1;
+        int $i1;
+        java.lang.String $r2;
+        android.support.v4.a.a $r3;
+
+        $r0 := @this: android.support.v4.app.ac;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(int)>(64);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("LoaderInfo{");
+        $i1 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>($r0);
+        $r2 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($i1);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" #");
+        $i1 = $r0.<android.support.v4.app.ac: int a>;
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r3 = $r0.<android.support.v4.app.ac: android.support.v4.a.a d>;
+        staticinvoke <android.support.v4.c.d: void a(java.lang.Object,java.lang.StringBuilder)>($r3, $r1);
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}}");
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return $r2;
+    }
+}

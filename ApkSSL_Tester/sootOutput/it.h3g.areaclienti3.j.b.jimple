@@ -1,0 +1,96 @@
+public class it.h3g.areaclienti3.j.b extends java.util.HashMap
+{
+    private static it.h3g.areaclienti3.j.b a;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.j.b $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.j.b;
+        specialinvoke $r0.<java.util.HashMap: void <init>()>();
+        return;
+    }
+
+    public static it.h3g.areaclienti3.j.b a()
+    {
+        it.h3g.areaclienti3.j.b $r0;
+        java.lang.Throwable $r2;
+
+        entermonitor class "it/h3g/areaclienti3/j/b";
+
+     label0:
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+        if $r0 != null goto label1;
+
+        $r0 = new it.h3g.areaclienti3.j.b;
+        specialinvoke $r0.<it.h3g.areaclienti3.j.b: void <init>()>();
+        <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a> = $r0;
+
+     label1:
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+
+     label2:
+        exitmonitor class "it/h3g/areaclienti3/j/b";
+        return $r0;
+
+     label3:
+        $r2 := @caughtexception;
+        exitmonitor class "it/h3g/areaclienti3/j/b";
+        throw $r2;
+
+        catch java.lang.Throwable from label0 to label2 with label3;
+    }
+
+    public void a(int, android.os.AsyncTask)
+    {
+        it.h3g.areaclienti3.j.b $r0;
+        int $i0;
+        android.os.AsyncTask $r1;
+        java.lang.Integer $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.j.b;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.os.AsyncTask;
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+        $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.b: java.lang.Object put(java.lang.Object,java.lang.Object)>($r2, $r1);
+        return;
+    }
+
+    public void b()
+    {
+        it.h3g.areaclienti3.j.b $r0;
+        java.util.Iterator $r1;
+        boolean $z0;
+        java.util.Set $r2;
+        java.lang.Object $r3;
+        java.util.Map$Entry $r4;
+        android.os.AsyncTask $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.j.b;
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+        if $r0 == null goto label1;
+
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.j.b: java.util.Set entrySet()>();
+        $r1 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r1.<java.util.Iterator: boolean hasNext()>();
+        if $z0 != 0 goto label2;
+
+        $r0 = <it.h3g.areaclienti3.j.b: it.h3g.areaclienti3.j.b a>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.j.b: void clear()>();
+
+     label1:
+        return;
+
+     label2:
+        $r3 = interfaceinvoke $r1.<java.util.Iterator: java.lang.Object next()>();
+        $r4 = (java.util.Map$Entry) $r3;
+        $r3 = interfaceinvoke $r4.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r5 = (android.os.AsyncTask) $r3;
+        virtualinvoke $r5.<android.os.AsyncTask: boolean cancel(boolean)>(1);
+        goto label0;
+    }
+}

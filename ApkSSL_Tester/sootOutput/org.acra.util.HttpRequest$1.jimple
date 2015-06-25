@@ -1,0 +1,48 @@
+class org.acra.util.HttpRequest$1 extends java.lang.Object
+{
+    static final int[] $SwitchMap$org$acra$sender$HttpSender$Method;
+
+    static void <clinit>()
+    {
+        org.acra.sender.HttpSender$Method[] $r0;
+        org.acra.sender.HttpSender$Method $r1;
+        int $i1;
+        int[] $r2;
+        java.lang.NoSuchFieldError $r3, $r4;
+
+        $r0 = staticinvoke <org.acra.sender.HttpSender$Method: org.acra.sender.HttpSender$Method[] values()>();
+        $i1 = lengthof $r0;
+        $r2 = newarray (int)[$i1];
+        <org.acra.util.HttpRequest$1: int[] $SwitchMap$org$acra$sender$HttpSender$Method> = $r2;
+
+     label0:
+        $r2 = <org.acra.util.HttpRequest$1: int[] $SwitchMap$org$acra$sender$HttpSender$Method>;
+        $r1 = <org.acra.sender.HttpSender$Method: org.acra.sender.HttpSender$Method POST>;
+        $i1 = virtualinvoke $r1.<org.acra.sender.HttpSender$Method: int ordinal()>();
+
+     label1:
+        $r2[$i1] = 1;
+
+     label2:
+        $r2 = <org.acra.util.HttpRequest$1: int[] $SwitchMap$org$acra$sender$HttpSender$Method>;
+        $r1 = <org.acra.sender.HttpSender$Method: org.acra.sender.HttpSender$Method PUT>;
+        $i1 = virtualinvoke $r1.<org.acra.sender.HttpSender$Method: int ordinal()>();
+
+     label3:
+        $r2[$i1] = 2;
+
+     label4:
+        return;
+
+     label5:
+        $r3 := @caughtexception;
+        goto label4;
+
+     label6:
+        $r4 := @caughtexception;
+        goto label2;
+
+        catch java.lang.NoSuchFieldError from label0 to label1 with label6;
+        catch java.lang.NoSuchFieldError from label2 to label3 with label5;
+    }
+}

@@ -1,0 +1,61 @@
+public abstract class com.google.android.gms.internal.cm extends java.lang.Object
+{
+    private final java.lang.Runnable a;
+    private volatile java.lang.Thread b;
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.cm $r0;
+        com.google.android.gms.internal.cn $r1;
+
+        $r0 := @this: com.google.android.gms.internal.cm;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r1 = new com.google.android.gms.internal.cn;
+        specialinvoke $r1.<com.google.android.gms.internal.cn: void <init>(com.google.android.gms.internal.cm)>($r0);
+        $r0.<com.google.android.gms.internal.cm: java.lang.Runnable a> = $r1;
+        return;
+    }
+
+    static java.lang.Thread a(com.google.android.gms.internal.cm, java.lang.Thread)
+    {
+        com.google.android.gms.internal.cm $r0;
+        java.lang.Thread $r1;
+
+        $r0 := @parameter0: com.google.android.gms.internal.cm;
+        $r1 := @parameter1: java.lang.Thread;
+        $r0.<com.google.android.gms.internal.cm: java.lang.Thread b> = $r1;
+        return $r1;
+    }
+
+    public abstract void a();
+
+    public abstract void b();
+
+    public final void e()
+    {
+        com.google.android.gms.internal.cm $r0;
+        java.lang.Runnable $r1;
+
+        $r0 := @this: com.google.android.gms.internal.cm;
+        $r1 = $r0.<com.google.android.gms.internal.cm: java.lang.Runnable a>;
+        staticinvoke <com.google.android.gms.internal.cp: void a(java.lang.Runnable)>($r1);
+        return;
+    }
+
+    public final void f()
+    {
+        com.google.android.gms.internal.cm $r0;
+        java.lang.Thread $r1;
+
+        $r0 := @this: com.google.android.gms.internal.cm;
+        virtualinvoke $r0.<com.google.android.gms.internal.cm: void b()>();
+        $r1 = $r0.<com.google.android.gms.internal.cm: java.lang.Thread b>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.google.android.gms.internal.cm: java.lang.Thread b>;
+        virtualinvoke $r1.<java.lang.Thread: void interrupt()>();
+
+     label0:
+        return;
+    }
+}

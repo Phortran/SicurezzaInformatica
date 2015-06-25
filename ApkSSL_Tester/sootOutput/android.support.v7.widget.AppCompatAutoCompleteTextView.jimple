@@ -1,0 +1,223 @@
+public class android.support.v7.widget.AppCompatAutoCompleteTextView extends android.widget.AutoCompleteTextView implements android.support.v4.view.TintableBackgroundView
+{
+    private static final int[] TINT_ATTRS;
+    private android.support.v7.internal.widget.TintInfo mBackgroundTint;
+    private android.support.v7.internal.widget.TintManager mTintManager;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        $r0 = newarray (int)[2];
+        $r0[0] = 16842964;
+        $r0[1] = 16843126;
+        <android.support.v7.widget.AppCompatAutoCompleteTextView: int[] TINT_ATTRS> = $r0;
+        return;
+    }
+
+    public void <init>(android.content.Context)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void <init>(android.content.Context,android.util.AttributeSet)>($r1, null);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $i0 = <android.support.v7.appcompat.R$attr: int autoCompleteTextViewStyle>;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, $i0);
+        return;
+    }
+
+    public void <init>(android.content.Context, android.util.AttributeSet, int)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.content.Context $r1;
+        android.util.AttributeSet $r2;
+        int $i0;
+        android.support.v7.internal.widget.TintTypedArray $r3;
+        android.content.res.ColorStateList $r4;
+        int[] $r5;
+        boolean $z0;
+        android.support.v7.internal.widget.TintManager $r6;
+        android.graphics.drawable.Drawable $r7;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $i0 := @parameter2: int;
+        $r1 = staticinvoke <android.support.v7.internal.widget.TintContextWrapper: android.content.Context wrap(android.content.Context)>($r1);
+        specialinvoke $r0.<android.widget.AutoCompleteTextView: void <init>(android.content.Context,android.util.AttributeSet,int)>($r1, $r2, $i0);
+        $z0 = <android.support.v7.internal.widget.TintManager: boolean SHOULD_BE_USED>;
+        if $z0 == 0 goto label2;
+
+        $r1 = virtualinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.content.Context getContext()>();
+        $r5 = <android.support.v7.widget.AppCompatAutoCompleteTextView: int[] TINT_ATTRS>;
+        $r3 = staticinvoke <android.support.v7.internal.widget.TintTypedArray: android.support.v7.internal.widget.TintTypedArray obtainStyledAttributes(android.content.Context,android.util.AttributeSet,int[],int,int)>($r1, $r2, $r5, $i0, 0);
+        $r6 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: android.support.v7.internal.widget.TintManager getTintManager()>();
+        $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintManager mTintManager> = $r6;
+        $z0 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: boolean hasValue(int)>(0);
+        if $z0 == 0 goto label0;
+
+        $r6 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: android.support.v7.internal.widget.TintManager getTintManager()>();
+        $i0 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: int getResourceId(int,int)>(0, -1);
+        $r4 = virtualinvoke $r6.<android.support.v7.internal.widget.TintManager: android.content.res.ColorStateList getTintList(int)>($i0);
+        if $r4 == null goto label0;
+
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void setSupportBackgroundTintList(android.content.res.ColorStateList)>($r4);
+
+     label0:
+        $z0 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: boolean hasValue(int)>(1);
+        if $z0 == 0 goto label1;
+
+        $r7 = virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: android.graphics.drawable.Drawable getDrawable(int)>(1);
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void setDropDownBackgroundDrawable(android.graphics.drawable.Drawable)>($r7);
+
+     label1:
+        virtualinvoke $r3.<android.support.v7.internal.widget.TintTypedArray: void recycle()>();
+
+     label2:
+        return;
+    }
+
+    private void applySupportBackgroundTint()
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.graphics.drawable.Drawable $r1;
+        android.support.v7.internal.widget.TintInfo $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 = virtualinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.graphics.drawable.Drawable getBackground()>();
+        if $r1 == null goto label0;
+
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        staticinvoke <android.support.v7.internal.widget.TintManager: void tintViewBackground(android.view.View,android.support.v7.internal.widget.TintInfo)>($r0, $r2);
+
+     label0:
+        return;
+    }
+
+    protected void drawableStateChanged()
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        specialinvoke $r0.<android.widget.AutoCompleteTextView: void drawableStateChanged()>();
+        specialinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void applySupportBackgroundTint()>();
+        return;
+    }
+
+    public android.content.res.ColorStateList getSupportBackgroundTintList()
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.support.v7.internal.widget.TintInfo $r1;
+        android.content.res.ColorStateList $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2 = $r1.<android.support.v7.internal.widget.TintInfo: android.content.res.ColorStateList mTintList>;
+        return $r2;
+
+     label0:
+        return null;
+    }
+
+    public android.graphics.PorterDuff$Mode getSupportBackgroundTintMode()
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.support.v7.internal.widget.TintInfo $r1;
+        android.graphics.PorterDuff$Mode $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2 = $r1.<android.support.v7.internal.widget.TintInfo: android.graphics.PorterDuff$Mode mTintMode>;
+        return $r2;
+
+     label0:
+        return null;
+    }
+
+    public void setDropDownBackgroundResource(int)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        int $i0;
+        android.support.v7.internal.widget.TintManager $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintManager mTintManager>;
+        $r2 = virtualinvoke $r1.<android.support.v7.internal.widget.TintManager: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+        virtualinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void setDropDownBackgroundDrawable(android.graphics.drawable.Drawable)>($r2);
+        return;
+    }
+
+    public void setSupportBackgroundTintList(android.content.res.ColorStateList)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.content.res.ColorStateList $r1;
+        android.support.v7.internal.widget.TintInfo $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 := @parameter0: android.content.res.ColorStateList;
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        if $r2 != null goto label0;
+
+        $r2 = new android.support.v7.internal.widget.TintInfo;
+        specialinvoke $r2.<android.support.v7.internal.widget.TintInfo: void <init>()>();
+        $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint> = $r2;
+
+     label0:
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2.<android.support.v7.internal.widget.TintInfo: android.content.res.ColorStateList mTintList> = $r1;
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2.<android.support.v7.internal.widget.TintInfo: boolean mHasTintList> = 1;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void applySupportBackgroundTint()>();
+        return;
+    }
+
+    public void setSupportBackgroundTintMode(android.graphics.PorterDuff$Mode)
+    {
+        android.support.v7.widget.AppCompatAutoCompleteTextView $r0;
+        android.graphics.PorterDuff$Mode $r1;
+        android.support.v7.internal.widget.TintInfo $r2;
+
+        $r0 := @this: android.support.v7.widget.AppCompatAutoCompleteTextView;
+        $r1 := @parameter0: android.graphics.PorterDuff$Mode;
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        if $r2 != null goto label0;
+
+        $r2 = new android.support.v7.internal.widget.TintInfo;
+        specialinvoke $r2.<android.support.v7.internal.widget.TintInfo: void <init>()>();
+        $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint> = $r2;
+
+     label0:
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2.<android.support.v7.internal.widget.TintInfo: android.graphics.PorterDuff$Mode mTintMode> = $r1;
+        $r2 = $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: android.support.v7.internal.widget.TintInfo mBackgroundTint>;
+        $r2.<android.support.v7.internal.widget.TintInfo: boolean mHasTintMode> = 1;
+        specialinvoke $r0.<android.support.v7.widget.AppCompatAutoCompleteTextView: void applySupportBackgroundTint()>();
+        return;
+    }
+}

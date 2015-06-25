@@ -1,0 +1,103 @@
+class com.google.c.b.y extends java.util.AbstractSet
+{
+    final com.google.c.b.w a;
+
+    void <init>(com.google.c.b.w)
+    {
+        com.google.c.b.y $r0;
+        com.google.c.b.w $r1;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 := @parameter0: com.google.c.b.w;
+        $r0.<com.google.c.b.y: com.google.c.b.w a> = $r1;
+        specialinvoke $r0.<java.util.AbstractSet: void <init>()>();
+        return;
+    }
+
+    public void clear()
+    {
+        com.google.c.b.y $r0;
+        com.google.c.b.w $r1;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 = $r0.<com.google.c.b.y: com.google.c.b.w a>;
+        virtualinvoke $r1.<com.google.c.b.w: void clear()>();
+        return;
+    }
+
+    public boolean contains(java.lang.Object)
+    {
+        com.google.c.b.y $r0;
+        java.lang.Object $r1;
+        boolean $z0;
+        com.google.c.b.ad $r2;
+        com.google.c.b.w $r3;
+        java.util.Map$Entry $r4;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 := @parameter0: java.lang.Object;
+        $z0 = $r1 instanceof java.util.Map$Entry;
+        if $z0 == 0 goto label0;
+
+        $r3 = $r0.<com.google.c.b.y: com.google.c.b.w a>;
+        $r4 = (java.util.Map$Entry) $r1;
+        $r2 = virtualinvoke $r3.<com.google.c.b.w: com.google.c.b.ad a(java.util.Map$Entry)>($r4);
+        if $r2 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public java.util.Iterator iterator()
+    {
+        com.google.c.b.y $r0;
+        com.google.c.b.z $r1;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 = new com.google.c.b.z;
+        specialinvoke $r1.<com.google.c.b.z: void <init>(com.google.c.b.y)>($r0);
+        return $r1;
+    }
+
+    public boolean remove(java.lang.Object)
+    {
+        com.google.c.b.y $r0;
+        java.lang.Object $r1;
+        boolean $z1;
+        com.google.c.b.ad $r2;
+        com.google.c.b.w $r3;
+        java.util.Map$Entry $r4;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 := @parameter0: java.lang.Object;
+        $z1 = $r1 instanceof java.util.Map$Entry;
+        if $z1 != 0 goto label1;
+
+     label0:
+        return 0;
+
+     label1:
+        $r3 = $r0.<com.google.c.b.y: com.google.c.b.w a>;
+        $r4 = (java.util.Map$Entry) $r1;
+        $r2 = virtualinvoke $r3.<com.google.c.b.w: com.google.c.b.ad a(java.util.Map$Entry)>($r4);
+        if $r2 == null goto label0;
+
+        $r3 = $r0.<com.google.c.b.y: com.google.c.b.w a>;
+        virtualinvoke $r3.<com.google.c.b.w: void a(com.google.c.b.ad,boolean)>($r2, 1);
+        return 1;
+    }
+
+    public int size()
+    {
+        com.google.c.b.y $r0;
+        com.google.c.b.w $r1;
+        int $i0;
+
+        $r0 := @this: com.google.c.b.y;
+        $r1 = $r0.<com.google.c.b.y: com.google.c.b.w a>;
+        $i0 = $r1.<com.google.c.b.w: int c>;
+        return $i0;
+    }
+}

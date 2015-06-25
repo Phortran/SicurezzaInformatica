@@ -1,0 +1,278 @@
+public class com.google.android.gms.maps.SupportMapFragment extends android.support.v4.app.Fragment
+{
+    private final com.google.android.gms.maps.u a;
+    private com.google.android.gms.maps.GoogleMap b;
+
+    public void <init>()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void <init>()>();
+        $r1 = new com.google.android.gms.maps.u;
+        specialinvoke $r1.<com.google.android.gms.maps.u: void <init>(android.support.v4.app.Fragment)>($r0);
+        $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a> = $r1;
+        return;
+    }
+
+    protected com.google.android.gms.maps.internal.IMapFragmentDelegate a()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+        com.google.android.gms.dynamic.a $r2;
+        com.google.android.gms.maps.t $r3;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r4;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void g()>();
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        $r2 = virtualinvoke $r1.<com.google.android.gms.maps.u: com.google.android.gms.dynamic.a a()>();
+        if $r2 != null goto label0;
+
+        return null;
+
+     label0:
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        $r2 = virtualinvoke $r1.<com.google.android.gms.maps.u: com.google.android.gms.dynamic.a a()>();
+        $r3 = (com.google.android.gms.maps.t) $r2;
+        $r4 = virtualinvoke $r3.<com.google.android.gms.maps.t: com.google.android.gms.maps.internal.IMapFragmentDelegate f()>();
+        return $r4;
+    }
+
+    public final com.google.android.gms.maps.GoogleMap b()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.GoogleMap $r1;
+        com.google.android.gms.maps.internal.IMapFragmentDelegate $r2;
+        android.os.IBinder $r3, $r6;
+        com.google.android.gms.maps.internal.IGoogleMapDelegate $r4, $r5;
+        android.os.RemoteException $r7;
+        com.google.android.gms.maps.model.m $r8;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.internal.IMapFragmentDelegate a()>();
+        if $r2 != null goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $r4 = interfaceinvoke $r2.<com.google.android.gms.maps.internal.IMapFragmentDelegate: com.google.android.gms.maps.internal.IGoogleMapDelegate a()>();
+
+     label2:
+        if $r4 == null goto label0;
+
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.GoogleMap b>;
+        if $r1 == null goto label3;
+
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.GoogleMap b>;
+        $r5 = virtualinvoke $r1.<com.google.android.gms.maps.GoogleMap: com.google.android.gms.maps.internal.IGoogleMapDelegate a()>();
+        $r6 = interfaceinvoke $r5.<com.google.android.gms.maps.internal.IGoogleMapDelegate: android.os.IBinder asBinder()>();
+        $r3 = interfaceinvoke $r4.<com.google.android.gms.maps.internal.IGoogleMapDelegate: android.os.IBinder asBinder()>();
+        if $r6 == $r3 goto label4;
+
+     label3:
+        $r1 = new com.google.android.gms.maps.GoogleMap;
+        specialinvoke $r1.<com.google.android.gms.maps.GoogleMap: void <init>(com.google.android.gms.maps.internal.IGoogleMapDelegate)>($r4);
+        $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.GoogleMap b> = $r1;
+
+     label4:
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.GoogleMap b>;
+        return $r1;
+
+     label5:
+        $r7 := @caughtexception;
+        $r8 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r8.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r7);
+        throw $r8;
+
+        catch android.os.RemoteException from label1 to label2 with label5;
+    }
+
+    public void onActivityCreated(android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.os.Bundle $r1;
+        java.lang.Class $r2;
+        java.lang.ClassLoader $r3;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.os.Bundle;
+        if $r1 == null goto label0;
+
+        $r2 = class "com/google/android/gms/maps/SupportMapFragment";
+        $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+        virtualinvoke $r1.<android.os.Bundle: void setClassLoader(java.lang.ClassLoader)>($r3);
+
+     label0:
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onActivityCreated(android.os.Bundle)>($r1);
+        return;
+    }
+
+    public void onAttach(android.app.Activity)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.app.Activity $r1;
+        com.google.android.gms.maps.u $r2;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.app.Activity;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onAttach(android.app.Activity)>($r1);
+        $r2 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        staticinvoke <com.google.android.gms.maps.u: void a(com.google.android.gms.maps.u,android.app.Activity)>($r2, $r1);
+        return;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.maps.u $r2;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onCreate(android.os.Bundle)>($r1);
+        $r2 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r2.<com.google.android.gms.maps.u: void a(android.os.Bundle)>($r1);
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3;
+        com.google.android.gms.maps.u $r4;
+        android.view.View $r5;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        $r5 = virtualinvoke $r4.<com.google.android.gms.maps.u: android.view.View a(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>($r1, $r2, $r3);
+        return $r5;
+    }
+
+    public void onDestroy()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void e()>();
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onDestroy()>();
+        return;
+    }
+
+    public void onDestroyView()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void d()>();
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onDestroyView()>();
+        return;
+    }
+
+    public void onInflate(android.app.Activity, android.util.AttributeSet, android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.app.Activity $r1;
+        android.util.AttributeSet $r2;
+        android.os.Bundle $r3, $r5;
+        com.google.android.gms.maps.u $r4;
+        com.google.android.gms.maps.GoogleMapOptions $r7;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.app.Activity;
+        $r2 := @parameter1: android.util.AttributeSet;
+        $r3 := @parameter2: android.os.Bundle;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onInflate(android.app.Activity,android.util.AttributeSet,android.os.Bundle)>($r1, $r2, $r3);
+        $r4 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        staticinvoke <com.google.android.gms.maps.u: void a(com.google.android.gms.maps.u,android.app.Activity)>($r4, $r1);
+        $r7 = staticinvoke <com.google.android.gms.maps.GoogleMapOptions: com.google.android.gms.maps.GoogleMapOptions a(android.content.Context,android.util.AttributeSet)>($r1, $r2);
+        $r5 = new android.os.Bundle;
+        specialinvoke $r5.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r5.<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)>("MapOptions", $r7);
+        $r4 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r4.<com.google.android.gms.maps.u: void a(android.app.Activity,android.os.Bundle,android.os.Bundle)>($r1, $r5, $r3);
+        return;
+    }
+
+    public void onLowMemory()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void f()>();
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onLowMemory()>();
+        return;
+    }
+
+    public void onPause()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void c()>();
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onPause()>();
+        return;
+    }
+
+    public void onResume()
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        com.google.android.gms.maps.u $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onResume()>();
+        $r1 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r1.<com.google.android.gms.maps.u: void b()>();
+        return;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.os.Bundle $r1;
+        java.lang.Class $r2;
+        java.lang.ClassLoader $r3;
+        com.google.android.gms.maps.u $r4;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.os.Bundle;
+        if $r1 == null goto label0;
+
+        $r2 = class "com/google/android/gms/maps/SupportMapFragment";
+        $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+        virtualinvoke $r1.<android.os.Bundle: void setClassLoader(java.lang.ClassLoader)>($r3);
+
+     label0:
+        specialinvoke $r0.<android.support.v4.app.Fragment: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r4 = $r0.<com.google.android.gms.maps.SupportMapFragment: com.google.android.gms.maps.u a>;
+        virtualinvoke $r4.<com.google.android.gms.maps.u: void b(android.os.Bundle)>($r1);
+        return;
+    }
+
+    public void setArguments(android.os.Bundle)
+    {
+        com.google.android.gms.maps.SupportMapFragment $r0;
+        android.os.Bundle $r1;
+
+        $r0 := @this: com.google.android.gms.maps.SupportMapFragment;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<android.support.v4.app.Fragment: void setArguments(android.os.Bundle)>($r1);
+        return;
+    }
+}

@@ -1,0 +1,1030 @@
+public class it.h3g.areaclienti3.remoteservice.a.r extends java.lang.Object
+{
+    private android.content.Context a;
+    private it.h3g.areaclienti3.j.f b;
+    private it.h3g.areaclienti3.cache.a c;
+
+    public void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.content.Context $r1;
+        it.h3g.areaclienti3.j.f $r2;
+        it.h3g.areaclienti3.cache.a $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.content.Context a> = $r1;
+        $r2 = new it.h3g.areaclienti3.j.f;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.f: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b> = $r2;
+        $r3 = new it.h3g.areaclienti3.cache.a;
+        specialinvoke $r3.<it.h3g.areaclienti3.cache.a: void <init>(android.content.Context)>($r1);
+        $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c> = $r3;
+        return;
+    }
+
+    private android.os.Bundle b(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        java.lang.String $r1, $r3, $r5;
+        org.c.q $r2;
+        android.os.Bundle $r4, $r7;
+        org.c.ah[] $r6;
+        int $i1, $i2, $i3, $i4;
+        org.c.ah $r8;
+        java.lang.StringBuilder $r9;
+        java.util.ArrayList $r10;
+        java.lang.Object[] $r11;
+        java.lang.Object $r12;
+        java.lang.CharSequence $r13;
+        org.c.am $r14;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: java.lang.String;
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r2 = new org.c.q;
+        specialinvoke $r2.<org.c.q: void <init>()>();
+        $r3 = virtualinvoke $r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("<![CDATA[", "");
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("]]>", "");
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("XML = ");
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("StoreAction", $r5);
+        $r8 = virtualinvoke $r2.<org.c.q: org.c.ah a(java.lang.String)>($r3);
+        $r10 = new java.util.ArrayList;
+        specialinvoke $r10.<java.util.ArrayList: void <init>()>();
+        if $r8 == null goto label7;
+
+     label0:
+        $r11 = virtualinvoke $r8.<org.c.ah: java.lang.Object[] d(java.lang.String)>("//item");
+        $i2 = lengthof $r11;
+        $i3 = 0;
+
+     label1:
+        if $i3 < $i2 goto label2;
+
+        virtualinvoke $r4.<android.os.Bundle: void putParcelableArrayList(java.lang.String,java.util.ArrayList)>("result", $r10);
+        return $r4;
+
+     label2:
+        $r12 = $r11[$i3];
+        $r8 = (org.c.ah) $r12;
+        $r6 = virtualinvoke $r8.<org.c.ah: org.c.ah[] k()>();
+        $r7 = new android.os.Bundle;
+        specialinvoke $r7.<android.os.Bundle: void <init>()>();
+        $i1 = lengthof $r6;
+        $i4 = 0;
+
+     label3:
+        if $i4 < $i1 goto label4;
+
+        virtualinvoke $r10.<java.util.ArrayList: boolean add(java.lang.Object)>($r7);
+        $i3 = $i3 + 1;
+        goto label1;
+
+     label4:
+        $r8 = $r6[$i4];
+        $r5 = virtualinvoke $r8.<org.c.ah: java.lang.String f()>();
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String toString()>();
+        $r13 = virtualinvoke $r8.<org.c.ah: java.lang.CharSequence l()>();
+        $r3 = interfaceinvoke $r13.<java.lang.CharSequence: java.lang.String toString()>();
+        virtualinvoke $r7.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>($r5, $r3);
+
+     label5:
+        $i4 = $i4 + 1;
+        goto label3;
+
+     label6:
+        $r14 := @caughtexception;
+        $r9 = new java.lang.StringBuilder;
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing options ");
+        $r3 = virtualinvoke $r14.<org.c.am: java.lang.String getMessage()>();
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r4;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error no contents found!");
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 7);
+        return $r4;
+
+        catch org.c.am from label0 to label5 with label6;
+    }
+
+    private java.lang.String c(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        java.lang.String $r1, $r2, $r4;
+        java.lang.StringBuilder $r3;
+        int $i1, $i2, $i3, $i4;
+        org.json.JSONObject $r5, $r7;
+        org.json.JSONArray $r6, $r8, $r10;
+        java.lang.Object $r9;
+        boolean $z0;
+        java.lang.Exception $r11;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: java.lang.String;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Reverse geocoding to server: ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r4);
+
+     label0:
+        $r7 = staticinvoke <it.h3g.areaclienti3.j.f: org.json.JSONObject a(java.lang.String)>($r1);
+        $r9 = virtualinvoke $r7.<org.json.JSONObject: java.lang.Object get(java.lang.String)>("results");
+        $r10 = (org.json.JSONArray) $r9;
+        $i2 = 0;
+
+     label1:
+        $i3 = virtualinvoke $r10.<org.json.JSONArray: int length()>();
+        if $i2 < $i3 goto label3;
+
+     label2:
+        return null;
+
+     label3:
+        $r5 = virtualinvoke $r10.<org.json.JSONArray: org.json.JSONObject getJSONObject(int)>($i2);
+        $z0 = virtualinvoke $r5.<org.json.JSONObject: boolean has(java.lang.String)>("address_components");
+        if $z0 == 0 goto label5;
+
+        $r6 = virtualinvoke $r5.<org.json.JSONObject: org.json.JSONArray getJSONArray(java.lang.String)>("address_components");
+        $i1 = 0;
+
+     label4:
+        $i3 = virtualinvoke $r6.<org.json.JSONArray: int length()>();
+        if $i1 < $i3 goto label6;
+
+     label5:
+        $i2 = $i2 + 1;
+        goto label1;
+
+     label6:
+        $r7 = virtualinvoke $r6.<org.json.JSONArray: org.json.JSONObject getJSONObject(int)>($i1);
+        $z0 = virtualinvoke $r5.<org.json.JSONObject: boolean has(java.lang.String)>("types");
+        if $z0 == 0 goto label14;
+
+        $r8 = virtualinvoke $r7.<org.json.JSONObject: org.json.JSONArray getJSONArray(java.lang.String)>("types");
+        $i4 = 0;
+        $r2 = null;
+
+     label7:
+        $i3 = virtualinvoke $r8.<org.json.JSONArray: int length()>();
+        if $i4 < $i3 goto label8;
+
+        if $r2 == null goto label14;
+
+        return $r2;
+
+     label8:
+        $r1 = "locality";
+        $r4 = virtualinvoke $r8.<org.json.JSONArray: java.lang.String getString(int)>($i4);
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r4);
+        if $z0 == 0 goto label9;
+
+        if $r2 != null goto label9;
+
+        $z0 = virtualinvoke $r7.<org.json.JSONObject: boolean has(java.lang.String)>("long_name");
+        if $z0 == 0 goto label11;
+
+        $r2 = virtualinvoke $r7.<org.json.JSONObject: java.lang.String getString(java.lang.String)>("long_name");
+
+     label9:
+        $r4 = "sublocality";
+        $r1 = virtualinvoke $r8.<org.json.JSONArray: java.lang.String getString(int)>($i4);
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+        if $z0 == 0 goto label10;
+
+        $z0 = virtualinvoke $r7.<org.json.JSONObject: boolean has(java.lang.String)>("long_name");
+        if $z0 == 0 goto label12;
+
+        $r2 = virtualinvoke $r7.<org.json.JSONObject: java.lang.String getString(java.lang.String)>("long_name");
+
+     label10:
+        $i4 = $i4 + 1;
+        goto label7;
+
+     label11:
+        $z0 = virtualinvoke $r7.<org.json.JSONObject: boolean has(java.lang.String)>("short_name");
+        if $z0 == 0 goto label9;
+
+        $r2 = virtualinvoke $r7.<org.json.JSONObject: java.lang.String getString(java.lang.String)>("short_name");
+        goto label9;
+
+     label12:
+        $z0 = virtualinvoke $r7.<org.json.JSONObject: boolean has(java.lang.String)>("short_name");
+        if $z0 == 0 goto label10;
+
+        $r4 = virtualinvoke $r7.<org.json.JSONObject: java.lang.String getString(java.lang.String)>("short_name");
+
+     label13:
+        $r2 = $r4;
+        goto label10;
+
+     label14:
+        $i1 = $i1 + 1;
+        goto label4;
+
+     label15:
+        $r11 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing geocode response ");
+        $r2 = virtualinvoke $r11.<java.lang.Exception: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        goto label2;
+
+        catch java.lang.Exception from label0 to label13 with label15;
+    }
+
+    public android.os.Bundle a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r2, $r5;
+        java.lang.StringBuilder $r4;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "GET REGIONS ACTION");
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("http://nazionale.h3g.xaos.it/api/get-regions");
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>("http://nazionale.h3g.xaos.it/api/get-regions");
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r5 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>("http://nazionale.h3g.xaos.it/api/get-regions", null, "get");
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(java.lang.String)>($r5);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>("http://nazionale.h3g.xaos.it/api/get-regions", $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", "http://nazionale.h3g.xaos.it/api/get-regions");
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r2 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle a(java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        java.lang.String $r1, $r2, $r5;
+        java.lang.StringBuilder $r3;
+        android.os.Bundle $r4, $r9;
+        java.io.StringReader $r6;
+        org.w3c.dom.NodeList $r7, $r8;
+        int $i1, $i5, $i6;
+        short $s2;
+        java.util.ArrayList $r10;
+        javax.xml.parsers.DocumentBuilderFactory $r11;
+        javax.xml.parsers.DocumentBuilder $r12;
+        org.xml.sax.InputSource $r13;
+        org.w3c.dom.Document $r14;
+        org.w3c.dom.Node $r15;
+        org.w3c.dom.Element $r16;
+        org.xml.sax.SAXException $r17;
+        java.io.IOException $r18;
+        javax.xml.parsers.ParserConfigurationException $r19;
+        javax.xml.parsers.FactoryConfigurationError $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: java.lang.String;
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("XML = ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("StoreAction", $r5);
+        $r10 = new java.util.ArrayList;
+        specialinvoke $r10.<java.util.ArrayList: void <init>()>();
+
+     label0:
+        $r11 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>();
+        $r12 = virtualinvoke $r11.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>();
+        $r13 = new org.xml.sax.InputSource;
+        $r6 = new java.io.StringReader;
+        specialinvoke $r6.<java.io.StringReader: void <init>(java.lang.String)>($r1);
+        specialinvoke $r13.<org.xml.sax.InputSource: void <init>(java.io.Reader)>($r6);
+        $r14 = virtualinvoke $r12.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(org.xml.sax.InputSource)>($r13);
+        $r8 = interfaceinvoke $r14.<org.w3c.dom.Document: org.w3c.dom.NodeList getElementsByTagName(java.lang.String)>("city");
+        $r15 = interfaceinvoke $r8.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>(0);
+        $r16 = (org.w3c.dom.Element) $r15;
+        $r15 = interfaceinvoke $r16.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>();
+        $r5 = interfaceinvoke $r15.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r7 = interfaceinvoke $r14.<org.w3c.dom.Document: org.w3c.dom.NodeList getElementsByTagName(java.lang.String)>("item");
+        $i5 = 0;
+
+     label1:
+        $i1 = interfaceinvoke $r7.<org.w3c.dom.NodeList: int getLength()>();
+        if $i5 < $i1 goto label2;
+
+        virtualinvoke $r4.<android.os.Bundle: void putParcelableArrayList(java.lang.String,java.util.ArrayList)>("result", $r10);
+        return $r4;
+
+     label2:
+        $r15 = interfaceinvoke $r7.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i5);
+        $r8 = interfaceinvoke $r15.<org.w3c.dom.Node: org.w3c.dom.NodeList getChildNodes()>();
+        $r9 = new android.os.Bundle;
+        specialinvoke $r9.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("city", $r5);
+        $i6 = 0;
+
+     label3:
+        $i1 = interfaceinvoke $r8.<org.w3c.dom.NodeList: int getLength()>();
+        if $i6 < $i1 goto label4;
+
+        virtualinvoke $r10.<java.util.ArrayList: boolean add(java.lang.Object)>($r9);
+        $i5 = $i5 + 1;
+        goto label1;
+
+     label4:
+        $r15 = interfaceinvoke $r8.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>($i6);
+        $s2 = interfaceinvoke $r15.<org.w3c.dom.Node: short getNodeType()>();
+        if $s2 != 1 goto label5;
+
+        $r2 = interfaceinvoke $r15.<org.w3c.dom.Node: java.lang.String getNodeName()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String toString()>();
+        $r15 = interfaceinvoke $r15.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>();
+        $r1 = interfaceinvoke $r15.<org.w3c.dom.Node: java.lang.String getNodeValue()>();
+        $r1 = virtualinvoke $r1.<java.lang.String: java.lang.String toString()>();
+        virtualinvoke $r9.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>($r2, $r1);
+
+     label5:
+        $i6 = $i6 + 1;
+        goto label3;
+
+     label6:
+        $r17 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing options ");
+        $r2 = virtualinvoke $r17.<org.xml.sax.SAXException: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r4;
+
+     label7:
+        $r18 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing options ");
+        $r2 = virtualinvoke $r18.<java.io.IOException: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r4;
+
+     label8:
+        $r19 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing options ");
+        $r2 = virtualinvoke $r19.<javax.xml.parsers.ParserConfigurationException: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r4;
+
+     label9:
+        $r20 := @caughtexception;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while parsing options ");
+        $r2 = virtualinvoke $r20.<javax.xml.parsers.FactoryConfigurationError: java.lang.String getMessage()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r2);
+        virtualinvoke $r4.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 1);
+        return $r4;
+
+        catch org.xml.sax.SAXException from label0 to label5 with label6;
+        catch java.io.IOException from label0 to label5 with label7;
+        catch javax.xml.parsers.ParserConfigurationException from label0 to label5 with label8;
+        catch javax.xml.parsers.FactoryConfigurationError from label0 to label5 with label9;
+    }
+
+    public android.os.Bundle b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r3, $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("region_id");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "GET PROVINCES ACTION");
+        $r3 = "http://nazionale.h3g.xaos.it/api/get-provinces-in-region/id/{REGION_ID}";
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{REGION_ID}", $r4);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>($r4, null, "get");
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(java.lang.String)>($r3);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r3 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r3, $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("province_id");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "GET CITIES ACTION");
+        $r3 = "http://nazionale.h3g.xaos.it/api/get-cities-in-province/code/{PROVINCE_ID}";
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{PROVINCE_ID}", $r4);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>($r4, null, "get");
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(java.lang.String)>($r3);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r3 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle d(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r3, $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("city_name");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "SEARCH CITY");
+        $r3 = "http://nazionale.h3g.xaos.it/api/search-city/name/{CITY_NAME}";
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{CITY_NAME}", $r4);
+        $r4 = virtualinvoke $r4.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(" ", "%20");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>($r4, null, "get");
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(java.lang.String)>($r3);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r3 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle e(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r3, $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("city_id");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "GET SHOPS IN CITY");
+        $r3 = "http://nazionale.h3g.xaos.it/api/get-shops-in-city/city/{CITY_ID}";
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{CITY_ID}", $r4);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>($r4, null, "get");
+        $r8 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle b(java.lang.String)>($r3);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r3 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle f(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r8;
+        java.lang.String $r3, $r4;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r6;
+        it.h3g.areaclienti3.j.f $r7;
+        boolean $z0;
+        java.io.IOException $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("city_id");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", "GET SERVICES IN CITY");
+        $r3 = "http://nazionale.h3g.xaos.it/api/get-services-in-city/city/{CITY_ID}";
+        $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("{CITY_ID}", $r4);
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("URL TO LOAD IS = ");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r1 = virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r4);
+        if $r1 != null goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.j.f b>;
+
+     label0:
+        $r3 = virtualinvoke $r7.<it.h3g.areaclienti3.j.f: java.lang.String a(java.lang.String,java.util.List,java.lang.String)>($r4, null, "get");
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.os.Bundle a(java.lang.String)>($r3);
+
+     label1:
+        $r1 = $r8;
+
+     label2:
+        if $r1 == null goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label3;
+
+        $r6 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r6.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r4, $r1);
+
+     label3:
+        if $r1 == null goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r4);
+
+     label4:
+        return $r1;
+
+     label5:
+        $r9 := @caughtexception;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", "Error during network connection");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error = ");
+        $r3 = virtualinvoke $r9.<java.io.IOException: java.lang.String getMessage()>();
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String)>("StoreAction", $r3);
+        if $r1 != null goto label6;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+
+     label6:
+        virtualinvoke $r1.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 0);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label5;
+    }
+
+    public android.os.Bundle g(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r2;
+        java.lang.String $r3, $r4, $r8, $r14, $r15;
+        android.content.Context $r5;
+        java.util.Locale $r6;
+        java.lang.StringBuilder $r7;
+        boolean $z0;
+        it.h3g.areaclienti3.cache.a $r9;
+        android.location.Geocoder $r10;
+        java.util.List $r11;
+        java.lang.Object $r12;
+        android.location.Address $r13;
+        double $d0;
+        java.io.IOException $r16;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        if $r1 == null goto label3;
+
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("locality");
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("android.location.Geocoder.");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        if $r3 == null goto label3;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label3;
+
+        $r9 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r2 = virtualinvoke $r9.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r8);
+        if $r2 != null goto label2;
+
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        $r10 = new android.location.Geocoder;
+        $r5 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: android.content.Context a>;
+        $r6 = new java.util.Locale;
+
+     label0:
+        specialinvoke $r6.<java.util.Locale: void <init>(java.lang.String)>("it");
+        specialinvoke $r10.<android.location.Geocoder: void <init>(android.content.Context,java.util.Locale)>($r5, $r6);
+        $r11 = virtualinvoke $r10.<android.location.Geocoder: java.util.List getFromLocationName(java.lang.String,int)>($r3, 1);
+        $r12 = interfaceinvoke $r11.<java.util.List: java.lang.Object get(int)>(0);
+        $r13 = (android.location.Address) $r12;
+        $d0 = virtualinvoke $r13.<android.location.Address: double getLongitude()>();
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(double)>($d0);
+        $d0 = virtualinvoke $r13.<android.location.Address: double getLatitude()>();
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(double)>($d0);
+        $r15 = virtualinvoke $r13.<android.location.Address: java.lang.String getLocality()>();
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLongitude", $r3);
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLatitude", $r14);
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLocality", $r15);
+        virtualinvoke $r2.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("LOCALITY = ");
+        $r4 = virtualinvoke $r13.<android.location.Address: java.lang.String getLocality()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r4);
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("LONGITUDE = ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r4 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r4);
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("LATITUDE = ");
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r14 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("StoreAction", $r14);
+
+     label1:
+        if $r2 == null goto label2;
+
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label2;
+
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label2;
+
+        $r9 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r8, $r2);
+
+     label2:
+        if $r2 == null goto label3;
+
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r8);
+
+     label3:
+        return $r2;
+
+     label4:
+        $r16 := @caughtexception;
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("Error while rertiving location coordinate: ");
+        $r14 = virtualinvoke $r16.<java.io.IOException: java.lang.String getMessage()>();
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r14 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void d(java.lang.String,java.lang.String)>("StoreAction", $r14);
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 7);
+        goto label1;
+
+        catch java.io.IOException from label0 to label1 with label4;
+    }
+
+    public android.os.Bundle h(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.remoteservice.a.r $r0;
+        android.os.Bundle $r1, $r2;
+        double $d0, $d1;
+        java.lang.String $r3, $r4, $r6, $r8;
+        java.lang.StringBuilder $r5;
+        it.h3g.areaclienti3.cache.a $r7;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.a.r;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        if $r1 == null goto label2;
+
+        $d0 = virtualinvoke $r1.<android.os.Bundle: double getDouble(java.lang.String)>("latitude");
+        $d1 = virtualinvoke $r1.<android.os.Bundle: double getDouble(java.lang.String)>("longitude");
+        $r5 = new java.lang.StringBuilder;
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://maps.googleapis.com/maps/api/geocode/json?latlng=");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&sensor=true&language=it");
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        $r2 = virtualinvoke $r7.<it.h3g.areaclienti3.cache.a: android.os.Bundle b(java.lang.String)>($r6);
+        if $r2 != null goto label1;
+
+        $r4 = specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.a.r: java.lang.String c(java.lang.String)>($r6);
+        $r2 = new android.os.Bundle;
+        specialinvoke $r2.<android.os.Bundle: void <init>()>();
+        if $r4 == null goto label3;
+
+        $r1 = new android.os.Bundle;
+        specialinvoke $r1.<android.os.Bundle: void <init>()>();
+        $r8 = staticinvoke <java.lang.String: java.lang.String valueOf(double)>($d0);
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLongitude", $r8);
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(double)>($d1);
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLatitude", $r3);
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("mLocality", $r4);
+        virtualinvoke $r2.<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)>("result", $r1);
+
+     label0:
+        if $r2 == null goto label1;
+
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 != 0 goto label1;
+
+        $z0 = virtualinvoke $r2.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label1;
+
+        $r7 = $r0.<it.h3g.areaclienti3.remoteservice.a.r: it.h3g.areaclienti3.cache.a c>;
+        virtualinvoke $r7.<it.h3g.areaclienti3.cache.a: boolean a(java.lang.String,android.os.Bundle)>($r6, $r2);
+
+     label1:
+        if $r2 == null goto label2;
+
+        virtualinvoke $r2.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("url", $r6);
+
+     label2:
+        return $r2;
+
+     label3:
+        virtualinvoke $r2.<android.os.Bundle: void putInt(java.lang.String,int)>("error", 7);
+        goto label0;
+    }
+}

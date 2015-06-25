@@ -1,0 +1,51 @@
+class it.h3g.areaclienti3.f extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final it.h3g.areaclienti3.BaseActivity a;
+
+    void <init>(it.h3g.areaclienti3.BaseActivity)
+    {
+        it.h3g.areaclienti3.f $r0;
+        it.h3g.areaclienti3.BaseActivity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.f;
+        $r1 := @parameter0: it.h3g.areaclienti3.BaseActivity;
+        $r0.<it.h3g.areaclienti3.f: it.h3g.areaclienti3.BaseActivity a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        it.h3g.areaclienti3.f $r0;
+        android.view.View $r1;
+        it.h3g.areaclienti3.BaseActivity $r2;
+        android.content.Intent $r3;
+        java.lang.String $r4;
+        it.h3g.areaclienti3.j.l $r5;
+        java.lang.StringBuilder $r6;
+        android.net.Uri $r7;
+        android.app.AlertDialog $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.f;
+        $r1 := @parameter0: android.view.View;
+        $r2 = $r0.<it.h3g.areaclienti3.f: it.h3g.areaclienti3.BaseActivity a>;
+        $r5 = $r2.<it.h3g.areaclienti3.BaseActivity: it.h3g.areaclienti3.j.l p>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.j.l: boolean c(int)>(2);
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("market://details?id=");
+        $r2 = $r0.<it.h3g.areaclienti3.f: it.h3g.areaclienti3.BaseActivity a>;
+        $r4 = virtualinvoke $r2.<it.h3g.areaclienti3.BaseActivity: java.lang.String getPackageName()>();
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);
+        $r4 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r7 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r4);
+        $r2 = $r0.<it.h3g.areaclienti3.f: it.h3g.areaclienti3.BaseActivity a>;
+        $r3 = new android.content.Intent;
+        specialinvoke $r3.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.VIEW");
+        $r3 = virtualinvoke $r3.<android.content.Intent: android.content.Intent setData(android.net.Uri)>($r7);
+        virtualinvoke $r2.<it.h3g.areaclienti3.BaseActivity: void startActivity(android.content.Intent)>($r3);
+        $r2 = $r0.<it.h3g.areaclienti3.f: it.h3g.areaclienti3.BaseActivity a>;
+        $r8 = $r2.<it.h3g.areaclienti3.BaseActivity: android.app.AlertDialog r>;
+        virtualinvoke $r8.<android.app.AlertDialog: void cancel()>();
+        return;
+    }
+}

@@ -1,0 +1,85 @@
+public final class com.b.a.a.a.e extends java.lang.Object
+{
+    private final com.b.a.a.a.a a;
+    private final java.io.DataInputStream b;
+
+    public void <init>(java.io.DataInputStream, com.b.a.a.a.a)
+    {
+        com.b.a.a.a.e $r0;
+        java.io.DataInputStream $r1;
+        com.b.a.a.a.a $r2;
+
+        $r0 := @this: com.b.a.a.a.e;
+        $r1 := @parameter0: java.io.DataInputStream;
+        $r2 := @parameter1: com.b.a.a.a.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.b.a.a.a.e: java.io.DataInputStream b> = $r1;
+        $r0.<com.b.a.a.a.e: com.b.a.a.a.a a> = $r2;
+        return;
+    }
+
+    public final byte a()
+    {
+        com.b.a.a.a.e $r0;
+        java.io.DataInputStream $r1;
+        com.b.a.a.a.a $r2;
+        byte $b1;
+
+        $r0 := @this: com.b.a.a.a.e;
+        $r1 = $r0.<com.b.a.a.a.e: java.io.DataInputStream b>;
+        $b1 = virtualinvoke $r1.<java.io.DataInputStream: byte readByte()>();
+        $r2 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        virtualinvoke $r2.<com.b.a.a.a.a: void a(long)>(1L);
+
+     label0:
+        return $b1;
+    }
+
+    public final void a(byte[])
+    {
+        com.b.a.a.a.e $r0;
+        byte[] $r1;
+        java.io.DataInputStream $r2;
+        int $i0;
+        long $l1;
+        com.b.a.a.a.a $r3;
+
+        $r0 := @this: com.b.a.a.a.e;
+        $r1 := @parameter0: byte[];
+        $r2 = $r0.<com.b.a.a.a.e: java.io.DataInputStream b>;
+        virtualinvoke $r2.<java.io.DataInputStream: void readFully(byte[])>($r1);
+        $r3 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        if $r3 == null goto label0;
+
+        $r3 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        $i0 = lengthof $r1;
+        $l1 = (long) $i0;
+        virtualinvoke $r3.<com.b.a.a.a.a: void a(long)>($l1);
+
+     label0:
+        return;
+    }
+
+    public final short b()
+    {
+        com.b.a.a.a.e $r0;
+        java.io.DataInputStream $r1;
+        com.b.a.a.a.a $r2;
+        short $s1;
+
+        $r0 := @this: com.b.a.a.a.e;
+        $r1 = $r0.<com.b.a.a.a.e: java.io.DataInputStream b>;
+        $s1 = virtualinvoke $r1.<java.io.DataInputStream: short readShort()>();
+        $r2 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<com.b.a.a.a.e: com.b.a.a.a.a a>;
+        virtualinvoke $r2.<com.b.a.a.a.a: void a(long)>(2L);
+
+     label0:
+        return $s1;
+    }
+}

@@ -1,0 +1,531 @@
+public class it.h3g.areaclienti3.e.b.b extends android.database.sqlite.SQLiteOpenHelper
+{
+    public static final java.lang.String[] a;
+    private static it.h3g.areaclienti3.e.b.b b;
+    private android.content.Context c;
+
+    static void <clinit>()
+    {
+        java.lang.String[] $r1;
+
+        <it.h3g.areaclienti3.e.b.b: it.h3g.areaclienti3.e.b.b b> = null;
+        $r1 = newarray (java.lang.String)[4];
+        $r1[0] = "ldpi";
+        $r1[1] = "mdpi";
+        $r1[2] = "hdpi";
+        $r1[3] = "xhdpi";
+        <it.h3g.areaclienti3.e.b.b: java.lang.String[] a> = $r1;
+        return;
+    }
+
+    private void <init>(android.content.Context)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>($r1, "trascodifica", null, 3);
+        $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c> = $r1;
+        return;
+    }
+
+    public static it.h3g.areaclienti3.e.b.b a(android.content.Context)
+    {
+        android.content.Context $r0;
+        it.h3g.areaclienti3.e.b.b $r1;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <it.h3g.areaclienti3.e.b.b: it.h3g.areaclienti3.e.b.b b>;
+        if $r1 != null goto label0;
+
+        $r1 = new it.h3g.areaclienti3.e.b.b;
+        specialinvoke $r1.<it.h3g.areaclienti3.e.b.b: void <init>(android.content.Context)>($r0);
+        <it.h3g.areaclienti3.e.b.b: it.h3g.areaclienti3.e.b.b b> = $r1;
+
+     label0:
+        $r1 = <it.h3g.areaclienti3.e.b.b: it.h3g.areaclienti3.e.b.b b>;
+        return $r1;
+    }
+
+    public static java.lang.String a(java.lang.String)
+    {
+        java.lang.String $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("tariffs-options");
+        if $z0 == 0 goto label1;
+
+        $r0 = "tariffOptions";
+
+     label0:
+        return $r0;
+
+     label1:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("carrier");
+        if $z0 == 0 goto label2;
+
+        return "carrier";
+
+     label2:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("topUpHistory");
+        if $z0 == 0 goto label3;
+
+        return "canaliRicarica";
+
+     label3:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("error-code");
+        if $z0 == 0 goto label4;
+
+        return "error";
+
+     label4:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("recapiti-personali");
+        if $z0 == 0 goto label5;
+
+        return "recapiti";
+
+     label5:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("mnp");
+        if $z0 == 0 goto label6;
+
+        return "portability";
+
+     label6:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("mnp-credit");
+        if $z0 == 0 goto label7;
+
+        return "portabilityCredit";
+
+     label7:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("cambio-piano");
+        if $z0 == 0 goto label8;
+
+        return "changeplan";
+
+     label8:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("catalogo_offerta");
+        if $z0 == 0 goto label9;
+
+        return "catalogoOfferta";
+
+     label9:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("marca_modello");
+        if $z0 == 0 goto label10;
+
+        return "marcaModello";
+
+     label10:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("sms-premium-error");
+        if $z0 == 0 goto label11;
+
+        return "error_SmsPremium";
+
+     label11:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("sms-premium-names");
+        if $z0 == 0 goto label12;
+
+        return "service_in_Subscription";
+
+     label12:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("label_app");
+        if $z0 == 0 goto label13;
+
+        return "extraThreshold";
+
+     label13:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("boxRinnovoOpzioni");
+        if $z0 == 0 goto label14;
+
+        return "boxRinnovoOpzioni";
+
+     label14:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("incompatibilita-piano");
+        if $z0 == 0 goto label15;
+
+        return "planCompatibility";
+
+     label15:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("userCredit");
+        if $z0 == 0 goto label16;
+
+        return "userCredit";
+
+     label16:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("scratchtype");
+        if $z0 == 0 goto label17;
+
+        return "scratchtype";
+
+     label17:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("spending");
+        if $z0 == 0 goto label18;
+
+        return "spending";
+
+     label18:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("oggetto");
+        if $z0 == 0 goto label19;
+
+        return "oggetto";
+
+     label19:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("faqmail");
+        if $z0 == 0 goto label20;
+
+        return "faqmail";
+
+     label20:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("abilitazioneMenu");
+        if $z0 == 0 goto label21;
+
+        return "abilitazioneMenu";
+
+     label21:
+        $z0 = virtualinvoke $r0.<java.lang.String: boolean equals(java.lang.Object)>("privacy-list");
+        if $z0 == 0 goto label0;
+
+        return "privacyList";
+    }
+
+    private java.lang.String b(java.lang.String)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        java.lang.String $r1, $r3, $r7;
+        android.content.Context $r2;
+        it.h3g.areaclienti3.j.k $r4;
+        java.lang.StringBuilder $r5;
+        java.io.IOException $r6, $r11;
+        boolean $z0;
+        android.content.res.AssetManager $r8;
+        java.io.InputStream $r9;
+        java.util.zip.GZIPInputStream $r10;
+        java.lang.Throwable $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: java.lang.String;
+
+     label0:
+        $r4 = new it.h3g.areaclienti3.j.k;
+        $r2 = $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c>;
+
+     label1:
+        specialinvoke $r4.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r2);
+        $r7 = "gzip/";
+        $z0 = virtualinvoke $r4.<it.h3g.areaclienti3.j.k: boolean b()>();
+        if $z0 != 0 goto label2;
+
+        $r7 = "gzip-en/";
+
+     label2:
+        $r2 = $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c>;
+        $r8 = virtualinvoke $r2.<android.content.Context: android.content.res.AssetManager getAssets()>();
+        $r5 = new java.lang.StringBuilder;
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r7);
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("gz");
+        $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r9 = virtualinvoke $r8.<android.content.res.AssetManager: java.io.InputStream open(java.lang.String)>($r7);
+        $r10 = new java.util.zip.GZIPInputStream;
+        specialinvoke $r10.<java.util.zip.GZIPInputStream: void <init>(java.io.InputStream)>($r9);
+        $r7 = staticinvoke <org.b.a.a.b: java.lang.String b(java.io.InputStream)>($r10);
+
+     label3:
+        $r3 = $r7;
+
+     label4:
+        virtualinvoke $r9.<java.io.InputStream: void close()>();
+        virtualinvoke $r10.<java.util.zip.GZIPInputStream: void close()>();
+
+     label5:
+        return $r7;
+
+     label6:
+        $r11 := @caughtexception;
+        $r3 = "";
+        $r6 = $r11;
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(java.lang.String,java.lang.String,java.lang.Throwable)>("DatabaseTrasHelper", "Error loadFileEncode", $r6);
+
+     label8:
+        return $r3;
+
+     label9:
+        $r12 := @caughtexception;
+        throw $r12;
+
+     label10:
+        $r6 := @caughtexception;
+        goto label7;
+
+        catch java.io.IOException from label1 to label3 with label6;
+        catch java.lang.Throwable from label0 to label3 with label9;
+        catch java.io.IOException from label4 to label5 with label10;
+        catch java.lang.Throwable from label4 to label5 with label9;
+        catch java.lang.Throwable from label7 to label8 with label9;
+    }
+
+    private void b(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String $r2;
+        java.lang.String[] $r3;
+        android.database.Cursor $r5;
+        boolean $z0;
+        android.content.ContentValues $r6;
+        java.lang.Integer $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "abilitazioneMenu";
+        $r5 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT * FROM transcodingTable WHERE key= ?", $r3);
+        if $r5 == null goto label1;
+
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 != 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Insert new abilitazioneMenu xml");
+        $r6 = new android.content.ContentValues;
+        specialinvoke $r6.<android.content.ContentValues: void <init>()>();
+        virtualinvoke $r6.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("key", "abilitazioneMenu");
+        $r2 = specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: java.lang.String b(java.lang.String)>("abilitazioneMenu");
+        virtualinvoke $r6.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("value", $r2);
+        $r7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1);
+        virtualinvoke $r6.<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>("date", $r7);
+        $r2 = staticinvoke <it.h3g.areaclienti3.e.b.b: java.lang.String a(java.lang.String)>("abilitazioneMenu");
+        virtualinvoke $r6.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("keymap", $r2);
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("transcodingTable", null, $r6);
+
+     label0:
+        return;
+
+     label1:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "The abilitazioneMenu xml already exists");
+        goto label0;
+    }
+
+    private void c(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String[] $r3;
+        android.database.Cursor $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "optionVisibility";
+        $r5 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT * FROM transcodingTable WHERE key= ?", $r3);
+        if $r5 == null goto label0;
+
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 != 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Delete old optionVisibility xml");
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "optionVisibility";
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("transcodingTable", "key= ?", $r3);
+
+     label0:
+        return;
+    }
+
+    private void d(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String[] $r3;
+        android.database.Cursor $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "freeunit";
+        $r5 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT * FROM transcodingTable WHERE key= ?", $r3);
+        if $r5 == null goto label0;
+
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 != 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Delete old freeunit xml");
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "freeunit";
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("transcodingTable", "key= ?", $r3);
+
+     label0:
+        return;
+    }
+
+    private void e(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String[] $r3;
+        android.database.Cursor $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "freeUnitDescrs";
+        $r5 = virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>("SELECT * FROM transcodingTable WHERE key= ?", $r3);
+        if $r5 == null goto label0;
+
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 != 0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Delete old freeUnitDescrs xml");
+        $r3 = newarray (java.lang.String)[1];
+        $r3[0] = "freeUnitDescrs";
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("transcodingTable", "key= ?", $r3);
+
+     label0:
+        return;
+    }
+
+    public void a(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        java.lang.String $r2, $r7;
+        int $i0, $i1;
+        android.content.Context $r3;
+        android.content.res.Resources $r4;
+        java.lang.String[] $r5;
+        it.h3g.areaclienti3.j.k $r6;
+        android.content.ContentValues $r8;
+        java.lang.Integer $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("transcodingTable", null, null);
+        $r3 = $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c>;
+        $r3 = virtualinvoke $r3.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r4 = virtualinvoke $r3.<android.content.Context: android.content.res.Resources getResources()>();
+        $r5 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String[] getStringArray(int)>(2131427332);
+        $i1 = 0;
+
+     label0:
+        $i0 = lengthof $r5;
+        if $i1 < $i0 goto label1;
+
+        return;
+
+     label1:
+        $r6 = new it.h3g.areaclienti3.j.k;
+        $r3 = $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c>;
+        specialinvoke $r6.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r3);
+        $r2 = $r5[$i1];
+        $r7 = virtualinvoke $r6.<it.h3g.areaclienti3.j.k: java.lang.String b(java.lang.String)>($r2);
+        $r8 = new android.content.ContentValues;
+        specialinvoke $r8.<android.content.ContentValues: void <init>()>();
+        virtualinvoke $r8.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("key", $r7);
+        $r2 = $r5[$i1];
+        $r2 = specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r8.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("value", $r2);
+        $r10 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1);
+        virtualinvoke $r8.<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>("date", $r10);
+        $r7 = staticinvoke <it.h3g.areaclienti3.e.b.b: java.lang.String a(java.lang.String)>($r7);
+        virtualinvoke $r8.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("keymap", $r7);
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("transcodingTable", null, $r8);
+        $i1 = $i1 + 1;
+        goto label0;
+    }
+
+    public void onCreate(android.database.sqlite.SQLiteDatabase)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        int $i0, $i1;
+        java.lang.String $r2;
+        java.lang.String[] $r4;
+        android.content.Context $r5;
+        android.content.res.Resources $r6;
+        android.content.ContentValues $r7;
+        java.lang.Integer $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $i0 = 0;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Create transcodification table");
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>("CREATE TABLE IF NOT EXISTS transcodingTable (key varchar(255) primary key, value text,date integer,keymap varchar(255));");
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "Create splashscreen table");
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>("CREATE TABLE IF NOT EXISTS splashTable (key varchar(255) primary key, name varchar(255),value text,date text);");
+        $i1 = 0;
+
+     label0:
+        if $i1 < 4 goto label2;
+
+        $r5 = $r0.<it.h3g.areaclienti3.e.b.b: android.content.Context c>;
+        $r5 = virtualinvoke $r5.<android.content.Context: android.content.Context getApplicationContext()>();
+        $r6 = virtualinvoke $r5.<android.content.Context: android.content.res.Resources getResources()>();
+        $r4 = virtualinvoke $r6.<android.content.res.Resources: java.lang.String[] getStringArray(int)>(2131427332);
+
+     label1:
+        $i1 = lengthof $r4;
+        if $i0 < $i1 goto label3;
+
+        return;
+
+     label2:
+        $r7 = new android.content.ContentValues;
+        specialinvoke $r7.<android.content.ContentValues: void <init>()>();
+        $r4 = <it.h3g.areaclienti3.e.b.b: java.lang.String[] a>;
+        $r2 = $r4[$i1];
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("key", $r2);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("value", "");
+        $r8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>("date", $r8);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("name", "default.png");
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("splashTable", null, $r7);
+        $i1 = $i1 + 1;
+        goto label0;
+
+     label3:
+        $r7 = new android.content.ContentValues;
+        specialinvoke $r7.<android.content.ContentValues: void <init>()>();
+        $r2 = $r4[$i0];
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("key", $r2);
+        $r2 = $r4[$i0];
+        $r2 = specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: java.lang.String b(java.lang.String)>($r2);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("value", $r2);
+        $r8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>("date", $r8);
+        $r2 = $r4[$i0];
+        $r2 = staticinvoke <it.h3g.areaclienti3.e.b.b: java.lang.String a(java.lang.String)>($r2);
+        virtualinvoke $r7.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("keymap", $r2);
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("transcodingTable", null, $r7);
+        $i0 = $i0 + 1;
+        goto label1;
+    }
+
+    public void onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
+    {
+        it.h3g.areaclienti3.e.b.b $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        int $i0, $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.e.b.b;
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        if $i1 <= $i0 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "onUpgrade start");
+        specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: void b(android.database.sqlite.SQLiteDatabase)>($r1);
+        specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: void d(android.database.sqlite.SQLiteDatabase)>($r1);
+        specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: void e(android.database.sqlite.SQLiteDatabase)>($r1);
+        specialinvoke $r0.<it.h3g.areaclienti3.e.b.b: void c(android.database.sqlite.SQLiteDatabase)>($r1);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("DatabaseTrasHelper", "onUpgrade end");
+
+     label0:
+        return;
+    }
+}

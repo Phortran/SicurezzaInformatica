@@ -1,0 +1,34 @@
+public final class com.facebook.rti.b.e.b.u extends java.lang.Object
+{
+    public final java.util.List a;
+
+    public void <init>(java.util.List)
+    {
+        com.facebook.rti.b.e.b.u $r0;
+        java.util.List $r1;
+        java.util.ArrayList $r2;
+
+        $r0 := @this: com.facebook.rti.b.e.b.u;
+        $r1 := @parameter0: java.util.List;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>(java.util.Collection)>($r1);
+        $r1 = staticinvoke <java.util.Collections: java.util.List unmodifiableList(java.util.List)>($r2);
+        $r0.<com.facebook.rti.b.e.b.u: java.util.List a> = $r1;
+        return;
+    }
+
+    public final java.lang.String toString()
+    {
+        com.facebook.rti.b.e.b.u $r0;
+        java.lang.String $r1;
+        java.util.List $r2;
+        java.lang.Object[] $r3;
+
+        $r0 := @this: com.facebook.rti.b.e.b.u;
+        $r2 = $r0.<com.facebook.rti.b.e.b.u: java.util.List a>;
+        $r3 = interfaceinvoke $r2.<java.util.List: java.lang.Object[] toArray()>();
+        $r1 = staticinvoke <android.text.TextUtils: java.lang.String join(java.lang.CharSequence,java.lang.Object[])>(",", $r3);
+        return $r1;
+    }
+}

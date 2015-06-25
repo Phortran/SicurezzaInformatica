@@ -1,0 +1,72 @@
+class com.google.android.gms.maps.internal.j$a$a extends java.lang.Object implements com.google.android.gms.maps.internal.j
+{
+    private android.os.IBinder a;
+
+    void <init>(android.os.IBinder)
+    {
+        com.google.android.gms.maps.internal.j$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.j$a$a;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.google.android.gms.maps.internal.j$a$a: android.os.IBinder a> = $r1;
+        return;
+    }
+
+    public void a(com.google.android.gms.maps.model.LatLng)
+    {
+        com.google.android.gms.maps.internal.j$a$a $r0;
+        com.google.android.gms.maps.model.LatLng $r1;
+        android.os.Parcel $r3, $r4;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: com.google.android.gms.maps.internal.j$a$a;
+        $r1 := @parameter0: com.google.android.gms.maps.model.LatLng;
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("com.google.android.gms.maps.internal.IOnMapLongClickListener");
+        if $r1 == null goto label3;
+
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r1.<com.google.android.gms.maps.model.LatLng: void writeToParcel(android.os.Parcel,int)>($r3, 0);
+
+     label1:
+        $r5 = $r0.<com.google.android.gms.maps.internal.j$a$a: android.os.IBinder a>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r3, $r4, 0);
+        virtualinvoke $r4.<android.os.Parcel: void readException()>();
+
+     label2:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>(0);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r6 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        com.google.android.gms.maps.internal.j$a$a $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: com.google.android.gms.maps.internal.j$a$a;
+        $r1 = $r0.<com.google.android.gms.maps.internal.j$a$a: android.os.IBinder a>;
+        return $r1;
+    }
+}

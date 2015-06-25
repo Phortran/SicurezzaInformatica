@@ -1,0 +1,136 @@
+public final class com.facebook.b.c.a extends java.lang.Object
+{
+    public long a;
+    private long b;
+
+    private void <init>()
+    {
+        com.facebook.b.c.a $r0;
+
+        $r0 := @this: com.facebook.b.c.a;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.facebook.b.c.a: long a> = -1L;
+        $r0.<com.facebook.b.c.a: long b> = -1L;
+        return;
+    }
+
+    void <init>(byte)
+    {
+        com.facebook.b.c.a $r0;
+        byte $b0;
+
+        $r0 := @this: com.facebook.b.c.a;
+        $b0 := @parameter0: byte;
+        specialinvoke $r0.<com.facebook.b.c.a: void <init>()>();
+        return;
+    }
+
+    public static com.facebook.b.c.a a()
+    {
+        com.facebook.b.c.a $r0;
+
+        $r0 = staticinvoke <com.facebook.b.c.b: com.facebook.b.c.a a()>();
+        return $r0;
+    }
+
+    private void c()
+    {
+        com.facebook.b.c.a $r0;
+        long $l0;
+        com.facebook.lite.ClientApplication $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.b.c.a;
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<com.facebook.b.c.a: long b> = $l0;
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication a()>();
+        $r2 = virtualinvoke $r1.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        $l0 = $r0.<com.facebook.b.c.a: long b>;
+        staticinvoke <com.facebook.lite.b.e: void e(android.content.Context,long)>($r2, $l0);
+        return;
+    }
+
+    private void d()
+    {
+        com.facebook.b.c.a $r0;
+        com.facebook.b.c.c $r1;
+        com.facebook.lite.ClientApplication $r2;
+        long $l0;
+        android.content.Context $r3;
+
+        $r0 := @this: com.facebook.b.c.a;
+        $r1 = new com.facebook.b.c.c;
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication a()>();
+        $r3 = virtualinvoke $r2.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        specialinvoke $r1.<com.facebook.b.c.c: void <init>(android.content.Context)>($r3);
+        virtualinvoke $r1.<com.facebook.b.c.c: void a()>();
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r0.<com.facebook.b.c.a: long a> = $l0;
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication a()>();
+        $r3 = virtualinvoke $r2.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        $l0 = $r0.<com.facebook.b.c.a: long a>;
+        staticinvoke <com.facebook.lite.b.e: void g(android.content.Context,long)>($r3, $l0);
+        return;
+    }
+
+    private void e()
+    {
+        com.facebook.b.c.a $r0;
+        long $l0, $l1;
+        com.facebook.lite.ClientApplication $r1;
+        byte $b2;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.b.c.a;
+        $l0 = $r0.<com.facebook.b.c.a: long a>;
+        $b2 = $l0 cmp 0L;
+        if $b2 >= 0 goto label0;
+
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication a()>();
+        $r2 = virtualinvoke $r1.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        $l0 = staticinvoke <com.facebook.lite.b.e: long t(android.content.Context)>($r2);
+        $r0.<com.facebook.b.c.a: long a> = $l0;
+
+     label0:
+        $l0 = $r0.<com.facebook.b.c.a: long b>;
+        $b2 = $l0 cmp 0L;
+        if $b2 >= 0 goto label1;
+
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication a()>();
+        $r2 = virtualinvoke $r1.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        $l1 = staticinvoke <com.facebook.lite.b.e: long r(android.content.Context)>($r2);
+        $r0.<com.facebook.b.c.a: long b> = $l1;
+
+     label1:
+        return;
+    }
+
+    public final void b()
+    {
+        com.facebook.b.c.a $r0;
+        long $l0, $l1;
+        byte $b2;
+
+        $r0 := @this: com.facebook.b.c.a;
+        specialinvoke $r0.<com.facebook.b.c.a: void e()>();
+        $l0 = $r0.<com.facebook.b.c.a: long a>;
+        $l0 = $l0 + 3600000L;
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $b2 = $l0 cmp $l1;
+        if $b2 >= 0 goto label0;
+
+        specialinvoke $r0.<com.facebook.b.c.a: void d()>();
+
+     label0:
+        $l1 = $r0.<com.facebook.b.c.a: long b>;
+        $l1 = $l1 + 86400000L;
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $b2 = $l1 cmp $l0;
+        if $b2 >= 0 goto label1;
+
+        specialinvoke $r0.<com.facebook.b.c.a: void c()>();
+
+     label1:
+        return;
+    }
+}

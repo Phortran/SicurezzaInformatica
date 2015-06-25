@@ -1,0 +1,128 @@
+public class it.h3g.areaclienti3.remoteservice.b.b extends java.lang.Object implements javax.net.ssl.X509TrustManager
+{
+    private static javax.net.ssl.TrustManager[] a;
+    private static final java.security.cert.X509Certificate[] b;
+
+    static void <clinit>()
+    {
+        java.security.cert.X509Certificate[] $r0;
+
+        $r0 = newarray (java.security.cert.X509Certificate)[0];
+        <it.h3g.areaclienti3.remoteservice.b.b: java.security.cert.X509Certificate[] b> = $r0;
+        return;
+    }
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.remoteservice.b.b $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.b;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void a()
+    {
+        it.h3g.areaclienti3.remoteservice.b.c $r0;
+        it.h3g.areaclienti3.remoteservice.b.b $r1;
+        java.security.NoSuchAlgorithmException $r2, $r8;
+        javax.net.ssl.SSLContext $r3;
+        javax.net.ssl.TrustManager[] $r4;
+        java.security.SecureRandom $r6;
+        javax.net.ssl.SSLSocketFactory $r7;
+        java.security.KeyManagementException $r9, $r10;
+
+        $r0 = new it.h3g.areaclienti3.remoteservice.b.c;
+        specialinvoke $r0.<it.h3g.areaclienti3.remoteservice.b.c: void <init>()>();
+        staticinvoke <javax.net.ssl.HttpsURLConnection: void setDefaultHostnameVerifier(javax.net.ssl.HostnameVerifier)>($r0);
+        $r4 = <it.h3g.areaclienti3.remoteservice.b.b: javax.net.ssl.TrustManager[] a>;
+        if $r4 != null goto label0;
+
+        $r4 = newarray (javax.net.ssl.TrustManager)[1];
+        $r1 = new it.h3g.areaclienti3.remoteservice.b.b;
+        specialinvoke $r1.<it.h3g.areaclienti3.remoteservice.b.b: void <init>()>();
+        $r4[0] = $r1;
+        <it.h3g.areaclienti3.remoteservice.b.b: javax.net.ssl.TrustManager[] a> = $r4;
+
+     label0:
+        $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>("TLS");
+
+     label1:
+        $r4 = <it.h3g.areaclienti3.remoteservice.b.b: javax.net.ssl.TrustManager[] a>;
+        $r6 = new java.security.SecureRandom;
+
+     label2:
+        specialinvoke $r6.<java.security.SecureRandom: void <init>()>();
+        virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(null, $r4, $r6);
+
+     label3:
+        $r7 = virtualinvoke $r3.<javax.net.ssl.SSLContext: javax.net.ssl.SSLSocketFactory getSocketFactory()>();
+        staticinvoke <javax.net.ssl.HttpsURLConnection: void setDefaultSSLSocketFactory(javax.net.ssl.SSLSocketFactory)>($r7);
+        return;
+
+     label4:
+        $r8 := @caughtexception;
+        $r3 = null;
+        $r2 = $r8;
+
+     label5:
+        virtualinvoke $r2.<java.security.NoSuchAlgorithmException: void printStackTrace()>();
+        goto label3;
+
+     label6:
+        $r9 := @caughtexception;
+        $r3 = null;
+        $r10 = $r9;
+
+     label7:
+        virtualinvoke $r10.<java.security.KeyManagementException: void printStackTrace()>();
+        goto label3;
+
+     label8:
+        $r10 := @caughtexception;
+        goto label7;
+
+     label9:
+        $r2 := @caughtexception;
+        goto label5;
+
+        catch java.security.NoSuchAlgorithmException from label0 to label1 with label4;
+        catch java.security.KeyManagementException from label0 to label1 with label6;
+        catch java.security.NoSuchAlgorithmException from label2 to label3 with label9;
+        catch java.security.KeyManagementException from label2 to label3 with label8;
+    }
+
+    public void checkClientTrusted(java.security.cert.X509Certificate[], java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.b.b $r0;
+        java.security.cert.X509Certificate[] $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.b;
+        $r1 := @parameter0: java.security.cert.X509Certificate[];
+        $r2 := @parameter1: java.lang.String;
+        return;
+    }
+
+    public void checkServerTrusted(java.security.cert.X509Certificate[], java.lang.String)
+    {
+        it.h3g.areaclienti3.remoteservice.b.b $r0;
+        java.security.cert.X509Certificate[] $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.b;
+        $r1 := @parameter0: java.security.cert.X509Certificate[];
+        $r2 := @parameter1: java.lang.String;
+        return;
+    }
+
+    public java.security.cert.X509Certificate[] getAcceptedIssuers()
+    {
+        it.h3g.areaclienti3.remoteservice.b.b $r0;
+        java.security.cert.X509Certificate[] $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.b;
+        $r1 = <it.h3g.areaclienti3.remoteservice.b.b: java.security.cert.X509Certificate[] b>;
+        return $r1;
+    }
+}

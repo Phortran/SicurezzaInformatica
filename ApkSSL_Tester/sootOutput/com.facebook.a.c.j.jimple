@@ -1,0 +1,39 @@
+public final class com.facebook.a.c.j extends java.lang.Object implements com.facebook.a.c.c
+{
+
+    public void <init>()
+    {
+        com.facebook.a.c.j $r0;
+
+        $r0 := @this: com.facebook.a.c.j;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private static java.net.HttpURLConnection a(java.net.HttpURLConnection)
+    {
+        java.net.HttpURLConnection $r0;
+
+        $r0 := @parameter0: java.net.HttpURLConnection;
+        staticinvoke <com.facebook.a.a: com.facebook.a.a.b a()>();
+        virtualinvoke $r0.<java.net.HttpURLConnection: void setConnectTimeout(int)>(3000);
+        staticinvoke <com.facebook.a.a: com.facebook.a.a.b a()>();
+        virtualinvoke $r0.<java.net.HttpURLConnection: void setReadTimeout(int)>(3000);
+        return $r0;
+    }
+
+    public final java.net.HttpURLConnection a(java.net.URL)
+    {
+        com.facebook.a.c.j $r0;
+        java.net.URL $r1;
+        java.net.URLConnection $r2;
+        java.net.HttpURLConnection $r3;
+
+        $r0 := @this: com.facebook.a.c.j;
+        $r1 := @parameter0: java.net.URL;
+        $r2 = virtualinvoke $r1.<java.net.URL: java.net.URLConnection openConnection()>();
+        $r3 = (java.net.HttpURLConnection) $r2;
+        $r3 = staticinvoke <com.facebook.a.c.j: java.net.HttpURLConnection a(java.net.HttpURLConnection)>($r3);
+        return $r3;
+    }
+}

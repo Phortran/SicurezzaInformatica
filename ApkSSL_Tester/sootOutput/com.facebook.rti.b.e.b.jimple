@@ -1,0 +1,52 @@
+final class com.facebook.rti.b.e.b extends java.lang.Object implements java.util.concurrent.Callable
+{
+    final java.lang.String a;
+    final com.facebook.rti.b.e.a b;
+
+    void <init>(com.facebook.rti.b.e.a, java.lang.String)
+    {
+        com.facebook.rti.b.e.b $r0;
+        com.facebook.rti.b.e.a $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: com.facebook.rti.b.e.b;
+        $r1 := @parameter0: com.facebook.rti.b.e.a;
+        $r2 := @parameter1: java.lang.String;
+        $r0.<com.facebook.rti.b.e.b: com.facebook.rti.b.e.a b> = $r1;
+        $r0.<com.facebook.rti.b.e.b: java.lang.String a> = $r2;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private com.facebook.rti.b.e.a.c a()
+    {
+        com.facebook.rti.b.e.b $r0;
+        java.lang.String $r1, $r2;
+        java.lang.Object[] $r3;
+        java.util.List $r4;
+        com.facebook.rti.b.e.a.c $r5;
+        com.facebook.rti.b.e.a $r6;
+
+        $r0 := @this: com.facebook.rti.b.e.b;
+        $r3 = newarray (java.lang.Object)[0];
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("AddressResolver", "resolveAsync executed", $r3);
+        $r5 = new com.facebook.rti.b.e.a.c;
+        $r2 = $r0.<com.facebook.rti.b.e.b: java.lang.String a>;
+        $r1 = $r0.<com.facebook.rti.b.e.b: java.lang.String a>;
+        $r4 = staticinvoke <com.facebook.rti.b.e.a: java.util.List a(java.lang.String)>($r1);
+        specialinvoke $r5.<com.facebook.rti.b.e.a.c: void <init>(java.lang.String,java.util.List,int)>($r2, $r4, 0);
+        $r6 = $r0.<com.facebook.rti.b.e.b: com.facebook.rti.b.e.a b>;
+        virtualinvoke $r6.<com.facebook.rti.b.e.a: void c(com.facebook.rti.b.e.a.c)>($r5);
+        return $r5;
+    }
+
+    public final java.lang.Object call()
+    {
+        com.facebook.rti.b.e.b $r0;
+        com.facebook.rti.b.e.a.c $r1;
+
+        $r0 := @this: com.facebook.rti.b.e.b;
+        $r1 = specialinvoke $r0.<com.facebook.rti.b.e.b: com.facebook.rti.b.e.a.c a()>();
+        return $r1;
+    }
+}

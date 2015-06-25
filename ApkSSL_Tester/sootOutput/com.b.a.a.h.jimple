@@ -1,0 +1,159 @@
+public final class com.b.a.a.h extends java.lang.Object
+{
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    private int i;
+    private final com.b.a.a.k.h j;
+
+    public void <init>(int)
+    {
+        com.b.a.a.h $r0;
+        int $i0;
+        com.b.a.a.k.h $r1;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<com.b.a.a.h: int d> = 0;
+        $r0.<com.b.a.a.h: int i> = 0;
+        $r1 = new com.b.a.a.k.h;
+        specialinvoke $r1.<com.b.a.a.k.h: void <init>()>();
+        $r0.<com.b.a.a.h: com.b.a.a.k.h j> = $r1;
+        $r0.<com.b.a.a.h: int b> = $i0;
+        return;
+    }
+
+    private com.b.a.a.g c(int)
+    {
+        com.b.a.a.h $r0;
+        int $i0, $i2;
+        com.b.a.a.g $r1;
+        java.lang.Object $r2;
+        com.b.a.a.k.h $r3;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        if $i0 != -1 goto label0;
+
+        $i0 = $r0.<com.b.a.a.h: int i>;
+        $i2 = $r0.<com.b.a.a.h: int i>;
+        $i2 = $i2 + 1;
+        $r0.<com.b.a.a.h: int i> = $i2;
+
+     label0:
+        $r3 = $r0.<com.b.a.a.h: com.b.a.a.k.h j>;
+        $r2 = virtualinvoke $r3.<com.b.a.a.k.h: java.lang.Object b(int)>($i0);
+        if $r2 != null goto label1;
+
+        $r3 = $r0.<com.b.a.a.h: com.b.a.a.k.h j>;
+        $r1 = new com.b.a.a.g;
+        specialinvoke $r1.<com.b.a.a.g: void <init>()>();
+        virtualinvoke $r3.<com.b.a.a.k.h: java.lang.Object a(int,java.lang.Object)>($i0, $r1);
+
+     label1:
+        $r3 = $r0.<com.b.a.a.h: com.b.a.a.k.h j>;
+        $r2 = virtualinvoke $r3.<com.b.a.a.k.h: java.lang.Object b(int)>($i0);
+        $r1 = (com.b.a.a.g) $r2;
+        return $r1;
+    }
+
+    public final com.b.a.a.k.h a()
+    {
+        com.b.a.a.h $r0;
+        com.b.a.a.k.h $r1;
+
+        $r0 := @this: com.b.a.a.h;
+        $r1 = $r0.<com.b.a.a.h: com.b.a.a.k.h j>;
+        return $r1;
+    }
+
+    public final void a(int)
+    {
+        com.b.a.a.h $r0;
+        int $i0, $i3;
+        com.b.a.a.g $r1;
+        long $l1, $l2;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        $r1 = specialinvoke $r0.<com.b.a.a.h: com.b.a.a.g c(int)>($i0);
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $l2 = $r1.<com.b.a.a.g: long d>;
+        $l2 = $l1 - $l2;
+        $i0 = (int) $l2;
+        $r1.<com.b.a.a.g: int b> = $i0;
+        $i0 = $r0.<com.b.a.a.h: int c>;
+        $i3 = $r1.<com.b.a.a.g: int b>;
+        $i3 = $i3 + $i0;
+        $r0.<com.b.a.a.h: int c> = $i3;
+        return;
+    }
+
+    public final void a(int, int)
+    {
+        com.b.a.a.h $r0;
+        int $i0, $i1;
+        com.b.a.a.g $r1, $r2;
+        long $l3, $l4;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        if $i0 != -1 goto label0;
+
+        $r0.<com.b.a.a.h: int d> = 1;
+
+     label0:
+        $l4 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r1 = specialinvoke $r0.<com.b.a.a.h: com.b.a.a.g c(int)>($i0);
+        $r1.<com.b.a.a.g: long c> = $l4;
+        $r1.<com.b.a.a.g: int a> = $i1;
+        $i0 = $r0.<com.b.a.a.h: int e>;
+        $i1 = $i0 + $i1;
+        $r0.<com.b.a.a.h: int e> = $i1;
+        $r2 = specialinvoke $r0.<com.b.a.a.h: com.b.a.a.g c(int)>(0);
+        $l3 = $r2.<com.b.a.a.g: long d>;
+        $l4 = $l4 - $l3;
+        $i1 = (int) $l4;
+        $r1.<com.b.a.a.g: int e> = $i1;
+        $i1 = $r1.<com.b.a.a.g: int e>;
+        $r0.<com.b.a.a.h: int g> = $i1;
+        return;
+    }
+
+    public final void a(int, int, int)
+    {
+        com.b.a.a.h $r0;
+        int $i0, $i1, $i2;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        $i1 := @parameter1: int;
+        $i2 := @parameter2: int;
+        $r0.<com.b.a.a.h: int h> = $i0;
+        $r0.<com.b.a.a.h: int a> = $i1;
+        $r0.<com.b.a.a.h: int f> = $i2;
+        return;
+    }
+
+    public final void b(int)
+    {
+        com.b.a.a.h $r0;
+        int $i0;
+        com.b.a.a.g $r1;
+        long $l1;
+
+        $r0 := @this: com.b.a.a.h;
+        $i0 := @parameter0: int;
+        $r1 = specialinvoke $r0.<com.b.a.a.h: com.b.a.a.g c(int)>($i0);
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        $r1.<com.b.a.a.g: long d> = $l1;
+        return;
+    }
+}

@@ -1,0 +1,132 @@
+class org.c.s extends java.lang.Object
+{
+    final org.c.q a;
+    private java.util.Stack b;
+    private java.util.Stack c;
+
+    private void <init>(org.c.q)
+    {
+        org.c.s $r0;
+        org.c.q $r1;
+        java.util.Stack $r2;
+
+        $r0 := @this: org.c.s;
+        $r1 := @parameter0: org.c.q;
+        $r0.<org.c.s: org.c.q a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r2 = new java.util.Stack;
+        specialinvoke $r2.<java.util.Stack: void <init>()>();
+        $r0.<org.c.s: java.util.Stack b> = $r2;
+        $r2 = new java.util.Stack;
+        specialinvoke $r2.<java.util.Stack: void <init>()>();
+        $r0.<org.c.s: java.util.Stack c> = $r2;
+        return;
+    }
+
+    void <init>(org.c.q, org.c.r)
+    {
+        org.c.s $r0;
+        org.c.q $r1;
+        org.c.r $r2;
+
+        $r0 := @this: org.c.s;
+        $r1 := @parameter0: org.c.q;
+        $r2 := @parameter1: org.c.r;
+        specialinvoke $r0.<org.c.s: void <init>(org.c.q)>($r1);
+        return;
+    }
+
+    static java.util.Stack a(org.c.s)
+    {
+        org.c.s $r0;
+        java.util.Stack $r1;
+
+        $r0 := @parameter0: org.c.s;
+        $r1 = $r0.<org.c.s: java.util.Stack b>;
+        return $r1;
+    }
+
+    public void a(org.c.v, org.c.v)
+    {
+        org.c.s $r0;
+        org.c.v $r1, $r2;
+        java.util.Stack $r3;
+
+        $r0 := @this: org.c.s;
+        $r1 := @parameter0: org.c.v;
+        $r2 := @parameter1: org.c.v;
+        $r3 = $r0.<org.c.s: java.util.Stack b>;
+        virtualinvoke $r3.<java.util.Stack: boolean add(java.lang.Object)>($r1);
+        $r3 = $r0.<org.c.s: java.util.Stack c>;
+        virtualinvoke $r3.<java.util.Stack: boolean add(java.lang.Object)>($r2);
+        return;
+    }
+
+    public boolean a()
+    {
+        org.c.s $r0;
+        java.util.Stack $r1;
+        boolean $z0;
+
+        $r0 := @this: org.c.s;
+        $r1 = $r0.<org.c.s: java.util.Stack b>;
+        $z0 = virtualinvoke $r1.<java.util.Stack: boolean isEmpty()>();
+        return $z0;
+    }
+
+    public java.lang.String b()
+    {
+        org.c.s $r0;
+        java.util.Stack $r1;
+        java.lang.Object $r2;
+        org.c.v $r3;
+        java.lang.String $r4;
+
+        $r0 := @this: org.c.s;
+        $r1 = $r0.<org.c.s: java.util.Stack c>;
+        $r2 = virtualinvoke $r1.<java.util.Stack: java.lang.Object peek()>();
+        $r3 = (org.c.v) $r2;
+        $r4 = staticinvoke <org.c.v: java.lang.String a(org.c.v)>($r3);
+        return $r4;
+    }
+
+    public org.c.v c()
+    {
+        org.c.s $r0;
+        java.util.Stack $r1;
+        java.lang.Object $r2;
+        org.c.v $r3;
+
+        $r0 := @this: org.c.s;
+        $r1 = $r0.<org.c.s: java.util.Stack c>;
+        virtualinvoke $r1.<java.util.Stack: java.lang.Object pop()>();
+        $r1 = $r0.<org.c.s: java.util.Stack b>;
+        $r2 = virtualinvoke $r1.<java.util.Stack: java.lang.Object pop()>();
+        $r3 = (org.c.v) $r2;
+        return $r3;
+    }
+
+    public int d()
+    {
+        org.c.s $r0;
+        java.util.Stack $r1;
+        boolean $z0;
+        java.lang.Object $r2;
+        org.c.v $r3;
+        int $i0;
+
+        $r0 := @this: org.c.s;
+        $r1 = $r0.<org.c.s: java.util.Stack c>;
+        $z0 = virtualinvoke $r1.<java.util.Stack: boolean isEmpty()>();
+        if $z0 == 0 goto label0;
+
+        return -1;
+
+     label0:
+        $r1 = $r0.<org.c.s: java.util.Stack c>;
+        $r2 = virtualinvoke $r1.<java.util.Stack: java.lang.Object peek()>();
+        $r3 = (org.c.v) $r2;
+        $i0 = staticinvoke <org.c.v: int b(org.c.v)>($r3);
+        return $i0;
+    }
+}

@@ -1,0 +1,67 @@
+class com.google.c.b.j extends java.lang.Object implements com.google.c.b.ae
+{
+    final java.lang.Class a;
+    final java.lang.reflect.Type b;
+    final com.google.c.b.f c;
+    private final com.google.c.b.ak d;
+
+    void <init>(com.google.c.b.f, java.lang.Class, java.lang.reflect.Type)
+    {
+        com.google.c.b.j $r0;
+        com.google.c.b.f $r1;
+        java.lang.Class $r2;
+        java.lang.reflect.Type $r3;
+        com.google.c.b.ak $r4;
+
+        $r0 := @this: com.google.c.b.j;
+        $r1 := @parameter0: com.google.c.b.f;
+        $r2 := @parameter1: java.lang.Class;
+        $r3 := @parameter2: java.lang.reflect.Type;
+        $r0.<com.google.c.b.j: com.google.c.b.f c> = $r1;
+        $r0.<com.google.c.b.j: java.lang.Class a> = $r2;
+        $r0.<com.google.c.b.j: java.lang.reflect.Type b> = $r3;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r4 = staticinvoke <com.google.c.b.ak: com.google.c.b.ak a()>();
+        $r0.<com.google.c.b.j: com.google.c.b.ak d> = $r4;
+        return;
+    }
+
+    public java.lang.Object a()
+    {
+        com.google.c.b.j $r0;
+        com.google.c.b.ak $r1;
+        java.lang.Class $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        java.lang.Object $r5;
+        java.lang.Exception $r6;
+        java.lang.RuntimeException $r7;
+        java.lang.reflect.Type $r8;
+
+        $r0 := @this: com.google.c.b.j;
+
+     label0:
+        $r1 = $r0.<com.google.c.b.j: com.google.c.b.ak d>;
+        $r2 = $r0.<com.google.c.b.j: java.lang.Class a>;
+        $r5 = virtualinvoke $r1.<com.google.c.b.ak: java.lang.Object a(java.lang.Class)>($r2);
+
+     label1:
+        return $r5;
+
+     label2:
+        $r6 := @caughtexception;
+        $r7 = new java.lang.RuntimeException;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Unable to invoke no-args constructor for ");
+        $r8 = $r0.<com.google.c.b.j: java.lang.reflect.Type b>;
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Register an InstanceCreator with Gson for this type may fix this problem.");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke $r7.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r4, $r6);
+        throw $r7;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+}

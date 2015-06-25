@@ -1,0 +1,69 @@
+public class it.h3g.areaclienti3.remoteservice.b.f extends org.e.a.h
+{
+    final it.h3g.areaclienti3.remoteservice.b.e a;
+
+    void <init>(it.h3g.areaclienti3.remoteservice.b.e)
+    {
+        it.h3g.areaclienti3.remoteservice.b.f $r0;
+        it.h3g.areaclienti3.remoteservice.b.e $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.f;
+        $r1 := @parameter0: it.h3g.areaclienti3.remoteservice.b.e;
+        $r0.<it.h3g.areaclienti3.remoteservice.b.f: it.h3g.areaclienti3.remoteservice.b.e a> = $r1;
+        specialinvoke $r0.<org.e.a.h: void <init>()>();
+        return;
+    }
+
+    public java.lang.Object a(org.xmlpull.v1.XmlPullParser, java.lang.String, java.lang.String, org.e.a.i)
+    {
+        it.h3g.areaclienti3.remoteservice.b.f $r0;
+        org.xmlpull.v1.XmlPullParser $r1;
+        java.lang.String $r2, $r3;
+        org.e.a.i $r4;
+        java.util.Date $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.f;
+        $r1 := @parameter0: org.xmlpull.v1.XmlPullParser;
+        $r2 := @parameter1: java.lang.String;
+        $r3 := @parameter2: java.lang.String;
+        $r4 := @parameter3: org.e.a.i;
+        $r3 = interfaceinvoke $r1.<org.xmlpull.v1.XmlPullParser: java.lang.String nextText()>();
+        $r5 = staticinvoke <it.h3g.areaclienti3.remoteservice.b.e: java.util.Date a(java.lang.String,java.lang.String)>($r3, "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'SS\'.\'sss");
+        return $r5;
+    }
+
+    public void a(org.e.a.l)
+    {
+        it.h3g.areaclienti3.remoteservice.b.f $r0;
+        org.e.a.l $r1;
+        java.lang.String $r2;
+        java.lang.Class $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.f;
+        $r1 := @parameter0: org.e.a.l;
+        $r2 = $r1.<org.e.a.l: java.lang.String j>;
+        $r4 = <org.e.a.h: java.lang.Class b>;
+        virtualinvoke $r1.<org.e.a.l: void a(java.lang.String,java.lang.String,java.lang.Class,org.e.a.g)>($r2, "dateTime", $r4, $r0);
+        return;
+    }
+
+    public void a(org.xmlpull.v1.XmlSerializer, java.lang.Object)
+    {
+        it.h3g.areaclienti3.remoteservice.b.f $r0;
+        org.xmlpull.v1.XmlSerializer $r1;
+        java.lang.Object $r2;
+        java.text.SimpleDateFormat $r3;
+        java.lang.String $r4;
+        java.util.Date $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.remoteservice.b.f;
+        $r1 := @parameter0: org.xmlpull.v1.XmlSerializer;
+        $r2 := @parameter1: java.lang.Object;
+        $r5 = (java.util.Date) $r2;
+        $r3 = new java.text.SimpleDateFormat;
+        specialinvoke $r3.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss");
+        $r4 = virtualinvoke $r3.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r5);
+        interfaceinvoke $r1.<org.xmlpull.v1.XmlSerializer: org.xmlpull.v1.XmlSerializer text(java.lang.String)>($r4);
+        return;
+    }
+}

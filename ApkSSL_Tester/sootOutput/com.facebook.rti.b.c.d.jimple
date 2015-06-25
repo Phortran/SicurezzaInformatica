@@ -1,0 +1,47 @@
+final class com.facebook.rti.b.c.d extends android.content.BroadcastReceiver
+{
+    final com.facebook.rti.b.c.b a;
+
+    void <init>(com.facebook.rti.b.c.b)
+    {
+        com.facebook.rti.b.c.d $r0;
+        com.facebook.rti.b.c.b $r1;
+
+        $r0 := @this: com.facebook.rti.b.c.d;
+        $r1 := @parameter0: com.facebook.rti.b.c.b;
+        $r0.<com.facebook.rti.b.c.d: com.facebook.rti.b.c.b a> = $r1;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.rti.b.c.d $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        java.lang.Object[] $r6;
+        com.facebook.rti.b.c.b $r7;
+
+        $r0 := @this: com.facebook.rti.b.c.d;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        $r3 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $r4 = <com.facebook.rti.b.c.b: java.lang.String a>;
+        $z0 = staticinvoke <com.facebook.rti.a.d.a.b: boolean a(java.lang.Object,java.lang.Object)>($r3, $r4);
+        if $z0 != 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r6 = newarray (java.lang.Object)[1];
+        $r4 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $r6[0] = $r4;
+        staticinvoke <com.facebook.rti.a.e.a: void b(java.lang.String,java.lang.String,java.lang.Object[])>("KeepaliveManager", "Keepalive alarm wake-up %s.", $r6);
+        $r7 = $r0.<com.facebook.rti.b.c.d: com.facebook.rti.b.c.b a>;
+        staticinvoke <com.facebook.rti.b.c.b: void a(com.facebook.rti.b.c.b)>($r7);
+        goto label0;
+    }
+}

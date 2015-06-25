@@ -1,0 +1,153 @@
+public class com.facebook.lite.ClientApplication extends android.app.Application
+{
+    private static final java.lang.String a;
+    private static final com.facebook.lite.i b;
+    private static final com.facebook.lite.a c;
+    private static com.facebook.lite.ClientApplication d;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r2;
+        com.facebook.lite.i $r3;
+        com.facebook.lite.a $r4;
+
+        $r0 = class "com/facebook/lite/ClientApplication";
+        $r2 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.ClientApplication: java.lang.String a> = $r2;
+        $r3 = new com.facebook.lite.i;
+        specialinvoke $r3.<com.facebook.lite.i: void <init>(java.lang.String,java.lang.String)>("275254692598279", "EMA for Android");
+        <com.facebook.lite.ClientApplication: com.facebook.lite.i b> = $r3;
+        $r4 = new com.facebook.lite.a;
+        specialinvoke $r4.<com.facebook.lite.a: void <init>()>();
+        <com.facebook.lite.ClientApplication: com.facebook.lite.a c> = $r4;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.ClientApplication $r0;
+
+        $r0 := @this: com.facebook.lite.ClientApplication;
+        specialinvoke $r0.<android.app.Application: void <init>()>();
+        return;
+    }
+
+    public static com.facebook.lite.ClientApplication a()
+    {
+        com.facebook.lite.ClientApplication $r0;
+
+        $r0 = <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication d>;
+        return $r0;
+    }
+
+    public static com.facebook.lite.a b()
+    {
+        com.facebook.lite.a $r0;
+
+        $r0 = <com.facebook.lite.ClientApplication: com.facebook.lite.a c>;
+        return $r0;
+    }
+
+    public static com.facebook.lite.MainActivity c()
+    {
+        com.facebook.lite.a $r0;
+        com.facebook.lite.MainActivity $r1;
+
+        $r0 = <com.facebook.lite.ClientApplication: com.facebook.lite.a c>;
+        $r1 = virtualinvoke $r0.<com.facebook.lite.a: com.facebook.lite.MainActivity h()>();
+        return $r1;
+    }
+
+    public static com.facebook.lite.a d()
+    {
+        com.facebook.lite.a $r0;
+
+        $r0 = <com.facebook.lite.ClientApplication: com.facebook.lite.a c>;
+        return $r0;
+    }
+
+    private static void e()
+    {
+        java.lang.Throwable $r1;
+        java.lang.String $r2;
+
+     label0:
+        staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.os.AsyncTask");
+
+     label1:
+        return;
+
+     label2:
+        $r1 := @caughtexception;
+        $r2 = <com.facebook.lite.ClientApplication: java.lang.String a>;
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>($r2, "class:cannot load asynctask");
+        goto label1;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    private static com.facebook.lite.i f()
+    {
+        com.facebook.lite.i $r0;
+
+        $r0 = <com.facebook.lite.ClientApplication: com.facebook.lite.i b>;
+        return $r0;
+    }
+
+    private void g()
+    {
+        com.facebook.lite.ClientApplication $r0;
+        com.facebook.lite.i $r1, $r2;
+        com.facebook.a.b $r3;
+        android.net.Uri $r4;
+        java.lang.String $r5, $r6, $r8;
+        com.facebook.a.j $r7;
+        com.facebook.lite.g $r9;
+
+        $r0 := @this: com.facebook.lite.ClientApplication;
+        $r1 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.i f()>();
+        $r2 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.i f()>();
+        $r5 = virtualinvoke $r2.<com.facebook.lite.i: java.lang.String a()>();
+        $r3 = new com.facebook.a.b;
+        specialinvoke $r3.<com.facebook.a.b: void <init>(android.app.Application)>($r0);
+        $r4 = staticinvoke <com.facebook.a.b: android.net.Uri a(java.lang.String)>($r5);
+        $r6 = virtualinvoke $r4.<android.net.Uri: java.lang.String toString()>();
+        $r7 = staticinvoke <com.facebook.a.a: com.facebook.a.j a(com.facebook.a.a.b,java.lang.String)>($r3, $r6);
+        $r8 = virtualinvoke $r1.<com.facebook.lite.i: java.lang.String b()>();
+        virtualinvoke $r7.<com.facebook.a.j: java.lang.String a(java.lang.String,java.lang.String)>("app", $r8);
+        virtualinvoke $r7.<com.facebook.a.j: java.lang.String a(java.lang.String,java.lang.String)>("fb_app_id", $r5);
+        $r9 = new com.facebook.lite.g;
+        specialinvoke $r9.<com.facebook.lite.g: void <init>(com.facebook.a.j)>($r7);
+        staticinvoke <java.lang.Thread: void setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)>($r9);
+        return;
+    }
+
+    protected void attachBaseContext(android.content.Context)
+    {
+        com.facebook.lite.ClientApplication $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: com.facebook.lite.ClientApplication;
+        $r1 := @parameter0: android.content.Context;
+        specialinvoke $r0.<android.app.Application: void attachBaseContext(android.content.Context)>($r1);
+        staticinvoke <com.facebook.lite.ClientApplication: void e()>();
+        specialinvoke $r0.<com.facebook.lite.ClientApplication: void g()>();
+        return;
+    }
+
+    public void onCreate()
+    {
+        com.facebook.lite.ClientApplication $r0;
+        com.facebook.lite.a $r1;
+        android.content.Context $r2;
+
+        $r0 := @this: com.facebook.lite.ClientApplication;
+        specialinvoke $r0.<android.app.Application: void onCreate()>();
+        <com.facebook.lite.ClientApplication: com.facebook.lite.ClientApplication d> = $r0;
+        $r1 = <com.facebook.lite.ClientApplication: com.facebook.lite.a c>;
+        $r2 = virtualinvoke $r0.<com.facebook.lite.ClientApplication: android.content.Context getApplicationContext()>();
+        virtualinvoke $r1.<com.facebook.lite.a: com.facebook.lite.a a(android.content.Context)>($r2);
+        return;
+    }
+}

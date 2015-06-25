@@ -1,0 +1,1466 @@
+public class it.h3g.areaclienti3.fragments.b.i extends it.h3g.areaclienti3.fragments.a implements it.h3g.areaclienti3.h.a
+{
+    android.widget.RelativeLayout a;
+    android.widget.ListView b;
+    android.widget.TextView c;
+    java.util.ArrayList d;
+    it.h3g.areaclienti3.h.b e;
+    android.net.Uri f;
+    boolean g;
+    boolean h;
+    java.lang.String i;
+    private android.widget.LinearLayout j;
+    private android.widget.RadioGroup k;
+    private android.widget.TextView l;
+    private int m;
+    private android.widget.LinearLayout n;
+    private android.view.View o;
+    private android.widget.EditText p;
+    private android.widget.EditText q;
+    private android.widget.TextView r;
+    private boolean s;
+    private boolean t;
+    private final int u;
+    private boolean v;
+    private java.lang.String w;
+    private java.lang.String x;
+    private android.os.Bundle y;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.b.i: int m> = -1;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean s> = 0;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: int u> = 10000;
+        return;
+    }
+
+    static void a(it.h3g.areaclienti3.fragments.b.i, int)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        int $i0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $i0 := @parameter1: int;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void finishFragment(int)>($i0);
+        return;
+    }
+
+    static void a(it.h3g.areaclienti3.fragments.b.i, boolean)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $z0 := @parameter1: boolean;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void d(boolean)>($z0);
+        return;
+    }
+
+    static boolean a(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v>;
+        return $z0;
+    }
+
+    static android.content.Context b(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        return $r1;
+    }
+
+    static android.widget.TextView c(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.widget.TextView $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView r>;
+        return $r1;
+    }
+
+    private void c(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2, $r3;
+        boolean $z2;
+        java.io.Serializable $r4;
+        it.h3g.areaclienti3.d.q $r5;
+        java.lang.StringBuilder $r6;
+        it.h3g.areaclienti3.fragments.d $r7;
+        it.h3g.areaclienti3.fragments.c $r8;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.os.Bundle;
+        if $r1 == null goto label4;
+
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("item");
+        if $z2 == 0 goto label4;
+
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("item");
+        $r5 = (it.h3g.areaclienti3.d.q) $r4;
+        $r2 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String a()>();
+        $z2 = virtualinvoke $r2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("CLAIM");
+        if $z2 != 0 goto label0;
+
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String a()>();
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("UNDEFINED");
+        if $z2 == 0 goto label1;
+
+     label0:
+        virtualinvoke $r1.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("amcFlow", 0);
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("body");
+        $r6 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r3);
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<br/>");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("bodyThreadForAMCtoE");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("body", $r3);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("sendMessageAction", $r1, 1);
+
+     label1:
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String b()>();
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("ALLOW_TO_AMC");
+        if $z2 == 0 goto label2;
+
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String a()>();
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("INFORMATION");
+        if $z2 == 0 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("sendMessageAction", $r1, 1);
+
+     label2:
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String b()>();
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("REQUESTS_SIZE_TO_AMC_EXCEEDED");
+        if $z2 == 0 goto label3;
+
+        virtualinvoke $r1.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("amcFlow", 0);
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("body");
+        $r6 = new java.lang.StringBuilder;
+        $r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r3);
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>($r3);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<br/>");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("bodyThreadForAMCtoE");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("body", $r3);
+        $r3 = virtualinvoke $r5.<it.h3g.areaclienti3.d.q: java.lang.String a()>();
+        $z2 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("INFORMATION");
+        if $z2 == 0 goto label3;
+
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("sendMessageAction", $r1, 1);
+
+     label3:
+        return;
+
+     label4:
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z2 == 0 goto label7;
+
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label5:
+        $z2 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteCode");
+        if $z2 == 0 goto label8;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteCode");
+
+     label6:
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        interfaceinvoke $r8.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String)>("CONTATTACI", $r2, $r3);
+        goto label3;
+
+     label7:
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231110);
+        goto label5;
+
+     label8:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231691);
+        goto label6;
+    }
+
+    private void c(it.h3g.areaclienti3.d.d)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.d.d $r1;
+        java.util.ArrayList $r2;
+        int $i1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.d;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r2 != null goto label0;
+
+        $r2 = new java.util.ArrayList;
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d> = $r2;
+
+     label0:
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i1 = virtualinvoke $r2.<java.util.ArrayList: int size()>();
+        if $i1 > 5 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        virtualinvoke $r2.<java.util.ArrayList: boolean add(java.lang.Object)>($r1);
+
+     label1:
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void d()>();
+        return;
+    }
+
+    static android.widget.EditText d(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        return $r1;
+    }
+
+    private void d()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.String $r2;
+        java.util.ArrayList $r3;
+        android.view.View $r4;
+        it.h3g.areaclienti3.h.b $r5;
+        android.content.Context $r6;
+        android.widget.ListView $r7;
+        android.widget.RelativeLayout $r8;
+        int $i2;
+        android.widget.TextView $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Update list");
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r3 == null goto label3;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e>;
+        if $r5 != null goto label4;
+
+        $r5 = new it.h3g.areaclienti3.h.b;
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        specialinvoke $r5.<it.h3g.areaclienti3.h.b: void <init>(android.content.Context,int,java.util.List,it.h3g.areaclienti3.h.a)>($r6, 0, $r3, $r0);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e> = $r5;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e>;
+        virtualinvoke $r7.<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>($r5);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Update list new adapter");
+
+     label0:
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        $r4 = virtualinvoke $r8.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165223);
+        $r9 = (android.widget.TextView) $r4;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r3 == null goto label5;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i2 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        if $i2 <= 0 goto label5;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231560);
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        virtualinvoke $r7.<android.widget.ListView: void setVisibility(int)>(0);
+
+     label1:
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i2 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        if $i2 > 4 goto label6;
+
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setVisibility(int)>(0);
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e>;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        staticinvoke <it.h3g.areaclienti3.h.b: void a(it.h3g.areaclienti3.h.b,android.widget.ListView)>($r5, $r7);
+
+     label3:
+        return;
+
+     label4:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e>;
+        virtualinvoke $r5.<it.h3g.areaclienti3.h.b: void notifyDataSetChanged()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Update list notify");
+        goto label0;
+
+     label5:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231561);
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        virtualinvoke $r7.<android.widget.ListView: void setVisibility(int)>(8);
+        goto label1;
+
+     label6:
+        $r8 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setVisibility(int)>(8);
+        goto label2;
+    }
+
+    private void d(boolean)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0, $z1;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        android.net.Uri $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5, $r8;
+        java.io.File $r6;
+        android.support.v4.app.h $r9;
+        java.io.IOException $r10;
+        it.h3g.areaclienti3.fragments.c $r11;
+        android.content.ActivityNotFoundException $r12;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 := @parameter0: boolean;
+        $r2 = staticinvoke <it.h3g.areaclienti3.h.e: android.content.Intent a(boolean)>($z0);
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $z1 = staticinvoke <it.h3g.areaclienti3.h.e: boolean a(android.content.Intent,android.content.Context)>($r2, $r1);
+        if $z1 == 0 goto label2;
+
+        $r6 = null;
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r6 = staticinvoke <it.h3g.areaclienti3.h.e: java.io.File c()>();
+        $r3 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r6);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f> = $r3;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("CurrentPhotoPath: ");
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", $r5);
+
+     label1:
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.support.v4.app.h getActivity()>();
+        staticinvoke <it.h3g.areaclienti3.h.e: void a(java.io.File,android.app.Activity,android.content.Intent,boolean)>($r6, $r9, $r2, $z0);
+
+     label2:
+        return;
+
+     label3:
+        $r10 := @caughtexception;
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r8 = virtualinvoke $r1.<android.content.Context: java.lang.String getString(int)>(2131231110);
+        interfaceinvoke $r11.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r8, 1);
+        goto label1;
+
+     label4:
+        $r12 := @caughtexception;
+        virtualinvoke $r12.<android.content.ActivityNotFoundException: void printStackTrace()>();
+        $r11 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r8 = virtualinvoke $r1.<android.content.Context: java.lang.String getString(int)>(2131231556);
+        interfaceinvoke $r11.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r8, 1);
+        goto label2;
+
+        catch java.io.IOException from label0 to label1 with label3;
+        catch android.content.ActivityNotFoundException from label1 to label2 with label4;
+    }
+
+    static it.h3g.areaclienti3.fragments.c e(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.fragments.c $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        return $r1;
+    }
+
+    static it.h3g.areaclienti3.fragments.b f(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.fragments.b $r1;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.b mCache>;
+        return $r1;
+    }
+
+    static void g(it.h3g.areaclienti3.fragments.b.i)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @parameter0: it.h3g.areaclienti3.fragments.b.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void d()>();
+        return;
+    }
+
+    protected void a()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.StringBuilder $r2;
+        boolean $z0, $z2, $z3;
+        java.lang.String $r3, $r9;
+        android.content.Context $r4;
+        android.text.Editable $r5;
+        android.widget.EditText $r6;
+        android.view.View $r7;
+        android.os.IBinder $r8;
+        it.h3g.areaclienti3.fragments.c $r10;
+        android.os.Bundle $r11, $r12;
+        it.h3g.areaclienti3.j.l $r13;
+        java.util.ArrayList $r14;
+        int $i0;
+        java.util.Iterator $r15;
+        it.h3g.areaclienti3.fragments.d $r16;
+        java.lang.Object $r17;
+        it.h3g.areaclienti3.d.d $r18;
+        android.net.Uri $r19;
+        android.graphics.Bitmap $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 = 0;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("sendForm()  ");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p>;
+        $r5 = virtualinvoke $r6.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MailFormFragment", $r3);
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View getView()>();
+        $r8 = virtualinvoke $r7.<android.view.View: android.os.IBinder getWindowToken()>();
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        staticinvoke <it.h3g.areaclienti3.j.m: void a(android.os.IBinder,android.content.Context)>($r8, $r4);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p>;
+        $z2 = virtualinvoke $r6.<android.widget.EditText: boolean isShown()>();
+        if $z2 == 0 goto label1;
+
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p>;
+        $r5 = virtualinvoke $r6.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $z2 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z2 == 0 goto label1;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MailFormFragment", "Subject is empty");
+
+     label0:
+        return;
+
+     label1:
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r5 = virtualinvoke $r6.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String trim()>();
+        $z2 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r3);
+        if $z2 == 0 goto label2;
+
+        $r9 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("ComposeMail_FillMessageBody", "error", "title");
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        interfaceinvoke $r10.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String)>("CONTATTACI", "ComposeMail_FillMessageBody", $r9);
+        goto label0;
+
+     label2:
+        $r11 = new android.os.Bundle;
+        specialinvoke $r11.<android.os.Bundle: void <init>()>();
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y>;
+        $r12 = virtualinvoke $r12.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $z2 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v>;
+        if $z2 != 0 goto label8;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String w>;
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("subject", $r3);
+
+     label3:
+        $r13 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.j.l myPreferences>;
+        $r3 = virtualinvoke $r13.<it.h3g.areaclienti3.j.l: java.lang.String f()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("msisdn", $r3);
+        $r13 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.j.l myPreferences>;
+        $r3 = virtualinvoke $r13.<it.h3g.areaclienti3.j.l: java.lang.String l()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("clientCode", $r3);
+        $r13 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.j.l myPreferences>;
+        $r3 = virtualinvoke $r13.<it.h3g.areaclienti3.j.l: java.lang.String G()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("token", $r3);
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("switchMsisdn", "");
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("targetMsisdn", "");
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r5 = virtualinvoke $r6.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("body", $r3);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y>;
+        $r12 = virtualinvoke $r12.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        if $r12 == null goto label9;
+
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y>;
+        $r12 = virtualinvoke $r12.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $r3 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("body");
+
+     label4:
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("bodyThreadForAMCtoE", $r3);
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("action", "");
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r14 == null goto label13;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i0 = virtualinvoke $r14.<java.util.ArrayList: int size()>();
+        if $i0 <= 0 goto label13;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $r15 = virtualinvoke $r14.<java.util.ArrayList: java.util.Iterator iterator()>();
+        $i0 = (int) 0;
+
+     label5:
+        $z2 = interfaceinvoke $r15.<java.util.Iterator: boolean hasNext()>();
+        if $z2 != 0 goto label10;
+
+        $r14 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        virtualinvoke $r11.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("attachments", $r14);
+        $z2 = 1;
+
+     label6:
+        $z3 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean t>;
+        if $z3 == 0 goto label7;
+
+        if $z2 != 0 goto label7;
+
+        $z0 = 1;
+
+     label7:
+        virtualinvoke $r11.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("amcFlow", $z0);
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("flusso amc? ");
+        $z3 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean t>;
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("MailFormFragment", $r3);
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>(" flowInfo : ->  ");
+        $r3 = virtualinvoke $r11.<android.os.Bundle: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("MailFormFragment", $r3);
+        if $z2 == 0 goto label12;
+
+        $r16 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r16.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("sendMessageAction", $r11, 1);
+        goto label0;
+
+     label8:
+        $z3 = virtualinvoke $r12.<android.os.Bundle: boolean getBoolean(java.lang.String)>("reply");
+        virtualinvoke $r11.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("reply", $z3);
+        $r3 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("id");
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("id", $r3);
+        $r3 = virtualinvoke $r12.<android.os.Bundle: java.lang.String getString(java.lang.String)>("socialClientId");
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("socialClientId", $r3);
+        $r6 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p>;
+        $r5 = virtualinvoke $r6.<android.widget.EditText: android.text.Editable getText()>();
+        $r3 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        virtualinvoke $r11.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("subject", $r3);
+        goto label3;
+
+     label9:
+        $r3 = "";
+        goto label4;
+
+     label10:
+        $r17 = interfaceinvoke $r15.<java.util.Iterator: java.lang.Object next()>();
+        $r18 = (it.h3g.areaclienti3.d.d) $r17;
+        $i0 = $i0 + 1;
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = virtualinvoke $r18.<it.h3g.areaclienti3.d.d: java.lang.String d()>();
+        $r19 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        $r20 = staticinvoke <it.h3g.areaclienti3.h.e: android.graphics.Bitmap a(android.content.Context,float,float,android.net.Uri)>($r4, 1024.0F, 768.0F, $r19);
+        if $r20 == null goto label11;
+
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        virtualinvoke $r18.<it.h3g.areaclienti3.d.d: void a(java.lang.String)>($r9);
+        $r9 = staticinvoke <it.h3g.areaclienti3.h.e: java.lang.String a(android.graphics.Bitmap)>($r20);
+        virtualinvoke $r18.<it.h3g.areaclienti3.d.d: void b(java.lang.String)>($r9);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r9 = virtualinvoke $r18.<it.h3g.areaclienti3.d.d: java.lang.String d()>();
+        $r19 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r9);
+        $r9 = staticinvoke <it.h3g.areaclienti3.h.e: java.lang.String b(android.content.Context,android.net.Uri)>($r4, $r19);
+        virtualinvoke $r18.<it.h3g.areaclienti3.d.d: void c(java.lang.String)>($r9);
+        goto label5;
+
+     label11:
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r9 = virtualinvoke $r4.<android.content.Context: java.lang.String getString(int)>(2131231555);
+        $i0 = (int) 1;
+        interfaceinvoke $r10.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r9, $i0);
+        goto label0;
+
+     label12:
+        $r16 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.d mService>;
+        interfaceinvoke $r16.<it.h3g.areaclienti3.fragments.d: void a(java.lang.String,android.os.Bundle,boolean)>("getAmcTypeAction", $r11, 1);
+        goto label0;
+
+     label13:
+        $z2 = 0;
+        goto label6;
+    }
+
+    public void a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3, $r4, $r6;
+        android.widget.EditText $r5;
+        android.view.View $r7;
+        android.widget.LinearLayout $r8;
+        android.text.Spanned $r9;
+        it.h3g.areaclienti3.fragments.c $r10;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label5;
+
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("----------<<< onCreate bundle info");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MailFormFragment", $r3);
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("subject");
+        if $z0 == 0 goto label0;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p>;
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("subject");
+        $r6 = virtualinvoke $r4.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("%20", " ");
+        $r6 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String b(java.lang.String)>($r6);
+        virtualinvoke $r5.<android.widget.EditText: void setText(java.lang.CharSequence)>($r6);
+
+     label0:
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v>;
+        if $z0 == 0 goto label1;
+
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165298);
+        $r8 = (android.widget.LinearLayout) $r7;
+        virtualinvoke $r8.<android.widget.LinearLayout: void setVisibility(int)>(0);
+
+     label1:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("body");
+        if $z0 == 0 goto label3;
+
+        $r4 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("body");
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("MailFormFragment", $r4);
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("flow");
+        if $z0 == 0 goto label4;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("flow");
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("A");
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("body", "");
+        $r6 = "";
+
+     label2:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r9 = staticinvoke <android.text.Html: android.text.Spanned fromHtml(java.lang.String)>($r6);
+        virtualinvoke $r5.<android.widget.EditText: void setText(java.lang.CharSequence)>($r9);
+
+     label3:
+        return;
+
+     label4:
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("<br/><br/><b>---Original Message---</b><br><b>Date: </b>");
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("dateSent");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<br/><b>Subject: </b>");
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("subject");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<br/><b>Body: </b>");
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("body");
+        $r6 = virtualinvoke $r6.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "<br/>");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<br/><b>---Write Message---</b>");
+        $r6 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label2;
+
+     label5:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 == 0 goto label3;
+
+        $r10 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231691);
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231110);
+        interfaceinvoke $r10.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String)>("CONTATTACI", $r4, $r3);
+        goto label3;
+    }
+
+    public void a(it.h3g.areaclienti3.d.d)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.d.d $r1;
+        it.h3g.areaclienti3.fragments.c $r2;
+        it.h3g.areaclienti3.fragments.b.t $r3;
+        it.h3g.areaclienti3.fragments.b.k $r4;
+        java.lang.String $r5, $r6, $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.d;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231563);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131230848);
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131230850);
+        $r3 = new it.h3g.areaclienti3.fragments.b.t;
+        specialinvoke $r3.<it.h3g.areaclienti3.fragments.b.t: void <init>(it.h3g.areaclienti3.fragments.b.i,it.h3g.areaclienti3.d.d)>($r0, $r1);
+        $r4 = new it.h3g.areaclienti3.fragments.b.k;
+        specialinvoke $r4.<it.h3g.areaclienti3.fragments.b.k: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        interfaceinvoke $r2.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String,android.view.View$OnClickListener,android.view.View$OnClickListener)>($r5, $r6, $r7, $r3, $r4);
+        return;
+    }
+
+    public void a(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String w> = $r1;
+        return;
+    }
+
+    public void a(boolean)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 := @parameter0: boolean;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g> = $z0;
+        return;
+    }
+
+    public java.util.ArrayList b()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        return $r1;
+    }
+
+    public void b(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.String $r2, $r6;
+        java.util.ArrayList $r3;
+        int $i1;
+        byte $b2;
+        it.h3g.areaclienti3.fragments.c $r4;
+        it.h3g.areaclienti3.fragments.b.s $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = staticinvoke <it.h3g.areaclienti3.j.m: boolean b(android.os.Bundle)>($r1);
+        if $z0 == 0 goto label5;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r3 == null goto label11;
+
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i1 = virtualinvoke $r3.<java.util.ArrayList: int size()>();
+        if $i1 <= 0 goto label11;
+
+        $b2 = 1;
+
+     label0:
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void c()>();
+        $r1 = virtualinvoke $r1.<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)>("result");
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("message");
+        if $z0 == 0 goto label4;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("message");
+
+     label1:
+        if $b2 == 0 goto label10;
+
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231564);
+
+     label2:
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r5 = new it.h3g.areaclienti3.fragments.b.s;
+        specialinvoke $r5.<it.h3g.areaclienti3.fragments.b.s: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        interfaceinvoke $r4.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int,android.view.View$OnClickListener)>($r2, 0, $r5);
+
+     label3:
+        return;
+
+     label4:
+        $r2 = "Operazione conclusa";
+        goto label1;
+
+     label5:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z0 == 0 goto label8;
+
+        $r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label6:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteCode");
+        if $z0 == 0 goto label9;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteCode");
+
+     label7:
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        interfaceinvoke $r4.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,java.lang.String,java.lang.String)>("CONTATTACI", $r6, $r2);
+        goto label3;
+
+     label8:
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231110);
+        goto label6;
+
+     label9:
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String getString(int)>(2131231691);
+        goto label7;
+
+     label10:
+        goto label2;
+
+     label11:
+        $b2 = 0;
+        goto label0;
+    }
+
+    public void b(it.h3g.areaclienti3.d.d)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.d.d $r1;
+        android.content.Context $r2;
+        java.lang.String $r3;
+        android.net.Uri $r4;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: it.h3g.areaclienti3.d.d;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = virtualinvoke $r1.<it.h3g.areaclienti3.d.d: java.lang.String d()>();
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r3);
+        staticinvoke <it.h3g.areaclienti3.h.e: void c(android.content.Context,android.net.Uri)>($r2, $r4);
+        return;
+    }
+
+    public void b(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String x> = $r1;
+        return;
+    }
+
+    public void b(boolean)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 := @parameter0: boolean;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean h> = $z0;
+        return;
+    }
+
+    public void c()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.util.ArrayList $r1;
+        int $i1;
+        android.widget.RelativeLayout $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        if $i1 <= 0 goto label0;
+
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d> = null;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void d()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        virtualinvoke $r2.<android.widget.RelativeLayout: void setVisibility(int)>(0);
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Action: clear attachment");
+
+     label0:
+        return;
+    }
+
+    public void c(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: java.lang.String;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String i> = $r1;
+        return;
+    }
+
+    public void c(boolean)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 := @parameter0: boolean;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean t> = $z0;
+        return;
+    }
+
+    public void d(java.lang.String)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        java.lang.String $r1;
+        android.widget.EditText $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        virtualinvoke $r2.<android.widget.EditText: void setText(java.lang.CharSequence)>($r1);
+        return;
+    }
+
+    public int getNameMenuResId()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        return 2131230911;
+    }
+
+    public int getResourceIcon()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        return 2130837652;
+    }
+
+    public int getSectionId()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        return 31;
+    }
+
+    public void handlerFragment(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r3;
+        boolean $z0;
+        java.lang.StringBuilder $r4;
+        android.view.View $r5;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.os.Bundle;
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Action: handlerFragment");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("sendMessageAction");
+        if $z0 == 0 goto label1;
+
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("On action finished : ");
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+        $r3 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("MailFormFragment", $r3);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void b(android.os.Bundle)>($r1);
+
+     label0:
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("getAmcTypeAction");
+        if $z0 == 0 goto label2;
+
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void c(android.os.Bundle)>($r1);
+        goto label0;
+
+     label2:
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("callBannerPiccoloAction");
+        if $z0 == 0 goto label0;
+
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View getView()>();
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void onBannerPiccoloResults(android.os.Bundle,android.view.View,int)>($r1, $r5, $i0);
+        goto label0;
+    }
+
+    public void onAttach(android.app.Activity)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.app.Activity $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.app.Activity;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onAttach(android.app.Activity)>($r1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void startAction()>();
+        return;
+    }
+
+    public android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.view.LayoutInflater $r1;
+        android.view.ViewGroup $r2;
+        android.os.Bundle $r3, $r4;
+        java.lang.String $r5, $r23, $r24;
+        android.text.InputFilter$LengthFilter $r6;
+        int $i0, $i1;
+        boolean $z2;
+        android.view.View $r7;
+        android.widget.ScrollView $r8;
+        android.widget.LinearLayout $r9;
+        android.widget.Button $r10;
+        it.h3g.areaclienti3.fragments.b.j $r11;
+        android.widget.EditText $r12;
+        android.text.InputFilter[] $r13;
+        it.h3g.areaclienti3.fragments.b.l $r14;
+        it.h3g.areaclienti3.fragments.b.m $r15;
+        it.h3g.areaclienti3.fragments.b.n $r16;
+        android.widget.TextView $r17;
+        android.content.res.Resources $r18;
+        java.lang.Object[] $r19;
+        java.lang.Integer $r20;
+        it.h3g.areaclienti3.fragments.b.o $r21;
+        android.widget.RadioGroup $r22;
+        java.io.Serializable $r25;
+        java.util.ArrayList $r26;
+        android.net.Uri $r27;
+        java.lang.StringBuilder $r28;
+        android.widget.RelativeLayout $r29;
+        it.h3g.areaclienti3.fragments.b.p $r30;
+        android.widget.ListView $r31;
+        android.content.Context $r32;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.view.LayoutInflater;
+        $r2 := @parameter1: android.view.ViewGroup;
+        $r3 := @parameter2: android.os.Bundle;
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle getArguments()>();
+        if $r4 == null goto label12;
+
+        $r4 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle getArguments()>();
+
+     label0:
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y> = $r4;
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y>;
+        $z2 = virtualinvoke $r4.<android.os.Bundle: boolean getBoolean(java.lang.String,boolean)>("reply", 0);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v> = $z2;
+        $z2 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v>;
+        if $z2 == 0 goto label1;
+
+        $z2 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean t>;
+        if $z2 != 0 goto label1;
+
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g> = 1;
+
+     label1:
+        $r7 = virtualinvoke $r1.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903069, $r2, 0);
+        $r8 = (android.widget.ScrollView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o> = $r8;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165337);
+        $r9 = (android.widget.LinearLayout) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.LinearLayout n> = $r9;
+        $z2 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean v>;
+        if $z2 == 0 goto label2;
+
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        virtualinvoke $r7.<android.view.View: void setBackgroundResource(int)>(2130837565);
+
+     label2:
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165340);
+        $r10 = (android.widget.Button) $r7;
+        $r11 = new it.h3g.areaclienti3.fragments.b.j;
+        specialinvoke $r11.<it.h3g.areaclienti3.fragments.b.j: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r10.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r11);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165336);
+        $r12 = (android.widget.EditText) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText p> = $r12;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165338);
+        $r12 = (android.widget.EditText) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q> = $r12;
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $i0 = (int) 1;
+        $r13 = newarray (android.text.InputFilter)[$i0];
+        $r6 = new android.text.InputFilter$LengthFilter;
+        specialinvoke $r6.<android.text.InputFilter$LengthFilter: void <init>(int)>(10000);
+        $i0 = (int) 0;
+        $r13[$i0] = $r6;
+        virtualinvoke $r12.<android.widget.EditText: void setFilters(android.text.InputFilter[])>($r13);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        virtualinvoke $r12.<android.widget.EditText: void setVerticalScrollBarEnabled(boolean)>(1);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r14 = new it.h3g.areaclienti3.fragments.b.l;
+        specialinvoke $r14.<it.h3g.areaclienti3.fragments.b.l: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r12.<android.widget.EditText: void setOnTouchListener(android.view.View$OnTouchListener)>($r14);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r15 = new it.h3g.areaclienti3.fragments.b.m;
+        specialinvoke $r15.<it.h3g.areaclienti3.fragments.b.m: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r12.<android.widget.EditText: void setOnClickListener(android.view.View$OnClickListener)>($r15);
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $r16 = new it.h3g.areaclienti3.fragments.b.n;
+        specialinvoke $r16.<it.h3g.areaclienti3.fragments.b.n: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r12.<android.widget.EditText: void addTextChangedListener(android.text.TextWatcher)>($r16);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165339);
+        $r17 = (android.widget.TextView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView r> = $r17;
+        $r17 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView r>;
+        virtualinvoke $r17.<android.widget.TextView: void setEnabled(boolean)>(0);
+        $r17 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView r>;
+        $r18 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.res.Resources getResources()>();
+        $r5 = virtualinvoke $r18.<android.content.res.Resources: java.lang.String getString(int)>(2131230835);
+        $i0 = (int) 1;
+        $r19 = newarray (java.lang.Object)[$i0];
+        $r12 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.EditText q>;
+        $i0 = virtualinvoke $r12.<android.widget.EditText: int length()>();
+        $i0 = 10000 - $i0;
+        $r20 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+        $i0 = (int) 0;
+        $r19[$i0] = $r20;
+        $r5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r5, $r19);
+        virtualinvoke $r17.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165206);
+        $r10 = (android.widget.Button) $r7;
+        $r21 = new it.h3g.areaclienti3.fragments.b.o;
+        specialinvoke $r21.<it.h3g.areaclienti3.fragments.b.o: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r10.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r21);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165341);
+        $r9 = (android.widget.LinearLayout) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.LinearLayout j> = $r9;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165343);
+        $r22 = (android.widget.RadioGroup) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RadioGroup k> = $r22;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165346);
+        $r17 = (android.widget.TextView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView l> = $r17;
+        $r24 = staticinvoke <it.h3g.areaclienti3.j.p: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)>("contactUs_social_description", "extraThreshold", "label");
+        if $r24 == null goto label3;
+
+        $z2 = virtualinvoke $r24.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z2 != 0 goto label3;
+
+        $r17 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView l>;
+        virtualinvoke $r17.<android.widget.TextView: void setText(java.lang.CharSequence)>($r24);
+
+     label3:
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.LinearLayout j>;
+        virtualinvoke $r9.<android.widget.LinearLayout: void setVisibility(int)>(8);
+        $r4 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.os.Bundle y>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void a(android.os.Bundle)>($r4);
+        if $r3 == null goto label7;
+
+        $r25 = virtualinvoke $r3.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("currentAttachmentsList");
+        if $r25 == null goto label4;
+
+        $r25 = virtualinvoke $r3.<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)>("currentAttachmentsList");
+        $r26 = (java.util.ArrayList) $r25;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d> = $r26;
+
+     label4:
+        $r24 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("currentPhotoUri");
+        if $r24 == null goto label5;
+
+        $r24 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("currentPhotoUri");
+        $r27 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r24);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f> = $r27;
+
+     label5:
+        $z2 = virtualinvoke $r3.<android.os.Bundle: boolean getBoolean(java.lang.String)>("currentScattaInvia_enabled");
+        if $z2 == 0 goto label6;
+
+        $z2 = virtualinvoke $r3.<android.os.Bundle: boolean getBoolean(java.lang.String)>("currentScattaInvia_enabled");
+        $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g> = $z2;
+
+     label6:
+        $r28 = new java.lang.StringBuilder;
+        specialinvoke $r28.<java.lang.StringBuilder: void <init>(java.lang.String)>("ONCREATEVIEW - on resume Background CURRENT PHOTO PATH: ");
+        $r27 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $r28 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r27);
+        $r23 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", $r23);
+
+     label7:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Action: onCreateView");
+        $r26 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r26 == null goto label13;
+
+        $r28 = new java.lang.StringBuilder;
+        specialinvoke $r28.<java.lang.StringBuilder: void <init>(java.lang.String)>("Attach size: ");
+        $r26 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i0 = virtualinvoke $r26.<java.util.ArrayList: int size()>();
+        $r28 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r23 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", $r23);
+
+     label8:
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165316);
+        $r17 = (android.widget.TextView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView c> = $r17;
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165315);
+        $r29 = (android.widget.RelativeLayout) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a> = $r29;
+        $r29 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        $r30 = new it.h3g.areaclienti3.fragments.b.p;
+        specialinvoke $r30.<it.h3g.areaclienti3.fragments.b.p: void <init>(it.h3g.areaclienti3.fragments.b.i)>($r0);
+        virtualinvoke $r29.<android.widget.RelativeLayout: void setOnClickListener(android.view.View$OnClickListener)>($r30);
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        $r7 = virtualinvoke $r7.<android.view.View: android.view.View findViewById(int)>(2131165317);
+        $r31 = (android.widget.ListView) $r7;
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b> = $r31;
+        $z2 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g>;
+        if $z2 == 0 goto label14;
+
+        $r32 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $z2 = staticinvoke <it.h3g.areaclienti3.h.e: boolean a(android.content.Context)>($r32);
+        if $z2 == 0 goto label14;
+
+        $r24 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String i>;
+        if $r24 == null goto label9;
+
+        $r24 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String i>;
+        $z2 = virtualinvoke $r24.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z2 != 0 goto label9;
+
+        $r17 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView c>;
+        $r24 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.lang.String i>;
+        virtualinvoke $r17.<android.widget.TextView: void setText(java.lang.CharSequence)>($r24);
+        $r17 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.TextView c>;
+        $i1 = (int) 0;
+        virtualinvoke $r17.<android.widget.TextView: void setVisibility(int)>($i1);
+
+     label9:
+        $r31 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        $i1 = (int) 0;
+        virtualinvoke $r31.<android.widget.ListView: void setVisibility(int)>($i1);
+        $r26 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r26 == null goto label10;
+
+        $r26 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i1 = virtualinvoke $r26.<java.util.ArrayList: int size()>();
+        if $i1 >= 5 goto label11;
+
+     label10:
+        $r29 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        $i1 = (int) 0;
+        virtualinvoke $r29.<android.widget.RelativeLayout: void setVisibility(int)>($i1);
+
+     label11:
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o>;
+        return $r7;
+
+     label12:
+        $r4 = new android.os.Bundle;
+        specialinvoke $r4.<android.os.Bundle: void <init>()>();
+        goto label0;
+
+     label13:
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Attach size: null");
+        goto label8;
+
+     label14:
+        $r31 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.ListView b>;
+        virtualinvoke $r31.<android.widget.ListView: void setVisibility(int)>(8);
+        $r29 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.widget.RelativeLayout a>;
+        virtualinvoke $r29.<android.widget.RelativeLayout: void setVisibility(int)>(8);
+        goto label11;
+    }
+
+    public void onDestroyView()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDestroyView()>();
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.view.View o> = null;
+        return;
+    }
+
+    public void onDetach()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onDetach()>();
+        return;
+    }
+
+    public void onResume()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        it.h3g.areaclienti3.j.k $r1;
+        android.content.Context $r2;
+        android.net.Uri $r3;
+        boolean $z0;
+        java.lang.String $r5;
+        it.h3g.areaclienti3.d.d $r6;
+        it.h3g.areaclienti3.fragments.c $r7;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onResume()>();
+        $r1 = new it.h3g.areaclienti3.j.k;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        specialinvoke $r1.<it.h3g.areaclienti3.j.k: void <init>(android.content.Context)>($r2);
+        virtualinvoke $r1.<it.h3g.areaclienti3.j.k: void f()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", "Action: onResume");
+        $z0 = staticinvoke <it.h3g.areaclienti3.h.e: boolean e()>();
+        if $z0 != 0 goto label0;
+
+        $z0 = staticinvoke <it.h3g.areaclienti3.h.e: boolean d()>();
+        if $z0 == 0 goto label3;
+
+     label0:
+        $z0 = staticinvoke <it.h3g.areaclienti3.h.e: boolean e()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = staticinvoke <it.h3g.areaclienti3.h.e: android.net.Uri b(android.content.Context)>($r2);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f> = $r3;
+
+     label1:
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        if $r3 == null goto label2;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $z0 = staticinvoke <it.h3g.areaclienti3.h.e: boolean a(android.content.Context,android.net.Uri)>($r2, $r3);
+        if $z0 == 0 goto label4;
+
+        $r6 = new it.h3g.areaclienti3.d.d;
+        specialinvoke $r6.<it.h3g.areaclienti3.d.d: void <init>()>();
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $r5 = staticinvoke <it.h3g.areaclienti3.h.e: java.lang.String b(android.content.Context,android.net.Uri)>($r2, $r3);
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.d: void c(java.lang.String)>($r5);
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $r5 = virtualinvoke $r3.<android.net.Uri: java.lang.String toString()>();
+        virtualinvoke $r6.<it.h3g.areaclienti3.d.d: void d(java.lang.String)>($r5);
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void c(it.h3g.areaclienti3.d.d)>($r6);
+        $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f> = null;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.h.e: void f()>();
+
+     label3:
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void d()>();
+        return;
+
+     label4:
+        $r7 = $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.fragments.c mDialog>;
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.content.Context mContext>;
+        $r5 = virtualinvoke $r2.<android.content.Context: java.lang.String getString(int)>(2131231562);
+        interfaceinvoke $r7.<it.h3g.areaclienti3.fragments.c: void a(java.lang.String,int)>($r5, 1);
+        goto label2;
+    }
+
+    public void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        android.os.Bundle $r1;
+        android.net.Uri $r2;
+        java.lang.String $r3;
+        java.util.ArrayList $r5;
+        int $i0;
+        boolean $z0;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.fragments.a: void onSaveInstanceState(android.os.Bundle)>($r1);
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        if $r2 == null goto label0;
+
+        $r2 = $r0.<it.h3g.areaclienti3.fragments.b.i: android.net.Uri f>;
+        $r3 = virtualinvoke $r2.<android.net.Uri: java.lang.String toString()>();
+        virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("currentPhotoUri", $r3);
+
+     label0:
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        if $r5 == null goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        $i0 = virtualinvoke $r5.<java.util.ArrayList: int size()>();
+        if $i0 <= 0 goto label1;
+
+        $r5 = $r0.<it.h3g.areaclienti3.fragments.b.i: java.util.ArrayList d>;
+        virtualinvoke $r1.<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)>("currentAttachmentsList", $r5);
+
+     label1:
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g>;
+        if $z0 == 0 goto label2;
+
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g>;
+        virtualinvoke $r1.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("currentScattaInvia_enabled", $z0);
+
+     label2:
+        $r0.<it.h3g.areaclienti3.fragments.b.i: it.h3g.areaclienti3.h.b e> = null;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("onSaveInstanceState ScattaInviaEnabled ");
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean g>;
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);
+        $r3 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("SCATTAINVIA", $r3);
+        return;
+    }
+
+    public void startAction()
+    {
+        it.h3g.areaclienti3.fragments.b.i $r0;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.b.i;
+        $z0 = $r0.<it.h3g.areaclienti3.fragments.b.i: boolean s>;
+        if $z0 != 0 goto label0;
+
+        $i0 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: int getSectionId()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.fragments.b.i: void getBannerPiccolo(int)>($i0);
+
+     label0:
+        return;
+    }
+}

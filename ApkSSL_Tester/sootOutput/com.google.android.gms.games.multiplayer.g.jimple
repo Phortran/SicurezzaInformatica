@@ -1,0 +1,113 @@
+final class com.google.android.gms.games.multiplayer.g extends com.google.android.gms.games.multiplayer.j
+{
+
+    void <init>()
+    {
+        com.google.android.gms.games.multiplayer.g $r0;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.g;
+        specialinvoke $r0.<com.google.android.gms.games.multiplayer.j: void <init>()>();
+        return;
+    }
+
+    public com.google.android.gms.games.multiplayer.ParticipantEntity a(android.os.Parcel)
+    {
+        com.google.android.gms.games.multiplayer.g $r0;
+        android.os.Parcel $r1;
+        java.lang.Integer $r2;
+        java.lang.String $r3, $r4, $r7;
+        int $i0, $i1, i2;
+        boolean $z1, $z2;
+        java.lang.Class $r5;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r6;
+        android.net.Uri $r8, $r9;
+        android.os.Parcelable$Creator $r10;
+        java.lang.Object $r11;
+        com.google.android.gms.games.PlayerEntity $r12;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.g;
+        $r1 := @parameter0: android.os.Parcel;
+        $z1 = 0;
+        $r2 = staticinvoke <com.google.android.gms.games.multiplayer.ParticipantEntity: java.lang.Integer m()>();
+        $z2 = staticinvoke <com.google.android.gms.games.multiplayer.ParticipantEntity: boolean a(java.lang.Integer)>($r2);
+        if $z2 != 0 goto label0;
+
+        $r5 = class "com/google/android/gms/games/multiplayer/ParticipantEntity";
+        $r4 = virtualinvoke $r5.<java.lang.Class: java.lang.String getCanonicalName()>();
+        $z2 = staticinvoke <com.google.android.gms.games.multiplayer.ParticipantEntity: boolean a(java.lang.String)>($r4);
+        if $z2 == 0 goto label1;
+
+     label0:
+        $r6 = specialinvoke $r0.<com.google.android.gms.games.multiplayer.j: com.google.android.gms.games.multiplayer.ParticipantEntity a(android.os.Parcel)>($r1);
+        return $r6;
+
+     label1:
+        $r7 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r3 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        if $r4 != null goto label7;
+
+        $r8 = null;
+
+     label2:
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        if $r4 != null goto label8;
+
+        $r9 = null;
+
+     label3:
+        $i0 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        $r4 = virtualinvoke $r1.<android.os.Parcel: java.lang.String readString()>();
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 <= 0 goto label9;
+
+        $z2 = 1;
+
+     label4:
+        $i1 = virtualinvoke $r1.<android.os.Parcel: int readInt()>();
+        if $i1 <= 0 goto label5;
+
+        $z1 = 1;
+
+     label5:
+        if $z1 == 0 goto label10;
+
+        $r10 = <com.google.android.gms.games.PlayerEntity: android.os.Parcelable$Creator CREATOR>;
+        $r11 = interfaceinvoke $r10.<android.os.Parcelable$Creator: java.lang.Object createFromParcel(android.os.Parcel)>($r1);
+        $r12 = (com.google.android.gms.games.PlayerEntity) $r11;
+
+     label6:
+        $r6 = new com.google.android.gms.games.multiplayer.ParticipantEntity;
+        i2 = (int) 1;
+        specialinvoke $r6.<com.google.android.gms.games.multiplayer.ParticipantEntity: void <init>(int,java.lang.String,java.lang.String,android.net.Uri,android.net.Uri,int,java.lang.String,boolean,com.google.android.gms.games.PlayerEntity,int)>(i2, $r7, $r3, $r8, $r9, $i0, $r4, $z2, $r12, 7);
+        return $r6;
+
+     label7:
+        $r8 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r4);
+        goto label2;
+
+     label8:
+        $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r4);
+        goto label3;
+
+     label9:
+        $z2 = 0;
+        goto label4;
+
+     label10:
+        $r12 = null;
+        goto label6;
+    }
+
+    public java.lang.Object createFromParcel(android.os.Parcel)
+    {
+        com.google.android.gms.games.multiplayer.g $r0;
+        android.os.Parcel $r1;
+        com.google.android.gms.games.multiplayer.ParticipantEntity $r2;
+
+        $r0 := @this: com.google.android.gms.games.multiplayer.g;
+        $r1 := @parameter0: android.os.Parcel;
+        $r2 = virtualinvoke $r0.<com.google.android.gms.games.multiplayer.g: com.google.android.gms.games.multiplayer.ParticipantEntity a(android.os.Parcel)>($r1);
+        return $r2;
+    }
+}

@@ -1,0 +1,145 @@
+public final class com.google.android.gms.internal.l extends java.lang.Object implements com.google.android.gms.internal.k
+{
+
+    public void <init>()
+    {
+        com.google.android.gms.internal.l $r0;
+
+        $r0 := @this: com.google.android.gms.internal.l;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private static boolean a(java.util.Map)
+    {
+        java.util.Map $r0;
+        java.lang.String $r1;
+        java.lang.Object $r3;
+        boolean $z0;
+
+        $r0 := @parameter0: java.util.Map;
+        $r1 = "1";
+        $r3 = interfaceinvoke $r0.<java.util.Map: java.lang.Object get(java.lang.Object)>("custom_close");
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        return $z0;
+    }
+
+    private static int b(java.util.Map)
+    {
+        java.util.Map $r0;
+        java.lang.String $r1, $r3;
+        java.lang.Object $r2;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @parameter0: java.util.Map;
+        $r2 = interfaceinvoke $r0.<java.util.Map: java.lang.Object get(java.lang.Object)>("o");
+        $r3 = (java.lang.String) $r2;
+        if $r3 == null goto label1;
+
+        $r1 = "p";
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z0 == 0 goto label0;
+
+        $i0 = staticinvoke <com.google.android.gms.internal.cs: int b()>();
+        return $i0;
+
+     label0:
+        $r1 = "l";
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r3);
+        if $z0 == 0 goto label1;
+
+        $i0 = staticinvoke <com.google.android.gms.internal.cs: int a()>();
+        return $i0;
+
+     label1:
+        return -1;
+    }
+
+    public void a(com.google.android.gms.internal.dg, java.util.Map)
+    {
+        com.google.android.gms.internal.l $r0;
+        com.google.android.gms.internal.dg $r1;
+        java.util.Map $r2;
+        java.lang.String $r3, $r6, $r8, $r9, $r10, $r11, $r12;
+        int $i0;
+        com.google.android.gms.internal.dh $r4;
+        java.lang.Object $r5;
+        boolean $z0;
+        com.google.android.gms.internal.be $r7;
+
+        $r0 := @this: com.google.android.gms.internal.l;
+        $r1 := @parameter0: com.google.android.gms.internal.dg;
+        $r2 := @parameter1: java.util.Map;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("a");
+        $r6 = (java.lang.String) $r5;
+        if $r6 != null goto label1;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Action missing from an open GMSG.");
+
+     label0:
+        return;
+
+     label1:
+        $r4 = virtualinvoke $r1.<com.google.android.gms.internal.dg: com.google.android.gms.internal.dh e()>();
+        $r3 = "expand";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 == 0 goto label3;
+
+        $z0 = virtualinvoke $r1.<com.google.android.gms.internal.dg: boolean h()>();
+        if $z0 == 0 goto label2;
+
+        staticinvoke <com.google.android.gms.internal.dc: void e(java.lang.String)>("Cannot expand WebView that is already expanded.");
+        goto label0;
+
+     label2:
+        $z0 = staticinvoke <com.google.android.gms.internal.l: boolean a(java.util.Map)>($r2);
+        $i0 = staticinvoke <com.google.android.gms.internal.l: int b(java.util.Map)>($r2);
+        virtualinvoke $r4.<com.google.android.gms.internal.dh: void a(boolean,int)>($z0, $i0);
+        goto label0;
+
+     label3:
+        $r3 = "webapp";
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>($r6);
+        if $z0 == 0 goto label5;
+
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("u");
+        $r6 = (java.lang.String) $r5;
+        if $r6 == null goto label4;
+
+        $z0 = staticinvoke <com.google.android.gms.internal.l: boolean a(java.util.Map)>($r2);
+        $i0 = staticinvoke <com.google.android.gms.internal.l: int b(java.util.Map)>($r2);
+        virtualinvoke $r4.<com.google.android.gms.internal.dh: void a(boolean,int,java.lang.String)>($z0, $i0, $r6);
+        goto label0;
+
+     label4:
+        $z0 = staticinvoke <com.google.android.gms.internal.l: boolean a(java.util.Map)>($r2);
+        $i0 = staticinvoke <com.google.android.gms.internal.l: int b(java.util.Map)>($r2);
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("html");
+        $r6 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("baseurl");
+        $r3 = (java.lang.String) $r5;
+        virtualinvoke $r4.<com.google.android.gms.internal.dh: void a(boolean,int,java.lang.String,java.lang.String)>($z0, $i0, $r6, $r3);
+        goto label0;
+
+     label5:
+        $r7 = new com.google.android.gms.internal.be;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("i");
+        $r6 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("u");
+        $r8 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("m");
+        $r9 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("p");
+        $r10 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("c");
+        $r11 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("f");
+        $r12 = (java.lang.String) $r5;
+        $r5 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("e");
+        $r3 = (java.lang.String) $r5;
+        specialinvoke $r7.<com.google.android.gms.internal.be: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>($r6, $r8, $r9, $r10, $r11, $r12, $r3);
+        virtualinvoke $r4.<com.google.android.gms.internal.dh: void a(com.google.android.gms.internal.be)>($r7);
+        goto label0;
+    }
+}

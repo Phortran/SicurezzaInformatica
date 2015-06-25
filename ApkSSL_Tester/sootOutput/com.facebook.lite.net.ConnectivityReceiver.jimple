@@ -1,0 +1,120 @@
+public class com.facebook.lite.net.ConnectivityReceiver extends android.content.BroadcastReceiver
+{
+    private static final java.lang.String a;
+    private static java.util.Set b;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+        java.util.HashSet $r2;
+
+        $r0 = class "com/facebook/lite/net/ConnectivityReceiver";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.net.ConnectivityReceiver: java.lang.String a> = $r1;
+        $r2 = new java.util.HashSet;
+        specialinvoke $r2.<java.util.HashSet: void <init>()>();
+        <com.facebook.lite.net.ConnectivityReceiver: java.util.Set b> = $r2;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.net.ConnectivityReceiver $r0;
+
+        $r0 := @this: com.facebook.lite.net.ConnectivityReceiver;
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+        return;
+    }
+
+    private static void a(android.content.Context)
+    {
+        android.content.Context $r0;
+        java.util.Set $r1;
+        java.util.Iterator $r2;
+        boolean $z0;
+        java.lang.Object $r3;
+        com.facebook.lite.net.f $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = <com.facebook.lite.net.ConnectivityReceiver: java.util.Set b>;
+        $r2 = interfaceinvoke $r1.<java.util.Set: java.util.Iterator iterator()>();
+
+     label0:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label1;
+
+        $r3 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+        $r4 = (com.facebook.lite.net.f) $r3;
+        interfaceinvoke $r4.<com.facebook.lite.net.f: void a(android.content.Context)>($r0);
+        goto label0;
+
+     label1:
+        return;
+    }
+
+    public static void a(com.facebook.lite.net.f)
+    {
+        com.facebook.lite.net.f $r0;
+        java.util.Set $r1;
+
+        $r0 := @parameter0: com.facebook.lite.net.f;
+        $r1 = <com.facebook.lite.net.ConnectivityReceiver: java.util.Set b>;
+        interfaceinvoke $r1.<java.util.Set: boolean add(java.lang.Object)>($r0);
+        return;
+    }
+
+    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.facebook.lite.net.ConnectivityReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        java.lang.String $r3, $r4;
+        boolean $z0;
+        com.facebook.lite.a $r5;
+        com.facebook.lite.g.a $r6;
+        java.lang.StringBuilder $r7;
+        long $l0;
+        com.b.a.a.b.b $r8;
+        java.lang.Runnable $r9;
+
+        $r0 := @this: com.facebook.lite.net.ConnectivityReceiver;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: android.content.Intent;
+        if $r1 == null goto label0;
+
+        if $r2 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r3 = virtualinvoke $r2.<android.content.Intent: java.lang.String getAction()>();
+        $r4 = "android.net.conn.CONNECTIVITY_CHANGE";
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label0;
+
+        staticinvoke <com.facebook.lite.net.ConnectivityReceiver: void a(android.content.Context)>($r1);
+        $r4 = "android.net.conn.CONNECTIVITY_CHANGE";
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 == 0 goto label0;
+
+        $r5 = staticinvoke <com.facebook.lite.ClientApplication: com.facebook.lite.a b()>();
+        if $r5 == null goto label0;
+
+        $r6 = virtualinvoke $r5.<com.facebook.lite.a: com.facebook.lite.g.a B()>();
+        if $r6 == null goto label0;
+
+        $z0 = staticinvoke <com.facebook.lite.b.b: boolean c()>();
+        if $z0 == 0 goto label0;
+
+        $r7 = new java.lang.StringBuilder;
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("conn/network connected/");
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r8 = virtualinvoke $r6.<com.facebook.lite.g.g: com.b.a.a.b.b R()>();
+        $r9 = virtualinvoke $r6.<com.facebook.lite.g.g: java.lang.Runnable a(boolean,boolean)>(1, 0);
+        virtualinvoke $r8.<com.b.a.a.b.b: void c(java.lang.Runnable)>($r9);
+        goto label0;
+    }
+}

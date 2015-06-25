@@ -1,0 +1,94 @@
+public final class com.google.android.gms.maps.b extends java.lang.Object
+{
+    private static com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a;
+
+    public static com.google.android.gms.maps.a a(com.google.android.gms.maps.model.CameraPosition)
+    {
+        com.google.android.gms.maps.model.CameraPosition $r0;
+        com.google.android.gms.maps.a $r1;
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r2;
+        com.google.android.gms.dynamic.b $r3;
+        android.os.RemoteException $r4;
+        com.google.android.gms.maps.model.m $r5;
+
+        $r0 := @parameter0: com.google.android.gms.maps.model.CameraPosition;
+        $r1 = new com.google.android.gms.maps.a;
+
+     label0:
+        $r2 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a()>();
+        $r3 = interfaceinvoke $r2.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.CameraPosition)>($r0);
+        specialinvoke $r1.<com.google.android.gms.maps.a: void <init>(com.google.android.gms.dynamic.b)>($r3);
+
+     label1:
+        return $r1;
+
+     label2:
+        $r4 := @caughtexception;
+        $r5 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r5.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r4);
+        throw $r5;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    public static com.google.android.gms.maps.a a(com.google.android.gms.maps.model.LatLng, float)
+    {
+        com.google.android.gms.maps.model.LatLng $r0;
+        float $f0;
+        com.google.android.gms.maps.a $r1;
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r2;
+        com.google.android.gms.dynamic.b $r3;
+        android.os.RemoteException $r4;
+        com.google.android.gms.maps.model.m $r5;
+
+        $r0 := @parameter0: com.google.android.gms.maps.model.LatLng;
+        $f0 := @parameter1: float;
+        $r1 = new com.google.android.gms.maps.a;
+
+     label0:
+        $r2 = staticinvoke <com.google.android.gms.maps.b: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a()>();
+        $r3 = interfaceinvoke $r2.<com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate: com.google.android.gms.dynamic.b a(com.google.android.gms.maps.model.LatLng,float)>($r0, $f0);
+        specialinvoke $r1.<com.google.android.gms.maps.a: void <init>(com.google.android.gms.dynamic.b)>($r3);
+
+     label1:
+        return $r1;
+
+     label2:
+        $r4 := @caughtexception;
+        $r5 = new com.google.android.gms.maps.model.m;
+        specialinvoke $r5.<com.google.android.gms.maps.model.m: void <init>(android.os.RemoteException)>($r4);
+        throw $r5;
+
+        catch android.os.RemoteException from label0 to label1 with label2;
+    }
+
+    private static com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a()
+    {
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r0;
+        java.lang.Object $r2;
+
+        $r0 = <com.google.android.gms.maps.b: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a>;
+        $r2 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object,java.lang.Object)>($r0, "CameraUpdateFactory is not initialized");
+        $r0 = (com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate) $r2;
+        return $r0;
+    }
+
+    static void a(com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate)
+    {
+        com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate $r0, $r1;
+        java.lang.Object $r2;
+
+        $r0 := @parameter0: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
+        $r1 = <com.google.android.gms.maps.b: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a>;
+        if $r1 == null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r2 = staticinvoke <com.google.android.gms.internal.fz: java.lang.Object a(java.lang.Object)>($r0);
+        $r1 = (com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate) $r2;
+        <com.google.android.gms.maps.b: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate a> = $r1;
+        goto label0;
+    }
+}

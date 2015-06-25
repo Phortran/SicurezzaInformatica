@@ -1,0 +1,159 @@
+final class com.facebook.a.n extends java.lang.Thread
+{
+    final com.facebook.a.j a;
+    private java.lang.Throwable b;
+    private com.facebook.a.e c;
+    private final com.facebook.a.m[] d;
+
+    public void <init>(com.facebook.a.j, com.facebook.a.e)
+    {
+        com.facebook.a.n $r0;
+        com.facebook.a.j $r1;
+        com.facebook.a.e $r2;
+        com.facebook.a.m[] $r3;
+
+        $r0 := @this: com.facebook.a.n;
+        $r1 := @parameter0: com.facebook.a.j;
+        $r2 := @parameter1: com.facebook.a.e;
+        $r3 = newarray (com.facebook.a.m)[0];
+        specialinvoke $r0.<com.facebook.a.n: void <init>(com.facebook.a.j,com.facebook.a.m[])>($r1, $r3);
+        $r0.<com.facebook.a.n: com.facebook.a.e c> = $r2;
+        return;
+    }
+
+    public transient void <init>(com.facebook.a.j, com.facebook.a.m[])
+    {
+        com.facebook.a.n $r0;
+        com.facebook.a.j $r1;
+        com.facebook.a.m[] $r2;
+
+        $r0 := @this: com.facebook.a.n;
+        $r1 := @parameter0: com.facebook.a.j;
+        $r2 := @parameter1: com.facebook.a.m[];
+        $r0.<com.facebook.a.n: com.facebook.a.j a> = $r1;
+        specialinvoke $r0.<java.lang.Thread: void <init>()>();
+        $r0.<com.facebook.a.n: java.lang.Throwable b> = null;
+        $r0.<com.facebook.a.n: com.facebook.a.m[] d> = $r2;
+        return;
+    }
+
+    private android.os.PowerManager$WakeLock b()
+    {
+        com.facebook.a.n $r0;
+        com.facebook.a.c.g $r1;
+        com.facebook.a.j $r2;
+        android.content.Context $r4;
+        boolean $z0;
+        java.lang.Object $r6;
+        android.os.PowerManager $r7;
+        android.os.PowerManager$WakeLock $r8;
+
+        $r0 := @this: com.facebook.a.n;
+        $r1 = new com.facebook.a.c.g;
+        $r2 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r4 = staticinvoke <com.facebook.a.j: android.content.Context a(com.facebook.a.j)>($r2);
+        specialinvoke $r1.<com.facebook.a.c.g: void <init>(android.content.Context)>($r4);
+        $z0 = virtualinvoke $r1.<com.facebook.a.c.g: boolean a(java.lang.String)>("android.permission.WAKE_LOCK");
+        if $z0 != 0 goto label0;
+
+        return null;
+
+     label0:
+        $r2 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r4 = staticinvoke <com.facebook.a.j: android.content.Context a(com.facebook.a.j)>($r2);
+        $r6 = virtualinvoke $r4.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("power");
+        $r7 = (android.os.PowerManager) $r6;
+        $r8 = virtualinvoke $r7.<android.os.PowerManager: android.os.PowerManager$WakeLock newWakeLock(int,java.lang.String)>(1, "ACRA wakelock");
+        virtualinvoke $r8.<android.os.PowerManager$WakeLock: void setReferenceCounted(boolean)>(0);
+        virtualinvoke $r8.<android.os.PowerManager$WakeLock: void acquire()>();
+        return $r8;
+    }
+
+    public final java.lang.Throwable a()
+    {
+        com.facebook.a.n $r0;
+        java.lang.Throwable $r1;
+
+        $r0 := @this: com.facebook.a.n;
+        $r1 = $r0.<com.facebook.a.n: java.lang.Throwable b>;
+        return $r1;
+    }
+
+    public final void run()
+    {
+        com.facebook.a.n $r0;
+        com.facebook.a.e $r1;
+        android.os.PowerManager$WakeLock $r2;
+        com.facebook.a.j $r3, $r5;
+        android.content.Context $r6;
+        boolean $z0;
+        com.facebook.a.m[] $r7;
+        java.lang.Throwable $r8, $r9;
+
+        $r0 := @this: com.facebook.a.n;
+        $r2 = null;
+
+     label0:
+        $r2 = specialinvoke $r0.<com.facebook.a.n: android.os.PowerManager$WakeLock b()>();
+        $r1 = $r0.<com.facebook.a.n: com.facebook.a.e c>;
+        if $r1 == null goto label3;
+
+        $r5 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r3 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r6 = staticinvoke <com.facebook.a.j: android.content.Context a(com.facebook.a.j)>($r3);
+        $r1 = $r0.<com.facebook.a.n: com.facebook.a.e c>;
+        virtualinvoke $r5.<com.facebook.a.j: void a(android.content.Context,com.facebook.a.e)>($r6, $r1);
+
+     label1:
+        if $r2 == null goto label2;
+
+        $z0 = virtualinvoke $r2.<android.os.PowerManager$WakeLock: boolean isHeld()>();
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r2.<android.os.PowerManager$WakeLock: void release()>();
+
+     label2:
+        return;
+
+     label3:
+        $r5 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r3 = $r0.<com.facebook.a.n: com.facebook.a.j a>;
+        $r6 = staticinvoke <com.facebook.a.j: android.content.Context a(com.facebook.a.j)>($r3);
+        $r7 = $r0.<com.facebook.a.n: com.facebook.a.m[] d>;
+        virtualinvoke $r5.<com.facebook.a.j: void a(android.content.Context,com.facebook.a.m[])>($r6, $r7);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r8 := @caughtexception;
+
+     label6:
+        $r0.<com.facebook.a.n: java.lang.Throwable b> = $r8;
+
+     label7:
+        if $r2 == null goto label2;
+
+        $z0 = virtualinvoke $r2.<android.os.PowerManager$WakeLock: boolean isHeld()>();
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r2.<android.os.PowerManager$WakeLock: void release()>();
+        goto label2;
+
+     label8:
+        $r9 := @caughtexception;
+        if $r2 == null goto label9;
+
+        $z0 = virtualinvoke $r2.<android.os.PowerManager$WakeLock: boolean isHeld()>();
+        if $z0 == 0 goto label9;
+
+        virtualinvoke $r2.<android.os.PowerManager$WakeLock: void release()>();
+
+     label9:
+        throw $r9;
+
+        catch java.lang.Throwable from label0 to label1 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+        catch java.lang.Throwable from label6 to label7 with label8;
+    }
+}

@@ -1,0 +1,284 @@
+public class com.facebook.lite.notification.k extends java.lang.Object
+{
+    private static final java.lang.String a;
+
+    static void <clinit>()
+    {
+        java.lang.Class $r0;
+        java.lang.String $r1;
+
+        $r0 = class "com/facebook/lite/notification/k";
+        $r1 = virtualinvoke $r0.<java.lang.Class: java.lang.String getSimpleName()>();
+        <com.facebook.lite.notification.k: java.lang.String a> = $r1;
+        return;
+    }
+
+    public void <init>()
+    {
+        com.facebook.lite.notification.k $r0;
+
+        $r0 := @this: com.facebook.lite.notification.k;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    private static long a(com.facebook.lite.notification.g)
+    {
+        com.facebook.lite.notification.g $r0;
+        long $l0, $l1;
+        byte $b2;
+
+        $r0 := @parameter0: com.facebook.lite.notification.g;
+        $l0 = virtualinvoke $r0.<com.facebook.lite.notification.g: long d()>();
+        $b2 = $l0 cmp 1072944000L;
+        if $b2 <= 0 goto label0;
+
+        $b2 = $l0 cmp 1577865600L;
+        if $b2 >= 0 goto label0;
+
+        $l1 = $l0 * 1000L;
+        return $l1;
+
+     label0:
+        $l1 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        return $l1;
+    }
+
+    private static void a(android.content.Context, com.facebook.lite.notification.g, android.content.Intent, int, int)
+    {
+        android.content.Context $r0;
+        com.facebook.lite.notification.g $r1;
+        android.content.Intent $r2;
+        int $i0, $i1;
+        java.lang.String $r3, $r4;
+        long $l2;
+        java.lang.Object $r5;
+        android.app.NotificationManager $r6;
+        android.app.Notification $r7;
+        android.app.PendingIntent $r8;
+        com.facebook.lite.c.g $r9;
+        boolean $z0;
+        com.facebook.b.c.a $r10;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: com.facebook.lite.notification.g;
+        $r2 := @parameter2: android.content.Intent;
+        $i0 := @parameter3: int;
+        $i1 := @parameter4: int;
+        $l2 = staticinvoke <com.facebook.lite.notification.k: long a(com.facebook.lite.notification.g)>($r1);
+        $r4 = virtualinvoke $r1.<com.facebook.lite.notification.g: java.lang.String c()>();
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("fb-push-json", $r4);
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,long)>("fb-push-time", $l2);
+        $r4 = virtualinvoke $r1.<com.facebook.lite.notification.g: java.lang.String f()>();
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setAction(java.lang.String)>($r4);
+        $r5 = virtualinvoke $r0.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("notification");
+        $r6 = (android.app.NotificationManager) $r5;
+        $r7 = new android.app.Notification;
+        $r4 = virtualinvoke $r1.<com.facebook.lite.notification.g: java.lang.String a()>();
+        specialinvoke $r7.<android.app.Notification: void <init>(int,java.lang.CharSequence,long)>($i1, $r4, $l2);
+        $r4 = virtualinvoke $r0.<android.content.Context: java.lang.String getString(int)>(2131165185);
+        $r8 = staticinvoke <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int)>($r0, 0, $r2, 268435456);
+        $r3 = virtualinvoke $r1.<com.facebook.lite.notification.g: java.lang.String a()>();
+        virtualinvoke $r7.<android.app.Notification: void setLatestEventInfo(android.content.Context,java.lang.CharSequence,java.lang.CharSequence,android.app.PendingIntent)>($r0, $r4, $r3, $r8);
+        $i1 = $r7.<android.app.Notification: int flags>;
+        $i1 = $i1 | 16;
+        $r7.<android.app.Notification: int flags> = $i1;
+        $r9 = staticinvoke <com.facebook.lite.c.g: com.facebook.lite.c.g b(android.content.Context)>($r0);
+        $z0 = virtualinvoke $r9.<com.facebook.lite.c.g: boolean d()>();
+        if $z0 != 0 goto label0;
+
+        $i1 = $r7.<android.app.Notification: int defaults>;
+        $i1 = $i1 | 1;
+        $r7.<android.app.Notification: int defaults> = $i1;
+
+     label0:
+        $z0 = virtualinvoke $r9.<com.facebook.lite.c.g: boolean e()>();
+        if $z0 != 0 goto label1;
+
+        $i1 = $r7.<android.app.Notification: int defaults>;
+        $i1 = $i1 | 2;
+        $r7.<android.app.Notification: int defaults> = $i1;
+
+     label1:
+        $z0 = virtualinvoke $r9.<com.facebook.lite.c.g: boolean c()>();
+        if $z0 != 0 goto label2;
+
+        $r7.<android.app.Notification: int ledARGB> = -16776961;
+        $r7.<android.app.Notification: int ledOnMS> = 500;
+        $r7.<android.app.Notification: int ledOffMS> = 500;
+        $i1 = $r7.<android.app.Notification: int flags>;
+        $i1 = $i1 | 1;
+        $r7.<android.app.Notification: int flags> = $i1;
+
+     label2:
+        staticinvoke <com.facebook.b.a.a: com.facebook.b.a.a a()>();
+        staticinvoke <com.facebook.b.a.a: int a(android.content.Context,java.lang.String)>($r0, "push_shown");
+        $r10 = staticinvoke <com.facebook.b.c.a: com.facebook.b.c.a a()>();
+        virtualinvoke $r10.<com.facebook.b.c.a: void b()>();
+        virtualinvoke $r6.<android.app.NotificationManager: void notify(int,android.app.Notification)>($i0, $r7);
+        return;
+    }
+
+    public static void a(android.content.Context, java.lang.String)
+    {
+        android.content.Context $r0;
+        java.lang.String $r1;
+        com.facebook.b.k $r2;
+        long $l0, $l2, $l3;
+        boolean $z2;
+        com.facebook.lite.notification.g $r4;
+        int $i1;
+        com.facebook.b.c.a $r5;
+        byte $b4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: java.lang.String;
+        $r2 = new com.facebook.b.k;
+        specialinvoke $r2.<com.facebook.b.k: void <init>(java.lang.String)>("ema_push_notification_received");
+        staticinvoke <com.facebook.b.a.a: com.facebook.b.a.a a()>();
+        staticinvoke <com.facebook.b.a.a: int a(android.content.Context,java.lang.String)>($r0, "push_received_count");
+        $z2 = staticinvoke <com.facebook.lite.b.e: boolean E(android.content.Context)>($r0);
+        if $z2 != 0 goto label1;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("push_disabled", 1);
+        staticinvoke <com.facebook.lite.notification.k: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+
+     label0:
+        return;
+
+     label1:
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("push_disabled", 0);
+        $z2 = staticinvoke <com.facebook.lite.b.g: boolean a(java.lang.CharSequence)>($r1);
+        if $z2 == 0 goto label2;
+
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("missing_payload", 1);
+        staticinvoke <com.facebook.lite.notification.k: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+        goto label0;
+
+     label2:
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("missing_payload", 0);
+        $r4 = staticinvoke <com.facebook.lite.notification.g: com.facebook.lite.notification.g a(java.lang.String)>($r1);
+        $i1 = virtualinvoke $r1.<java.lang.String: int hashCode()>();
+        $l0 = (long) $i1;
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("notification_id", $l0);
+        $r1 = virtualinvoke $r4.<com.facebook.lite.notification.g: java.lang.String f()>();
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,java.lang.String)>("notification_type", $r1);
+        $l0 = staticinvoke <com.facebook.lite.notification.k: long a(com.facebook.lite.notification.g)>($r4);
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("time_received", $l0);
+        $l2 = staticinvoke <com.facebook.lite.b.e: long i(android.content.Context)>($r0);
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("current_user_id", $l2);
+        $l3 = virtualinvoke $r4.<com.facebook.lite.notification.g: long e()>();
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,long)>("target_user_id", $l3);
+        $z2 = virtualinvoke $r4.<com.facebook.lite.notification.g: boolean g()>();
+        virtualinvoke $r2.<com.facebook.b.k: com.facebook.b.i b(java.lang.String,boolean)>("logged_out_push", $z2);
+        $r5 = staticinvoke <com.facebook.b.c.a: com.facebook.b.c.a a()>();
+        virtualinvoke $r5.<com.facebook.b.c.a: void b()>();
+        staticinvoke <com.facebook.lite.notification.k: void a(com.facebook.b.k,android.content.Context)>($r2, $r0);
+        $b4 = $l2 cmp 0L;
+        if $b4 != 0 goto label3;
+
+        if $z2 == 0 goto label0;
+
+     label3:
+        $z2 = virtualinvoke $r4.<com.facebook.lite.notification.g: boolean h()>();
+        if $z2 == 0 goto label4;
+
+        $b4 = $l3 cmp $l2;
+        if $b4 != 0 goto label0;
+
+     label4:
+        staticinvoke <com.facebook.lite.notification.k: boolean a(android.content.Context,com.facebook.lite.notification.g)>($r0, $r4);
+        goto label0;
+    }
+
+    private static void a(com.facebook.b.k, android.content.Context)
+    {
+        com.facebook.b.k $r0;
+        android.content.Context $r1;
+
+        $r0 := @parameter0: com.facebook.b.k;
+        $r1 := @parameter1: android.content.Context;
+        staticinvoke <com.facebook.b.k: void a(com.facebook.b.k,android.content.Context)>($r0, $r1);
+        return;
+    }
+
+    private static boolean a(android.content.Context, com.facebook.lite.notification.g)
+    {
+        android.content.Context $r0;
+        com.facebook.lite.notification.g $r1;
+        int $i1, $i2;
+        com.facebook.lite.notification.i $r2;
+        int[] $r3;
+        java.lang.Integer $r4;
+        android.content.Intent $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: com.facebook.lite.notification.g;
+        $r2 = virtualinvoke $r1.<com.facebook.lite.notification.g: com.facebook.lite.notification.i b()>();
+        $i1 = 2130837513;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(999);
+        $r3 = <com.facebook.lite.notification.l: int[] a>;
+        $i2 = virtualinvoke $r2.<com.facebook.lite.notification.i: int ordinal()>();
+        $i2 = $r3[$i2];
+        lookupswitch($i2)
+        {
+            case 1: goto label1;
+            case 2: goto label2;
+            case 3: goto label3;
+            case 4: goto label4;
+            case 5: goto label5;
+            case 6: goto label6;
+            case 7: goto label7;
+            case 8: goto label8;
+            case 9: goto label9;
+            default: goto label0;
+        };
+
+     label0:
+        $r5 = new android.content.Intent;
+        specialinvoke $r5.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/facebook/lite/MainActivity");
+        virtualinvoke $r5.<android.content.Intent: android.content.Intent setFlags(int)>(603979776);
+        $i2 = virtualinvoke $r4.<java.lang.Integer: int intValue()>();
+        staticinvoke <com.facebook.lite.notification.k: void a(android.content.Context,com.facebook.lite.notification.g,android.content.Intent,int,int)>($r0, $r1, $r5, $i2, $i1);
+        return 1;
+
+     label1:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120001);
+        goto label0;
+
+     label2:
+        $i1 = 2130837516;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120002);
+        goto label0;
+
+     label3:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120003);
+        goto label0;
+
+     label4:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120004);
+        goto label0;
+
+     label5:
+        $i1 = 2130837514;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(2);
+        goto label0;
+
+     label6:
+        $i1 = 2130837515;
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120005);
+        goto label0;
+
+     label7:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120006);
+        goto label0;
+
+     label8:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120007);
+        goto label0;
+
+     label9:
+        $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(120008);
+        goto label0;
+    }
+}

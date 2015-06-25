@@ -1,0 +1,149 @@
+class android.support.v4.app.INotificationSideChannel$Stub$Proxy extends java.lang.Object implements android.support.v4.app.INotificationSideChannel
+{
+    private android.os.IBinder mRemote;
+
+    void <init>(android.os.IBinder)
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        $r1 := @parameter0: android.os.IBinder;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<android.support.v4.app.INotificationSideChannel$Stub$Proxy: android.os.IBinder mRemote> = $r1;
+        return;
+    }
+
+    public android.os.IBinder asBinder()
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+        android.os.IBinder $r1;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        $r1 = $r0.<android.support.v4.app.INotificationSideChannel$Stub$Proxy: android.os.IBinder mRemote>;
+        return $r1;
+    }
+
+    public void cancel(java.lang.String, int, java.lang.String) throws android.os.RemoteException
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+        java.lang.String $r1, $r2;
+        int $i0;
+        android.os.Parcel $r3;
+        android.os.IBinder $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.String;
+        $r3 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r3.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("android.support.v4.app.INotificationSideChannel");
+        virtualinvoke $r3.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        virtualinvoke $r3.<android.os.Parcel: void writeInt(int)>($i0);
+        virtualinvoke $r3.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        $r5 = $r0.<android.support.v4.app.INotificationSideChannel$Stub$Proxy: android.os.IBinder mRemote>;
+        interfaceinvoke $r5.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(2, $r3, null, 1);
+
+     label1:
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r6 := @caughtexception;
+        virtualinvoke $r3.<android.os.Parcel: void recycle()>();
+        throw $r6;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public void cancelAll(java.lang.String) throws android.os.RemoteException
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+        java.lang.String $r1;
+        android.os.Parcel $r2;
+        android.os.IBinder $r4;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r2.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("android.support.v4.app.INotificationSideChannel");
+        virtualinvoke $r2.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        $r4 = $r0.<android.support.v4.app.INotificationSideChannel$Stub$Proxy: android.os.IBinder mRemote>;
+        interfaceinvoke $r4.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(3, $r2, null, 1);
+
+     label1:
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r2.<android.os.Parcel: void recycle()>();
+        throw $r5;
+
+        catch java.lang.Throwable from label0 to label1 with label2;
+    }
+
+    public java.lang.String getInterfaceDescriptor()
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        return "android.support.v4.app.INotificationSideChannel";
+    }
+
+    public void notify(java.lang.String, int, java.lang.String, android.app.Notification) throws android.os.RemoteException
+    {
+        android.support.v4.app.INotificationSideChannel$Stub$Proxy $r0;
+        java.lang.String $r1, $r2;
+        int $i0;
+        android.app.Notification $r3;
+        android.os.Parcel $r4;
+        android.os.IBinder $r6;
+        java.lang.Throwable $r7;
+
+        $r0 := @this: android.support.v4.app.INotificationSideChannel$Stub$Proxy;
+        $r1 := @parameter0: java.lang.String;
+        $i0 := @parameter1: int;
+        $r2 := @parameter2: java.lang.String;
+        $r3 := @parameter3: android.app.Notification;
+        $r4 = staticinvoke <android.os.Parcel: android.os.Parcel obtain()>();
+
+     label0:
+        virtualinvoke $r4.<android.os.Parcel: void writeInterfaceToken(java.lang.String)>("android.support.v4.app.INotificationSideChannel");
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r1);
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>($i0);
+        virtualinvoke $r4.<android.os.Parcel: void writeString(java.lang.String)>($r2);
+        if $r3 == null goto label3;
+
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(1);
+        virtualinvoke $r3.<android.app.Notification: void writeToParcel(android.os.Parcel,int)>($r4, 0);
+
+     label1:
+        $r6 = $r0.<android.support.v4.app.INotificationSideChannel$Stub$Proxy: android.os.IBinder mRemote>;
+        interfaceinvoke $r6.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $r4, null, 1);
+
+     label2:
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        return;
+
+     label3:
+        virtualinvoke $r4.<android.os.Parcel: void writeInt(int)>(0);
+
+     label4:
+        goto label1;
+
+     label5:
+        $r7 := @caughtexception;
+        virtualinvoke $r4.<android.os.Parcel: void recycle()>();
+        throw $r7;
+
+        catch java.lang.Throwable from label0 to label2 with label5;
+        catch java.lang.Throwable from label3 to label4 with label5;
+    }
+}

@@ -1,0 +1,66 @@
+class it.h3g.areaclienti3.fragments.ad extends android.os.AsyncTask
+{
+    final it.h3g.areaclienti3.fragments.ac a;
+    private final org.json.JSONObject b;
+
+    void <init>(it.h3g.areaclienti3.fragments.ac, org.json.JSONObject)
+    {
+        it.h3g.areaclienti3.fragments.ad $r0;
+        it.h3g.areaclienti3.fragments.ac $r1;
+        org.json.JSONObject $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ad;
+        $r1 := @parameter0: it.h3g.areaclienti3.fragments.ac;
+        $r2 := @parameter1: org.json.JSONObject;
+        $r0.<it.h3g.areaclienti3.fragments.ad: it.h3g.areaclienti3.fragments.ac a> = $r1;
+        $r0.<it.h3g.areaclienti3.fragments.ad: org.json.JSONObject b> = $r2;
+        specialinvoke $r0.<android.os.AsyncTask: void <init>()>();
+        return;
+    }
+
+    protected transient java.lang.Void a(java.lang.Void[])
+    {
+        it.h3g.areaclienti3.fragments.ad $r0;
+        java.lang.Void[] $r1;
+        it.h3g.areaclienti3.g.b $r2;
+        it.h3g.areaclienti3.fragments.ac $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5, $r8;
+        it.h3g.areaclienti3.fragments.x $r6;
+        android.content.Context $r7;
+        org.json.JSONObject $r9;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ad;
+        $r1 := @parameter0: java.lang.Void[];
+        $r2 = new it.h3g.areaclienti3.g.b;
+        $r3 = $r0.<it.h3g.areaclienti3.fragments.ad: it.h3g.areaclienti3.fragments.ac a>;
+        $r6 = staticinvoke <it.h3g.areaclienti3.fragments.ac: it.h3g.areaclienti3.fragments.x a(it.h3g.areaclienti3.fragments.ac)>($r3);
+        $r7 = $r6.<it.h3g.areaclienti3.fragments.x: android.content.Context mContext>;
+        specialinvoke $r2.<it.h3g.areaclienti3.g.b: void <init>(android.content.Context)>($r7);
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("jsonObject: ");
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.ad: org.json.JSONObject b>;
+        $r5 = virtualinvoke $r9.<org.json.JSONObject: java.lang.String toString()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("NewsDetails", $r5);
+        $r9 = $r0.<it.h3g.areaclienti3.fragments.ad: org.json.JSONObject b>;
+        $r8 = virtualinvoke $r9.<org.json.JSONObject: java.lang.String toString()>();
+        virtualinvoke $r2.<it.h3g.areaclienti3.g.b: java.lang.String d(java.lang.String)>($r8);
+        return null;
+    }
+
+    protected transient java.lang.Object doInBackground(java.lang.Object[])
+    {
+        it.h3g.areaclienti3.fragments.ad $r0;
+        java.lang.Object[] $r1;
+        java.lang.Void $r2;
+        java.lang.Void[] $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.fragments.ad;
+        $r1 := @parameter0: java.lang.Object[];
+        $r3 = (java.lang.Void[]) $r1;
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.fragments.ad: java.lang.Void a(java.lang.Void[])>($r3);
+        return $r2;
+    }
+}

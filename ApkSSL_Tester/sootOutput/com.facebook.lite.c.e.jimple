@@ -1,0 +1,151 @@
+public final class com.facebook.lite.c.e extends com.facebook.lite.c.a
+{
+    private boolean b;
+    private int c;
+    private int d;
+    private int e;
+    private long f;
+
+    public void <init>()
+    {
+        com.facebook.lite.c.e $r0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        specialinvoke $r0.<com.facebook.lite.c.a: void <init>()>();
+        return;
+    }
+
+    public static com.facebook.lite.c.e b()
+    {
+        com.facebook.lite.c.e $r0;
+
+        $r0 = staticinvoke <com.facebook.lite.c.f: com.facebook.lite.c.e a()>();
+        return $r0;
+    }
+
+    public static com.facebook.lite.c.e b(android.content.Context)
+    {
+        android.content.Context $r0;
+        com.facebook.lite.c.e $r1;
+        com.facebook.lite.c.a $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 = staticinvoke <com.facebook.lite.c.e: com.facebook.lite.c.e b()>();
+        $r2 = virtualinvoke $r1.<com.facebook.lite.c.e: com.facebook.lite.c.a a(android.content.Context)>($r0);
+        $r1 = (com.facebook.lite.c.e) $r2;
+        return $r1;
+    }
+
+    private void h()
+    {
+        com.facebook.lite.c.e $r0;
+        int $i0, $i2;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $i0 = $r0.<com.facebook.lite.c.e: int c>;
+        if $i0 >= 0 goto label0;
+
+        $r0.<com.facebook.lite.c.e: int c> = 10;
+
+     label0:
+        $i0 = $r0.<com.facebook.lite.c.e: int d>;
+        if $i0 >= 0 goto label1;
+
+        $r0.<com.facebook.lite.c.e: int d> = 10;
+
+     label1:
+        $i0 = $r0.<com.facebook.lite.c.e: int e>;
+        if $i0 > 1048576 goto label2;
+
+        $i2 = $r0.<com.facebook.lite.c.e: int e>;
+        if $i2 >= 0 goto label3;
+
+     label2:
+        $r0.<com.facebook.lite.c.e: int e> = 20480;
+
+     label3:
+        return;
+    }
+
+    public final java.lang.String a()
+    {
+        com.facebook.lite.c.e $r0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        return "logging";
+    }
+
+    protected final void a(org.json.JSONObject)
+    {
+        com.facebook.lite.c.e $r0;
+        org.json.JSONObject $r1;
+        int $i1;
+        long $l2;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $r1 := @parameter0: org.json.JSONObject;
+        $i1 = staticinvoke <com.facebook.lite.b.d: int a(org.json.JSONObject,java.lang.String,int)>($r1, "low_freq_daily", 10);
+        $r0.<com.facebook.lite.c.e: int d> = $i1;
+        $i1 = staticinvoke <com.facebook.lite.b.d: int a(org.json.JSONObject,java.lang.String,int)>($r1, "high_freq_hourly", 10);
+        $r0.<com.facebook.lite.c.e: int c> = $i1;
+        $l2 = staticinvoke <com.facebook.lite.b.d: long a(org.json.JSONObject,java.lang.String)>($r1, "periodic_interval");
+        $r0.<com.facebook.lite.c.e: long f> = $l2;
+        $z0 = staticinvoke <com.facebook.lite.b.d: boolean a(org.json.JSONObject,java.lang.String,boolean)>($r1, "enable_honey", 1);
+        $r0.<com.facebook.lite.c.e: boolean b> = $z0;
+        $i1 = staticinvoke <com.facebook.lite.b.d: int a(org.json.JSONObject,java.lang.String,int)>($r1, "offline_log_size", 20480);
+        $r0.<com.facebook.lite.c.e: int e> = $i1;
+        specialinvoke $r0.<com.facebook.lite.c.e: void h()>();
+        return;
+    }
+
+    public final int c()
+    {
+        com.facebook.lite.c.e $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $i0 = $r0.<com.facebook.lite.c.e: int c>;
+        return $i0;
+    }
+
+    public final int d()
+    {
+        com.facebook.lite.c.e $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $i0 = $r0.<com.facebook.lite.c.e: int d>;
+        return $i0;
+    }
+
+    public final int e()
+    {
+        com.facebook.lite.c.e $r0;
+        int $i0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $i0 = $r0.<com.facebook.lite.c.e: int e>;
+        return $i0;
+    }
+
+    public final long f()
+    {
+        com.facebook.lite.c.e $r0;
+        long $l0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $l0 = $r0.<com.facebook.lite.c.e: long f>;
+        return $l0;
+    }
+
+    public final boolean g()
+    {
+        com.facebook.lite.c.e $r0;
+        boolean $z0;
+
+        $r0 := @this: com.facebook.lite.c.e;
+        $z0 = $r0.<com.facebook.lite.c.e: boolean b>;
+        return $z0;
+    }
+}

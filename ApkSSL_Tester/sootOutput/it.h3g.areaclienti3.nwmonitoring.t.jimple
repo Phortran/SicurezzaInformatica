@@ -1,0 +1,123 @@
+class it.h3g.areaclienti3.nwmonitoring.t extends java.lang.Object implements java.lang.Runnable
+{
+    final it.h3g.areaclienti3.nwmonitoring.r a;
+    private it.h3g.areaclienti3.nwmonitoring.ar b;
+    private android.content.Context c;
+
+    public void <init>(it.h3g.areaclienti3.nwmonitoring.r, it.h3g.areaclienti3.nwmonitoring.ar, android.content.Context)
+    {
+        it.h3g.areaclienti3.nwmonitoring.t $r0;
+        it.h3g.areaclienti3.nwmonitoring.r $r1;
+        it.h3g.areaclienti3.nwmonitoring.ar $r2;
+        android.content.Context $r3;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.t;
+        $r1 := @parameter0: it.h3g.areaclienti3.nwmonitoring.r;
+        $r2 := @parameter1: it.h3g.areaclienti3.nwmonitoring.ar;
+        $r3 := @parameter2: android.content.Context;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.r a> = $r1;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b> = $r2;
+        $r0.<it.h3g.areaclienti3.nwmonitoring.t: android.content.Context c> = $r3;
+        return;
+    }
+
+    public void run()
+    {
+        it.h3g.areaclienti3.nwmonitoring.t $r0;
+        android.content.Context $r1;
+        boolean $z0;
+        java.lang.Object $r3;
+        android.net.ConnectivityManager $r4;
+        android.net.NetworkInfo $r5;
+        java.lang.String $r6, $r10;
+        it.h3g.areaclienti3.nwmonitoring.r $r7;
+        it.h3g.areaclienti3.nwmonitoring.bf $r8;
+        it.h3g.areaclienti3.nwmonitoring.ar $r9;
+        it.h3g.areaclienti3.nwmonitoring.s $r11;
+        int $i0;
+        com.google.c.j $r12;
+        it.h3g.model.APIResponse $r14;
+        java.lang.Exception $r15;
+
+        $r0 := @this: it.h3g.areaclienti3.nwmonitoring.t;
+
+     label0:
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: android.content.Context c>;
+        $r3 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+        $r4 = (android.net.ConnectivityManager) $r3;
+        $r5 = virtualinvoke $r4.<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>();
+        if $r5 == null goto label1;
+
+        $z0 = virtualinvoke $r5.<android.net.NetworkInfo: boolean isConnectedOrConnecting()>();
+        if $z0 != 0 goto label2;
+
+     label1:
+        return;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SEND_DATA", "Invio pacchetto dati");
+        $r7 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.r a>;
+        $r8 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.r: it.h3g.areaclienti3.nwmonitoring.bf a(it.h3g.areaclienti3.nwmonitoring.r)>($r7);
+        $r6 = virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: java.lang.String a()>();
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b>;
+        $r10 = virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.ar: java.lang.String c()>();
+        $r11 = staticinvoke <it.h3g.areaclienti3.nwmonitoring.r: it.h3g.areaclienti3.nwmonitoring.s a(java.lang.String,java.lang.String,java.lang.String,boolean)>($r6, $r10, "application/json", 1);
+        $i0 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.s: int a()>();
+        if $i0 != 200 goto label8;
+
+        $r12 = new com.google.c.j;
+        specialinvoke $r12.<com.google.c.j: void <init>()>();
+        $r10 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.s: java.lang.String b()>();
+        $r3 = virtualinvoke $r12.<com.google.c.j: java.lang.Object a(java.lang.String,java.lang.Class)>($r10, class "it/h3g/model/APIResponse");
+        $r14 = (it.h3g.model.APIResponse) $r3;
+        $r10 = virtualinvoke $r14.<it.h3g.model.APIResponse: java.lang.String getError()>();
+        if $r10 == null goto label3;
+
+        $r10 = virtualinvoke $r14.<it.h3g.model.APIResponse: java.lang.String getError()>();
+        if $r10 != "" goto label7;
+
+     label3:
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.ar: void a(int)>(0);
+        $r8 = new it.h3g.areaclienti3.nwmonitoring.bf;
+        $r1 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: android.content.Context c>;
+        specialinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: void <init>(android.content.Context)>($r1);
+        virtualinvoke $r8.<it.h3g.areaclienti3.nwmonitoring.bf: void a(it.h3g.model.APIResponse)>($r14);
+
+     label4:
+        $r6 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.s: java.lang.String b()>();
+        staticinvoke <it.h3g.areaclienti3.nwmonitoring.ap: void a(java.lang.String,java.lang.String)>("NW-MONITORING-SEND_RESPONSE_STRING", $r6);
+
+     label5:
+        goto label1;
+
+     label6:
+        $r15 := @caughtexception;
+        virtualinvoke $r15.<java.lang.Exception: void printStackTrace()>();
+        goto label1;
+
+     label7:
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.ar: void a(int)>(1);
+        goto label4;
+
+     label8:
+        $i0 = virtualinvoke $r11.<it.h3g.areaclienti3.nwmonitoring.s: int a()>();
+        if $i0 != -2 goto label9;
+
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.ar: void a(int)>(2);
+        goto label1;
+
+     label9:
+        $r9 = $r0.<it.h3g.areaclienti3.nwmonitoring.t: it.h3g.areaclienti3.nwmonitoring.ar b>;
+        virtualinvoke $r9.<it.h3g.areaclienti3.nwmonitoring.ar: void a(int)>(1);
+
+     label10:
+        goto label1;
+
+        catch java.lang.Exception from label0 to label5 with label6;
+        catch java.lang.Exception from label7 to label10 with label6;
+    }
+}

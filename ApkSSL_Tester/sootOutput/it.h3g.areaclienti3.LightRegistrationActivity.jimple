@@ -1,0 +1,375 @@
+public class it.h3g.areaclienti3.LightRegistrationActivity extends it.h3g.areaclienti3.BaseActivity
+{
+    protected android.content.Context D;
+    protected it.h3g.areaclienti3.j.m E;
+    protected java.lang.String F;
+    protected java.lang.String G;
+    protected java.lang.Boolean H;
+    protected android.widget.TextView I;
+    protected android.widget.TextView J;
+    protected android.widget.EditText K;
+    protected android.widget.EditText L;
+    protected android.widget.EditText M;
+    protected android.widget.EditText N;
+    protected android.widget.CheckBox O;
+    protected android.widget.CheckBox P;
+    protected android.widget.CheckBox Q;
+    protected android.widget.ImageView R;
+    protected android.widget.ImageView S;
+    protected android.widget.ImageView T;
+    protected android.widget.Button U;
+    protected android.widget.Button V;
+    protected boolean W;
+    protected java.lang.String X;
+    protected java.lang.String Y;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void <init>()>();
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: boolean W> = 0;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String X> = "";
+        return;
+    }
+
+    public void a(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+        java.lang.String $r2, $r6, $r7;
+        it.h3g.areaclienti3.ac $r3;
+        it.h3g.areaclienti3.ad $r4;
+        java.lang.Boolean $r5;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $r5 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        <it.h3g.areaclienti3.LightRegistrationActivity: java.lang.Boolean u> = $r5;
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void k()>();
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void f()>();
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("error");
+        if $z0 == 0 goto label5;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("remoteError");
+        if $z0 == 0 goto label3;
+
+        $r6 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("remoteError");
+
+     label0:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("errorCode");
+        if $z0 == 0 goto label4;
+
+        $r7 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("errorCode");
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void a(java.lang.String,java.lang.String,java.lang.String)>("REGISTRAZIONE", $r7, $r6);
+
+     label2:
+        return;
+
+     label3:
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131231110);
+        goto label0;
+
+     label4:
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131231691);
+        goto label1;
+
+     label5:
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("result");
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setResult(int)>(2);
+        $r7 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230828);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230864);
+        $r2 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230865);
+        $r3 = new it.h3g.areaclienti3.ac;
+        specialinvoke $r3.<it.h3g.areaclienti3.ac: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        $r4 = new it.h3g.areaclienti3.ad;
+        specialinvoke $r4.<it.h3g.areaclienti3.ad: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void a(java.lang.String,java.lang.String,java.lang.String,android.view.View$OnClickListener,android.view.View$OnClickListener)>($r7, $r6, $r2, $r3, $r4);
+        goto label2;
+    }
+
+    public void a(android.os.Message)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.os.Message $r1;
+        int $i0;
+        java.lang.Object $r3;
+        android.os.Bundle $r4;
+        java.lang.String $r5;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $r1 := @parameter0: android.os.Message;
+        $i0 = $r1.<android.os.Message: int what>;
+        lookupswitch($i0)
+        {
+            case 1: goto label1;
+            default: goto label0;
+        };
+
+     label0:
+        return;
+
+     label1:
+        $r3 = $r1.<android.os.Message: java.lang.Object obj>;
+        $r4 = (android.os.Bundle) $r3;
+        $r5 = virtualinvoke $r4.<android.os.Bundle: java.lang.String getString(java.lang.String)>("action");
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("setPasswordAction");
+        if $z0 == 0 goto label2;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("LightRegistration", "Set password action!");
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void a(android.os.Bundle)>($r4);
+        goto label0;
+
+     label2:
+        staticinvoke <it.h3g.areaclienti3.j.m: void c(java.lang.String,java.lang.String)>("LightRegistration", "The action finished is not konwn");
+        goto label0;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.os.Bundle $r1;
+        it.h3g.areaclienti3.j.m $r2;
+        java.lang.String $r3, $r7, $r8;
+        android.view.View$OnClickListener $r4;
+        int $i2;
+        android.content.Intent $r5;
+        boolean $z1;
+        java.lang.Boolean $r6;
+        android.view.View $r9;
+        android.widget.TextView $r10;
+        java.lang.Object[] $r11;
+        android.widget.CheckBox $r12;
+        android.widget.ImageView $r13;
+        it.h3g.areaclienti3.w $r14;
+        it.h3g.areaclienti3.x $r15;
+        it.h3g.areaclienti3.y $r16;
+        android.widget.EditText $r17;
+        android.widget.Button $r18;
+        it.h3g.areaclienti3.z $r19;
+        it.h3g.areaclienti3.ab $r20;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onCreate(android.os.Bundle)>($r1);
+        $r2 = new it.h3g.areaclienti3.j.m;
+        specialinvoke $r2.<it.h3g.areaclienti3.j.m: void <init>(android.content.Context)>($r0);
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: it.h3g.areaclienti3.j.m E> = $r2;
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setContentView(int)>(2130903089);
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.content.Context D> = $r0;
+        $r3 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String g()>();
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String Y> = $r3;
+        $r5 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.content.Intent getIntent()>();
+        $r1 = virtualinvoke $r5.<android.content.Intent: android.os.Bundle getExtras()>();
+        if $r1 == null goto label0;
+
+        $z1 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String,boolean)>("registered", 0);
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z1);
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.Boolean H> = $r6;
+        $r3 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("msisdn");
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String F> = $r3;
+
+     label0:
+        $r3 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String F>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String F>;
+        $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z1 == 0 goto label2;
+
+     label1:
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131231691);
+        $r3 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131231691);
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131231110);
+        $r4 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View$OnClickListener x>;
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void a(java.lang.String,java.lang.String,java.lang.String,android.view.View$OnClickListener)>("REGISTRAZIONE", $r3, $r8, $r4);
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setResult(int)>(1);
+
+     label2:
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165475);
+        $r10 = (android.widget.TextView) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.TextView I> = $r10;
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230984);
+        $r11 = newarray (java.lang.Object)[1];
+        $r7 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String Y>;
+        $i2 = (int) 0;
+        $r11[$i2] = $r7;
+        $r8 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r8, $r11);
+        $r10 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.TextView I>;
+        virtualinvoke $r10.<android.widget.TextView: void setText(java.lang.CharSequence)>($r8);
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165477);
+        $r10 = (android.widget.TextView) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.TextView J> = $r10;
+        $r6 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.Boolean H>;
+        $z1 = virtualinvoke $r6.<java.lang.Boolean: boolean booleanValue()>();
+        if $z1 == 0 goto label4;
+
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230986);
+
+     label3:
+        $r11 = newarray (java.lang.Object)[1];
+        $r7 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String F>;
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String substring(int)>(2);
+        $i2 = (int) 0;
+        $r11[$i2] = $r7;
+        $r8 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>($r8, $r11);
+        $r10 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.TextView J>;
+        virtualinvoke $r10.<android.widget.TextView: void setText(java.lang.CharSequence)>($r8);
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165482);
+        $r12 = (android.widget.CheckBox) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.CheckBox O> = $r12;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165485);
+        $r12 = (android.widget.CheckBox) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.CheckBox P> = $r12;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165488);
+        $r12 = (android.widget.CheckBox) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.CheckBox Q> = $r12;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165483);
+        $r13 = (android.widget.ImageView) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView R> = $r13;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165486);
+        $r13 = (android.widget.ImageView) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView S> = $r13;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165489);
+        $r13 = (android.widget.ImageView) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView T> = $r13;
+        $r13 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView R>;
+        $r14 = new it.h3g.areaclienti3.w;
+        specialinvoke $r14.<it.h3g.areaclienti3.w: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r13.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r14);
+        $r13 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView S>;
+        $r15 = new it.h3g.areaclienti3.x;
+        specialinvoke $r15.<it.h3g.areaclienti3.x: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r13.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r15);
+        $r13 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.ImageView T>;
+        $r16 = new it.h3g.areaclienti3.y;
+        specialinvoke $r16.<it.h3g.areaclienti3.y: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r13.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r16);
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165478);
+        $r17 = (android.widget.EditText) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.EditText K> = $r17;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165479);
+        $r17 = (android.widget.EditText) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.EditText L> = $r17;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165480);
+        $r17 = (android.widget.EditText) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.EditText M> = $r17;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165481);
+        $r17 = (android.widget.EditText) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.EditText N> = $r17;
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165491);
+        $r18 = (android.widget.Button) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.Button U> = $r18;
+        $r18 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.Button U>;
+        $r19 = new it.h3g.areaclienti3.z;
+        specialinvoke $r19.<it.h3g.areaclienti3.z: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r18.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r19);
+        $r9 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165476);
+        $r18 = (android.widget.Button) $r9;
+        $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.Button V> = $r18;
+        $r18 = $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.widget.Button V>;
+        $r20 = new it.h3g.areaclienti3.ab;
+        specialinvoke $r20.<it.h3g.areaclienti3.ab: void <init>(it.h3g.areaclienti3.LightRegistrationActivity)>($r0);
+        virtualinvoke $r18.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r20);
+        return;
+
+     label4:
+        $r8 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: java.lang.String getString(int)>(2131230985);
+        goto label3;
+    }
+
+    protected void onDestroy()
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.view.View $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setResult(int)>(1);
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onDestroy()>();
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: android.view.View findViewById(int)>(2131165474);
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void unbindDrawables(android.view.View)>($r1);
+        staticinvoke <java.lang.System: void gc()>();
+        return;
+    }
+
+    public boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        int $i0;
+        android.view.KeyEvent $r1;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        if $i0 != 4 goto label0;
+
+        staticinvoke <it.h3g.areaclienti3.j.m: void b(java.lang.String,java.lang.String)>("LightRegistration", "Click su back button - Light registration not complete.");
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setResult(int)>(1);
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void finish()>();
+        return 0;
+
+     label0:
+        $z0 = specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: boolean onKeyDown(int,android.view.KeyEvent)>($i0, $r1);
+        return $z0;
+    }
+
+    protected void onPause()
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void setResult(int)>(1);
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onPause()>();
+        staticinvoke <java.lang.System: void gc()>();
+        return;
+    }
+
+    protected void onRestoreInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.os.Bundle $r1;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean containsKey(java.lang.String)>("loading");
+        if $z0 == 0 goto label0;
+
+        $z0 = virtualinvoke $r1.<android.os.Bundle: boolean getBoolean(java.lang.String)>("loading");
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r0.<it.h3g.areaclienti3.LightRegistrationActivity: void j()>();
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onRestoreInstanceState(android.os.Bundle)>($r1);
+        return;
+    }
+
+    protected void onSaveInstanceState(android.os.Bundle)
+    {
+        it.h3g.areaclienti3.LightRegistrationActivity $r0;
+        android.os.Bundle $r1;
+        java.lang.Boolean $r2;
+        boolean $z0;
+
+        $r0 := @this: it.h3g.areaclienti3.LightRegistrationActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $r2 = <it.h3g.areaclienti3.LightRegistrationActivity: java.lang.Boolean u>;
+        $z0 = virtualinvoke $r2.<java.lang.Boolean: boolean booleanValue()>();
+        if $z0 == 0 goto label0;
+
+        virtualinvoke $r1.<android.os.Bundle: void putBoolean(java.lang.String,boolean)>("loading", 1);
+
+     label0:
+        specialinvoke $r0.<it.h3g.areaclienti3.BaseActivity: void onSaveInstanceState(android.os.Bundle)>($r1);
+        return;
+    }
+}

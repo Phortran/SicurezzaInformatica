@@ -1,0 +1,453 @@
+public class it.h3g.areaclienti3.b.h extends android.widget.BaseAdapter
+{
+    private final java.lang.String a;
+    private java.util.ArrayList b;
+    private android.view.LayoutInflater c;
+    private android.content.Context d;
+    private android.view.View$OnClickListener e;
+    private java.lang.String f;
+    private boolean g;
+
+    public void <init>()
+    {
+        it.h3g.areaclienti3.b.h $r0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        specialinvoke $r0.<android.widget.BaseAdapter: void <init>()>();
+        $r0.<it.h3g.areaclienti3.b.h: java.lang.String a> = "TrafficResultsListAdapter";
+        $r0.<it.h3g.areaclienti3.b.h: java.lang.String f> = null;
+        $r0.<it.h3g.areaclienti3.b.h: boolean g> = 0;
+        return;
+    }
+
+    public void <init>(android.content.Context, java.util.ArrayList, android.view.View$OnClickListener, java.lang.String, boolean)
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        android.content.Context $r1;
+        java.util.ArrayList $r2;
+        android.view.View$OnClickListener $r3;
+        java.lang.String $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        android.view.LayoutInflater $r6;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $r1 := @parameter0: android.content.Context;
+        $r2 := @parameter1: java.util.ArrayList;
+        $r3 := @parameter2: android.view.View$OnClickListener;
+        $r4 := @parameter3: java.lang.String;
+        $z0 := @parameter4: boolean;
+        specialinvoke $r0.<it.h3g.areaclienti3.b.h: void <init>()>();
+        $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList b> = $r2;
+        $r0.<it.h3g.areaclienti3.b.h: android.view.View$OnClickListener e> = $r3;
+        $r0.<it.h3g.areaclienti3.b.h: java.lang.String f> = $r4;
+        $r0.<it.h3g.areaclienti3.b.h: boolean g> = $z0;
+        $r0.<it.h3g.areaclienti3.b.h: android.content.Context d> = $r1;
+        $r5 = virtualinvoke $r1.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("layout_inflater");
+        $r6 = (android.view.LayoutInflater) $r5;
+        $r0.<it.h3g.areaclienti3.b.h: android.view.LayoutInflater c> = $r6;
+        return;
+    }
+
+    public java.util.ArrayList a(int)
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        int $i0, $i1;
+        java.util.ArrayList $r1;
+        java.lang.Object $r2;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $i0 := @parameter0: int;
+        $r1 = $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList b>;
+        $i1 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        if $i0 >= $i1 goto label0;
+
+        $r1 = $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList b>;
+        $r2 = virtualinvoke $r1.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+        $r1 = (java.util.ArrayList) $r2;
+        return $r1;
+
+     label0:
+        return null;
+    }
+
+    public int getCount()
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        java.util.ArrayList $r1;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $r1 = $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList b>;
+        $i0 = virtualinvoke $r1.<java.util.ArrayList: int size()>();
+        return $i0;
+    }
+
+    public java.lang.Object getItem(int)
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        int $i0;
+        java.util.ArrayList $r1;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $i0 := @parameter0: int;
+        $r1 = virtualinvoke $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList a(int)>($i0);
+        return $r1;
+    }
+
+    public long getItemId(int)
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        int $i0;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $i0 := @parameter0: int;
+        return 0L;
+    }
+
+    public android.view.View getView(int, android.view.View, android.view.ViewGroup)
+    {
+        it.h3g.areaclienti3.b.h $r0;
+        int $i0, $i1, $i2;
+        android.view.View $r1;
+        android.view.ViewGroup $r2;
+        android.view.LayoutInflater $r3;
+        boolean $z0;
+        android.content.Context $r4;
+        java.util.ArrayList $r6;
+        java.lang.String $r7, $r14, $r17;
+        android.widget.RelativeLayout $r8;
+        android.widget.TextView $r9, $r10;
+        android.content.res.Resources $r11;
+        android.widget.ImageView $r12;
+        java.lang.Object $r13;
+        java.lang.StringBuilder $r15;
+        android.view.View$OnClickListener $r16;
+        android.text.Spanned $r18;
+
+        $r0 := @this: it.h3g.areaclienti3.b.h;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.View;
+        $r2 := @parameter2: android.view.ViewGroup;
+        $r3 = $r0.<it.h3g.areaclienti3.b.h: android.view.LayoutInflater c>;
+        $r1 = virtualinvoke $r3.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)>(2130903169, $r2, 0);
+        $r8 = (android.widget.RelativeLayout) $r1;
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setId(int)>($i0);
+        $r6 = virtualinvoke $r0.<it.h3g.areaclienti3.b.h: java.util.ArrayList a(int)>($i0);
+        $r1 = virtualinvoke $r8.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165550);
+        $r9 = (android.widget.TextView) $r1;
+        $r1 = virtualinvoke $r8.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165935);
+        $r10 = (android.widget.TextView) $r1;
+        $r4 = $r0.<it.h3g.areaclienti3.b.h: android.content.Context d>;
+        $r11 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $i1 = virtualinvoke $r11.<android.content.res.Resources: int getColor(int)>(2131099670);
+        $r4 = $r0.<it.h3g.areaclienti3.b.h: android.content.Context d>;
+        $r11 = virtualinvoke $r4.<android.content.Context: android.content.res.Resources getResources()>();
+        $i0 = virtualinvoke $r11.<android.content.res.Resources: int getColor(int)>(2131099768);
+        $r1 = virtualinvoke $r8.<android.widget.RelativeLayout: android.view.View findViewById(int)>(2131165916);
+        $r12 = (android.widget.ImageView) $r1;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r14 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r14.<java.lang.String: int indexOf(java.lang.String)>("Totale Periodo");
+        if $i2 < 0 goto label5;
+
+        $i2 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        if $i2 < 1 goto label4;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r14 = (java.lang.String) $r13;
+        $r14 = virtualinvoke $r14.<java.lang.String: java.lang.String trim()>();
+        $i2 = virtualinvoke $r14.<java.lang.String: int length()>();
+        if $i2 <= 0 goto label4;
+
+        $r15 = new java.lang.StringBuilder;
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("");
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14);
+        $z0 = $r0.<it.h3g.areaclienti3.b.h: boolean g>;
+        if $z0 == 0 goto label3;
+
+        $r14 = $r0.<it.h3g.areaclienti3.b.h: java.lang.String f>;
+
+     label0:
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label1:
+        $i2 = virtualinvoke $r6.<java.util.ArrayList: int size()>();
+        if $i2 < 8 goto label2;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r7 = (java.lang.String) $r13;
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String trim()>();
+        $i2 = virtualinvoke $r7.<java.lang.String: int length()>();
+        if $i2 <= 0 goto label2;
+
+        $r15 = new java.lang.StringBuilder;
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r14);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - \u20ac ");
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r14 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label2:
+        virtualinvoke $r9.<android.widget.TextView: void setTextSize(float)>(20.0F);
+        $r14 = virtualinvoke $r14.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "");
+        $r14 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String e(java.lang.String)>($r14);
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r14);
+        virtualinvoke $r9.<android.widget.TextView: void setTextColor(int)>($i0);
+        virtualinvoke $r10.<android.widget.TextView: void setVisibility(int)>(8);
+        virtualinvoke $r12.<android.widget.ImageView: void setVisibility(int)>(8);
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setBackgroundColor(int)>($i1);
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setEnabled(boolean)>(0);
+        return $r8;
+
+     label3:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r14 = (java.lang.String) $r13;
+        goto label0;
+
+     label4:
+        $r15 = new java.lang.StringBuilder;
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("");
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("---");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label1;
+
+     label5:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r14 = (java.lang.String) $r13;
+        $r16 = $r0.<it.h3g.areaclienti3.b.h: android.view.View$OnClickListener e>;
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setOnClickListener(android.view.View$OnClickListener)>($r16);
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        if $r13 == null goto label20;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(7);
+        if $r13 == null goto label20;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r7 = (java.lang.String) $r13;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("0.00");
+        if $z0 == 0 goto label20;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(7);
+        $r7 = (java.lang.String) $r13;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("0.00");
+        if $z0 != 0 goto label20;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(7);
+        $r7 = (java.lang.String) $r13;
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 != 0 goto label20;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(7);
+        $r14 = (java.lang.String) $r13;
+
+     label6:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r7 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r7.<java.lang.String: int indexOf(java.lang.String)>("Chiamate");
+        if $i2 >= 0 goto label7;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r7 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r7.<java.lang.String: int indexOf(java.lang.String)>("SMS");
+        if $i2 >= 0 goto label7;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r7 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r7.<java.lang.String: int indexOf(java.lang.String)>("MMS");
+        if $i2 < 0 goto label11;
+
+     label7:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r7 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r7.<java.lang.String: int indexOf(java.lang.String)>("Visualizza Soglie");
+        if $i2 < 0 goto label10;
+
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r14 = (java.lang.String) $r13;
+        $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r14);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in Soglia");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label8:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r7 = (java.lang.String) $r13;
+        $r7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r7);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r7);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r7 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label9:
+        $r17 = virtualinvoke $r14.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "");
+        $r18 = staticinvoke <android.text.Html: android.text.Spanned fromHtml(java.lang.String)>($r17);
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r18);
+        virtualinvoke $r9.<android.widget.TextView: void setTextSize(float)>(16.0F);
+        $r17 = virtualinvoke $r7.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", "");
+        $r17 = staticinvoke <it.h3g.areaclienti3.j.m: java.lang.String e(java.lang.String)>($r17);
+        virtualinvoke $r10.<android.widget.TextView: void setText(java.lang.CharSequence)>($r17);
+        virtualinvoke $r10.<android.widget.TextView: void setVisibility(int)>(0);
+        virtualinvoke $r12.<android.widget.ImageView: void setVisibility(int)>(0);
+        virtualinvoke $r8.<android.widget.RelativeLayout: void setEnabled(boolean)>(1);
+        return $r8;
+
+     label10:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<b>\u20ac");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</b>");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label8;
+
+     label11:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r17 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r17.<java.lang.String: int indexOf(java.lang.String)>("Internet");
+        if $i2 < 0 goto label14;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r17 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r17.<java.lang.String: int indexOf(java.lang.String)>("Visualizza Soglie");
+        if $i2 < 0 goto label13;
+
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in Soglia");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label12:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(6);
+        $r17 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r7 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label9;
+
+     label13:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<b>\u20ac");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</b>");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label12;
+
+     label14:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r17 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r17.<java.lang.String: int indexOf(java.lang.String)>("Spese e Attivazioni");
+        if $i2 < 0 goto label17;
+
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r17 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r17.<java.lang.String: int indexOf(java.lang.String)>("Visualizza Soglie");
+        if $i2 < 0 goto label16;
+
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in Soglia");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label15:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(1);
+        $r17 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r7 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label9;
+
+     label16:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<b>\u20ac");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</b>");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label15;
+
+     label17:
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(8);
+        $r17 = (java.lang.String) $r13;
+        $i2 = virtualinvoke $r17.<java.lang.String: int indexOf(java.lang.String)>("Visualizza Soglie");
+        if $i2 < 0 goto label19;
+
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in Soglia");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label18:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(0);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(5);
+        $r17 = (java.lang.String) $r13;
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r7 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label9;
+
+     label19:
+        $r15 = new java.lang.StringBuilder;
+        $r13 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>(3);
+        $r17 = (java.lang.String) $r13;
+        $r17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r17);
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>($r17);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" - ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<b>\u20ac");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r15 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</b>");
+        $r14 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();
+        goto label18;
+
+     label20:
+        goto label6;
+    }
+}
